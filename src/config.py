@@ -26,8 +26,8 @@ MIN_ENGAGEMENT = {
 }
 
 # Cantidad máxima de candidatos que llegan a Claude (control de costo).
-# Subido a 50 para absorber las nuevas fuentes sin aplastar Reddit/newsletters.
-MAX_CANDIDATES = 50
+# 30 candidatos × ~300 tokens ≈ 9000 tokens output — margen seguro sin truncar.
+MAX_CANDIDATES = 30
 
 # Keywords que marcan relevancia para scouting de negocio.
 # Un item pasa el pre-filtro si su engagement supera el umbral
