@@ -26,7 +26,7 @@ def score(items: list[Item]) -> list[ScoredItem]:
 
     resp = client.messages.create(
         model=config.MODEL,
-        max_tokens=8000,
+        max_tokens=16000,  # 35 items × ~300 tokens + margen
         system=[
             {
                 "type": "text",
@@ -37,12 +37,17 @@ def score(items: list[Item]) -> list[ScoredItem]:
         messages=[
             {
                 "role": "user",
-                "content": f"Candidatos de esta semana:\n\n{candidates}",
+                "content": (
+                    f"Candidatos de esta semana ({len(items)} en total):\n\n{candidates}\n\n"
+                    f"IMPORTANTE: evaluá los {len(items)} candidatos sin excepción. "
+                    "Los irrelevantes reciben scores bajos pero deben aparecer en el JSON."
+                ),
             }
         ],
     )
 
     text = "".join(block.text for block in resp.content if block.type == "text")
+    print(f"[score] stop_reason={resp.stop_reason} output_tokens={resp.usage.output_tokens}")
     return _parse(text)
 
 
@@ -74,6 +79,7 @@ def _parse(text: str) -> list[ScoredItem]:
             scored.append(ScoredItem.model_validate(obj))
         except Exception as e:  # noqa: BLE001 — un item malo no tumba el resto
             print(f"[score] item descartado por validación: {e}")
+    print(f"[score] {len(data)} recibidos del modelo, {len(scored)} válidos")
     return scored
 
 
