@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import time
 from datetime import date
 from pathlib import Path
 
@@ -27,11 +26,8 @@ def build_sources() -> list[Source]:
     ]
     for name, url in config.RSS_FEEDS.items():
         sources.append(RSSFeed(name=name, url=url, lookback_days=config.LOOKBACK_DAYS))
-    for i, (name, url) in enumerate(config.REDDIT_FEEDS.items()):
-        # El primer Reddit no necesita espera. Los siguientes esperan 10s
-        # para respetar el rate limit de Reddit (~1 req/8s sin auth).
-        sources.append(RSSFeed(name=name, url=url, lookback_days=config.LOOKBACK_DAYS,
-                               pre_fetch_delay=0 if i == 0 else 10))
+    for name, url in config.REDDIT_FEEDS.items():
+        sources.append(RSSFeed(name=name, url=url, lookback_days=config.LOOKBACK_DAYS))
     if config.ENABLE_PRODUCTHUNT:
         sources.append(ProductHunt(lookback_days=config.LOOKBACK_DAYS))
     return sources

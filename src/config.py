@@ -67,23 +67,22 @@ RELEVANCE_KEYWORDS = [
 ]
 
 # --- Fuentes RSS Tier 1 ---
-# Medios tech generales
 RSS_FEEDS = {
+    # EEUU
     "techcrunch": "https://techcrunch.com/feed/",
-    "wired": "https://www.wired.com/feed/rss",
-    "mit": "https://www.technologyreview.com/feed/",
+    "wired":      "https://www.wired.com/feed/rss",
+    "mit":        "https://www.technologyreview.com/feed/",
+    # Europa (ideas ~12-18 meses antes de llegar a LatAm)
+    "sifted":     "https://sifted.eu/feed/",
+    "techeu":     "https://tech.eu/feed/",
     # Asia
     "techinasia": "https://feeds.feedburner.com/techinasia",
-    # VC / newsletters
-    "a16z": "https://a16z.substack.com/feed",
 }
 
-# Reddit: feeds públicos top/semana. Requieren User-Agent — se pasan
-# en main.py al instanciar RSSFeed con extra_headers.
+# Reddit r/SaaS: único subreddit activo sin rate-limit en CI.
+# r/startups y r/entrepreneur dan 429 desde GitHub Actions con múltiples calls.
 REDDIT_FEEDS = {
-    "reddit_saas":        "https://www.reddit.com/r/SaaS/top/.rss?t=week&limit=25",
-    "reddit_startups":    "https://www.reddit.com/r/startups/top/.rss?t=week&limit=25",
-    "reddit_entrepreneur":"https://www.reddit.com/r/entrepreneur/top/.rss?t=week&limit=25",
+    "reddit_saas": "https://www.reddit.com/r/SaaS/top/.rss?t=week&limit=25",
 }
 
 # --- Fuentes activas ---

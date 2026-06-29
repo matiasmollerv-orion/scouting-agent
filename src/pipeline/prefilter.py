@@ -1,33 +1,47 @@
 from __future__ import annotations
 
+from collections import defaultdict
+
 from .. import config
 from ..models import Item
 
-# Máximo de items que puede aportar HN al pool final.
-# Sin este cap, Show HN llena todos los slots y Reddit/newsletters quedan fuera.
-HN_CAP = 20
+# Slots máximos por fuente antes del corte global.
+# Garantiza diversidad geográfica — sin esto una sola fuente llena todo.
+MAX_PER_SOURCE = {
+    "hackernews": 15,   # Show HN primero (lanzamientos reales)
+    "default":     7,   # todas las demás fuentes
+}
 
 
 def prefilter(items: list[Item]) -> list[Item]:
     """Reduce el universo a candidatos SIN llamar al LLM (control de costo).
 
-    Pasos: dedup -> filtro de relevancia -> cap por fuente HN para garantizar
-    diversidad -> tope MAX_CANDIDATES global.
+    Pasos: dedup -> filtro de relevancia -> cap por fuente (diversidad
+    geográfica) -> tope MAX_CANDIDATES global.
     """
     deduped = _dedup(items)
     relevant = [it for it in deduped if _is_relevant(it)]
 
-    # Separar HN (priorizar Show HN) del resto (ordenar por engagement).
-    hn = [it for it in relevant if it.source == "hackernews"]
-    others = [it for it in relevant if it.source != "hackernews"]
+    # Agrupar por fuente y aplicar cap + orden interno.
+    by_source: dict[str, list[Item]] = defaultdict(list)
+    for it in relevant:
+        by_source[it.source].append(it)
 
-    hn.sort(key=lambda it: (0 if it.title.lower().startswith("show hn:") else 1, -it.engagement))
-    others.sort(key=lambda it: -it.engagement)
+    pool: list[Item] = []
+    for source, src_items in by_source.items():
+        cap = MAX_PER_SOURCE.get(source, MAX_PER_SOURCE["default"])
+        # HN: Show HN primero, luego por engagement.
+        # Resto: por engagement.
+        src_items.sort(
+            key=lambda it: (0 if it.title.lower().startswith("show hn:") else 1, -it.engagement)
+        )
+        pool.extend(src_items[:cap])
 
-    combined = hn[:HN_CAP] + others
-    # Shuffle suave: intercalar HN y otros para que Claude vea variedad.
-    # En la práctica es suficiente concatenar — Claude evalúa todos.
-    return combined[: config.MAX_CANDIDATES]
+    # Orden final: Show HN al tope, resto por engagement.
+    pool.sort(
+        key=lambda it: (0 if it.title.lower().startswith("show hn:") else 1, -it.engagement)
+    )
+    return pool[: config.MAX_CANDIDATES]
 
 
 def _dedup(items: list[Item]) -> list[Item]:
