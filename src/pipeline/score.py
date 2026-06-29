@@ -58,7 +58,7 @@ def _serialize(items: list[Item]) -> str:
             "url": it.url,
             "source": it.source,
             "engagement": it.engagement,
-            "text": it.text[:600],
+            "text": it.text[:1500],
         }
         for it in items
     ]

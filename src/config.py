@@ -89,3 +89,7 @@ REDDIT_FEEDS = {
 # Product Hunt y YC arrancan apagadas (módulos opcionales).
 ENABLE_PRODUCTHUNT = bool(os.environ.get("PRODUCTHUNT_TOKEN"))
 ENABLE_YC = os.environ.get("SCOUTING_ENABLE_YC", "false").lower() == "true"
+
+# --- Email (Resend) ---
+RESEND_API_KEY = os.environ.get("RESEND_API_KEY", "")
+EMAIL_TO = os.environ.get("EMAIL_TO", "matiasmollerv@gmail.com")

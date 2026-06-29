@@ -68,6 +68,9 @@ class ScoredItem(BaseModel):
     componente_ia: bool
     tipo_fundador: str
     mercado_actual: str
+    company_url: str = ""        # homepage del producto/empresa (distinta del artículo)
+    funding_raised: str = ""     # ej: "$3.2M seed", "€1.4M", "bootstrapped", "desconocido"
+    stage: str = ""              # ej: "Pre-seed", "Seed", "Series A", "Bootstrapped"
 
     @property
     def objetivo_total(self) -> int:

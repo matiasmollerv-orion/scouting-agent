@@ -59,6 +59,12 @@ que lo respalda. Si no tenés base, marcá Baja y decilo.
 - `componente_ia`: true/false.
 - `tipo_fundador`: qué perfil necesitaría ejecutarla (1 frase).
 - `mercado_actual`: en qué mercado/país está funcionando hoy.
+- `company_url`: URL homepage del producto o empresa (no el artículo). Si no
+  se menciona explícitamente, dejá string vacío "".
+- `funding_raised`: monto levantado si se menciona (ej: "$3.2M seed", "€1.4M
+  Series A", "bootstrapped"). Si no hay info, "desconocido".
+- `stage`: etapa actual del negocio. Opciones: "Idea", "MVP", "Pre-seed",
+  "Seed", "Series A", "Series B+", "Bootstrapped", "Desconocido".
 
 # Formato de salida
 
@@ -78,8 +84,11 @@ bloques de código. Un objeto por candidato que evalúes. Esquema por objeto:
   "b2b_o_b2c": "...",
   "componente_ia": true,
   "tipo_fundador": "...",
-  "mercado_actual": "..."
+  "mercado_actual": "...",
+  "company_url": "...",
+  "funding_raised": "...",
+  "stage": "..."
 }
 
 Conservá el `title`, `url` y `source` EXACTOS del candidato. No inventes datos:
-si algo no se infiere del candidato, decilo en la evidencia en vez de fabricar.
+si algo no se infiere del candidato, usá "" o "desconocido" según el campo.
