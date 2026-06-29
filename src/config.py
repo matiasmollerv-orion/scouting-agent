@@ -90,6 +90,9 @@ REDDIT_FEEDS = {
 ENABLE_PRODUCTHUNT = bool(os.environ.get("PRODUCTHUNT_TOKEN"))
 ENABLE_YC = os.environ.get("SCOUTING_ENABLE_YC", "false").lower() == "true"
 
-# --- Email (Resend) ---
-RESEND_API_KEY = os.environ.get("RESEND_API_KEY", "")
-EMAIL_TO = os.environ.get("EMAIL_TO", "matiasmollerv@gmail.com")
+# --- Email (Gmail SMTP) ---
+# Mismas credenciales que el Financial Dashboard.
+# Generar App Password en: Google Account → Security → 2-Step → App Passwords
+GMAIL_USER         = os.environ.get("GMAIL_USER", "")
+GMAIL_APP_PASSWORD = os.environ.get("GMAIL_APP_PASSWORD", "").replace(" ", "")
+EMAIL_TO           = os.environ.get("EMAIL_TO", "matiasmollerv@gmail.com")

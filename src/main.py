@@ -1,9 +1,12 @@
 from __future__ import annotations
 
+import smtplib
+import ssl
 from datetime import date
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from email.utils import formataddr
 from pathlib import Path
-
-import resend
 
 from . import config
 from .models import RawItem
@@ -66,21 +69,32 @@ def run() -> Path:
 
 
 def _send_email(top, total_evaluados: int, week: int) -> None:
-    if not config.RESEND_API_KEY:
-        print("[email] RESEND_API_KEY no configurada — se omite el envío")
+    if not config.GMAIL_USER or not config.GMAIL_APP_PASSWORD:
+        print("[email] GMAIL_USER / GMAIL_APP_PASSWORD no configuradas — se omite el envío")
         return
 
     html = render_html(top, total_evaluados=total_evaluados, min_objetivo=config.MIN_OBJETIVO)
-    resend.api_key = config.RESEND_API_KEY
+    subject = (
+        f"🔍 Scouting Semanal — Semana {week} · "
+        f"{len(top)} idea{'s' if len(top) != 1 else ''} sobre el gate"
+    )
 
-    params: resend.Emails.SendParams = {
-        "from": "Scouting Semanal <onboarding@resend.dev>",
-        "to": [config.EMAIL_TO],
-        "subject": f"🔍 Scouting Semanal — Semana {week} · {len(top)} idea{'s' if len(top) != 1 else ''} sobre el gate",
-        "html": html,
-    }
-    resp = resend.Emails.send(params)
-    print(f"[email] enviado a {config.EMAIL_TO} — id={resp['id']}")
+    msg = MIMEMultipart("alternative")
+    msg["Subject"] = subject
+    msg["From"]    = formataddr(("Scouting Semanal", config.GMAIL_USER))
+    msg["To"]      = config.EMAIL_TO
+    msg.attach(MIMEText(html, "html", "utf-8"))
+
+    try:
+        ctx = ssl.create_default_context()
+        with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=ctx) as server:
+            server.login(config.GMAIL_USER, config.GMAIL_APP_PASSWORD)
+            server.sendmail(config.GMAIL_USER, [config.EMAIL_TO], msg.as_string())
+        print(f"[email] enviado a {config.EMAIL_TO}")
+    except smtplib.SMTPAuthenticationError as e:
+        print(f"[email] error de autenticación Gmail: {e}")
+    except Exception as e:
+        print(f"[email] error SMTP: {e}")
 
 
 if __name__ == "__main__":
