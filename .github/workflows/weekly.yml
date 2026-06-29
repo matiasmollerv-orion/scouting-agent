@@ -2,9 +2,9 @@ name: weekly-scouting
 
 on:
   schedule:
-    # Lunes 12:00 UTC (~08:00/09:00 Chile según horario). Actions corre en UTC
+    # Sábado 12:00 UTC (~08:00/09:00 Chile según horario). Actions corre en UTC
     # y puede retrasarse bajo carga; no es puntual al minuto.
-    - cron: "0 12 * * 1"
+    - cron: "0 12 * * 6"
   workflow_dispatch: {}  # permite correrlo a mano desde la pestaña Actions
 
 permissions:

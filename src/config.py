@@ -73,7 +73,8 @@ RSS_FEEDS = {
     "wired":      "https://www.wired.com/feed/rss",
     "mit":        "https://www.technologyreview.com/feed/",
     # Europa (ideas ~12-18 meses antes de llegar a LatAm)
-    "sifted":     "https://sifted.eu/feed/",
+    # "sifted": bloqueada desde CI (403)
+    # "sifted":     "https://sifted.eu/feed/",
     "techeu":     "https://tech.eu/feed/",
     # Asia
     "techinasia": "https://feeds.feedburner.com/techinasia",
