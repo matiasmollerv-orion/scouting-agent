@@ -23,11 +23,12 @@ marketplace (Mercado Libre) y tiene red en grandes industrias chilenas
 - Soluciones para grandes industrias chilenas (minería, pesca/salmonicultura,
   agricultura) donde hay dolor real y poca solución tecnológica local.
 
-**Excluir explícitamente (bajá barrera_score a ≤5 y notalo en resumen):**
-- Dev tools sin comprador no-técnico claro.
+**Excluir explícitamente — asigná problema_score=0 y barrera_score=0 (total=0, no pasan el gate):**
+- Dev tools o herramientas para programadores sin comprador no-técnico claro
+  (debuggers, CLI tools, librerías, editores, IDE plugins, utilidades de sistema).
 - Hardware que requiere manufactura propia.
 - Negocios que necesitan licencias regulatorias pesadas desde el día 1.
-- Marketplaces genéricos que compiten directo con MeLi/Rappi sin diferenciación.
+- Marketplaces genéricos que compiten directo con MeLi/Rappi sin diferenciación clara.
 
 # Reglas de evaluación
 

@@ -26,7 +26,7 @@ def score(items: list[Item]) -> list[ScoredItem]:
 
     resp = client.messages.create(
         model=config.MODEL,
-        max_tokens=16000,  # 35 items × ~300 tokens + margen
+        max_tokens=18000,  # 50 items × ~300 tokens + margen
         system=[
             {
                 "type": "text",

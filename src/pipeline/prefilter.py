@@ -3,20 +3,31 @@ from __future__ import annotations
 from .. import config
 from ..models import Item
 
+# Máximo de items que puede aportar HN al pool final.
+# Sin este cap, Show HN llena todos los slots y Reddit/newsletters quedan fuera.
+HN_CAP = 20
+
 
 def prefilter(items: list[Item]) -> list[Item]:
     """Reduce el universo a candidatos SIN llamar al LLM (control de costo).
 
-    Pasos: dedup por URL -> filtro de relevancia (engagement o keywords)
-    -> tope MAX_CANDIDATES ordenado por engagement.
+    Pasos: dedup -> filtro de relevancia -> cap por fuente HN para garantizar
+    diversidad -> tope MAX_CANDIDATES global.
     """
     deduped = _dedup(items)
     relevant = [it for it in deduped if _is_relevant(it)]
-    # Show HN primero (lanzamientos reales), luego el resto por engagement.
-    relevant.sort(
-        key=lambda it: (0 if it.title.lower().startswith("show hn:") else 1, -it.engagement)
-    )
-    return relevant[: config.MAX_CANDIDATES]
+
+    # Separar HN (priorizar Show HN) del resto (ordenar por engagement).
+    hn = [it for it in relevant if it.source == "hackernews"]
+    others = [it for it in relevant if it.source != "hackernews"]
+
+    hn.sort(key=lambda it: (0 if it.title.lower().startswith("show hn:") else 1, -it.engagement))
+    others.sort(key=lambda it: -it.engagement)
+
+    combined = hn[:HN_CAP] + others
+    # Shuffle suave: intercalar HN y otros para que Claude vea variedad.
+    # En la práctica es suficiente concatenar — Claude evalúa todos.
+    return combined[: config.MAX_CANDIDATES]
 
 
 def _dedup(items: list[Item]) -> list[Item]:

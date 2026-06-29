@@ -26,7 +26,8 @@ MIN_ENGAGEMENT = {
 }
 
 # Cantidad máxima de candidatos que llegan a Claude (control de costo).
-MAX_CANDIDATES = 35
+# Subido a 50 para absorber las nuevas fuentes sin aplastar Reddit/newsletters.
+MAX_CANDIDATES = 50
 
 # Keywords que marcan relevancia para scouting de negocio.
 # Un item pasa el pre-filtro si su engagement supera el umbral
@@ -66,11 +67,23 @@ RELEVANCE_KEYWORDS = [
 ]
 
 # --- Fuentes RSS Tier 1 ---
+# Medios tech generales
 RSS_FEEDS = {
     "techcrunch": "https://techcrunch.com/feed/",
     "wired": "https://www.wired.com/feed/rss",
     "mit": "https://www.technologyreview.com/feed/",
-    "indiehackers": "https://www.indiehackers.com/posts.rss",
+    # Asia
+    "techinasia": "https://feeds.feedburner.com/techinasia",
+    # VC / newsletters
+    "a16z": "https://a16z.substack.com/feed",
+}
+
+# Reddit: feeds públicos top/semana. Requieren User-Agent — se pasan
+# en main.py al instanciar RSSFeed con extra_headers.
+REDDIT_FEEDS = {
+    "reddit_saas":        "https://www.reddit.com/r/SaaS/top/.rss?t=week&limit=25",
+    "reddit_startups":    "https://www.reddit.com/r/startups/top/.rss?t=week&limit=25",
+    "reddit_entrepreneur":"https://www.reddit.com/r/entrepreneur/top/.rss?t=week&limit=25",
 }
 
 # --- Fuentes activas ---

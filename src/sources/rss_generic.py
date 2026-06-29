@@ -1,25 +1,41 @@
 from __future__ import annotations
 
+import time
 from datetime import datetime, timezone
 
 import feedparser
+import httpx
 from dateutil import parser as dateparser
 
 from ..models import RawItem
 from .base import Source
 
+DEFAULT_HEADERS = {"User-Agent": "scouting-agent/1.0 (github.com/matiasmollerv-orion/scouting-agent)"}
+
 
 class RSSFeed(Source):
-    """Fuente RSS genérica. Reutilizable para TechCrunch, Wired, MIT, etc."""
+    """Fuente RSS genérica. Reutilizable para cualquier feed RSS/Atom.
 
-    def __init__(self, name: str, url: str, lookback_days: int = 7):
+    Usa httpx para el fetch (permite headers personalizados — necesario para
+    Reddit, que bloquea requests sin User-Agent).
+    """
+
+    def __init__(self, name: str, url: str, lookback_days: int = 7,
+                 extra_headers: dict | None = None, pre_fetch_delay: int = 0):
         self.name = name
         self.url = url
         self.lookback_days = lookback_days
+        self.headers = {**DEFAULT_HEADERS, **(extra_headers or {})}
+        self.pre_fetch_delay = pre_fetch_delay  # segundos a esperar antes de fetch
 
     def fetch(self) -> list[RawItem]:
+        if self.pre_fetch_delay:
+            time.sleep(self.pre_fetch_delay)
         try:
-            feed = feedparser.parse(self.url)
+            resp = httpx.get(self.url, headers=self.headers, timeout=20,
+                             follow_redirects=True)
+            resp.raise_for_status()
+            feed = feedparser.parse(resp.text)
         except Exception as e:  # noqa: BLE001
             print(f"[{self.name}] fetch falló: {e}")
             return []
