@@ -24,7 +24,8 @@ def score(items: list[Item]) -> list[ScoredItem]:
     system_prompt = PROMPT_PATH.read_text(encoding="utf-8")
     candidates = _serialize(items)
 
-    resp = client.messages.create(
+    # Streaming requerido por el SDK cuando max_tokens puede superar ~10 min de generación.
+    with client.messages.stream(
         model=config.MODEL,
         max_tokens=24000,  # 50 items × ~400 tokens + margen amplio
         system=[
@@ -44,10 +45,11 @@ def score(items: list[Item]) -> list[ScoredItem]:
                 ),
             }
         ],
-    )
+    ) as stream:
+        msg = stream.get_final_message()
 
-    text = "".join(block.text for block in resp.content if block.type == "text")
-    print(f"[score] stop_reason={resp.stop_reason} output_tokens={resp.usage.output_tokens}")
+    text = "".join(block.text for block in msg.content if block.type == "text")
+    print(f"[score] stop_reason={msg.stop_reason} output_tokens={msg.usage.output_tokens}")
     return _parse(text)
 
 
