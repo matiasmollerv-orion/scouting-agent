@@ -80,9 +80,10 @@ def _send_email(top, passing_ids: set, total_evaluados: int, week: int) -> None:
         return
 
     html = render_html(top, passing_ids=passing_ids, total_evaluados=total_evaluados, min_objetivo=config.MIN_OBJETIVO)
+    n_passed = len(passing_ids)
     subject = (
         f"🔍 Scouting Semanal — Semana {week} · "
-        f"{len(top)} idea{'s' if len(top) != 1 else ''} sobre el gate"
+        f"{n_passed} idea{'s' if n_passed != 1 else ''} sobre el gate · top {len(top)} mostradas"
     )
 
     msg = MIMEMultipart("alternative")
