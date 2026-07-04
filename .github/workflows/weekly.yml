@@ -41,5 +41,6 @@ jobs:
             echo "Sin cambios en reports/"
           else
             git commit -m "report: scouting semanal $(date -u +%Y-W%V)"
+            git pull --rebase origin main
             git push
           fi
