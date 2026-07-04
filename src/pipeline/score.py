@@ -27,7 +27,7 @@ def score(items: list[Item]) -> list[ScoredItem]:
     # Streaming requerido por el SDK cuando max_tokens puede superar ~10 min de generación.
     with client.messages.stream(
         model=config.MODEL,
-        max_tokens=12000,  # 30 items × ~300 tokens + margen amplio
+        max_tokens=20000,  # 30 items × ~400 tokens + margen amplio
         system=[
             {
                 "type": "text",
