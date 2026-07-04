@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 
 from anthropic import Anthropic
+from json_repair import repair_json
 
 from .. import config
 from ..models import Item, ScoredItem
@@ -72,8 +73,13 @@ def _parse(text: str) -> list[ScoredItem]:
     try:
         data = json.loads(raw)
     except json.JSONDecodeError as e:
-        print(f"[score] JSON inválido del modelo: {e}")
-        return []
+        print(f"[score] JSON con errores, intentando reparar: {e}")
+        try:
+            data = json.loads(repair_json(raw))
+            print("[score] JSON reparado exitosamente")
+        except Exception as e2:
+            print(f"[score] JSON irreparable: {e2}")
+            return []
 
     scored: list[ScoredItem] = []
     for obj in data:

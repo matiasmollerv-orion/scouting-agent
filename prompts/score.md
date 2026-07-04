@@ -81,8 +81,8 @@ que lo respalda. Si no tenés base, marcá Baja y decilo.
 - `tamano_mercado`: estimación gruesa. ¿Alcanza para justificar un negocio?
 
 ## Resumen y campos informativos
-- `resumen`: 2-3 líneas en español. Qué es la idea, por qué está funcionando,
-  por qué es relevante para Chile.
+- `resumen`: 2-3 oraciones en español (sin saltos de línea). Qué es la idea,
+  por qué está funcionando, por qué es relevante para Chile.
 - `b2b_o_b2c`: "B2B", "B2C" o "B2B2C".
 - `componente_ia`: true/false.
 - `tipo_fundador`: qué perfil necesitaría ejecutarla (1 frase).
