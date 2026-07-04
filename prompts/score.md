@@ -5,30 +5,58 @@ negocio innovadoras con tracción real y potencial de réplica en Chile.
 
 # Tesis del fundador
 
-El destinatario de este reporte tiene perfil comercial/ventas, usa IA para
-construir MVPs y puede sumar un cofundador técnico. Trabaja en el sector
-marketplace (Mercado Libre) y tiene red en grandes industrias chilenas
-(minería, agroindustria, salmonicultura). Entiende el dolor de empresas en
-áreas de revenue, operaciones comerciales y gestión de equipos.
+El destinatario tiene perfil comercial/ventas, usa IA para construir MVPs y
+puede sumar un cofundador técnico. Trabaja en el sector marketplace (Mercado
+Libre) y tiene red en grandes industrias chilenas (minería, agroindustria,
+salmonicultura). Entiende el dolor de empresas en revenue, operaciones
+comerciales y gestión de equipos. Tiene 31 años, usa Claude Code en su trabajo
+y ve de primera mano cómo ejecutivos de grandes empresas no saben por dónde
+empezar con la IA.
 
 **Ideas de ALTO interés — priorizalas en el scoring:**
-- B2B de cualquier industria: herramientas que eficienten procesos reales
+
+- **Ecommerce y DTC**: productos innovadores, marcas directas al consumidor,
+  modelos de suscripción física. Cualquier categoría con potencial de volumen.
+
+- **B2B servicios y software**: herramientas que eficienten procesos reales
   (revenue/ventas, comunicación interna, reporting, gestión de equipos en
-  terreno o trabajadores sin escritorio, productividad operacional). El dolor
+  terreno, trabajadores sin escritorio, productividad operacional). El dolor
   debe ser concreto y el comprador identificable.
-- B2C: wellness, longevidad, biohacking, finanzas personales, servicios para
-  hogares — especialmente con WhatsApp como canal o componente agéntico.
-- Marketplaces verticales o de nicho con propuesta diferenciada.
-- Ecommerce con productos innovadores en industrias de alto crecimiento.
-- Soluciones para grandes industrias chilenas (minería, pesca/salmonicultura,
+
+- **B2C servicios**: cualquier servicio con tracción real de consumidores.
+  Especialmente con WhatsApp como canal o componente agéntico.
+
+- **Wellness, bienestar, longevidad, hábitos, biohacking, productividad**:
+  suplementos, wearables, apps de salud, entrenamiento, sueño, nutrición,
+  salud mental. Tanto B2C como B2B (beneficios para empleados). Este es un
+  sector prioritario.
+
+- **IA para personas en empresas — ALTA PRIORIDAD**: servicios, plataformas o
+  consultorías que ayuden a ejecutivos y profesionales no-técnicos a usar IA
+  en su trabajo diario. Ejemplos: agente que actúa como segundo cerebro,
+  secretaria agéntica, asistente para revisar data, coach de productividad con
+  IA, consultora que construye agentes internos para empresas. El dolor es
+  real: ejecutivos de 40-50 años con alto cargo no saben cómo aprovechar
+  herramientas como Claude, ChatGPT o Cursor en su día a día. Quien les
+  enseñe y construya esos flujos tiene un negocio.
+
+- **Servicios para la clase media en crecimiento**: negocios que apunten a
+  la clase media emergente global (LatAm, Asia, África). Finanzas personales,
+  ahorro, inversión accesible, movilidad, educación, salud preventiva,
+  vivienda. La clase media es el motor del consumo mundial y está
+  subatendida tecnológicamente.
+
+- **Marketplaces verticales o de nicho** con propuesta diferenciada.
+
+- **Soluciones para grandes industrias chilenas** (minería, pesca/salmonicultura,
   agricultura) donde hay dolor real y poca solución tecnológica local.
 
-**Excluir explícitamente — asigná problema_score=0 y barrera_score=0 (total=0, no pasan el gate):**
+**Excluir explícitamente — asigná problema_score=0 y barrera_score=0:**
 - Dev tools o herramientas para programadores sin comprador no-técnico claro
   (debuggers, CLI tools, librerías, editores, IDE plugins, utilidades de sistema).
 - Hardware que requiere manufactura propia.
 - Negocios que necesitan licencias regulatorias pesadas desde el día 1.
-- Marketplaces genéricos que compiten directo con MeLi/Rappi sin diferenciación clara.
+- Marketplaces genéricos que compiten directo con MeLi/Rappi sin diferenciación.
 
 # Reglas de evaluación
 
@@ -53,7 +81,7 @@ que lo respalda. Si no tenés base, marcá Baja y decilo.
 - `tamano_mercado`: estimación gruesa. ¿Alcanza para justificar un negocio?
 
 ## Resumen y campos informativos
-- `resumen`: 3-5 líneas en español. Qué es la idea, por qué está funcionando,
+- `resumen`: 2-3 líneas en español. Qué es la idea, por qué está funcionando,
   por qué es relevante para Chile.
 - `b2b_o_b2c`: "B2B", "B2C" o "B2B2C".
 - `componente_ia`: true/false.

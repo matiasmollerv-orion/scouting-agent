@@ -50,30 +50,36 @@ def run() -> Path:
     print(f"[prefilter] {len(candidates)} candidatos a Claude")
 
     scored = score(candidates)
-    passing = [s for s in scored if s.passes_gate(config.MIN_OBJETIVO)]
-    passing.sort(key=lambda s: s.objetivo_total, reverse=True)
-    top = passing[: config.MAX_IDEAS]
+    scored.sort(key=lambda s: s.objetivo_total, reverse=True)
 
-    report = render(top, total_evaluados=len(scored), min_objetivo=config.MIN_OBJETIVO)
+    # Ideas que pasaron el gate (para el reporte Markdown del repo)
+    passing = [s for s in scored if s.passes_gate(config.MIN_OBJETIVO)]
+    top_gate = passing[: config.MAX_IDEAS]
+
+    # Top 5 por score para el email (con o sin gate — siempre hay algo que ver)
+    top_email = scored[: config.MAX_IDEAS]
+
+    report = render(top_gate, total_evaluados=len(scored), min_objetivo=config.MIN_OBJETIVO)
 
     today = date.today()
     week = today.isocalendar().week
     out = REPORTS_DIR / f"{today.year}-W{week:02d}.md"
     out.write_text(report, encoding="utf-8")
-    print(f"[done] {len(top)} ideas -> {out}")
+    print(f"[done] {len(top_gate)} sobre gate, top-5 email: {[s.objetivo_total for s in top_email]} -> {out}")
 
-    # --- Envío de email HTML ---
-    _send_email(top, total_evaluados=len(scored), week=week)
+    # --- Envío de email HTML (siempre top 5, marcando cuáles pasaron el gate) ---
+    _send_email(top_email, passing_ids={s.url for s in top_gate},
+                total_evaluados=len(scored), week=week)
 
     return out
 
 
-def _send_email(top, total_evaluados: int, week: int) -> None:
+def _send_email(top, passing_ids: set, total_evaluados: int, week: int) -> None:
     if not config.GMAIL_USER or not config.GMAIL_APP_PASSWORD:
         print("[email] GMAIL_USER / GMAIL_APP_PASSWORD no configuradas — se omite el envío")
         return
 
-    html = render_html(top, total_evaluados=total_evaluados, min_objetivo=config.MIN_OBJETIVO)
+    html = render_html(top, passing_ids=passing_ids, total_evaluados=total_evaluados, min_objetivo=config.MIN_OBJETIVO)
     subject = (
         f"🔍 Scouting Semanal — Semana {week} · "
         f"{len(top)} idea{'s' if len(top) != 1 else ''} sobre el gate"

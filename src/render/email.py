@@ -20,20 +20,26 @@ HTML_TEMPLATE = Template("""
             border-radius: 8px 8px 0 0; }
   .header h1 { margin: 0; font-size: 20px; font-weight: 600; }
   .header p  { margin: 6px 0 0; color: #aaa; font-size: 13px; }
-  .meta { background: white; padding: 14px 28px; border-bottom: 1px solid #eee;
-          font-size: 13px; color: #666; }
   .card { background: white; margin-top: 12px; border-radius: 8px;
           border: 1px solid #e8e8e8; overflow: hidden; }
+  .card.passed { border-left: 4px solid #16a34a; }
+  .card.not-passed { border-left: 4px solid #d1d5db; opacity: 0.85; }
   .card-header { padding: 18px 22px 12px; border-bottom: 1px solid #f0f0f0; }
   .rank { display: inline-block; background: #1a1a1a; color: white;
           font-size: 11px; font-weight: 700; padding: 2px 8px;
-          border-radius: 3px; margin-bottom: 8px; }
+          border-radius: 3px; margin-bottom: 8px; margin-right: 6px; }
+  .gate-badge { display: inline-block; font-size: 10px; font-weight: 700;
+                padding: 2px 7px; border-radius: 3px; margin-bottom: 8px;
+                vertical-align: middle; }
+  .gate-badge.passed { background: #dcfce7; color: #15803d; }
+  .gate-badge.not-passed { background: #f3f4f6; color: #6b7280; }
   .card-header h2 { margin: 0 0 6px; font-size: 17px; line-height: 1.3; }
   .card-header h2 a { color: #1a1a1a; text-decoration: none; }
   .card-header h2 a:hover { text-decoration: underline; }
   .score-badge { display: inline-block; background: #f0fdf4; color: #166534;
                  border: 1px solid #bbf7d0; font-size: 13px; font-weight: 700;
                  padding: 3px 10px; border-radius: 4px; margin-right: 8px; }
+  .score-badge.low { background: #f9fafb; color: #6b7280; border-color: #e5e7eb; }
   .pills { margin-top: 8px; }
   .pill { display: inline-block; background: #f3f4f6; color: #374151;
           font-size: 11px; padding: 2px 8px; border-radius: 3px;
@@ -55,29 +61,27 @@ HTML_TEMPLATE = Template("""
   .card-footer { padding: 10px 22px 14px; background: #fafafa;
                  border-top: 1px solid #f0f0f0; font-size: 12px; color: #9ca3af; }
   .card-footer a { color: #6b7280; }
-  .empty { background: white; border-radius: 8px; padding: 32px 28px;
-           text-align: center; color: #6b7280; font-size: 14px; }
   .footer { margin-top: 20px; text-align: center; font-size: 11px; color: #9ca3af;
             padding-bottom: 20px; }
+  .legend { background: white; border-radius: 8px; margin-top: 12px;
+            padding: 10px 18px; font-size: 12px; color: #6b7280; }
 </style>
 </head>
 <body>
 <div class="container">
   <div class="header">
     <h1>🔍 Scouting Semanal — Semana {{ week }}</h1>
-    <p>{{ today }} · {{ ideas|length }} idea{{ 's' if ideas|length != 1 }} sobre el gate · {{ total_evaluados }} candidatos evaluados</p>
+    <p>{{ today }} · {{ n_passed }} sobre el gate · {{ total_evaluados }} candidatos evaluados · top {{ ideas|length }} mostradas</p>
   </div>
 
-  {% if not ideas %}
-  <div class="empty">
-    <p>No hubo ideas que superaran el gate esta semana.<br>
-    Se evaluaron {{ total_evaluados }} candidatos.</p>
-  </div>
-  {% else %}
   {% for idea in ideas %}
-  <div class="card">
+  {% set passed = idea.url in passing_ids %}
+  <div class="card {{ 'passed' if passed else 'not-passed' }}">
     <div class="card-header">
       <div class="rank">#{{ loop.index }}</div>
+      <span class="gate-badge {{ 'passed' if passed else 'not-passed' }}">
+        {{ '✓ Gate' if passed else 'Bajo gate' }}
+      </span>
       <h2>
         {% if idea.company_url %}
           <a href="{{ idea.company_url }}" target="_blank">{{ idea.title }}</a>
@@ -85,7 +89,7 @@ HTML_TEMPLATE = Template("""
           <a href="{{ idea.url }}" target="_blank">{{ idea.title }}</a>
         {% endif %}
       </h2>
-      <span class="score-badge">{{ idea.objetivo_total }}/40</span>
+      <span class="score-badge {{ '' if passed else 'low' }}">{{ idea.objetivo_total }}/40</span>
       <span class="pill">{{ idea.b2b_o_b2c }}</span>
       {% if idea.componente_ia %}<span class="pill ia">IA</span>{% endif %}
       {% if idea.funding_raised and idea.funding_raised != 'desconocido' %}
@@ -133,7 +137,11 @@ HTML_TEMPLATE = Template("""
     </div>
   </div>
   {% endfor %}
-  {% endif %}
+
+  <div class="legend">
+    <strong>✓ Gate</strong> = score ≥ 24/40 + replicabilidad ≠ Baja + al menos una señal Alta.
+    Las ideas "Bajo gate" se muestran igual para que puedas juzgar si el criterio es correcto.
+  </div>
 
   <div class="footer">
     Generado automáticamente con Claude Haiku · Las señales cualitativas son juicio del modelo, no métricas verificadas.
@@ -144,10 +152,13 @@ HTML_TEMPLATE = Template("""
 """)
 
 
-def render_html(ideas: list[ScoredItem], total_evaluados: int, min_objetivo: int) -> str:
+def render_html(ideas: list[ScoredItem], passing_ids: set[str],
+                total_evaluados: int, min_objetivo: int) -> str:
     today = date.today()
     return HTML_TEMPLATE.render(
         ideas=ideas,
+        passing_ids=passing_ids,
+        n_passed=sum(1 for i in ideas if i.url in passing_ids),
         total_evaluados=total_evaluados,
         min_objetivo=min_objetivo,
         week=today.isocalendar().week,
