@@ -65,6 +65,13 @@ HTML_TEMPLATE = Template("""
             padding-bottom: 20px; }
   .legend { background: white; border-radius: 8px; margin-top: 12px;
             padding: 10px 18px; font-size: 12px; color: #6b7280; }
+  .error-banner { background: #fef2f2; border: 1px solid #fecaca; color: #991b1b;
+                  border-radius: 8px; margin-top: 12px; padding: 14px 18px;
+                  font-size: 13px; font-weight: 600; }
+  .next-step { background: #fffbeb; border-left: 3px solid #f59e0b;
+               padding: 8px 12px; margin-top: 12px; font-size: 13px;
+               color: #78350f; border-radius: 0 4px 4px 0; }
+  .pill.tesis { background: #ecfdf5; color: #047857; font-weight: 600; }
 </style>
 </head>
 <body>
@@ -73,6 +80,13 @@ HTML_TEMPLATE = Template("""
     <h1>🔍 Scouting Semanal — Semana {{ week }}</h1>
     <p>{{ today }} · {{ n_passed }} sobre el gate · {{ total_evaluados }} candidatos evaluados · top {{ ideas|length }} mostradas</p>
   </div>
+
+  {% if error %}
+  <div class="error-banner">
+    ⚠️ El scoring falló esta semana (JSON inválido tras 2 intentos). Esto NO significa
+    que no hubo ideas — revisá los logs del workflow en GitHub Actions.
+  </div>
+  {% endif %}
 
   {% for idea in ideas %}
   {% set passed = idea.url in passing_ids %}
@@ -90,6 +104,9 @@ HTML_TEMPLATE = Template("""
         {% endif %}
       </h2>
       <span class="score-badge {{ '' if passed else 'low' }}">{{ idea.objetivo_total }}/40</span>
+      {% if idea.fit_tesis and idea.fit_tesis != 'Otro' %}
+        <span class="pill tesis">{{ idea.fit_tesis }}</span>
+      {% endif %}
       <span class="pill">{{ idea.b2b_o_b2c }}</span>
       {% if idea.componente_ia %}<span class="pill ia">IA</span>{% endif %}
       {% if idea.funding_raised and idea.funding_raised != 'desconocido' %}
@@ -126,7 +143,28 @@ HTML_TEMPLATE = Template("""
             — {{ idea.tamano_mercado.evidencia }}
           </div>
         </div>
+        {% if idea.por_que_ahora %}
+        <div class="sig-row">
+          <div class="sig-label">¿Por qué ahora?</div>
+          <div class="sig-val">{{ idea.por_que_ahora }}</div>
+        </div>
+        {% endif %}
+        {% if idea.modelo_negocio %}
+        <div class="sig-row">
+          <div class="sig-label">Modelo de negocio</div>
+          <div class="sig-val">{{ idea.modelo_negocio }}</div>
+        </div>
+        {% endif %}
+        {% if idea.competencia_local %}
+        <div class="sig-row">
+          <div class="sig-label">Competencia local</div>
+          <div class="sig-val">{{ idea.competencia_local }}</div>
+        </div>
+        {% endif %}
       </div>
+      {% if idea.next_step %}
+      <div class="next-step">👉 <strong>Próximo paso:</strong> {{ idea.next_step }}</div>
+      {% endif %}
     </div>
     <div class="card-footer">
       Fundador ideal: {{ idea.tipo_fundador }} ·
@@ -153,7 +191,8 @@ HTML_TEMPLATE = Template("""
 
 
 def render_html(ideas: list[ScoredItem], passing_ids: set[str],
-                total_evaluados: int, min_objetivo: int) -> str:
+                total_evaluados: int, min_objetivo: int,
+                error: bool = False) -> str:
     today = date.today()
     return HTML_TEMPLATE.render(
         ideas=ideas,
@@ -161,6 +200,7 @@ def render_html(ideas: list[ScoredItem], passing_ids: set[str],
         n_passed=sum(1 for i in ideas if i.url in passing_ids),
         total_evaluados=total_evaluados,
         min_objetivo=min_objetivo,
+        error=error,
         week=today.isocalendar().week,
         today=today.strftime("%d %b %Y"),
     )

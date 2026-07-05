@@ -29,9 +29,13 @@ No hubo ideas que superaran el gate esta semana ({{ total_evaluados }} candidato
 | Replicabilidad en Chile | {{ idea.replicabilidad.nivel }} — {{ idea.replicabilidad.evidencia }} |
 | Ventana de tiempo | {{ idea.ventana.nivel }} — {{ idea.ventana.evidencia }} |
 | Tamaño de mercado | {{ idea.tamano_mercado.nivel }} — {{ idea.tamano_mercado.evidencia }} |
-
-**Ficha:** {{ idea.b2b_o_b2c }} · IA: {{ "Sí" if idea.componente_ia else "No" }} · Mercado actual: {{ idea.mercado_actual }}
+{% if idea.por_que_ahora %}| ¿Por qué ahora? | {{ idea.por_que_ahora }} |
+{% endif %}{% if idea.modelo_negocio %}| Modelo de negocio | {{ idea.modelo_negocio }} |
+{% endif %}{% if idea.competencia_local %}| Competencia local | {{ idea.competencia_local }} |
+{% endif %}
+**Ficha:** {{ idea.b2b_o_b2c }} · IA: {{ "Sí" if idea.componente_ia else "No" }} · Mercado actual: {{ idea.mercado_actual }}{% if idea.fit_tesis %} · Tesis: {{ idea.fit_tesis }}{% endif %}
 **Fundador ideal:** {{ idea.tipo_fundador }}
+{% if idea.next_step %}**👉 Próximo paso:** {{ idea.next_step }}{% endif %}
 
 ---
 {% endfor %}

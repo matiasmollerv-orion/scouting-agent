@@ -64,20 +64,28 @@ RELEVANCE_KEYWORDS = [
     # Tesis: grandes industrias chilenas
     "agtech", "mining software", "aquaculture", "precision agriculture",
     "farm management", "fishery", "commodity",
+    # Tesis: clase media emergente / inclusión financiera
+    "middle class", "emerging market", "financial inclusion", "remittance",
+    "microfinance", "gig economy", "informal economy", "affordable",
+    # Tesis: ecommerce operaciones
+    "checkout", "last mile", "logistics", "retention", "loyalty program",
 ]
 
 # --- Fuentes RSS Tier 1 ---
 RSS_FEEDS = {
     # EEUU
     "techcrunch": "https://techcrunch.com/feed/",
-    "wired":      "https://www.wired.com/feed/rss",
     "mit":        "https://www.technologyreview.com/feed/",
     # Europa (ideas ~12-18 meses antes de llegar a LatAm)
     # "sifted": bloqueada desde CI (403)
-    # "sifted":     "https://sifted.eu/feed/",
     "techeu":     "https://tech.eu/feed/",
     # Asia
     "techinasia": "https://feeds.feedburner.com/techinasia",
+    # Mercados emergentes / clase media global (tesis: clase media)
+    "restofworld": "https://restofworld.org/feed/latest/",
+    # Ecommerce / DTC / retail (tesis: ecommerce)
+    "modernretail": "https://www.modernretail.co/feed/",
+    # "wired": eliminada — solo reviews de productos de consumo, sin señal de negocio
 }
 
 # Reddit r/SaaS: único subreddit activo sin rate-limit en CI.

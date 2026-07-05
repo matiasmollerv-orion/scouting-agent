@@ -72,6 +72,13 @@ class ScoredItem(BaseModel):
     funding_raised: str = ""     # ej: "$3.2M seed", "€1.4M", "bootstrapped", "desconocido"
     stage: str = ""              # ej: "Pre-seed", "Seed", "Series A", "Bootstrapped"
 
+    # Análisis de oportunidad (v2)
+    por_que_ahora: str = ""      # timing: qué cambió recientemente que habilita la idea
+    modelo_negocio: str = ""     # cómo cobra: ticket, recurrencia, quién paga
+    competencia_local: str = ""  # player en Chile/LatAm si existe, o "no identificada"
+    fit_tesis: str = ""          # categoría de la tesis del fundador a la que mapea
+    next_step: str = ""          # acción concreta de validación en 1 línea
+
     @property
     def objetivo_total(self) -> int:
         return self.problema_score + self.barrera_score
