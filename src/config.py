@@ -95,9 +95,10 @@ REDDIT_FEEDS = {
 }
 
 # --- Fuentes activas ---
-# Product Hunt y YC arrancan apagadas (módulos opcionales).
+# Product Hunt requiere token (módulo opcional).
 ENABLE_PRODUCTHUNT = bool(os.environ.get("PRODUCTHUNT_TOKEN"))
-ENABLE_YC = os.environ.get("SCOUTING_ENABLE_YC", "false").lower() == "true"
+# YC: API comunitaria estática (yc-oss), gratis y sin bloqueo CI — activa por defecto.
+ENABLE_YC = os.environ.get("SCOUTING_ENABLE_YC", "true").lower() == "true"
 
 # --- Email (Gmail SMTP) ---
 # Mismas credenciales que el Financial Dashboard.

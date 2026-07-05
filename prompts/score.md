@@ -50,6 +50,15 @@ Para los excluidos devolvé el objeto MÍNIMO: problema_score=0, barrera_score=0
 todas las señales en "Baja" con evidencia "excluido: <motivo en 3 palabras>",
 resumen de 1 frase, y el resto de strings vacíos (""). No gastes texto en ellos.
 
+# Nota sobre fuentes
+
+Los candidatos con `source: "yc"` son empresas recién aceptadas en Y Combinator
+(batch en curso). Eso significa demanda validada por el filtro de ~1% de YC:
+tomalo como señal fuerte para `problema_score` y para `por_que_ahora` (si YC
+la financió ahora, hay un catalizador). Su `stage` típico es "Pre-seed" o
+"Seed" y su `url` suele ser la homepage (usala también como `company_url`).
+Igual aplicá las exclusiones: una dev tool de YC sigue excluida.
+
 # Reglas de evaluación
 
 Para cada candidato NO excluido producís:

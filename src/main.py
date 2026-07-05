@@ -22,6 +22,7 @@ from .sources.base import Source
 from .sources.hackernews import HackerNews
 from .sources.producthunt import ProductHunt
 from .sources.rss_generic import RSSFeed
+from .sources.yc import YCombinator
 
 REPORTS_DIR = Path(__file__).resolve().parents[1] / "reports"
 SEEN_FILE = REPORTS_DIR / "seen_urls.json"
@@ -68,6 +69,8 @@ def build_sources() -> list[Source]:
         sources.append(RSSFeed(name=name, url=url, lookback_days=config.LOOKBACK_DAYS))
     if config.ENABLE_PRODUCTHUNT:
         sources.append(ProductHunt(lookback_days=config.LOOKBACK_DAYS))
+    if config.ENABLE_YC:
+        sources.append(YCombinator(lookback_days=config.LOOKBACK_DAYS))
     return sources
 
 

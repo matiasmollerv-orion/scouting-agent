@@ -65,10 +65,10 @@ def _dedup(items: list[Item]) -> list[Item]:
 
 
 def _is_relevant(it: Item) -> bool:
-    # "Show HN:" son lanzamientos de productos en HN — pasan directo,
-    # sin necesitar keyword match. Engagement solo no alcanza: un post
-    # viral sin señal de negocio no es candidato.
-    if it.title.lower().startswith("show hn:"):
+    # "Show HN:" y empresas YC son lanzamientos por definición — pasan directo,
+    # sin necesitar keyword match (un one-liner de YC puede no contener keywords
+    # pero ya pasó el filtro de aceptación de ~1% de YC).
+    if it.source == "yc" or it.title.lower().startswith("show hn:"):
         return True
     haystack = f"{it.title} {it.text}".lower()
     return any(kw in haystack for kw in config.RELEVANCE_KEYWORDS)
