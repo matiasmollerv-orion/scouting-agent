@@ -183,6 +183,7 @@ HTML_TEMPLATE = Template("""
 
   <div class="footer">
     Generado automáticamente con Claude Haiku · Las señales cualitativas son juicio del modelo, no métricas verificadas.
+    {% if cost_usd %}<br>💰 Costo real de este reporte: <strong>${{ "%.3f"|format(cost_usd) }} USD</strong> (tokens medidos, no proyección) · anualizado ×52: ${{ "%.2f"|format(cost_usd * 52) }}{% endif %}
   </div>
 </div>
 </body>
@@ -192,7 +193,7 @@ HTML_TEMPLATE = Template("""
 
 def render_html(ideas: list[ScoredItem], passing_ids: set[str],
                 total_evaluados: int, min_objetivo: int,
-                error: bool = False) -> str:
+                error: bool = False, cost_usd: float = 0.0) -> str:
     today = date.today()
     return HTML_TEMPLATE.render(
         ideas=ideas,
@@ -201,6 +202,7 @@ def render_html(ideas: list[ScoredItem], passing_ids: set[str],
         total_evaluados=total_evaluados,
         min_objetivo=min_objetivo,
         error=error,
+        cost_usd=cost_usd,
         week=today.isocalendar().week,
         today=today.strftime("%d %b %Y"),
     )

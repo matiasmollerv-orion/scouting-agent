@@ -88,7 +88,7 @@ def run() -> Path:
     candidates = prefilter(normalize(raw), seen_urls=_load_seen(week_key))
     print(f"[prefilter] {len(candidates)} candidatos a Claude")
 
-    scored = score(candidates)
+    scored, cost_usd = score(candidates)
     scored.sort(key=lambda s: s.objetivo_total, reverse=True)
     scoring_failed = bool(candidates) and not scored
 
@@ -112,7 +112,7 @@ def run() -> Path:
     # --- Envío de email HTML (siempre top 5, marcando cuáles pasaron el gate) ---
     _send_email(top_email, passing_ids={s.url for s in top_gate},
                 total_evaluados=len(scored), week=week,
-                error=scoring_failed)
+                error=scoring_failed, cost_usd=cost_usd)
 
     return out
 
@@ -137,13 +137,13 @@ def _capture_to_gbrain(report_path: Path) -> None:
 
 
 def _send_email(top, passing_ids: set, total_evaluados: int, week: int,
-                error: bool = False) -> None:
+                error: bool = False, cost_usd: float = 0.0) -> None:
     if not config.GMAIL_USER or not config.GMAIL_APP_PASSWORD:
         print("[email] GMAIL_USER / GMAIL_APP_PASSWORD no configuradas — se omite el envío")
         return
 
     html = render_html(top, passing_ids=passing_ids, total_evaluados=total_evaluados,
-                       min_objetivo=config.MIN_OBJETIVO, error=error)
+                       min_objetivo=config.MIN_OBJETIVO, error=error, cost_usd=cost_usd)
     n_passed = len(passing_ids)
     if error:
         subject = f"⚠️ Scouting Semanal — Semana {week} · falló el scoring, revisar logs"

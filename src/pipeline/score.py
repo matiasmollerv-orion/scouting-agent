@@ -11,9 +11,16 @@ from ..models import Item, ScoredItem
 
 PROMPT_PATH = Path(__file__).resolve().parents[2] / "prompts" / "score.md"
 
+# Precios Haiku 4.5 (USD por millón de tokens). Actualizar si cambia el modelo.
+PRICE_INPUT_PER_MTOK = 1.00
+PRICE_OUTPUT_PER_MTOK = 5.00
 
-def score(items: list[Item]) -> list[ScoredItem]:
+
+def score(items: list[Item]) -> tuple[list[ScoredItem], float]:
     """Manda los candidatos a Claude en una sola llamada y parsea el resultado.
+
+    Retorna (scored, costo_usd) — el costo se calcula de los tokens REALES
+    consumidos, acumulando reintentos, para reportarlo en el email.
 
     Una llamada con todos los candidatos (en vez de una por item) abarata el
     costo y deja que el modelo compare entre sí. Si el JSON sale irreparable,
@@ -23,11 +30,12 @@ def score(items: list[Item]) -> list[ScoredItem]:
     cache hit y escribir al cache cuesta +25%.
     """
     if not items:
-        return []
+        return [], 0.0
 
     client = Anthropic(api_key=config.ANTHROPIC_API_KEY)
     system_prompt = PROMPT_PATH.read_text(encoding="utf-8")
     candidates = _serialize(items)
+    cost_usd = 0.0
 
     for attempt in (1, 2):
         # Streaming requerido por el SDK con max_tokens alto (>~10 min posibles).
@@ -48,15 +56,20 @@ def score(items: list[Item]) -> list[ScoredItem]:
         ) as stream:
             msg = stream.get_final_message()
 
+        cost_usd += (
+            msg.usage.input_tokens * PRICE_INPUT_PER_MTOK
+            + msg.usage.output_tokens * PRICE_OUTPUT_PER_MTOK
+        ) / 1_000_000
         text = "".join(block.text for block in msg.content if block.type == "text")
         print(f"[score] intento {attempt}: stop_reason={msg.stop_reason} "
-              f"output_tokens={msg.usage.output_tokens}")
+              f"input={msg.usage.input_tokens} output={msg.usage.output_tokens} "
+              f"costo_acum=${cost_usd:.4f}")
         scored = _parse(text)
         if scored:
-            return scored
+            return scored, cost_usd
         print(f"[score] intento {attempt} sin resultados válidos"
               + (", reintentando" if attempt == 1 else " — abortando"))
-    return []
+    return [], cost_usd
 
 
 def _serialize(items: list[Item]) -> str:
