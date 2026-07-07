@@ -54,6 +54,12 @@ RELEVANCE_KEYWORDS = [
     "workforce management", "field service", "deskless worker",
     "frontline worker", "employee tracking", "operations software",
     "workflow automation", "internal tools", "reporting tool",
+    # Tesis: futuro del trabajo / planillas grandes
+    "future of work", "hr tech", "people analytics", "headcount",
+    "workforce planning", "performance review", "performance management",
+    "employee onboarding", "shift scheduling", "staffing", "payroll",
+    "labor management", "digital worker", "ai coworker", "ai employee",
+    "ai agents for work", "org design", "employee engagement",
     # Tesis: wellness / longevidad / biohacking
     "wellness", "longevity", "biohacking", "supplement", "wearable",
     "health coach", "mental health", "gut health", "sleep",
@@ -85,6 +91,11 @@ RSS_FEEDS = {
     "restofworld": "https://restofworld.org/feed/latest/",
     # Ecommerce / DTC / retail (tesis: ecommerce)
     "modernretail": "https://www.modernretail.co/feed/",
+    # Futuro del trabajo / workforce (tesis: futuro del trabajo)
+    "joshbersin": "https://joshbersin.com/feed/",       # analista #1 de HR tech
+    "charter":    "https://charterworks.com/feed/",     # periodismo futuro del trabajo
+    "hrdive":     "https://www.hrdive.com/feeds/news/", # noticias industria HR
+    # "worklife": muerta — último post dic 2025
     # "wired": eliminada — solo reviews de productos de consumo, sin señal de negocio
 }
 

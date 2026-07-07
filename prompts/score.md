@@ -15,6 +15,15 @@ empezar con la IA.
 
 **Categorías de ALTO interés (usá estos nombres exactos en `fit_tesis`):**
 
+- **"Futuro del trabajo"** — MÁXIMA PRIORIDAD: el fundador ve a diario en
+  Mercado Libre las ineficiencias de operar con planillas de empleados muy
+  grandes, y quiere obsesionarse con resolverlas. Interesa TODO lo que ataque
+  ese dolor: workforce planning, people analytics, gestión de headcount,
+  scheduling de turnos, performance management a escala, onboarding masivo,
+  comunicación interna en organizaciones grandes, agentes de IA que absorben
+  tareas administrativas o roles completos ("empleados digitales"),
+  herramientas que achican la brecha entre headcount y output. Su ventaja:
+  conoce el dolor desde adentro y tiene red de compradores corporativos.
 - **"IA ejecutivos"** — ALTA PRIORIDAD: servicios, plataformas o consultorías
   que ayuden a ejecutivos y profesionales no-técnicos a usar IA en su trabajo
   diario. Segundo cerebro, secretaria agéntica, asistente para revisar data,
