@@ -14,15 +14,12 @@ from pathlib import Path
 from . import config
 from .models import RawItem
 from .pipeline.normalize import normalize
+from .pipeline.pool import load_pool_items, reset_pool
 from .pipeline.prefilter import prefilter
 from .pipeline.score import score
 from .render.email import render_html
 from .render.report import render
-from .sources.base import Source
-from .sources.hackernews import HackerNews
-from .sources.producthunt import ProductHunt
-from .sources.rss_generic import RSSFeed
-from .sources.yc import YCombinator
+from .sources_factory import build_sources
 
 REPORTS_DIR = Path(__file__).resolve().parents[1] / "reports"
 SEEN_FILE = REPORTS_DIR / "seen_urls.json"
@@ -56,24 +53,6 @@ def _save_seen(candidates, current_week: str) -> None:
     SEEN_FILE.write_text(json.dumps(data, ensure_ascii=False, indent=0), encoding="utf-8")
 
 
-def build_sources() -> list[Source]:
-    sources: list[Source] = [
-        HackerNews(
-            lookback_days=config.LOOKBACK_DAYS,
-            min_points=config.MIN_ENGAGEMENT["hackernews"],
-        )
-    ]
-    for name, url in config.RSS_FEEDS.items():
-        sources.append(RSSFeed(name=name, url=url, lookback_days=config.LOOKBACK_DAYS))
-    for name, url in config.REDDIT_FEEDS.items():
-        sources.append(RSSFeed(name=name, url=url, lookback_days=config.LOOKBACK_DAYS))
-    if config.ENABLE_PRODUCTHUNT:
-        sources.append(ProductHunt(lookback_days=config.LOOKBACK_DAYS))
-    if config.ENABLE_YC:
-        sources.append(YCombinator(lookback_days=config.LOOKBACK_DAYS))
-    return sources
-
-
 def run() -> Path:
     raw: list[RawItem] = []
     for src in build_sources():
@@ -85,7 +64,11 @@ def run() -> Path:
     week = today.isocalendar().week
     week_key = f"{today.year}-W{week:02d}"
 
-    candidates = prefilter(normalize(raw), seen_urls=_load_seen(week_key))
+    # Fetch fresco + pool acumulado por el job diario (prefilter dedup-ea).
+    pool_items = load_pool_items()
+    print(f"[pool] {len(pool_items)} items acumulados durante la semana")
+
+    candidates = prefilter(normalize(raw) + pool_items, seen_urls=_load_seen(week_key))
     print(f"[prefilter] {len(candidates)} candidatos a Claude")
 
     scored, cost_usd = score(candidates)
@@ -105,6 +88,7 @@ def run() -> Path:
     out.write_text(report, encoding="utf-8")
     if scored:
         _save_seen(candidates, week_key)  # solo marca vistos si el scoring funcionó
+        reset_pool()  # el pool ya fue evaluado; el job diario vuelve a llenarlo
     print(f"[done] {len(top_gate)} sobre gate, top-5 email: {[s.objetivo_total for s in top_email]} -> {out}")
 
     _capture_to_gbrain(out)

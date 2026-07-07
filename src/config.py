@@ -2,13 +2,28 @@ from __future__ import annotations
 
 import os
 
-# --- Modelo ---
-MODEL = os.environ.get("SCOUTING_MODEL", "claude-haiku-4-5")
+# --- Modelos (dos etapas) ---
+# Triage: Haiku puntúa TODOS los candidatos con output mínimo (barato).
+# Deep: Sonnet analiza en profundidad solo los mejores (calidad donde importa).
+MODEL_TRIAGE = os.environ.get("SCOUTING_MODEL_TRIAGE", "claude-haiku-4-5")
+MODEL_DEEP = os.environ.get("SCOUTING_MODEL_DEEP", "claude-sonnet-5")
 ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
+
+# Batch API: 50% de descuento en trabajos asíncronos. El email del sábado
+# puede esperar minutos, así que siempre se intenta batch primero; si falla
+# o demora demasiado, cae a llamada directa (precio completo) para que el
+# reporte llegue igual.
+USE_BATCH = os.environ.get("SCOUTING_USE_BATCH", "true").lower() == "true"
+BATCH_TIMEOUT_MIN = int(os.environ.get("SCOUTING_BATCH_TIMEOUT_MIN", "40"))
+
+# Guardrail de costo: si una corrida acumula más que esto, se aborta lo que
+# falte y el email llega con lo que haya + advertencia. Gasto acotado por diseño.
+COST_LIMIT_USD = float(os.environ.get("SCOUTING_COST_LIMIT_USD", "0.30"))
 
 # --- Gate de scoring ---
 MIN_OBJETIVO = int(os.environ.get("SCOUTING_MIN_OBJETIVO", "24"))  # sobre 40
 MAX_IDEAS = 5
+TOP_DEEP = 8  # cuántos candidatos pasan del triage al análisis profundo
 
 # --- Ventana temporal ---
 # Solo se consideran items publicados en los últimos N días.
@@ -25,9 +40,10 @@ MIN_ENGAGEMENT = {
     "producthunt": 20,  # votos
 }
 
-# Cantidad máxima de candidatos que llegan a Claude (control de costo).
-# 20 candidatos × ~400 tokens ≈ 8000 tokens — cómodo bajo límite de 20k.
-MAX_CANDIDATES = 20
+# Cantidad máxima de candidatos que llegan al triage (control de costo).
+# El triage produce ~30 tokens/item, así que 30 candidatos son ~1k tokens
+# de output — el pool diario justifica ver más que antes.
+MAX_CANDIDATES = 30
 
 # Keywords que marcan relevancia para scouting de negocio.
 # Un item pasa el pre-filtro si su engagement supera el umbral
