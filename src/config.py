@@ -93,6 +93,39 @@ RELEVANCE_KEYWORDS = [
     "checkout", "last mile", "logistics", "retention", "loyalty program",
 ]
 
+# --- Momentum de temas ---
+# Conteo semanal de menciones por tema de la tesis, sobre TODO lo fetcheado
+# (no solo lo que pasa el filtro). No filtra nada: solo mide. La señal es la
+# aceleración entre semanas (práctica de Harmonic/Exploding Topics), no el
+# número absoluto.
+THEME_KEYWORDS = {
+    "Futuro del trabajo": [
+        "workforce", "hr tech", "people analytics", "headcount", "hiring",
+        "employee", "staffing", "payroll", "shift scheduling", "frontline",
+        "deskless", "future of work", "performance review",
+    ],
+    "IA agéntica": [
+        "ai agent", "agentic", "copilot", "ai assistant", "autonomous agent",
+        "ai employee", "digital worker", "second brain",
+    ],
+    "Wellness": [
+        "wellness", "longevity", "biohacking", "sleep", "nutrition",
+        "mental health", "fitness", "supplement", "health coach", "gut health",
+    ],
+    "Ecommerce/DTC": [
+        "ecommerce", "dtc", "direct-to-consumer", "shopify", "checkout",
+        "consumer brand", "retail tech", "last mile",
+    ],
+    "Fintech/Clase media": [
+        "fintech", "financial inclusion", "remittance", "savings", "lending",
+        "microfinance", "personal finance", "middle class",
+    ],
+    "Marketplace": ["marketplace"],
+    "Industrias CL": [
+        "mining", "aquaculture", "agtech", "agriculture", "fishery", "salmon",
+    ],
+}
+
 # --- Fuentes RSS Tier 1 ---
 RSS_FEEDS = {
     # EEUU

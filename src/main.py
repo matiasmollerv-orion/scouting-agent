@@ -77,6 +77,12 @@ def run() -> Path:
     for w in warnings:
         print(f"[salud] {w}")
 
+    themes = _count_themes(merged)
+    momentum = _theme_momentum(themes)
+    print(f"[temas] {themes}")
+    for m in momentum:
+        print(f"[momentum] {m}")
+
     candidates = prefilter(merged, seen_urls=_load_seen(week_key))
     print(f"[prefilter] {len(candidates)} candidatos a Claude")
 
@@ -104,7 +110,7 @@ def run() -> Path:
         # incluidas las descartadas — son inteligencia de mercado, no basura.
         _write_full_dataset(week_key, result, top_gate)
         _append_stats(week_key, source_counts, len(candidates), len(scored),
-                      len(top_gate), result.cost_usd)
+                      len(top_gate), result.cost_usd, themes)
     print(f"[done] {len(top_gate)} sobre gate, top-5 email: {[s.objetivo_total for s in top_email]} -> {out}")
 
     _capture_to_gbrain(out)
@@ -113,9 +119,39 @@ def run() -> Path:
     _send_email(top_email, passing_ids={s.url for s in top_gate},
                 total_evaluados=len(scored), week=week,
                 error=scoring_failed, cost_usd=result.cost_usd,
-                warnings=warnings)
+                warnings=warnings, momentum=momentum)
 
     return out
+
+
+def _count_themes(items) -> dict[str, int]:
+    """Menciones por tema de la tesis sobre todo lo fetcheado esta semana."""
+    counts: dict[str, int] = {}
+    for cat, kws in config.THEME_KEYWORDS.items():
+        n = 0
+        for it in items:
+            haystack = f"{it.title} {it.text}".lower()
+            if any(kw in haystack for kw in kws):
+                n += 1
+        counts[cat] = n
+    return counts
+
+
+def _theme_momentum(themes: dict[str, int]) -> list[str]:
+    """Temas acelerando vs las últimas 4 semanas — la ola importa más que el número.
+
+    Requiere ≥2 semanas de historial con temas para no dar falsos positivos.
+    """
+    history = [h for h in _load_stats()[-4:] if h.get("themes")]
+    if len(history) < 2:
+        return []
+    msgs: list[str] = []
+    for cat, n in themes.items():
+        past = [h["themes"].get(cat, 0) for h in history]
+        avg = sum(past) / len(past)
+        if n >= 5 and avg > 0 and n >= 1.6 * avg:
+            msgs.append(f"{cat}: {n} menciones esta semana (promedio: {avg:.0f})")
+    return msgs
 
 
 STATS_FILE = REPORTS_DIR / "stats.json"
@@ -158,7 +194,8 @@ def _load_stats() -> list[dict]:
 
 
 def _append_stats(week_key: str, sources: dict[str, int], candidates: int,
-                  scored: int, gate: int, cost_usd: float) -> None:
+                  scored: int, gate: int, cost_usd: float,
+                  themes: dict[str, int] | None = None) -> None:
     stats = [s for s in _load_stats() if s.get("week") != week_key]
     stats.append({
         "week": week_key,
@@ -167,6 +204,7 @@ def _append_stats(week_key: str, sources: dict[str, int], candidates: int,
         "scored": scored,
         "gate": gate,
         "cost_usd": round(cost_usd, 4),
+        "themes": themes or {},
     })
     STATS_FILE.write_text(json.dumps(stats[-52:], ensure_ascii=False, indent=1),
                           encoding="utf-8")
@@ -205,14 +243,15 @@ def _capture_to_gbrain(report_path: Path) -> None:
 
 def _send_email(top, passing_ids: set, total_evaluados: int, week: int,
                 error: bool = False, cost_usd: float = 0.0,
-                warnings: list[str] | None = None) -> None:
+                warnings: list[str] | None = None,
+                momentum: list[str] | None = None) -> None:
     if not config.GMAIL_USER or not config.GMAIL_APP_PASSWORD:
         print("[email] GMAIL_USER / GMAIL_APP_PASSWORD no configuradas — se omite el envío")
         return
 
     html = render_html(top, passing_ids=passing_ids, total_evaluados=total_evaluados,
                        min_objetivo=config.MIN_OBJETIVO, error=error, cost_usd=cost_usd,
-                       warnings=warnings or [])
+                       warnings=warnings or [], momentum=momentum or [])
     n_passed = len(passing_ids)
     if error:
         subject = f"⚠️ Scouting Semanal — Semana {week} · falló el scoring, revisar logs"

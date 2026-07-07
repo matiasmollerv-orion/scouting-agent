@@ -88,6 +88,13 @@ HTML_TEMPLATE = Template("""
   </div>
   {% endif %}
 
+  {% if momentum %}
+  <div class="legend" style="border-left: 3px solid #16a34a;">
+    📈 <strong>Temas en aceleración</strong> (menciones en todas las fuentes vs promedio 4 semanas):
+    {% for m in momentum %}<br>&nbsp;&nbsp;• {{ m }}{% endfor %}
+  </div>
+  {% endif %}
+
   {% for idea in ideas %}
   {% set passed = idea.url in passing_ids %}
   <div class="card {{ 'passed' if passed else 'not-passed' }}">
@@ -199,7 +206,8 @@ HTML_TEMPLATE = Template("""
 def render_html(ideas: list[ScoredItem], passing_ids: set[str],
                 total_evaluados: int, min_objetivo: int,
                 error: bool = False, cost_usd: float = 0.0,
-                warnings: list[str] | None = None) -> str:
+                warnings: list[str] | None = None,
+                momentum: list[str] | None = None) -> str:
     today = date.today()
     return HTML_TEMPLATE.render(
         ideas=ideas,
@@ -210,6 +218,7 @@ def render_html(ideas: list[ScoredItem], passing_ids: set[str],
         error=error,
         cost_usd=cost_usd,
         warnings=warnings or [],
+        momentum=momentum or [],
         week=today.isocalendar().week,
         today=today.strftime("%d %b %Y"),
     )
