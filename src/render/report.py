@@ -40,19 +40,40 @@ No hubo ideas que superaran el gate esta semana ({{ total_evaluados }} candidato
 ---
 {% endfor %}
 {% endif %}
+{% if panorama %}
+## Panorama completo de la semana
+
+Todas las evaluaciones del triage, incluidas las descartadas — inteligencia de
+mercado para análisis posteriores (patrones por industria, ideas combinables).
+
+| Triage | Título | Fuente |
+|---|---|---|
+{% for p in panorama -%}
+| {{ p.total if p.total is not none else '—' }}/40 | [{{ p.title }}]({{ p.url }}) | {{ p.source }} |
+{% endfor %}
+{% endif %}
+
 *Generado automáticamente. Las señales cualitativas son juicio del modelo, no métricas verificadas.*
 """
 )
 
 
 def render(
-    ideas: list[ScoredItem], total_evaluados: int, min_objetivo: int
+    ideas: list[ScoredItem], total_evaluados: int, min_objetivo: int,
+    panorama: list[dict] | None = None,
 ) -> str:
     today = date.today()
+    # Orden en Python (Jinja sort no maneja None): sin score al final.
+    panorama = sorted(
+        panorama or [],
+        key=lambda p: p.get("total") if p.get("total") is not None else -1,
+        reverse=True,
+    )
     return TEMPLATE.render(
         ideas=ideas,
         total_evaluados=total_evaluados,
         min_objetivo=min_objetivo,
+        panorama=panorama,
         week=today.isocalendar().week,
         today=today.isoformat(),
     )

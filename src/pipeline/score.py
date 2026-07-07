@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import time
+from dataclasses import dataclass, field
 from pathlib import Path
 
 from anthropic import Anthropic
@@ -12,6 +13,17 @@ from ..models import Item, ScoredItem
 
 PROMPTS_DIR = Path(__file__).resolve().parents[2] / "prompts"
 
+
+@dataclass
+class ScoreResult:
+    """Resultado completo del scoring — incluye el triage de TODOS los
+    candidatos, no solo los que pasaron al análisis profundo. Las ideas
+    descartadas son inteligencia de mercado para el segundo cerebro."""
+
+    deep: list[ScoredItem] = field(default_factory=list)
+    triage: list[dict] = field(default_factory=list)  # {title, url, source, total}
+    cost_usd: float = 0.0
+
 # USD por millón de tokens (input, output). Actualizar si cambian los modelos.
 PRICES = {
     "claude-haiku-4-5": (1.00, 5.00),
@@ -20,8 +32,8 @@ PRICES = {
 BATCH_DISCOUNT = 0.5  # Batch API: 50% off input y output
 
 
-def score(items: list[Item]) -> tuple[list[ScoredItem], float]:
-    """Scoring en dos etapas. Retorna (scored, costo_usd_real).
+def score(items: list[Item]) -> ScoreResult:
+    """Scoring en dos etapas.
 
     Etapa 1 (triage, Haiku): puntúa TODOS los candidatos con output mínimo
     (~30 tokens/item). Etapa 2 (deep, Sonnet): análisis completo solo de los
@@ -29,11 +41,11 @@ def score(items: list[Item]) -> tuple[list[ScoredItem], float]:
     llamada directa. Guardrail: si el costo acumulado supera COST_LIMIT_USD,
     se aborta lo que falte.
     """
+    result = ScoreResult()
     if not items:
-        return [], 0.0
+        return result
 
     client = Anthropic(api_key=config.ANTHROPIC_API_KEY)
-    cost = 0.0
 
     # --- Etapa 1: triage ---
     triage_system = (PROMPTS_DIR / "triage.md").read_text(encoding="utf-8")
@@ -42,17 +54,22 @@ def score(items: list[Item]) -> tuple[list[ScoredItem], float]:
         f"Puntuá los {len(items)} sin excepción."
     )
     text, c = _call(client, config.MODEL_TRIAGE, triage_system, triage_user, max_tokens=4000)
-    cost += c
-    ranked = _rank_from_triage(text, items)
+    result.cost_usd += c
+    ranked, scores_by_url = _rank_from_triage(text, items)
+    result.triage = [
+        {"title": it.title, "url": it.url, "source": it.source,
+         "total": scores_by_url.get(it.url)}
+        for it in items
+    ]
     if not ranked:
         print("[score] triage sin resultados — fallback: top por orden de prefilter")
         ranked = items[: config.TOP_DEEP]
     top = ranked[: config.TOP_DEEP]
     print(f"[score] triage: {len(items)} candidatos -> top {len(top)} a análisis profundo")
 
-    if cost >= config.COST_LIMIT_USD:
-        print(f"[score] GUARDRAIL: ${cost:.3f} ≥ ${config.COST_LIMIT_USD} — se aborta etapa deep")
-        return [], cost
+    if result.cost_usd >= config.COST_LIMIT_USD:
+        print(f"[score] GUARDRAIL: ${result.cost_usd:.3f} ≥ ${config.COST_LIMIT_USD} — se aborta etapa deep")
+        return result
 
     # --- Etapa 2: análisis profundo ---
     deep_system = (PROMPTS_DIR / "score.md").read_text(encoding="utf-8")
@@ -62,16 +79,16 @@ def score(items: list[Item]) -> tuple[list[ScoredItem], float]:
     )
     for attempt in (1, 2):
         text, c = _call(client, config.MODEL_DEEP, deep_system, deep_user, max_tokens=8000)
-        cost += c
-        scored = _parse(text)
-        if scored:
-            return scored, cost
-        if cost >= config.COST_LIMIT_USD:
-            print(f"[score] GUARDRAIL: ${cost:.3f} — sin reintento")
+        result.cost_usd += c
+        result.deep = _parse(text)
+        if result.deep:
+            return result
+        if result.cost_usd >= config.COST_LIMIT_USD:
+            print(f"[score] GUARDRAIL: ${result.cost_usd:.3f} — sin reintento")
             break
         print(f"[score] deep intento {attempt} sin resultados válidos"
               + (", reintentando" if attempt == 1 else " — abortando"))
-    return [], cost
+    return result
 
 
 def _call(client: Anthropic, model: str, system: str, user: str,
@@ -141,11 +158,9 @@ def _cost(model: str, input_tokens: int, output_tokens: int,
     return (input_tokens * p_in + output_tokens * p_out) / 1_000_000 * discount
 
 
-def _rank_from_triage(text: str, items: list[Item]) -> list[Item]:
-    """Ordena los items según los scores del triage (mayor a menor)."""
+def _rank_from_triage(text: str, items: list[Item]) -> tuple[list[Item], dict[str, int]]:
+    """Ordena los items según los scores del triage. Retorna (ranked, scores_por_url)."""
     data = _loads_forgiving(text)
-    if not data:
-        return []
     by_url = {it.url: it for it in items}
     scores: dict[str, int] = {}
     for obj in data:
@@ -158,7 +173,7 @@ def _rank_from_triage(text: str, items: list[Item]) -> list[Item]:
             continue
     ranked = sorted(scores, key=scores.get, reverse=True)
     # Excluidos (total=0) no pasan al deep aunque haya cupo.
-    return [by_url[u] for u in ranked if scores[u] > 0]
+    return [by_url[u] for u in ranked if scores[u] > 0], scores
 
 
 def _serialize(items: list[Item], text_chars: int) -> str:
