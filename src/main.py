@@ -2,22 +2,18 @@ from __future__ import annotations
 
 import json
 import os
-import smtplib
-import ssl
 import subprocess
 from datetime import date
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
-from email.utils import formataddr
 from pathlib import Path
 
 from . import config
 from .models import RawItem
 from .pipeline.normalize import normalize
-from .pipeline.pool import load_pool_items, reset_pool
+from .pipeline.pool import load_newsletter_items, load_pool_items, reset_pool
 from .pipeline.prefilter import prefilter
 from .pipeline.score import score
 from .render.email import render_html
+from .render.mailer import send_html
 from .render.report import render
 from .sources_factory import build_sources
 
@@ -64,11 +60,13 @@ def run() -> Path:
     week = today.isocalendar().week
     week_key = f"{today.year}-W{week:02d}"
 
-    # Fetch fresco + pool acumulado por el job diario (prefilter dedup-ea).
+    # Fetch fresco + pool acumulado por el job diario (prefilter dedup-ea)
+    # + newsletters empujados desde GBrain por el LaunchAgent del Mac.
     pool_items = load_pool_items()
-    print(f"[pool] {len(pool_items)} items acumulados durante la semana")
+    newsletter_items = load_newsletter_items()
+    print(f"[pool] {len(pool_items)} items acumulados + {len(newsletter_items)} newsletters GBrain")
 
-    merged = normalize(raw) + pool_items
+    merged = normalize(raw) + pool_items + newsletter_items
     source_counts: dict[str, int] = {}
     for it in merged:
         source_counts[it.source] = source_counts.get(it.source, 0) + 1
@@ -245,10 +243,6 @@ def _send_email(top, passing_ids: set, total_evaluados: int, week: int,
                 error: bool = False, cost_usd: float = 0.0,
                 warnings: list[str] | None = None,
                 momentum: list[str] | None = None) -> None:
-    if not config.GMAIL_USER or not config.GMAIL_APP_PASSWORD:
-        print("[email] GMAIL_USER / GMAIL_APP_PASSWORD no configuradas — se omite el envío")
-        return
-
     html = render_html(top, passing_ids=passing_ids, total_evaluados=total_evaluados,
                        min_objetivo=config.MIN_OBJETIVO, error=error, cost_usd=cost_usd,
                        warnings=warnings or [], momentum=momentum or [])
@@ -260,23 +254,7 @@ def _send_email(top, passing_ids: set, total_evaluados: int, week: int,
             f"🔍 Scouting Semanal — Semana {week} · "
             f"{n_passed} idea{'s' if n_passed != 1 else ''} sobre el gate · top {len(top)} mostradas"
         )
-
-    msg = MIMEMultipart("alternative")
-    msg["Subject"] = subject
-    msg["From"]    = formataddr(("Scouting Semanal", config.GMAIL_USER))
-    msg["To"]      = config.EMAIL_TO
-    msg.attach(MIMEText(html, "html", "utf-8"))
-
-    try:
-        ctx = ssl.create_default_context()
-        with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=ctx) as server:
-            server.login(config.GMAIL_USER, config.GMAIL_APP_PASSWORD)
-            server.sendmail(config.GMAIL_USER, [config.EMAIL_TO], msg.as_string())
-        print(f"[email] enviado a {config.EMAIL_TO}")
-    except smtplib.SMTPAuthenticationError as e:
-        print(f"[email] error de autenticación Gmail: {e}")
-    except Exception as e:
-        print(f"[email] error SMTP: {e}")
+    send_html(subject, html)
 
 
 if __name__ == "__main__":

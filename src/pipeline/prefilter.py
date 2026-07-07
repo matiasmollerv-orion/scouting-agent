@@ -71,10 +71,10 @@ def _dedup(items: list[Item]) -> list[Item]:
 
 
 def _is_relevant(it: Item) -> bool:
-    # "Show HN:" y empresas YC son lanzamientos por definición — pasan directo,
-    # sin necesitar keyword match (un one-liner de YC puede no contener keywords
-    # pero ya pasó el filtro de aceptación de ~1% de YC).
-    if it.source == "yc" or it.title.lower().startswith("show hn:"):
+    # Pasan directo sin keyword match: "Show HN:" y YC (lanzamientos por
+    # definición) y newsletters (contenido curado por el propio usuario,
+    # muchas veces en español — las keywords son en inglés).
+    if it.source in ("yc", "newsletters") or it.title.lower().startswith("show hn:"):
         return True
     haystack = f"{it.title} {it.text}".lower()
     return any(kw in haystack for kw in config.RELEVANCE_KEYWORDS)
