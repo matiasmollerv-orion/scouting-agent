@@ -23,7 +23,9 @@ COST_LIMIT_USD = float(os.environ.get("SCOUTING_COST_LIMIT_USD", "0.30"))
 # --- Gate de scoring ---
 MIN_OBJETIVO = int(os.environ.get("SCOUTING_MIN_OBJETIVO", "24"))  # sobre 40
 MAX_IDEAS = 5
-TOP_DEEP = 8  # cuántos candidatos pasan del triage al análisis profundo
+# Cuántos pasan del triage al análisis profundo. Overridable por env para
+# mini-runs reales baratos (ej: SCOUTING_TOP_DEEP=2 ≈ $0.01 total).
+TOP_DEEP = int(os.environ.get("SCOUTING_TOP_DEEP", "8"))
 
 # --- Ventana temporal ---
 # Solo se consideran items publicados en los últimos N días.
@@ -43,7 +45,8 @@ MIN_ENGAGEMENT = {
 # Cantidad máxima de candidatos que llegan al triage (control de costo).
 # El triage produce ~30 tokens/item, así que 30 candidatos son ~1k tokens
 # de output — el pool diario justifica ver más que antes.
-MAX_CANDIDATES = 30
+# Overridable por env para mini-runs reales (ej: SCOUTING_MAX_CANDIDATES=3).
+MAX_CANDIDATES = int(os.environ.get("SCOUTING_MAX_CANDIDATES", "30"))
 
 # Keywords que marcan relevancia para scouting de negocio.
 # Un item pasa el pre-filtro si su engagement supera el umbral
