@@ -23,10 +23,16 @@ def prefilter(items: list[Item], seen_urls: set[str] | None = None) -> list[Item
     seen_urls = seen_urls or set()
     deduped = _dedup(items)
     fresh = [it for it in deduped if it.dedup_key() not in seen_urls]
-    skipped = len(deduped) - len(fresh)
-    if skipped:
-        print(f"[prefilter] {skipped} items ya evaluados en semanas previas, omitidos")
     relevant = [it for it in fresh if _is_relevant(it)]
+    discarded = [it for it in fresh if not _is_relevant(it)]
+
+    # Embudo visible: las pérdidas silenciosas se detectan mirando estos números.
+    print(f"[funnel] entrada={len(items)} | dup=-{len(items) - len(deduped)} | "
+          f"vistos=-{len(deduped) - len(fresh)} | sin_keyword=-{len(discarded)} | "
+          f"relevantes={len(relevant)}")
+    # Muestra de descartados por keyword — para detectar falsos negativos del filtro.
+    for it in discarded[:5]:
+        print(f"[funnel] descartado: [{it.source}] {it.title[:80]}")
 
     # Agrupar por fuente, ordenar internamente y aplicar cap.
     by_source: dict[str, list[Item]] = defaultdict(list)

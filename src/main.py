@@ -68,7 +68,12 @@ def run() -> Path:
     pool_items = load_pool_items()
     print(f"[pool] {len(pool_items)} items acumulados durante la semana")
 
-    candidates = prefilter(normalize(raw) + pool_items, seen_urls=_load_seen(week_key))
+    merged = normalize(raw) + pool_items
+    dead_sources = _detect_dead_sources(merged)
+    if dead_sources:
+        print(f"[salud] fuentes sin items esta semana: {', '.join(dead_sources)}")
+
+    candidates = prefilter(merged, seen_urls=_load_seen(week_key))
     print(f"[prefilter] {len(candidates)} candidatos a Claude")
 
     scored, cost_usd = score(candidates)
@@ -96,9 +101,27 @@ def run() -> Path:
     # --- Envío de email HTML (siempre top 5, marcando cuáles pasaron el gate) ---
     _send_email(top_email, passing_ids={s.url for s in top_gate},
                 total_evaluados=len(scored), week=week,
-                error=scoring_failed, cost_usd=cost_usd)
+                error=scoring_failed, cost_usd=cost_usd,
+                dead_sources=dead_sources)
 
     return out
+
+
+def _detect_dead_sources(items) -> list[str]:
+    """Fuentes que no aportaron NADA en toda la semana — candidatas a muertas.
+
+    Una fuente rota no lanza error: simplemente deja de aportar. Sin este
+    chequeo, muere en silencio (le pasó a WorkLife y casi a TechInAsia).
+    """
+    counts: dict[str, int] = {}
+    for it in items:
+        counts[it.source] = counts.get(it.source, 0) + 1
+    expected = {"hackernews", *config.RSS_FEEDS, *config.REDDIT_FEEDS}
+    if config.ENABLE_YC:
+        expected.add("yc")
+    if config.ENABLE_PRODUCTHUNT:
+        expected.add("producthunt")
+    return sorted(s for s in expected if counts.get(s, 0) == 0)
 
 
 def _capture_to_gbrain(report_path: Path) -> None:
@@ -121,13 +144,15 @@ def _capture_to_gbrain(report_path: Path) -> None:
 
 
 def _send_email(top, passing_ids: set, total_evaluados: int, week: int,
-                error: bool = False, cost_usd: float = 0.0) -> None:
+                error: bool = False, cost_usd: float = 0.0,
+                dead_sources: list[str] | None = None) -> None:
     if not config.GMAIL_USER or not config.GMAIL_APP_PASSWORD:
         print("[email] GMAIL_USER / GMAIL_APP_PASSWORD no configuradas — se omite el envío")
         return
 
     html = render_html(top, passing_ids=passing_ids, total_evaluados=total_evaluados,
-                       min_objetivo=config.MIN_OBJETIVO, error=error, cost_usd=cost_usd)
+                       min_objetivo=config.MIN_OBJETIVO, error=error, cost_usd=cost_usd,
+                       dead_sources=dead_sources or [])
     n_passed = len(passing_ids)
     if error:
         subject = f"⚠️ Scouting Semanal — Semana {week} · falló el scoring, revisar logs"

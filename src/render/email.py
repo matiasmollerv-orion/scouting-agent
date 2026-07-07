@@ -179,6 +179,10 @@ HTML_TEMPLATE = Template("""
   <div class="legend">
     <strong>✓ Gate</strong> = score ≥ 24/40 + replicabilidad ≠ Baja + al menos una señal Alta.
     Las ideas "Bajo gate" se muestran igual para que puedas juzgar si el criterio es correcto.
+    {% if dead_sources %}
+    <br>⚠️ <strong>Fuentes sin items esta semana:</strong> {{ dead_sources|join(', ') }} —
+    si se repite 2+ semanas, la fuente probablemente murió y hay que reemplazarla.
+    {% endif %}
   </div>
 
   <div class="footer">
@@ -193,7 +197,8 @@ HTML_TEMPLATE = Template("""
 
 def render_html(ideas: list[ScoredItem], passing_ids: set[str],
                 total_evaluados: int, min_objetivo: int,
-                error: bool = False, cost_usd: float = 0.0) -> str:
+                error: bool = False, cost_usd: float = 0.0,
+                dead_sources: list[str] | None = None) -> str:
     today = date.today()
     return HTML_TEMPLATE.render(
         ideas=ideas,
@@ -203,6 +208,7 @@ def render_html(ideas: list[ScoredItem], passing_ids: set[str],
         min_objetivo=min_objetivo,
         error=error,
         cost_usd=cost_usd,
+        dead_sources=dead_sources or [],
         week=today.isocalendar().week,
         today=today.strftime("%d %b %Y"),
     )
