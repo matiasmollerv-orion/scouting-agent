@@ -34,25 +34,35 @@ def _gbrain(*args: str) -> str:
     return result.stdout
 
 
-def recent_newsletter_pages() -> list[tuple[str, str]]:
-    """[(slug, título)] de páginas newsletters/* de los últimos LOOKBACK_DAYS."""
+# Prefijos del brain que alimentan el scouting:
+# - newsletters/*: contenido curado que el usuario recibe por email
+# - inbox/*: notas "Brain: ..." que el usuario se envía desde el celular
+#   (ideas propias, links, preguntas — material directo de la tesis)
+PREFIXES = {"newsletters/": "newsletters", "inbox/": "brain-inbox"}
+
+
+def recent_newsletter_pages() -> list[tuple[str, str, str]]:
+    """[(slug, título, source)] de páginas recientes de los últimos LOOKBACK_DAYS."""
     cutoff = (datetime.now(timezone.utc) - timedelta(days=LOOKBACK_DAYS)).date()
-    pages: list[tuple[str, str]] = []
-    for line in _gbrain("list", "-n", "200").splitlines():
+    pages: list[tuple[str, str, str]] = []
+    for line in _gbrain("list", "-n", "300").splitlines():
         parts = line.split("\t")
-        if len(parts) < 4 or not parts[0].startswith("newsletters/"):
+        if len(parts) < 4:
             continue
         slug, _type, date_str, title = parts[0], parts[1], parts[2], parts[3]
+        source = next((src for pre, src in PREFIXES.items() if slug.startswith(pre)), None)
+        if not source:
+            continue
         try:
             if datetime.strptime(date_str.strip(), "%Y-%m-%d").date() < cutoff:
                 continue
         except ValueError:
             continue
-        pages.append((slug.strip(), title.strip()))
+        pages.append((slug.strip(), title.strip(), source))
     return pages
 
 
-def page_to_item(slug: str, title: str) -> Item | None:
+def page_to_item(slug: str, title: str, source: str) -> Item | None:
     try:
         body = _gbrain("get", slug)
     except RuntimeError as e:
@@ -61,7 +71,7 @@ def page_to_item(slug: str, title: str) -> Item | None:
     # Quita frontmatter YAML si existe.
     body = re.sub(r"\A---\n.*?\n---\n", "", body, flags=re.DOTALL)
     return Item(
-        source="newsletters",
+        source=source,
         title=title,
         # URL sintética estable para dedup/seen; el contenido vive en el brain.
         url=f"gbrain://{slug}",
@@ -72,8 +82,9 @@ def page_to_item(slug: str, title: str) -> Item | None:
 
 def main() -> None:
     pages = recent_newsletter_pages()
-    print(f"[newsletters] {len(pages)} páginas recientes en el brain")
-    items = [it for slug, title in pages if (it := page_to_item(slug, title))]
+    print(f"[newsletters] {len(pages)} páginas recientes en el brain "
+          f"({sum(1 for p in pages if p[2] == 'brain-inbox')} de inbox)")
+    items = [it for slug, title, source in pages if (it := page_to_item(slug, title, source))]
     if not items:
         print("[newsletters] nada que empujar")
         return
