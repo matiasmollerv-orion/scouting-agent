@@ -1,0 +1,32 @@
+[
+ {
+  "week": "2026-W28",
+  "sources": {
+   "hackernews": 853,
+   "techcrunch": 97,
+   "mit": 27,
+   "techeu": 58,
+   "restofworld": 12,
+   "modernretail": 31,
+   "charter": 8,
+   "hrdive": 33,
+   "reddit_saas": 67,
+   "yc": 60,
+   "newsletters": 31,
+   "brain-inbox": 6
+  },
+  "candidates": 30,
+  "scored": 7,
+  "gate": 1,
+  "cost_usd": 0.0628,
+  "themes": {
+   "Futuro del trabajo": 39,
+   "IA agéntica": 71,
+   "Wellness": 6,
+   "Ecommerce/DTC": 5,
+   "Fintech/Clase media": 20,
+   "Marketplace": 8,
+   "Industrias CL": 4
+  }
+ }
+]

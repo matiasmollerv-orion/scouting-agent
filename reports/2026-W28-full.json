@@ -1,0 +1,415 @@
+{
+ "week": "2026-W28",
+ "triage": [
+  {
+   "title": "Show HN: 18 Words",
+   "url": "https://18words.com/",
+   "source": "hackernews",
+   "total": 20
+  },
+  {
+   "title": "OpenAI bets on families as ChatGPT goes deeper into households",
+   "url": "https://techcrunch.com/2026/07/11/openai-bets-on-families-as-chatgpt-goes-deeper-into-households/",
+   "source": "techcrunch",
+   "total": 0
+  },
+  {
+   "title": "Anthropic found a hidden space where Claude puzzles over concepts",
+   "url": "https://www.technologyreview.com/2026/07/09/1140293/anthropic-found-a-hidden-space-where-claude-puzzles-over-concepts/",
+   "source": "mit",
+   "total": 0
+  },
+  {
+   "title": "Maritime defence startup Kraken Technology hits unicorn status",
+   "url": "https://tech.eu/2026/07/09/maritime-defence-startup-kraken-technology-hits-unicorn-status/",
+   "source": "techeu",
+   "total": 0
+  },
+  {
+   "title": "Your next nurse may monitor you from the Philippines",
+   "url": "https://restofworld.org/2026/u-s-healthcare-philippines-remote-nurses/?utm_source=rss&utm_medium=rss&utm_campaign=feeds",
+   "source": "restofworld",
+   "total": 0
+  },
+  {
+   "title": "Marketplace Briefing: AI traffic is poised to reshape the Amazon funnel",
+   "url": "https://www.modernretail.co/marketing/marketplace-briefing-ai-traffic-is-poised-to-reshape-the-amazon-funnel/?utm_campaign=modernretaildis&utm_medium=rss&utm_source=general-rss",
+   "source": "modernretail",
+   "total": 0
+  },
+  {
+   "title": "What this entrepreneur learned about better meetings",
+   "url": "https://www.charterworks.com/what-this-entrepreneur-learned-about-better-meetings/",
+   "source": "charter",
+   "total": 0
+  },
+  {
+   "title": "The economy is shutting young adults out of career-entry jobs, analysis finds",
+   "url": "https://www.hrdive.com/news/the-economy-shutting-young-adults-out-of-career-entry-jobs/824891/",
+   "source": "hrdive",
+   "total": 0
+  },
+  {
+   "title": "Keep going. No matter what.",
+   "url": "https://www.reddit.com/r/SaaS/comments/1urv4mu/keep_going_no_matter_what/",
+   "source": "reddit_saas",
+   "total": 0
+  },
+  {
+   "title": "TrustAI (YC Summer 2026) – Suggested cross-tool automations that run in one-click in background",
+   "url": "https://auto.trytrust.ai/",
+   "source": "yc",
+   "total": 31
+  },
+  {
+   "title": "Strategy Breakdowns: AI as a handrail — Granola's $1.5B playbook",
+   "url": "gbrain://newsletters/strategy-breakdowns-granola-ai-handrail",
+   "source": "newsletters",
+   "total": 0
+  },
+  {
+   "title": "How To Run Local Agents On Your Mac Https Www Linkedin Com P",
+   "url": "gbrain://inbox/how-to-run-local-agents-on-your-mac-https-www-linkedin-com-p",
+   "source": "brain-inbox",
+   "total": 0
+  },
+  {
+   "title": "Show HN: Getting GLM 5.2 running on my slow computer",
+   "url": "https://github.com/JustVugg/colibri",
+   "source": "hackernews",
+   "total": 13
+  },
+  {
+   "title": "Figma acquires team behind a vibe-coding app",
+   "url": "https://techcrunch.com/2026/07/07/figma-acquires-team-behind-a-vibe-coding-app/",
+   "source": "techcrunch",
+   "total": 0
+  },
+  {
+   "title": "EmTech AI 2026: The Rise of the AI Platform",
+   "url": "https://www.technologyreview.com/2026/07/08/1140223/emtech-ai-2026-the-rise-of-the-ai-platform/",
+   "source": "mit",
+   "total": 0
+  },
+  {
+   "title": "German AI workforce management startup Sherpa raises $2.2M pre-seed",
+   "url": "https://tech.eu/2026/07/09/german-ai-workforce-management-startup-sherpa-raises-22m-pre-seed/",
+   "source": "techeu",
+   "total": 31
+  },
+  {
+   "title": "Meta’s AI glasses are already among the fastest sellers at America’s Best, Eyeglass World",
+   "url": "https://www.modernretail.co/technology/metas-ai-glasses-are-already-among-the-fastest-sellers-at-americas-best-eyeglass-world/?utm_campaign=modernretaildis&utm_medium=rss&utm_source=general-rss",
+   "source": "modernretail",
+   "total": 0
+  },
+  {
+   "title": "WorkSmart settles EEOC claim it failed to hire, refer women per a client request",
+   "url": "https://www.hrdive.com/news/worksmart-settles-eeoc-claim-staffing-agency-women-hiring/824824/",
+   "source": "hrdive",
+   "total": 0
+  },
+  {
+   "title": "RIP SaaS",
+   "url": "https://www.reddit.com/r/SaaS/comments/1uo3mlj/rip_saas/",
+   "source": "reddit_saas",
+   "total": 0
+  },
+  {
+   "title": "Litmus (YC Summer 2026) – Run an async work trial on every engineer you interview.",
+   "url": "https://litmushiring.com/",
+   "source": "yc",
+   "total": 28
+  },
+  {
+   "title": "Elena Verna: Please stop the AI Confidence Theater",
+   "url": "gbrain://newsletters/elena-verna-ai-confidence-theater",
+   "source": "newsletters",
+   "total": 0
+  },
+  {
+   "title": "Como Sera El Futuro Del Trabajo Me Sorprende Realmente",
+   "url": "gbrain://inbox/como-sera-el-futuro-del-trabajo-me-sorprende-realmente",
+   "source": "brain-inbox",
+   "total": 0
+  },
+  {
+   "title": "Show HN: Davit, a Apple Containers UI",
+   "url": "https://davit.app",
+   "source": "hackernews",
+   "total": 10
+  },
+  {
+   "title": "This startup pits dealerships against each other to bid on your used car",
+   "url": "https://techcrunch.com/2026/07/07/this-startup-is-pitting-dealerships-against-each-other-to-bid-on-your-used-car/",
+   "source": "techcrunch",
+   "total": 0
+  },
+  {
+   "title": "Chip testing startup QuantumDiamonds raises €15M in equity funding",
+   "url": "https://tech.eu/2026/07/09/semiconductor-equipment-startup-quantumdiamonds-raises-eur15m-in-equity-funding/",
+   "source": "techeu",
+   "total": 0
+  },
+  {
+   "title": "How Dollar Shave Club decides when to use AI-generated creative",
+   "url": "https://www.modernretail.co/marketing/how-dollar-shave-club-decides-when-to-use-ai-generated-creative/?utm_campaign=modernretaildis&utm_medium=rss&utm_source=general-rss",
+   "source": "modernretail",
+   "total": 0
+  },
+  {
+   "title": "First time getting a dispute, how do I handle it?",
+   "url": "https://www.reddit.com/r/SaaS/comments/1usjvot/first_time_getting_a_dispute_how_do_i_handle_it/",
+   "source": "reddit_saas",
+   "total": 0
+  },
+  {
+   "title": "Palette (YC Summer 2026) – An interactive AI video generation and editing platform",
+   "url": "https://palettetechnology.com/",
+   "source": "yc",
+   "total": 21
+  },
+  {
+   "title": "McKinsey: Lo que hacen diferente las empresas AI-native",
+   "url": "gbrain://newsletters/mckinsey-ai-operating-truths",
+   "source": "newsletters",
+   "total": 0
+  },
+  {
+   "title": "Como Seria Una Inversion Infinita",
+   "url": "gbrain://inbox/como-seria-una-inversion-infinita",
+   "source": "brain-inbox",
+   "total": 0
+  }
+ ],
+ "deep": [
+  {
+   "title": "German AI workforce management startup Sherpa raises $2.2M pre-seed",
+   "url": "https://tech.eu/2026/07/09/german-ai-workforce-management-startup-sherpa-raises-22m-pre-seed/",
+   "source": "techeu",
+   "problema_score": 20,
+   "barrera_score": 8,
+   "replicabilidad": {
+    "nivel": "Alta",
+    "evidencia": "gestión de fuerza externa/contratistas es dolor común en minería y agro chilenos"
+   },
+   "ventana": {
+    "nivel": "Alta",
+    "evidencia": "categoría workforce OS AI recién validada por VC en Europa, sin players locales"
+   },
+   "tamano_mercado": {
+    "nivel": "Alta",
+    "evidencia": "toda empresa con workforce externo grande es cliente potencial"
+   },
+   "resumen": "Sherpa construye un 'sistema operativo' con IA para gestionar fuerza laboral externa (contratistas, freelancers, temporales). Ataca directamente el dolor de planillas grandes y dispersión operativa que vive el fundador en Mercado Libre. Validado por funding reciente de VCs serios.",
+   "b2b_o_b2c": "B2B",
+   "componente_ia": true,
+   "tipo_fundador": "perfil comercial con red en industrias de alto uso de contratistas + cofundador técnico en IA/ops",
+   "mercado_actual": "Alemania/Europa",
+   "company_url": "",
+   "funding_raised": "$2.2M pre-seed",
+   "stage": "Pre-seed",
+   "por_que_ahora": "auge de agentes IA aplicados a HR/ops coincide con crecimiento de fuerza laboral externa/gig en industrias tradicionales",
+   "modelo_negocio": "SaaS B2B, licencia por empresa o por trabajador gestionado",
+   "competencia_local": "no identificada",
+   "fit_tesis": "Futuro del trabajo",
+   "next_step": "entrevistar a 5 jefes de RRHH/operaciones en minería o salmonicultura sobre gestión de contratistas y turnos"
+  },
+  {
+   "title": "TrustAI (YC Summer 2026) – Suggested cross-tool automations that run in one-click in background",
+   "url": "https://auto.trytrust.ai/",
+   "source": "yc",
+   "problema_score": 15,
+   "barrera_score": 10,
+   "replicabilidad": {
+    "nivel": "Media",
+    "evidencia": "empresas chilenas usan CRM/Slack, poca automatización agéntica local"
+   },
+   "ventana": {
+    "nivel": "Media",
+    "evidencia": "categoría de agentes de browser recién emergiendo"
+   },
+   "tamano_mercado": {
+    "nivel": "Media",
+    "evidencia": "SaaS B2B para equipos con múltiples herramientas"
+   },
+   "resumen": "Agente que observa el contexto del usuario en distintas herramientas (CRM, Slack, GitHub) y sugiere automatizaciones de un clic para tareas repetitivas. Reduce fricción de cambiar entre apps sin requerir integración compleja. En Chile podría atacar el dolor de ejecutivos comerciales que operan en múltiples sistemas.",
+   "b2b_o_b2c": "B2B",
+   "componente_ia": true,
+   "tipo_fundador": "perfil técnico con experiencia en automatización/browser extensions más go-to-market B2B",
+   "mercado_actual": "EEUU, early access",
+   "company_url": "https://auto.trytrust.ai/",
+   "funding_raised": "desconocido",
+   "stage": "Pre-seed",
+   "por_que_ahora": "agentes de navegador y LLMs con contexto multi-app recién son viables técnicamente",
+   "modelo_negocio": "SaaS por asiento, ~USD 30-50/mes por usuario",
+   "competencia_local": "no identificada",
+   "fit_tesis": "IA ejecutivos",
+   "next_step": "probar el producto con 3 ejecutivos comerciales que usan CRM+Slack a diario y medir horas ahorradas"
+  },
+  {
+   "title": "Litmus (YC Summer 2026) – Run an async work trial on every engineer you interview.",
+   "url": "https://litmushiring.com/",
+   "source": "yc",
+   "problema_score": 15,
+   "barrera_score": 6,
+   "replicabilidad": {
+    "nivel": "Media",
+    "evidencia": "contratación técnica en Chile aún usa entrevistas tradicionales poco predictivas"
+   },
+   "ventana": {
+    "nivel": "Media",
+    "evidencia": "hay competidores globales de assessment técnico (HackerRank, CodeSignal)"
+   },
+   "tamano_mercado": {
+    "nivel": "Media",
+    "evidencia": "nicho de hiring técnico, no todo el mercado de RRHH"
+   },
+   "resumen": "Plataforma que genera pruebas técnicas realistas a partir del contexto real de la empresa (repos, tickets) para evaluar cómo trabaja un ingeniero, no solo cómo entrevista. Comprador es no-técnico (RRHH/hiring managers) pero el producto es de nicho estrecho, solo hiring de ingenieros.",
+   "b2b_o_b2c": "B2B",
+   "componente_ia": true,
+   "tipo_fundador": "perfil técnico con experiencia en assessment/hiring engineering",
+   "mercado_actual": "EEUU, early stage",
+   "company_url": "https://litmushiring.com/",
+   "funding_raised": "desconocido",
+   "stage": "Pre-seed",
+   "por_que_ahora": "IA generativa permite crear pruebas personalizadas y evaluar código con contexto en sandbox de forma barata",
+   "modelo_negocio": "SaaS por proceso de contratación, fee por vacante o suscripción para equipo de RRHH",
+   "competencia_local": "HackerRank/CodeSignal (globales, no locales)",
+   "fit_tesis": "Futuro del trabajo",
+   "next_step": "validar con 3 empresas tech chilenas cuántas horas pierden en entrevistas técnicas mal predictivas"
+  },
+  {
+   "title": "Show HN: 18 Words",
+   "url": "https://18words.com/",
+   "source": "hackernews",
+   "problema_score": 8,
+   "barrera_score": 10,
+   "replicabilidad": {
+    "nivel": "Baja",
+    "evidencia": "sin texto descriptivo, no se puede evaluar problema real"
+   },
+   "ventana": {
+    "nivel": "Baja",
+    "evidencia": "sin evidencia suficiente para estimar"
+   },
+   "tamano_mercado": {
+    "nivel": "Baja",
+    "evidencia": "sin datos de mercado o tracción más allá del engagement en HN"
+   },
+   "resumen": "Producto mostrado en Hacker News con alto engagement (1466 puntos) pero sin descripción textual disponible, por lo que no se puede determinar con certeza qué problema resuelve. El nombre sugiere una herramienta minimalista de escritura o aprendizaje de idiomas.",
+   "b2b_o_b2c": "B2C",
+   "componente_ia": false,
+   "tipo_fundador": "desconocido",
+   "mercado_actual": "desconocido",
+   "company_url": "https://18words.com/",
+   "funding_raised": "desconocido",
+   "stage": "MVP",
+   "por_que_ahora": "sin catalizador claro por falta de información",
+   "modelo_negocio": "desconocido",
+   "competencia_local": "no identificada",
+   "fit_tesis": "Otro",
+   "next_step": "visitar el sitio y probar el producto antes de descartar o priorizar"
+  },
+  {
+   "title": "Palette (YC Summer 2026) – An interactive AI video generation and editing platform",
+   "url": "https://palettetechnology.com/",
+   "source": "yc",
+   "problema_score": 12,
+   "barrera_score": 5,
+   "replicabilidad": {
+    "nivel": "Media",
+    "evidencia": "empresas chilenas producen contenido de marketing/corporativo sin herramientas IA locales"
+   },
+   "ventana": {
+    "nivel": "Media",
+    "evidencia": "espacio de AI video editing tiene ya players grandes (Runway, Descript)"
+   },
+   "tamano_mercado": {
+    "nivel": "Media",
+    "evidencia": "mercado global de video enterprise es grande pero fragmentado"
+   },
+   "resumen": "Plataforma de edición de video con IA que permite a equipos enterprise editar timelines, hacer clip-stitching y overlays vía lenguaje natural. Útil para marketing y comunicación interna corporativa, pero compite con jugadores ya establecidos como Runway o Descript.",
+   "b2b_o_b2c": "B2B",
+   "componente_ia": true,
+   "tipo_fundador": "perfil técnico en video/ML infra, capital intensivo por modelos generativos",
+   "mercado_actual": "EEUU, enterprise early adopters",
+   "company_url": "https://palettetechnology.com/",
+   "funding_raised": "desconocido",
+   "stage": "Pre-seed",
+   "por_que_ahora": "modelos de video generativo maduraron lo suficiente para uso enterprise conversacional",
+   "modelo_negocio": "SaaS enterprise, licencia por equipo o consumo de render",
+   "competencia_local": "no identificada (globalmente: Runway, Descript)",
+   "fit_tesis": "Otro",
+   "next_step": "no priorizar; requiere capital e infraestructura de modelos de video, fuera de foco de MVP liviano"
+  },
+  {
+   "title": "Show HN: Getting GLM 5.2 running on my slow computer",
+   "url": "https://github.com/JustVugg/colibri",
+   "source": "hackernews",
+   "problema_score": 0,
+   "barrera_score": 0,
+   "replicabilidad": {
+    "nivel": "Baja",
+    "evidencia": "excluido: dev tool técnico"
+   },
+   "ventana": {
+    "nivel": "Baja",
+    "evidencia": "excluido: dev tool técnico"
+   },
+   "tamano_mercado": {
+    "nivel": "Baja",
+    "evidencia": "excluido: dev tool técnico"
+   },
+   "resumen": "Proyecto técnico de un desarrollador para correr un LLM grande en hardware limitado, sin comprador no-técnico claro.",
+   "b2b_o_b2c": "",
+   "componente_ia": false,
+   "tipo_fundador": "",
+   "mercado_actual": "",
+   "company_url": "",
+   "funding_raised": "",
+   "stage": "Desconocido",
+   "por_que_ahora": "",
+   "modelo_negocio": "",
+   "competencia_local": "",
+   "fit_tesis": "Otro",
+   "next_step": ""
+  },
+  {
+   "title": "Show HN: Davit, a Apple Containers UI",
+   "url": "https://davit.app",
+   "source": "hackernews",
+   "problema_score": 0,
+   "barrera_score": 0,
+   "replicabilidad": {
+    "nivel": "Baja",
+    "evidencia": "excluido: dev tool técnico"
+   },
+   "ventana": {
+    "nivel": "Baja",
+    "evidencia": "excluido: dev tool técnico"
+   },
+   "tamano_mercado": {
+    "nivel": "Baja",
+    "evidencia": "excluido: dev tool técnico"
+   },
+   "resumen": "Interfaz gráfica vibe-coded para Apple Containers, herramienta de desarrolladores sin comprador no-técnico.",
+   "b2b_o_b2c": "",
+   "componente_ia": false,
+   "tipo_fundador": "",
+   "mercado_actual": "",
+   "company_url": "",
+   "funding_raised": "",
+   "stage": "Desconocido",
+   "por_que_ahora": "",
+   "modelo_negocio": "",
+   "competencia_local": "",
+   "fit_tesis": "Otro",
+   "next_step": ""
+  }
+ ],
+ "gate_urls": [
+  "https://tech.eu/2026/07/09/german-ai-workforce-management-startup-sherpa-raises-22m-pre-seed/"
+ ],
+ "cost_usd": 0.0628
+}
