@@ -75,10 +75,13 @@ def score(items: list[Item]) -> ScoreResult:
     deep_system = (PROMPTS_DIR / "score.md").read_text(encoding="utf-8")
     deep_user = (
         f"Candidatos de esta semana ({len(top)} en total):\n\n{_serialize(top, text_chars=1200)}\n\n"
-        f"IMPORTANTE: evaluá los {len(top)} candidatos sin excepción."
+        f"IMPORTANTE: evaluá los {len(top)} candidatos sin excepción. "
+        "Sé conciso: máximo ~120 palabras por objeto JSON."
     )
     for attempt in (1, 2):
-        text, c = _call(client, config.MODEL_DEEP, deep_system, deep_user, max_tokens=8000)
+        # 16k tokens: el run 2026-W28 truncó a 8k con newsletters de contenido
+        # rico (~1000 tokens/item). Solo se paga lo generado, no el tope.
+        text, c = _call(client, config.MODEL_DEEP, deep_system, deep_user, max_tokens=16000)
         result.cost_usd += c
         result.deep = _parse(text)
         if result.deep:
@@ -219,9 +222,16 @@ def _loads_forgiving(text: str) -> list:
 
 
 def _extract_json_array(text: str) -> str:
-    """Recorta al primer '[' y último ']' por si el modelo agrega ruido."""
+    """Recorta al primer '[' y último ']' por si el modelo agrega ruido.
+
+    Si no hay ']' (output truncado por max_tokens), devuelve desde '[' hasta
+    el final: json_repair cierra el array y rescata los items completos.
+    En 2026-W28 devolver "[]" aquí botó 8 análisis pagados.
+    """
     start = text.find("[")
-    end = text.rfind("]")
-    if start == -1 or end == -1 or end < start:
+    if start == -1:
         return "[]"
+    end = text.rfind("]")
+    if end == -1 or end < start:
+        return text[start:]
     return text[start : end + 1]
