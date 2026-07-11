@@ -23,6 +23,7 @@ class ScoreResult:
     deep: list[ScoredItem] = field(default_factory=list)
     triage: list[dict] = field(default_factory=list)  # {title, url, source, total}
     cost_usd: float = 0.0
+    truncated: bool = False  # el deep chocó max_tokens y se rescató con repair
 
 # USD por millón de tokens (input, output). Actualizar si cambian los modelos.
 PRICES = {
@@ -53,7 +54,7 @@ def score(items: list[Item]) -> ScoreResult:
         f"Candidatos ({len(items)}):\n\n{_serialize(items, text_chars=400)}\n\n"
         f"Puntuá los {len(items)} sin excepción."
     )
-    text, c = _call(client, config.MODEL_TRIAGE, triage_system, triage_user, max_tokens=4000)
+    text, c, _ = _call(client, config.MODEL_TRIAGE, triage_system, triage_user, max_tokens=4000)
     result.cost_usd += c
     ranked, scores_by_url = _rank_from_triage(text, items)
     result.triage = [
@@ -81,10 +82,17 @@ def score(items: list[Item]) -> ScoreResult:
     for attempt in (1, 2):
         # 16k tokens: el run 2026-W28 truncó a 8k con newsletters de contenido
         # rico (~1000 tokens/item). Solo se paga lo generado, no el tope.
-        text, c = _call(client, config.MODEL_DEEP, deep_system, deep_user, max_tokens=16000)
+        text, c, truncated = _call(client, config.MODEL_DEEP, deep_system, deep_user,
+                                   max_tokens=16000)
         result.cost_usd += c
         result.deep = _parse(text)
         if result.deep:
+            # Truncación rescatada por json-repair: no es falla, pero se avisa
+            # para no perder items en silencio si el output crece más.
+            if truncated:
+                result.truncated = True
+                print(f"[score] ⚠️ deep truncado a max_tokens — {len(result.deep)} "
+                      f"items rescatados de {len(top)}; subir max_tokens si se repite")
             return result
         if result.cost_usd >= config.COST_LIMIT_USD:
             print(f"[score] GUARDRAIL: ${result.cost_usd:.3f} — sin reintento")
@@ -95,8 +103,12 @@ def score(items: list[Item]) -> ScoreResult:
 
 
 def _call(client: Anthropic, model: str, system: str, user: str,
-          max_tokens: int) -> tuple[str, float]:
-    """Una llamada al modelo: intenta Batch API (50% off), cae a directa."""
+          max_tokens: int) -> tuple[str, float, bool]:
+    """Una llamada al modelo: intenta Batch API (50% off), cae a directa.
+
+    Retorna (texto, costo_usd, truncado) — truncado=True si el modelo cortó
+    la salida por max_tokens (stop_reason).
+    """
     if config.USE_BATCH:
         try:
             return _call_batch(client, model, system, user, max_tokens)
@@ -106,7 +118,7 @@ def _call(client: Anthropic, model: str, system: str, user: str,
 
 
 def _call_batch(client: Anthropic, model: str, system: str, user: str,
-                max_tokens: int) -> tuple[str, float]:
+                max_tokens: int) -> tuple[str, float, bool]:
     batch = client.messages.batches.create(
         requests=[
             {
@@ -131,16 +143,17 @@ def _call_batch(client: Anthropic, model: str, system: str, user: str,
                 cost = _cost(model, msg.usage.input_tokens, msg.usage.output_tokens,
                              discount=BATCH_DISCOUNT)
                 text = "".join(bl.text for bl in msg.content if bl.type == "text")
-                print(f"[score] batch {model}: in={msg.usage.input_tokens} "
-                      f"out={msg.usage.output_tokens} costo=${cost:.4f} (50% off)")
-                return text, cost
+                print(f"[score] batch {model}: stop={msg.stop_reason} "
+                      f"in={msg.usage.input_tokens} out={msg.usage.output_tokens} "
+                      f"costo=${cost:.4f} (50% off)")
+                return text, cost, msg.stop_reason == "max_tokens"
             raise RuntimeError("batch sin resultados")
         time.sleep(20)
     raise TimeoutError(f"batch no terminó en {config.BATCH_TIMEOUT_MIN} min")
 
 
 def _call_direct(client: Anthropic, model: str, system: str, user: str,
-                 max_tokens: int) -> tuple[str, float]:
+                 max_tokens: int) -> tuple[str, float, bool]:
     with client.messages.stream(
         model=model,
         max_tokens=max_tokens,
@@ -152,7 +165,7 @@ def _call_direct(client: Anthropic, model: str, system: str, user: str,
     text = "".join(bl.text for bl in msg.content if bl.type == "text")
     print(f"[score] directo {model}: stop={msg.stop_reason} "
           f"in={msg.usage.input_tokens} out={msg.usage.output_tokens} costo=${cost:.4f}")
-    return text, cost
+    return text, cost, msg.stop_reason == "max_tokens"
 
 
 def _cost(model: str, input_tokens: int, output_tokens: int,

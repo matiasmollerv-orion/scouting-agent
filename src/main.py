@@ -88,6 +88,10 @@ def run() -> Path:
     scored = result.deep
     scored.sort(key=lambda s: s.objetivo_total, reverse=True)
     scoring_failed = bool(candidates) and not scored
+    if result.truncated:
+        warnings.append(
+            f"análisis truncado a max_tokens ({len(scored)} de {config.TOP_DEEP} ideas "
+            "rescatadas) — subir max_tokens si se repite")
 
     # Ideas que pasaron el gate (para el reporte Markdown del repo)
     passing = [s for s in scored if s.passes_gate(config.MIN_OBJETIVO)]
