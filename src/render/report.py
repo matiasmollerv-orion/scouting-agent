@@ -10,17 +10,18 @@ TEMPLATE = Template(
     """# Reporte de Scouting — Semana {{ week }} ({{ today }})
 
 {% if not ideas %}
-No hubo ideas que superaran el gate esta semana ({{ total_evaluados }} candidatos evaluados).
+No hubo candidatos con análisis profundo esta semana ({{ total_evaluados }} evaluados en triage).
 {% else %}
-**{{ ideas|length }} idea(s)** superaron el gate (score objetivo ≥ {{ min_objetivo }}/40), de {{ total_evaluados }} candidatos evaluados.
+**{{ ideas|length }} candidato(s) analizados en profundidad** de {{ total_evaluados }} evaluados en triage esta semana. **{{ gate_count }}** superaron el gate (score objetivo ≥ {{ min_objetivo }}/40) — se listan TODOS los analizados en profundidad, no solo los que pasan gate: son inteligencia de mercado igual.
 
 {% for idea in ideas %}
-## {{ loop.index }}. {{ idea.title }} — {{ idea.objetivo_total }}/40
+## {{ loop.index }}. {{ "✅ " if idea.passes_gate(min_objetivo) else "" }}{{ idea.title }} — {{ idea.objetivo_total }}/40
 
 {{ idea.resumen }}
 
 **Fuente:** [{{ idea.source }}]({{ idea.url }})
-
+{% if idea.valida_idea_propia %}**🎯 Valida idea propia:** {{ idea.valida_idea_propia }}
+{% endif %}
 | Criterio | Resultado |
 |---|---|
 | Señal de problema real | {{ idea.problema_score }}/25 |
@@ -41,7 +42,7 @@ No hubo ideas que superaran el gate esta semana ({{ total_evaluados }} candidato
 {% endfor %}
 {% endif %}
 {% if panorama %}
-## Panorama completo de la semana
+## Panorama completo de la semana (triage)
 
 Todas las evaluaciones del triage, incluidas las descartadas — inteligencia de
 mercado para análisis posteriores (patrones por industria, ideas combinables).
@@ -60,7 +61,7 @@ mercado para análisis posteriores (patrones por industria, ideas combinables).
 
 def render(
     ideas: list[ScoredItem], total_evaluados: int, min_objetivo: int,
-    panorama: list[dict] | None = None,
+    panorama: list[dict] | None = None, gate_count: int = 0,
 ) -> str:
     today = date.today()
     # Orden en Python (Jinja sort no maneja None): sin score al final.
@@ -74,6 +75,7 @@ def render(
         total_evaluados=total_evaluados,
         min_objetivo=min_objetivo,
         panorama=panorama,
+        gate_count=gate_count,
         week=today.isocalendar().week,
         today=today.isoformat(),
     )

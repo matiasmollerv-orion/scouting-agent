@@ -72,6 +72,9 @@ HTML_TEMPLATE = Template("""
                padding: 8px 12px; margin-top: 12px; font-size: 13px;
                color: #78350f; border-radius: 0 4px 4px 0; }
   .pill.tesis { background: #ecfdf5; color: #047857; font-weight: 600; }
+  .valida-propia { background: #fdf2f8; border-left: 3px solid #db2777;
+                    padding: 8px 12px; margin-top: 8px; font-size: 13px;
+                    color: #831843; border-radius: 0 4px 4px 0; }
 </style>
 </head>
 <body>
@@ -128,6 +131,9 @@ HTML_TEMPLATE = Template("""
     </div>
     <div class="card-body">
       <p class="resumen">{{ idea.resumen }}</p>
+      {% if idea.valida_idea_propia %}
+      <div class="valida-propia">🎯 <strong>Valida idea propia:</strong> {{ idea.valida_idea_propia }}</div>
+      {% endif %}
       <div class="signals">
         <div class="sig-row">
           <div class="sig-label">Replicabilidad</div>

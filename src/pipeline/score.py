@@ -76,7 +76,10 @@ def score(items: list[Item]) -> ScoreResult:
         return result
 
     # --- Etapa 2: análisis profundo ---
-    deep_system = (PROMPTS_DIR / "score.md").read_text(encoding="utf-8")
+    # Las ideas propias solo se inyectan en el deep (no en el triage barato):
+    # es contexto que solo importa para el análisis rico, no para descartar rápido.
+    ideas_propias = (PROMPTS_DIR / "ideas_propias.md").read_text(encoding="utf-8")
+    deep_system = (PROMPTS_DIR / "score.md").read_text(encoding="utf-8") + "\n\n" + ideas_propias
     deep_user = (
         f"Candidatos de esta semana ({len(top)} en total):\n\n{_serialize(top, text_chars=1200)}\n\n"
         f"IMPORTANTE: evaluá los {len(top)} candidatos sin excepción. "

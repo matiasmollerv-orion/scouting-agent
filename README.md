@@ -12,6 +12,20 @@ fetch (fuentes) → normalize → prefilter (sin LLM) → score (Claude) → gat
 
 El reporte queda versionado en `reports/AAAA-Wnn.md`.
 
+## Conexión con GBrain
+
+- **GBrain → Scouting:** `scripts/newsletters_to_pool.py` empuja tus páginas
+  `newsletters/*` e `inbox/*` (notas "Brain: ...") como candidatos al pipeline.
+- **Scouting → GBrain:** cada corrida captura el reporte .md completo — TODAS
+  las ideas con análisis profundo (no solo las que pasan el gate), más el
+  panorama de triage. Así el segundo cerebro ve la inteligencia completa.
+- **Cruce con ideas propias:** `prompts/ideas_propias.md` lista tus tesis de
+  negocio ya brainstormeadas (extraídas de tus sesiones de ideación en
+  GBrain). El análisis profundo de cada candidato la usa como contexto y
+  marca en `valida_idea_propia` cuando un candidato nuevo valida o se parece
+  a algo que ya pensaste — visible en el email (pill rosa) y en el dashboard.
+  Actualizar ese archivo a mano cuando surjan tesis nuevas.
+
 ## Scoring
 
 Solo **2 criterios son numéricos** (los únicos calculables desde las fuentes):

@@ -67,7 +67,8 @@ for url, row in ondemand.items():
     df.loc[mask, "objetivo_total"] = row.get("problema_score", 0) + row.get("barrera_score", 0)
     for col in ["fit_tesis", "resumen", "next_step", "por_que_ahora",
                 "modelo_negocio", "competencia_local", "stage",
-                "funding_raised", "company_url", "mercado_actual"]:
+                "funding_raised", "company_url", "mercado_actual",
+                "valida_idea_propia"]:
         df.loc[mask, col] = row.get(col, "")
 
 # --- Filtros ---
@@ -139,7 +140,8 @@ f["analizado"] = f["has_deep"].map({True: "Profundo", False: "Triage"})
 
 DISPLAY_COLS = [
     "passes_gate", "score_mostrado", "analizado", "title", "source",
-    "fit_tesis", "stage", "mercado_actual", "funding_raised", "week", "url",
+    "fit_tesis", "stage", "mercado_actual", "funding_raised",
+    "valida_idea_propia", "week", "url",
 ]
 COLUMN_CONFIG = {
     "passes_gate": st.column_config.CheckboxColumn("Gate", width="small"),
@@ -153,6 +155,7 @@ COLUMN_CONFIG = {
     "stage": st.column_config.TextColumn("Etapa", width="small"),
     "mercado_actual": st.column_config.TextColumn("País", width="small"),
     "funding_raised": st.column_config.TextColumn("Ronda / Funding", width="medium"),
+    "valida_idea_propia": st.column_config.TextColumn("🎯 Valida idea propia", width="medium"),
     "week": st.column_config.TextColumn("Semana", width="small"),
     "url": st.column_config.LinkColumn("Link", width="small", display_text="🔗"),
 }
@@ -188,6 +191,8 @@ with cols[0]:
         st.markdown(f"[Web de la empresa]({row['company_url']})")
     if row["has_deep"]:
         st.write(row["resumen"])
+        if row.get("valida_idea_propia"):
+            st.warning(f"🎯 **Valida idea propia:** {row['valida_idea_propia']}")
         st.markdown(
             f"**Vertical:** {row['fit_tesis']}  ·  "
             f"**Etapa:** {row.get('stage', '')}  ·  "

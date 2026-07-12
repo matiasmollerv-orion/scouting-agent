@@ -78,6 +78,7 @@ class ScoredItem(BaseModel):
     competencia_local: str = ""  # player en Chile/LatAm si existe, o "no identificada"
     fit_tesis: str = ""          # categoría de la tesis del fundador a la que mapea
     next_step: str = ""          # acción concreta de validación en 1 línea
+    valida_idea_propia: str = ""  # nombre de la idea ya brainstormeada que este candidato valida, si aplica
 
     @property
     def objetivo_total(self) -> int:

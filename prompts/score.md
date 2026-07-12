@@ -113,6 +113,10 @@ NO son números y NO suman al score. Juicio honesto. Sin base → Baja y decilo.
 - `fit_tesis`: la categoría exacta de la tesis (ver lista arriba).
 - `next_step`: LA acción concreta de validación para el fundador, 1 línea.
   Ej: "hablar con 5 jefes de operaciones de salmoneras sobre este dolor".
+- `valida_idea_propia`: si este candidato VALIDA, SE PARECE A o COMBINA BIEN
+  con alguna de las ideas propias del fundador (ver sección al final del
+  prompt), poné el nombre exacto entre comillas tal como aparece ahí. Si no
+  hay relación clara, "".
 
 ## Resumen y campos informativos
 - `resumen`: 2-3 oraciones en español (sin saltos de línea). Qué es, por qué
@@ -155,7 +159,8 @@ dentro de un string). Un objeto por candidato. Esquema:
   "modelo_negocio": "...",
   "competencia_local": "...",
   "fit_tesis": "...",
-  "next_step": "..."
+  "next_step": "...",
+  "valida_idea_propia": "..."
 }
 
 Conservá el `title`, `url` y `source` EXACTOS del candidato. No inventes datos:

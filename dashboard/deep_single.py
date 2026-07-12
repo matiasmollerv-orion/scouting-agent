@@ -17,7 +17,8 @@ from src.pipeline.score import PROMPTS_DIR, _cost, _parse, _serialize
 def analyze_one(item: Item) -> tuple[ScoredItem | None, float]:
     """Analiza un solo candidato en profundidad. Retorna (resultado, costo_usd)."""
     client = Anthropic(api_key=config.ANTHROPIC_API_KEY)
-    system = (PROMPTS_DIR / "score.md").read_text(encoding="utf-8")
+    ideas_propias = (PROMPTS_DIR / "ideas_propias.md").read_text(encoding="utf-8")
+    system = (PROMPTS_DIR / "score.md").read_text(encoding="utf-8") + "\n\n" + ideas_propias
     user = (
         f"Candidato a analizar (1 en total):\n\n{_serialize([item], text_chars=1200)}\n\n"
         "Sé conciso: máximo ~120 palabras por objeto JSON."

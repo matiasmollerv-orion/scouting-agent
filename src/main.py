@@ -100,8 +100,11 @@ def run() -> Path:
     # Top 5 por score para el email (con o sin gate — siempre hay algo que ver)
     top_email = scored[: config.MAX_IDEAS]
 
-    report = render(top_gate, total_evaluados=len(scored), min_objetivo=config.MIN_OBJETIVO,
-                    panorama=result.triage)
+    # El reporte .md (el que se captura a GBrain) lleva TODAS las ideas con
+    # análisis profundo, no solo las que pasan el gate — así el segundo cerebro
+    # ve la inteligencia completa, no solo el recorte que llega por email.
+    report = render(scored, total_evaluados=len(candidates), min_objetivo=config.MIN_OBJETIVO,
+                    panorama=result.triage, gate_count=len(top_gate))
 
     out = REPORTS_DIR / f"{week_key}.md"
     out.write_text(report, encoding="utf-8")
