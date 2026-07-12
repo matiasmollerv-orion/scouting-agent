@@ -67,7 +67,7 @@ for url, row in ondemand.items():
     df.loc[mask, "objetivo_total"] = row.get("problema_score", 0) + row.get("barrera_score", 0)
     for col in ["fit_tesis", "resumen", "next_step", "por_que_ahora",
                 "modelo_negocio", "competencia_local", "stage",
-                "funding_raised", "company_url"]:
+                "funding_raised", "company_url", "mercado_actual"]:
         df.loc[mask, col] = row.get(col, "")
 
 # --- Filtros ---
@@ -128,54 +128,94 @@ f = f.sort_values(
 
 st.caption(f"{len(f)} ideas mostradas · {len(df)} evaluadas en total desde que corre el sistema")
 
-# --- Listado ---
-for _, row in f.iterrows():
-    score_txt = (
-        f"{int(row['objetivo_total'])}/40" if pd.notna(row["objetivo_total"])
-        else f"triage {row['triage_total']}"
-    )
-    gate_badge = "✅ " if row["passes_gate"] else ""
-    label = f"{gate_badge}[{row['source']}] {row['title']} — {score_txt}"
+# --- Tabla compacta: una fila por idea, columnas para escanear de un vistazo ---
+if f.empty:
+    st.info("Ningún resultado con estos filtros.")
+    st.stop()
 
-    with st.expander(label):
-        cols = st.columns([3, 1])
-        with cols[0]:
-            st.markdown(f"[Ver original]({row['url']})")
-            if row.get("company_url"):
-                st.markdown(f"[Web de la empresa]({row['company_url']})")
-            if row["has_deep"]:
-                st.write(row["resumen"])
-                st.markdown(
-                    f"**Fit tesis:** {row['fit_tesis']}  ·  "
-                    f"**Stage:** {row.get('stage', '')}  ·  "
-                    f"**Funding:** {row.get('funding_raised', '')}"
+f = f.reset_index(drop=True)
+f["score_mostrado"] = f["objetivo_total"].where(f["has_deep"], f["triage_total"])
+f["analizado"] = f["has_deep"].map({True: "Profundo", False: "Triage"})
+
+DISPLAY_COLS = [
+    "passes_gate", "score_mostrado", "analizado", "title", "source",
+    "fit_tesis", "stage", "mercado_actual", "funding_raised", "week", "url",
+]
+COLUMN_CONFIG = {
+    "passes_gate": st.column_config.CheckboxColumn("Gate", width="small"),
+    "score_mostrado": st.column_config.ProgressColumn(
+        "Score", min_value=0, max_value=40, format="%d", width="small"
+    ),
+    "analizado": st.column_config.TextColumn("Análisis", width="small"),
+    "title": st.column_config.TextColumn("Idea", width="large"),
+    "source": st.column_config.TextColumn("Fuente", width="small"),
+    "fit_tesis": st.column_config.TextColumn("Vertical / Industria", width="medium"),
+    "stage": st.column_config.TextColumn("Etapa", width="small"),
+    "mercado_actual": st.column_config.TextColumn("País", width="small"),
+    "funding_raised": st.column_config.TextColumn("Ronda / Funding", width="medium"),
+    "week": st.column_config.TextColumn("Semana", width="small"),
+    "url": st.column_config.LinkColumn("Link", width="small", display_text="🔗"),
+}
+
+st.caption("Click en una fila para ver el detalle completo abajo. Click en el header de una columna para ordenar.")
+event = st.dataframe(
+    f[DISPLAY_COLS],
+    column_config=COLUMN_CONFIG,
+    hide_index=True,
+    use_container_width=True,
+    height=600,
+    on_select="rerun",
+    selection_mode="single-row",
+)
+
+selected = event.selection.rows if event and event.selection else []
+if not selected:
+    st.info("👆 Selecciona una idea de la tabla para ver el detalle.")
+    st.stop()
+
+row = f.iloc[selected[0]]
+
+# --- Detalle de la idea seleccionada ---
+st.divider()
+gate_badge = "✅ " if row["passes_gate"] else ""
+st.subheader(f"{gate_badge}{row['title']}")
+st.caption(f"[{row['source']}] · {row['week']}")
+
+cols = st.columns([3, 1])
+with cols[0]:
+    st.markdown(f"[Ver original]({row['url']})")
+    if row.get("company_url"):
+        st.markdown(f"[Web de la empresa]({row['company_url']})")
+    if row["has_deep"]:
+        st.write(row["resumen"])
+        st.markdown(
+            f"**Vertical:** {row['fit_tesis']}  ·  "
+            f"**Etapa:** {row.get('stage', '')}  ·  "
+            f"**País:** {row.get('mercado_actual', '')}  ·  "
+            f"**Funding:** {row.get('funding_raised', '')}"
+        )
+        st.markdown(f"**Por qué ahora:** {row.get('por_que_ahora', '')}")
+        st.markdown(f"**Modelo de negocio:** {row.get('modelo_negocio', '')}")
+        st.markdown(f"**Competencia local:** {row.get('competencia_local', '')}")
+        st.markdown(f"**Next step:** {row.get('next_step', '')}")
+    else:
+        st.caption("Solo triage — sin análisis profundo todavía.")
+with cols[1]:
+    if not row["has_deep"]:
+        disabled = cap_used >= WEEKLY_CAP
+        if st.button("🔍 Analizar en profundidad", key=f"deep_{row['url']}", disabled=disabled):
+            with st.spinner("Analizando con Claude..."):
+                item = Item(
+                    source=row["source"], title=row["title"],
+                    url=row["url"], text=row.get("text") or "",
                 )
-                st.markdown(f"**Por qué ahora:** {row.get('por_que_ahora', '')}")
-                st.markdown(f"**Modelo de negocio:** {row.get('modelo_negocio', '')}")
-                st.markdown(f"**Competencia local:** {row.get('competencia_local', '')}")
-                st.markdown(f"**Next step:** {row.get('next_step', '')}")
+                scored, cost = analyze_one(item)
+            if scored:
+                save_ondemand(row["week"], item, scored, cost)
+                st.success(f"Listo (${cost:.4f}). Recargando...")
+                st.cache_data.clear()
+                st.rerun()
             else:
-                st.caption("Solo triage — sin análisis profundo todavía.")
-        with cols[1]:
-            if not row["has_deep"]:
-                disabled = cap_used >= WEEKLY_CAP
-                if st.button(
-                    "🔍 Analizar en profundidad",
-                    key=f"deep_{row['url']}",
-                    disabled=disabled,
-                ):
-                    with st.spinner("Analizando con Claude..."):
-                        item = Item(
-                            source=row["source"], title=row["title"],
-                            url=row["url"], text=row.get("text") or "",
-                        )
-                        scored, cost = analyze_one(item)
-                    if scored:
-                        save_ondemand(row["week"], item, scored, cost)
-                        st.success(f"Listo (${cost:.4f}). Recargando...")
-                        st.cache_data.clear()
-                        st.rerun()
-                    else:
-                        st.error("El modelo no devolvió un resultado válido.")
-                if disabled:
-                    st.caption("Tope semanal alcanzado")
+                st.error("El modelo no devolvió un resultado válido.")
+        if disabled:
+            st.caption("Tope semanal alcanzado")

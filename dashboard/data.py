@@ -19,6 +19,7 @@ REPORTS_DIR = Path(__file__).resolve().parents[1] / "reports"
 DEEP_COLS = [
     "fit_tesis", "resumen", "company_url", "next_step", "por_que_ahora",
     "modelo_negocio", "competencia_local", "stage", "funding_raised",
+    "mercado_actual",
 ]
 
 _WEEK_RE = re.compile(r"(\d{4})-W(\d{2})")
