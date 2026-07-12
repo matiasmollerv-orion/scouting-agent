@@ -8,7 +8,10 @@ decidir cuáles merecen análisis profundo.
   workforce planning, people analytics, agentes IA que absorben tareas o roles.
 - IA para ejecutivos no-técnicos (segundo cerebro, secretaria agéntica,
   consultoría de agentes internos).
-- Wellness/longevidad/hábitos. B2B ops. Ecommerce/DTC. Clase media emergente.
+- Wellness/longevidad/hábitos. B2B ops. Clase media emergente.
+- Ecommerce/DTC (doble foco): IA/herramientas que hacen ecommerces más
+  eficientes Y tendencias de consumo global — categorías de productos que
+  están explotando con marcas/ecommerces nuevos capturando esa ola.
 - Marketplaces de nicho. Industrias chilenas (minería, pesca, agro).
 
 **Excluir (problema_score=0 y barrera_score=0):**

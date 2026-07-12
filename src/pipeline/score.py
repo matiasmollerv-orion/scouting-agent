@@ -57,9 +57,12 @@ def score(items: list[Item]) -> ScoreResult:
     text, c, _ = _call(client, config.MODEL_TRIAGE, triage_system, triage_user, max_tokens=4000)
     result.cost_usd += c
     ranked, scores_by_url = _rank_from_triage(text, items)
+    # Se guarda el texto (mismo largo que usa el deep) aunque el item no
+    # llegue a análisis profundo automático: es lo que el dashboard necesita
+    # para poder pedir el análisis on-demand más adelante sin re-fetchear.
     result.triage = [
         {"title": it.title, "url": it.url, "source": it.source,
-         "total": scores_by_url.get(it.url)}
+         "total": scores_by_url.get(it.url), "text": it.text[:1200]}
         for it in items
     ]
     if not ranked:

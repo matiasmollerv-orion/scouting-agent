@@ -84,6 +84,17 @@ RELEVANCE_KEYWORDS = [
     "health coach", "mental health", "gut health", "sleep",
     # Tesis: ecommerce / DTC / productos innovadores
     "dtc", "direct-to-consumer", "ecommerce", "shopify", "consumer brand",
+    "subscription box", "cpg", "consumer packaged goods", "private label",
+    # Tesis: ecommerce — IA y herramientas que hacen tiendas más eficientes
+    "product recommendation", "personalization engine", "dynamic pricing",
+    "visual search", "virtual try-on", "conversational commerce",
+    "ai shopping", "product discovery",
+    # Tesis: ecommerce — señales de categorías de consumo explotando
+    "fastest growing", "breakout brand", "emerging category", "consumer trend",
+    "viral brand", "trending product", "category creator",
+    # Tesis: ecommerce — infraestructura y canales nuevos
+    "social commerce", "live shopping", "creator commerce",
+    "fulfillment", "returns management", "cross-border ecommerce",
     # Tesis: servicios para hogares
     "home services", "household", "home management", "cleaning service",
     # Tesis: grandes industrias chilenas
@@ -117,7 +128,14 @@ THEME_KEYWORDS = {
     ],
     "Ecommerce/DTC": [
         "ecommerce", "dtc", "direct-to-consumer", "shopify", "checkout",
-        "consumer brand", "retail tech", "last mile",
+        "consumer brand", "retail tech", "last mile", "subscription box",
+        "personalization", "product recommendation", "social commerce",
+        "live shopping", "fulfillment", "cpg", "private label",
+    ],
+    "Tendencias consumo": [
+        "consumer trend", "breakout brand", "fastest growing", "viral brand",
+        "emerging category", "category creator", "trending product",
+        "consumer behavior", "subscription box", "private label",
     ],
     "Fintech/Clase media": [
         "fintech", "financial inclusion", "remittance", "savings", "lending",
@@ -143,6 +161,7 @@ RSS_FEEDS = {
     "restofworld": "https://restofworld.org/feed/latest/",
     # Ecommerce / DTC / retail (tesis: ecommerce)
     "modernretail": "https://www.modernretail.co/feed/",
+    "2pml":         "https://2pml.com/feed/",            # análisis DTC/brands/ecommerce
     # Futuro del trabajo / workforce (tesis: futuro del trabajo)
     "joshbersin": "https://joshbersin.com/feed/",       # analista #1 de HR tech
     "charter":    "https://charterworks.com/feed/",     # periodismo futuro del trabajo

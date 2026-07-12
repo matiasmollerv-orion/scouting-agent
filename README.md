@@ -62,3 +62,32 @@ Corré a mano desde *Actions → weekly-scouting → Run workflow* para probar.
 
 Todo en `src/config.py` (modelo, umbrales, keywords, feeds). El prompt de
 scoring vive en `prompts/score.md` y se edita sin tocar código.
+
+## Dashboard (`dashboard/`)
+
+El email semanal solo muestra el top 5. Todo lo evaluado (30 candidatos con
+triage + hasta 8 con análisis profundo, cada semana) ya queda en
+`reports/*-full.json` pero nadie lo navega. `dashboard/app.py` es una app
+Streamlit que consolida todas las semanas, permite filtrar por tema/score/gate,
+y agrega un botón para pedir análisis profundo **on-demand** de cualquier idea
+que solo tenga triage — sin esperar a que el pipeline automático la elija
+entre las 8 finalistas.
+
+**Costo:** leer el dashboard es $0 (solo lee JSON del repo). Cada análisis
+on-demand es ~$0.008 (1 llamada directa a Sonnet por idea). Tope de 15
+análisis on-demand por semana (`dashboard/db.py: WEEKLY_CAP`) como guardrail.
+
+**Setup:**
+
+1. Corré `dashboard/schema.sql` una vez en el SQL editor de Supabase (mismo
+   proyecto que usa Financial Dashboard) para crear la tabla
+   `scouting_deep_ondemand`, donde persisten los análisis on-demand.
+2. Deployá en Streamlit Cloud apuntando a `dashboard/app.py` como main file.
+3. Secrets en Streamlit Cloud: `ANTHROPIC_API_KEY`, `SUPABASE_URL`, `SUPABASE_KEY`.
+
+**Local:**
+
+```bash
+pip install -r dashboard/requirements.txt
+streamlit run dashboard/app.py
+```

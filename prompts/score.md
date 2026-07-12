@@ -35,8 +35,20 @@ empezar con la IA.
 - **"B2B ops"** — herramientas que eficienten procesos reales: revenue/ventas,
   comunicación interna, reporting, equipos en terreno, trabajadores sin
   escritorio. Dolor concreto y comprador identificable.
-- **"Ecommerce"** — productos innovadores, DTC, suscripción física, y
-  herramientas de operación ecommerce (checkout, logística, retención).
+- **"Ecommerce"** — DOS ángulos igual de prioritarios:
+  (1) **IA y herramientas para ecommerce**: soluciones que hacen tiendas más
+  eficientes y atractivas de cara al usuario — personalización, search/discovery,
+  pricing dinámico, virtual try-on, commerce conversacional, retención,
+  checkout, logística last-mile, fulfillment, returns. Comprador: dueños de
+  ecommerce que quieren convertir más.
+  (2) **Tendencias de consumo global y ecommerces que las capturan**: el fundador
+  quiere detectar qué categorías de productos están explotando mundialmente y
+  quién está montando los ecommerces/marcas DTC que capturan esa ola. No busca
+  categorías fijas — busca el PATRÓN: una categoría "dormida" que empieza a
+  crecer aceleradamente, con marcas nuevas apareciendo, y la oportunidad de ser
+  el primero en replicarlo en LatAm. Señales: marcas DTC con crecimiento
+  llamativo, categorías donde aparecen muchos players nuevos, cambios en
+  comportamiento de consumidor que crean demanda nueva.
 - **"Clase media"** — negocios para la clase media emergente global (LatAm,
   Asia, África): finanzas personales, ahorro, inversión accesible, educación,
   salud preventiva, vivienda. Subatendida tecnológicamente.

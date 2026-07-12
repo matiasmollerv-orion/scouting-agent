@@ -1,0 +1,6 @@
+streamlit>=1.38
+pandas>=2.2
+supabase>=2.7
+anthropic>=0.40
+pydantic>=2.7
+json-repair>=0.30
