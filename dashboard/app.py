@@ -28,7 +28,7 @@ except Exception:
 import pandas as pd
 import streamlit as st
 
-from dashboard.data import load_all_weeks
+from dashboard.data import DEEP_COLS, load_all_weeks
 from dashboard.db import WEEKLY_CAP, count_this_week, fetch_ondemand, save_ondemand
 from dashboard.deep_single import analyze_one
 from src.models import Item
@@ -57,6 +57,13 @@ ondemand = _load_ondemand()
 if df.empty:
     st.info("Todavía no hay datos — corre el pipeline semanal al menos una vez.")
     st.stop()
+
+# Streamlit Cloud usa warm deployments: st.cache_data puede servir un
+# DataFrame cacheado de una versión anterior del código, sin las columnas
+# nuevas. Se garantizan todas antes de usarlas — nunca KeyError por caché vieja.
+for _col in DEEP_COLS:
+    if _col not in df.columns:
+        df[_col] = ""
 
 # Los análisis on-demand pisan lo que venía del repo (mismo url).
 for url, row in ondemand.items():
