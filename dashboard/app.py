@@ -68,7 +68,8 @@ for url, row in ondemand.items():
     for col in ["fit_tesis", "resumen", "next_step", "por_que_ahora",
                 "modelo_negocio", "competencia_local", "stage",
                 "funding_raised", "company_url", "mercado_actual",
-                "valida_idea_propia"]:
+                "valida_idea_propia", "fundadores", "redes_sociales",
+                "fit_yc"]:
         df.loc[mask, col] = row.get(col, "")
 
 # --- Filtros ---
@@ -140,8 +141,8 @@ f["analizado"] = f["has_deep"].map({True: "Profundo", False: "Triage"})
 
 DISPLAY_COLS = [
     "passes_gate", "score_mostrado", "analizado", "title", "source",
-    "fit_tesis", "stage", "mercado_actual", "funding_raised",
-    "valida_idea_propia", "week", "url",
+    "fit_tesis", "stage", "mercado_actual", "funding_raised", "fit_yc",
+    "valida_idea_propia", "week", "url", "company_url",
 ]
 COLUMN_CONFIG = {
     "passes_gate": st.column_config.CheckboxColumn("Gate", width="small"),
@@ -155,9 +156,11 @@ COLUMN_CONFIG = {
     "stage": st.column_config.TextColumn("Etapa", width="small"),
     "mercado_actual": st.column_config.TextColumn("País", width="small"),
     "funding_raised": st.column_config.TextColumn("Ronda / Funding", width="medium"),
+    "fit_yc": st.column_config.TextColumn("Fit YC", width="small"),
     "valida_idea_propia": st.column_config.TextColumn("🎯 Valida idea propia", width="medium"),
     "week": st.column_config.TextColumn("Semana", width="small"),
-    "url": st.column_config.LinkColumn("Link", width="small", display_text="🔗"),
+    "url": st.column_config.LinkColumn("Fuente", width="small", display_text="🔗"),
+    "company_url": st.column_config.LinkColumn("Web", width="small", display_text="🌐"),
 }
 
 st.caption("Click en una fila para ver el detalle completo abajo. Click en el header de una columna para ordenar.")
@@ -198,7 +201,12 @@ with cols[0]:
             f"**Etapa:** {row.get('stage', '')}  ·  "
             f"**País:** {row.get('mercado_actual', '')}  ·  "
             f"**Funding:** {row.get('funding_raised', '')}"
+            + (f"  ·  **Fit YC:** {row['fit_yc']}" if row.get("fit_yc") else "")
         )
+        if row.get("fundadores") and row["fundadores"] != "no identificados":
+            st.markdown(f"**Fundadores:** {row['fundadores']}")
+        if row.get("redes_sociales"):
+            st.markdown(f"**Redes:** {row['redes_sociales']}")
         st.markdown(f"**Por qué ahora:** {row.get('por_que_ahora', '')}")
         st.markdown(f"**Modelo de negocio:** {row.get('modelo_negocio', '')}")
         st.markdown(f"**Competencia local:** {row.get('competencia_local', '')}")

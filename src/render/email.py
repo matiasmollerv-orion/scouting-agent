@@ -75,6 +75,7 @@ HTML_TEMPLATE = Template("""
   .valida-propia { background: #fdf2f8; border-left: 3px solid #db2777;
                     padding: 8px 12px; margin-top: 8px; font-size: 13px;
                     color: #831843; border-radius: 0 4px 4px 0; }
+  .pill.yc { background: #fff7ed; color: #c2410c; font-weight: 600; }
 </style>
 </head>
 <body>
@@ -125,6 +126,7 @@ HTML_TEMPLATE = Template("""
       {% if idea.stage and idea.stage != 'Desconocido' %}
         <span class="pill stage">{{ idea.stage }}</span>
       {% endif %}
+      {% if idea.fit_yc == 'Alto' %}<span class="pill yc">YC-fit Alto</span>{% endif %}
       <div class="pills">
         <span class="pill">{{ idea.mercado_actual }}</span>
       </div>
@@ -180,11 +182,13 @@ HTML_TEMPLATE = Template("""
       {% endif %}
     </div>
     <div class="card-footer">
-      Fundador ideal: {{ idea.tipo_fundador }} ·
+      Fundador ideal: {{ idea.tipo_fundador }}
+      {% if idea.fundadores and idea.fundadores != 'no identificados' %} · Fundadores: {{ idea.fundadores }}{% endif %} ·
       <a href="{{ idea.url }}" target="_blank">Ver fuente ({{ idea.source }})</a>
       {% if idea.company_url %} ·
         <a href="{{ idea.company_url }}" target="_blank">Web de la empresa</a>
       {% endif %}
+      {% if idea.redes_sociales %} · {{ idea.redes_sociales }}{% endif %}
     </div>
   </div>
   {% endfor %}

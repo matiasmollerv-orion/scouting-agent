@@ -131,6 +131,18 @@ NO son números y NO suman al score. Juicio honesto. Sin base → Baja y decilo.
   "bootstrapped"). Si no hay info, "desconocido".
 - `stage`: "Idea", "MVP", "Pre-seed", "Seed", "Series A", "Series B+",
   "Bootstrapped" o "Desconocido".
+- `fundadores`: nombres reales de los fundadores SOLO si el texto los
+  menciona explícitamente (ej: "Ana Pérez y Juan Gómez"). NUNCA los
+  inventes ni los infieras — si no aparecen, "no identificados".
+- `redes_sociales`: handle o URL de X/Twitter, LinkedIn u otra red de la
+  empresa SOLO si aparece literalmente en el texto. Si no, "".
+- `fit_yc`: "Alto", "Medio" o "Bajo" — ¿qué tanto se parece este candidato al
+  patrón que Y Combinator financia HOY? Alto = software con IA aplicada a un
+  workflow concreto, mercado grande, equipo puede iterar rápido, distribución
+  clara. Bajo = servicios pesados en personas, hardware, mercados nicho sin
+  expansión, regulación pesada. Es una señal de calibración externa: si algo
+  puntúa alto en tu tesis Y alto en fit_yc, la validación es doble. Los
+  candidatos con `source: "yc"` son "Alto" por definición.
 
 # Formato de salida
 
@@ -160,7 +172,10 @@ dentro de un string). Un objeto por candidato. Esquema:
   "competencia_local": "...",
   "fit_tesis": "...",
   "next_step": "...",
-  "valida_idea_propia": "..."
+  "valida_idea_propia": "...",
+  "fundadores": "...",
+  "redes_sociales": "...",
+  "fit_yc": "Alto|Medio|Bajo"
 }
 
 Conservá el `title`, `url` y `source` EXACTOS del candidato. No inventes datos:

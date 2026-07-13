@@ -29,5 +29,16 @@ create table if not exists scouting_deep_ondemand (
   competencia_local text,
   fit_tesis text,
   next_step text,
+  valida_idea_propia text,
+  fundadores text,
+  redes_sociales text,
+  fit_yc text,
   cost_usd numeric
 );
+
+-- Migración para tablas creadas antes de estos campos (idempotente,
+-- correr en el SQL editor si la tabla ya existía):
+alter table scouting_deep_ondemand add column if not exists valida_idea_propia text;
+alter table scouting_deep_ondemand add column if not exists fundadores text;
+alter table scouting_deep_ondemand add column if not exists redes_sociales text;
+alter table scouting_deep_ondemand add column if not exists fit_yc text;

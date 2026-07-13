@@ -80,6 +80,11 @@ class ScoredItem(BaseModel):
     next_step: str = ""          # acción concreta de validación en 1 línea
     valida_idea_propia: str = ""  # nombre de la idea ya brainstormeada que este candidato valida, si aplica
 
+    # Contexto de la empresa (v3) — extractivos, solo si el texto los menciona
+    fundadores: str = ""         # nombres reales de fundadores, o "no identificados"
+    redes_sociales: str = ""     # handle/URL de X, LinkedIn, etc. si aparece en el texto
+    fit_yc: str = ""             # "Alto|Medio|Bajo" — ¿se parece a lo que YC financia hoy?
+
     @property
     def objetivo_total(self) -> int:
         return self.problema_score + self.barrera_score
