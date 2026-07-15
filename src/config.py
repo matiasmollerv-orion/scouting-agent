@@ -95,6 +95,14 @@ RELEVANCE_KEYWORDS = [
     # Tesis: ecommerce — infraestructura y canales nuevos
     "social commerce", "live shopping", "creator commerce",
     "fulfillment", "returns management", "cross-border ecommerce",
+    # Tesis: negocio tradicional reinventado (demanda probada, innovación en
+    # el CÓMO). Incluye categorías físicas concretas: la prensa tech solo las
+    # cubre cuando alguien las está reinventando — baja frecuencia, alta señal.
+    "refurbished", "recommerce", "resale", "secondhand", "second-hand",
+    "circular economy", "trade-in", "buyback", "tech-enabled",
+    "legacy industry", "boring business", "brick-and-mortar",
+    "laundry", "car wash", "barbershop", "dry cleaning", "self-storage",
+    "moving service", "grocery store", "convenience store",
     # Tesis: servicios para hogares
     "home services", "household", "home management", "cleaning service",
     # Tesis: grandes industrias chilenas
@@ -142,6 +150,11 @@ THEME_KEYWORDS = {
         "microfinance", "personal finance", "middle class",
     ],
     "Marketplace": ["marketplace"],
+    "Tradicional reinventado": [
+        "refurbished", "recommerce", "resale", "secondhand", "second-hand",
+        "circular economy", "trade-in", "tech-enabled", "brick-and-mortar",
+        "laundry", "car wash", "barbershop", "legacy industry",
+    ],
     "Industrias CL": [
         "mining", "aquaculture", "agtech", "agriculture", "fishery", "salmon",
     ],

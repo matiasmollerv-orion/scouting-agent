@@ -13,6 +13,10 @@ decidir cuáles merecen análisis profundo.
   eficientes Y tendencias de consumo global — categorías de productos que
   están explotando con marcas/ecommerces nuevos capturando esa ola.
 - Marketplaces de nicho. Industrias chilenas (minería, pesca, agro).
+- Negocios tradicionales reinventados: industria probada y "aburrida"
+  (lavandería, retail, reacondicionados, servicios físicos) con un modelo de
+  negocio o experiencia disruptiva — demanda ya probada, innovación en el
+  CÓMO (ej: Back Market con electrónica usada certificada).
 
 **Excluir (problema_score=0 y barrera_score=0):**
 - Dev tools para programadores sin comprador no-técnico claro.

@@ -58,6 +58,18 @@ empezar con la IA.
   agricultura donde hay dolor real y poca solución tecnológica local.
 - **"B2C servicios"** — cualquier servicio con tracción real de consumidores,
   especialmente con WhatsApp como canal o componente agéntico.
+- **"Tradicional reinventado"** — negocios de industrias probadas y
+  "aburridas" (lavandería, retail, supermercado, barbería, mudanzas,
+  electrónica usada, arriendo, lo que sea) donde alguien innovó en el CÓMO,
+  no en el QUÉ: nuevo modelo de negocio (suscripción, recommerce,
+  marketplace, vertical integrado), capa de confianza (certificación,
+  garantía — ej. Back Market en tecnología reacondicionada, replicado en
+  Chile por Reuse), experiencia radicalmente mejor, o economía circular.
+  La demanda ya está probada — el riesgo de mercado es casi cero; lo que se
+  evalúa es si la vuelta de tuerca crea una ventaja real y defendible.
+  Señales del patrón: digitalización de una compra que era análoga,
+  incumbentes fragmentados/informales con mala experiencia, "el Warby Parker
+  de X", premiumización o abaratamiento radical de una categoría legacy.
 - **"Otro"** — si no mapea a ninguna categoría anterior.
 
 **Excluir explícitamente:**
