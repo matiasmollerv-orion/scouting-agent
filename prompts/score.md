@@ -58,18 +58,27 @@ empezar con la IA.
   agricultura donde hay dolor real y poca solución tecnológica local.
 - **"B2C servicios"** — cualquier servicio con tracción real de consumidores,
   especialmente con WhatsApp como canal o componente agéntico.
-- **"Tradicional reinventado"** — negocios de industrias probadas y
-  "aburridas" (lavandería, retail, supermercado, barbería, mudanzas,
-  electrónica usada, arriendo, lo que sea) donde alguien innovó en el CÓMO,
-  no en el QUÉ: nuevo modelo de negocio (suscripción, recommerce,
-  marketplace, vertical integrado), capa de confianza (certificación,
-  garantía — ej. Back Market en tecnología reacondicionada, replicado en
-  Chile por Reuse), experiencia radicalmente mejor, o economía circular.
-  La demanda ya está probada — el riesgo de mercado es casi cero; lo que se
-  evalúa es si la vuelta de tuerca crea una ventaja real y defendible.
-  Señales del patrón: digitalización de una compra que era análoga,
-  incumbentes fragmentados/informales con mala experiencia, "el Warby Parker
-  de X", premiumización o abaratamiento radical de una categoría legacy.
+- **"Tradicional reinventado"** — CUALQUIER industria probada y "aburrida"
+  (lavandería, supermercado, retail, barbería, mudanzas, ferretería,
+  farmacia, gimnasio, restaurante, arriendo, electrónica usada, lo que sea)
+  donde alguien reinventó el CÓMO, no el QUÉ. La innovación puede estar en
+  cualquier dimensión, no importa cuál mientras cree una ventaja real:
+    · Entrega/logística (lavandería que despacha con drones, delivery en 10 min)
+    · Modelo de negocio (suscripción, membresía, recommerce, vertical integrado,
+      marketplace, dark stores, pago por uso)
+    · Tecnología/automatización (supermercado sin cajas, cocina robotizada,
+      IA para pricing o inventario)
+    · Experiencia radicalmente mejor (app-first donde todo era presencial,
+      transparencia de precios, atención instantánea)
+    · Formato (autoservicio donde había atención, D2C donde había intermediarios,
+      capa de confianza/certificación sobre un mercado informal)
+  La demanda YA está probada (todos usan supermercados, lavanderías, etc.), así
+  que el riesgo de mercado es casi cero. Lo único que se evalúa es si la vuelta
+  de tuerca es lo bastante fuerte para crear una ventaja defendible y no ser
+  copiada al día siguiente. Señales del patrón: un incumbente fragmentado,
+  informal o con mala experiencia; "el Warby Parker / Back Market / Rappi de X";
+  digitalización de algo que era 100% análogo; un formato nuevo que baja costos
+  o mejora la experiencia de forma radical.
 - **"Otro"** — si no mapea a ninguna categoría anterior.
 
 **Excluir explícitamente:**

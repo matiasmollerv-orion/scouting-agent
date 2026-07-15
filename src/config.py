@@ -95,14 +95,19 @@ RELEVANCE_KEYWORDS = [
     # Tesis: ecommerce — infraestructura y canales nuevos
     "social commerce", "live shopping", "creator commerce",
     "fulfillment", "returns management", "cross-border ecommerce",
-    # Tesis: negocio tradicional reinventado (demanda probada, innovación en
-    # el CÓMO). Incluye categorías físicas concretas: la prensa tech solo las
-    # cubre cuando alguien las está reinventando — baja frecuencia, alta señal.
-    "refurbished", "recommerce", "resale", "secondhand", "second-hand",
-    "circular economy", "trade-in", "buyback", "tech-enabled",
-    "legacy industry", "boring business", "brick-and-mortar",
+    # Tesis: negocio tradicional reinventado — CUALQUIER industria probada con
+    # una vuelta de tuerca en el cómo (entrega, modelo, tech, experiencia,
+    # formato). Dos tipos de keyword: (a) señales de que algo legacy se está
+    # reinventando, (b) categorías físicas concretas que la prensa tech solo
+    # cubre cuando alguien las disrumpe — baja frecuencia, alta señal.
+    "reinventing", "disrupting", "reimagining", "modernizing",
+    "tech-enabled", "app-based", "on-demand", "legacy industry",
+    "boring business", "brick-and-mortar", "traditional industry",
+    "the warby parker of", "the uber of", "the airbnb of",
+    "refurbished", "recommerce", "resale", "trade-in", "dark store",
+    "cashierless", "autonomous store", "ghost kitchen", "cloud kitchen",
     "laundry", "car wash", "barbershop", "dry cleaning", "self-storage",
-    "moving service", "grocery store", "convenience store",
+    "moving service", "grocery", "convenience store", "pharmacy", "gym",
     # Tesis: servicios para hogares
     "home services", "household", "home management", "cleaning service",
     # Tesis: grandes industrias chilenas
@@ -151,9 +156,10 @@ THEME_KEYWORDS = {
     ],
     "Marketplace": ["marketplace"],
     "Tradicional reinventado": [
-        "refurbished", "recommerce", "resale", "secondhand", "second-hand",
-        "circular economy", "trade-in", "tech-enabled", "brick-and-mortar",
-        "laundry", "car wash", "barbershop", "legacy industry",
+        "reinventing", "disrupting", "reimagining", "tech-enabled",
+        "on-demand", "brick-and-mortar", "legacy industry", "dark store",
+        "cashierless", "ghost kitchen", "cloud kitchen", "refurbished",
+        "recommerce", "laundry", "car wash", "grocery",
     ],
     "Industrias CL": [
         "mining", "aquaculture", "agtech", "agriculture", "fishery", "salmon",
