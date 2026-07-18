@@ -76,7 +76,7 @@ for url, row in ondemand.items():
                 "modelo_negocio", "competencia_local", "stage",
                 "funding_raised", "company_url", "mercado_actual",
                 "valida_idea_propia", "fundadores", "redes_sociales",
-                "fit_yc"]:
+                "fit_yc", "tipo_candidato"]:
         df.loc[mask, col] = row.get(col, "")
 
 # --- Filtros ---
@@ -147,9 +147,9 @@ f["score_mostrado"] = f["objetivo_total"].where(f["has_deep"], f["triage_total"]
 f["analizado"] = f["has_deep"].map({True: "Profundo", False: "Triage"})
 
 DISPLAY_COLS = [
-    "passes_gate", "score_mostrado", "analizado", "title", "source",
-    "fit_tesis", "stage", "mercado_actual", "funding_raised", "fit_yc",
-    "valida_idea_propia", "week", "url", "company_url",
+    "passes_gate", "score_mostrado", "analizado", "tipo_candidato", "title",
+    "source", "fit_tesis", "stage", "mercado_actual", "funding_raised",
+    "fit_yc", "valida_idea_propia", "week", "url", "company_url",
 ]
 COLUMN_CONFIG = {
     "passes_gate": st.column_config.CheckboxColumn("Gate", width="small"),
@@ -157,6 +157,7 @@ COLUMN_CONFIG = {
         "Score", min_value=0, max_value=40, format="%d", width="small"
     ),
     "analizado": st.column_config.TextColumn("Análisis", width="small"),
+    "tipo_candidato": st.column_config.TextColumn("Tipo", width="small"),
     "title": st.column_config.TextColumn("Idea", width="large"),
     "source": st.column_config.TextColumn("Fuente", width="small"),
     "fit_tesis": st.column_config.TextColumn("Vertical / Industria", width="medium"),
@@ -200,6 +201,8 @@ with cols[0]:
     if row.get("company_url"):
         st.markdown(f"[Web de la empresa]({row['company_url']})")
     if row["has_deep"]:
+        if row.get("tipo_candidato"):
+            st.caption(f"Tipo: {row['tipo_candidato']}")
         st.write(row["resumen"])
         if row.get("valida_idea_propia"):
             st.warning(f"🎯 **Valida idea propia:** {row['valida_idea_propia']}")

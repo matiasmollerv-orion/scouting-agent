@@ -83,6 +83,7 @@ def save_ondemand(week: str, item, scored, cost_usd: float) -> None:
         "fundadores": scored.fundadores,
         "redes_sociales": scored.redes_sociales,
         "fit_yc": scored.fit_yc,
+        "tipo_candidato": scored.tipo_candidato,
         "cost_usd": round(cost_usd, 5),
     }
     sb.table(TABLE).upsert(row, on_conflict="url").execute()

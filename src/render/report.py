@@ -16,7 +16,8 @@ No hubo candidatos con análisis profundo esta semana ({{ total_evaluados }} eva
 
 {% for idea in ideas %}
 ## {{ loop.index }}. {{ "✅ " if idea.passes_gate(min_objetivo) else "" }}{{ idea.title }} — {{ idea.objetivo_total }}/40
-
+{% if idea.tipo_candidato %}*[{{ idea.tipo_candidato }}]*
+{% endif %}
 {{ idea.resumen }}
 
 **Fuente:** [{{ idea.source }}]({{ idea.url }})

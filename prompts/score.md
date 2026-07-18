@@ -139,6 +139,22 @@ NO son números y NO suman al score. Juicio honesto. Sin base → Baja y decilo.
   prompt), poné el nombre exacto entre comillas tal como aparece ahí. Si no
   hay relación clara, "".
 
+## Naturaleza del candidato
+- `tipo_candidato`: no todo lo que llega es una empresa que se puede estudiar
+  y replicar. Clasificá honestamente:
+    · "Empresa específica" — un producto o startup concreto y único (ej: un
+      candidato de YC, un Show HN, un artículo que cubre UNA empresa).
+      `company_url`, `funding_raised`, `stage` deberían poder completarse.
+    · "Tendencia" — artículo o análisis que cubre VARIAS empresas o un
+      patrón de mercado (ej: "5 startups de agentes de RRHH están surgiendo").
+      No hay un jugador único a replicar; el valor es la señal de la ola, no
+      el producto. `company_url` normalmente queda "".
+    · "Reflexión" — opinión, ensayo o pieza de pensamiento sin empresa(s)
+      concreta(s) mencionada(s).
+  Esto importa porque una "Empresa específica" es algo que el fundador puede
+  estudiar y potencialmente replicar mañana; una "Tendencia" es inteligencia
+  de mercado para calibrar hacia dónde mirar, no un blueprint.
+
 ## Resumen y campos informativos
 - `resumen`: 2-3 oraciones en español (sin saltos de línea). Qué es, por qué
   funciona, por qué es relevante para Chile.
@@ -196,7 +212,8 @@ dentro de un string). Un objeto por candidato. Esquema:
   "valida_idea_propia": "...",
   "fundadores": "...",
   "redes_sociales": "...",
-  "fit_yc": "Alto|Medio|Bajo"
+  "fit_yc": "Alto|Medio|Bajo",
+  "tipo_candidato": "Empresa específica|Tendencia|Reflexión"
 }
 
 Conservá el `title`, `url` y `source` EXACTOS del candidato. No inventes datos:

@@ -33,6 +33,7 @@ create table if not exists scouting_deep_ondemand (
   fundadores text,
   redes_sociales text,
   fit_yc text,
+  tipo_candidato text,
   cost_usd numeric
 );
 
@@ -42,3 +43,4 @@ alter table scouting_deep_ondemand add column if not exists valida_idea_propia t
 alter table scouting_deep_ondemand add column if not exists fundadores text;
 alter table scouting_deep_ondemand add column if not exists redes_sociales text;
 alter table scouting_deep_ondemand add column if not exists fit_yc text;
+alter table scouting_deep_ondemand add column if not exists tipo_candidato text;

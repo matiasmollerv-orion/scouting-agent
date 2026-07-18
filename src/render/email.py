@@ -76,6 +76,9 @@ HTML_TEMPLATE = Template("""
                     padding: 8px 12px; margin-top: 8px; font-size: 13px;
                     color: #831843; border-radius: 0 4px 4px 0; }
   .pill.yc { background: #fff7ed; color: #c2410c; font-weight: 600; }
+  .pill.tipo-empresa { background: #eef2ff; color: #4338ca; font-weight: 600; }
+  .pill.tipo-tendencia { background: #f9fafb; color: #6b7280; font-weight: 600; }
+  .pill.tipo-reflexion { background: #f9fafb; color: #9ca3af; font-weight: 600; }
 </style>
 </head>
 <body>
@@ -107,6 +110,9 @@ HTML_TEMPLATE = Template("""
       <span class="gate-badge {{ 'passed' if passed else 'not-passed' }}">
         {{ '✓ Gate' if passed else 'Bajo gate' }}
       </span>
+      {% if idea.tipo_candidato %}
+        <span class="pill {{ 'tipo-empresa' if 'Empresa' in idea.tipo_candidato else ('tipo-tendencia' if idea.tipo_candidato == 'Tendencia' else 'tipo-reflexion') }}">{{ idea.tipo_candidato }}</span>
+      {% endif %}
       <h2>
         {% if idea.company_url %}
           <a href="{{ idea.company_url }}" target="_blank">{{ idea.title }}</a>

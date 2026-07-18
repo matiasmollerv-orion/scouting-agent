@@ -85,6 +85,11 @@ class ScoredItem(BaseModel):
     redes_sociales: str = ""     # handle/URL de X, LinkedIn, etc. si aparece en el texto
     fit_yc: str = ""             # "Alto|Medio|Bajo" — ¿se parece a lo que YC financia hoy?
 
+    # Naturaleza del candidato (v4) — no todo lo fetcheado es una empresa
+    # replicable: mucho es análisis periodístico de una tendencia con varios
+    # players mencionados, no un producto único a estudiar.
+    tipo_candidato: str = ""     # "Empresa específica" | "Tendencia" | "Reflexión"
+
     @property
     def objetivo_total(self) -> int:
         return self.problema_score + self.barrera_score
