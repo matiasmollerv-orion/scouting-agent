@@ -2,9 +2,11 @@ name: weekly-scouting
 
 on:
   schedule:
-    # Sábado 12:00 UTC (~08:00/09:00 Chile según horario). Actions corre en UTC
-    # y puede retrasarse bajo carga; no es puntual al minuto.
-    - cron: "0 12 * * 6"
+    # Sábado 12:07 UTC (~08:00/09:00 Chile según horario). El minuto :00 en
+    # punto es el más congestionado de GitHub Actions a nivel global (ahí
+    # caen todos los crons del mundo) — 2026-07-18 se atrasó 46+ min por eso.
+    # Corriendo en :07 se evita ese pico; igual puede atrasarse algo bajo carga.
+    - cron: "7 12 * * 6"
   workflow_dispatch: {}  # permite correrlo a mano desde la pestaña Actions
 
 permissions:
