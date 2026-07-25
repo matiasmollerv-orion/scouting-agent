@@ -1,0 +1,517 @@
+{
+ "week": "2026-W30",
+ "triage": [
+  {
+   "title": "Show HN: I replaced a $120k bowling center system with $1,600 in ESP32s",
+   "url": "https://news.ycombinator.com/item?id=48968606",
+   "source": "hackernews",
+   "total": 36,
+   "text": "I might be the only SRE on Earth with his own bowling center. It&#x27;s a more in-depth gig than you&#x27;d think.<p>My family and I bought an abandoned 8-lane bowling center in the rural mid-west. In our small town there weren&#x27;t many recreation options for families. You&#x27;ve heard of a food desert? This is an R&amp;R desert.<p>It had been abandoned for a good reason. The roof leaks, the electrical system was constantly surging, and my 70-year-old bowling equipment (still) doesn&#x27;t work perfectly. The system that keeps your score is particularly interesting to me. It&#x27;s the thing you watch during your game, but it fades into the background beyond that. Turns out these things are really cool, but absurdly expensive.<p>Ours was installed in 2008 and cost six figures. It&#x27;s calculating ball speed and trajectory, camera-based pin detection (object detection and trig, on ICs!), runs the fouling, the animations, the pinsetting machine and ball return. Very cool stuff for its age.<p>From the business perspective, my facility only cost me $105k. To forklift-replace the score keeping system runs anywhere between $80-$120k, depending on features, vendor, and unit age. No "
+  },
+  {
+   "title": "TechCrunch Disrupt 2026’s new Smart Money Stage explores fintech, payments, AI, and everything between",
+   "url": "https://techcrunch.com/2026/07/24/techcrunch-disrupt-2026s-new-smart-money-stage-explores-fintech-payments-ai-and-everything-between/",
+   "source": "techcrunch",
+   "total": 0,
+   "text": "Money has evolved into far more than the cash in your wallet or your bank account. And at TechCrunch Disrupt 2026, we’re devoting an entire stage to that progression."
+  },
+  {
+   "title": "Shape-shifting mirrors on NASA’s new space telescope could unveil Jupiters like our own",
+   "url": "https://www.technologyreview.com/2026/07/22/1140701/shape-shifting-mirrors-roman-space-telescope/",
+   "source": "mit",
+   "total": 0,
+   "text": "When NASA’s Nancy Grace Roman Space Telescope launches, as early as the end of next month, it will attempt one of astronomy’s most precise disappearing acts to date. The telescope will carry the first space-bound “active” coronagraph, an instrument that effectively erases most of the light from a star during photography. It will allow astronomers&#8230;"
+  },
+  {
+   "title": "When Hollywood feared AI, Filmustage bet on pre-production instead",
+   "url": "https://tech.eu/2026/07/24/when-hollywood-feared-ai-filmustage-bet-on-pre-production-instead/",
+   "source": "techeu",
+   "total": 29,
+   "text": "Startup founder Egor Dubrovsky told me that he won't trim his beard until Filmustage's monthly recurring revenue triples. Today it's more than 15 centimetres long. Ironically, beards have also become ..."
+  },
+  {
+   "title": "DeepSeek founder’s fund drops 15.7% on AI selloff",
+   "url": "https://www.techinasia.com/endowus-ceo-gregory-van-optimistic-profitability",
+   "source": "techinasia",
+   "total": 0,
+   "text": "The CSI 1000 Index fell more than 12% over the week, its worst drop since a quant selloff in February 2024."
+  },
+  {
+   "title": "Marketplace Briefing: How Whatnot’s AI-powered recommendation system gives it a competitive edge",
+   "url": "https://www.modernretail.co/technology/marketplace-briefing-how-whatnots-ai-powered-recommendation-system-gives-it-a-competitive-edge/?utm_campaign=modernretaildis&utm_medium=rss&utm_source=general-rss",
+   "source": "modernretail",
+   "total": 0,
+   "text": "Whatnot believes its recommendation systems — which now refresh in just minutes — are what set the company apart from competitors. Whatnot chief product officer Tom Verrilli spoke with Modern Retail about what makes recommendations uniquely challenging in live commerce."
+  },
+  {
+   "title": "I just got my first paying customer. ❤️",
+   "url": "https://www.reddit.com/r/SaaS/comments/1v4t3i7/i_just_got_my_first_paying_customer/",
+   "source": "reddit_saas",
+   "total": 20,
+   "text": "I know it's &quot;just&quot; $9, but I can't stop smiling. Over the last few weeks I've been building a Chrome extension for developers.  There were days where I wondered if anyone would actually pay for something I made. Today, a complete stranger did. The money isn't what made me happy. It's the fact that someone I don't know looked at my product and thought, &quot;Yeah, this is worth paying for.&quot; That feeling is hard to describe. It's also a reminder that every bug fix, late night, feature request, and Reddit post wasn't for nothing. I'm nowhere near where I want to be, but today feels like the first real step. If you're building something and haven't made your first sale yet, keep going. You never know which feature, post, or conversation will convince that first customer. Now it's time to make the product even better for customer #2.   &#32; submitted by &#32;  /u/aryanxcreates   [link] &#32; [comments]"
+  },
+  {
+   "title": "Waddle Labs (YC Summer 2026) – Agents for robotics control.",
+   "url": "https://www.waddlelabs.ai/",
+   "source": "yc",
+   "total": 20,
+   "text": "Agents for robotics control."
+  },
+  {
+   "title": "3rd Circuit: Employers need not ‘go digging for disabilities’",
+   "url": "https://www.hrdive.com/news/3rd-circuit-disability-discrimination-west-penn-allegheny-health-system/825811/",
+   "source": "hrdive",
+   "total": 0,
+   "text": "A midnight-shift employee fired for sleeping on the job mentioned fatigue and dry eye too late to properly invoke the Americans with Disabilities Act, the appeals court said."
+  },
+  {
+   "title": "Strategy Breakdowns: Pioneer DJ — Cómo ganar siendo el estándar inevitable",
+   "url": "gbrain://newsletters/strategy-breakdowns-pioneer-dj",
+   "source": "newsletters",
+   "total": 0,
+   "text": "# Pioneer DJ: Por qué todos los booths de DJ se ven igual\n\n**Playbook central:** La opción segura es la única opción cuando la incompatibilidad no es una alternativa.\n\nPioneer DJ tiene ~70% del mercado global de hardware DJ y cerca del 100% de los booths profesionales de clubes. Su software Rekordbox es gratis con cada pieza de hardware — es el Microsoft Word para DJs.\n\n## La jugada: Controlar la ruta de migración en cada format shift\n\nEl CDJ (Compact Disc Jockey) fue lanzado por Pioneer en 1994. En 2026 ya no tiene slot de CD, pero el nombre y form factor persisten. En 30 años ha sobrevivido 6 formatos: vinyl → CD → MP3 → USB → SD → Cloud.\n\nLos format shifts son eventos de extinción para incumbentes:\n- Kodak no hizo el salto de film a digital\n- Blockbuster no hizo el salto de disco a streaming\n- BlackBerry no hizo el salto de teclado a touchscreen\n\n**El playbook de Pioneer: siempre ship el siguiente formato dentro del deck actual.**\n\n- CDJ-1000 (2001): CDs + MP3 CD-Rs\n- CDJ-2000 (2009): mantiene slot CD, agrega USB y SD Card — DJs podían usar ambos durante la transición\n- CDJ-3000 (2020): elimina el CD slot. Para cuando salió, todos los DJs ya habían migrado a USB/SD\n- CDJ-3000X ("
+  },
+  {
+   "title": "Soluciones Ecommerce",
+   "url": "gbrain://inbox/soluciones-ecommerce",
+   "source": "brain-inbox",
+   "total": 26,
+   "text": "# Brain: soluciones ecommerce\n\n- **De:** \"Matías Moller Verderau\" <matiasmollerv@gmail.com>\n- **Fecha:** Thu, 9 Jul 2026 12:15:18 -0400\n- **Capturado:** 2026-07-09 19:15\n\n---\n\nQue empresas o soluciones existen a nivel global con foco en que los\necommerces y tiendas online puedan ofrecer una experiencia diferenciadora a\nsus clientes? Desde funcionalidades como ver la talla del modelo para\ncomparar, agente que recomiende y ayude a buscar, resumen de reviews de la\ngente, sistemas de gamificacion y puntos, etc\n\nMatías Moller Verderau"
+  },
+  {
+   "title": "Show HN: Bento - An entire PowerPoint in one HTML file (edit+view+data+collab)",
+   "url": "https://bento.page/slides/",
+   "source": "hackernews",
+   "total": 20,
+   "text": "Over the past few months, our team has been building more and more slidedecks using web frontend technologies with coding harnesses like Claude Code, but a common complaint is to make even small edits we need to edit the code either manually or via the harness.<p>To avoid this loop, I ended up creating Bento, a single HTML file with everything you need in a slide tool including animations and shared editing. There&#x27;s no install or cloud login, everything works offline. The default deck is around 560 KB and it doesn&#x27;t need to fetch anything once you got it.<p>Open it in a browser and then you can edit, present, print and save. Share it via email or via Airdrop and all they need is a browser to edit, present and also do live collab on the slides. Drop it in to Claude or ChatGPT to transform existing pptx files into Bento slides. There is no cloud involved, only an encrypted blind relay to allow for shared editing. The relay doesn&#x27;t see any of the data.<p>Check it out at <a href=\"https:&#x2F;&#x2F;bento.page&#x2F;slides&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;bento.page&#x2F;slides&#x2F;</a> which takes you straight to the editor.<p>Go to <a href=\"https:&#x2F;&#x2F;bento"
+  },
+  {
+   "title": "Build in public, fail in public: what it’s like to be a founder under 20 right now",
+   "url": "https://techcrunch.com/2026/07/24/build-in-public-fail-in-public-what-its-like-to-be-a-founder-under-20-right-now/",
+   "source": "techcrunch",
+   "total": 0,
+   "text": "AI tools have democratized the opportunity to build, shortening the timelines of success and enabling more young people to start successful companies without stepping foot inside a Big Tech company."
+  },
+  {
+   "title": "When AI Stops Experimenting and Starts Scaling [Sponsored]",
+   "url": "https://tech.eu/2026/07/24/when-ai-stops-experimenting-and-starts-scaling/",
+   "source": "techeu",
+   "total": 23,
+   "text": "For a decade, virtual try-on technology has been the industry's perennial \"almost.\" The idea—letting shoppers see how a jacket or a shade of lipstick would actually look on them—was always compelling...."
+  },
+  {
+   "title": "Bitcoin falls 1.3% as oil rises, chip stocks slide",
+   "url": "https://www.techinasia.com/crypto-trading-volume-falls-to-1-6t-lowest-since-june",
+   "source": "techinasia",
+   "total": 0,
+   "text": "Brent crude rose above US$91 a barrel after the US and Iran escalated hostilities around the Strait of Hormuz."
+  },
+  {
+   "title": "More brands are leaning on founders to drive social content",
+   "url": "https://www.modernretail.co/marketing/more-brands-are-leaning-on-founders-to-drive-social-content/?utm_campaign=modernretaildis&utm_medium=rss&utm_source=general-rss",
+   "source": "modernretail",
+   "total": 0,
+   "text": "Posting founder content is a key growth strategy for founder-led brands, but one that comes with a learning curve."
+  },
+  {
+   "title": "Pov: you are a SaaS founder in 2026",
+   "url": "https://www.reddit.com/r/SaaS/comments/1v2cwrm/pov_you_are_a_saas_founder_in_2026/",
+   "source": "reddit_saas",
+   "total": 0,
+   "text": "&#32; submitted by &#32;  /u/Sorry_Signal_5081   [link] &#32; [comments]"
+  },
+  {
+   "title": "rekursiv.ai (YC Summer 2026) – Scale AI scientists whose own breakthroughs accelerate the next.",
+   "url": "https://rekursiv.ai",
+   "source": "yc",
+   "total": 16,
+   "text": "Scale AI scientists whose own breakthroughs accelerate the next.\nWe're scaling self-improving AI scientist teams to ideate/experiment/discover, generating new knowledge autonomously. Their discoveries reduced ARC-1/2 costs by 10,000× while maintaining state-of-the-art accuracy and yielded material advances on combinatorial ML problems.\r\n\r\nWe believe that AI is bounded not by compute, but ideas. Scaling to millions of sessions of discovery enables leveraging its own discoveries and presents a novel training source capable of ushering a new era of self-reliant foundational models."
+  },
+  {
+   "title": "1 in 4 workers stay in unwanted jobs for health coverage, survey finds",
+   "url": "https://www.hrdive.com/news/1-in-5-workers-stay-unwanted-jobs-health-insurance-job-lock-gallup-west-health/825936/",
+   "source": "hrdive",
+   "total": 23,
+   "text": "More Americans are keeping jobs they would otherwise leave for fear of losing their insurance, as healthcare costs rise and nonemployer coverage seems less affordable, according to a new poll."
+  },
+  {
+   "title": "La inversión de la semana: La próxima década ya tiene señales claras",
+   "url": "gbrain://newsletters/revolution-inversion-semana-proxima-decada",
+   "source": "newsletters",
+   "total": 0,
+   "text": "# La capa que el mercado está ignorando: Infraestructura física de la IA\n\n**Tesis central:** Mientras la mayoría se pregunta qué empresa de IA va a ganar, el capital institucional ya está posicionado en otra capa: **la infraestructura física** que hará posible esa revolución.\n\n## Datos clave\n\n- **Energía:** La demanda eléctrica de data centers podría casi **duplicarse hacia 2030**\n- **Capex:** Los hyperscalers podrían invertir más de **$527 mil millones en infraestructura de IA en 2026**\n- **Cobre:** Podría enfrentar una demanda **24% mayor hacia 2035**\n- **Robótica:** El mercado de robótica industrial crece cerca de **10% anual** hacia la próxima década\n\n> \"La IA no flota en la nube. Corre sobre electricidad, metales, chips, servidores, redes y capacidad energética.\"\n\n## Sectores de posicionamiento antes del consenso\n\nLos vectores que definen la próxima década:\n1. **IA aplicada** (no las plataformas, las aplicaciones)\n2. **Energía y red eléctrica** (cuello de botella para data centers)\n3. **Cobre y materiales escasos** (demanda estructural por electrificación)\n4. **Uranio** (energía base para data centers)\n5. **Robótica industrial** (10% anual garantizado)\n6. **Economía espacial**"
+  },
+  {
+   "title": "Show HN: Firefox in WebAssembly",
+   "url": "https://developer.puter.com/labs/firefox-wasm/",
+   "source": "hackernews",
+   "total": 15,
+   "text": "This is the entire Firefox browser rendering to a &lt;canvas&gt; element. Gecko, all UI components, and the Spidermonkey JS engine are all compiled and running in WebAssembly.<p>Here are a few things you might find interesting:<p>- This is fully end to end encrypted! We use the WISP protocol for TCP-over-websockets.<p>- There is a novel WASM-&gt;JS JIT for experimental site speedup<p>- This port cost over 25k in opus&#x2F;fable tokens for debugging and JIT research<p>This was just a fun experiment to push the boundaries of WebAssembly. For a more usable &quot;browser in browser&quot; experience, we also built <a href=\"https:&#x2F;&#x2F;github.com&#x2F;HeyPuter&#x2F;browser.js\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;HeyPuter&#x2F;browser.js</a> that eats a bit less RAM."
+  },
+  {
+   "title": "Sam Altman’s biometric startup World raises $52.5M via crypto sale",
+   "url": "https://techcrunch.com/2026/07/24/sam-altmans-biometric-startup-world-raises-52-5-million-via-crypto-sale/",
+   "source": "techcrunch",
+   "total": 13,
+   "text": "Sam Altman's side project — which seeks to scan the world's eyeballs and turn them into unique digital identifiers — has raised some fresh cash through a crypto sale."
+  },
+  {
+   "title": "UK healthtech challenger using AI to cut lung disease test time clinches $19M",
+   "url": "https://tech.eu/2026/07/24/uk-health-startup-using-ai-to-cut-lung-disease-test-time-clinches-19m/",
+   "source": "techeu",
+   "total": 16,
+   "text": "A UK healthtech startup which has built AI-powered tech that it says reduces the test time for a lung disease that impacts nearly two million people in the UK from an hour to under five minutes has ra..."
+  },
+  {
+   "title": "Grab-backed GXS narrows loss on business lending",
+   "url": "https://www.techinasia.com/validus-nets-30m-series-led-khazanah-nasional",
+   "source": "techinasia",
+   "total": 0,
+   "text": "The bank's April 2025 acquisition of Validus Capital’s Singapore unit helped expand lending to small and medium-sized enterprises."
+  },
+  {
+   "title": "Walmart reveals soccer fans’ World Cup shopping habits",
+   "url": "https://www.modernretail.co/operations/walmart-reveals-soccer-fans-world-cup-shopping-habits/?utm_campaign=modernretaildis&utm_medium=rss&utm_source=general-rss",
+   "source": "modernretail",
+   "total": 0,
+   "text": "A new study from Walmart shows how its soccer-watching consumers planned to grocery shop during the World Cup, from how much they would spend to what kind of snacks they would buy — and the company has seen some of these results validated over the course of the tournament."
+  },
+  {
+   "title": "I don't believe this... just crossed $8k MRR. Am I rich yet?",
+   "url": "https://www.reddit.com/r/SaaS/comments/1v1ue8c/i_dont_believe_this_just_crossed_8k_mrr_am_i_rich/",
+   "source": "reddit_saas",
+   "total": 15,
+   "text": "Not naming the product, don't really want this to read as a plug. But I checked Stripe this morning half asleep and just stared at the number for a solid minute. $8k MRR. Genuinely did the math three times because it didn't feel real. Then I remembered that's before taxes, before tooling costs, before the months I paid myself basically nothing to keep it alive, and &quot;rich&quot; evaporated pretty fast. Still feels like a big deal though, so I'm just going to sit in it for a day before my brain finds a new number to be anxious about. Curious what MRR number, if any, actually made you feel like you'd made it, because apparently $8k isn't it for me and I want to know if that's a me problem or just how this always goes.  &#32; submitted by &#32;  /u/CoffeeArabixaDev   [link] &#32; [comments]"
+  },
+  {
+   "title": "Proprio Robotics (YC Summer 2026) – Building autonomous data centers",
+   "url": "https://www.propriorobotics.com/",
+   "source": "yc",
+   "total": 18,
+   "text": "Building autonomous data centers"
+  },
+  {
+   "title": "New grads have to compete with AI for entry-level roles, hiring managers say",
+   "url": "https://www.hrdive.com/news/new-grads-have-to-compete-with-ai-for-entry-level-roles-hiring/825810/",
+   "source": "hrdive",
+   "total": 27,
+   "text": "Nearly half of organizations now ask a senior worker plus AI to do the work of several entry-level grads, per a new report."
+  },
+  {
+   "title": "Chamath: Por qué oro, plata, platino y paladio subieron a la vez",
+   "url": "gbrain://newsletters/chamath-metales-macro-2026",
+   "source": "newsletters",
+   "total": 0,
+   "text": "# Señal macro: Bancos centrales prefieren oro sobre bonos del Tesoro\n\n**Primera vez desde 1996:** Los bancos centrales del mundo ahora mantienen más oro que bonos del Tesoro de EE.UU. como porcentaje de sus reservas.\n\n## Datos clave\n\n- **China:** Sus reservas de oro superan **74 millones de onzas**, tras años reduciendo tenencias de Treasuries\n- **S&P 500 en oro:** El S&P 500 **no ha hecho nuevos máximos desde el año 2000** si se mide en oro en vez de dólares (el oro elimina el efecto de expansión monetaria)\n- **Plata:** Superó **$100/oz en enero 2026**, forzando a fabricantes a rediseñar productos para usar metales más baratos\n- **Analogía histórica:** El último ciclo comparable fue en la década de 1970, que terminó con tasas de interés del 20% y un reset de política monetaria\n\n## ¿Por qué importa para emprendimiento?\n\n1. **El sistema monetario está en transición** — cuando los bancos centrales huyen de bonos hacia oro, el costo del capital cambia estructuralmente\n2. **Los activos físicos escasos ganan valor relativo** vs. activos financieros nominales\n3. **Señal de timing:** Si esto repite el ciclo de los 70s, estamos en las etapas tempranas de una reconfiguración monetaria que d"
+  },
+  {
+   "title": "Show HN: Juggler – an open-source GUI coding agent, by the creator of JUCE",
+   "url": "https://github.com/juggler-ai/juggler",
+   "source": "hackernews",
+   "total": 13,
+   "text": "Hello HN, I don&#x27;t post on here much, but wanted to get some eyes on a new project I&#x27;m just launching. I think we definitely need one more AI code agent..<p>I&#x27;m a long-term C++ dev, and over 30+ years I&#x27;ve created some successful audio dev tools (JUCE, the Tracktion DAW, the Cmajor DSP language). All of these came from me getting annoyed with something I had to use, and deciding to have a go at my own take on whatever it was.<p>So Juggler is my attempt at an AI code agent, after spending too many hours loving what the models could do, but hating the CLI experience, and having some opinions of what a better UX might be for this stuff.<p>Lots more blurb on the website and github, but a quick tech dump which might grab your attention if you&#x27;re into these things:<p>A session is a document, not a log file. Each conversation is a Yjs CRDT tree. It can branch into sub-threads (recursively), and you can drill down, backtrack, edit, undo&#x2F;redo, and inspect everything: tool calls, approvals, and the raw context JSON going to the model, etc. The UI is based around Finder-style Miller columns rather than a big doom-scroll, and is quick to navigate.<p>Because it&#x27"
+  }
+ ],
+ "deep": [
+  {
+   "title": "New grads have to compete with AI for entry-level roles, hiring managers say",
+   "url": "https://www.hrdive.com/news/new-grads-have-to-compete-with-ai-for-entry-level-roles-hiring/825810/",
+   "source": "hrdive",
+   "problema_score": 15,
+   "barrera_score": 10,
+   "replicabilidad": {
+    "nivel": "Alta",
+    "evidencia": "empresas chilenas también reducen headcount junior"
+   },
+   "ventana": {
+    "nivel": "Alta",
+    "evidencia": "tendencia recién emergente, sin solución local madura"
+   },
+   "tamano_mercado": {
+    "nivel": "Alta",
+    "evidencia": "todas las empresas con roles de entrada"
+   },
+   "resumen": "Encuesta muestra que casi la mitad de las empresas combinan un trabajador senior con IA para reemplazar funciones junior. Señal fuerte de cambio estructural en headcount, núcleo del interés del fundador en futuro del trabajo.",
+   "b2b_o_b2c": "B2B",
+   "componente_ia": true,
+   "tipo_fundador": "perfil de datos/ops que construya herramientas de workforce planning con IA",
+   "mercado_actual": "Estados Unidos (encuesta corporativa)",
+   "company_url": "",
+   "funding_raised": "desconocido",
+   "stage": "Desconocido",
+   "por_que_ahora": "LLMs ya ejecutan tareas de nivel junior de forma confiable, cambiando la lógica de contratación.",
+   "modelo_negocio": "N/A - señal de mercado, no producto propio",
+   "competencia_local": "no identificada",
+   "fit_tesis": "Futuro del trabajo",
+   "next_step": "hablar con gerentes de RRHH de grandes empresas chilenas sobre cómo están redefiniendo roles junior con IA",
+   "valida_idea_propia": "",
+   "fundadores": "no identificados",
+   "redes_sociales": "",
+   "fit_yc": "Bajo",
+   "tipo_candidato": "Tendencia"
+  },
+  {
+   "title": "When Hollywood feared AI, Filmustage bet on pre-production instead",
+   "url": "https://tech.eu/2026/07/24/when-hollywood-feared-ai-filmustage-bet-on-pre-production-instead/",
+   "source": "techeu",
+   "problema_score": 14,
+   "barrera_score": 10,
+   "replicabilidad": {
+    "nivel": "Baja",
+    "evidencia": "industria audiovisual chilena muy pequeña"
+   },
+   "ventana": {
+    "nivel": "Baja",
+    "evidencia": "vertical de nicho global sin urgencia local"
+   },
+   "tamano_mercado": {
+    "nivel": "Media",
+    "evidencia": "mercado global de producción cinematográfica"
+   },
+   "resumen": "Filmustage usa IA para automatizar tareas de pre-producción en cine (desglose de guiones, cronogramas), con MRR creciente. Poco relevante para las industrias foco del fundador en Chile.",
+   "b2b_o_b2c": "B2B",
+   "componente_ia": true,
+   "tipo_fundador": "técnico con conocimiento de industria audiovisual",
+   "mercado_actual": "Global (Hollywood y producción internacional)",
+   "company_url": "",
+   "funding_raised": "desconocido",
+   "stage": "Desconocido",
+   "por_que_ahora": "LLMs ya pueden analizar guiones y automatizar breakdown/scheduling con precisión aceptable.",
+   "modelo_negocio": "SaaS por suscripción a productoras, ticket variable según features",
+   "competencia_local": "no identificada",
+   "fit_tesis": "Otro",
+   "next_step": "descartar salvo pivot a otra vertical, monitorear si emergen equivalentes en LatAm",
+   "valida_idea_propia": "",
+   "fundadores": "Egor Dubrovsky",
+   "redes_sociales": "",
+   "fit_yc": "Medio",
+   "tipo_candidato": "Empresa específica"
+  },
+  {
+   "title": "When AI Stops Experimenting and Starts Scaling [Sponsored]",
+   "url": "https://tech.eu/2026/07/24/when-ai-stops-experimenting-and-starts-scaling/",
+   "source": "techeu",
+   "problema_score": 14,
+   "barrera_score": 8,
+   "replicabilidad": {
+    "nivel": "Media",
+    "evidencia": "retailers de moda chilenos podrían integrar try-on"
+   },
+   "ventana": {
+    "nivel": "Media",
+    "evidencia": "players globales ya escalando, ventana se achica"
+   },
+   "tamano_mercado": {
+    "nivel": "Alta",
+    "evidencia": "mercado global de ecommerce de moda/beauty"
+   },
+   "resumen": "Pieza patrocinada sobre cómo la tecnología de virtual try-on finalmente escala gracias a mejoras en IA, tras una década de ser 'casi'. Relevante para ecommerce de moda, aunque es contenido de tendencia sin una empresa única a replicar.",
+   "b2b_o_b2c": "B2B2C",
+   "componente_ia": true,
+   "tipo_fundador": "técnico en visión computacional + comercial retail",
+   "mercado_actual": "Global (retail y ecommerce de moda/beauty)",
+   "company_url": "",
+   "funding_raised": "desconocido",
+   "stage": "Desconocido",
+   "por_que_ahora": "Modelos de IA generativa permiten renderizado realista en tiempo real a costo bajo.",
+   "modelo_negocio": "SaaS/licencia por integración a ecommerce, fee por transacción o suscripción",
+   "competencia_local": "no identificada",
+   "fit_tesis": "Ecommerce",
+   "next_step": "evaluar proveedores de virtual try-on para ofrecer integración a retailers chilenos de moda",
+   "valida_idea_propia": "",
+   "fundadores": "no identificados",
+   "redes_sociales": "",
+   "fit_yc": "Medio",
+   "tipo_candidato": "Tendencia"
+  },
+  {
+   "title": "Waddle Labs (YC Summer 2026) – Agents for robotics control.",
+   "url": "https://www.waddlelabs.ai/",
+   "source": "yc",
+   "problema_score": 16,
+   "barrera_score": 5,
+   "replicabilidad": {
+    "nivel": "Media",
+    "evidencia": "minería chilena usa robótica/automatización avanzada"
+   },
+   "ventana": {
+    "nivel": "Media",
+    "evidencia": "adopción de agentes IA en robótica industrial recién comienza"
+   },
+   "tamano_mercado": {
+    "nivel": "Media",
+    "evidencia": "mercado de control robótico industrial en crecimiento"
+   },
+   "resumen": "Startup de YC que construye agentes de IA para controlar robots físicos, dirigido a fabricantes y operadores de robótica industrial. Podría tener aplicación en automatización minera chilena, aunque requiere socio técnico especializado en robótica.",
+   "b2b_o_b2c": "B2B",
+   "componente_ia": true,
+   "tipo_fundador": "ingeniero de robótica + IA",
+   "mercado_actual": "Estados Unidos (etapa temprana, YC)",
+   "company_url": "https://www.waddlelabs.ai/",
+   "funding_raised": "desconocido",
+   "stage": "Pre-seed",
+   "por_que_ahora": "Avances en modelos multimodales permiten agentes de control robótico más generalizables y económicos.",
+   "modelo_negocio": "SaaS/licencia por robot desplegado o integración con fabricantes",
+   "competencia_local": "no identificada",
+   "fit_tesis": "Industrias CL",
+   "next_step": "explorar con mineras chilenas si usan robots que podrían beneficiarse de agentes de control IA, requiere socio técnico",
+   "valida_idea_propia": "",
+   "fundadores": "no identificados",
+   "redes_sociales": "",
+   "fit_yc": "Alto",
+   "tipo_candidato": "Empresa específica"
+  },
+  {
+   "title": "1 in 4 workers stay in unwanted jobs for health coverage, survey finds",
+   "url": "https://www.hrdive.com/news/1-in-5-workers-stay-unwanted-jobs-health-insurance-job-lock-gallup-west-health/825936/",
+   "source": "hrdive",
+   "problema_score": 10,
+   "barrera_score": 5,
+   "replicabilidad": {
+    "nivel": "Baja",
+    "evidencia": "sistema de salud chileno no ligado igual al empleo"
+   },
+   "ventana": {
+    "nivel": "Baja",
+    "evidencia": "mecanismo específico del sistema de salud de EE.UU."
+   },
+   "tamano_mercado": {
+    "nivel": "Media",
+    "evidencia": "grande en EE.UU., no aplica directo a Chile"
+   },
+   "resumen": "Encuesta indica que uno de cada cuatro trabajadores en EE.UU. se queda en empleos no deseados por miedo a perder cobertura de salud. El mecanismo depende del vínculo empleo-seguro típico de EE.UU., poco replicable en el sistema chileno.",
+   "b2b_o_b2c": "B2C",
+   "componente_ia": false,
+   "tipo_fundador": "",
+   "mercado_actual": "Estados Unidos",
+   "company_url": "",
+   "funding_raised": "desconocido",
+   "stage": "Desconocido",
+   "por_que_ahora": "Aumento de costos de salud y menor oferta de seguros individuales en EE.UU.",
+   "modelo_negocio": "N/A",
+   "competencia_local": "no identificada",
+   "fit_tesis": "Otro",
+   "next_step": "descartar por baja replicabilidad en sistema de salud chileno",
+   "valida_idea_propia": "",
+   "fundadores": "no identificados",
+   "redes_sociales": "",
+   "fit_yc": "Bajo",
+   "tipo_candidato": "Tendencia"
+  },
+  {
+   "title": "Soluciones Ecommerce",
+   "url": "gbrain://inbox/soluciones-ecommerce",
+   "source": "brain-inbox",
+   "problema_score": 5,
+   "barrera_score": 5,
+   "replicabilidad": {
+    "nivel": "Alta",
+    "evidencia": "ecommerce chileno carece de estas features avanzadas"
+   },
+   "ventana": {
+    "nivel": "Media",
+    "evidencia": "features ya existen globalmente, falta player local"
+   },
+   "tamano_mercado": {
+    "nivel": "Alta",
+    "evidencia": "todo ecommerce global es mercado potencial"
+   },
+   "resumen": "Nota personal del fundador preguntando qué soluciones existen para diferenciar la experiencia de ecommerce (try-on, agente de recomendación, reviews, gamificación). Es una reflexión propia, no una empresa concreta.",
+   "b2b_o_b2c": "B2B",
+   "componente_ia": true,
+   "tipo_fundador": "perfil producto/comercial que integre o construya soluciones de experiencia ecommerce",
+   "mercado_actual": "",
+   "company_url": "",
+   "funding_raised": "desconocido",
+   "stage": "Idea",
+   "por_que_ahora": "IA generativa y computer vision bajaron el costo de features como try-on y recomendación conversacional.",
+   "modelo_negocio": "SaaS o fee de integración cobrado a dueños de ecommerce",
+   "competencia_local": "no identificada",
+   "fit_tesis": "Ecommerce",
+   "next_step": "mapear 5 soluciones existentes (try-on, agentes de compra) y testear con 2-3 ecommerce chilenos medianos",
+   "valida_idea_propia": "",
+   "fundadores": "no identificados",
+   "redes_sociales": "",
+   "fit_yc": "Bajo",
+   "tipo_candidato": "Reflexión"
+  },
+  {
+   "title": "Show HN: I replaced a $120k bowling center system with $1,600 in ESP32s",
+   "url": "https://news.ycombinator.com/item?id=48968606",
+   "source": "hackernews",
+   "problema_score": 0,
+   "barrera_score": 0,
+   "replicabilidad": {
+    "nivel": "Baja",
+    "evidencia": "excluido: hardware manufactura propia"
+   },
+   "ventana": {
+    "nivel": "Baja",
+    "evidencia": "excluido: hardware manufactura propia"
+   },
+   "tamano_mercado": {
+    "nivel": "Baja",
+    "evidencia": "excluido: hardware manufactura propia"
+   },
+   "resumen": "Reemplazo DIY de sistema de bowling con hardware propio, nicho irrelevante para la tesis.",
+   "b2b_o_b2c": "",
+   "componente_ia": false,
+   "tipo_fundador": "",
+   "mercado_actual": "",
+   "company_url": "",
+   "funding_raised": "",
+   "stage": "",
+   "por_que_ahora": "",
+   "modelo_negocio": "",
+   "competencia_local": "",
+   "fit_tesis": "",
+   "next_step": "",
+   "valida_idea_propia": "",
+   "fundadores": "",
+   "redes_sociales": "",
+   "fit_yc": "",
+   "tipo_candidato": ""
+  },
+  {
+   "title": "I just got my first paying customer. ❤️",
+   "url": "https://www.reddit.com/r/SaaS/comments/1v4t3i7/i_just_got_my_first_paying_customer/",
+   "source": "reddit_saas",
+   "problema_score": 0,
+   "barrera_score": 0,
+   "replicabilidad": {
+    "nivel": "Baja",
+    "evidencia": "excluido: dev tool sin comprador"
+   },
+   "ventana": {
+    "nivel": "Baja",
+    "evidencia": "excluido: dev tool sin comprador"
+   },
+   "tamano_mercado": {
+    "nivel": "Baja",
+    "evidencia": "excluido: dev tool sin comprador"
+   },
+   "resumen": "Post de anécdota personal sobre primera venta de una extensión de Chrome para desarrolladores, sin comprador no-técnico claro.",
+   "b2b_o_b2c": "",
+   "componente_ia": false,
+   "tipo_fundador": "",
+   "mercado_actual": "",
+   "company_url": "",
+   "funding_raised": "",
+   "stage": "",
+   "por_que_ahora": "",
+   "modelo_negocio": "",
+   "competencia_local": "",
+   "fit_tesis": "",
+   "next_step": "",
+   "valida_idea_propia": "",
+   "fundadores": "",
+   "redes_sociales": "",
+   "fit_yc": "",
+   "tipo_candidato": ""
+  }
+ ],
+ "gate_urls": [
+  "https://www.hrdive.com/news/new-grads-have-to-compete-with-ai-for-entry-level-roles-hiring/825810/"
+ ],
+ "cost_usd": 0.1124
+}
