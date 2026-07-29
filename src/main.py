@@ -97,8 +97,16 @@ def run() -> Path:
     passing = [s for s in scored if s.passes_gate(config.MIN_OBJETIVO)]
     top_gate = passing[: config.MAX_IDEAS]
 
-    # Top 5 por score para el email (con o sin gate — siempre hay algo que ver)
-    top_email = scored[: config.MAX_IDEAS]
+    # Email separado en dos secciones: empresas concretas (estudiables,
+    # replicables) vs tendencias/reflexiones (señal de mercado, sin un jugador
+    # único). Sin este split, las tendencias — que suelen puntuar alto por
+    # agregar señal de varias empresas — desplazaban a las empresas del top 5.
+    TENDENCIA_TYPES = {"Tendencia", "Reflexión"}
+    empresas_scored = [s for s in scored if s.tipo_candidato not in TENDENCIA_TYPES]
+    tendencias_scored = [s for s in scored if s.tipo_candidato in TENDENCIA_TYPES]
+    top_empresas = empresas_scored[: config.MAX_IDEAS_EMPRESA]
+    top_tendencias = tendencias_scored[: config.MAX_IDEAS_TENDENCIA]
+    top_email = top_empresas + top_tendencias
 
     # El reporte .md (el que se captura a GBrain) lleva TODAS las ideas con
     # análisis profundo, no solo las que pasan el gate — así el segundo cerebro
@@ -120,8 +128,8 @@ def run() -> Path:
 
     _capture_to_gbrain(out)
 
-    # --- Envío de email HTML (siempre top 5, marcando cuáles pasaron el gate) ---
-    _send_email(top_email, passing_ids={s.url for s in top_gate},
+    # --- Envío de email HTML (empresas + tendencias, marcando cuáles pasaron el gate) ---
+    _send_email(top_empresas, top_tendencias, passing_ids={s.url for s in top_gate},
                 total_evaluados=len(scored), week=week,
                 error=scoring_failed, cost_usd=result.cost_usd,
                 warnings=warnings, momentum=momentum)
@@ -246,12 +254,13 @@ def _capture_to_gbrain(report_path: Path) -> None:
         print(f"[gbrain] no disponible: {e}")
 
 
-def _send_email(top, passing_ids: set, total_evaluados: int, week: int,
-                error: bool = False, cost_usd: float = 0.0,
+def _send_email(empresas: list, tendencias: list, passing_ids: set, total_evaluados: int,
+                week: int, error: bool = False, cost_usd: float = 0.0,
                 warnings: list[str] | None = None,
                 momentum: list[str] | None = None) -> None:
-    html = render_html(top, passing_ids=passing_ids, total_evaluados=total_evaluados,
-                       min_objetivo=config.MIN_OBJETIVO, error=error, cost_usd=cost_usd,
+    html = render_html(empresas, tendencias, passing_ids=passing_ids,
+                       total_evaluados=total_evaluados, min_objetivo=config.MIN_OBJETIVO,
+                       error=error, cost_usd=cost_usd,
                        warnings=warnings or [], momentum=momentum or [])
     n_passed = len(passing_ids)
     if error:
@@ -259,7 +268,9 @@ def _send_email(top, passing_ids: set, total_evaluados: int, week: int,
     else:
         subject = (
             f"🔍 Scouting Semanal — Semana {week} · "
-            f"{n_passed} idea{'s' if n_passed != 1 else ''} sobre el gate · top {len(top)} mostradas"
+            f"{n_passed} idea{'s' if n_passed != 1 else ''} sobre el gate · "
+            f"{len(empresas)} empresa{'s' if len(empresas) != 1 else ''} · "
+            f"{len(tendencias)} tendencia{'s' if len(tendencias) != 1 else ''}"
         )
     send_html(subject, html)
 

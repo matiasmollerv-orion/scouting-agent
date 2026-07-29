@@ -20,6 +20,9 @@ HTML_TEMPLATE = Template("""
             border-radius: 8px 8px 0 0; }
   .header h1 { margin: 0; font-size: 20px; font-weight: 600; }
   .header p  { margin: 6px 0 0; color: #aaa; font-size: 13px; }
+  .section-title { margin: 22px 0 4px; font-size: 15px; font-weight: 700;
+                    color: #374151; padding-left: 2px; }
+  .section-sub { margin: 0 0 4px; font-size: 12px; color: #9ca3af; padding-left: 2px; }
   .card { background: white; margin-top: 12px; border-radius: 8px;
           border: 1px solid #e8e8e8; overflow: hidden; }
   .card.passed { border-left: 4px solid #16a34a; }
@@ -85,7 +88,7 @@ HTML_TEMPLATE = Template("""
 <div class="container">
   <div class="header">
     <h1>🔍 Scouting Semanal — Semana {{ week }}</h1>
-    <p>{{ today }} · {{ n_passed }} sobre el gate · {{ total_evaluados }} candidatos evaluados · top {{ ideas|length }} mostradas</p>
+    <p>{{ today }} · {{ n_passed }} sobre el gate · {{ total_evaluados }} candidatos evaluados · {{ empresas|length }} empresas + {{ tendencias|length }} tendencias mostradas</p>
   </div>
 
   {% if error %}
@@ -102,11 +105,11 @@ HTML_TEMPLATE = Template("""
   </div>
   {% endif %}
 
-  {% for idea in ideas %}
+  {% macro card(idea, rank) %}
   {% set passed = idea.url in passing_ids %}
   <div class="card {{ 'passed' if passed else 'not-passed' }}">
     <div class="card-header">
-      <div class="rank">#{{ loop.index }}</div>
+      <div class="rank">#{{ rank }}</div>
       <span class="gate-badge {{ 'passed' if passed else 'not-passed' }}">
         {{ '✓ Gate' if passed else 'Bajo gate' }}
       </span>
@@ -197,7 +200,19 @@ HTML_TEMPLATE = Template("""
       {% if idea.redes_sociales %} · {{ idea.redes_sociales }}{% endif %}
     </div>
   </div>
-  {% endfor %}
+  {% endmacro %}
+
+  {% if empresas %}
+  <div class="section-title">🏢 Empresas y emprendimientos concretos</div>
+  <div class="section-sub">Candidatos únicos y estudiables — algo que podrías investigar hoy.</div>
+  {% for idea in empresas %}{{ card(idea, loop.index) }}{% endfor %}
+  {% endif %}
+
+  {% if tendencias %}
+  <div class="section-title">📊 Tendencias y señales de mercado</div>
+  <div class="section-sub">Análisis que cubren varios players — inteligencia de mercado, no un blueprint único.</div>
+  {% for idea in tendencias %}{{ card(idea, loop.index) }}{% endfor %}
+  {% endif %}
 
   <div class="legend">
     <strong>✓ Gate</strong> = score ≥ 24/40 + replicabilidad ≠ Baja + al menos una señal Alta.
@@ -219,16 +234,18 @@ HTML_TEMPLATE = Template("""
 """)
 
 
-def render_html(ideas: list[ScoredItem], passing_ids: set[str],
-                total_evaluados: int, min_objetivo: int,
+def render_html(empresas: list[ScoredItem], tendencias: list[ScoredItem],
+                passing_ids: set[str], total_evaluados: int, min_objetivo: int,
                 error: bool = False, cost_usd: float = 0.0,
                 warnings: list[str] | None = None,
                 momentum: list[str] | None = None) -> str:
     today = date.today()
+    all_ideas = empresas + tendencias
     return HTML_TEMPLATE.render(
-        ideas=ideas,
+        empresas=empresas,
+        tendencias=tendencias,
         passing_ids=passing_ids,
-        n_passed=sum(1 for i in ideas if i.url in passing_ids),
+        n_passed=sum(1 for i in all_ideas if i.url in passing_ids),
         total_evaluados=total_evaluados,
         min_objetivo=min_objetivo,
         error=error,

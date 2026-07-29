@@ -84,7 +84,13 @@ empezar con la IA.
 **Excluir explícitamente:**
 - Dev tools o herramientas para programadores sin comprador no-técnico claro
   (debuggers, CLI tools, librerías, editores, IDE plugins, utilidades de sistema).
-- Hardware que requiere manufactura propia.
+- Startups de hardware donde el FUNDADOR debe diseñar y fabricar un producto
+  físico nuevo desde cero (ej: un wearable, un gadget IoT, un dron propio).
+  **Esto NO excluye** negocios manufactureros/industriales YA EXISTENTES que
+  innovaron su modelo de negocio, distribución o proceso (ej: una fábrica de
+  plásticos que cambió cómo vende o produce) — esos van en "Tradicional
+  reinventado": el fundador podría replicar el MODELO asociándose con un
+  socio técnico/de producción, no fabricar él mismo desde cero.
 - Negocios que necesitan licencias regulatorias pesadas desde el día 1.
 - Marketplaces genéricos que compiten directo con MeLi/Rappi sin diferenciación.
 
@@ -110,6 +116,12 @@ Para cada candidato NO excluido producís:
   evidencia disponible (engagement, lenguaje de tracción, funding mencionado,
   recurrencia del tema). NO premies hype mainstream sin sustancia. Sé estricto:
   un post viral sin problema claro no merece más de 10.
+  **Ojo con los candidatos "Tendencia"** (ver `tipo_candidato` más abajo): que
+  un artículo mencione 5 startups financiadas NO significa que el problema sea
+  5 veces más fuerte que el de una sola empresa. Evaluá la tendencia como UN
+  dato, con el mismo rigor que a una empresa — no sumes ni promediés la
+  tracción de cada player mencionado. Sumar señal así infla artificialmente
+  estos candidatos por encima de empresas concretas y más accionables.
 - `barrera_score` (0-15): ¿se puede lanzar un MVP sin 10 ingenieros ni USD 1M?
   Más puntaje = barrera MÁS razonable (más fácil de lanzar). Un negocio que
   exige hardware, licencias regulatorias pesadas o capital intensivo va bajo.

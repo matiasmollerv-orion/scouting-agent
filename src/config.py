@@ -23,6 +23,12 @@ COST_LIMIT_USD = float(os.environ.get("SCOUTING_COST_LIMIT_USD", "0.30"))
 # --- Gate de scoring ---
 MIN_OBJETIVO = int(os.environ.get("SCOUTING_MIN_OBJETIVO", "24"))  # sobre 40
 MAX_IDEAS = 5
+# El email separa "Empresas" (candidato único, estudiable) de "Tendencias"
+# (análisis que cubre varios players). Sin esto, las tendencias — que suelen
+# puntuar alto por agregar señal de varias empresas — desplazaban a las
+# empresas concretas del top 5. Overridable por env.
+MAX_IDEAS_EMPRESA = int(os.environ.get("SCOUTING_MAX_IDEAS_EMPRESA", "4"))
+MAX_IDEAS_TENDENCIA = int(os.environ.get("SCOUTING_MAX_IDEAS_TENDENCIA", "2"))
 # Cuántos pasan del triage al análisis profundo. Overridable por env para
 # mini-runs reales baratos (ej: SCOUTING_TOP_DEEP=2 ≈ $0.01 total).
 TOP_DEEP = int(os.environ.get("SCOUTING_TOP_DEEP", "8"))
@@ -108,6 +114,10 @@ RELEVANCE_KEYWORDS = [
     "cashierless", "autonomous store", "ghost kitchen", "cloud kitchen",
     "laundry", "car wash", "barbershop", "dry cleaning", "self-storage",
     "moving service", "grocery", "convenience store", "pharmacy", "gym",
+    # Tesis: manufactura/industria tradicional reinventada — el ejemplo que
+    "manufacturing startup", "contract manufacturer", "injection molding",
+    "factory automation", "industrial automation", "reshoring",
+    "advanced manufacturing", "small manufacturer", "family-owned factory",
     # Tesis: servicios para hogares
     "home services", "household", "home management", "cleaning service",
     # Tesis: grandes industrias chilenas
@@ -159,7 +169,8 @@ THEME_KEYWORDS = {
         "reinventing", "disrupting", "reimagining", "tech-enabled",
         "on-demand", "brick-and-mortar", "legacy industry", "dark store",
         "cashierless", "ghost kitchen", "cloud kitchen", "refurbished",
-        "recommerce", "laundry", "car wash", "grocery",
+        "recommerce", "laundry", "car wash", "grocery", "manufacturing",
+        "factory", "injection molding", "contract manufacturer",
     ],
     "Industrias CL": [
         "mining", "aquaculture", "agtech", "agriculture", "fishery", "salmon",
@@ -185,6 +196,10 @@ RSS_FEEDS = {
     "joshbersin": "https://joshbersin.com/feed/",       # analista #1 de HR tech
     "charter":    "https://charterworks.com/feed/",     # periodismo futuro del trabajo
     "hrdive":     "https://www.hrdive.com/feeds/news/", # noticias industria HR
+    # Manufactura/industria tradicional (tesis: tradicional reinventado —
+    # el hueco real: HN/TechCrunch casi nunca cubren una fábrica de plásticos
+    # que cambió de modelo. Mismo publisher que hrdive (Industry Dive).
+    "manufacturingdive": "https://www.manufacturingdive.com/feeds/news/",
     # "worklife": muerta — último post dic 2025
     # "wired": eliminada — solo reviews de productos de consumo, sin señal de negocio
 }

@@ -21,8 +21,10 @@ decidir cuáles merecen análisis profundo.
 
 **Excluir (problema_score=0 y barrera_score=0):**
 - Dev tools para programadores sin comprador no-técnico claro.
-- Hardware con manufactura propia. Licencias regulatorias pesadas día 1.
-- Marketplaces genéricos vs MeLi/Rappi.
+- Startups de hardware donde el fundador fabrica un producto nuevo desde cero
+  (wearable, gadget IoT). NO excluye fábricas/manufactura YA EXISTENTE que
+  innovó su modelo (eso es "Tradicional reinventado", puntuar generoso).
+- Licencias regulatorias pesadas día 1. Marketplaces genéricos vs MeLi/Rappi.
 
 **Scores:**
 - `problema_score` (0-25): ¿señal de problema real? (tracción, funding,
