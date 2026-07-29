@@ -27,12 +27,14 @@ _WEEK_RE = re.compile(r"(\d{4})-W(\d{2})")
 
 
 def week_to_date(week_str: str) -> date | None:
-    """Lunes de la semana ISO (ej: '2026-W28' -> 2026-07-06)."""
+    """Sábado de la semana ISO — cuando realmente corre el pipeline (ej:
+    '2026-W30' -> 2026-07-25). Usar el lunes (día 1) confundía: mostraba
+    la corrida del sábado 25 como si fuera del 20, pareciendo desactualizada."""
     m = _WEEK_RE.match(str(week_str))
     if not m:
         return None
     try:
-        return date.fromisocalendar(int(m.group(1)), int(m.group(2)), 1)
+        return date.fromisocalendar(int(m.group(1)), int(m.group(2)), 6)
     except ValueError:
         return None
 
