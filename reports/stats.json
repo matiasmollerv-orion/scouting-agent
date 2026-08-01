@@ -96,5 +96,40 @@
    "Tradicional reinventado": 8,
    "Industrias CL": 6
   }
+ },
+ {
+  "week": "2026-W31",
+  "sources": {
+   "hackernews": 1145,
+   "techcrunch": 143,
+   "mit": 36,
+   "techeu": 67,
+   "restofworld": 16,
+   "modernretail": 34,
+   "joshbersin": 2,
+   "charter": 13,
+   "hrdive": 47,
+   "manufacturingdive": 26,
+   "reddit_saas": 75,
+   "yc": 74,
+   "techinasia": 31,
+   "newsletters": 31,
+   "brain-inbox": 6
+  },
+  "candidates": 30,
+  "scored": 8,
+  "gate": 1,
+  "cost_usd": 0.0927,
+  "themes": {
+   "Futuro del trabajo": 39,
+   "IA agéntica": 81,
+   "Wellness": 16,
+   "Ecommerce/DTC": 8,
+   "Tendencias consumo": 0,
+   "Fintech/Clase media": 14,
+   "Marketplace": 14,
+   "Tradicional reinventado": 25,
+   "Industrias CL": 5
+  }
  }
 ]

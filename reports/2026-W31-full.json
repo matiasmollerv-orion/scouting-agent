@@ -1,0 +1,517 @@
+{
+ "week": "2026-W31",
+ "triage": [
+  {
+   "title": "Show HN: Open-source engine running Gemma 4 26B in 2 GB RAM on any M-series Mac",
+   "url": "https://github.com/drumih/turbo-fieldfare",
+   "source": "hackernews",
+   "total": 17,
+   "text": "Hi HN,<p>I built a specialized inference engine for running 4-bit Gemma 4 26B-A4B-IT on any M-series Mac using about 2 GB of RAM. It is called TurboFieldfare and is written in Swift and Metal.<p>I have always adored on-device AI. It feels like magic that you can run a powerful NN on your Mac or iPhone. So I wanted to push the limits a bit and run a model whose weights don’t fit in memory.<p>The model’s 4-bit quantized weights occupy roughly 14 GB, which makes running it with conventional inference tools almost impossible on an 8 GB or even 16 GB Mac once the OS, applications, and KV cache are included.<p>The trick is to keep the shared part of the model and the KV cache in RAM, then stream only the routed experts needed for each token from SSD. An SSD is way slower than RAM, so the runtime uses a small expert cache and bounded parallel `pread`. While those reads are in flight, the GPU runs the shared part of the layer.<p>I ran more than 100 experiments. Most didn’t work. A few got me here. The experiments are described in the GitHub repo.<p>It currently generates 5–6 tok&#x2F;s on an 8 GB M2 MacBook Air and 31–35 tok&#x2F;s on an M5 MacBook Pro.<p>I also added an experimental OpenA"
+  },
+  {
+   "title": "Silicon Valley loves young founders. Until it doesn’t.",
+   "url": "https://techcrunch.com/2026/07/31/build-in-public-fail-in-public-what-its-like-to-be-a-founder-under-20-right-now/",
+   "source": "techcrunch",
+   "total": 0,
+   "text": "AI tools have democratized the opportunity to build, shortening the timelines of success and enabling more young people to start successful companies without stepping foot inside a Big Tech company."
+  },
+  {
+   "title": "Lovable snaps up team behind Swedish AI agent startup Nalvin",
+   "url": "https://tech.eu/2026/07/31/lovable-snaps-up-team-behind-swedish-ai-agent-startup-nalvin/",
+   "source": "techeu",
+   "total": 0,
+   "text": "Swedish vibe coding startup Lovable has acquired the team behind AI agent startup Nalvin, as it looks to drive growth by cherry-picking top founders from startups. Stockholm-based Nalvin is an AI agen..."
+  },
+  {
+   "title": "In China, people are renting out their faces to AI",
+   "url": "https://restofworld.org/2026/china-ai-microdramas-face-licensing/?utm_source=rss&utm_medium=rss&utm_campaign=feeds",
+   "source": "restofworld",
+   "total": 14,
+   "text": "New platforms are paying people to license their likeness for AI-generated dramas and ads, creating a new marketplace for biometric identity."
+  },
+  {
+   "title": "How new wellness brand Plainspeak is using mail-in samples to acquire customers",
+   "url": "https://www.modernretail.co/marketing/how-new-wellness-brand-plainspeak-is-using-mail-in-samples-to-acquire-customers/?utm_campaign=modernretaildis&utm_medium=rss&utm_source=general-rss",
+   "source": "modernretail",
+   "total": 20,
+   "text": "New women's wellness brand Plainspeak is using USPS mail-in samples to drive subscriptions for its women’s supplement, sidestepping paid ads. The founders are betting on the analog strategy to build a loyal customer base."
+  },
+  {
+   "title": "Employers may not be training workers well enough for widespread AI disruption",
+   "url": "https://www.hrdive.com/news/employers-may-not-be-training-workers-well-enough-for-widespread-ai-disrupt/826672/",
+   "source": "hrdive",
+   "total": 0,
+   "text": "Advanced skills, such as managing AI agents, do not tend to be the focus of employer training, The Conference Board said in a report."
+  },
+  {
+   "title": "Boeing’s recovery momentum surges with $24.6B revenue in Q2",
+   "url": "https://www.manufacturingdive.com/news/boeing-q2-earnings-2026-bca-bds-speea-arizona/826382/",
+   "source": "manufacturingdive",
+   "total": 0,
+   "text": "The plane maker expects to generate a cash flow between $1 billion and $3 billion and aims to deliver up to 600 commercial planes by the end of 2026."
+  },
+  {
+   "title": "First real money ever made from my SaaS!!",
+   "url": "https://www.reddit.com/r/SaaS/comments/1v950sz/first_real_money_ever_made_from_my_saas/",
+   "source": "reddit_saas",
+   "total": 0,
+   "text": "I know this isn't that big of a deal, but seeing how 2 years of learning and building a web solution as a part time hobby is starting to make me some money, I just can't describe the happiness it made me feel.  The app is subscription based with monthly or yearly payments. Since Stripe isn't supported in my country, and I'm not a full business yet, I just went with Paddle, and selected Euro as the subscription currency since its the second most used currency in our country.  Why cash and not digitally? First, my currency is &quot;DH&quot; which stands for Moroccan Dirham. And: let oneEuro = &quot;10.6 DH&quot; let oneUSD = &quot;9.3 DH&quot; Since Euro is volatile and raising in value, and I'm listing my plans as 15€ and 30€.. the users get afraid of wanting to subscribe monthly or yearly, because 15€ could increase monthly in value (1st month ~160DH, 2nd month ~170dh and so on) and 15$ is worth less than 150DH (about 140DH...) So not very profitable for me. So I built a manual solution by choosing bank transfers or cash in hands instead, at agreed times as in the subsciption invoice my app generates, with built in notification reminders.  This is just a temporary solution until I "
+  },
+  {
+   "title": "Atlia (YC Summer 2026) – We are the AI-native property management company",
+   "url": "https://www.atlia.com",
+   "source": "yc",
+   "total": 29,
+   "text": "We are the AI-native property management company\nWe are making the AI-native property management company. \r\n\r\nWe manage short-term rental properties by running operations completely autonomously, letting us operate with extremely low overheads. This lets us offer the best owner and guest experiences with the lowest management rates in the country.\r\n\r\nOur services are initially starting in the greater San Diego and Fort Lauderdale regions."
+  },
+  {
+   "title": "Malaysia’s KWAP seeks to recover $40m from eFishery",
+   "url": "https://www.techinasia.com/indonesian-iot-dycodex-founder-denies-role-in-efishery-fraud-case",
+   "source": "techinasia",
+   "total": 0,
+   "text": "KWAP said its 2.51% stake made it a minority shareholder, alongside other institutional investors affected by the misconduct."
+  },
+  {
+   "title": "The path to artificial superintelligence",
+   "url": "https://www.technologyreview.com/2026/07/27/1140724/the-path-to-artificial-superintelligence/",
+   "source": "mit",
+   "total": 0,
+   "text": "Imagine a healthcare system made up of multiple AI agents: one that manages symptom assessment, another scheduling, a third insurance, and a fourth pharmacy. Each is an expert in its domain. But they all have their own distinct knowledge and objectives. Today they can exchange data, but they are not yet able to actually coordinate&#8230;"
+  },
+  {
+   "title": "Strategy Breakdowns The Sony Walkman",
+   "url": "gbrain://newsletters/strategy-breakdowns-the-sony-walkman",
+   "source": "newsletters",
+   "total": 0,
+   "text": "# 🎯 The Sony Walkman\n\n- **De:** Strategy Breakdowns <strategybreakdowns@mail.beehiiv.com>\n- **Fecha:** Wed, 1 Jul 2026 13:19:17 +0000\n- **Capturado:** 2026-07-05 12:24\n\n---\n\nView image: (https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80/uploads/asset/file/52bbc694-aa8b-483f-938b-5821eba97524/Email_header_Final_Cut_Opt_01.gif?t=1731078182)\nFollow image link: (https://strategybreakdowns.com/)\nCaption: \n\n----------\nRead on [our website](https://strategybreakdowns.com/p/sony-walkman)\n\n\n----------Read time: **4 minutes 52 seconds**\n\n\n\n\n\n----------\nView image: (https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80/uploads/asset/file/59c4c8d4-afb8-4729-8e4e-650e411479cb/Handover_Intro__1_.png?t=1732030842)\nCaption: \n\nIn 1979, Sony shipped a cassette player with no record button. \n\nEvery piece of market research said it wouldn't sell. \n\nEvery retailer agreed. \n\n\n\nSony’s own engineers begged their CEO to keep the button, because it cost almost nothing to leave in. \n\nHe removed it anyway.\n\n\n\nThat product went on to sell **400 million units.**\n\n\n\nView image: (https://media.beehiiv.com/cdn-cgi/image/fit=scale"
+  },
+  {
+   "title": "Show HN: Physically accurate black hole you can put in your room",
+   "url": "https://blackhole.plav.in",
+   "source": "hackernews",
+   "total": 12,
+   "text": "We have a black hole at home — with actual relativistic physics, live in your browser.<p>I&#x27;m Sasha (Alexander) Plavin, an astrophysicist at Harvard&#x27;s Black Hole Initiative studying quasars and black hole environments. I work with raytracing&#x2F;radiative transfer simulations professionally, and wanted to make one anyone can play with — so I built this app.<p>Put the black hole onto your screen (any browser), or directly into your room with AR or VR (requires WebXR, for example Chrome on Android, or any VR headset). When looking around, pay attention to unintuitive relativistic effects: rays bending around the black hole, and special relativistic &quot;Doppler boosting&quot; changing brightness depending on the viewing angle — zoom out to see the fast jet where the latter effect is especially pronounced.\nFaint markers show where other viewers are standing right now.<p>Alternatively, put the black hole in front of your camera and watch it lens\nyour actual surroundings. Light winds around the hole, so you see both what&#x27;s in front of you and what&#x27;s behind you at once (when the device and browser allow both camera feeds). The closer to the black hole, the stronger t"
+  },
+  {
+   "title": "VC-backed startups commit more fraud, and researchers think they know why",
+   "url": "https://techcrunch.com/2026/07/31/vc-backed-startups-commit-more-fraud-and-researchers-think-they-know-why/",
+   "source": "techcrunch",
+   "total": 0,
+   "text": "New research from the U.K.’s Imperial College and France’s Emlyon Business School mapped out how Silicon Valley founders commit fraud — and the role investors play."
+  },
+  {
+   "title": "How CurvLabs is using wearable technology to rethink back pain treatment",
+   "url": "https://tech.eu/2026/07/31/how-curvlabs-is-using-wearable-technology-to-rethink-back-pain-treatment/",
+   "source": "techeu",
+   "total": 14,
+   "text": "UK startup CurvLabs began with a simple question: why, after years of appointments, scans and physiotherapy, did founder Rohan Kotecha still not understand what was causing his back pain? Diagnosed wi..."
+  },
+  {
+   "title": "PopSockets’ next act hinges on DTC, TikTok and a bigger product ecosystem",
+   "url": "https://www.modernretail.co/operations/popsockets-next-act-hinges-on-dtc-tiktok-and-a-bigger-product-ecosystem/?utm_campaign=modernretaildis&utm_medium=rss&utm_source=general-rss",
+   "source": "modernretail",
+   "total": 16,
+   "text": "PopSockets wants a bigger grip on the phone accessory market — and it's betting on limited-edition drops, TikTok videos and magnetic products to get it there."
+  },
+  {
+   "title": "ICHRA adoption slowed by ACA exchange costs, instability",
+   "url": "https://www.hrdive.com/news/ichra-adoption-slowed-individual-market-affordability-ebri-morgan-health/826555/",
+   "source": "hrdive",
+   "total": 0,
+   "text": "Many employers are considering the coverage arrangements, but worries about the ACA marketplaces &mdash; including potentially high costs for workers &mdash; are making them hesitant to move forward, according to a survey."
+  },
+  {
+   "title": "L3Harris inks deals with DOD, Lockheed Martin to expand component production",
+   "url": "https://www.manufacturingdive.com/news/l3harris-lockheed-defense-dod-war-pac-3-thaad-quadruple-production/826294/",
+   "source": "manufacturingdive",
+   "total": 0,
+   "text": "The two seven-year contracts will ramp up production of the PAC-3 missiles and THAAD interceptors. The agreements come as U.S. forces face missile and drone systems shortages amid the Iran war."
+  },
+  {
+   "title": "I did it 🤩! crossed $273 in revenue with my saas.",
+   "url": "https://www.reddit.com/r/SaaS/comments/1v6tice/i_did_it_crossed_273_in_revenue_with_my_saas/",
+   "source": "reddit_saas",
+   "total": 0,
+   "text": "After months of building, redesigning, and questioning whether anyone would actually pay for what I built, I finally crossed $273 in total revenue. It’s not life-changing money, but it’s the first real proof that someone is willing to pay for software I created. A few things I’ve learned so far:  Shipping beats endlessly polishing features. Talking to users is more valuable than guessing what they want. Every piece of feedback has helped shape the product more than I expected. Distribution is much harder than development. Building the product was the easy part getting people to discover it is the real challenge.  I’m currently working on an AI chatbot platform that businesses can train on their own website, and one thing that’s become very clear is that solving a specific business problem is far more important than adding dozens of features. My next goal is to reach $1,000 in revenue, and I’m spending much more time on customer acquisition than writing code now. For those who’ve already crossed $1k or $10k MRR: What was the single biggest thing that helped you get there? I’d love to learn from your experience.  &#32; submitted by &#32;  /u/Excellent-Band7647   [link] &#32; [comment"
+  },
+  {
+   "title": "Applied Electrodynamics, Inc. (YC Summer 2026) – A new kind of camera that can see through walls.",
+   "url": "https://www.ae-dyn.com/",
+   "source": "yc",
+   "total": 14,
+   "text": "A new kind of camera that can see through walls.\nApplied Electrodynamics builds imaging systems that see through solid matter. Our team previously co-invented the iPhone touchscreen and Nest learning thermostat. We’re starting in construction, helping teams map structural elements and utilities inside walls and ceilings. The same platform extends to security screening and cargo inspection. Our mission is to make the hidden physical world machine-readable across the entire electromagnetic spectrum."
+  },
+  {
+   "title": "Coupang warehouse fire enters third day disrupting deliveries",
+   "url": "https://www.techinasia.com/coupang-taps-nvidia-to-scale-ai-in-logistics-network",
+   "source": "techinasia",
+   "total": 0,
+   "text": "Officials said the blaze has been difficult to contain because of the building’s complex structure and the large amount of flammable material inside."
+  },
+  {
+   "title": "Building the enterprise environment for agentic AI",
+   "url": "https://www.technologyreview.com/2026/07/27/1140668/building-the-enterprise-environment-for-agentic-ai/",
+   "source": "mit",
+   "total": 0,
+   "text": "For the enterprise, the promise of agentic AI is much more than just a better chatbot. It is software agents that execute business tasks end-to-end across people, business workflows, data, and systems. The platform best-suited to run agents is built with proper CPU capacity, resilient data access, policy-aware tool use, observability, memory management, and the&#8230;"
+  },
+  {
+   "title": "Strategy Breakdowns How Pioneer Dj Won The Booth",
+   "url": "gbrain://newsletters/strategy-breakdowns-how-pioneer-dj-won-the-booth",
+   "source": "newsletters",
+   "total": 0,
+   "text": "# 🎯 How Pioneer DJ won the booth\n\n- **De:** Strategy Breakdowns <strategybreakdowns@mail.beehiiv.com>\n- **Fecha:** Wed, 24 Jun 2026 13:54:07 +0000 (UTC)\n- **Capturado:** 2026-07-05 12:24\n\n---\n\nView image: (https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80/uploads/asset/file/52bbc694-aa8b-483f-938b-5821eba97524/Email_header_Final_Cut_Opt_01.gif?t=1731078182)\nFollow image link: (https://strategybreakdowns.com/)\nCaption: \n\n----------\nRead on [our website](https://strategybreakdowns.com/p/pioneerdj)\n\n\n----------Read time: **5 minutes 3 seconds**\n\n\n\n\n\n----------\nView image: (https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80/uploads/asset/file/59c4c8d4-afb8-4729-8e4e-650e411479cb/Handover_Intro__1_.png?t=1732030842)\nCaption: \n\nView image: (https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80/uploads/asset/file/59f01111-b875-42c6-a64b-1484ec04b62b/ezgif-3f5b2858029d2717.gif?t=1782304153)\nCaption: \n\n\n\nMe + friends ~~gatekeeping the aux~~ button-mashing our way through uni.\n\nBack when b2b meant Back-to-Back, not Business-to-Business 😮‍💨\n\n\n\nI've been chronically"
+  },
+  {
+   "title": "Show HN: I was tired of opening 2 tabs for every HN link, so I made a userscript",
+   "url": "https://github.com/twalichiewicz/HNewhere",
+   "source": "hackernews",
+   "total": 14,
+   "text": "HN is great for the links people share, but a big part of the value I get comes from reading the discussion around them. I realized I was always opening the article in one tab and the comments in another, constantly switching back and forth.<p>I figured there was probably a simpler way, so I threw together this userscript to merge the two.<p>1. Clicking a link from Hacker News opens the article with a side panel containing the discussion. It doesn&#x27;t require your credentials, is resizable, and is easy to tweak if you want to customize it.<p>2. If you land on an article that has previously been shared on HN, the script finds the existing discussion and adds a button in the top-right to open the panel.<p>Feedback welcome."
+  },
+  {
+   "title": "Repeat founder Ryan Williams raises $10M seed for an AI startup for private credit managers",
+   "url": "https://techcrunch.com/2026/07/31/repeat-founder-ryan-williams-raises-10m-seed-for-an-ai-startup-for-private-credit-managers/",
+   "source": "techcrunch",
+   "total": 23,
+   "text": "Ellis AI announced Thursday its emergence from stealth with $10 million in seed funding."
+  },
+  {
+   "title": "inforcer raises $50M Series C to scale AI security platform for MSPs",
+   "url": "https://tech.eu/2026/07/30/inforcer-raises-50m-series-c-to-scale-ai-security-platform-for-msps/",
+   "source": "techeu",
+   "total": 0,
+   "text": "UK-basedinforcer has raised $50 million in a Series C funding round led by Insight Partners, with participation from existing investors Meritech Capital and Dawn Capital.inforcer develops a unified Mi..."
+  },
+  {
+   "title": "Unpacked: How agentic AI is reshaping the consumer journey",
+   "url": "https://www.modernretail.co/sponsored/unpacked-how-agentic-ai-is-reshaping-the-consumer-journey/?utm_campaign=modernretaildis&utm_medium=rss&utm_source=general-rss",
+   "source": "modernretail",
+   "total": 0,
+   "text": "This Unpacked guide, sponsored by Talon.One, explores how brands can make their loyalty and promotions agent-ready, as agentic commerce evolves from a theoretical concept into practical applications, and AI agents begin to handle the end-to-end shopping journey for consumers.  Agentic commerce has quickly become a hot industry topic, as the technology evolves from a theoretical [&#8230;]"
+  },
+  {
+   "title": "Jury awards male surgical technician $105K for delivery room discrimination",
+   "url": "https://www.hrdive.com/news/jury-awards-male-surgical-technician-105k-bentonville-arkansas/826358/",
+   "source": "hrdive",
+   "total": 0,
+   "text": "According to the U.S. Equal Employment Opportunity Commission, two female obstetricians barred the technician from performing his job because of his sex."
+  },
+  {
+   "title": "As the person who actually has to use your software at work, I'm tired of the \"I built this in a weekend with AI\" founders",
+   "url": "https://www.reddit.com/r/SaaS/comments/1vbfeha/as_the_person_who_actually_has_to_use_your/",
+   "source": "reddit_saas",
+   "total": null,
+   "text": "Different angle than the usual rant here, because I'm on the other side of it. I'm the employee who gets your tool dropped in my lap and told to make it part of my job. Every week now there's a new one. Someone prompted an app into existence over a weekend, slapped a landing page on it, and is very excited. And every week I'm the one who finds out, live, in front of my team, that the export button doesn't actually export, that it forgets my settings, that it falls over the second two of us use it at once. The pitch is always &quot;we built this in days.&quot; That's not the flex you think it is. You're telling me you spent days on the thing I have to trust with my actual work. When it breaks, and it breaks, you're either gone in three months or you're apologizing in the support chat while my deadline burns. I don't care how it was built. Nobody at my job has ever asked whether a tool was hand-coded or vibe-coded. What we notice is whether it's still working the second week, whether support answers, whether our data is where we left it. The boring stuff. The stuff that takes longer than a weekend precisely because it's the part that matters. Here's what actually earns my company's m"
+  },
+  {
+   "title": "OpenVector (YC Summer 2026) – AI that turns any camera to an autonomous worker with real-time vision",
+   "url": "https://openvector.com",
+   "source": "yc",
+   "total": 32,
+   "text": "AI that turns any camera to an autonomous worker with real-time vision\nOpenVector transforms any existing camera into an automated 24/7 workforce without requiring new hardware. Users simply describe a task in plain English, and OpenVector automatically builds a custom AI vision model to monitor the feed. When it detects an important physical event—like a stalled production cycle, a safety violation, or a waiting customer—it operates a computer just like a human to take immediate action. It integrates with legacy systems to make calls, send emails, update a POS/CRM, or trigger webhooks in real time. OpenVector enables any camera to do real work."
+  }
+ ],
+ "deep": [
+  {
+   "title": "OpenVector (YC Summer 2026) – AI that turns any camera to an autonomous worker with real-time vision",
+   "url": "https://openvector.com",
+   "source": "yc",
+   "problema_score": 20,
+   "barrera_score": 8,
+   "replicabilidad": {
+    "nivel": "Alta",
+    "evidencia": "minería/salmonicultura tienen cámaras y necesitan monitoreo de seguridad y procesos"
+   },
+   "ventana": {
+    "nivel": "Media",
+    "evidencia": "vision-AI agentic crece rápido globalmente, competencia llegará en 1-2 años"
+   },
+   "tamano_mercado": {
+    "nivel": "Alta",
+    "evidencia": "automatización de monitoreo aplica a manufactura, retail, industria pesada global"
+   },
+   "resumen": "OpenVector convierte cámaras existentes en trabajadores autónomos de IA que detectan eventos físicos y actúan sobre sistemas legacy. Reduce necesidad de supervisión humana constante en plantas y operaciones. Relevante para minería y salmonicultura chilenas por seguridad y control de procesos.",
+   "b2b_o_b2c": "B2B",
+   "componente_ia": true,
+   "tipo_fundador": "Técnico en visión por computador + ventas industrial",
+   "mercado_actual": "EEUU, early stage",
+   "company_url": "https://openvector.com",
+   "funding_raised": "desconocido",
+   "stage": "Pre-seed",
+   "por_que_ahora": "modelos multimodales de visión ya son suficientemente capaces y baratos para tareas específicas sin hardware nuevo",
+   "modelo_negocio": "SaaS por cámara/mes según tareas monitoreadas",
+   "competencia_local": "no identificada",
+   "fit_tesis": "Futuro del trabajo",
+   "next_step": "hablar con gerentes de seguridad/operaciones de minería y salmonicultura sobre monitoreo por cámara",
+   "valida_idea_propia": "",
+   "fundadores": "no identificados",
+   "redes_sociales": "",
+   "fit_yc": "Alto",
+   "tipo_candidato": "Empresa específica"
+  },
+  {
+   "title": "Atlia (YC Summer 2026) – We are the AI-native property management company",
+   "url": "https://www.atlia.com",
+   "source": "yc",
+   "problema_score": 15,
+   "barrera_score": 8,
+   "replicabilidad": {
+    "nivel": "Media",
+    "evidencia": "mercado STR chileno menor pero fragmentado, gestión de arriendos informal"
+   },
+   "ventana": {
+    "nivel": "Media",
+    "evidencia": "modelo aún no llega a LatAm, ventana moderada antes de replicación"
+   },
+   "tamano_mercado": {
+    "nivel": "Media",
+    "evidencia": "STR en Chile existe pero es más chico que EEUU"
+   },
+   "resumen": "Atlia gestiona propiedades de arriendo de corto plazo con operaciones autónomas de IA, permitiendo tarifas de gestión más bajas. Es una empresa operativa, no solo software, iniciando en EEUU. Podría replicarse en Chile atacando gestión informal de arriendos turísticos.",
+   "b2b_o_b2c": "B2B2C",
+   "componente_ia": true,
+   "tipo_fundador": "Operador con ejecución local + IA para ops",
+   "mercado_actual": "San Diego y Fort Lauderdale, EEUU",
+   "company_url": "https://www.atlia.com",
+   "funding_raised": "desconocido",
+   "stage": "Pre-seed",
+   "por_que_ahora": "agentes de IA permiten operar property management con overhead mínimo",
+   "modelo_negocio": "comisión/fee de gestión sobre ingresos de arriendo",
+   "competencia_local": "administradoras de arriendo tradicionales, co-hosts informales",
+   "fit_tesis": "Tradicional reinventado",
+   "next_step": "medir tamaño de mercado STR gestionado informalmente en Chile",
+   "valida_idea_propia": "",
+   "fundadores": "no identificados",
+   "redes_sociales": "",
+   "fit_yc": "Alto",
+   "tipo_candidato": "Empresa específica"
+  },
+  {
+   "title": "Repeat founder Ryan Williams raises $10M seed for an AI startup for private credit managers",
+   "url": "https://techcrunch.com/2026/07/31/repeat-founder-ryan-williams-raises-10m-seed-for-an-ai-startup-for-private-credit-managers/",
+   "source": "techcrunch",
+   "problema_score": 18,
+   "barrera_score": 5,
+   "replicabilidad": {
+    "nivel": "Baja",
+    "evidencia": "mercado de private credit en Chile es muy pequeño"
+   },
+   "ventana": {
+    "nivel": "Baja",
+    "evidencia": "nicho financiero específico sin equivalente relevante local"
+   },
+   "tamano_mercado": {
+    "nivel": "Media",
+    "evidencia": "private credit es asset class grande globalmente, no en Chile"
+   },
+   "resumen": "Ellis AI levantó $10M seed para dar herramientas de IA a gestores de crédito privado, sector financiero en auge en EEUU. Fundador repetidor da señal de confianza. Baja aplicabilidad directa a Chile por tamaño de mercado de crédito privado local.",
+   "b2b_o_b2c": "B2B",
+   "componente_ia": true,
+   "tipo_fundador": "Fintech con expertise en crédito privado",
+   "mercado_actual": "EEUU",
+   "company_url": "",
+   "funding_raised": "$10M seed",
+   "stage": "Seed",
+   "por_que_ahora": "crecimiento del asset class de crédito privado exige herramientas de análisis con IA",
+   "modelo_negocio": "SaaS por AUM gestionado",
+   "competencia_local": "no identificada",
+   "fit_tesis": "Otro",
+   "next_step": "descartar por bajo fit de mercado local, no priorizar",
+   "valida_idea_propia": "",
+   "fundadores": "Ryan Williams",
+   "redes_sociales": "",
+   "fit_yc": "Medio",
+   "tipo_candidato": "Empresa específica"
+  },
+  {
+   "title": "How new wellness brand Plainspeak is using mail-in samples to acquire customers",
+   "url": "https://www.modernretail.co/marketing/how-new-wellness-brand-plainspeak-is-using-mail-in-samples-to-acquire-customers/?utm_campaign=modernretaildis&utm_medium=rss&utm_source=general-rss",
+   "source": "modernretail",
+   "problema_score": 12,
+   "barrera_score": 10,
+   "replicabilidad": {
+    "nivel": "Media",
+    "evidencia": "mercado de suplementos crece en Chile pero canal de muestras por correo no aplica igual"
+   },
+   "ventana": {
+    "nivel": "Media",
+    "evidencia": "CAC en paid social sube en todos lados, oportunidad de canales alternativos"
+   },
+   "tamano_mercado": {
+    "nivel": "Media",
+    "evidencia": "wellness femenino DTC es categoría en crecimiento sostenido"
+   },
+   "resumen": "Plainspeak es una marca DTC de suplementos para mujeres que usa muestras por correo (USPS) para adquirir clientes evitando ads pagados. Es una innovación de canal de adquisición más que de producto. Relevante como referencia de wellness B2C con estrategia de bajo CAC.",
+   "b2b_o_b2c": "B2C",
+   "componente_ia": false,
+   "tipo_fundador": "Marketero DTC con foco en wellness femenino",
+   "mercado_actual": "EEUU",
+   "company_url": "",
+   "funding_raised": "desconocido",
+   "stage": "Bootstrapped",
+   "por_que_ahora": "CAC en paid social cada vez más alto empuja a tácticas analógicas de bajo costo",
+   "modelo_negocio": "suscripción DTC de suplementos, ticket mensual recurrente",
+   "competencia_local": "no identificada",
+   "fit_tesis": "Wellness",
+   "next_step": "evaluar tácticas de adquisición alternativas para futura marca wellness B2C local",
+   "valida_idea_propia": "",
+   "fundadores": "no identificados",
+   "redes_sociales": "",
+   "fit_yc": "Bajo",
+   "tipo_candidato": "Empresa específica"
+  },
+  {
+   "title": "In China, people are renting out their faces to AI",
+   "url": "https://restofworld.org/2026/china-ai-microdramas-face-licensing/?utm_source=rss&utm_medium=rss&utm_campaign=feeds",
+   "source": "restofworld",
+   "problema_score": 10,
+   "barrera_score": 8,
+   "replicabilidad": {
+    "nivel": "Baja",
+    "evidencia": "fenómeno ligado a industria de microdramas china, sin equivalente cultural en Chile"
+   },
+   "ventana": {
+    "nivel": "Baja",
+    "evidencia": "demanda muy específica de un mercado de contenido chino"
+   },
+   "tamano_mercado": {
+    "nivel": "Baja",
+    "evidencia": "nicho, demanda local en Chile no evidente"
+   },
+   "resumen": "Plataformas chinas pagan a personas por licenciar su rostro para dramas y anuncios generados por IA, creando un marketplace de identidad biométrica. Es un fenómeno cultural y regulatorio específico de China. Poco replicable en Chile por diferencias culturales y riesgos legales de datos biométricos.",
+   "b2b_o_b2c": "B2C",
+   "componente_ia": true,
+   "tipo_fundador": "Legal + producto para manejo de datos biométricos",
+   "mercado_actual": "China",
+   "company_url": "",
+   "funding_raised": "desconocido",
+   "stage": "Desconocido",
+   "por_que_ahora": "boom de microdramas generados por IA en China crea demanda de likeness licensing",
+   "modelo_negocio": "marketplace con comisión por licencia de rostro",
+   "competencia_local": "no identificada",
+   "fit_tesis": "Otro",
+   "next_step": "descartar, riesgo regulatorio y cultural alto para Chile",
+   "valida_idea_propia": "",
+   "fundadores": "no identificados",
+   "redes_sociales": "",
+   "fit_yc": "Bajo",
+   "tipo_candidato": "Tendencia"
+  },
+  {
+   "title": "PopSockets’ next act hinges on DTC, TikTok and a bigger product ecosystem",
+   "url": "https://www.modernretail.co/operations/popsockets-next-act-hinges-on-dtc-tiktok-and-a-bigger-product-ecosystem/?utm_campaign=modernretaildis&utm_medium=rss&utm_source=general-rss",
+   "source": "modernretail",
+   "problema_score": 8,
+   "barrera_score": 5,
+   "replicabilidad": {
+    "nivel": "Baja",
+    "evidencia": "es historia de revival de marca específica, no un patrón generalizable"
+   },
+   "ventana": {
+    "nivel": "Baja",
+    "evidencia": "no aplica ventana, marca madura reposicionándose"
+   },
+   "tamano_mercado": {
+    "nivel": "Media",
+    "evidencia": "mercado de accesorios de celular es grande pero maduro"
+   },
+   "resumen": "PopSockets busca revitalizarse con venta directa al consumidor, drops limitados en TikTok y ampliación de su ecosistema de productos. Es una historia de reinvención de marca madura, no un modelo replicable fácilmente. Poco actionable para un fundador partiendo de cero en Chile.",
+   "b2b_o_b2c": "B2C",
+   "componente_ia": false,
+   "tipo_fundador": "Marca DTC establecida con equipo de marketing",
+   "mercado_actual": "EEUU",
+   "company_url": "",
+   "funding_raised": "desconocido",
+   "stage": "Desconocido",
+   "por_que_ahora": "sin catalizador claro, es estrategia de marketing de marca ya existente",
+   "modelo_negocio": "venta directa DTC + retail, drops de producto limitado",
+   "competencia_local": "no identificada",
+   "fit_tesis": "Otro",
+   "next_step": "monitorear, baja prioridad de acción",
+   "valida_idea_propia": "",
+   "fundadores": "no identificados",
+   "redes_sociales": "",
+   "fit_yc": "Bajo",
+   "tipo_candidato": "Empresa específica"
+  },
+  {
+   "title": "Show HN: Open-source engine running Gemma 4 26B in 2 GB RAM on any M-series Mac",
+   "url": "https://github.com/drumih/turbo-fieldfare",
+   "source": "hackernews",
+   "problema_score": 0,
+   "barrera_score": 0,
+   "replicabilidad": {
+    "nivel": "Baja",
+    "evidencia": "excluido: dev tool técnico"
+   },
+   "ventana": {
+    "nivel": "Baja",
+    "evidencia": "excluido: dev tool técnico"
+   },
+   "tamano_mercado": {
+    "nivel": "Baja",
+    "evidencia": "excluido: dev tool técnico"
+   },
+   "resumen": "Excluido: herramienta de inferencia para desarrolladores sin comprador no-técnico claro.",
+   "b2b_o_b2c": "",
+   "componente_ia": false,
+   "tipo_fundador": "",
+   "mercado_actual": "",
+   "company_url": "",
+   "funding_raised": "",
+   "stage": "Desconocido",
+   "por_que_ahora": "",
+   "modelo_negocio": "",
+   "competencia_local": "",
+   "fit_tesis": "Otro",
+   "next_step": "",
+   "valida_idea_propia": "",
+   "fundadores": "",
+   "redes_sociales": "",
+   "fit_yc": "Bajo",
+   "tipo_candidato": "Empresa específica"
+  },
+  {
+   "title": "How CurvLabs is using wearable technology to rethink back pain treatment",
+   "url": "https://tech.eu/2026/07/31/how-curvlabs-is-using-wearable-technology-to-rethink-back-pain-treatment/",
+   "source": "techeu",
+   "problema_score": 0,
+   "barrera_score": 0,
+   "replicabilidad": {
+    "nivel": "Baja",
+    "evidencia": "excluido: hardware wearable propio"
+   },
+   "ventana": {
+    "nivel": "Baja",
+    "evidencia": "excluido: hardware wearable propio"
+   },
+   "tamano_mercado": {
+    "nivel": "Baja",
+    "evidencia": "excluido: hardware wearable propio"
+   },
+   "resumen": "Excluido: requiere diseño y fabricación de wearable propio desde cero.",
+   "b2b_o_b2c": "",
+   "componente_ia": false,
+   "tipo_fundador": "",
+   "mercado_actual": "",
+   "company_url": "",
+   "funding_raised": "",
+   "stage": "Desconocido",
+   "por_que_ahora": "",
+   "modelo_negocio": "",
+   "competencia_local": "",
+   "fit_tesis": "Otro",
+   "next_step": "",
+   "valida_idea_propia": "",
+   "fundadores": "",
+   "redes_sociales": "",
+   "fit_yc": "Bajo",
+   "tipo_candidato": "Empresa específica"
+  }
+ ],
+ "gate_urls": [
+  "https://openvector.com"
+ ],
+ "cost_usd": 0.0927
+}
