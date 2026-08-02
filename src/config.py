@@ -28,7 +28,7 @@ MAX_IDEAS = 5
 # puntuar alto por agregar señal de varias empresas — desplazaban a las
 # empresas concretas del top 5. Overridable por env.
 MAX_IDEAS_EMPRESA = int(os.environ.get("SCOUTING_MAX_IDEAS_EMPRESA", "4"))
-MAX_IDEAS_TENDENCIA = int(os.environ.get("SCOUTING_MAX_IDEAS_TENDENCIA", "2"))
+MAX_IDEAS_TENDENCIA = int(os.environ.get("SCOUTING_MAX_IDEAS_TENDENCIA", "3"))
 # Cuántos pasan del triage al análisis profundo. Overridable por env para
 # mini-runs reales baratos (ej: SCOUTING_TOP_DEEP=2 ≈ $0.01 total).
 TOP_DEEP = int(os.environ.get("SCOUTING_TOP_DEEP", "8"))
