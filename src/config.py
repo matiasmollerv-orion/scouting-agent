@@ -33,6 +33,14 @@ MAX_IDEAS_TENDENCIA = int(os.environ.get("SCOUTING_MAX_IDEAS_TENDENCIA", "3"))
 # mini-runs reales baratos (ej: SCOUTING_TOP_DEEP=2 ≈ $0.01 total).
 TOP_DEEP = int(os.environ.get("SCOUTING_TOP_DEEP", "8"))
 
+# Búsquedas web reales para el deep (competencia global, ventana, por qué
+# ahora) — sin esto el modelo completaba esos campos desde su prior de
+# entrenamiento sin verificar nada (caso real: OpenVector vs. Clarifruit,
+# feedback sesión de ideación 2026-08 — quedó "competencia_local: no
+# identificada" leído como blue ocean, había un incumbente global maduro).
+# Solo en deep, NUNCA en triage — ahí sí importaría el costo (30 candidatos).
+MAX_WEB_SEARCHES_DEEP = int(os.environ.get("SCOUTING_MAX_WEB_SEARCHES_DEEP", "12"))
+
 # --- Ventana temporal ---
 # Solo se consideran items publicados en los últimos N días.
 LOOKBACK_DAYS = int(os.environ.get("SCOUTING_LOOKBACK_DAYS", "7"))

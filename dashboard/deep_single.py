@@ -11,7 +11,12 @@ from anthropic import Anthropic
 
 from src import config
 from src.models import Item, ScoredItem
-from src.pipeline.score import PROMPTS_DIR, _cost, _parse, _serialize
+from src.pipeline.score import (
+    PRICE_WEB_SEARCH, PROMPTS_DIR, _cost, _parse, _search_count, _serialize,
+    web_search_tool,
+)
+
+MAX_SEARCHES_ONDEMAND = 3  # 1 sola idea, no 8 — tope más chico que el deep semanal
 
 
 def analyze_one(item: Item) -> tuple[ScoredItem | None, float]:
@@ -28,9 +33,11 @@ def analyze_one(item: Item) -> tuple[ScoredItem | None, float]:
         max_tokens=2000,
         system=system,
         messages=[{"role": "user", "content": user}],
+        tools=web_search_tool(MAX_SEARCHES_ONDEMAND),
     ) as stream:
         msg = stream.get_final_message()
-    cost = _cost(config.MODEL_DEEP, msg.usage.input_tokens, msg.usage.output_tokens)
+    searches = _search_count(msg)
+    cost = _cost(config.MODEL_DEEP, msg.usage.input_tokens, msg.usage.output_tokens) + searches * PRICE_WEB_SEARCH
     text = "".join(bl.text for bl in msg.content if bl.type == "text")
     scored = _parse(text)
     return (scored[0] if scored else None), cost

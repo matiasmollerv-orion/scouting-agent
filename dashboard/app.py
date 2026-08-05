@@ -73,8 +73,8 @@ for url, row in ondemand.items():
     df.loc[mask, "has_deep"] = True
     df.loc[mask, "objetivo_total"] = row.get("problema_score", 0) + row.get("barrera_score", 0)
     for col in ["fit_tesis", "resumen", "next_step", "por_que_ahora",
-                "modelo_negocio", "competencia_local", "stage",
-                "funding_raised", "company_url", "mercado_actual",
+                "modelo_negocio", "competencia_local", "competencia_global",
+                "stage", "funding_raised", "company_url", "mercado_actual",
                 "valida_idea_propia", "fundadores", "redes_sociales",
                 "fit_yc", "tipo_candidato"]:
         df.loc[mask, col] = row.get(col, "")
@@ -220,6 +220,11 @@ with cols[0]:
         st.markdown(f"**Por qué ahora:** {row.get('por_que_ahora', '')}")
         st.markdown(f"**Modelo de negocio:** {row.get('modelo_negocio', '')}")
         st.markdown(f"**Competencia local:** {row.get('competencia_local', '')}")
+        comp_global = row.get("competencia_global", "")
+        if comp_global and comp_global not in ("no identificada", "no verificado"):
+            st.error(f"⚠️ **Competencia global real:** {comp_global} — no es blue ocean.")
+        elif comp_global:
+            st.markdown(f"**Competencia global:** {comp_global}")
         st.markdown(f"**Next step:** {row.get('next_step', '')}")
     else:
         st.caption("Solo triage — sin análisis profundo todavía.")

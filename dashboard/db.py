@@ -77,6 +77,7 @@ def save_ondemand(week: str, item, scored, cost_usd: float) -> None:
         "por_que_ahora": scored.por_que_ahora,
         "modelo_negocio": scored.modelo_negocio,
         "competencia_local": scored.competencia_local,
+        "competencia_global": scored.competencia_global,
         "fit_tesis": scored.fit_tesis,
         "next_step": scored.next_step,
         "valida_idea_propia": scored.valida_idea_propia,

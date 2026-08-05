@@ -75,7 +75,8 @@ class ScoredItem(BaseModel):
     # Análisis de oportunidad (v2)
     por_que_ahora: str = ""      # timing: qué cambió recientemente que habilita la idea
     modelo_negocio: str = ""     # cómo cobra: ticket, recurrencia, quién paga
-    competencia_local: str = ""  # player en Chile/LatAm si existe, o "no identificada"
+    competencia_local: str = ""  # player en Chile/LatAm — "no identificada" (buscó, nada) o "no verificado" (no buscó)
+    competencia_global: str = ""  # player establecido fuera de la región que podría entrar a Chile — mismo criterio
     fit_tesis: str = ""          # categoría de la tesis del fundador a la que mapea
     next_step: str = ""          # acción concreta de validación en 1 línea
     valida_idea_propia: str = ""  # nombre de la idea ya brainstormeada que este candidato valida, si aplica

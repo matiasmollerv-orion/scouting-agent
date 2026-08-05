@@ -31,6 +31,17 @@ PRICES = {
     "claude-sonnet-5": (3.00, 15.00),
 }
 BATCH_DISCOUNT = 0.5  # Batch API: 50% off input y output
+PRICE_WEB_SEARCH = 0.01  # USD por búsqueda ($10 / 1000) — sin descuento batch
+
+def web_search_tool(max_uses: int) -> list[dict]:
+    """Tool de búsqueda web REAL — sin esto, competencia_local/competencia_global/
+    ventana se completaban desde el prior de entrenamiento del modelo, sin
+    verificar nada. Server-side (Anthropic ejecuta y sigue generando en la
+    misma llamada), no requiere loop manual de tool_use/tool_result."""
+    return [{"type": "web_search_20250305", "name": "web_search", "max_uses": max_uses}]
+
+
+WEB_SEARCH_TOOL = web_search_tool(config.MAX_WEB_SEARCHES_DEEP)  # deep semanal (8 items)
 
 
 def score(items: list[Item]) -> ScoreResult:
@@ -89,7 +100,7 @@ def score(items: list[Item]) -> ScoreResult:
         # 16k tokens: el run 2026-W28 truncó a 8k con newsletters de contenido
         # rico (~1000 tokens/item). Solo se paga lo generado, no el tope.
         text, c, truncated = _call(client, config.MODEL_DEEP, deep_system, deep_user,
-                                   max_tokens=16000)
+                                   max_tokens=16000, tools=WEB_SEARCH_TOOL)
         result.cost_usd += c
         result.deep = _parse(text)
         if result.deep:
@@ -109,34 +120,33 @@ def score(items: list[Item]) -> ScoreResult:
 
 
 def _call(client: Anthropic, model: str, system: str, user: str,
-          max_tokens: int) -> tuple[str, float, bool]:
+          max_tokens: int, tools: list[dict] | None = None) -> tuple[str, float, bool]:
     """Una llamada al modelo: intenta Batch API (50% off), cae a directa.
 
     Retorna (texto, costo_usd, truncado) — truncado=True si el modelo cortó
-    la salida por max_tokens (stop_reason).
+    la salida por max_tokens (stop_reason). `tools` (ej: web_search) solo se
+    pasa cuando corresponde — la etapa de triage nunca lo recibe (costo).
     """
     if config.USE_BATCH:
         try:
-            return _call_batch(client, model, system, user, max_tokens)
+            return _call_batch(client, model, system, user, max_tokens, tools)
         except Exception as e:  # noqa: BLE001 — batch nunca debe matar el run
             print(f"[score] batch falló ({e}) — fallback a llamada directa")
-    return _call_direct(client, model, system, user, max_tokens)
+    return _call_direct(client, model, system, user, max_tokens, tools)
 
 
 def _call_batch(client: Anthropic, model: str, system: str, user: str,
-                max_tokens: int) -> tuple[str, float, bool]:
+                max_tokens: int, tools: list[dict] | None = None) -> tuple[str, float, bool]:
+    params = {
+        "model": model,
+        "max_tokens": max_tokens,
+        "system": system,
+        "messages": [{"role": "user", "content": user}],
+    }
+    if tools:
+        params["tools"] = tools
     batch = client.messages.batches.create(
-        requests=[
-            {
-                "custom_id": "scouting",
-                "params": {
-                    "model": model,
-                    "max_tokens": max_tokens,
-                    "system": system,
-                    "messages": [{"role": "user", "content": user}],
-                },
-            }
-        ]
+        requests=[{"custom_id": "scouting", "params": params}]
     )
     deadline = time.time() + config.BATCH_TIMEOUT_MIN * 60
     while time.time() < deadline:
@@ -148,10 +158,12 @@ def _call_batch(client: Anthropic, model: str, system: str, user: str,
                 msg = entry.result.message
                 cost = _cost(model, msg.usage.input_tokens, msg.usage.output_tokens,
                              discount=BATCH_DISCOUNT)
+                searches = _search_count(msg)
+                cost += searches * PRICE_WEB_SEARCH  # búsquedas no llevan descuento batch
                 text = "".join(bl.text for bl in msg.content if bl.type == "text")
                 print(f"[score] batch {model}: stop={msg.stop_reason} "
                       f"in={msg.usage.input_tokens} out={msg.usage.output_tokens} "
-                      f"costo=${cost:.4f} (50% off)")
+                      f"búsquedas={searches} costo=${cost:.4f} (50% off en tokens)")
                 return text, cost, msg.stop_reason == "max_tokens"
             raise RuntimeError("batch sin resultados")
         time.sleep(20)
@@ -159,18 +171,22 @@ def _call_batch(client: Anthropic, model: str, system: str, user: str,
 
 
 def _call_direct(client: Anthropic, model: str, system: str, user: str,
-                 max_tokens: int) -> tuple[str, float, bool]:
+                 max_tokens: int, tools: list[dict] | None = None) -> tuple[str, float, bool]:
+    kwargs = {"tools": tools} if tools else {}
     with client.messages.stream(
         model=model,
         max_tokens=max_tokens,
         system=system,
         messages=[{"role": "user", "content": user}],
+        **kwargs,
     ) as stream:
         msg = stream.get_final_message()
-    cost = _cost(model, msg.usage.input_tokens, msg.usage.output_tokens)
+    searches = _search_count(msg)
+    cost = _cost(model, msg.usage.input_tokens, msg.usage.output_tokens) + searches * PRICE_WEB_SEARCH
     text = "".join(bl.text for bl in msg.content if bl.type == "text")
     print(f"[score] directo {model}: stop={msg.stop_reason} "
-          f"in={msg.usage.input_tokens} out={msg.usage.output_tokens} costo=${cost:.4f}")
+          f"in={msg.usage.input_tokens} out={msg.usage.output_tokens} "
+          f"búsquedas={searches} costo=${cost:.4f}")
     return text, cost, msg.stop_reason == "max_tokens"
 
 
@@ -178,6 +194,12 @@ def _cost(model: str, input_tokens: int, output_tokens: int,
           discount: float = 1.0) -> float:
     p_in, p_out = PRICES.get(model, (3.00, 15.00))  # default conservador
     return (input_tokens * p_in + output_tokens * p_out) / 1_000_000 * discount
+
+
+def _search_count(msg) -> int:
+    """Búsquedas web reales usadas en la llamada (0 si no hubo tool o no se usó)."""
+    server_tool_use = getattr(msg.usage, "server_tool_use", None)
+    return getattr(server_tool_use, "web_search_requests", 0) or 0
 
 
 def _rank_from_triage(text: str, items: list[Item]) -> tuple[list[Item], dict[str, int]]:

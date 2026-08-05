@@ -34,6 +34,7 @@ No hubo candidatos con análisis profundo esta semana ({{ total_evaluados }} eva
 {% if idea.por_que_ahora %}| ¿Por qué ahora? | {{ idea.por_que_ahora }} |
 {% endif %}{% if idea.modelo_negocio %}| Modelo de negocio | {{ idea.modelo_negocio }} |
 {% endif %}{% if idea.competencia_local %}| Competencia local | {{ idea.competencia_local }} |
+{% endif %}{% if idea.competencia_global %}| Competencia global | {{ idea.competencia_global }} |
 {% endif %}
 **Ficha:** {{ idea.b2b_o_b2c }} · IA: {{ "Sí" if idea.componente_ia else "No" }} · Mercado actual: {{ idea.mercado_actual }}{% if idea.fit_tesis %} · Tesis: {{ idea.fit_tesis }}{% endif %}{% if idea.fit_yc %} · Fit YC: {{ idea.fit_yc }}{% endif %}
 **Fundador ideal:** {{ idea.tipo_fundador }}{% if idea.fundadores and idea.fundadores != 'no identificados' %} · **Fundadores:** {{ idea.fundadores }}{% endif %}{% if idea.redes_sociales %} · **Redes:** {{ idea.redes_sociales }}{% endif %}

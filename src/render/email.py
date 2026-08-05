@@ -74,6 +74,9 @@ HTML_TEMPLATE = Template("""
   .next-step { background: #fffbeb; border-left: 3px solid #f59e0b;
                padding: 8px 12px; margin-top: 12px; font-size: 13px;
                color: #78350f; border-radius: 0 4px 4px 0; }
+  .competencia-alert { background: #fff1f2; border-left: 3px solid #e11d48;
+               padding: 8px 12px; margin-top: 8px; font-size: 13px;
+               color: #881337; border-radius: 0 4px 4px 0; }
   .pill.tesis { background: #ecfdf5; color: #047857; font-weight: 600; }
   .valida-propia { background: #fdf2f8; border-left: 3px solid #db2777;
                     padding: 8px 12px; margin-top: 8px; font-size: 13px;
@@ -185,7 +188,16 @@ HTML_TEMPLATE = Template("""
           <div class="sig-val">{{ idea.competencia_local }}</div>
         </div>
         {% endif %}
+        {% if idea.competencia_global %}
+        <div class="sig-row">
+          <div class="sig-label">Competencia global</div>
+          <div class="sig-val">{{ idea.competencia_global }}</div>
+        </div>
+        {% endif %}
       </div>
+      {% if idea.competencia_global and idea.competencia_global not in ('no identificada', 'no verificado') %}
+      <div class="competencia-alert">⚠️ <strong>Hay competencia global real:</strong> {{ idea.competencia_global }} — no es blue ocean solo porque no haya player local.</div>
+      {% endif %}
       {% if idea.next_step %}
       <div class="next-step">👉 <strong>Próximo paso:</strong> {{ idea.next_step }}</div>
       {% endif %}

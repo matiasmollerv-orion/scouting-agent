@@ -76,6 +76,7 @@ def _fake_response_text(system: str, user_content: str) -> str:
             "stage": "Seed", "por_que_ahora": "costo de agentes IA cayó 10x en 2025",
             "modelo_negocio": "SaaS USD 99/mes por equipo",
             "competencia_local": "no identificada",
+            "competencia_global": "no verificado",
             "fit_tesis": "Futuro del trabajo",
             "next_step": "hablar con 5 gerentes de operaciones esta semana",
         })
@@ -131,7 +132,7 @@ class FakeMessages:
     def __init__(self):
         self.batches = FakeBatches()
 
-    def stream(self, *, model, max_tokens, system, messages):
+    def stream(self, *, model, max_tokens, system, messages, tools=None):
         print(f"  [fake] llamada directa a {model}")
         return FakeStream(system, messages[0]["content"])
 
