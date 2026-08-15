@@ -1,0 +1,28 @@
+name: historical-backlog
+
+# Consulta ad-hoc manual — backfill histórico (ecommerce + bienestar
+# financiero) más allá del lookback semanal normal. NO tiene schedule.
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  backlog:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install deps
+        run: pip install -r requirements.txt
+
+      - name: Run historical backlog query
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python -m scripts.historical_backlog
