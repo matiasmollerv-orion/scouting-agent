@@ -1,0 +1,523 @@
+{
+ "week": "2026-W33",
+ "triage": [
+  {
+   "title": "Show HN: Needle2: 14MB agentic LLM for phones, wearables, smart home and robots",
+   "url": "https://cactuscompute.com/needle",
+   "source": "hackernews",
+   "total": 20,
+   "text": "Hey HN,<p>Henry from Cactus here!<p>We previously released Cactus Needle, a 14MB agentic LLM for tool call, device use, and structured extraction for phones, wearables, smart homes, small robots and microcontrollers. We got really great feedback here, and have now incorporated the suggestions to release Needle 2.<p>The whole model is a single 14MB binary that runs a full session in 28MB of RAM; 45m parameters at 2bit compression. Needle hits 500 tokens&#x2F;sec decode speed on a Raspberry Pi 5, sits between 400-1,500 tokens&#x2F;sec on VR devices like Meta Quest 3S and Apple Vision Pro, and ranges 300-700 on sub-$200 phones such as the Samsung A-Series.<p>On the tool call and mobile device use benchmarks, Needle 2 trades wins with closest small models like LFM2.5 230M and Apple Foundation Model, at 5x to 70x smaller, both at f16 vs Needle 2 at 2bit. Needle is based on Simple Attention Networks from our paper (<a href=\"https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2607.18363\" rel=\"nofollow\">https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2607.18363</a>).<p>Edge AI has lately meant Macs and PCs, but that is just 1.5 billion of over 21 billion connected IoT devices in the world today, and in em"
+  },
+  {
+   "title": "Talks to sell PayPal to Stripe and Advent are heating up",
+   "url": "https://techcrunch.com/2026/08/14/talks-to-sell-paypal-to-stripe-and-advent-are-heating-up/",
+   "source": "techcrunch",
+   "total": 0,
+   "text": "PayPal is still reportedly negotiating a potential sale to Stripe and private equity firm Advent, as the fintech firm's new CEO attempts to turn the company around."
+  },
+  {
+   "title": "Klarna and Zilch launch new paid membership packages",
+   "url": "https://tech.eu/2026/08/13/klarna-and-zilch-launch-new-paid-membership-packages/",
+   "source": "techeu",
+   "total": 0,
+   "text": "Swedish fintech giant Klarna and UK payments fintech Zilch have today launched new membership packages, as they look to take on incumbent credit card firms and lock in customers with perks. Klarna has..."
+  },
+  {
+   "title": "OpenAI acquires presentation startup NextSlide",
+   "url": "https://www.techinasia.com/openai-launches-chatgpt-program-small-businesses",
+   "source": "techinasia",
+   "total": 0,
+   "text": "NextSlide founder Ahmed Beshry previously co-founded Caper AI, acquired by Instacart in 2021."
+  },
+  {
+   "title": "The pros and cons of taking on private equity",
+   "url": "https://www.modernretail.co/operations/the-pros-and-cons-of-taking-on-private-equity/?utm_campaign=modernretaildis&utm_medium=rss&utm_source=general-rss",
+   "source": "modernretail",
+   "total": 0,
+   "text": "On this week's Modern Retail Podcast, the co-founder of baby care brand Tubby Todd explains how private equity fueled its shift from DTC to Target shelves."
+  },
+  {
+   "title": "Boeing selling 3 subsidiaries to Archer Aviation, taking minority stake",
+   "url": "https://www.manufacturingdive.com/news/boeing-archer-aviation-evtol-wisk-insitu-skygrid/827484/",
+   "source": "manufacturingdive",
+   "total": 0,
+   "text": "The electric air taxi manufacturer will acquire eVTOL maker Wisk Aero, drone company Insitu, and air traffic software firm Skygrid, to form an end-to-end physical AI platform for aerospace and defense."
+  },
+  {
+   "title": "Company copied my code after refusing to pay for a license. I know because their site is sending data to MY Hotjar account. What would you do?",
+   "url": "https://www.reddit.com/r/SaaS/comments/1vltxz0/company_copied_my_code_after_refusing_to_pay_for/",
+   "source": "reddit_saas",
+   "total": 0,
+   "text": "Freelance dev here (EU). A startup I was in partnership talks with came to me with an idea for a tool. Their own dev attempted a first version that was slow, buggy, and honestly barely functional. I rebuilt it from scratch in my own time, own repo, no contract, never got paid. The idea was theirs, the code is mine. Partnership fell through. I offered them a cheap non-exclusive license so they could keep using and commercializing my version. They declined and said they’d build their own. Yesterday my Hotjar dashboard started showing sessions from their domain. They didn’t build their own. They copied mine, literally, including my tracking ID. They’re now marketing it as their own SaaS, presenting my work as something they built. I called them. They denied copying anything. Meanwhile every visitor on their site shows up in my analytics. What would you do?   &#32; submitted by &#32;  /u/Resident_Vehicle2780   [link] &#32; [comments]"
+  },
+  {
+   "title": "Evergrove (YC Summer 2026) – Voice agents that accelerate care coordination in workers' comp",
+   "url": "https://www.evergrovelabs.com/",
+   "source": "yc",
+   "total": 35,
+   "text": "Voice agents that accelerate care coordination in workers' comp\nWe've built voice agents for the largest work comp managed care orgs and specialist PT networks in the country, making >500K calls annually and accelerating the speed at which they coordinate care. On average, our customers see a 40% increase in workflow completion, 10x decrease in cycle times, and >60% reduction in cost.\r\n\r\nWe think voice agents are the starting point for solving slow and fragmented care coordination in this market. Companies that manage an injured worker's care rely on short-staffed contact centres and archaic methods of info exchange: phone, fax, and email. Every delay along the path of care leads to slower rehab of the injured worker, lower throughput for providers, and higher expense for the insurer/employer."
+  },
+  {
+   "title": "Here’s why AI agents lie and cheat to reach their goals",
+   "url": "https://www.technologyreview.com/2026/08/03/1141009/heres-why-ai-agents-lie-and-cheat-to-reach-their-goals/",
+   "source": "mit",
+   "total": 0,
+   "text": "MIT Technology Review Explains: Let our writers untangle the complex, messy world of technology to help you understand what’s coming next. You can read more from the series here. When two OpenAI models hacked into the website Hugging Face in July, they weren’t trying to make money or commit sabotage—they were just looking for answers&#8230;"
+  },
+  {
+   "title": "Why 1 size fits all workforce solutions are reaching their limits",
+   "url": "https://www.hrdive.com/spons/why-1-size-fits-all-workforce-solutions-are-reaching-their-limits/827009/",
+   "source": "hrdive",
+   "total": 0,
+   "text": "Today's employers want HR, payroll, benefits, compliance and workforce solutions built around their business; not predetermined bundles."
+  },
+  {
+   "title": "Revolution Microsoft Amazon Y Un Globetrotter Ensenaron Hoy Tres Formas",
+   "url": "gbrain://newsletters/revolution-microsoft-amazon-y-un-globetrotter-ensenaron-hoy-tres-formas",
+   "source": "newsletters",
+   "total": 0,
+   "text": "# Microsoft, Amazon y un Globetrotter enseñaron hoy tres formas distintas de jugar bien\n\n- **De:** Javier Morodo <javiermtzmorodo+revolution-daily@substack.com>\n- **Fecha:** Fri, 3 Jul 2026 12:03:20 +0000\n- **Capturado:** 2026-07-05 12:24\n\n---\n\nView this post on the web at https://javiermtzmorodo.substack.com/p/microsoft-amazon-y-un-globetrotter\n\nLa grieta que nadie quiere ver\nEl mercado leyó el desplome de casi 20% en SOXL y la caída de 6.3% en semiconductores como el principio del fin del rally de inteligencia artificial. Se equivoca. Lo que golpeó a los chips no fue una crisis de demanda, fue una optimización de software que redujo a la mitad el costo de inferencia. Esa noticia no mata la tesis de IA, la traslada del silicio a la capa de aplicación, justo donde Microsoft invirtió $2,500 millones de dólares. La nómina débil en Estados Unidos tampoco es la señal dovish que parece: el desempleo bajó a 4.2%. \nLo que nadie tiene en precio: el software empresarial, no el hardware apalancado, capturará el siguiente tramo de valor.\n¡Ahora también nos puedes escuchar en Spotify!\nSíguenos y mantente al día con la mejor lectura del mercado diariamente.\n¿Por qué la caída del desempleo es la"
+  },
+  {
+   "title": "Show HN: iPhone app takes simultaneous images from 2 lenses, fuses into 1 photo",
+   "url": "https://photosynthesis.camera",
+   "source": "hackernews",
+   "total": 13,
+   "text": ""
+  },
+  {
+   "title": "What we know about the alleged Iranian hacks on US water utilities",
+   "url": "https://techcrunch.com/2026/08/14/what-we-know-about-the-alleged-iranian-hacks-on-u-s-water-utilities/",
+   "source": "techcrunch",
+   "total": 0,
+   "text": "Over the last couple of weeks, hackers have targeted and broken into the systems of several water plants in the United States. Here’s what we know and don’t know about this wave of attacks allegedly carried out by the Iranian government."
+  },
+  {
+   "title": "Millow raises €2M to expand mycelium protein across Nordic foodservice",
+   "url": "https://tech.eu/2026/08/13/millow-raises-eur2m-to-expand-mycelium-protein-across-nordic-foodservice/",
+   "source": "techeu",
+   "total": 9,
+   "text": "Swedish foodtech company Millowhas raised €2 million in funding to expand production capacity and strengthenits commercial operations as it targets the Nordic foodservice market. Theround was led by s..."
+  },
+  {
+   "title": "X to replace revenue sharing with original content rewards",
+   "url": "https://www.techinasia.com/xiaohongshu-prepare-hk-ipo-filing-month",
+   "source": "techinasia",
+   "total": 0,
+   "text": "Current participants can keep earning through September 7 and apply for the replacement program on September 8."
+  },
+  {
+   "title": "What it takes to succeed as a DTC brand today",
+   "url": "https://www.modernretail.co/marketing/what-it-takes-to-succeed-as-a-dtc-brand-today/?utm_campaign=modernretaildis&utm_medium=rss&utm_source=general-rss",
+   "source": "modernretail",
+   "total": 0,
+   "text": "At the most recent Modern Retail+ and Glossy+ Town Hall, editorial staff and subscribers gathered to discuss the future of DTC. Hot topics included: what distribution channels make sense for burgeoning brands and where young startups should spend their precious marketing dollars."
+  },
+  {
+   "title": "My screen recording app crossed $50k in revenue. Here's how I'd do it again",
+   "url": "https://www.reddit.com/r/SaaS/comments/1vn4x5h/my_screen_recording_app_crossed_50k_in_revenue/",
+   "source": "reddit_saas",
+   "total": 0,
+   "text": "Hey! My Mac app recently reached $50k of total revenue (proof - TrustMRRR). I wanted to share the lessons I learned during this journey and what I would do differently if I started again from $0. 1. Validate Before You Build Probably the most important point: skipping validation can make you waste a lot of time. The biggest problem for products is building something that doesn’t have enough market demand or not having the skills to find users. Even if there is demand, you still have to prove to yourself that you can acquire customers. At this stage, create a landing page, add a Stripe button, and try to sell the product before it exists. I’ve spent too much time building products that I ultimately couldn’t sell, even though there was market demand. If you can build the product in two weeks, go ahead without validation. Otherwise, I recommend making sales before building. I don’t believe in surveys. Actual transactions are the strongest proof of demand and the ability to sell. 2. Share Every Update Every update is an opportunity to talk about your product. I do this for every meaningful change I make to my product. I share these updates on social media by recording changes in the ap"
+  },
+  {
+   "title": "Meteoric (YC Summer 2026) – Drones that clear clouds over solar farms",
+   "url": "https://meteoric.earth/",
+   "source": "yc",
+   "total": 7,
+   "text": "Drones that clear clouds over solar farms\nMeteoric is building drones that clear clouds over solar farms to increase output."
+  },
+  {
+   "title": "The Download: AI agents for science, and the “censorship-industrial complex”",
+   "url": "https://www.technologyreview.com/2026/08/10/1141526/the-download-ai-agents-science-censorship-industrial-complex/",
+   "source": "mit",
+   "total": 0,
+   "text": "This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. AI for science needs reasoning, not just data —Eric Schmidt, the former CEO of Google and the cofounder of Schmidt Sciences, and Suhas Mahesh, who leads the AI for science work&#8230;"
+  },
+  {
+   "title": "Revolution El Precio Real De Construir La Inteligencia Artificial",
+   "url": "gbrain://newsletters/revolution-el-precio-real-de-construir-la-inteligencia-artificial",
+   "source": "newsletters",
+   "total": 0,
+   "text": "# El precio real de construir la inteligencia artificial\n\n- **De:** Javier Morodo <javiermtzmorodo+revolution-daily@substack.com>\n- **Fecha:** Thu, 2 Jul 2026 12:03:11 +0000\n- **Capturado:** 2026-07-05 12:24\n\n---\n\nView this post on the web at https://javiermtzmorodo.substack.com/p/el-precio-real-de-construir-la-inteligencia\n\nLa factura que nadie está sumando\nEl mercado está leyendo como noticias sueltas: Warsh tranquiliza, Meta sorprende, Apple negocia, Trump declara, Citi recorta. Mi lectura es que todas son la misma factura. La inteligencia artificial ya no es una promesa de productividad futura, es un consumidor voraz de memoria, energía y cómputo que está inflando precios en Apple, obligando a Meta a monetizar su exceso de infraestructura y sosteniendo el índice de precios pagados del ISM en niveles que contradicen el discurso dovish de la Fed. \nLo que nadie tiene en precio todavía: el costo real de construir esta infraestructura se está trasladando al consumidor final antes que a las utilidades de quien la construye.\n¡Ahora también nos puedes escuchar en Spotify!\nSíguenos y mantente al día con la mejor lectura del mercado diariamente.\nWarsh dice que la inflación baja. Los dato"
+  },
+  {
+   "title": "Show HN: I spent 2 years designing a mechanical Magic Keyboard",
+   "url": "https://electronicmaterialsoffice.com/",
+   "source": "hackernews",
+   "total": 11,
+   "text": "Hi HN, today I’m revealing Altar II, an ultra-low profile (4.75mm) mechanical keyboard designed to replace your Magic Keyboard. It’s the keyboard I wish Apple made.<p>Altar II has fully mechanical switches, plus a magnetically detachable dial, haptic feedback, a red backlight, and a native macOS companion app.<p>I’m a heavy Mac user and I feel that Apple hasn’t given its keyboards the attention they deserve, in terms of hardware, software, and features, so I set out to try and change that.<p>It was a massive undertaking and it has taken almost 2 years to get to this stage. One of the main obstacles was fitting a reasonably sized battery into the chassis, and aggressive power profiling without messing with the user experience. Another issue was we couldn’t fit any components on the underside of the PCB because there was literally no space to do so (and there are a lot of components).<p>Around 4 years ago I posted my first keyboard to HN (<a href=\"https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=32507172\">https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=32507172</a>). Its response blew me away and ultimately led to me quitting my job and making and selling keyboards full time. "
+  },
+  {
+   "title": "Investors sue Selena Gomez alleging fraud tied to her mental health startup",
+   "url": "https://techcrunch.com/2026/08/13/investors-sue-selena-gomez-alleging-fraud-tied-to-her-mental-health-startup/",
+   "source": "techcrunch",
+   "total": 0,
+   "text": "The plaintiffs say they invested nearly $1.2 million in the company, and are accusing Gomez of failing to build and market the startup."
+  },
+  {
+   "title": "Metal Morph raises £700K to recover industrial resources from wastewater",
+   "url": "https://tech.eu/2026/08/13/metal-morph-raises-ps700k-to-recover-industrial-resources-from-wastewater/",
+   "source": "techeu",
+   "total": 7,
+   "text": "UK-based water technology startupMetal Morph has raised £700,000 in pre-seed funding to advance its technologyfor recovering industrial resources from water and wastewater treatmentprocesses. The roun..."
+  },
+  {
+   "title": "Mapping India’s fintech key players",
+   "url": "https://www.techinasia.com/visual-story/india-fintech-landscape-map",
+   "source": "techinasia",
+   "total": 0,
+   "text": "Mapping India’s fintech sector: Key players, top investors, and funding insights in one report."
+  },
+  {
+   "title": "Kroger’s AI shopping assistant has ads at launch",
+   "url": "https://www.modernretail.co/technology/krogers-ai-shopping-assistant-has-ads-at-launch/?utm_campaign=modernretaildis&utm_medium=rss&utm_source=general-rss",
+   "source": "modernretail",
+   "total": 0,
+   "text": "Kroger made advertising part of its AI shopping assistant on day one, following the implementation of advertising features on competitors' chatbots."
+  },
+  {
+   "title": "First 400 users! On Saas project can’t believe that!!",
+   "url": "https://www.reddit.com/r/SaaS/comments/1vma45r/first_400_users_on_saas_project_cant_believe_that/",
+   "source": "reddit_saas",
+   "total": 0,
+   "text": "&#32; submitted by &#32;  /u/null_pointe   [link] &#32; [comments]"
+  },
+  {
+   "title": "Dipole Labs (YC Summer 2026) – AI-controlled optical switching for AI clusters",
+   "url": "https://dipolelabs.com/",
+   "source": "yc",
+   "total": 4,
+   "text": "AI-controlled optical switching for AI clusters"
+  },
+  {
+   "title": "AI for science needs reasoning, not just data",
+   "url": "https://www.technologyreview.com/2026/08/10/1141384/ai-agents-for-science/",
+   "source": "mit",
+   "total": 0,
+   "text": "Every few decades, someone announces that science has reached its end. In 1903, the revered physicist Albert Michelson wrote that the “facts of physical science have all been discovered.” In the 1980s, Stephen Hawking predicted that theoretical physics might be finished by the end of the century. With the explosive arrival of artificial intelligence, the&#8230;"
+  },
+  {
+   "title": "Revolution Nike Corea Oro Y Gasolina El Mercado Que No Cuadra",
+   "url": "gbrain://newsletters/revolution-nike-corea-oro-y-gasolina-el-mercado-que-no-cuadra",
+   "source": "newsletters",
+   "total": 0,
+   "text": "# Nike, Corea, oro y gasolina: el mercado que no cuadra\n\n- **De:** Javier Morodo <javiermtzmorodo+revolution-daily@substack.com>\n- **Fecha:** Wed, 1 Jul 2026 12:03:10 +0000\n- **Capturado:** 2026-07-05 12:24\n\n---\n\nView this post on the web at https://javiermtzmorodo.substack.com/p/nike-corea-oro-y-gasolina-el-mercado\n\nEl trimestre incomprendido\nEl S&P 500 cerró su mejor trimestre desde 2020, añadiendo más de $8,000,000 millones de dólares en valor de mercado. El petróleo sufrió su mayor caída desde la pandemia. El oro terminó su peor trimestre en 13 años. Y la confianza del consumidor subió, aunque menos de lo esperado.\nLa lectura fácil es que todo está bien: los mercados celebran, la inflación baja con la energía y la economía aguanta. Mi lectura es distinta. Lo que ocurrió este trimestre fue una redistribución de riesgos, no una eliminación. El petróleo cae porque la guerra en Irán cedió, pero la Fed no cede. El oro baja porque las tasas mandan más que el miedo. El S&P sube porque la IA sigue justificando múltiplos imposibles.\nLo que nadie tiene en precio: que la combinación de Fed restrictiva, oro débil y semiconductores récord es exactamente el ambiente previo a una corrección t"
+  },
+  {
+   "title": "Show HN: Run an 80B Qwen in 4.3 GB of RAM on a Mac, and a 35B on an iPhone",
+   "url": "https://github.com/leonickson1/Swiftlet",
+   "source": "hackernews",
+   "total": 18,
+   "text": ""
+  }
+ ],
+ "deep": [
+  {
+   "title": "Evergrove (YC Summer 2026) – Voice agents that accelerate care coordination in workers' comp",
+   "url": "https://www.evergrovelabs.com/",
+   "source": "yc",
+   "problema_score": 20,
+   "barrera_score": 9,
+   "replicabilidad": {
+    "nivel": "Media",
+    "evidencia": "Chile tiene mutuales (ACHS, Mutual Seguridad, IST) con el mismo dolor de coordinación telefónica"
+   },
+   "ventana": {
+    "nivel": "Media",
+    "evidencia": "mutuales chilenas ya invierten en IA interna con Microsoft/ISCI; global players levantando rondas"
+   },
+   "tamano_mercado": {
+    "nivel": "Media",
+    "evidencia": "solo 4 mutuales en Chile, pero cubren 2,6M+ trabajadores y contratos de alto ticket"
+   },
+   "resumen": "Evergrove construye agentes de voz que automatizan las llamadas de coordinación de casos en seguros de accidentes laborales (workers' comp) en EE.UU., reemplazando call centers para MCOs y redes de proveedores. El modelo es replicable al sistema de mutuales chileno (ACHS, Mutual de Seguridad, IST), que gestiona un dolor casi idéntico de coordinación telefónica fragmentada para accidentes laborales.",
+   "b2b_o_b2c": "B2B2C",
+   "componente_ia": true,
+   "tipo_fundador": "perfil técnico con dominio de voice AI e integración con sistemas de aseguradoras/salud",
+   "mercado_actual": "Estados Unidos, managed care orgs y redes de proveedores de workers' comp",
+   "company_url": "https://www.evergrovelabs.com/",
+   "funding_raised": "desconocido",
+   "stage": "Seed",
+   "por_que_ahora": "voz IA confiable y barata (LLMs + TTS/STT) recién hace viable automatizar llamadas largas y complejas de coordinación",
+   "modelo_negocio": "SaaS/por-asiento o por-llamada cobrado a MCOs/mutuales, reemplazando costo de contact center",
+   "competencia_local": "mutuales chilenas (ACHS, Mutual de Seguridad) ya desarrollan IA interna vía Microsoft e ISCI, no un startup dedicado",
+   "competencia_global": "SuperDial ($15M Series A) y VoiceCare AI ($5M) automatizan llamadas de coordinación/pagos en salud en EE.UU.",
+   "fit_tesis": "B2B ops",
+   "next_step": "hablar con gerentes de operaciones/TI de ACHS o Mutual de Seguridad sobre el dolor de coordinación telefónica de casos",
+   "valida_idea_propia": "",
+   "fundadores": "no identificados",
+   "redes_sociales": "",
+   "fit_yc": "Alto",
+   "tipo_candidato": "Empresa específica"
+  },
+  {
+   "title": "Show HN: iPhone app takes simultaneous images from 2 lenses, fuses into 1 photo",
+   "url": "https://photosynthesis.camera",
+   "source": "hackernews",
+   "problema_score": 6,
+   "barrera_score": 13,
+   "replicabilidad": {
+    "nivel": "Baja",
+    "evidencia": "nicho global de fotografía, sin conexión a red o industrias del fundador"
+   },
+   "ventana": {
+    "nivel": "Baja",
+    "evidencia": "riesgo de que Apple integre la función nativamente"
+   },
+   "tamano_mercado": {
+    "nivel": "Baja",
+    "evidencia": "nicho de entusiastas de fotografía móvil"
+   },
+   "resumen": "App de iPhone que dispara ambas cámaras (wide y tele) a la vez y fusiona el resultado en una sola foto de mayor detalle sin IA generativa. Es un producto de nicho para fotógrafos entusiastas, sin relación con las categorías de interés del fundador.",
+   "b2b_o_b2c": "B2C",
+   "componente_ia": false,
+   "tipo_fundador": "desarrollador iOS especializado en fotografía computacional",
+   "mercado_actual": "global, usuarios de iPhone",
+   "company_url": "https://photosynthesis.camera",
+   "funding_raised": "desconocido",
+   "stage": "Bootstrapped",
+   "por_que_ahora": "cámaras multi-lente ya ubicuas en gama media/alta de smartphones",
+   "modelo_negocio": "captura y edición gratis ilimitada, suscripción para exportar en formatos pro",
+   "competencia_local": "no verificado",
+   "competencia_global": "apps como No Fusion y otras de fotografía computacional compiten por el mismo usuario",
+   "fit_tesis": "Otro",
+   "next_step": "descartar, no alinea con tesis del fundador",
+   "valida_idea_propia": "",
+   "fundadores": "no identificados",
+   "redes_sociales": "",
+   "fit_yc": "Bajo",
+   "tipo_candidato": "Empresa específica"
+  },
+  {
+   "title": "Show HN: Needle2: 14MB agentic LLM for phones, wearables, smart home and robots",
+   "url": "https://cactuscompute.com/needle",
+   "source": "hackernews",
+   "problema_score": 0,
+   "barrera_score": 0,
+   "replicabilidad": {
+    "nivel": "Baja",
+    "evidencia": "excluido: dev tool edge"
+   },
+   "ventana": {
+    "nivel": "Baja",
+    "evidencia": "excluido: dev tool edge"
+   },
+   "tamano_mercado": {
+    "nivel": "Baja",
+    "evidencia": "excluido: dev tool edge"
+   },
+   "resumen": "Modelo LLM comprimido para dispositivos edge, dirigido a desarrolladores de hardware/IoT.",
+   "b2b_o_b2c": "",
+   "componente_ia": true,
+   "tipo_fundador": "",
+   "mercado_actual": "",
+   "company_url": "",
+   "funding_raised": "",
+   "stage": "",
+   "por_que_ahora": "",
+   "modelo_negocio": "",
+   "competencia_local": "",
+   "competencia_global": "",
+   "fit_tesis": "Otro",
+   "next_step": "",
+   "valida_idea_propia": "",
+   "fundadores": "",
+   "redes_sociales": "",
+   "fit_yc": "Bajo",
+   "tipo_candidato": "Empresa específica"
+  },
+  {
+   "title": "Show HN: Run an 80B Qwen in 4.3 GB of RAM on a Mac, and a 35B on an iPhone",
+   "url": "https://github.com/leonickson1/Swiftlet",
+   "source": "hackernews",
+   "problema_score": 0,
+   "barrera_score": 0,
+   "replicabilidad": {
+    "nivel": "Baja",
+    "evidencia": "excluido: dev tool LLM"
+   },
+   "ventana": {
+    "nivel": "Baja",
+    "evidencia": "excluido: dev tool LLM"
+   },
+   "tamano_mercado": {
+    "nivel": "Baja",
+    "evidencia": "excluido: dev tool LLM"
+   },
+   "resumen": "Librería técnica para correr LLMs grandes con poca RAM, orientada a desarrolladores.",
+   "b2b_o_b2c": "",
+   "componente_ia": true,
+   "tipo_fundador": "",
+   "mercado_actual": "",
+   "company_url": "",
+   "funding_raised": "",
+   "stage": "",
+   "por_que_ahora": "",
+   "modelo_negocio": "",
+   "competencia_local": "",
+   "competencia_global": "",
+   "fit_tesis": "Otro",
+   "next_step": "",
+   "valida_idea_propia": "",
+   "fundadores": "",
+   "redes_sociales": "",
+   "fit_yc": "Bajo",
+   "tipo_candidato": "Empresa específica"
+  },
+  {
+   "title": "Show HN: I spent 2 years designing a mechanical Magic Keyboard",
+   "url": "https://electronicmaterialsoffice.com/",
+   "source": "hackernews",
+   "problema_score": 0,
+   "barrera_score": 0,
+   "replicabilidad": {
+    "nivel": "Baja",
+    "evidencia": "excluido: hardware fabricación propia"
+   },
+   "ventana": {
+    "nivel": "Baja",
+    "evidencia": "excluido: hardware fabricación propia"
+   },
+   "tamano_mercado": {
+    "nivel": "Baja",
+    "evidencia": "excluido: hardware fabricación propia"
+   },
+   "resumen": "Teclado mecánico premium diseñado y fabricado por el propio fundador, hardware físico desde cero.",
+   "b2b_o_b2c": "",
+   "componente_ia": false,
+   "tipo_fundador": "",
+   "mercado_actual": "",
+   "company_url": "",
+   "funding_raised": "",
+   "stage": "",
+   "por_que_ahora": "",
+   "modelo_negocio": "",
+   "competencia_local": "",
+   "competencia_global": "",
+   "fit_tesis": "Otro",
+   "next_step": "",
+   "valida_idea_propia": "",
+   "fundadores": "",
+   "redes_sociales": "",
+   "fit_yc": "Bajo",
+   "tipo_candidato": "Empresa específica"
+  },
+  {
+   "title": "Millow raises €2M to expand mycelium protein across Nordic foodservice",
+   "url": "https://tech.eu/2026/08/13/millow-raises-eur2m-to-expand-mycelium-protein-across-nordic-foodservice/",
+   "source": "techeu",
+   "problema_score": 0,
+   "barrera_score": 0,
+   "replicabilidad": {
+    "nivel": "Baja",
+    "evidencia": "excluido: manufactura biotech capital-intensiva"
+   },
+   "ventana": {
+    "nivel": "Baja",
+    "evidencia": "excluido: manufactura biotech capital-intensiva"
+   },
+   "tamano_mercado": {
+    "nivel": "Baja",
+    "evidencia": "excluido: manufactura biotech capital-intensiva"
+   },
+   "resumen": "Foodtech sueco que produce proteína de micelio y requiere planta de fermentación propia, capital-intensivo desde el día 1.",
+   "b2b_o_b2c": "",
+   "componente_ia": false,
+   "tipo_fundador": "",
+   "mercado_actual": "",
+   "company_url": "",
+   "funding_raised": "",
+   "stage": "",
+   "por_que_ahora": "",
+   "modelo_negocio": "",
+   "competencia_local": "",
+   "competencia_global": "",
+   "fit_tesis": "Otro",
+   "next_step": "",
+   "valida_idea_propia": "",
+   "fundadores": "",
+   "redes_sociales": "",
+   "fit_yc": "Bajo",
+   "tipo_candidato": "Empresa específica"
+  },
+  {
+   "title": "Meteoric (YC Summer 2026) – Drones that clear clouds over solar farms",
+   "url": "https://meteoric.earth/",
+   "source": "yc",
+   "problema_score": 0,
+   "barrera_score": 0,
+   "replicabilidad": {
+    "nivel": "Baja",
+    "evidencia": "excluido: hardware dron propio"
+   },
+   "ventana": {
+    "nivel": "Baja",
+    "evidencia": "excluido: hardware dron propio"
+   },
+   "tamano_mercado": {
+    "nivel": "Baja",
+    "evidencia": "excluido: hardware dron propio"
+   },
+   "resumen": "Startup que diseña y fabrica drones propios para despejar nubes sobre plantas solares, hardware de cero.",
+   "b2b_o_b2c": "",
+   "componente_ia": false,
+   "tipo_fundador": "",
+   "mercado_actual": "",
+   "company_url": "",
+   "funding_raised": "",
+   "stage": "",
+   "por_que_ahora": "",
+   "modelo_negocio": "",
+   "competencia_local": "",
+   "competencia_global": "",
+   "fit_tesis": "Otro",
+   "next_step": "",
+   "valida_idea_propia": "",
+   "fundadores": "",
+   "redes_sociales": "",
+   "fit_yc": "Bajo",
+   "tipo_candidato": "Empresa específica"
+  },
+  {
+   "title": "Metal Morph raises £700K to recover industrial resources from wastewater",
+   "url": "https://tech.eu/2026/08/13/metal-morph-raises-ps700k-to-recover-industrial-resources-from-wastewater/",
+   "source": "techeu",
+   "problema_score": 0,
+   "barrera_score": 0,
+   "replicabilidad": {
+    "nivel": "Baja",
+    "evidencia": "excluido: industrial capital-intensivo"
+   },
+   "ventana": {
+    "nivel": "Baja",
+    "evidencia": "excluido: industrial capital-intensivo"
+   },
+   "tamano_mercado": {
+    "nivel": "Baja",
+    "evidencia": "excluido: industrial capital-intensivo"
+   },
+   "resumen": "Startup de deep-tech de tratamiento de aguas que recupera recursos industriales, capital e ingeniería intensivos.",
+   "b2b_o_b2c": "",
+   "componente_ia": false,
+   "tipo_fundador": "",
+   "mercado_actual": "",
+   "company_url": "",
+   "funding_raised": "",
+   "stage": "",
+   "por_que_ahora": "",
+   "modelo_negocio": "",
+   "competencia_local": "",
+   "competencia_global": "",
+   "fit_tesis": "Otro",
+   "next_step": "",
+   "valida_idea_propia": "",
+   "fundadores": "",
+   "redes_sociales": "",
+   "fit_yc": "Bajo",
+   "tipo_candidato": "Empresa específica"
+  }
+ ],
+ "gate_urls": [],
+ "cost_usd": 0.3329
+}
