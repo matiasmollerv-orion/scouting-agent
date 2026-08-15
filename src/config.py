@@ -98,28 +98,58 @@ RELEVANCE_KEYWORDS = [
     "workforce management", "field service", "deskless worker",
     "frontline worker", "employee tracking", "operations software",
     "workflow automation", "internal tools", "reporting tool",
-    # Tesis: futuro del trabajo / planillas grandes
-    "future of work", "hr tech", "people analytics", "headcount",
-    "workforce planning", "performance review", "performance management",
-    "employee onboarding", "shift scheduling", "staffing", "payroll",
-    "labor management", "digital worker", "ai coworker", "ai employee",
-    "ai agents for work", "org design", "employee engagement",
-    # Tesis: wellness / longevidad / biohacking
-    "wellness", "longevity", "biohacking", "supplement", "wearable",
-    "health coach", "mental health", "gut health", "sleep",
-    # Tesis: ecommerce / DTC / productos innovadores
-    "dtc", "direct-to-consumer", "ecommerce", "shopify", "consumer brand",
-    "subscription box", "cpg", "consumer packaged goods", "private label",
+    # Tesis: futuro del trabajo / planillas grandes — MÁXIMA prioridad,
+    # sinónimos amplios para no perder señal por fraseo distinto
+    "future of work", "hr tech", "hr software", "people analytics", "headcount",
+    "workforce planning", "workforce management", "performance review",
+    "performance management", "employee onboarding", "onboarding software",
+    "shift scheduling", "staffing", "payroll", "labor management",
+    "digital worker", "ai coworker", "ai employee", "ai teammate",
+    "ai agents for work", "agentic workforce", "org design", "employee engagement",
+    "replaces call center", "replaces support team", "automates hiring",
+    "cuts headcount", "layoffs", "restructuring", "back-office automation",
+    "middle management", "manager software", "internal communications",
+    # Tesis: wellness / longevidad / biohacking — sinónimos amplios
+    "wellness", "longevity", "biohacking", "supplement", "supplements",
+    "wearable", "health coach", "mental health", "gut health", "sleep",
+    "sleep tracking", "fitness app", "nutrition app", "personalized nutrition",
+    "recovery", "burnout", "stress management", "corporate wellness",
+    "employee benefits", "preventive health", "functional medicine",
+    "hormone health", "metabolic health", "longevity clinic",
+    # Tesis: ecommerce / DTC — vocabulario amplio y en lenguaje real de
+    # prensa, no jerga de consultora (2026-08: "breakout brand" nunca
+    # aparece en un titular real; "sold out" o "can't keep up with demand" sí).
+    "dtc", "d2c", "direct-to-consumer", "direct to consumer", "ecommerce",
+    "e-commerce", "online retail", "online retailer", "online store",
+    "digital-first brand", "shopify", "consumer brand", "brand launch",
+    "launches brand", "unveils", "debuts", "rolls out", "new product line",
+    "subscription box", "membership brand", "cpg", "consumer packaged goods",
+    "private label", "house brand",
     # Tesis: ecommerce — IA y herramientas que hacen tiendas más eficientes
-    "product recommendation", "personalization engine", "dynamic pricing",
-    "visual search", "virtual try-on", "conversational commerce",
-    "ai shopping", "product discovery",
-    # Tesis: ecommerce — señales de categorías de consumo explotando
-    "fastest growing", "breakout brand", "emerging category", "consumer trend",
-    "viral brand", "trending product", "category creator",
+    "product recommendation", "personalization engine", "personalized shopping",
+    "dynamic pricing", "visual search", "virtual try-on", "try before you buy",
+    "conversational commerce", "ai shopping", "shopping assistant",
+    "product discovery", "search and discovery",
+    # Tesis: ecommerce — señales de categorías/productos explotando, en
+    # lenguaje real (no "breakout brand", que nadie escribe en un titular)
+    "sold out", "waitlist", "can't keep up with demand", "demand surge",
+    "surge in demand", "cult following", "cult favorite", "fan favorite",
+    "viral on tiktok", "tiktok made me buy it", "tiktok famous", "went viral",
+    "fastest-growing", "fastest growing", "gains market share", "market share",
+    "hottest category", "booming category", "category creator", "fills a gap",
+    "gap in the market", "expands into", "enters the market", "new category",
+    "rebrand", "relaunches", "reformulates", "refreshes its", "makeover",
+    # Tesis: ecommerce — categorías de producto con señal frecuente (no
+    # exclusivas — solo suben la probabilidad de match real en prensa retail)
+    "skincare", "beauty brand", "personal care", "haircare", "fragrance",
+    "wellness brand", "pet brand", "pet care", "snack brand", "beverage brand",
+    "functional beverage", "protein brand", "supplement brand", "clean label",
+    "plant-based", "better-for-you", "sneaker brand", "footwear brand",
+    "apparel brand", "activewear",
     # Tesis: ecommerce — infraestructura y canales nuevos
-    "social commerce", "live shopping", "creator commerce",
-    "fulfillment", "returns management", "cross-border ecommerce",
+    "social commerce", "live shopping", "livestream shopping", "creator commerce",
+    "creator-led brand", "fulfillment", "returns management",
+    "cross-border ecommerce", "same-day delivery", "last-mile delivery",
     # Tesis: negocio tradicional reinventado — CUALQUIER industria probada con
     # una vuelta de tuerca en el cómo (entrega, modelo, tech, experiencia,
     # formato). Dos tipos de keyword: (a) señales de que algo legacy se está
@@ -169,15 +199,20 @@ THEME_KEYWORDS = {
         "mental health", "fitness", "supplement", "health coach", "gut health",
     ],
     "Ecommerce/DTC": [
-        "ecommerce", "dtc", "direct-to-consumer", "shopify", "checkout",
-        "consumer brand", "retail tech", "last mile", "subscription box",
+        "ecommerce", "e-commerce", "dtc", "d2c", "direct-to-consumer", "shopify",
+        "checkout", "consumer brand", "brand launch", "unveils", "debuts",
+        "retail tech", "last mile", "same-day delivery", "subscription box",
         "personalization", "product recommendation", "social commerce",
-        "live shopping", "fulfillment", "cpg", "private label",
+        "live shopping", "fulfillment", "cpg", "private label", "online retail",
     ],
     "Tendencias consumo": [
-        "consumer trend", "breakout brand", "fastest growing", "viral brand",
-        "emerging category", "category creator", "trending product",
-        "consumer behavior", "subscription box", "private label",
+        # Lenguaje real de prensa, no jerga de consultora — "breakout brand"
+        # nunca genera match; "sold out"/"went viral"/"cult following" sí.
+        "sold out", "waitlist", "can't keep up with demand", "demand surge",
+        "cult following", "cult favorite", "went viral", "viral on tiktok",
+        "fastest-growing", "fastest growing", "gains market share",
+        "hottest category", "booming category", "new category",
+        "gap in the market", "fills a gap", "expands into", "rebrand",
     ],
     "Fintech/Clase media": [
         "fintech", "financial inclusion", "remittance", "savings", "lending",

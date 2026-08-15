@@ -80,6 +80,10 @@ def run() -> Path:
     print(f"[temas] {themes}")
     for m in momentum:
         print(f"[momentum] {m}")
+    dead = _dead_themes(themes)
+    warnings.extend(dead)
+    for d in dead:
+        print(f"[salud-tema] {d}")
 
     candidates = prefilter(merged, seen_urls=_load_seen(week_key))
     print(f"[prefilter] {len(candidates)} candidatos a Claude")
@@ -175,6 +179,11 @@ def _source_health(counts: dict[str, int]) -> list[str]:
 
     Una fuente rota no lanza error: simplemente deja de aportar. Sin este
     chequeo, muere en silencio (le pasó a WorkLife y casi a TechInAsia).
+
+    2pml estuvo en 0 seis semanas seguidas (2026-08) antes de que alguien lo
+    notara — la alerta existía pero se repetía sin escalar, fácil de ignorar.
+    Ahora una racha de 3+ semanas muertas se marca 🚨 en vez de repetir el
+    mismo aviso genérico cada semana.
     """
     expected = {"hackernews", *config.RSS_FEEDS, *config.REDDIT_FEEDS}
     if config.ENABLE_YC:
@@ -182,19 +191,61 @@ def _source_health(counts: dict[str, int]) -> list[str]:
     if config.ENABLE_PRODUCTHUNT:
         expected.add("producthunt")
 
-    history = _load_stats()[-4:]
+    all_history = _load_stats()
+    recent = all_history[-4:]
     warnings: list[str] = []
     for src in sorted(expected):
         n = counts.get(src, 0)
         if n == 0:
-            warnings.append(f"{src}: 0 items (¿fuente muerta?)")
+            streak = _dead_streak(all_history, "sources", src)
+            if streak >= 3:
+                warnings.append(
+                    f"🚨 {src}: 0 items por {streak}+ semanas seguidas — no es un bache, "
+                    "está MUERTA. Reemplazar o quitar, no solo avisar de nuevo.")
+            else:
+                warnings.append(f"{src}: 0 items (¿fuente muerta?)")
             continue
-        past = [h["sources"].get(src, 0) for h in history if h.get("sources")]
+        past = [h["sources"].get(src, 0) for h in recent if h.get("sources")]
         if len(past) >= 2:
             avg = sum(past) / len(past)
             if avg >= 5 and n < 0.4 * avg:
                 warnings.append(f"{src}: cayó a {n} items (promedio 4 semanas: {avg:.0f})")
     return warnings
+
+
+def _dead_themes(themes: dict[str, int]) -> list[str]:
+    """Categorías de la tesis casi sin señal por varias semanas seguidas.
+
+    No asume que "no hay nada" — asume que el FILTRO puede estar mal
+    calibrado (le pasó a "Tendencias consumo": la señal existía en
+    modernretail, pero las keywords eran vocabulario de trend-report que
+    ningún titular real usa — se perdía en el prefiltro, no en la fuente).
+    Umbral bajo (<2) y racha larga (4+ semanas) para no generar ruido con
+    variación normal semana a semana.
+    """
+    all_history = _load_stats()
+    warnings: list[str] = []
+    for cat in config.THEME_KEYWORDS:
+        if themes.get(cat, 0) >= 2:
+            continue
+        streak = _dead_streak(all_history, "themes", cat, threshold=2)
+        if streak >= 4:
+            warnings.append(
+                f"🚨 '{cat}': casi sin señal hace {streak}+ semanas — revisar si las "
+                "keywords calzan con cómo se escribe realmente sobre esto, antes de "
+                "asumir que simplemente no hay nada que reportar.")
+    return warnings
+
+
+def _dead_streak(history: list[dict], field: str, key: str, threshold: int = 1) -> int:
+    """Semanas consecutivas (incluida la actual) con {field}[{key}] < threshold."""
+    streak = 1  # la semana actual ya cumple la condición (por eso se llama esta función)
+    for h in reversed(history):
+        if h.get(field, {}).get(key, 0) < threshold:
+            streak += 1
+        else:
+            break
+    return streak
 
 
 def _load_stats() -> list[dict]:
