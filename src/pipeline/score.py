@@ -37,7 +37,14 @@ def web_search_tool(max_uses: int) -> list[dict]:
     """Tool de búsqueda web REAL — sin esto, competencia_local/competencia_global/
     ventana se completaban desde el prior de entrenamiento del modelo, sin
     verificar nada. Server-side (Anthropic ejecuta y sigue generando en la
-    misma llamada), no requiere loop manual de tool_use/tool_result."""
+    misma llamada), no requiere loop manual de tool_use/tool_result.
+
+    Uso deliberadamente la variante BÁSICA (web_search_20250305), no
+    web_search_20260209 (la vigente para Sonnet 5, con filtrado dinámico).
+    La `20260209` corre code execution por debajo, lo que suma iteraciones
+    al loop server-side de tools (tope de 10 antes de stop_reason=pause_turn)
+    — en Batch API un pause_turn no se puede resumir, el resultado queda
+    incompleto. La básica ya está probada en retro.py y evita ese riesgo."""
     return [{"type": "web_search_20250305", "name": "web_search", "max_uses": max_uses}]
 
 
@@ -156,6 +163,12 @@ def _call_batch(client: Anthropic, model: str, system: str, user: str,
                 if entry.result.type != "succeeded":
                     raise RuntimeError(f"batch result: {entry.result.type}")
                 msg = entry.result.message
+                if msg.stop_reason == "pause_turn":
+                    # El loop server-side de tools llegó a su tope de
+                    # iteraciones sin terminar — batch no puede resumirlo
+                    # (a diferencia de una llamada directa). Se levanta para
+                    # que _call() caiga a _call_direct, que sí puede seguir.
+                    raise RuntimeError("pause_turn en batch — loop de tools sin terminar")
                 cost = _cost(model, msg.usage.input_tokens, msg.usage.output_tokens,
                              discount=BATCH_DISCOUNT)
                 searches = _search_count(msg)

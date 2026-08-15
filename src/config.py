@@ -39,7 +39,11 @@ TOP_DEEP = int(os.environ.get("SCOUTING_TOP_DEEP", "8"))
 # feedback sesión de ideación 2026-08 — quedó "competencia_local: no
 # identificada" leído como blue ocean, había un incumbente global maduro).
 # Solo en deep, NUNCA en triage — ahí sí importaría el costo (30 candidatos).
-MAX_WEB_SEARCHES_DEEP = int(os.environ.get("SCOUTING_MAX_WEB_SEARCHES_DEEP", "12"))
+# Tope conservador (8, no más): el loop server-side de tools de Anthropic
+# corta a los 10 iteraciones (stop_reason=pause_turn) — en Batch API ese
+# resultado no se puede resumir, queda incompleto. 8 búsquedas para 8 items
+# deja margen antes de ese tope.
+MAX_WEB_SEARCHES_DEEP = int(os.environ.get("SCOUTING_MAX_WEB_SEARCHES_DEEP", "8"))
 
 # --- Ventana temporal ---
 # Solo se consideran items publicados en los últimos N días.
