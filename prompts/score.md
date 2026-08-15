@@ -56,14 +56,21 @@ empezar con la IA.
   (1) **B2C — hábitos financieros saludables**: apps o servicios que generan
   conciencia y disciplina real sobre gasto (detectar gastos hormiga/micro-
   gastos recurrentes, dónde y cuándo gastar), ahorro e inversión automática
-  y recurrente, inversión segura pero rentable accesible sin fricción,
+  y recurrente, inversión segura pero rentable accesible sin fricción
+  (incluye inversión inmobiliaria fraccionada/accesible como clase de
+  activo — mismo principio de "inversión accesible sin fricción"),
   educación financiera aplicada a la acción (no solo contenido).
   (2) **B2B/infra — acceso al mercado financiero**: fintechs que resuelven
   el ACCESO — para personas (banca para no bancarizados, crédito justo,
-  acceso a inversión) y para EMPRESAS (acceso a capital de trabajo,
-  embedded finance, tesorería, pagos B2B). Distinto de "Clase media": no
-  está limitado a mercados emergentes ni mezcla salud/vivienda/educación —
-  es específicamente la tesis financiera del fundador, en cualquier mercado.
+  acceso a inversión) y para EMPRESAS (acceso a capital de trabajo, crédito
+  pyme, gestión de gasto corporativo con control en tiempo real —tarjetas
+  corporativas, spend management). Distinto de "Clase media": no está
+  limitado a mercados emergentes ni mezcla salud/vivienda/educación — es
+  específicamente la tesis financiera del fundador, en cualquier mercado.
+  NO incluye (decisión explícita, evitar saturar de fintechs): banca
+  digital/neobancos genéricos, insurtech, cripto/Web3, regtech/compliance,
+  trading/mercados de capitales — salvo que se conecten directo con hábitos
+  de inversión personal o acceso a capital, no como categoría en sí misma.
 - **"Clase media"** — negocios para la clase media emergente global (LatAm,
   Asia, África): finanzas personales, ahorro, inversión accesible, educación,
   salud preventiva, vivienda. Subatendida tecnológicamente.

@@ -10,11 +10,14 @@ decidir cuáles merecen análisis profundo.
   consultoría de agentes internos).
 - Wellness/longevidad/hábitos. B2B ops. Clase media emergente.
 - Bienestar financiero (ALTA prioridad): hábitos de gasto consciente, ahorro
-  e inversión automática/recurrente, inversión accesible segura pero
-  rentable, educación financiera aplicada. Y fintech B2B/infra que resuelve
-  acceso al mercado financiero para personas o empresas (crédito, embedded
-  finance, tesorería). No confundir con "Clase media" (esa es más amplia:
-  salud/vivienda/educación en mercados emergentes específicamente).
+  e inversión automática/recurrente (incluye inversión inmobiliaria
+  fraccionada/accesible), educación financiera aplicada. Y fintech B2B que
+  resuelve acceso: crédito pyme, capital de trabajo, gestión de gasto
+  corporativo (tarjetas con control, spend management). Explícitamente NO
+  incluye: neobancos genéricos, insurtech, cripto/Web3, regtech/compliance,
+  trading — decisión deliberada para no saturar de fintechs. No confundir
+  con "Clase media" (esa es más amplia: salud/vivienda/educación en
+  mercados emergentes específicamente).
 - Ecommerce/DTC (doble foco): IA/herramientas que hacen ecommerces más
   eficientes Y tendencias de consumo global — categorías de productos que
   están explotando con marcas/ecommerces nuevos capturando esa ola.

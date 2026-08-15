@@ -185,11 +185,17 @@ RELEVANCE_KEYWORDS = [
     "automated investing", "recurring investment", "robo-advisor",
     "robo advisor", "investment app", "wealth app", "wealthtech",
     "financial literacy", "financial wellness", "money management app",
-    "neobank", "digital bank", "challenger bank", "embedded finance",
-    "banking the unbanked", "unbanked", "underbanked", "credit access",
-    "alternative credit", "credit scoring", "working capital",
-    "small business lending", "sme lending", "b2b payments", "treasury",
-    "cash flow management", "invoice financing", "buy now pay later",
+    "embedded finance", "banking the unbanked", "unbanked", "underbanked",
+    "credit access", "alternative credit", "credit scoring",
+    "working capital", "small business lending", "sme lending",
+    "invoice financing",
+    # Bienestar financiero: gasto corporativo con control (elegido, no
+    # neobancos/insurtech/cripto/regtech/trading — decisión explícita)
+    "spend management", "corporate card", "corporate expense",
+    "expense management software", "corporate spending",
+    # Bienestar financiero: inversión inmobiliaria accesible (elegido)
+    "fractional real estate", "real estate investing app",
+    "proptech investing", "real estate crowdfunding", "mortgage tech",
     # Tesis: ecommerce operaciones
     "checkout", "last mile", "logistics", "retention", "loyalty program",
 ]
@@ -237,8 +243,9 @@ THEME_KEYWORDS = {
         "budgeting app", "expense tracker", "spending habits",
         "round-up investing", "automated savings", "automated investing",
         "robo-advisor", "financial literacy", "financial wellness",
-        "neobank", "embedded finance", "credit access", "working capital",
-        "buy now pay later",
+        "embedded finance", "credit access", "working capital",
+        "spend management", "corporate card", "fractional real estate",
+        "real estate investing app", "mortgage tech",
     ],
     "Marketplace": ["marketplace"],
     "Tradicional reinventado": [
