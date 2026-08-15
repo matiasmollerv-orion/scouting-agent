@@ -74,8 +74,14 @@ def _is_relevant(it: Item) -> bool:
     # Pasan directo sin keyword match: "Show HN:" y YC (lanzamientos por
     # definición), newsletters (contenido curado por el propio usuario) y
     # brain-inbox (notas/ideas que el usuario se manda a sí mismo) — muchas
-    # veces en español, y las keywords son en inglés.
-    if it.source in ("yc", "newsletters", "brain-inbox") or it.title.lower().startswith("show hn:"):
+    # veces en español, y las keywords son en inglés. modernretail/retaildive
+    # también: son feeds 100% retail/ecommerce por definición — exigirles
+    # ADEMÁS mis keywords de "trend-report" (breakout brand, viral brand...)
+    # botaba titulares reales como "Frida aims to solve personal care gap"
+    # que no usan ese vocabulario pero son exactamente la señal buscada
+    # (2026-08, feedback: pocas ideas de ecommerce/productos en tendencia).
+    if it.source in ("yc", "newsletters", "brain-inbox", "modernretail", "retaildive") \
+            or it.title.lower().startswith("show hn:"):
         return True
     haystack = f"{it.title} {it.text}".lower()
     return any(kw in haystack for kw in config.RELEVANCE_KEYWORDS)

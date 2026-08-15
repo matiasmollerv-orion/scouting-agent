@@ -208,9 +208,11 @@ RSS_FEEDS = {
     "techinasia": "https://feeds.feedburner.com/techinasia",
     # Mercados emergentes / clase media global (tesis: clase media)
     "restofworld": "https://restofworld.org/feed/latest/",
-    # Ecommerce / DTC / retail (tesis: ecommerce)
+    # Ecommerce / DTC / retail (tesis: ecommerce) — mismo publisher que hrdive
+    # y manufacturingdive (Industry Dive), ya probado confiable.
     "modernretail": "https://www.modernretail.co/feed/",
-    "2pml":         "https://2pml.com/feed/",            # análisis DTC/brands/ecommerce
+    "retaildive":   "https://www.retaildive.com/feeds/news/",
+    # "2pml": eliminada 2026-08 — último post 5 jul, 6+ semanas sin publicar
     # Futuro del trabajo / workforce (tesis: futuro del trabajo)
     "joshbersin": "https://joshbersin.com/feed/",       # analista #1 de HR tech
     "charter":    "https://charterworks.com/feed/",     # periodismo futuro del trabajo
