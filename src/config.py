@@ -175,6 +175,21 @@ RELEVANCE_KEYWORDS = [
     # Tesis: clase media emergente / inclusión financiera
     "middle class", "emerging market", "financial inclusion", "remittance",
     "microfinance", "gig economy", "informal economy", "affordable",
+    # Tesis: bienestar financiero — hábitos B2C + acceso al mercado
+    # financiero B2B/infra (personas Y empresas). Convicción personal del
+    # fundador (2026-08): sus propios hábitos de inversión recurrente le
+    # cambiaron la trayectoria financiera.
+    "personal finance app", "budgeting app", "expense tracker",
+    "spending habits", "micro-spending", "subscription tracker",
+    "round-up investing", "round up savings", "automated savings",
+    "automated investing", "recurring investment", "robo-advisor",
+    "robo advisor", "investment app", "wealth app", "wealthtech",
+    "financial literacy", "financial wellness", "money management app",
+    "neobank", "digital bank", "challenger bank", "embedded finance",
+    "banking the unbanked", "unbanked", "underbanked", "credit access",
+    "alternative credit", "credit scoring", "working capital",
+    "small business lending", "sme lending", "b2b payments", "treasury",
+    "cash flow management", "invoice financing", "buy now pay later",
     # Tesis: ecommerce operaciones
     "checkout", "last mile", "logistics", "retention", "loyalty program",
 ]
@@ -217,6 +232,13 @@ THEME_KEYWORDS = {
     "Fintech/Clase media": [
         "fintech", "financial inclusion", "remittance", "savings", "lending",
         "microfinance", "personal finance", "middle class",
+    ],
+    "Bienestar financiero": [
+        "budgeting app", "expense tracker", "spending habits",
+        "round-up investing", "automated savings", "automated investing",
+        "robo-advisor", "financial literacy", "financial wellness",
+        "neobank", "embedded finance", "credit access", "working capital",
+        "buy now pay later",
     ],
     "Marketplace": ["marketplace"],
     "Tradicional reinventado": [

@@ -9,6 +9,12 @@ decidir cuáles merecen análisis profundo.
 - IA para ejecutivos no-técnicos (segundo cerebro, secretaria agéntica,
   consultoría de agentes internos).
 - Wellness/longevidad/hábitos. B2B ops. Clase media emergente.
+- Bienestar financiero (ALTA prioridad): hábitos de gasto consciente, ahorro
+  e inversión automática/recurrente, inversión accesible segura pero
+  rentable, educación financiera aplicada. Y fintech B2B/infra que resuelve
+  acceso al mercado financiero para personas o empresas (crédito, embedded
+  finance, tesorería). No confundir con "Clase media" (esa es más amplia:
+  salud/vivienda/educación en mercados emergentes específicamente).
 - Ecommerce/DTC (doble foco): IA/herramientas que hacen ecommerces más
   eficientes Y tendencias de consumo global — categorías de productos que
   están explotando con marcas/ecommerces nuevos capturando esa ola.
