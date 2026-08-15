@@ -39,11 +39,18 @@ TOP_DEEP = int(os.environ.get("SCOUTING_TOP_DEEP", "8"))
 # feedback sesión de ideación 2026-08 — quedó "competencia_local: no
 # identificada" leído como blue ocean, había un incumbente global maduro).
 # Solo en deep, NUNCA en triage — ahí sí importaría el costo (30 candidatos).
-# Tope conservador (8, no más): el loop server-side de tools de Anthropic
-# corta a los 10 iteraciones (stop_reason=pause_turn) — en Batch API ese
-# resultado no se puede resumir, queda incompleto. 8 búsquedas para 8 items
-# deja margen antes de ese tope.
-MAX_WEB_SEARCHES_DEEP = int(os.environ.get("SCOUTING_MAX_WEB_SEARCHES_DEEP", "8"))
+#
+# El prompt (score.md) instruye buscar SOLO para candidatos que cumplirían
+# el gate real, o el de mayor problema_score si ninguno lo cumple — así el
+# gasto escala con cuántas ideas buenas hay esa semana, no parejo para las 8.
+# El tope de acá es un TECHO de seguridad, no el uso esperado.
+#
+# Medido en el primer run real (2026-W33, 4 búsquedas antes de este ajuste
+# de prompt): cada búsqueda agregó ~$0.074 al costo del deep (el contenido
+# de los resultados se inyecta como tokens de input, no es solo la tarifa
+# plana de $0.01/búsqueda — ballooneó el input de ~9k a 126k tokens). Con
+# esa tasa real, 4 tope ≈ $0.30 total — el techo exacto del guardrail.
+MAX_WEB_SEARCHES_DEEP = int(os.environ.get("SCOUTING_MAX_WEB_SEARCHES_DEEP", "4"))
 
 # --- Ventana temporal ---
 # Solo se consideran items publicados en los últimos N días.
