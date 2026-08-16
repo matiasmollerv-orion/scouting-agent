@@ -21,29 +21,22 @@ TARGET_URL_FRAGMENT = "frida-aims-to-solve-personal-care-gap"
 
 
 def find_frida() -> Item | None:
-    parsed = feedparser.parse("https://www.modernretail.co/feed/?paged=8")
-    for e in parsed.entries:
-        if TARGET_URL_FRAGMENT in e.get("link", ""):
-            return Item(source="modernretail", title=e.get("title", ""),
-                        url=e.get("link", ""), text=e.get("summary", "")[:2000])
+    # La paginación de modernretail no es estable entre requests — busca en
+    # un rango amplio en vez de asumir una página fija.
+    for p in range(1, 16):
+        url = f"https://www.modernretail.co/feed/?paged={p}" if p > 1 else "https://www.modernretail.co/feed/"
+        parsed = feedparser.parse(url)
+        for e in parsed.entries:
+            if TARGET_URL_FRAGMENT in e.get("link", ""):
+                return Item(source="modernretail", title=e.get("title", ""),
+                            url=e.get("link", ""), text=e.get("summary", "")[:2000])
     return None
 
 
 def main() -> None:
     item = find_frida()
     if not item:
-        print("No se encontró Frida en la página probada — probando páginas cercanas...")
-        for p in (6, 7, 9, 10):
-            parsed = feedparser.parse(f"https://www.modernretail.co/feed/?paged={p}")
-            for e in parsed.entries:
-                if TARGET_URL_FRAGMENT in e.get("link", ""):
-                    item = Item(source="modernretail", title=e.get("title", ""),
-                                url=e.get("link", ""), text=e.get("summary", "")[:2000])
-                    break
-            if item:
-                break
-    if not item:
-        print("No se pudo encontrar Frida. Abortando.")
+        print("No se pudo encontrar Frida en 15 páginas. Abortando.")
         return
 
     print(f"Item encontrado: {item.title}")
