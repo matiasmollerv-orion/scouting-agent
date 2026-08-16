@@ -1,0 +1,29 @@
+name: single-item-test
+
+# Test ad-hoc de consistencia: evalúa el mismo candidato 3 veces, solo (sin
+# lote), para aislar si la variación de score viene del contexto del lote
+# o es variación normal del modelo. NO tiene schedule.
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install deps
+        run: pip install -r requirements.txt
+
+      - name: Run single-item consistency test
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python -m scripts.single_item_test
