@@ -35,7 +35,7 @@ empezar con la IA.
 - **"B2B ops"** — herramientas que eficienten procesos reales: revenue/ventas,
   comunicación interna, reporting, equipos en terreno, trabajadores sin
   escritorio. Dolor concreto y comprador identificable.
-- **"Ecommerce"** — DOS ángulos igual de prioritarios:
+- **"Ecommerce"** — TRES ángulos igual de prioritarios:
   (1) **IA y herramientas para ecommerce**: soluciones que hacen tiendas más
   eficientes y atractivas de cara al usuario — personalización, search/discovery,
   pricing dinámico, virtual try-on, commerce conversacional, retención,
@@ -49,6 +49,16 @@ empezar con la IA.
   el primero en replicarlo en LatAm. Señales: marcas DTC con crecimiento
   llamativo, categorías donde aparecen muchos players nuevos, cambios en
   comportamiento de consumidor que crean demanda nueva.
+  (3) **Marcas DTC maduras que crecen bien — el playbook, no la empresa
+  en sí**: una marca ya establecida extiende su línea de producto siguiendo
+  el ciclo de vida o las nuevas necesidades de su MISMO cliente (ej: marca
+  de bebés que sigue a la familia hacia niños mayores), o encuentra un canal
+  de adquisición/distribución nuevo que funciona mejor que lo tradicional.
+  El valor NO es "replicar esa empresa" (ya existe, dominante) — es el
+  PATRÓN de crecimiento: cómo construir lealtad de marca que se extiende a
+  categorías adyacentes, o qué canal/mecánica de distribución está
+  funcionando hoy. Es inteligencia de mercado igual de válida que una idea
+  nueva — sirve para calibrar cómo armar un negocio DTC propio que dure.
 - **"Bienestar financiero"** — ALTA PRIORIDAD, convicción personal del
   fundador: sus propios hábitos de inversión recurrente le cambiaron la
   trayectoria financiera, y cree que más acceso a conciencia y herramientas
