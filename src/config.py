@@ -130,11 +130,26 @@ RELEVANCE_KEYWORDS = [
     "launches brand", "unveils", "debuts", "rolls out", "new product line",
     "subscription box", "membership brand", "cpg", "consumer packaged goods",
     "private label", "house brand",
-    # Tesis: ecommerce — IA y herramientas que hacen tiendas más eficientes
+    # Tesis: ecommerce — IA y herramientas cara al cliente
     "product recommendation", "personalization engine", "personalized shopping",
     "dynamic pricing", "visual search", "virtual try-on", "try before you buy",
     "conversational commerce", "ai shopping", "shopping assistant",
     "product discovery", "search and discovery",
+    # Tesis: ecommerce — B2B para empresas que venden online, EL PRINCIPIO
+    # amplio (ayudar a vender más/gastar menos/operar más liviano), no una
+    # lista cerrada de ejemplos puntuales:
+    "inventory management", "demand forecasting", "stock optimization",
+    "ai agent for ecommerce", "ai agent for merchants", "ai copilot for sellers",
+    "customer service automation", "catalog management", "returns automation",
+    "merchant financing", "revenue-based financing", "merchant cash advance",
+    "seller financing", "working capital for sellers", "ecommerce operations",
+    "3pl", "third-party logistics", "shipping software", "shipping rates",
+    "packaging startup", "sustainable packaging", "multi-channel selling",
+    "marketplace management software", "channel management", "reviews platform",
+    "user-generated content platform", "loyalty program software",
+    "subscription management software", "seller analytics", "ecommerce analytics",
+    "sales tax compliance", "merchant compliance", "ecommerce ads platform",
+    "retail media", "affiliate marketing platform", "influencer marketing platform",
     # Tesis: ecommerce — señales de categorías/productos explotando, en
     # lenguaje real (no "breakout brand", que nadie escribe en un titular)
     "sold out", "waitlist", "can't keep up with demand", "demand surge",

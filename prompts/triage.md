@@ -18,12 +18,14 @@ decidir cuáles merecen análisis profundo.
   trading — decisión deliberada para no saturar de fintechs. No confundir
   con "Clase media" (esa es más amplia: salud/vivienda/educación en
   mercados emergentes específicamente).
-- Ecommerce/DTC (TRIPLE foco): IA/herramientas que hacen ecommerces más
-  eficientes; tendencias de consumo global — categorías explotando con
-  marcas nuevas; Y marcas DTC maduras que crecen bien (extensión de línea
-  siguiendo al mismo cliente, canal de adquisición nuevo que funciona) —
-  esto último es PATRÓN/playbook, no necesita ser una empresa nueva o
-  reciente para valer la pena.
+- Ecommerce/DTC (TRIPLE foco): (1) cualquier software/servicio B2B que
+  ayude a una empresa que vende online a vender más, gastar menos u operar
+  más liviano — cara al cliente O operación interna (agentes IA, inventario,
+  logística, financiamiento, analytics, compliance, lo que sea, no es una
+  lista cerrada); (2) tendencias de consumo global — categorías explotando
+  con marcas nuevas; (3) marcas DTC maduras que crecen bien (extensión de
+  línea, canal de adquisición nuevo) — PATRÓN/playbook, no necesita ser
+  empresa nueva para valer la pena.
 - Marketplaces de nicho. Industrias chilenas (minería, pesca, agro).
 - Negocios tradicionales reinventados: CUALQUIER industria probada y "aburrida"
   (lavandería, supermercado, retail, farmacia, gimnasio, servicios físicos)

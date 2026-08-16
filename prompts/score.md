@@ -36,11 +36,25 @@ empezar con la IA.
   comunicación interna, reporting, equipos en terreno, trabajadores sin
   escritorio. Dolor concreto y comprador identificable.
 - **"Ecommerce"** — TRES ángulos igual de prioritarios:
-  (1) **IA y herramientas para ecommerce**: soluciones que hacen tiendas más
-  eficientes y atractivas de cara al usuario — personalización, search/discovery,
-  pricing dinámico, virtual try-on, commerce conversacional, retención,
-  checkout, logística last-mile, fulfillment, returns. Comprador: dueños de
-  ecommerce que quieren convertir más.
+  (1) **Software o servicios B2B para empresas que venden online — el
+  PRINCIPIO, no una lista cerrada**: cualquier producto que ayude a una
+  marca/tienda online a operar mejor, crecer más rápido, o necesitar menos
+  capital, sin importar qué función interna toque. NO te limites a los
+  ejemplos de abajo — son ilustración de la amplitud, no el límite:
+    · Cara al cliente: personalización, search/discovery, pricing dinámico,
+      virtual try-on, commerce conversacional, checkout, reviews/UGC,
+      loyalty/retención, marketing y ads.
+    · Operación interna: agentes IA (atención, catálogo, devoluciones),
+      inventario/forecasting de demanda, fulfillment, logística/3PL,
+      shipping, packaging, gestión multi-canal/marketplace, analytics/BI
+      para vendedores, compliance/impuestos para sellers.
+    · Financiamiento: capital de trabajo, revenue-based financing,
+      adelantos sobre ventas — también puede clasificar como "Bienestar
+      financiero" si ese ángulo domina, no son mutuamente excluyentes.
+  El comprador siempre es la empresa que vende online (B2B), no el
+  consumidor final. Si dudás si algo cuenta, preguntate: "¿esto ayuda a
+  alguien que vende online a vender más, gastar menos, o operar más
+  liviano?" — si sí, cuenta, aunque no esté en la lista de arriba.
   (2) **Tendencias de consumo global y ecommerces que las capturan**: el fundador
   quiere detectar qué categorías de productos están explotando mundialmente y
   quién está montando los ecommerces/marcas DTC que capturan esa ola. No busca
