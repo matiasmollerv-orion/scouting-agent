@@ -68,10 +68,15 @@ MIN_ENGAGEMENT = {
 }
 
 # Cantidad máxima de candidatos que llegan al triage (control de costo).
-# El triage produce ~30 tokens/item, así que 30 candidatos son ~1k tokens
-# de output — el pool diario justifica ver más que antes.
+# El triage es MUY barato (~$0.0003/item) — subir esto no mueve el costo
+# real de forma significativa (30->100 ≈ +$0.02/semana), pero hace que
+# muchísimo más contenido tenga al menos un score visible en el dashboard
+# en vez de perderse en el prefiltro sin dejar rastro (feedback 2026-08:
+# "quiero poder ver el artículo aunque no se profundice, y decidir yo").
+# TOP_DEEP (el análisis caro) NO cambia — sigue siendo 8, el costo real
+# de la corrida semanal no se mueve.
 # Overridable por env para mini-runs reales (ej: SCOUTING_MAX_CANDIDATES=3).
-MAX_CANDIDATES = int(os.environ.get("SCOUTING_MAX_CANDIDATES", "30"))
+MAX_CANDIDATES = int(os.environ.get("SCOUTING_MAX_CANDIDATES", "100"))
 
 # Keywords que marcan relevancia para scouting de negocio.
 # Un item pasa el pre-filtro si su engagement supera el umbral
