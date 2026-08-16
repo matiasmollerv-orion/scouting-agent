@@ -12,40 +12,51 @@ MAX_PER_SOURCE = {
     "default":     7,   # todas las demás fuentes
 }
 
+# Fuentes 100% curadas/on-topic por definición — no necesitan matchear
+# keyword para tener prioridad de sort (yc: lanzamientos; newsletters/
+# brain-inbox: el propio usuario las curó; modernretail/retaildive: feeds
+# 100% retail/ecommerce).
+TRUSTED_SOURCES = {"yc", "newsletters", "brain-inbox", "modernretail", "retaildive"}
+
 
 def prefilter(items: list[Item], seen_urls: set[str] | None = None) -> list[Item]:
     """Reduce el universo a candidatos SIN llamar al LLM (control de costo).
 
-    Pasos: dedup -> excluir vistos en semanas previas -> filtro de relevancia
-    -> cap por fuente -> interleave round-robin (diversidad garantizada)
-    -> tope MAX_CANDIDATES global.
+    2026-08: se sacó el filtro DURO de keywords. Un match de texto literal
+    siempre va a tener puntos ciegos (frases reales no anticipadas — pasó con
+    "sold out"/"went viral" vs "breakout brand"). Ahora las keywords solo
+    desempatan orden DENTRO de cada fuente cuando hay más items que cupo;
+    nada se descarta por no matchear una palabra. El juicio de relevancia
+    real es 100% de Haiku en el triage (semántico, no de texto literal).
+
+    Pasos: dedup -> excluir vistos en semanas previas -> cap por fuente
+    (keyword-match como desempate, no como filtro) -> interleave round-robin
+    (diversidad garantizada) -> tope MAX_CANDIDATES global.
     """
     seen_urls = seen_urls or set()
     deduped = _dedup(items)
     fresh = [it for it in deduped if it.dedup_key() not in seen_urls]
-    relevant = [it for it in fresh if _is_relevant(it)]
-    discarded = [it for it in fresh if not _is_relevant(it)]
 
-    # Embudo visible: las pérdidas silenciosas se detectan mirando estos números.
     print(f"[funnel] entrada={len(items)} | dup=-{len(items) - len(deduped)} | "
-          f"vistos=-{len(deduped) - len(fresh)} | sin_keyword=-{len(discarded)} | "
-          f"relevantes={len(relevant)}")
-    # Muestra de descartados por keyword — para detectar falsos negativos del filtro.
-    for it in discarded[:5]:
-        print(f"[funnel] descartado: [{it.source}] {it.title[:80]}")
+          f"vistos=-{len(deduped) - len(fresh)} | disponibles={len(fresh)} "
+          f"(sin filtro de keywords — el juicio de relevancia es de Haiku ahora)")
 
     # Agrupar por fuente, ordenar internamente y aplicar cap.
     by_source: dict[str, list[Item]] = defaultdict(list)
-    for it in relevant:
+    for it in fresh:
         by_source[it.source].append(it)
 
     pools: list[list[Item]] = []
     for source, src_items in by_source.items():
         cap = MAX_PER_SOURCE.get(source, MAX_PER_SOURCE["default"])
-        # HN: Show HN primero, luego por engagement. Resto: por engagement.
-        src_items.sort(
-            key=lambda it: (0 if it.title.lower().startswith("show hn:") else 1, -it.engagement)
-        )
+        # Orden: Show HN primero, luego match de keyword (desempate, no
+        # filtro), luego engagement. Si una fuente tiene menos items que su
+        # cupo, TODOS entran igual — nadie se pierde por no matchear.
+        src_items.sort(key=lambda it: (
+            0 if it.title.lower().startswith("show hn:") else 1,
+            0 if _matches_keyword(it) else 1,
+            -it.engagement,
+        ))
         pools.append(src_items[:cap])
 
     # Round-robin entre fuentes: toma 1 de cada una por turno.
@@ -57,6 +68,7 @@ def prefilter(items: list[Item], seen_urls: set[str] | None = None) -> list[Item
             if idx < len(pool) and len(result) < config.MAX_CANDIDATES:
                 result.append(pool[idx])
         idx += 1
+    print(f"[funnel] {len(result)} candidatos a triage (round-robin, tope {config.MAX_CANDIDATES})")
     return result
 
 
@@ -70,18 +82,10 @@ def _dedup(items: list[Item]) -> list[Item]:
     return list(seen.values())
 
 
-def _is_relevant(it: Item) -> bool:
-    # Pasan directo sin keyword match: "Show HN:" y YC (lanzamientos por
-    # definición), newsletters (contenido curado por el propio usuario) y
-    # brain-inbox (notas/ideas que el usuario se manda a sí mismo) — muchas
-    # veces en español, y las keywords son en inglés. modernretail/retaildive
-    # también: son feeds 100% retail/ecommerce por definición — exigirles
-    # ADEMÁS mis keywords de "trend-report" (breakout brand, viral brand...)
-    # botaba titulares reales como "Frida aims to solve personal care gap"
-    # que no usan ese vocabulario pero son exactamente la señal buscada
-    # (2026-08, feedback: pocas ideas de ecommerce/productos en tendencia).
-    if it.source in ("yc", "newsletters", "brain-inbox", "modernretail", "retaildive") \
-            or it.title.lower().startswith("show hn:"):
+def _matches_keyword(it: Item) -> bool:
+    """Ya NO decide inclusión/exclusión — solo desempate de orden dentro de
+    una fuente sobre-suscrita. Ver docstring de prefilter()."""
+    if it.source in TRUSTED_SOURCES:
         return True
     haystack = f"{it.title} {it.text}".lower()
     return any(kw in haystack for kw in config.RELEVANCE_KEYWORDS)

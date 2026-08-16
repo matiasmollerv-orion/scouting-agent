@@ -75,8 +75,14 @@ MIN_ENGAGEMENT = {
 # "quiero poder ver el artículo aunque no se profundice, y decidir yo").
 # TOP_DEEP (el análisis caro) NO cambia — sigue siendo 8, el costo real
 # de la corrida semanal no se mueve.
+#
+# 2026-08: se sacó el filtro DURO de keywords en prefilter.py — ahora TODO
+# lo deduplicado/no-visto compite por cupo (round-robin por fuente), no solo
+# lo que matchea una palabra. El tope real de fill natural es ~14 fuentes ×
+# su cupo (hackernews=10, resto=7 default) ≈ 100-110 — 150 da margen para
+# no cortar antes de ese fill natural.
 # Overridable por env para mini-runs reales (ej: SCOUTING_MAX_CANDIDATES=3).
-MAX_CANDIDATES = int(os.environ.get("SCOUTING_MAX_CANDIDATES", "100"))
+MAX_CANDIDATES = int(os.environ.get("SCOUTING_MAX_CANDIDATES", "150"))
 
 # Keywords que marcan relevancia para scouting de negocio.
 # Un item pasa el pre-filtro si su engagement supera el umbral
