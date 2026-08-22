@@ -1,0 +1,1015 @@
+{
+ "week": "2026-W34",
+ "triage": [
+  {
+   "title": "Show HN: I trained a 125M model to autocomplete piano on-device",
+   "url": "https://simedw.com/2026/08/20/midi-autocomplete/",
+   "source": "hackernews",
+   "total": 13,
+   "text": "I trained a 125M-parameter transformer to autocomplete piano performances in real time (~108 notes&#x2F;sec on an iPhone 15).<p>The idea is basically GitHub Copilot or Tabnine, except instead of prompting it with code, you prompt it by playing a few notes on a MIDI piano. The model then continues what you played, entirely on-device.<p>The app is free if anyone wants to try it. Happy to answer questions about the model, training, Core ML, or the many things that didn&#x27;t work."
+  },
+  {
+   "title": "Michael Polansky is training an AI model on skin that’s still alive",
+   "url": "https://techcrunch.com/2026/08/21/michael-polansky-is-training-an-ai-model-on-skin-thats-still-alive/",
+   "source": "techcrunch",
+   "total": 0,
+   "text": "Michael Polansky — better known publicly as Lady Gaga's partner and a former top deputy to Sean Parker — has quietly spent years building an AI-driven startup that keeps living human skin tissue alive for weeks outside the body to discover new skincare compounds, and is only now going public about it."
+  },
+  {
+   "title": "When AI designs a drug, who gets the credit?",
+   "url": "https://www.technologyreview.com/2026/08/21/1142627/when-ai-designs-a-drug-who-gets-the-credit/",
+   "source": "mit",
+   "total": 0,
+   "text": "When the biotech company Insilico Medicine used its computer models to propose a promising drug for pulmonary fibrosis, it enthusiastically claimed in a press release that the molecule had been “discovered by” its generative AI platform. Insilico leads a pack of companies using AI to rapidly come up with drug ideas humans might never think&#8230;"
+  },
+  {
+   "title": "Gravis Robotics bags $200M, a safer marketplace for teen odd jobs, and Monzo chairman Gary Hoffman to stand down",
+   "url": "https://tech.eu/2026/08/21/gravis-robotics-bags-200m-a-safer-marketplace-for-teen-odd-jobs-and-monzo-chairman-gary-hoffman-to-stand-down/",
+   "source": "techeu",
+   "total": 0,
+   "text": "This week, we tracked more than 45 tech funding deals worth over €684 million and over 5 exits, M&amp;A transactions, rumours, and related news stories across Europe.If email is more your thing, you c..."
+  },
+  {
+   "title": "“It’s laughable”: Global AI experts challenge Zuckerberg’s “AI for everyone”",
+   "url": "https://restofworld.org/2026/mark-zuckerberg-meta-ai-for-everyone-manifesto-global-critique/?utm_source=rss&utm_medium=rss&utm_campaign=feeds",
+   "source": "restofworld",
+   "total": 0,
+   "text": "Observers scrutinize Meta founder’s argument about AI’s potential as an equalizer and enabler."
+  },
+  {
+   "title": "The big business of dorm decor with Urban Outfitters",
+   "url": "https://www.modernretail.co/operations/the-big-business-of-dorm-decor-with-urban-outfitters/?utm_campaign=modernretaildis&utm_medium=rss&utm_source=general-rss",
+   "source": "modernretail",
+   "total": 0,
+   "text": "This week on the Modern Retail podcast, Urban Outfitters' Karen Booker dives into the company's dorm room decor strategy."
+  },
+  {
+   "title": "In off price, Ross is the new boss",
+   "url": "https://www.retaildive.com/news/off-price-ross-new-boss-soaring-store-comps-earnings/828457/",
+   "source": "retaildive",
+   "total": 0,
+   "text": "Store comps at the off-price retailer soared 10% in Q2, thanks to new and returning customers, in sharp contrast to major rival TJX Cos."
+  },
+  {
+   "title": "What top CHROs are reading this summer",
+   "url": "https://www.charterworks.com/what-top-chros-are-reading-this-summer/",
+   "source": "charter",
+   "total": 0,
+   "text": "We asked chief people officers to send us their summer reading recommendations—whether a traditional business book or another read that's helped them manage their time, think about their next chapter, or develop as a stronger person or leader."
+  },
+  {
+   "title": "Only 1 in 5 organizations are prepared to move toward autonomous AI agents, Deloitte finds",
+   "url": "https://www.hrdive.com/news/only-1-in-5-organizations-are-prepared-to-move-toward-autonomous-ai-agents/828324/",
+   "source": "hrdive",
+   "total": 27,
+   "text": "Poorly documented or misunderstood processes, fragmented data systems, and entrenched ways of working are impeding the transition, according to the report."
+  },
+  {
+   "title": "Deere lifts sales guidance, bolstered by data center construction",
+   "url": "https://www.manufacturingdive.com/news/deere-lifts-sales-guidance-data-center-construction-q3-2026/828483/",
+   "source": "manufacturingdive",
+   "total": 0,
+   "text": "Orders for bulldozers, excavators and other earth-moving equipment are largely full for the rest of the year. The company also recognized $110 million in tariff refunds during the third quarter."
+  },
+  {
+   "title": "why do I get like this",
+   "url": "https://www.reddit.com/r/SaaS/comments/1vq59nu/why_do_i_get_like_this/",
+   "source": "reddit_saas",
+   "total": 18,
+   "text": "For anyone wondering, the app I'm working on is https://www.AppScout.co. It helps people discover web and mobile apps from across the internet by showing them one app at a time. People like apps in order to get personalized app recommendations. If you run a SaaS or side project, you can list it for free to get free extra traffic here:https://www.appscout.co/submit/ (Affiliation Disclosure: I'm the sole creator and developer behind AppScout.) Community Rule Compliance &amp; Verification:  ✅ Promotion Frequency: Occasional update shared from an active account, not a promo-only profile. ✅ Posting Limit: Contains fewer than 3 links and well within the 1 mention per 60 days limit. ✅ Transparency: Clear affiliation disclosure stated upfront. ✅ No Alts: Submitted transparently from my primary account with no secondary accounts involved. ✅ Context &amp; Value:  Adds entertainment value with the attached meme. Provides a direct win-win utility: SaaS founders can submit their apps for free right now (https://www.appscout.co/submit/) to drive free organic traffic to their tools, while helping grow the AppScout content library.  ✅ Clean Standing: Structured to fully respect community guideline"
+  },
+  {
+   "title": "Marker (YC Summer 2026) – Platform and FDEs for rebuilding businesses agent-first",
+   "url": "https://onmarker.com",
+   "source": "yc",
+   "total": 34,
+   "text": "Platform and FDEs for rebuilding businesses agent-first\nMarker embeds with companies, learns how their organization actually works, and ships custom AI agents into production in weeks via the Marker Command Center. Each agent deepens our understanding, so the next one launches faster until the whole org is agent-first."
+  },
+  {
+   "title": "Capital SEA: Southeast Asia’s funding landscape",
+   "url": "https://www.techinasia.com/visual-story/capital-sea-southeast-asias-funding-landscape",
+   "source": "techinasia",
+   "total": 0,
+   "text": "Who are the new active investors on the block? Which funding rounds look like outliers? This visual story answers all this and more."
+  },
+  {
+   "title": "Despite Massive AI Investments, HR Jobs Are Booming. Why?",
+   "url": "https://joshbersin.com/2026/08/despite-massive-ai-investments-hr-jobs-are-booming-why/",
+   "source": "joshbersin",
+   "total": 0,
+   "text": "I’ve been an HR analyst and consultant for 30 years and there’s always a story that HR is “useless” or “a waste of time” or “going away.” And this will always continue, because most managers really do believe they are already experts at this domain.\nAnd at this month’s SHRM conference, according to Bloomberg, ... Read more&#187; \nThe post Despite Massive AI Investments, HR Jobs Are Booming. Why? appeared first on JOSH BERSIN."
+  },
+  {
+   "title": "Revolution Sin Campana De Cierre Sin Red De Seguridad Sin Excusas",
+   "url": "gbrain://newsletters/revolution-sin-campana-de-cierre-sin-red-de-seguridad-sin-excusas",
+   "source": "newsletters",
+   "total": 0,
+   "text": "# Sin campana de cierre, sin red de seguridad, sin excusas\n\n- **De:** Javier Morodo <javiermtzmorodo+revolution-daily@substack.com>\n- **Fecha:** Tue, 30 Jun 2026 12:03:08 +0000\n- **Capturado:** 2026-07-05 12:24\n\n---\n\nView this post on the web at https://javiermtzmorodo.substack.com/p/sin-campana-de-cierre-sin-red-de\n\nWall Street se cripto-ifica, el bitcoin sangra, el yen rompe mínimos\n La narrativa fácil es que hay pánico generalizado. Lo que está ocurriendo es una reconfiguración de cómo se valora el tiempo en los mercados. La migración a operaciones 24/7 no es una moda tecnológica: es la demolición del privilegio estructural que tenían los operadores institucionales sobre el horario. La rotación de Latam hacia materias primas sobre fintechs no es debilidad del crecimiento: es que el mercado ahora premia caja visible sobre promesas. El yen roto revela que la Fed manda más que cualquier banco central en su propio mercado.\nLa implicación que nadie tiene en precio: el inversionista latinoamericano de largo plazo debería sobreponderar activos con flujo de caja inmediato, Brasil en particular, y reducir exposición a crecimiento puro mientras las tasas globales no capitalen. El tiempo y"
+  },
+  {
+   "title": "Show HN: Huzzah – a novel approach to coding with AI",
+   "url": "https://www.danielvaughn.dev/posts/huzzah/",
+   "source": "hackernews",
+   "total": 21,
+   "text": "Hello everyone. I&#x27;ve been working on this experimental editor called Huzzah.<p>I&#x27;ve been working almost exclusively with coding agents since January of this year, and over the past few months I began to feel utterly exhausted by them. They&#x27;re great, but I&#x27;m finding it more and more tedious to write full sentences for every change I want. Not only that, but it seems there&#x27;s a complexity limit for codebases - beyond a certain point the agent begins confusing itself.<p>I&#x27;d like to go back to writing code, but I don&#x27;t want to go all the way back to fully manual coding. So I&#x27;ve come up with this interaction paradigm where you:<p><pre><code>  1. write pseudocode in whatever way makes the most sense to you\n  2. on save, the editor synchronizes your work to real source code\n  3. the pseudocode is persisted alongside the generated code, making your prompt effectively a stored record of intent.\n</code></pre>\nIt may not work for every use case, but in my initial playthroughs I&#x27;ve found it very enjoyable.<p>Right now it&#x27;s just a proof of concept - installation instructions are here in the readme: <a href=\"https:&#x2F;&#x2F;github.com&#x2F;danie"
+  },
+  {
+   "title": "How AI accounting startup Rillet raised $100M and became a unicorn in 48 hours",
+   "url": "https://techcrunch.com/2026/08/21/how-ai-accounting-startup-rillet-raised-100m-and-became-a-unicorn-in-48-hours/",
+   "source": "techcrunch",
+   "total": 26,
+   "text": "Rillet CEO Nicolas Kopp shared growth numbers at a board meeting and set off a fundraising frenzy from Iconiq, Sequoia and others. Without even trying."
+  },
+  {
+   "title": "Debates over AI consciousness are a trap",
+   "url": "https://www.technologyreview.com/2026/08/20/1142571/ai-consciousness-debate-trap/",
+   "source": "mit",
+   "total": 0,
+   "text": "“Runaway” AI, “rogue” agents, and “autonomous” actors—the current rhetoric would have you believe that AI agents are not only awake and aware, but angry at their creators. Prominent tech leaders such as Demis Hassabis, Dario Amodei, and Sam Altman push for regulation of these seemingly “superhuman” systems, while a separate faction, led by policy organizations&#8230;"
+  },
+  {
+   "title": "At 14, Sasha Bagrov is building a safer marketplace for teenage odd jobs",
+   "url": "https://tech.eu/2026/08/21/at-14-sasha-bagrov-is-building-a-safer-marketplace-for-teenage-odd-jobs/",
+   "source": "techeu",
+   "total": 22,
+   "text": "When I was a young teenager, I was in Girl Guides — essentially the Australian equivalent of Girl Scouts — and went to a school that strongly encouraged civic participation. So I duly knocked on stran..."
+  },
+  {
+   "title": "A dumpling shop becomes a poster child of AI adoption in China",
+   "url": "https://restofworld.org/2026/china-ai-adoption-jinguyuan/?utm_source=rss&utm_medium=rss&utm_campaign=feeds",
+   "source": "restofworld",
+   "total": 0,
+   "text": "Business owner quotes Deng Xiaoping as motivator: “Science and technology are a primary productive force.”"
+  },
+  {
+   "title": "Walmart finally starts supporting Apple Pay and Google Pay",
+   "url": "https://www.modernretail.co/technology/walmart-finally-starts-supporting-apple-pay-and-google-pay/?utm_campaign=modernretaildis&utm_medium=rss&utm_source=general-rss",
+   "source": "modernretail",
+   "total": 0,
+   "text": "By the end of this year, shoppers will finally be able to use Apple Pay and Google Pay in Walmart stores, ending years of frustration that the retailer didn't support what is now a nearly ubiquitous payment option."
+  },
+  {
+   "title": "Roots to be acquired by Roberto Cavalli parent company",
+   "url": "https://www.retaildive.com/news/roots-acquired-marquee-brands/828478/",
+   "source": "retaildive",
+   "total": 0,
+   "text": "The outdoor retailer will go private in a deal led by Marquee Brands that is designed to ensure it &ldquo;remains anchored in Canadian culture.&rdquo;"
+  },
+  {
+   "title": "Why it helps to acknowledge your boss’s emotions",
+   "url": "https://www.charterworks.com/why-it-helps-to-acknowledge-the-bosss-emotions/",
+   "source": "charter",
+   "total": 0,
+   "text": "New research suggests asking your boss about her feelings could help team performance"
+  },
+  {
+   "title": "Bridging the employer chasm: How leading HR teams win in 2026",
+   "url": "https://www.hrdive.com/spons/bridging-the-employer-chasm-how-leading-hr-teams-win-in-2026/827706/",
+   "source": "hrdive",
+   "total": 0,
+   "text": "A widening workplace divide threatens culture and retention. Learn how top leaders are closing it &mdash; and where you can learn to do the same."
+  },
+  {
+   "title": "Micron adds $10B memory lab to its Idaho expansion plans",
+   "url": "https://www.manufacturingdive.com/news/micron-announces-10b-houston-based-micron-research-labs/828429/",
+   "source": "manufacturingdive",
+   "total": 0,
+   "text": "The research facility will bring together industry, government, academia and other stakeholders to pursue AI memory compute breakthroughs. Construction is expected to begin next year."
+  },
+  {
+   "title": "I finally got my first paying customer after 8 months",
+   "url": "https://www.reddit.com/r/SaaS/comments/1vrnb9j/i_finally_got_my_first_paying_customer_after_8/",
+   "source": "reddit_saas",
+   "total": 0,
+   "text": "a few days ago, I got my first paying customer for my SaaS.  $70.  I know that's not a lot of money, but honestly, seeing that payment come through felt pretty crazy.  I've been trying to make a SaaS work for almost 2 years now.  Before Announcify (my current SaaS), I built PDFQuizGen.  I got some traffic, people signed up, but nobody paid.  Eventually I moved on and started building Announcify.  Announcify is a changelog tool for SaaS companies.  The idea seemed pretty simple.  Help companies show users what they've shipped without having to build their own changelog system.  I spent months building it. GitHub integration, Linear integration, AI-generated changelogs, analytics, custom domains, different widget layouts, etc.  The problem was that I was spending way more time building than talking to people.  I'd tell myself I needed to finish one more feature first.  Then another one.  Then I would look at the analytics and see that barely anyone was visiting the site anyway.  At some point I realized I was probably just hiding behind development because it's easier to sit down and code than to actually find people and ask them to use something you've built.  So I started doing mor"
+  },
+  {
+   "title": "Edgerun (YC Summer 2026) – Military exoskeletons",
+   "url": "https://edgerun.com",
+   "source": "yc",
+   "total": 0,
+   "text": "Military exoskeletons\nEdgerun Industries builds military exoskeletons. Our hip-mounted system assists with every step a soldier takes under combat load, so they can travel farther, carry more, and arrive with more energy to fight."
+  },
+  {
+   "title": "DigitalBridge-backed Switch files confidentially for US IPO",
+   "url": "https://www.techinasia.com/goldman-jpmorgan-hired-switchs-potential-10b-ipo",
+   "source": "techinasia",
+   "total": 0,
+   "text": "Switch has data centers in Nevada, Michigan, Georgia, and Texas."
+  },
+  {
+   "title": "Revolution Bofa Eleva El Mundo Pero La Fed No Ha Terminado Con Las Tasa",
+   "url": "gbrain://newsletters/revolution-bofa-eleva-el-mundo-pero-la-fed-no-ha-terminado-con-las-tasa",
+   "source": "newsletters",
+   "total": 0,
+   "text": "# BofA eleva el mundo pero la Fed no ha terminado con las tasas\n\n- **De:** Javier Morodo <javiermtzmorodo+revolution-daily@substack.com>\n- **Fecha:** Mon, 29 Jun 2026 12:00:48 +0000\n- **Capturado:** 2026-07-05 12:24\n\n---\n\nView this post on the web at https://javiermtzmorodo.substack.com/p/bofa-eleva-el-mundo-pero-la-fed-no\n\nEl mundo mejora. La Fed no.\nEl mercado está comprando la tesis del alivio geopolítico como si el problema de fondo hubiera desaparecido. El acuerdo de paz frágil con Irán baja el Brent a $72 dólares por barril y Bank of America eleva su estimado de crecimiento global a 3.2% para 2026. Todo suena bien. El error está en creer que inflación más baja equivale a Fed más laxa. BofA anticipa 75 puntos base adicionales de alza comenzando en septiembre. La tesis real: el crecimiento aguanta, la IA sostiene el capex, pero el costo del dinero sigue subiendo. En ese entorno, los activos que ganan son renta fija corta en dólares, consumo defensivo con ancla en economías sede del Mundial y semiconductores con ventaja estructural no dependiente de tasas.\nEl alivio geopolítico no resuelve el problema inflacionario. Solo lo disfraza.\n¡Ahora también nos puedes escuchar en Spotify"
+  },
+  {
+   "title": "Show HN: Scroll through all 43252003274489856000 Rubik's Cube states",
+   "url": "https://everycube.alen.is/",
+   "source": "hackernews",
+   "total": 0,
+   "text": ""
+  },
+  {
+   "title": "Nvidia just showed that the harness, not the AI model, is now the real hero",
+   "url": "https://techcrunch.com/2026/08/21/nvidia-just-showed-that-the-harness-not-the-ai-model-is-now-the-real-hero/",
+   "source": "techcrunch",
+   "total": 0,
+   "text": "Nvidia research shows that AI agents can perform well, and not go off the deep end, through fine-tuning, even if the AI model isn't that great at the task."
+  },
+  {
+   "title": "Unlocking hidden revenue streams with market models",
+   "url": "https://www.technologyreview.com/2026/08/20/1142070/unlocking-hidden-revenue-streams-with-market-models/",
+   "source": "mit",
+   "total": 0,
+   "text": "Each day, an airline transports tens of thousands of passengers on hundreds of flights. Often these are not straightforward point-to-point routes, with passengers requiring multiple connections. The airline can consider potentially hundreds of variables to price each of these journeys: demand, season, time of day, current events, global markets, and competitor airline activity to name&#8230;"
+  },
+  {
+   "title": "Solinide closes €4M to commercialise photonic chips for AI data centres",
+   "url": "https://tech.eu/2026/08/20/solinide-closes-eur4m-to-commercialise-photonic-chips-for-ai-data-centres/",
+   "source": "techeu",
+   "total": 0,
+   "text": "Swedish deeptech company Solinide Photonics has raised €4 million in seed funding to commercialise its siliconnitride photonic integrated circuit technology and prepare for scalablemanufacturing. The ..."
+  },
+  {
+   "title": "Chinese carmakers now sell one EV abroad for every two at home",
+   "url": "https://restofworld.org/2026/china-ev-exports-overcapacity-global-markets/?utm_source=rss&utm_medium=rss&utm_campaign=feeds",
+   "source": "restofworld",
+   "total": 0,
+   "text": "Dwindling sales at home are pushing the cars toward Brazil, Thailand, and the Gulf."
+  },
+  {
+   "title": "With a record $2.7B in sales, U.S. Polo Assn. is scoring points with younger audiences",
+   "url": "https://www.modernretail.co/operations/with-a-record-2-7b-in-sales-u-s-polo-assn-is-scoring-points-with-younger-audiences/?utm_campaign=modernretaildis&utm_medium=rss&utm_source=general-rss",
+   "source": "modernretail",
+   "total": 0,
+   "text": "U.S. Polo Assn. is celebrating a record year, thanks to its larger store footprint and growing fanbase of teens and twenty-somethings."
+  },
+  {
+   "title": "The Weekly Closeout: Target’s home turnaround and Macy’s 100th parade countdown",
+   "url": "https://www.retaildive.com/news/target-home-turnaround-macys-thanksgiving-day-parade-vuori-cmo/828460/",
+   "source": "retaildive",
+   "total": 0,
+   "text": "Long lead times in the category mean a rebound will take time. Meanwhile, the department store is setting its sights on its centennial Thanksgiving Day Parade."
+  },
+  {
+   "title": "Why leaders should ignore predictions about AI",
+   "url": "https://www.charterworks.com/why-leaders-should-ignore-predictions-about-ai/",
+   "source": "charter",
+   "total": 0,
+   "text": "How workers in India are training robots with head-mounted cameras. \nThe case against prediction—and for uncertainty. \nMidnight job interviews with AI chatbots."
+  },
+  {
+   "title": "Workers report ‘FOBO’ — a fear of becoming obsolete",
+   "url": "https://www.hrdive.com/news/workers-report-fobo-a-fear-of-becoming-obsolete/828115/",
+   "source": "hrdive",
+   "total": 0,
+   "text": "Most workers told ETS and The Harris Poll that upskilling &ldquo;is no longer a choice&rdquo; but also that it was hard to get employer support on the matter."
+  },
+  {
+   "title": "SandboxAQ’s goal to find PFAS-free alternatives for the semiconductor industry",
+   "url": "https://www.manufacturingdive.com/news/chips-act-pfas-sandboxaq-ai-lqm-stefan-leichenauer-engineering/828283/",
+   "source": "manufacturingdive",
+   "total": 0,
+   "text": "The Silicon Valley startup developed an advanced computational method to also help find alternatives for rare-earth-free magnets, catalysts and batteries in the sector, said Stefan Leichenauer, VP of engineering."
+  },
+  {
+   "title": "Over 6 failed attempts and then I grew my SaaS to $1.7k revenue in 4 months",
+   "url": "https://www.reddit.com/r/SaaS/comments/1vs9ji8/over_6_failed_attempts_and_then_i_grew_my_saas_to/",
+   "source": "reddit_saas",
+   "total": 0,
+   "text": "Hey guys! This community has been great!! I would watch people making money from SaaS from the side lines until end of last year then I decided to do something about it. Since I watched Social network I wanted to build a massive startup of my own. A unicorn. I would fail everytime as I would focus on things like market size, moat, trends etc, but would not account for the most impressive thing - which is solving a real problem and building something people want. I was accepted into an accelerator program beginning of this year ( similar to YC ) but ended up leaving because it felt more like I am back in school trying to impress my teachers ( VCs in this scenario ) than actually building something worth while. - but that’s on me, smarter people than me navigated that environment better, raised money and now are doing bigger things. Anyways, I launched my SaaS ( built it for a hackathon to win open AI credits and maybe a job too ), didn’t even make top 10. Launched the platform a month after the hackathon anyway with the prototype and to my surprise someone bought a subscription. Put in more time - used claude for SEO, posted on X, reddit and made videos on Instagram and now 4 months"
+  },
+  {
+   "title": "Studio (YC Summer 2026) – Engineer the future",
+   "url": "https://trystudio.ai",
+   "source": "yc",
+   "total": 27,
+   "text": "Engineer the future\nStudio is a simulation lab studying how humans and societies respond to new ideas, and is building the first software models that can accurately predict that response. Instead of creating digital twins of survey respondents, Studio builds live market models of interconnected audience segments from real, traceable consumer-behavior evidence. Our predictions match live KPI outcomes like revenue and sentiment with over 95% accuracy for large consumer-facing brands."
+  },
+  {
+   "title": "Nvidia plans $3b investment in Stargate developer Lancium",
+   "url": "https://www.techinasia.com/nvidia-signs-15b-amkor-chippackaging-deal",
+   "source": "techinasia",
+   "total": 0,
+   "text": "Lancium’s Abilene campus is Stargate’s first operational data center site."
+  },
+  {
+   "title": "Mckinsey Top 10 Articles This Quarter",
+   "url": "gbrain://newsletters/mckinsey-top-10-articles-this-quarter",
+   "source": "newsletters",
+   "total": 0,
+   "text": "# Top 10 articles this quarter\n\n- **De:** McKinsey Top Ten <publishing@email.mckinsey.com>\n- **Fecha:** Sat, 4 Jul 2026 15:03:31 +0000\n- **Capturado:** 2026-07-05 12:24\n\n---\n\nBuilding an agentic organization, the AI transformation manifesto, and more ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ \n  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ \n  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ \n  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ \n  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ \n  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ \n  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ \n  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ \n  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ \n \n \n\n \n\n \n\n\n\n\n\n \n\n \n\n \n\n \n\n \n\n \n\n \n\n \n\n \n\n\n\n \n\n\n\n\n \n\n\n\n\n \n\n\n\n\n \n\n\n\n\n \n\n\n\n\n \n\n\n\n\n \n\n\n\n\n \n\n\n\n\n \n\n\n\n\n \n\n\n\n\n \n \n\n \n \n \n \n\n\n\n\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \nShare this email \n \n \n \n\n \n \n \n \n \n \n \n \n \n\n \n \n \n \n\n\n \n \n \n \n\n \n \n \n \n\n\n\n \n \n \n \n \n \n \n \n \n \n \n \nFor direct answers to complex questions, check out McKinsey Explainers.\n \n\n \n \n \n \n\n \n \n \n \n﻿Top Ten Newsletter │ Second Quarter 2026 \n\n \n \n \n \nOur top ten articles this quarter look at what it takes to build an agentic organization, AI-enabled workflows for marketers, and more. At No. 1, McKinsey’s Alex Singla, Alexander Sukharevsky, Kate Smaje, Eric Lamarre, and Robert Levin outline the defining themes that separate the companies tha"
+  },
+  {
+   "title": "Show HN: Woxi - Open-source Mathematica / Wolfram Language reimplementation",
+   "url": "https://woxi.ad-si.com",
+   "source": "hackernews",
+   "total": 0,
+   "text": "Woxi is an interpreter for the Wolfram Language written in Rust.<p>It comes with Woxi Studio, a Mathematica-like GUI built with iced, but you can also use Woxi through a CLI, Jupyter kernel, Python package, npm package, or WASM module.<p>Compared with wolframscript &#x2F; Mathematica, the main differences are:<p>- Free and open source\n- Very fast startup - Typically milliseconds rather than seconds for the Wolfram kernel, making Woxi practical for shell scripts, one-liners, and other short-lived processes\n- Embeddable - It can run in a browser via WASM or be embedded into another application as a scripting language<p>A more detailed comparison with Mathematica is available here:\n<a href=\"https:&#x2F;&#x2F;woxi.ad-si.com&#x2F;docs&#x2F;comparison&#x2F;mathematica&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;woxi.ad-si.com&#x2F;docs&#x2F;comparison&#x2F;mathematica&#x2F;</a>.<p>Conformance is ensured with ~26&#x27;000 unit tests and ~900 .wls script snapshot tests.<p>The current focus is on fixing remaining edge cases, improving performance, and growing the community.<p>If you use the Wolfram Language, I&#x27;d be particularly interested in feedback on compatibility and missing functional"
+  },
+  {
+   "title": "Why is the DOJ investigating Andreessen Horowitz’s board seats?",
+   "url": "https://techcrunch.com/video/why-is-the-doj-investigating-andreessen-horowitzs-board-seats/",
+   "source": "techcrunch",
+   "total": 0,
+   "text": "Andreessen Horowitz has two partners sitting on the boards of companies that now&#160;compete with each other: Ben Horowitz at Databricks and Martin Casado at&#160;Fivetran. Nothing too scandalous on the surface, except&#160;the Department of&#160;Justice&#160;has&#160;reportedly&#160;been investigating the arrangement&#160;for&#160;almost&#160;a&#160;year, dusting&#160;off a 112-year-old antitrust&#160;law&#160;that&#8217;s&#160;rarely used against VCs.&#160; Board conflicts&#160;aren&#8217;t&#160;exactly new, and these companies&#160;weren&#8217;t&#160;necessarily direct competitors when a16z first invested [&#8230;]"
+  },
+  {
+   "title": "Support networks aim to help kids through the polycrisis",
+   "url": "https://www.technologyreview.com/2026/08/20/1141686/support-networks-help-kids-polycrisis/",
+   "source": "mit",
+   "total": 0,
+   "text": "Sometime in the late 2000s, Pim Sullivan-Tailyour was sitting in the back of a car, headed toward her great-grandmother’s tiny town in the south of Thailand. She watched big mountains pass by out the window. She was just six years old but was about to be hit by an adult-size realization. “They were just quarried&#8230;"
+  },
+  {
+   "title": "France's top-funded tech companies in H1 2026",
+   "url": "https://tech.eu/2026/08/20/frances-top-funded-tech-companies-in-h1-2026/",
+   "source": "techeu",
+   "total": 0,
+   "text": "France remained one of Europe’s leading tech funding marketsin H1 2026, with investment concentrated in AI, space, fintech and healthcare.Several large transactions shaped the total, including Eutelsa..."
+  },
+  {
+   "title": "Ban on Chinese robots leaves U.S. startups stranded",
+   "url": "https://restofworld.org/2026/china-robot-ban-silicon-valley/?utm_source=rss&utm_medium=rss&utm_campaign=feeds",
+   "source": "restofworld",
+   "total": 0,
+   "text": "Three Unitree G1 humanoid robots are pictured at robotics company Unitree's first retail store in Beijing."
+  },
+  {
+   "title": "Walmart gets close to $3 billion in tariff refunds",
+   "url": "https://www.modernretail.co/operations/walmart-gets-close-to-3-billion-in-tariff-refunds/?utm_campaign=modernretaildis&utm_medium=rss&utm_source=general-rss",
+   "source": "modernretail",
+   "total": 0,
+   "text": "Tariff refunds continue to bolster the balance sheets of big retailers while consumers remain constrained by higher fuel prices and other macroeconomic factors."
+  },
+  {
+   "title": "Home Depot rolls out express delivery in 3 hours or less across US",
+   "url": "https://www.retaildive.com/news/home-depot-express-delivery-3-hours-or-less/828362/",
+   "source": "retaildive",
+   "total": 18,
+   "text": "The service covers thousands of SKUs and uses more than 2,000 U.S. stores as fulfillment hubs."
+  },
+  {
+   "title": "A new ‘social contract’ that helps all workers benefit from AI",
+   "url": "https://www.charterworks.com/a-new-social-contract-that-helps-all-workers-benefit-from-ai/",
+   "source": "charter",
+   "total": 0,
+   "text": "Worker pessimism about AI adoption has never been higher, but it doesn't have to be that way. How one organization involved \"worker voice\" in its process for adopting AI."
+  },
+  {
+   "title": "Rethinking RTO? Researchers highlight the positive impact of remote work",
+   "url": "https://www.hrdive.com/news/rto-future-of-work-summer-2026/828127/",
+   "source": "hrdive",
+   "total": 0,
+   "text": "In a year where retention is top of mind for employers, conversations highlighting the benefits of remote work may be crucial."
+  },
+  {
+   "title": "Tesla looks to build $10B solar cell manufacturing site in Texas",
+   "url": "https://www.manufacturingdive.com/news/tesla-eyes-10b-solar-cell-manufacturing-site-fort-bend-county-texas/828372/",
+   "source": "manufacturingdive",
+   "total": 0,
+   "text": "The automaker is evaluating multiple states for Project Crystal Sun. The Fort Bend County site would create more than 9,712 jobs and begin construction as soon as this year."
+  },
+  {
+   "title": "Crossed 400 users on my first SaaS in 2 months :)",
+   "url": "https://www.reddit.com/r/SaaS/comments/1vspd0i/crossed_400_users_on_my_first_saas_in_2_months/",
+   "source": "reddit_saas",
+   "total": 0,
+   "text": "Still a small number, but seeing 400+ people sign up for something I started building from scratch a couple of months ago feels pretty special. I built a design tool, basically a visual playground for creating cool effects like ASCII, dither, halftone and a lot more, all in the browser. I've mostly been building by listening to users, shipping quickly and sharing the journey online. If you're curious, this is what I'm building: https://ditther.com No big launch or paid ads so far. Just sharing content on X and improving the app every week. On to the next milestone: 1,000 users. I'm starting to focus more on marketing now. For other solo founders, what channels actually worked for you when going from a few hundred users to your first 1,000?  &#32; submitted by &#32;  /u/aashishdesign   [link] &#32; [comments]"
+  },
+  {
+   "title": "Grocalo (YC Summer 2026) – AI brain that runs content for creators",
+   "url": "https://grocalo.com/",
+   "source": "yc",
+   "total": 31,
+   "text": "AI brain that runs content for creators\nGrocalo (S26) is an AI brain that runs content for creators. We understand their audiences, using video understanding and deep platform analytics to bottle up the taste behind each creator and personalize and distribute content to creator specific audiences.\r\n\r\nGrocalo generated 2B views and gained 4M followers for our creators in the last 2 months. Our clients include Jimmy O. Yang (Comedian, 11M followers), King Bach (72M followers), Leenda Dong (28M followers), Steven He (30M followers), Sheena Melwani (18M followers), and Jeannie Mai (TV host, 6M followers).\r\n\r\nContent should be personalized and data-driven. We’re developing the most advanced AI brain capable of replicating virality for any given audience."
+  },
+  {
+   "title": "The hunt for the next Sea Group or Grab",
+   "url": "https://www.techinasia.com/hunt-sea-group-grab",
+   "source": "techinasia",
+   "total": 0,
+   "text": "Singapore’s next big success story will look very different from the Southeast Asia-focused giants that have come up."
+  },
+  {
+   "title": "Mckinsey From Anxiety To Advantage A Marketing Organization That Thri",
+   "url": "gbrain://newsletters/mckinsey-from-anxiety-to-advantage-a-marketing-organization-that-thri",
+   "source": "newsletters",
+   "total": 0,
+   "text": "# From anxiety to advantage: A marketing organization that thrives with AI\n\n- **De:** \"McKinsey & Company\" <publishing@email.mckinsey.com>\n- **Fecha:** Mon, 29 Jun 2026 14:45:30 +0000\n- **Capturado:** 2026-07-05 12:24\n\n---\n\nBuild an AI-ready marketing organization ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ \n  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ \n  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ \n  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ \n  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ \n  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ \n  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ \n  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ \n  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ \n \n \n\n \n\n \n\n\n\n\n\n \n\n \n\n \n\n \n\n \n\n \n\n \n\n \n\n \n\n\n\n \n\n\n\n\n \n\n\n\n\n \n\n\n\n\n \n\n\n\n\n \n\n\n\n\n \n\n\n\n\n \n\n\n\n\n \n\n\n\n\n \n\n\n\n\n \n\n\n\n\n \n \n\n \n \n \n \n\n\n\n\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \nShare this email \n \n \n \n \n \n\n \n \n \n \n\n\n\n \n \n \n \n \n \n \n \n \n \n \n \nBrought to you by Steve Reis﻿ (Steve_Reis@McKinsey.com) and Tjark Freundt (Tjark_Freundt@McKinsey.com), global leaders of McKinsey’s Growth, Marketing & Sales Practice\n \n\n \n \n \n \n \n \n \n \n \n\n \n \n \n \n\n\n \n \n \n \n \n \n \n \n \n \nNew from McKinsey & Company \n \n \n \n \nFrom anxiety to advantage: A marketing organization that thrives with AI \n \n \nMarketers are using AI, but surface-level enthusiasm is masking the anxiety, indecision, and operating-model gaps holding ba"
+  },
+  {
+   "title": "Show HN: Eigendrum - Draw any shape and hear what it sounds like as a drum",
+   "url": "https://baselashraf81.github.io/eigendrum/",
+   "source": "hackernews",
+   "total": 0,
+   "text": "Hi HN, I built Eigendrum, a web tool that solves the 2D wave equation for arbitrary shapes so you can hear what they sound like as drums.<p>How it works:\n* Solves -∇²u = λu using finite element analysis (Kφ = λMφ) on a triangle mesh.\n* Validated to &lt;0.1% error against closed-form solutions for circles (Bessel zeros) and rectangles.\n* Sound model factors in strike location, Rayleigh damping, and mallet width.\n* Includes Kac drums I &amp; II to demonstrate identical sound spectra from different geometries.\n* No frameworks, build steps, or dependencies.<p>Repo and tests: <a href=\"https:&#x2F;&#x2F;github.com&#x2F;BaselAshraf81&#x2F;eigendrum\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;BaselAshraf81&#x2F;eigendrum</a><p>Happy to answer any questions about the FEM solver or Web Audio setup!<p><a href=\"https:&#x2F;&#x2F;eigendrum.com&#x2F;#p=circle\" rel=\"nofollow\">https:&#x2F;&#x2F;eigendrum.com&#x2F;#p=circle</a>"
+  },
+  {
+   "title": "Oura faces lawsuit accusing it of misleading consumers about sleep-tracking accuracy",
+   "url": "https://techcrunch.com/2026/08/21/oura-faces-lawsuit-accusing-it-of-misleading-consumers-about-sleep-tracking-accuracy/",
+   "source": "techcrunch",
+   "total": 0,
+   "text": "The lawsuit alleges that Oura rings are unable to measure any of the physiological signals needed to assess sleep quality or determine sleep stages."
+  },
+  {
+   "title": "The Download: threats from space mirrors and credit for AI drugs",
+   "url": "https://www.technologyreview.com/2026/08/21/1142762/the-download-space-mirrors-threats-ai-designed-drugs-credit/",
+   "source": "mit",
+   "total": 0,
+   "text": "This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. This company’s plans to deploy space mirrors could jeopardize the night sky for many A company that plans to beam sunlight from space to Earth on demand might unintentionally brighten the&#8230;"
+  },
+  {
+   "title": "Callosum raises $100M seed round",
+   "url": "https://tech.eu/2026/08/20/callosum-raises-100m-seed-round/",
+   "source": "techeu",
+   "total": null,
+   "text": "A UK AI startup that is building software infrastructure that allows AI workloads to run on different chips and AI models has raised $100m in an exceptionally high-value European seed round. Callosum ..."
+  },
+  {
+   "title": "The online shopping trend where you buy nothing",
+   "url": "https://restofworld.org/2026/south-korea-shopping-trend/?utm_source=rss&utm_medium=rss&utm_campaign=feeds",
+   "source": "restofworld",
+   "total": null,
+   "text": "On South Korea’s “dopamine sites,” the pleasure comes from aspirational shopping rituals like browsing, curating, and tracking — not from a delivery."
+  },
+  {
+   "title": "Big-Box Briefing: Target sees sales boom in reinvented snack category",
+   "url": "https://www.modernretail.co/operations/big-box-briefing-target-sees-sales-boom-in-reinvented-snack-category/?utm_campaign=modernretaildis&utm_medium=rss&utm_source=general-rss",
+   "source": "modernretail",
+   "total": null,
+   "text": "Target has entered a new era of trendy snacks, creating more space for products like protein bars and meat sticks as part of a massive refresh of its grocery business."
+  },
+  {
+   "title": "Victoria’s Secret reshapes tech leadership",
+   "url": "https://www.retaildive.com/news/victorias-secret-tech-leadership-cto-board-directors/828455/",
+   "source": "retaildive",
+   "total": null,
+   "text": "Former Foot Locker executive Adrian Butler will oversee technology and former Starbucks CTO Gerri Martin-Flickinger will sit on the board."
+  },
+  {
+   "title": "How AI is ‘upending’ the traditional rules of pay",
+   "url": "https://www.charterworks.com/how-ai-is-upending-the-traditional-rules-of-pay/",
+   "source": "charter",
+   "total": null,
+   "text": "Charter spoke with Colacurcio about what flatter organizations mean for compensation, how that impacts workers' appetite for becoming managers, and why the fundamentals of pay strategy matter more than ever in an age of AI."
+  },
+  {
+   "title": "Amazon worker fired shortly after disclosing pregnancy has discrimination claim, court rules",
+   "url": "https://www.hrdive.com/news/amazon-worker-fired-shortly-after-disclosing-pregnancy-has-bias-claim/828533/",
+   "source": "hrdive",
+   "total": null,
+   "text": "The alleged close connection between her disclosure, restrictions on her overtime and her termination indicated adverse action based on the pregnancy, the court said."
+  },
+  {
+   "title": "Illinois bill streamlines manufacturing career paths for high schoolers",
+   "url": "https://www.manufacturingdive.com/news/illinois-bill-manufacturing-careers-high-school-labor-force/828303/",
+   "source": "manufacturingdive",
+   "total": null,
+   "text": "The legislation aims to ensure students have access to hands-on training for jobs in CNC machining, welding and other fields."
+  },
+  {
+   "title": "To everyone still building when nobody is watching",
+   "url": "https://www.reddit.com/r/SaaS/comments/1vu8o2l/to_everyone_still_building_when_nobody_is_watching/",
+   "source": "reddit_saas",
+   "total": null,
+   "text": "Just a little appreciation post for everyone out here grinding on their SaaS. If you're building something, dealing with bugs, talking to users, getting ignored, changing things for the 10th time and still waking up the next day to keep going, I hope you know you're doing better than you think. ❤️ It can be really easy to look at other founders and feel like everyone is ahead of you, but most people are figuring it out as they go. Keep going, even if progress feels painfully slow sometimes. “A little progress each day adds up to big results.” Also, I'm genuinely curious, what are you guys struggling with right now? If you're stuck on something and just want another opinion or someone to bounce an idea off, feel free to reach out. Happy to help if I can. PS: We've shipped quite a few SaaS products ourselves, so if nothing else, we've probably made a few of the mistakes you're currently making.  &#32; submitted by &#32;  /u/rocketeams   [link] &#32; [comments]"
+  },
+  {
+   "title": "Callbook AI (YC Summer 2026) – AI collections agency for late stage portfolios",
+   "url": "https://callbook.ai",
+   "source": "yc",
+   "total": null,
+   "text": "AI collections agency for late stage portfolios\nCallbook AI is a collections agency operated by AI. We collect late stage portfolios by finding, contacting and negotiating with borrowers."
+  },
+  {
+   "title": "A list of fundraising startups from Asia and beyond (Updated)",
+   "url": "https://www.techinasia.com/visual-story/list-fundraising-startups-southeast-asia-india",
+   "source": "techinasia",
+   "total": null,
+   "text": "Fundraising is hard. To make things slightly easier, we've compiled this list of fundraising startups for our subscribers."
+  },
+  {
+   "title": "Mckinsey The Quarters Top Themes",
+   "url": "gbrain://newsletters/mckinsey-the-quarters-top-themes",
+   "source": "newsletters",
+   "total": null,
+   "text": "# The quarter’s top themes\n\n- **De:** McKinsey Top Ten <publishing@email.mckinsey.com>\n- **Fecha:** Sat, 27 Jun 2026 15:51:30 +0000\n- **Capturado:** 2026-07-05 12:24\n\n---\n\nTurning AI ambition into value, effective leadership amid uncertainty, and more ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ \n  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ \n  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ \n  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ \n  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ \n  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ \n  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ \n  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ \n  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ \n \n \n\n \n\n \n\n\n\n\n\n \n\n \n\n \n\n \n\n \n\n \n\n \n\n \n\n \n\n\n\n \n\n\n\n\n \n\n\n\n\n \n\n\n\n\n \n\n\n\n\n \n\n\n\n\n \n\n\n\n\n \n\n\n\n\n \n\n\n\n\n \n\n\n\n\n \n\n\n\n\n \n \n\n \n \n \n \n\n\n\n\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \nShare this email \n \n \n \n\n \n \n \n \n \n \n \n \n \n\n \n \n \n \n\n\n \n \n \n \n\n \n \n \n \n\n\n\n \n \n \n \n \n \n \n \n \n \n \n \nFor direct answers to complex questions, check out McKinsey Explainers.\n \n\n \n \n \n \n\n \n \n \n \nTop Ten McKinsey Themes │ Second Quarter 2026 \n\n \n \n \n \nIn the second quarter of 2026, our top ten posts from McKinsey Themes highlight how organizations can turn AI ambition into value, effective leadership amid uncertainty, scenario planning, and more. At No. 1 is Rewired 2.0: How leading companies are (still) winning with AI, which draws on "
+  },
+  {
+   "title": "Show HN: Voice driven murder mystery, Interview AI suspects with your voice",
+   "url": "https://www.whodunnitai.com/",
+   "source": "hackernews",
+   "total": null,
+   "text": "Hey HN!<p>I&#x27;m excited to show off this really fun project I put together. I originally built this project 2-3 years ago, AI was already booming at the time, however voice AI agents were still very early. I loved my proof of concept at the time, but wasn&#x27;t quite happy with it.<p>I recently had the desire to check out the tech again, and know many of you will be interested.<p>Interviews are speech to speech with OpenAI&#x27;s gpt-realtime-2.1 over WebRTC. This model is... expensive, and because of that, I have to add some amount of restrictions, conversations are tied to a authenticated Clerk user id. I have also added a 30 minute timer because well, I really don&#x27;t want to go broke while I sleep tonight.<p>Each suspect has a tool they call when you make a direct accusation. It captures who you accused and a faithful list of the evidence you actually stated.<p>A separate gpt-5-mini judge then decides which of the case&#x27;s required evidence facts you genuinely presented. Paraphrasing counts, vague suspicion and fishing don&#x27;t.<p>The rest is Next.js, MongoDB, and Clerk.<p>Let me know whether the suspects hold up under a real interrogation."
+  },
+  {
+   "title": "How to tell if your AI platforms’ accounts have been hacked",
+   "url": "https://techcrunch.com/2026/08/15/how-to-tell-if-your-ai-platforms-accounts-have-been-hacked/",
+   "source": "techcrunch",
+   "total": null,
+   "text": "A guide on how to check if hackers have broken into your accounts on the most popular AI platforms."
+  },
+  {
+   "title": "Mother tongue",
+   "url": "https://www.technologyreview.com/2026/08/21/1141726/mother-tongue-fiction/",
+   "source": "mit",
+   "total": null,
+   "text": "“Daddy?” Theo curled against my side in bed. “Where do words go when they die?” I’d orchestrated the bedtime routine flawlessly: bath (taken), teeth (brushed), potty (tinkled), books (two), song (one, poorly sung), and snuggle (his chin on my second rib). Now was the moment when our son’s eyelids were supposed to flutter gently closed,&#8230;"
+  },
+  {
+   "title": "Paralo raises £270K to tackle golf’s fragmented technology stack",
+   "url": "https://tech.eu/2026/08/20/paralo-raises-ps270k-to-tackle-golfs-fragmented-technology-stack/",
+   "source": "techeu",
+   "total": null,
+   "text": "UK golf technology startup Paralo has raised £270,000 in an oversubscribed pre-seed funding round to develop its operating system for golf clubs and a connected product for golfers. £250,000 of the fo..."
+  },
+  {
+   "title": "Mozilla’s CTO thinks AI should be built like the internet",
+   "url": "https://restofworld.org/2026/open-source-ai-infrastructure-mozilla/?utm_source=rss&utm_medium=rss&utm_campaign=feeds",
+   "source": "restofworld",
+   "total": null,
+   "text": "Raffi Krikorian explains that while consumers flock to ChatGPT and Claude, companies are increasingly turning to open models that they can customize and control."
+  },
+  {
+   "title": "Walmart extends Scintilla data platform to Sam’s Club",
+   "url": "https://www.modernretail.co/technology/walmart-extends-scintilla-data-platform-to-sams-club/?utm_campaign=modernretaildis&utm_medium=rss&utm_source=general-rss",
+   "source": "modernretail",
+   "total": null,
+   "text": "Sam's Club merchants and brands will soon be able to use Walmart's data analytics platform to better understand and predict member behavior."
+  },
+  {
+   "title": "Michaels launches 3D digital frame builder",
+   "url": "https://www.retaildive.com/news/michaels-3d-augmented-reality-digital-frame-builder/828381/",
+   "source": "retaildive",
+   "total": null,
+   "text": "The retailer is harnessing 3D and AR technology to help shoppers preview frames in their spaces."
+  },
+  {
+   "title": "How the 'machine pace' of work is burning out your best employees",
+   "url": "https://www.charterworks.com/how-the-machine-pace-of-work-is-burning-out-your-best-employees/",
+   "source": "charter",
+   "total": null,
+   "text": "How the heaviest AI users—and best performers—are burning out trying to ‘outrace irrelevance’"
+  },
+  {
+   "title": "Feds axe contractor affirmative action requirements in trio of final rules",
+   "url": "https://www.hrdive.com/news/feds-ax-contractor-affirmative-action-requirements-in-trio-of-final-rules/828542/",
+   "source": "hrdive",
+   "total": null,
+   "text": "The documents follow up on one of President Donald Trump&rsquo;s first orders that sought to alter the federal government&rsquo;s antidiscrimination enforcement work."
+  },
+  {
+   "title": "Bristol Myers Squibb to build $2.3B manufacturing campus in Houston",
+   "url": "https://www.manufacturingdive.com/news/bristol-myers-squibb-invest-2b-manufacturing-campus-houston/828245/",
+   "source": "manufacturingdive",
+   "total": null,
+   "text": "The 600,000-square-foot campus will produce several types of medicines with room for expansion as digital integration and automation capabilities evolve."
+  },
+  {
+   "title": "8 months, 50k downloads, and $276 ❤️",
+   "url": "https://www.reddit.com/r/SaaS/comments/1vtgg8t/8_months_50k_downloads_and_276/",
+   "source": "reddit_saas",
+   "total": null,
+   "text": "I know $276 in 28 days isn't a massive number, but I am incredibly proud of it. I have been building a productivity app as a solo developer for 1.5 years, and it has been live on the stores for 8 months. Recently, the app crossed 50,000 total downloads. Getting traffic is one thing, but convincing people to actually pay for a B2C app is a whole different reality. Seeing complete strangers pull out their credit cards for something I coded from scratch is a feeling that is hard to describe. It is a reminder that every bug fix, every UI tweak, and all those late nights coding were actually worth it. I am nowhere near where I want to be, but hitting this revenue this month feels like a solid validation. If you are building a consumer app alone and struggling to convert free users, keep iterating and testing your pricing. Now it is time to get back to the code and figure out how to double that conversion rate.  &#32; submitted by &#32;  /u/remzi_dev   [link] &#32; [comments]"
+  },
+  {
+   "title": "Aerogen Systems (YC Summer 2026) – Building the future of advanced chip manufacturing.",
+   "url": "https://www.aerogensystems.com/",
+   "source": "yc",
+   "total": null,
+   "text": "Building the future of advanced chip manufacturing.\nWe are building the future of chip manufacturing.\r\n\r\nChips are more advanced than ever, and the features inside them keep getting smaller. But the cleanroom infrastructure supporting their manufacture has not scaled at the same pace. Intel, TSMC, Samsung, and others spend billions building and operating massive cleanrooms, only to isolate their most advanced wafers from the surrounding facility as much as possible.\r\n\r\nWe think that architecture is backwards. Instead of making the entire building cleaner, why not make the machinery itself as clean as possible?\r\n\r\nTalos is our proprietary tool-integrated purification system. It sits directly inside semiconductor equipment and continuously destroys airborne molecular contaminants before they reach the wafer. Instead of fighting contamination by constantly flooding tools with ultra-high-purity nitrogen, Talos keeps the environment inside the machine 10–100x cleaner, without the massive purge-gas bill.\r\n\r\nTalos is powerful on its own, but it is also the foundation for a much bigger vision: the Cleanpipe.\r\n\r\nThe Aerogen Systems Cleanpipe is an ultra-clean interconnect infrastructure tha"
+  },
+  {
+   "title": "Mckinsey From Campaigns To Continuous Growth Ai Capabilities Shaping",
+   "url": "gbrain://newsletters/mckinsey-from-campaigns-to-continuous-growth-ai-capabilities-shaping",
+   "source": "newsletters",
+   "total": null,
+   "text": "# From campaigns to continuous growth: AI capabilities shaping marketing\n\n- **De:** \"McKinsey & Company\" <publishing@email.mckinsey.com>\n- **Fecha:** Fri, 26 Jun 2026 20:39:30 +0000\n- **Capturado:** 2026-07-05 12:24\n\n---\n\n5 core pillars  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ \n  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ \n  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ \n  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ \n  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ \n  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ \n  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ \n  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ \n  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ \n \n \n\n \n\n \n\n\n\n\n\n \n\n \n\n \n\n \n\n \n\n \n\n \n\n \n\n \n\n\n\n \n\n\n\n\n \n\n\n\n\n \n\n\n\n\n \n\n\n\n\n \n\n\n\n\n \n\n\n\n\n \n\n\n\n\n \n\n\n\n\n \n\n\n\n\n \n\n\n\n\n \n \n\n \n \n \n \n\n\n\n\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \nShare this email \n \n \n \n \n \n\n \n \n \n \n\n\n\n \n \n \n \n \n \n \n \n \n \n \n \nBrought to you by Steve Reis﻿ (Steve_Reis@McKinsey.com) and Tjark Freundt (Tjark_Freundt@McKinsey.com), global leaders of McKinsey’s Growth, Marketing & Sales Practice\n \n\n \n \n \n \n \n \n \n \n \n\n \n \n \n \n\n\n \n \n \n \n \n \n \n \n \n \nNew from McKinsey & Company \n \n \n \n \nFrom campaigns to continuous growth: AI capabilities shaping marketing \n \n \nCapabilities built around insights, creativity, personalization, agentic commerce, and orchestration form the five core pillars of the future of marketin"
+  },
+  {
+   "title": "Show HN: Git-knife – Edit commit messages, authors, and dates like a spreadsheet",
+   "url": "https://github.com/TheRealYT/git-knife",
+   "source": "hackernews",
+   "total": null,
+   "text": ""
+  },
+  {
+   "title": "Every fusion startup that has raised over $100M",
+   "url": "https://techcrunch.com/2026/08/15/every-fusion-startup-that-has-raised-over-100m/",
+   "source": "techcrunch",
+   "total": null,
+   "text": "Fusion startups have raised $7.1 billion to date, with the majority of it going to a handful of companies."
+  },
+  {
+   "title": "This company’s plans to deploy space mirrors could jeopardize the night sky for many",
+   "url": "https://www.technologyreview.com/2026/08/21/1142755/space-mirrors-night-sky/",
+   "source": "mit",
+   "total": null,
+   "text": "A company that plans to beam sunlight from space to Earth on demand might unintentionally brighten the night sky for many more people than intended, according to a new study. Later this year, the US company Reflect Orbital plans to launch a test satellite called Eärendil-1 that will extend an 18-by-18-meter mirror in orbit. The&#8230;"
+  },
+  {
+   "title": "Lithuanian AI startup Guideless raises €1M to streamline software training",
+   "url": "https://tech.eu/2026/08/20/lithuanian-ai-startup-guideless-raises-eur1m-to-streamline-software-training/",
+   "source": "techeu",
+   "total": null,
+   "text": "AI-powered software training andoperational knowledge platform Guideless has raised €1 million in pre-seedfunding to further develop its technology and expand internationally. The roundwas led by Supe..."
+  },
+  {
+   "title": "Why we should all be worried about AI in elections",
+   "url": "https://restofworld.org/2026/ai-elections-deepfake-voter-chatbot/?utm_source=rss&utm_medium=rss&utm_campaign=feeds",
+   "source": "restofworld",
+   "total": null,
+   "text": "Deepfakes dominate headlines, but the real danger lies in opaque AI systems that make up election infrastructure."
+  },
+  {
+   "title": "The new AI playbook: The rules brands are setting around customer-facing content",
+   "url": "https://www.modernretail.co/marketing/the-new-ai-playbook-the-rules-brands-are-setting-around-customer-facing-content/?utm_campaign=modernretaildis&utm_medium=rss&utm_source=general-rss",
+   "source": "modernretail",
+   "total": null,
+   "text": "While the majority of marketers say they're using AI, many are setting boundaries around use cases for customer-facing content."
+  },
+  {
+   "title": "Walmart’s stores have ‘evolved’ as e-commerce grows",
+   "url": "https://www.retaildive.com/news/walmarts-stores-omnichannel-tariffs-drug-pricing-regulation/828387/",
+   "source": "retaildive",
+   "total": null,
+   "text": "CFO John David Rainey said brick and mortar is vital as retail becomes more omnichannel. Meanwhile, Walmart's Q2 U.S. comps were softened by drug pricing regulation."
+  },
+  {
+   "title": "Jamie Dimon isn't worried about AI job losses. He's worried about schools.",
+   "url": "https://www.charterworks.com/jamie-dimon-isnt-worried-about-ai-job-losses-hes-worried-about-schools/",
+   "source": "charter",
+   "total": null,
+   "text": "The declining value of an MBA in the AI era. What the CEO of America’s biggest bank says about AI, jobs, and a bubble. Helicopter parenting is landing in the workplace"
+  },
+  {
+   "title": "Skilled labor demand is exploding. AI may be both a cause and a solution",
+   "url": "https://www.hrdive.com/news/skilled-labor-demand-is-exploding-ai-is-both-a-cause-and-a-solution-nfpa/828486/",
+   "source": "hrdive",
+   "total": null,
+   "text": "A survey by the National Fire Protection Association found that while AI is putting pressure on an already stretched fire and safety workforce, it is also making their jobs easier."
+  },
+  {
+   "title": "Nearly 60 members of Congress call for aluminum pricing investigation",
+   "url": "https://www.manufacturingdive.com/news/house-representatives-commerce-investigation-aluminum-pricing-midwest-premium/828246/",
+   "source": "manufacturingdive",
+   "total": null,
+   "text": "At issue is the Midwest Premium, which reportedly incorporates the 50% aluminum tariffs on domestic manufacturers &mdash; even those that use domestically recycled aluminum.&nbsp;"
+  },
+  {
+   "title": "SaaS isn't dead, but I honestly think it's getting harder than ever.",
+   "url": "https://www.reddit.com/r/SaaS/comments/1vry2tu/saas_isnt_dead_but_i_honestly_think_its_getting/",
+   "source": "reddit_saas",
+   "total": null,
+   "text": "AI is killing one of the biggest advantages SaaS companies used to have: the cost and time it took to build software.  With Claude, ChatGPT, Gemini and AI coding, people can now vibe-code internal tools and surprisingly good alternatives to existing SaaS products in days.  I'm already running a SaaS, I'm getting shorter LTV, more churn and competitors shipping features way faster than me.  And there are no real restrictions anymore. A small team can build ridiculously fast.  Honestly, if I were starting from scratch today, I'd at least consider a boring old-school business instead.  An ecommerce store. A niche agency. A local service business. Something where you can just run Meta ads and sell something.  Maybe selling t-shirts is a better business than building another SaaS.  I'm not even joking  &#32; submitted by &#32;  /u/pubgupdates   [link] &#32; [comments]"
+  },
+  {
+   "title": "Hilstart (YC Summer 2026) – Autonomous Hardware Testing",
+   "url": "https://hilstart.io/",
+   "source": "yc",
+   "total": null,
+   "text": "Autonomous Hardware Testing\nWe build physical agent harnesses to enable AI to debug, validate, and ship functional hardware and software."
+  },
+  {
+   "title": "Mckinsey Ai Operating Truths Global Foresight",
+   "url": "gbrain://newsletters/mckinsey-ai-operating-truths-global-foresight",
+   "source": "newsletters",
+   "total": null,
+   "text": "# AI operating truths, global foresight\n\n- **De:** McKinsey CEO Shortlist <publishing@email.mckinsey.com>\n- **Fecha:** Fri, 26 Jun 2026 08:16:00 +0000\n- **Capturado:** 2026-07-05 12:24\n\n---\n\nEmerging ideas for leaders ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ \n  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ \n  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ \n  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ \n  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ \n  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ \n  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ \n  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ \n  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ \n \n \n\n \n\n \n\n\n\n\n\n \n\n \n\n \n\n \n\n \n\n \n\n \n\n \n\n \n\n\n\n \n\n\n\n\n \n\n\n\n\n \n\n\n\n\n \n\n\n\n\n \n\n\n\n\n \n\n\n\n\n \n\n\n\n\n \n\n\n\n\n \n\n\n\n\n \n\n\n\n\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \nShare this email \n \n \n \n\n \n \n \n \n \n \n \n \n \n\n \n \n \n \n﻿OUR BEST IDEAS FOR THE C-SUITE\n \n\n\n\n \n \n \n \n\n \n \n \n \n\n\n \n \n \n \n \n \n \n \n \n \n \n \nCurated by Alex Panas, global leader of industries, & Becca Coggins, global leader of functional practices and growth platforms \n \n\n \n \n \n \nWelcome to the latest edition of The CEO Shortlist, a biweekly newsletter of our best ideas for the C-suite. In this issue, we examine what separates AI-native companies from the rest of the pack and why geopolitical scenario planning has become one of the most urgent strategic capabilities leaders can develop. We"
+  },
+  {
+   "title": "Show HN: Ante, a coding agent in a single binary that runs offline",
+   "url": "https://github.com/AntigmaLabs/ante",
+   "source": "hackernews",
+   "total": null,
+   "text": ""
+  },
+  {
+   "title": "Show HN: Automatically detect and patch walking-dead states in Sierra games",
+   "url": "https://github.com/katiahayati/lucasartsifier/",
+   "source": "hackernews",
+   "total": null,
+   "text": "Hi HN, I&#x27;ve become lazier in my old age and struggle to replay my favorite Sierra games from the 80s and 90s because I keep getting into those situations where I need an item from 3 acts ago, I have no save game handy, and now I gotta make dinner.<p>So I&#x27;m building the Lucasartsifier: a static analysis tool that decompiles Sierra resource files, automatically finds those states, automatically generates code to prevent the player from getting into those states, then emits loose patch files that can be placed alongside the original game resources. There&#x27;s no game-specific code involved; all the logic is generic, though of course Sierra introduces new idioms and mechanics in every game so every new supported game needs a bunch of engine work.<p>So for example in Leisure Suit Larry 2, the patched game prevents you from boarding the cruise ship until you have both the sunscreen and the Grotesque Gulp. Without them you die on the raft 3 play-hours later.<p>So far this works on Leisure Suit Larry 2 (SCI0), King&#x27;s Quest 4 (SCI0), King&#x27;s Quest 6 (SCI1.1), and Laura Bow 2 (SCI1.1). I&#x27;m currently working on King&#x27;s Quest 5 (SCI1.0).<p>This is work done with C"
+  },
+  {
+   "title": "Show HN: Desktopcolors.com – A museum for solid background colors of classic OS",
+   "url": "https://desktopcolors.com",
+   "source": "hackernews",
+   "total": null,
+   "text": "Hi HN, in my last vacation, I built desktopcolors.com as a place to collect iconic solid background colors. Let me know what you think."
+  }
+ ],
+ "deep": [
+  {
+   "title": "Marker (YC Summer 2026) – Platform and FDEs for rebuilding businesses agent-first",
+   "url": "https://onmarker.com",
+   "source": "yc",
+   "problema_score": 20,
+   "barrera_score": 8,
+   "replicabilidad": {
+    "nivel": "Alta",
+    "evidencia": "Empresas medianas chilenas tienen procesos manuales sin agentes IA"
+   },
+   "ventana": {
+    "nivel": "Media",
+    "evidencia": "Sierra y Decagon ya dominan globalmente el modelo FDE"
+   },
+   "tamano_mercado": {
+    "nivel": "Alta",
+    "evidencia": "Mercado de agentes empresariales crece con múltiples players >$1B"
+   },
+   "resumen": "Marker es una consultora AI-native que embebe forward-deployed engineers en empresas para reconstruir sus operaciones con agentes IA, empezando por procesos puntuales y expandiéndose. Valida directamente la idea propia de consultoría de agentes para medianas empresas chilenas con ciclo de venta corto.",
+   "b2b_o_b2c": "B2B",
+   "componente_ia": true,
+   "tipo_fundador": "Perfil técnico + comercial capaz de vender e implementar agentes a medida en clientes enterprise",
+   "mercado_actual": "Empresas medianas/grandes en EEUU",
+   "company_url": "https://onmarker.com",
+   "funding_raised": "desconocido",
+   "stage": "Pre-seed",
+   "por_que_ahora": "LLMs agenticos maduraron lo suficiente para ejecutar workflows reales en producción, no solo chatbots",
+   "modelo_negocio": "Servicio de implementación + suscripción de plataforma por agente desplegado",
+   "competencia_local": "no verificado",
+   "competencia_global": "Fuerte: <cite index=\"18-1\">Sierra, valued at $4.5 billion, and Decagon, currently raising $100 million-plus</cite>, ambos con modelo FDE similar en soporte; Decagon ya <cite index=\"11-3\">ha crossed $100 million in annualized revenue</cite>.",
+   "fit_tesis": "Futuro del trabajo",
+   "next_step": "Hablar con 5 gerentes de operaciones de exportadoras/retail medianas sobre qué proceso agenticarían primero",
+   "valida_idea_propia": "Consultoría de agentes de IA para empresas medianas",
+   "fundadores": "no identificados",
+   "redes_sociales": "",
+   "fit_yc": "Alto",
+   "tipo_candidato": "Empresa específica"
+  },
+  {
+   "title": "How AI accounting startup Rillet raised $100M and became a unicorn in 48 hours",
+   "url": "https://techcrunch.com/2026/08/21/how-ai-accounting-startup-rillet-raised-100m-and-became-a-unicorn-in-48-hours/",
+   "source": "techcrunch",
+   "problema_score": 18,
+   "barrera_score": 3,
+   "replicabilidad": {
+    "nivel": "Baja",
+    "evidencia": "Contabilidad requiere expertise regulatorio profundo, ya resuelto por incumbentes"
+   },
+   "ventana": {
+    "nivel": "Baja",
+    "evidencia": "Rillet ya es unicornio con capital masivo para expandirse"
+   },
+   "tamano_mercado": {
+    "nivel": "Alta",
+    "evidencia": "Software contable es mercado enorme y probado"
+   },
+   "resumen": "Rillet es un software contable con IA que generó una ronda de $100M en 48 horas tras mostrar números de crecimiento a su directorio. Señala apetito inversor enorme por reinventar contabilidad, pero es una categoría regulada y de alta complejidad técnica, lejos del perfil del fundador.",
+   "b2b_o_b2c": "B2B",
+   "componente_ia": true,
+   "tipo_fundador": "Equipo con expertise contable/fintech profundo y capacidad de levantar capital grande",
+   "mercado_actual": "Empresas medianas/grandes en EEUU",
+   "company_url": "",
+   "funding_raised": "$100M",
+   "stage": "Series B+",
+   "por_que_ahora": "IA permite automatizar contabilidad compleja reduciendo dependencia de contadores manuales",
+   "modelo_negocio": "SaaS enterprise, ticket alto mensual",
+   "competencia_local": "no verificado",
+   "competencia_global": "no verificado",
+   "fit_tesis": "Otro",
+   "next_step": "No accionable para este perfil; monitorear como referencia de apetito de mercado",
+   "valida_idea_propia": "",
+   "fundadores": "Nicolas Kopp (CEO)",
+   "redes_sociales": "",
+   "fit_yc": "Medio",
+   "tipo_candidato": "Empresa específica"
+  },
+  {
+   "title": "Grocalo (YC Summer 2026) – AI brain that runs content for creators",
+   "url": "https://grocalo.com/",
+   "source": "yc",
+   "problema_score": 15,
+   "barrera_score": 5,
+   "replicabilidad": {
+    "nivel": "Baja",
+    "evidencia": "Nicho de creadores masivos con audiencia en inglés, poco aplicable a industrias CL"
+   },
+   "ventana": {
+    "nivel": "Baja",
+    "evidencia": "Requiere modelos de video propios ya construidos y validados con creadores top"
+   },
+   "tamano_mercado": {
+    "nivel": "Media",
+    "evidencia": "Creator economy grande pero ticket bajo por creador"
+   },
+   "resumen": "Grocalo personaliza y distribuye contenido para creadores usando IA de comprensión de video, reportando fuerte crecimiento con clientes de alto perfil. No conecta con el dolor de operaciones/comerciales del fundador ni con su red en industrias chilenas.",
+   "b2b_o_b2c": "B2B2C",
+   "componente_ia": true,
+   "tipo_fundador": "Equipo con expertise en ML de video y relaciones con creadores/talent",
+   "mercado_actual": "Creadores de contenido en EEUU",
+   "company_url": "https://grocalo.com/",
+   "funding_raised": "desconocido",
+   "stage": "Seed",
+   "por_que_ahora": "Modelos de video understanding permiten personalizar contenido a escala",
+   "modelo_negocio": "Fee por gestión de contenido/comisión sobre crecimiento de audiencia",
+   "competencia_local": "no verificado",
+   "competencia_global": "no verificado",
+   "fit_tesis": "Otro",
+   "next_step": "Descartar por bajo fit con tesis; no requiere validación",
+   "valida_idea_propia": "",
+   "fundadores": "no identificados",
+   "redes_sociales": "",
+   "fit_yc": "Alto",
+   "tipo_candidato": "Empresa específica"
+  },
+  {
+   "title": "Studio (YC Summer 2026) – Engineer the future",
+   "url": "https://trystudio.ai",
+   "source": "yc",
+   "problema_score": 15,
+   "barrera_score": 5,
+   "replicabilidad": {
+    "nivel": "Baja",
+    "evidencia": "Requiere data science avanzada y grandes datasets de comportamiento de consumo"
+   },
+   "ventana": {
+    "nivel": "Media",
+    "evidencia": "Espacio de market research con IA aún emergente"
+   },
+   "tamano_mercado": {
+    "nivel": "Media",
+    "evidencia": "Brands grandes son compradoras, pero mercado nicho de research"
+   },
+   "resumen": "Studio construye modelos de simulación de mercado que predicen reacción de audiencias y KPIs de marcas de consumo con alta precisión reportada. Es interesante como inteligencia de mercado pero exige capacidades técnicas profundas ajenas al perfil del fundador.",
+   "b2b_o_b2c": "B2B",
+   "componente_ia": true,
+   "tipo_fundador": "Equipo de data science/ML con expertise en modelado predictivo de consumo",
+   "mercado_actual": "Marcas de consumo grandes en EEUU",
+   "company_url": "https://trystudio.ai",
+   "funding_raised": "desconocido",
+   "stage": "Pre-seed",
+   "por_que_ahora": "Disponibilidad de datos de comportamiento de consumidor trazables a escala",
+   "modelo_negocio": "SaaS/licencia por marca para simulaciones de mercado",
+   "competencia_local": "no verificado",
+   "competencia_global": "no verificado",
+   "fit_tesis": "Otro",
+   "next_step": "No priorizar; requiere capacidades fuera del perfil del fundador",
+   "valida_idea_propia": "",
+   "fundadores": "no identificados",
+   "redes_sociales": "",
+   "fit_yc": "Alto",
+   "tipo_candidato": "Empresa específica"
+  },
+  {
+   "title": "Only 1 in 5 organizations are prepared to move toward autonomous AI agents, Deloitte finds",
+   "url": "https://www.hrdive.com/news/only-1-in-5-organizations-are-prepared-to-move-toward-autonomous-ai-agents/828324/",
+   "source": "hrdive",
+   "problema_score": 14,
+   "barrera_score": 3,
+   "replicabilidad": {
+    "nivel": "Alta",
+    "evidencia": "Empresas chilenas también tienen procesos mal documentados"
+   },
+   "ventana": {
+    "nivel": "Media",
+    "evidencia": "Brecha de preparación aún grande, pero es tendencia global ya cubierta por consultoras"
+   },
+   "tamano_mercado": {
+    "nivel": "Alta",
+    "evidencia": "Aplica a toda empresa grande buscando adoptar agentes"
+   },
+   "resumen": "Reporte de Deloitte sobre la brecha entre ambición y preparación organizacional para agentes autónomos de IA. Es señal de mercado más que producto: confirma el dolor que Marker y la idea de consultoría de agentes buscan resolver.",
+   "b2b_o_b2c": "B2B",
+   "componente_ia": true,
+   "tipo_fundador": "No aplica (es un reporte, no una empresa)",
+   "mercado_actual": "Global, encuesta corporativa",
+   "company_url": "",
+   "funding_raised": "desconocido",
+   "stage": "Desconocido",
+   "por_que_ahora": "Adopción de agentes autónomos se acelera pero procesos internos no están listos",
+   "modelo_negocio": "",
+   "competencia_local": "no verificado",
+   "competencia_global": "no verificado",
+   "fit_tesis": "Futuro del trabajo",
+   "next_step": "Usar como dato de contexto al presentar consultoría de agentes a ejecutivos",
+   "valida_idea_propia": "Consultoría de agentes de IA para empresas medianas",
+   "fundadores": "no identificados",
+   "redes_sociales": "",
+   "fit_yc": "Bajo",
+   "tipo_candidato": "Tendencia"
+  },
+  {
+   "title": "At 14, Sasha Bagrov is building a safer marketplace for teenage odd jobs",
+   "url": "https://tech.eu/2026/08/21/at-14-sasha-bagrov-is-building-a-safer-marketplace-for-teenage-odd-jobs/",
+   "source": "techeu",
+   "problema_score": 8,
+   "barrera_score": 8,
+   "replicabilidad": {
+    "nivel": "Media",
+    "evidencia": "Empleo informal de menores existe en Chile pero regulación local no está clara"
+   },
+   "ventana": {
+    "nivel": "Media",
+    "evidencia": "Nicho pequeño, poco explorado, sin urgencia clara"
+   },
+   "tamano_mercado": {
+    "nivel": "Baja",
+    "evidencia": "Mercado de trabajos ocasionales para adolescentes es acotado"
+   },
+   "resumen": "Marketplace fundado por una adolescente para conectar jóvenes con trabajos ocasionales de forma más segura. Historia de interés humano más que negocio con tracción validada; involucra temas sensibles de seguridad y menores que complican escalar.",
+   "b2b_o_b2c": "B2C",
+   "componente_ia": false,
+   "tipo_fundador": "Perfil de producto/comunidad enfocado en confianza y seguridad, no el del fundador",
+   "mercado_actual": "Australia (comunidad local)",
+   "company_url": "",
+   "funding_raised": "desconocido",
+   "stage": "Idea",
+   "por_que_ahora": "sin catalizador claro",
+   "modelo_negocio": "Comisión por trabajo intermediado",
+   "competencia_local": "no verificado",
+   "competencia_global": "no verificado",
+   "fit_tesis": "Marketplace",
+   "next_step": "No priorizar dado bajo tamaño de mercado y tema sensible de menores",
+   "valida_idea_propia": "",
+   "fundadores": "Sasha Bagrov",
+   "redes_sociales": "",
+   "fit_yc": "Bajo",
+   "tipo_candidato": "Empresa específica"
+  },
+  {
+   "title": "why do I get like this",
+   "url": "https://www.reddit.com/r/SaaS/comments/1vq59nu/why_do_i_get_like_this/",
+   "source": "reddit_saas",
+   "problema_score": 2,
+   "barrera_score": 5,
+   "replicabilidad": {
+    "nivel": "Baja",
+    "evidencia": "Directorio de apps genérico sin diferenciación ni tracción real"
+   },
+   "ventana": {
+    "nivel": "Baja",
+    "evidencia": "Sin señal de crecimiento, post de auto-promoción con 0 engagement"
+   },
+   "tamano_mercado": {
+    "nivel": "Baja",
+    "evidencia": "Directorios de apps son mercado saturado y de bajo valor"
+   },
+   "resumen": "Post de auto-promoción en Reddit de un directorio de descubrimiento de apps sin métricas de tracción reales. No hay problema validado ni diferenciación clara frente a alternativas existentes.",
+   "b2b_o_b2c": "B2C",
+   "componente_ia": false,
+   "tipo_fundador": "Solo developer indie sin necesidad de socio",
+   "mercado_actual": "Global, apps y SaaS indie",
+   "company_url": "https://www.appscout.co",
+   "funding_raised": "Bootstrapped",
+   "stage": "MVP",
+   "por_que_ahora": "sin catalizador claro",
+   "modelo_negocio": "Freemium/listing gratuito con posible monetización por publicidad",
+   "competencia_local": "no verificado",
+   "competencia_global": "no verificado",
+   "fit_tesis": "Otro",
+   "next_step": "Descartar, sin señal de problema real ni tracción",
+   "valida_idea_propia": "",
+   "fundadores": "no identificados",
+   "redes_sociales": "",
+   "fit_yc": "Bajo",
+   "tipo_candidato": "Empresa específica"
+  },
+  {
+   "title": "Show HN: Huzzah – a novel approach to coding with AI",
+   "url": "https://www.danielvaughn.dev/posts/huzzah/",
+   "source": "hackernews",
+   "problema_score": 0,
+   "barrera_score": 0,
+   "replicabilidad": {
+    "nivel": "Baja",
+    "evidencia": "excluido: dev tool programadores"
+   },
+   "ventana": {
+    "nivel": "Baja",
+    "evidencia": "excluido: dev tool programadores"
+   },
+   "tamano_mercado": {
+    "nivel": "Baja",
+    "evidencia": "excluido: dev tool programadores"
+   },
+   "resumen": "Editor experimental de pseudocódigo para trabajar con agentes de codificación, dirigido exclusivamente a programadores.",
+   "b2b_o_b2c": "",
+   "componente_ia": true,
+   "tipo_fundador": "",
+   "mercado_actual": "",
+   "company_url": "",
+   "funding_raised": "",
+   "stage": "Desconocido",
+   "por_que_ahora": "",
+   "modelo_negocio": "",
+   "competencia_local": "",
+   "competencia_global": "",
+   "fit_tesis": "Otro",
+   "next_step": "",
+   "valida_idea_propia": "",
+   "fundadores": "no identificados",
+   "redes_sociales": "",
+   "fit_yc": "Bajo",
+   "tipo_candidato": "Empresa específica"
+  }
+ ],
+ "gate_urls": [
+  "https://onmarker.com"
+ ],
+ "cost_usd": 0.1964
+}
