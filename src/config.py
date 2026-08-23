@@ -56,6 +56,17 @@ MAX_WEB_SEARCHES_DEEP = int(os.environ.get("SCOUTING_MAX_WEB_SEARCHES_DEEP", "4"
 # Solo se consideran items publicados en los últimos N días.
 LOOKBACK_DAYS = int(os.environ.get("SCOUTING_LOOKBACK_DAYS", "7"))
 
+# Fuentes que publican con MENOS frecuencia que semanal — con LOOKBACK_DAYS=7
+# quedan casi siempre en 0 items aunque estén vivas (no es lo mismo que
+# "muerta": geekestate publica cada ~2 semanas, no cada 2+ años como
+# andrewchen, que se sacó de RSS_FEEDS por esa razón). El pool diario poda
+# por fecha de DESCUBRIMIENTO, no de publicación — con ventana más ancha el
+# job diario igual las encuentra a tiempo.
+LOOKBACK_OVERRIDES = {
+    "geekestate": 25,
+    "creatoreconomy": 25,
+}
+
 # --- Pre-filtro (sin LLM) ---
 # Umbral mínimo de engagement por fuente para pasar al análisis.
 MIN_ENGAGEMENT = {
@@ -339,8 +350,27 @@ RSS_FEEDS = {
     # el hueco real: HN/TechCrunch casi nunca cubren una fábrica de plásticos
     # que cambió de modelo. Mismo publisher que hrdive (Industry Dive).
     "manufacturingdive": "https://www.manufacturingdive.com/feeds/news/",
+    # Bienestar financiero / fintech (tesis: bienestar financiero) — el
+    # mismo hueco que tenía ecommerce antes de modernretail: prensa tech
+    # general cubre rondas, no historias de producto fintech.
+    "finextra":    "https://www.finextra.com/rss/headlines.aspx",
+    "tearsheet":   "https://tearsheet.co/feed/",       # análisis de fondo, no solo noticias
+    "fintechtimes": "https://thefintechtimes.com/feed/",
+    # Inmobiliario/proptech (tesis: inmobiliario)
+    "geekestate":  "https://geekestateblog.com/feed/", # ex-Zillow, ángulo práctico
+    # Creadores de contenido (tesis: creadores de contenido)
+    "creatoreconomy": "https://thecreatoreconomy.com/rss.xml",
+    # Marketplace (tesis: marketplace): andrewchen.com evaluado y descartado
+    # como fuente automatizada — feed responde bien pero último post real es
+    # de feb 2024, más de 2 años sin publicar. No es "muerta" (sigue online),
+    # simplemente no publica con cadencia útil para un pipeline automatizado.
+    # Sigue siendo buena LECTURA manual, solo no aporta al fetch semanal.
+    # IA ejecutivos (tesis: IA ejecutivos) — estrategia tech/negocio, no
+    # solo AI news genérico
+    "stratechery": "https://stratechery.com/feed/",
     # "worklife": muerta — último post dic 2025
     # "wired": eliminada — solo reviews de productos de consumo, sin señal de negocio
+    # "credaily" (CRE Daily): descartada — feed responde 200 pero 0 items reales
 }
 
 # Reddit r/SaaS: único subreddit activo sin rate-limit en CI.

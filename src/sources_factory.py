@@ -18,7 +18,8 @@ def build_sources() -> list[Source]:
         )
     ]
     for name, url in config.RSS_FEEDS.items():
-        sources.append(RSSFeed(name=name, url=url, lookback_days=config.LOOKBACK_DAYS))
+        lookback = config.LOOKBACK_OVERRIDES.get(name, config.LOOKBACK_DAYS)
+        sources.append(RSSFeed(name=name, url=url, lookback_days=lookback))
     for name, url in config.REDDIT_FEEDS.items():
         sources.append(RSSFeed(name=name, url=url, lookback_days=config.LOOKBACK_DAYS))
     if config.ENABLE_PRODUCTHUNT:

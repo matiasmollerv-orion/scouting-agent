@@ -14,9 +14,16 @@ MAX_PER_SOURCE = {
 
 # Fuentes 100% curadas/on-topic por definición — no necesitan matchear
 # keyword para tener prioridad de sort (yc: lanzamientos; newsletters/
-# brain-inbox: el propio usuario las curó; modernretail/retaildive: feeds
-# 100% retail/ecommerce).
-TRUSTED_SOURCES = {"yc", "newsletters", "brain-inbox", "modernretail", "retaildive"}
+# brain-inbox: el propio usuario las curó; el resto son feeds dedicados
+# a UNA categoría de la tesis, verificados con contenido real 2026-08).
+TRUSTED_SOURCES = {
+    "yc", "newsletters", "brain-inbox",
+    "modernretail", "retaildive",                      # ecommerce
+    "finextra", "tearsheet", "fintechtimes",            # bienestar financiero
+    "geekestate",                                       # inmobiliario
+    "creatoreconomy",                                   # creadores de contenido
+    "stratechery",                                      # ia ejecutivos
+}
 
 
 def prefilter(items: list[Item], seen_urls: set[str] | None = None) -> list[Item]:
