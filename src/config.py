@@ -337,6 +337,16 @@ RSS_FEEDS = {
     "techinasia": "https://feeds.feedburner.com/techinasia",
     # Mercados emergentes / clase media global (tesis: clase media)
     "restofworld": "https://restofworld.org/feed/latest/",
+    # Industrias chilenas: minería, salmonicultura/acuicultura, agro (tesis:
+    # industrias CL) — 2026-08: prensa gringa nunca cubre esto, hueco real.
+    # Verificadas con contenido fresco y real, no solo HTTP 200:
+    "aqua":       "https://www.aqua.cl/feed/",         # salmonicultura/acuicultura
+    "mch":        "https://www.mch.cl/feed/",          # Minería Chilena
+    "redagricola": "https://redagricola.com/feed/",     # agro/fruticultura
+    # Descartadas: salmonexpert.cl y mundoacuicola.cl (404, sin feed real),
+    # portalminero.com (feed válido pero solo 1 item, muy bajo volumen),
+    # emol.com/df.cl (sin RSS real, redirigen a portada genérica),
+    # biobiochile (404 en las rutas de feed probadas).
     # Ecommerce / DTC / retail (tesis: ecommerce) — mismo publisher que hrdive
     # y manufacturingdive (Industry Dive), ya probado confiable.
     "modernretail": "https://www.modernretail.co/feed/",
@@ -350,6 +360,15 @@ RSS_FEEDS = {
     # el hueco real: HN/TechCrunch casi nunca cubren una fábrica de plásticos
     # que cambió de modelo. Mismo publisher que hrdive (Industry Dive).
     "manufacturingdive": "https://www.manufacturingdive.com/feeds/news/",
+    # Retail/restaurantes tradicionales reinventados (tesis: tradicional
+    # reinventado) — mismo hueco: manufacturingdive cubre fábricas, pero no
+    # "supermercado sin cajas" ni "cadena de comida rápida con nuevo modelo
+    # de delivery". grocerydive es hermana de retaildive/modernretail
+    # (Industry Dive), mismo patrón probado. Descartadas: chainstoreage.com
+    # y drugstorenews.com (403, bloquean requests automatizados),
+    # restaurantbusinessonline.com (feed responde pero 0 items reales).
+    "grocerydive": "https://www.grocerydive.com/feeds/news/",
+    "nrn":         "https://www.nrn.com/rss.xml",       # Nation's Restaurant News
     # Bienestar financiero / fintech (tesis: bienestar financiero) — el
     # mismo hueco que tenía ecommerce antes de modernretail: prensa tech
     # general cubre rondas, no historias de producto fintech.
@@ -375,6 +394,15 @@ RSS_FEEDS = {
     # IA ejecutivos (tesis: IA ejecutivos) — estrategia tech/negocio, no
     # solo AI news genérico
     "stratechery": "https://stratechery.com/feed/",
+    # B2C servicios (tesis: b2c servicios) — categoría difícil de cubrir
+    # porque casi todo trade press es de producto/software, no de servicio
+    # puro. Skift es prensa seria de industria de viajes/hospitalidad —
+    # servicio recurrente/por uso que paga el consumidor final. Descartadas:
+    # therobinreport.com (válida pero redundante con retaildive, mismo
+    # ángulo retail), fittinsider.com (no resuelve DNS), blooloop.com
+    # (nicho muy angosto — solo atracciones/parques temáticos), thehustle.co
+    # (403, y de todos modos suele llegar ya vía brain-inbox del usuario).
+    "skift": "https://skift.com/feed/",
     # "worklife": muerta — último post dic 2025
     # "wired": eliminada — solo reviews de productos de consumo, sin señal de negocio
     # "credaily" (CRE Daily): descartada — feed responde 200 pero 0 items reales

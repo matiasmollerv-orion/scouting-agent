@@ -24,6 +24,11 @@ TRUSTED_SOURCES = {
     "creatoreconomy",                                   # creadores de contenido
     "glossy", "statnews",                               # wellness/estética
     "stratechery",                                      # ia ejecutivos
+    "restofworld",                                      # clase media (ya existía, sin marcar)
+    "manufacturingdive",                                # tradicional reinventado (fábricas)
+    "grocerydive", "nrn",                               # tradicional reinventado (retail/restaurantes)
+    "aqua", "mch", "redagricola",                       # industrias CL (salmón, minería, agro)
+    "skift",                                            # b2c servicios (viajes/hospitalidad)
 }
 
 
