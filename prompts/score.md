@@ -13,6 +13,17 @@ comerciales y gestión de equipos. Tiene 31 años, usa Claude Code en su trabajo
 y ve de primera mano cómo ejecutivos de grandes empresas no saben por dónde
 empezar con la IA.
 
+**Regla dura: NO restrinjas por si el fundador tiene experiencia directa en
+la industria.** Su prioridad es una buena idea en una industria con
+potencial — no necesariamente algo que él sepa ejecutar solo. Siempre puede
+sumar un socio o cofundador con la expertise que falte (técnica,
+regulatoria, de industria específica); que él conozca el rubro es un PLUS,
+nunca un requisito para que algo puntúe bien. Si notás que estás por bajar
+`replicabilidad`, `barrera_score`, o cualquier señal solo porque "requiere
+expertise que el fundador no tiene" o está "lejos de su perfil" — PARÁ, esa
+no es razón válida acá. Evaluá si el PROBLEMA es real y grande, no si este
+fundador específico podría resolverlo solo sin ayuda de nadie.
+
 **Categorías de ALTO interés (usá estos nombres exactos en `fit_tesis`):**
 
 - **"Futuro del trabajo"** — MÁXIMA PRIORIDAD: el fundador ve a diario en
@@ -31,7 +42,11 @@ empezar con la IA.
   alto cargo no saben aprovechar Claude/ChatGPT en su día a día.
 - **"Wellness"** — bienestar, longevidad, hábitos, biohacking, productividad
   personal: suplementos, wearables, apps de salud, sueño, nutrición, salud
-  mental. B2C y B2B (beneficios para empleados). Sector prioritario.
+  mental. B2C y B2B (beneficios para empleados). Incluye medicina estética
+  no invasiva y biotecnología aplicada a estética (biostimuladores, PDRN,
+  exosomas, tratamientos dermatológicos avanzados) — mismo principio que
+  longevidad: invertir en cómo el cuerpo se ve/envejece, solo que vía
+  estética en vez de vía suplementos. Sector prioritario.
 - **"B2B ops"** — herramientas que eficienten procesos reales: revenue/ventas,
   comunicación interna, reporting, equipos en terreno, trabajadores sin
   escritorio. Dolor concreto y comprador identificable.
@@ -84,17 +99,41 @@ empezar con la IA.
   (incluye inversión inmobiliaria fraccionada/accesible como clase de
   activo — mismo principio de "inversión accesible sin fricción"),
   educación financiera aplicada a la acción (no solo contenido).
-  (2) **B2B/infra — acceso al mercado financiero**: fintechs que resuelven
-  el ACCESO — para personas (banca para no bancarizados, crédito justo,
-  acceso a inversión) y para EMPRESAS (acceso a capital de trabajo, crédito
-  pyme, gestión de gasto corporativo con control en tiempo real —tarjetas
-  corporativas, spend management). Distinto de "Clase media": no está
-  limitado a mercados emergentes ni mezcla salud/vivienda/educación — es
-  específicamente la tesis financiera del fundador, en cualquier mercado.
-  NO incluye (decisión explícita, evitar saturar de fintechs): banca
-  digital/neobancos genéricos, insurtech, cripto/Web3, regtech/compliance,
-  trading/mercados de capitales — salvo que se conecten directo con hábitos
-  de inversión personal o acceso a capital, no como categoría en sí misma.
+  (2) **CUALQUIER fintech con un MODELO de negocio genuinamente novedoso o
+  disruptivo, B2C o B2B**: no importa la categoría (neobank, insurtech,
+  crédito, trading, lo que sea) — lo que importa es que el modelo sea
+  estructuralmente distinto a lo tradicional, no "otra app más" de lo
+  mismo. Ejemplo real que le interesó al fundador: créditos grupales/
+  lending circles (grupos que se prestan entre sí con confianza
+  comunitaria). También incluye el ángulo de ACCESO: banca para no
+  bancarizados, crédito justo, acceso a inversión, acceso a capital de
+  trabajo/crédito pyme, gestión de gasto corporativo. Excluí SOLO lo
+  genérico/me-too sin innovación real de modelo (ej: "otro neobank más
+  sin nada distinto", "otra app de trading genérica") — si el modelo es
+  realmente distinto, aunque sea insurtech o cripto, cuenta igual.
+  Distinto de "Clase media": no está limitado a mercados emergentes ni
+  mezcla salud/vivienda/educación — es específicamente la tesis financiera
+  del fundador, en cualquier mercado.
+- **"Inmobiliario"** — el fundador quiere entender hacia dónde evoluciona la
+  relación humano-espacio físico. DOS ángulos: (1) **Modelo de negocio**:
+  cómo se compra, vende, renta, financia o gestiona una propiedad —
+  fraccionamiento, iBuying, co-living/co-working, build-to-rent, property
+  management software, tokenización, nuevos esquemas de acceso a vivienda.
+  (2) **El inmueble mismo**: cómo se construye y qué es — construcción
+  modular/prefabricada, impresión 3D, nuevos materiales, formatos
+  residenciales nuevos (micro-unidades, espacios adaptables), tecnología
+  integrada al edificio. Principio: cualquier cosa que cambie
+  fundamentalmente cómo la gente accede a, usa, o interactúa con el
+  espacio físico donde vive o trabaja. (Distinto del ángulo de inversión
+  inmobiliaria de "Bienestar financiero" — ese es sobre ACCESO a invertir;
+  este es la industria completa. No son excluyentes.)
+- **"Creadores de contenido"** — servicios y herramientas para influencers,
+  YouTubers, y cualquiera que gane dinero vía redes sociales, que los
+  ayuden a crecer o profesionalizar ESE ingreso: gestión de marcas/
+  sponsors, monetización, analytics, finanzas para ingresos irregulares,
+  producción/repurposing de contenido, comunidad. No importa si el
+  comprador técnicamente es "una empresa" o "una persona" — importa que
+  esté tratando su presencia online como un negocio real.
 - **"Clase media"** — negocios para la clase media emergente global (LatAm,
   Asia, África): finanzas personales, ahorro, inversión accesible, educación,
   salud preventiva, vivienda. Subatendida tecnológicamente.

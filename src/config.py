@@ -245,33 +245,61 @@ THEME_KEYWORDS = {
         "wellness", "longevity", "biohacking", "sleep", "nutrition",
         "mental health", "fitness", "supplement", "health coach", "gut health",
     ],
-    "Ecommerce/DTC": [
-        "ecommerce", "e-commerce", "dtc", "d2c", "direct-to-consumer", "shopify",
-        "checkout", "consumer brand", "brand launch", "unveils", "debuts",
-        "retail tech", "last mile", "same-day delivery", "subscription box",
-        "personalization", "product recommendation", "social commerce",
-        "live shopping", "fulfillment", "cpg", "private label", "online retail",
+    # Ecommerce dividido en 3 sub-temas (antes un solo bucket "Ecommerce/DTC"
+    # muy amplio para ser accionable — feedback: "si me hablaras de una nueva
+    # tecnología/solución/modelo de negocio en la industria, sería power").
+    "Ecommerce: herramientas B2B": [
+        "personalization", "product recommendation", "dynamic pricing",
+        "virtual try-on", "conversational commerce", "checkout",
+        "inventory management", "demand forecasting", "ai agent for ecommerce",
+        "ai agent for merchants", "customer service automation",
+        "merchant financing", "revenue-based financing", "3pl",
+        "shipping software", "multi-channel selling", "seller analytics",
+        "retail media", "ecommerce ads",
     ],
-    "Tendencias consumo": [
+    "Ecommerce: tendencias consumo": [
         # Lenguaje real de prensa, no jerga de consultora — "breakout brand"
         # nunca genera match; "sold out"/"went viral"/"cult following" sí.
         "sold out", "waitlist", "can't keep up with demand", "demand surge",
         "cult following", "cult favorite", "went viral", "viral on tiktok",
         "fastest-growing", "fastest growing", "gains market share",
         "hottest category", "booming category", "new category",
-        "gap in the market", "fills a gap", "expands into", "rebrand",
+        "gap in the market", "fills a gap",
+    ],
+    "Ecommerce: marcas DTC maduras": [
+        "new product line", "expands into", "extends its", "line extension",
+        "expanding internationally", "loyal customers", "rebrand",
+        "following its customers", "brand extension",
     ],
     "Fintech/Clase media": [
         "fintech", "financial inclusion", "remittance", "savings", "lending",
         "microfinance", "personal finance", "middle class",
     ],
     "Bienestar financiero": [
+        # Lenguaje amplio de prensa fintech real, no solo jerga de producto —
+        # "Bienestar financiero" quedó en 0 semanas seguidas con las keywords
+        # viejas mientras "Fintech/Clase media" mostraba señal sana (mismo
+        # contenido, bucket mal calibrado, no falta de señal real).
+        "fintech raises", "digital bank", "neobank", "lending circle",
+        "group lending", "peer lending", "savings app", "investing app",
         "budgeting app", "expense tracker", "spending habits",
         "round-up investing", "automated savings", "automated investing",
         "robo-advisor", "financial literacy", "financial wellness",
         "embedded finance", "credit access", "working capital",
         "spend management", "corporate card", "fractional real estate",
-        "real estate investing app", "mortgage tech",
+        "real estate investing app", "mortgage tech", "buy now pay later",
+        "credit score", "microloans",
+    ],
+    "Inmobiliario": [
+        "proptech", "real estate", "co-living", "co-working", "build-to-rent",
+        "property management software", "modular construction",
+        "prefabricated", "3d-printed building", "fractional real estate",
+        "ibuying", "tokenized real estate",
+    ],
+    "Creadores de contenido": [
+        "creator economy", "influencer marketing", "content creator",
+        "youtuber", "brand deal", "sponsorship platform", "creator monetization",
+        "ugc platform", "creator commerce",
     ],
     "Marketplace": ["marketplace"],
     "Tradicional reinventado": [
