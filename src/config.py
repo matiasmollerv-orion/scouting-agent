@@ -360,6 +360,13 @@ RSS_FEEDS = {
     "geekestate":  "https://geekestateblog.com/feed/", # ex-Zillow, ángulo práctico
     # Creadores de contenido (tesis: creadores de contenido)
     "creatoreconomy": "https://thecreatoreconomy.com/rss.xml",
+    # Wellness/estética (tesis: wellness) — hermana de modernretail, mismo
+    # dueño (Digiday Media), mismo patrón que ya nos funciona. wellandgood
+    # y mobihealthnews evaluadas y descartadas: la primera fue absorbida
+    # por theskimm.com (ya no existe sola), la segunda bloquea requests
+    # automatizados (403) aunque con el User-Agent del pipeline.
+    "glossy":   "https://www.glossy.co/feed/",
+    "statnews": "https://www.statnews.com/feed/",
     # Marketplace (tesis: marketplace): andrewchen.com evaluado y descartado
     # como fuente automatizada — feed responde bien pero último post real es
     # de feb 2024, más de 2 años sin publicar. No es "muerta" (sigue online),

@@ -22,6 +22,7 @@ TRUSTED_SOURCES = {
     "finextra", "tearsheet", "fintechtimes",            # bienestar financiero
     "geekestate",                                       # inmobiliario
     "creatoreconomy",                                   # creadores de contenido
+    "glossy", "statnews",                               # wellness/estética
     "stratechery",                                      # ia ejecutivos
 }
 
