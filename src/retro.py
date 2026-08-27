@@ -6,7 +6,8 @@ con web search para verificar su estado actual (¿levantaron? ¿crecieron?
 sistemáticamente mueren, el criterio está malo y hay que ajustarlo.
 
 Corre el día 1 de enero/abril/julio/octubre (quarterly.yml) o a mano.
-Costo: ~$0.35-0.50 por trimestre (tope de 20 búsquedas web por diseño).
+Costo: ~$0.20-0.30 por trimestre (tope de 20 búsquedas web por diseño;
+2026-08: pasó a usar Batch API vía score._call(), 50% off en tokens).
 """
 from __future__ import annotations
 
@@ -17,13 +18,12 @@ from pathlib import Path
 from anthropic import Anthropic
 
 from . import config
-from .pipeline.score import PRICES, _loads_forgiving
+from .pipeline.score import _call, _loads_forgiving
 from .render.mailer import send_html
 
 REPORTS_DIR = Path(__file__).resolve().parents[1] / "reports"
 MAX_IDEAS = 12
 MAX_SEARCHES = 20
-PRICE_WEB_SEARCH = 0.01  # USD por búsqueda ($10 / 1000)
 LOOKBACK_DAYS = 92
 
 SYSTEM = """Sos un analista de venture capital haciendo la retrospectiva trimestral
@@ -97,30 +97,20 @@ def run() -> None:
     print(f"[retro] {quarter}: revisando {len(ideas)} ideas "
           f"({sum(1 for i in ideas if i['gate'])} pasaron el gate)")
 
+    # Job trimestral en background (cron quarterly.yml, nadie esperando en
+    # pantalla) — pasa por _call() de score.py, que ya intenta Batch API
+    # (50% off tokens) con fallback automático a llamada directa si el batch
+    # falla o si el loop server-side de web_search no termina (pause_turn).
     client = Anthropic(api_key=config.ANTHROPIC_API_KEY)
-    with client.messages.stream(
-        model=config.MODEL_DEEP,
-        max_tokens=6000,
-        system=SYSTEM,
+    user = (f"Ideas destacadas del trimestre {quarter}:\n\n"
+            + json.dumps(ideas, ensure_ascii=False, indent=1))
+    text, cost, _truncated = _call(
+        client, config.MODEL_DEEP, SYSTEM, user, max_tokens=6000,
         tools=[{"type": "web_search_20250305", "name": "web_search",
                 "max_uses": MAX_SEARCHES}],
-        messages=[{
-            "role": "user",
-            "content": f"Ideas destacadas del trimestre {quarter}:\n\n"
-                       + json.dumps(ideas, ensure_ascii=False, indent=1),
-        }],
-    ) as stream:
-        msg = stream.get_final_message()
+        log_prefix="[retro]",
+    )
 
-    searches = getattr(getattr(msg.usage, "server_tool_use", None),
-                       "web_search_requests", 0) or 0
-    p_in, p_out = PRICES.get(config.MODEL_DEEP, (3.0, 15.0))
-    cost = ((msg.usage.input_tokens * p_in + msg.usage.output_tokens * p_out)
-            / 1_000_000 + searches * PRICE_WEB_SEARCH)
-    print(f"[retro] in={msg.usage.input_tokens} out={msg.usage.output_tokens} "
-          f"búsquedas={searches} costo=${cost:.3f}")
-
-    text = "".join(b.text for b in msg.content if b.type == "text")
     result = _parse_object(text)
     if not result:
         print("[retro] respuesta no parseable — se guarda cruda")

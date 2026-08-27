@@ -127,23 +127,27 @@ def score(items: list[Item]) -> ScoreResult:
 
 
 def _call(client: Anthropic, model: str, system: str, user: str,
-          max_tokens: int, tools: list[dict] | None = None) -> tuple[str, float, bool]:
+          max_tokens: int, tools: list[dict] | None = None,
+          log_prefix: str = "[score]") -> tuple[str, float, bool]:
     """Una llamada al modelo: intenta Batch API (50% off), cae a directa.
 
     Retorna (texto, costo_usd, truncado) — truncado=True si el modelo cortó
     la salida por max_tokens (stop_reason). `tools` (ej: web_search) solo se
     pasa cuando corresponde — la etapa de triage nunca lo recibe (costo).
+    `log_prefix` es solo cosmético (logs), para que otros callers — ej:
+    retro.py, que reusa esta función — no salgan etiquetados "[score]".
     """
     if config.USE_BATCH:
         try:
-            return _call_batch(client, model, system, user, max_tokens, tools)
+            return _call_batch(client, model, system, user, max_tokens, tools, log_prefix)
         except Exception as e:  # noqa: BLE001 — batch nunca debe matar el run
-            print(f"[score] batch falló ({e}) — fallback a llamada directa")
-    return _call_direct(client, model, system, user, max_tokens, tools)
+            print(f"{log_prefix} batch falló ({e}) — fallback a llamada directa")
+    return _call_direct(client, model, system, user, max_tokens, tools, log_prefix)
 
 
 def _call_batch(client: Anthropic, model: str, system: str, user: str,
-                max_tokens: int, tools: list[dict] | None = None) -> tuple[str, float, bool]:
+                max_tokens: int, tools: list[dict] | None = None,
+                log_prefix: str = "[score]") -> tuple[str, float, bool]:
     params = {
         "model": model,
         "max_tokens": max_tokens,
@@ -174,7 +178,7 @@ def _call_batch(client: Anthropic, model: str, system: str, user: str,
                 searches = _search_count(msg)
                 cost += searches * PRICE_WEB_SEARCH  # búsquedas no llevan descuento batch
                 text = "".join(bl.text for bl in msg.content if bl.type == "text")
-                print(f"[score] batch {model}: stop={msg.stop_reason} "
+                print(f"{log_prefix} batch {model}: stop={msg.stop_reason} "
                       f"in={msg.usage.input_tokens} out={msg.usage.output_tokens} "
                       f"búsquedas={searches} costo=${cost:.4f} (50% off en tokens)")
                 return text, cost, msg.stop_reason == "max_tokens"
@@ -184,7 +188,8 @@ def _call_batch(client: Anthropic, model: str, system: str, user: str,
 
 
 def _call_direct(client: Anthropic, model: str, system: str, user: str,
-                 max_tokens: int, tools: list[dict] | None = None) -> tuple[str, float, bool]:
+                 max_tokens: int, tools: list[dict] | None = None,
+                 log_prefix: str = "[score]") -> tuple[str, float, bool]:
     kwargs = {"tools": tools} if tools else {}
     with client.messages.stream(
         model=model,
@@ -197,16 +202,25 @@ def _call_direct(client: Anthropic, model: str, system: str, user: str,
     searches = _search_count(msg)
     cost = _cost(model, msg.usage.input_tokens, msg.usage.output_tokens) + searches * PRICE_WEB_SEARCH
     text = "".join(bl.text for bl in msg.content if bl.type == "text")
-    print(f"[score] directo {model}: stop={msg.stop_reason} "
+    print(f"{log_prefix} directo {model}: stop={msg.stop_reason} "
           f"in={msg.usage.input_tokens} out={msg.usage.output_tokens} "
           f"búsquedas={searches} costo=${cost:.4f}")
     return text, cost, msg.stop_reason == "max_tokens"
 
 
 def _cost(model: str, input_tokens: int, output_tokens: int,
-          discount: float = 1.0) -> float:
+          discount: float = 1.0, cache_write_tokens: int = 0,
+          cache_read_tokens: int = 0) -> float:
+    """cache_write/read solo los pasa dashboard/deep_single.py (única llamada
+    de este proyecto con prompt caching real — ver su docstring). El pipeline
+    semanal y retro.py llaman con los defaults (0), sin cambio de comportamiento.
+    Cache write ~1.25x precio input (TTL 5 min), cache read ~0.1x — no llevan
+    el descuento de Batch API porque caching solo se usa en la llamada directa
+    del dashboard, nunca junto a `discount` (batch)."""
     p_in, p_out = PRICES.get(model, (3.00, 15.00))  # default conservador
-    return (input_tokens * p_in + output_tokens * p_out) / 1_000_000 * discount
+    base = (input_tokens * p_in + output_tokens * p_out) / 1_000_000 * discount
+    cache = (cache_write_tokens * p_in * 1.25 + cache_read_tokens * p_in * 0.1) / 1_000_000
+    return base + cache
 
 
 def _search_count(msg) -> int:
