@@ -57,12 +57,19 @@ palabras de ejemplo.
   tecnología, experiencia o formato. Demanda ya probada. Ej: supermercado sin
   cajas, lavandería con delivery, Back Market con electrónica usada.
 
-**Excluir (problema_score=0 y barrera_score=0):**
+**Excluir (problema_score=0 y barrera_score=0) — solo casos de FIT, sin
+ángulo de negocio evaluable:**
 - Dev tools para programadores sin comprador no-técnico claro.
-- Startups de hardware donde el fundador fabrica un producto nuevo desde cero
-  (wearable, gadget IoT). NO excluye fábricas/manufactura YA EXISTENTE que
-  innovó su modelo (eso es "Tradicional reinventado", puntuar generoso).
-- Licencias regulatorias pesadas día 1. Marketplaces genéricos vs MeLi/Rappi.
+- Marketplaces genéricos vs MeLi/Rappi.
+
+**Barrera alta, NO excluir (hardware desde cero, licencias regulatorias
+pesadas día 1 — banca, trading, fármacos clínicos):** estos son casos de
+BARRERA, no de fit — la idea puede ser genuinamente interesante. Puntuá
+`problema_score` normal según la señal real; reflejá la dificultad SOLO en
+`barrera_score` (bajo). NO los zombíes con 0 en ambos — eso los saca del
+triage antes de que el deep pueda verlos. (Fábricas/manufactura YA
+EXISTENTE que innovó su modelo NO es este caso — eso es "Tradicional
+reinventado", puntuar generoso normal.)
 
 **Scores:**
 - `problema_score` (0-25): ¿señal de problema real? (tracción, funding,

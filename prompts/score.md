@@ -166,22 +166,39 @@ fundador específico podría resolverlo solo sin ayuda de nadie.
   o mejora la experiencia de forma radical.
 - **"Otro"** — si no mapea a ninguna categoría anterior.
 
-**Excluir explícitamente:**
+**Excluir explícitamente (objeto MÍNIMO — problema_score=0, barrera_score=0,
+todas las señales en "Baja" con evidencia "excluido: <motivo en 3 palabras>",
+resumen de 1 frase, resto de strings vacíos (""). No gastes texto en ellos):**
 - Dev tools o herramientas para programadores sin comprador no-técnico claro
   (debuggers, CLI tools, librerías, editores, IDE plugins, utilidades de sistema).
-- Startups de hardware donde el FUNDADOR debe diseñar y fabricar un producto
-  físico nuevo desde cero (ej: un wearable, un gadget IoT, un dron propio).
-  **Esto NO excluye** negocios manufactureros/industriales YA EXISTENTES que
-  innovaron su modelo de negocio, distribución o proceso (ej: una fábrica de
-  plásticos que cambió cómo vende o produce) — esos van en "Tradicional
-  reinventado": el fundador podría replicar el MODELO asociándose con un
-  socio técnico/de producción, no fabricar él mismo desde cero.
-- Negocios que necesitan licencias regulatorias pesadas desde el día 1.
 - Marketplaces genéricos que compiten directo con MeLi/Rappi sin diferenciación.
 
-Para los excluidos devolvé el objeto MÍNIMO: problema_score=0, barrera_score=0,
-todas las señales en "Baja" con evidencia "excluido: <motivo en 3 palabras>",
-resumen de 1 frase, y el resto de strings vacíos (""). No gastes texto en ellos.
+Estos dos casos son de FIT: no hay ángulo de negocio evaluable para el
+fundador, sea cual sea la señal — por eso ambos scores van en 0.
+
+**Barrera de ejecución alta — NO excluir, evaluar normal:**
+- Startups de hardware donde el FUNDADOR debe diseñar y fabricar un producto
+  físico nuevo desde cero (ej: un wearable, un gadget IoT, un dron propio).
+  **Esto NO incluye** negocios manufactureros/industriales YA EXISTENTES que
+  innovaron su modelo de negocio, distribución o proceso (ej: una fábrica de
+  plásticos que cambió cómo vende o produce) — esos van en "Tradicional
+  reinventado" y se puntúan generoso normalmente: el fundador podría replicar
+  el MODELO asociándose con un socio técnico/de producción, no fabricar él
+  mismo desde cero.
+- Negocios que necesitan licencias regulatorias pesadas desde el día 1 (banca,
+  trading, fármacos en desarrollo clínico, etc.).
+
+Estos dos son de BARRERA, no de fit: la idea puede ser genuinamente
+interesante (ej: una startup de un fármaco real, una de biosensores para
+agro) — el fundador solo no la puede ejecutar solo ni rápido. Puntuá
+`problema_score` NORMAL, según la señal real (tracción, funding, cobertura
+de prensa) — no lo bajes por la barrera. Reflejá la dificultad SOLO en
+`barrera_score` (bajo, 0-4: exige capital intensivo / años de regulación /
+fabricación física propia). Completá el objeto ENTERO como cualquier otro
+candidato — resumen real, señales reales, no el tratamiento mínimo de
+arriba. El resultado natural: rara vez pasan el gate (barrera_score bajo
+arrastra el total), pero Matías ve que existen y por qué son interesantes,
+en vez de un 0 que las esconde.
 
 # Nota sobre fuentes
 
