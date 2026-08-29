@@ -105,9 +105,19 @@ def run() -> Path:
     # replicables) vs tendencias/reflexiones (señal de mercado, sin un jugador
     # único). Sin este split, las tendencias — que suelen puntuar alto por
     # agregar señal de varias empresas — desplazaban a las empresas del top 5.
+    # 2026-08 fix: los excluidos duros del deep (hardware desde cero,
+    # licencia pesada día 1, etc.) quedan con objetivo_total=0 y
+    # tipo_candidato="" — antes caían en empresas_scored (tipo_candidato=""
+    # no es "Tendencia"/"Reflexión") y, si esa semana había pocas empresas
+    # reales, top_empresas los usaba para RELLENAR el cupo fijo de
+    # MAX_IDEAS_EMPRESA. Resultado real (2026-W35): 1 empresa con score 32
+    # seguida de 3 excluidos con score 0 en el mismo email, como si fueran
+    # ideas evaluables. El filtro objetivo_total > 0 saca los excluidos de
+    # ambos baldes ANTES de rellenar — si hay 1 empresa real esa semana, el
+    # email muestra 1, no 4 con relleno.
     TENDENCIA_TYPES = {"Tendencia", "Reflexión"}
-    empresas_scored = [s for s in scored if s.tipo_candidato not in TENDENCIA_TYPES]
-    tendencias_scored = [s for s in scored if s.tipo_candidato in TENDENCIA_TYPES]
+    empresas_scored = [s for s in scored if s.tipo_candidato not in TENDENCIA_TYPES and s.objetivo_total > 0]
+    tendencias_scored = [s for s in scored if s.tipo_candidato in TENDENCIA_TYPES and s.objetivo_total > 0]
     top_empresas = empresas_scored[: config.MAX_IDEAS_EMPRESA]
     top_tendencias = tendencias_scored[: config.MAX_IDEAS_TENDENCIA]
     top_email = top_empresas + top_tendencias
