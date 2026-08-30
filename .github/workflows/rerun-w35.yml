@@ -1,0 +1,37 @@
+name: rerun-w35
+
+# Re-corrida ad-hoc de 2026-W35 con el fix de max_tokens del triage (commit
+# 557f87d) — el run original truncó el triage y perdió 57% de los
+# candidatos en silencio. Usa el mismo candidate set ya guardado, sin
+# re-fetchear ni tocar seen_urls/stats/pool. NO tiene schedule.
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  rerun:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install deps
+        run: pip install -r requirements.txt
+
+      - name: Re-run W35 with fixed triage max_tokens
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python -m scripts.rerun_w35_fixed
+
+      - name: Commit resulting report
+        run: |
+          git config user.name "scouting-bot"
+          git config user.email "actions@github.com"
+          git add reports/2026-W35-rerun.md reports/2026-W35-rerun-full.json
+          git diff --staged --quiet && echo "sin cambios" || (git pull --rebase origin main && git commit -m "rerun W35 con fix de triage max_tokens" && git push origin main)
