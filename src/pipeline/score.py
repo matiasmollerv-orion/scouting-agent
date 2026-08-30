@@ -24,6 +24,7 @@ class ScoreResult:
     triage: list[dict] = field(default_factory=list)  # {title, url, source, total}
     cost_usd: float = 0.0
     truncated: bool = False  # el deep chocó max_tokens y se rescató con repair
+    triage_truncated: bool = False  # el triage chocó max_tokens — candidatos sin scorear
 
 # USD por millón de tokens (input, output). Actualizar si cambian los modelos.
 PRICES = {
@@ -72,8 +73,23 @@ def score(items: list[Item]) -> ScoreResult:
         f"Candidatos ({len(items)}):\n\n{_serialize(items, text_chars=400)}\n\n"
         f"Puntuá los {len(items)} sin excepción."
     )
-    text, c, _ = _call(client, config.MODEL_TRIAGE, triage_system, triage_user, max_tokens=4000)
+    # max_tokens: 2026-08 encontrado en producción — con max_tokens=4000 y
+    # MAX_CANDIDATES=150 (subido esta sesión, antes 100/30), el output de
+    # Haiku se cortaba a mitad de la lista: W35 real, 85/150 candidatos
+    # (57%) sin score porque el JSON se truncó en el índice 65 y nunca se
+    # recuperó — todo lo que viene después en el round-robin (justo donde
+    # caen las fuentes agregadas más recientemente, por orden de inserción
+    # en RSS_FEEDS) queda sin evaluar. json-repair rescata lo que alcanzó a
+    # salir, pero lo que nunca salió no es recuperable. 150 items × ~50-60
+    # tokens/item real (URLs largas con utm params pesan más que el
+    # "~30 tokens/item" original) ≈ 7500-9000 tokens — 16000 da margen real.
+    text, c, triage_truncated = _call(client, config.MODEL_TRIAGE, triage_system,
+                                       triage_user, max_tokens=16000)
     result.cost_usd += c
+    if triage_truncated:
+        result.triage_truncated = True
+        print(f"[score] ⚠️ triage truncado a max_tokens con {len(items)} candidatos — "
+              "subir max_tokens de nuevo si se repite")
     ranked, scores_by_url = _rank_from_triage(text, items)
     # Se guarda el texto (mismo largo que usa el deep) aunque el item no
     # llegue a análisis profundo automático: es lo que el dashboard necesita

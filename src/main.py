@@ -96,6 +96,11 @@ def run() -> Path:
         warnings.append(
             f"análisis truncado a max_tokens ({len(scored)} de {config.TOP_DEEP} ideas "
             "rescatadas) — subir max_tokens si se repite")
+    if result.triage_truncated:
+        sin_score = sum(1 for t in result.triage if t.get("total") is None)
+        warnings.append(
+            f"⚠️ triage truncado a max_tokens — {sin_score} de {len(candidates)} candidatos "
+            "quedaron SIN evaluar esta semana (silenciosamente excluidos, no por criterio)")
 
     # Ideas que pasaron el gate (para el reporte Markdown del repo)
     passing = [s for s in scored if s.passes_gate(config.MIN_OBJETIVO)]
