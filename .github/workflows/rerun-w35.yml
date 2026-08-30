@@ -34,4 +34,12 @@ jobs:
           git config user.name "scouting-bot"
           git config user.email "actions@github.com"
           git add reports/2026-W35-rerun.md reports/2026-W35-rerun-full.json
-          git diff --staged --quiet && echo "sin cambios" || (git pull --rebase origin main && git commit -m "rerun W35 con fix de triage max_tokens" && git push origin main)
+          # Bug real 2026-08-30: `git pull --rebase` con el índice sucio (ya
+          # con `git add` corrido) falla — "cannot pull with rebase". El
+          # commit ya salvó el resultado del script pagado; stash antes de
+          # rebasear y recuperar después evita perderlo si esto vuelve a fallar.
+          git diff --staged --quiet && echo "sin cambios" || (
+            git commit -m "rerun W35 con fix de triage max_tokens" &&
+            git pull --rebase origin main &&
+            git push origin main
+          )
