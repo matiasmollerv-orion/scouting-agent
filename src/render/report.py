@@ -9,6 +9,12 @@ from ..models import ScoredItem
 TEMPLATE = Template(
     """# Reporte de Scouting — Semana {{ week }} ({{ today }})
 
+{% if warnings %}
+## ⚠️ Advertencias de esta corrida
+
+{% for w in warnings %}- {{ w }}
+{% endfor %}
+{% endif %}
 {% if not ideas %}
 No hubo candidatos con análisis profundo esta semana ({{ total_evaluados }} evaluados en triage).
 {% else %}
@@ -64,6 +70,7 @@ mercado para análisis posteriores (patrones por industria, ideas combinables).
 def render(
     ideas: list[ScoredItem], total_evaluados: int, min_objetivo: int,
     panorama: list[dict] | None = None, gate_count: int = 0,
+    warnings: list[str] | None = None,
 ) -> str:
     today = date.today()
     # Orden en Python (Jinja sort no maneja None): sin score al final.
@@ -78,6 +85,7 @@ def render(
         min_objetivo=min_objetivo,
         panorama=panorama,
         gate_count=gate_count,
+        warnings=warnings or [],
         week=today.isocalendar().week,
         today=today.isoformat(),
     )

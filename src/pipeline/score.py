@@ -99,6 +99,19 @@ def score(items: list[Item]) -> ScoreResult:
          "total": scores_by_url.get(it.url), "text": it.text[:1200]}
         for it in items
     ]
+    # Chequeo de cobertura INDEPENDIENTE de si el modelo reportó
+    # stop_reason=="max_tokens": lo que de verdad importa es cuántos
+    # candidatos terminaron sin score, sea cual sea la causa (truncación,
+    # JSON malformado que json-repair no pudo rescatar completo, etc.).
+    # 2026-W35 real: 85/150 (57%) sin score con max_tokens=4000 — este
+    # chequeo lo hubiera marcado igual aunque el flag de stop_reason
+    # hubiera fallado por cualquier motivo.
+    sin_score = sum(1 for t in result.triage if t["total"] is None)
+    if items and sin_score / len(items) > 0.15:
+        result.triage_truncated = True
+        print(f"[score] ⚠️ cobertura de triage baja: {sin_score}/{len(items)} "
+              f"({100*sin_score/len(items):.0f}%) candidatos sin score — "
+              "no necesariamente por max_tokens, pero algo los está perdiendo")
     if not ranked:
         print("[score] triage sin resultados — fallback: top por orden de prefilter")
         ranked = items[: config.TOP_DEEP]

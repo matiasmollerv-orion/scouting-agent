@@ -11,8 +11,16 @@ stats del run real del sábado. El email de muestra llega de verdad (Gmail),
 marcado [ENSAYO $0].
 
 Uso:
-  python tests/dry_run.py batch     # valida el camino Batch API
-  python tests/dry_run.py fallback  # valida batch caído -> llamada directa
+  python tests/dry_run.py batch      # valida el camino Batch API
+  python tests/dry_run.py fallback   # valida batch caído -> llamada directa
+  python tests/dry_run.py truncated  # simula triage cortado a mitad de lista
+                                      # (regresión del bug real 2026-W35:
+                                      # max_tokens insuficiente para
+                                      # MAX_CANDIDATES -> 57% de candidatos
+                                      # sin score, en silencio). Valida que
+                                      # el chequeo de cobertura de score.py
+                                      # lo detecte y el warning llegue al
+                                      # reporte/email.
 """
 from __future__ import annotations
 
@@ -26,7 +34,7 @@ REPO = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO))
 
 MODE = sys.argv[1] if len(sys.argv) > 1 else "batch"
-assert MODE in ("batch", "fallback"), "modo: batch | fallback"
+assert MODE in ("batch", "fallback", "truncated"), "modo: batch | fallback | truncated"
 
 # Credenciales Gmail locales (mismas del Financial Dashboard) para que el
 # email de ensayo llegue de verdad. Sin ellas, el envío solo se omite.
@@ -51,9 +59,13 @@ def _payload_items(user_content: str) -> list[dict]:
 def _fake_response_text(system: str, user_content: str) -> str:
     items = _payload_items(user_content)
     if "TRIAGE" in system:
+        # MODE="truncated": simula el bug real de 2026-W35 — el modelo se
+        # queda sin max_tokens a mitad de la lista y el array JSON nunca
+        # llega a cubrir el resto. Solo la primera mitad recibe score.
+        n = len(items) // 2 if MODE == "truncated" else len(items)
         # Scores descendentes con algunos excluidos (0) — determinista.
         out = []
-        for i, it in enumerate(items):
+        for i, it in enumerate(items[:n]):
             total = max(0, 32 - i * 2) if i % 7 != 3 else 0
             out.append({"url": it["url"],
                         "problema_score": min(25, int(total * 0.65)),
@@ -167,13 +179,29 @@ def main() -> None:
     full = list(sandbox.glob("*-full.json"))
     stats = sandbox / "stats.json"
     seen = sandbox / "seen_urls.json"
-    ok = True
-    for label, cond in [
+    triage_data = json.loads(full[0].read_text())["triage"] if full else []
+    sin_score = sum(1 for t in triage_data if t.get("total") is None)
+    checks = [
         ("reporte .md con panorama", week_md.exists() and "Panorama completo" in week_md.read_text()),
-        ("dataset full.json", bool(full) and len(json.loads(full[0].read_text())["triage"]) > 0),
+        ("dataset full.json", bool(full) and len(triage_data) > 0),
         ("stats.json con temas", stats.exists() and "themes" in stats.read_text()),
         ("seen_urls.json (sandbox)", seen.exists()),
-    ]:
+    ]
+    if MODE == "truncated":
+        # Regresión del bug real: si esto no detecta la cobertura baja,
+        # el fix de score.py se rompió en silencio otra vez.
+        checks.append((f"cobertura baja detectada ({sin_score}/{len(triage_data)} sin score)",
+                       sin_score > 0 and "triage" in week_md.read_text().lower()
+                       and ("cobertura" in week_md.read_text().lower()
+                            or "truncad" in week_md.read_text().lower())))
+    else:
+        # Camino feliz: con el fake completo, TODOS los candidatos deben
+        # tener score — si esto falla, algo en score.py está perdiendo
+        # items incluso sin truncación real.
+        checks.append((f"triage cubre el 100% de candidatos ({len(triage_data)}/{len(triage_data)})",
+                       sin_score == 0))
+    ok = True
+    for label, cond in checks:
         print(f"  {'✅' if cond else '❌'} {label}")
         ok = ok and cond
     print(f"\n=== {'ENSAYO OK' if ok else 'ENSAYO CON FALLAS'} (modo {MODE}) — costo API: $0.00 ===")
