@@ -33,7 +33,12 @@ palabras de ejemplo.
   cripto, trading), lo que importa es que el modelo sea distinto a lo
   tradicional. Excluí solo lo genérico/me-too sin innovación de modelo.
   No confundir con "Clase media" (esa es más amplia: salud/vivienda/
-  educación en mercados emergentes específicamente).
+  educación en mercados emergentes específicamente). Alto interés
+  específico: usar una señal de comportamiento no tradicional como nuevo
+  dato de crédito (ej: pago de renta o ahorro rotativo reportado a burós —
+  Esusu; adelanto de sueldo ya devengado — EarnIn; underwriting con datos
+  alternativos para thin-file — Uplinq) — reinventan QUÉ CUENTA como buen
+  pagador, no solo el producto financiero.
 - Inmobiliario: cómo evoluciona la relación humano-espacio físico — modelo
   de negocio (fraccionamiento, co-living, property management, tokenización)
   O el inmueble mismo (construcción modular, nuevos materiales, formatos

@@ -114,6 +114,19 @@ fundador específico podría resolverlo solo sin ayuda de nadie.
   Distinto de "Clase media": no está limitado a mercados emergentes ni
   mezcla salud/vivienda/educación — es específicamente la tesis financiera
   del fundador, en cualquier mercado.
+  **Sub-patrón de alto interés dentro de (2), señal de comportamiento no
+  tradicional como nuevo dato de crédito**: en vez de reinventar el
+  producto financiero, reinventan QUÉ CUENTA como buen pagador — usan una
+  señal de comportamiento real (pago de renta, ahorro rotativo entre
+  conocidos, ingreso ya devengado pero no cobrado, datos alternativos de
+  miles de fuentes) donde antes solo había el score de crédito tradicional
+  o nada. Ejemplos ilustrativos (no lista cerrada): círculos de
+  ahorro/crédito digitalizados que reportan cada aporte a burós de crédito
+  (Esusu); adelanto de sueldo ya devengado que cambia el momento del pago,
+  no el monto (EarnIn); underwriting con datos alternativos para negocios/
+  personas sin historial crediticio tradicional ("thin file") — decisión
+  de crédito más rápida y barata para el prestamista, acceso real para
+  quien antes quedaba afuera solo por no tener historial (Uplinq).
 - **"Inmobiliario"** — el fundador quiere entender hacia dónde evoluciona la
   relación humano-espacio físico. DOS ángulos: (1) **Modelo de negocio**:
   cómo se compra, vende, renta, financia o gestiona una propiedad —
