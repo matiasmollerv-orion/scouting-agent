@@ -292,5 +292,58 @@
    "Tradicional reinventado": 47,
    "Industrias CL": 24
   }
+ },
+ {
+  "week": "2026-W36",
+  "sources": {
+   "hackernews": 1016,
+   "techcrunch": 136,
+   "mit": 33,
+   "techeu": 75,
+   "restofworld": 15,
+   "aqua": 59,
+   "mch": 60,
+   "redagricola": 12,
+   "modernretail": 32,
+   "retaildive": 50,
+   "joshbersin": 3,
+   "charter": 15,
+   "hrdive": 51,
+   "manufacturingdive": 34,
+   "grocerydive": 35,
+   "nrn": 140,
+   "finextra": 188,
+   "tearsheet": 17,
+   "fintechtimes": 63,
+   "geekestate": 9,
+   "glossy": 40,
+   "statnews": 97,
+   "stratechery": 14,
+   "skift": 58,
+   "reddit_saas": 80,
+   "yc": 3,
+   "techinasia": 5,
+   "newsletters": 31,
+   "brain-inbox": 6
+  },
+  "candidates": 150,
+  "scored": 8,
+  "gate": 5,
+  "cost_usd": 0.308,
+  "themes": {
+   "Futuro del trabajo": 44,
+   "IA agéntica": 82,
+   "Wellness": 23,
+   "Ecommerce: herramientas B2B": 23,
+   "Ecommerce: tendencias consumo": 10,
+   "Ecommerce: marcas DTC maduras": 2,
+   "Fintech/Clase media": 97,
+   "Bienestar financiero": 5,
+   "Inmobiliario": 5,
+   "Creadores de contenido": 4,
+   "Marketplace": 8,
+   "Tradicional reinventado": 34,
+   "Industrias CL": 26
+  }
  }
 ]

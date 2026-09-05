@@ -1,0 +1,1369 @@
+{
+ "week": "2026-W36",
+ "triage": [
+  {
+   "title": "Show HN: Open-Source eInk Bike Computer",
+   "url": "https://opentrailpaper.com",
+   "source": "hackernews",
+   "total": 13,
+   "text": "Hey all, i just launched my Eink Bike computer project and think it is cool.<p>Another tidbit, in the crazy things that AI has done... It has helped create a ANT (common sensor wireless protocol used in workout&#x2F;biking) implementation for ESP32 by messing around with undocumented registers: <a href=\"https:&#x2F;&#x2F;github.com&#x2F;RaemondBW&#x2F;esp32-ant\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;RaemondBW&#x2F;esp32-ant</a>"
+  },
+  {
+   "title": "XDOF, just three months out of stealth, is in talks for a Series B at a $1.2B valuation",
+   "url": "https://techcrunch.com/2026/09/04/xdof-just-three-months-out-of-stealth-is-in-talks-for-a-series-b-at-a-1-2b-valuation/",
+   "source": "techcrunch",
+   "total": 0,
+   "text": "The round is being raised just months after the robot data startup exited from stealth."
+  },
+  {
+   "title": "Architecting memory and storage in the AI era",
+   "url": "https://www.technologyreview.com/2026/09/04/1140872/architecting-memory-and-storage-in-the-ai-era/",
+   "source": "mit",
+   "total": 0,
+   "text": "The era of AI inference has arrived. Imagine a healthcare system analyzing millions of data points in real time to accelerate life-saving medical research, or an intelligent assistant instantly resolving thousands of complex customer needs at once. These real-world breakthroughs rely on advanced infrastructure acting as the engine of continuous intelligence, powering real-time services while&#8230;"
+  },
+  {
+   "title": "UK startup AI Score raises $5.4M to scale its enterprise AI governance platform",
+   "url": "https://tech.eu/2026/09/04/uk-startup-ai-score-raises-54m-to-scale-its-enterprise-ai-governance-platform/",
+   "source": "techeu",
+   "total": 22,
+   "text": "London-based AI governancecompany AI Score has raised $5.4 million in seed funding to further develop itsplatform for managing the use of generative and agentic AI acrossorganisations. The round was l..."
+  },
+  {
+   "title": "Chinese businesses are giving away AI tokens with coffee, credit cards, and dumplings",
+   "url": "https://restofworld.org/2026/china-ai-tokens-consumer-rewards-credit-cards-telcos-deepseek/?utm_source=rss&utm_medium=rss&utm_campaign=feeds",
+   "source": "restofworld",
+   "total": 19,
+   "text": "Five unexpected ways computing power is entering everyday life in the country."
+  },
+  {
+   "title": "Perú proyecta superar las 3.200 habilitaciones sanitarias en pesca y acuicultura",
+   "url": "https://www.aqua.cl/peru-proyecta-superar-las-3-200-habilitaciones-sanitarias-en-pesca-y-acuicultura/",
+   "source": "aqua",
+   "total": 7,
+   "text": "Sanipes otorgó 1.331 habilitaciones sanitarias durante el primer semestre de 2026 y proyecta cerrar el año con 3.277 autorizaciones a nivel nacional.\nThe post Perú proyecta superar las 3.200 habilitaciones sanitarias en pesca y acuicultura appeared first on AQUA."
+  },
+  {
+   "title": "Presupuesto 2027: Comité Consultivo eleva precio de referencia del cobre",
+   "url": "https://www.mch.cl/presupuesto-2027-comite-consultivo-eleva-precio-de-referencia-del-cobre/",
+   "source": "mch",
+   "total": 0,
+   "text": "El valor estimado por la instancia supera en casi US$1 por libra al monto utilizado en el proyecto el año pasado.\nLa entrada Presupuesto 2027: Comité Consultivo eleva precio de referencia del cobre se publicó primero en Mch."
+  },
+  {
+   "title": "Guardianes del Paisaje llega a Ica: el adelanto del séptimo capítulo con Grupo Vanguard Internacional",
+   "url": "https://redagricola.com/guardianes-del-paisaje-llega-a-ica-el-adelanto-del-septimo-capitulo-con-grupo-vanguard-internacional/",
+   "source": "redagricola",
+   "total": 4,
+   "text": "Un nuevo adelanto de la serie documental muestra cómo la agroexportadora combina biocontrol y manejo integral de sus recursos para sostener más de 1.500 hectáreas de uva de mesa en pleno desierto de Ica.\nThe post Guardianes del Paisaje llega a Ica: el adelanto del séptimo capítulo con Grupo Vanguard Internacional appeared first on Redagrícola."
+  },
+  {
+   "title": "Why fragrance is the new key to commanding a premium price tag",
+   "url": "https://www.modernretail.co/podcasts/why-fragrance-is-the-new-key-to-commanding-a-premium-price-tag/?utm_campaign=modernretaildis&utm_medium=rss&utm_source=general-rss",
+   "source": "modernretail",
+   "total": 16,
+   "text": "This week's Modern Retail Podcast features Diana Melencio of XRC Ventures discussing the growth of fragrance as a premiumization play for CPG brands."
+  },
+  {
+   "title": "Lululemon pulls back store plans as sales plummet",
+   "url": "https://www.retaildive.com/news/lululemon-pulls-back-store-plans-sales-plummet-q2/829660/",
+   "source": "retaildive",
+   "total": 7,
+   "text": "Even sales of leggings fell 20% in Q2. Incoming CEO Heidi O&rsquo;Neill, the former Nike exec who arrives next week, has her work cut out for her."
+  },
+  {
+   "title": "US Workforce In 2035: A Few More Workers, A Lot More Output",
+   "url": "https://joshbersin.com/2026/09/us-workforce-in-2035-a-few-more-workers-a-lot-more-output/",
+   "source": "joshbersin",
+   "total": 24,
+   "text": "Despite the talk about job losses from AI, we now know the opposite is true. The new Bureau of Labor Statistics Employment Projections: 2025-2035. shows that we are likely to have labor shortages in the future, despite growth in AI productivity ahead.\nThe bottom line is this: the US labor market will only grow ... Read more&#187; \nThe post US Workforce In 2035: A Few More Workers, A Lot More Output appeared first on JOSH BERSIN."
+  },
+  {
+   "title": "Book Briefing: ‘The Psychology of AI Adoption at Work’ by Gleb Tsipursky",
+   "url": "https://www.charterworks.com/book-briefing-the-psychology-of-ai-adoption-at-work-by-gleb-tsipursky/",
+   "source": "charter",
+   "total": 19,
+   "text": "Based on hundreds of hours of focus groups and one-on-one interviews, Tsipursky develops thirteen psychological profiles of employee and manager attitudes toward genAI."
+  },
+  {
+   "title": "As costs mount, employees say they want financial, not wellness benefits",
+   "url": "https://www.hrdive.com/news/employees-want-financial-not-wellness-benefits/829253/",
+   "source": "hrdive",
+   "total": 22,
+   "text": "Pay growth and long-term incentives matter most to employees at the moment as well as spot bonuses with increased frequency, Gartner said."
+  },
+  {
+   "title": "US manufacturing adds 16,000 jobs in August",
+   "url": "https://www.manufacturingdive.com/news/us-manufacturing-adds-16000-jobs-in-august/829655/",
+   "source": "manufacturingdive",
+   "total": 4,
+   "text": "The machinery manufacturing sector gained the most workers at 6,100 jobs, while the motor vehicles and parts industry lost 4,500."
+  },
+  {
+   "title": "What is Sprouts’ next CEO inheriting?",
+   "url": "https://www.grocerydive.com/news/sprouts-farmers-market-jack-sinclair-nick-konat-ceo-change/829586/",
+   "source": "grocerydive",
+   "total": 5,
+   "text": "Nick Konat will soon helm a specialty grocer that is juggling a lot, from improving its recent lackluster financial results to revamping value messaging and aiming to open dozens of stores."
+  },
+  {
+   "title": "New on the Menu: Seasonal tomato chaat and crab-stuffed squash blossoms",
+   "url": "https://www.nrn.com/independent-restaurants/new-on-the-menu-seasonal-tomato-chaat-and-crab-stuffed-squash-blossoms",
+   "source": "nrn",
+   "total": 3,
+   "text": "Plus seafood yakisoba, vegan mapo tofu, and a cocktail named for an inside joke."
+  },
+  {
+   "title": "ECB explores link between Tips and Brazil's Pix",
+   "url": "https://www.finextra.com/newsarticle/48350/ecb-explores-link-between-tips-and-brazils-pix?utm_medium=rssfinextra&utm_source=finextrafeed",
+   "source": "finextra",
+   "total": 7,
+   "text": "The European Central Bank is looking into the possibility of interlinking the Eurosystem’s Target Instant Payment Settlement (Tips) with Brazil's Pix system."
+  },
+  {
+   "title": "The infrastructure paradox: The better you become, the harder customers are to keep",
+   "url": "https://tearsheet.co/opinion/the-infrastructure-paradox-the-better-you-become-the-harder-customers-are-to-keep/?utm_source=rss&utm_medium=rss&utm_campaign=the-infrastructure-paradox-the-better-you-become-the-harder-customers-are-to-keep",
+   "source": "tearsheet",
+   "total": 10,
+   "text": "The “Letter from the Editor” is a biweekly series of exclusive insight and opinion-driven analysis from Tearsheet&#8217;s Managing Editor Sara Khairi, connecting ideas, questioning assumptions, and tracking shifts across both mature and emerging trends in financial services. This is now PRO-only content. Subscribe to PRO so you never miss a Letter from the Editor exclusive. &#8230; \nContinue reading \"The infrastructure paradox: The better you become, the harder customers are to keep\"\nThe post The infrastructure paradox: The better you become, the harder customers are to keep appeared first on Tearsheet."
+  },
+  {
+   "title": "How AI is Driving a New Wave of Motor Fraud",
+   "url": "https://thefintechtimes.com/how-ai-is-driving-a-new-wave-of-motor-fraud/",
+   "source": "fintechtimes",
+   "total": 15,
+   "text": "Dave Rossi, managing director at National Hunter, on how AI is industrialising motor fraud and why intelligence sharing is now the industry's best defence.\nThe post How AI is Driving a New Wave of Motor Fraud appeared first on The Fintech Times."
+  },
+  {
+   "title": "When Content Becomes Infinite, Humanity Becomes Scarce",
+   "url": "https://geekestateblog.com/when-content-becomes-infinite-humanity-becomes-scarce/",
+   "source": "geekestate",
+   "total": 9,
+   "text": "I’m dating myself here, but there was a time when going to the movies felt relatively simple. In the 1980s, the number of movies competing for our attention was a fraction of what we have access to today. You went to the theater, or you...\nThe post When Content Becomes Infinite, Humanity Becomes Scarce appeared first on GeekEstate Blog."
+  },
+  {
+   "title": "Pop Newsletter: Set did $3.5 million in 24 hours leveraging customers as the new influencers",
+   "url": "https://www.glossy.co/pop/set-customer-influencer-strategy-coastline-drop/?utm_campaign=glossydis&utm_medium=rss&utm_source=general-rss",
+   "source": "glossy",
+   "total": 25,
+   "text": "Set is giving customers the access traditionally reserved for influencers. Its Coastline collection generated $3.5 million online in 24 hours, while its $500,000 Austin activation helped acquire thousands of new shoppers."
+  },
+  {
+   "title": "Opinion: What STAT readers think about M.D. vs. D.O., AI in medicine, surrogacy, and more",
+   "url": "https://www.statnews.com/2026/09/05/md-vs-do-surrogacy-ai-medicine-stat-letters-to-editor/?utm_campaign=rss",
+   "source": "statnews",
+   "total": 8,
+   "text": "“A click, signature, or brief review should not magically transfer responsibility from an AI developer or platform to a physician,” a reader tells STAT."
+  },
+  {
+   "title": "2026.36: Friction and Feedback",
+   "url": "https://stratechery.com/2026/friction-and-feedback/",
+   "source": "stratechery",
+   "total": 4,
+   "text": "The best Stratechery content from the week of August 31, 2026, including the market speaking, Apple finding religion, and society losing friction."
+  },
+  {
+   "title": "A Viral AI Bot Just Showed Travel What Frictionless Actually Means",
+   "url": "https://skift.com/2026/09/04/a-viral-ai-bot-just-showed-travel-what-frictionless-actually-means/",
+   "source": "skift",
+   "total": 27,
+   "text": "Instinct, a freshman AI assistant that has Silicon Valley buzzing, can book and rebook trips from a text thread. Key lesson for travel: Talking about frictionless booking isn&apos;t the same as delivering it."
+  },
+  {
+   "title": "The single biggest shift coming to SaaS",
+   "url": "https://www.reddit.com/r/SaaS/comments/1w5qg2s/the_single_biggest_shift_coming_to_saas/",
+   "source": "reddit_saas",
+   "total": 28,
+   "text": "Almost every B2B SaaS company rn is scrambling to build their own proprietary AI assistant inside their web app where they want users to log in, click their sidebar and talk to their custom bot. But if you've noticed the buyers have changed a lot in last few months and how they work today and nobody wants to switch between 15 different walled garden browser tabs to talk to 15 different agents. People want to stay in Claude Code, Codex, or their terminal and have their central agent interact with your product via APIs, MCPs, or plain execution hooks. and I think this changes two massive things for SaaS founders going forward: 1st, Product UI is becoming secondary so if a customer can't invoke your core capability directly through their existing agent or workflow, they'll pick a competitor whose API is easier to hook into or simply script a lightweight internal tool themselves. 2nd, GTM &amp; outbound have to change with the pitching another standalone tool with its own UI is facing massive fatigue. Outbound only works when you reach out based on live timing triggers (like stack migrations or active workflow bottlenecks) where teams are actively struggling with multiple works. and in"
+  },
+  {
+   "title": "Frontier Computing (YC Summer 2026) – Frontier grows scalable biological brains as an ML training substrate",
+   "url": "https://frontier.site",
+   "source": "yc",
+   "total": 6,
+   "text": "Frontier grows scalable biological brains as an ML training substrate\nFrontier is first to grow biological brains at scale, serving biological neural nets with substrate-level colocation of memory and compute, enabling highly cost effective training of large parameter count models.\r\n\r\nWhile academia has traditionally been limited to ~1M neurons in vitro, Frontier has built a pathway to scale to 100M+ neurons by circumventing traditional scaling challenges in biological culture, demonstrating this strategy's functionality by training a biological brain using this scaling primitive to play Frogger.\r\n\r\nFrontier is now growing exascale compute clusters to produce substrates capable of long-horizon language reasoning while operating at much higher sample efficiencies than traditional architectures, and collocating memory with compute to enable significantly larger parameter counts than would be tractable for training within traditional compute clusters."
+  },
+  {
+   "title": "We love AI. We hate AI. What now?",
+   "url": "https://www.techinasia.com/love-ai-hate-ai",
+   "source": "techinasia",
+   "total": 4,
+   "text": "AI is a lightning rod for opinions these days, so here are two stories that highlight both the rush to invest and the need for cautious adoption."
+  },
+  {
+   "title": "Revolution Despidos Que Pagan Centros De Datos Y Capital Que Corre Al H",
+   "url": "gbrain://newsletters/revolution-despidos-que-pagan-centros-de-datos-y-capital-que-corre-al-h",
+   "source": "newsletters",
+   "total": 0,
+   "text": "# Despidos que pagan centros de datos y capital que corre al hardware\n\n- **De:** Javier Morodo <javiermtzmorodo+revolution-daily@substack.com>\n- **Fecha:** Tue, 7 Jul 2026 12:03:19 +0000\n- **Capturado:** 2026-07-09 19:13\n\n---\n\nView this post on the web at https://javiermtzmorodo.substack.com/p/despidos-que-pagan-centros-de-datos\n\nEl dinero cambió de piso\nEl mercado lee este rally de IA como una sola operación: compra las de siempre y espera. Esa lectura ya caducó. Lo que veo en el tablero es otra cosa, una rotación de piso completa. Microsoft recorta nómina para financiar infraestructura, los banqueros centrales debaten en Sintra si todo esto se paga solo, y el capital fresco corre hacia el fierro: memoria, silicio a medida, fundición, hardware. HSBC redescubre a Intel, Broadcom amarra a Apple hasta 2031, SK Hynix sale a Wall Street y Dell vuela. \nLa implicación que nadie tiene todavía en precio: la próxima pierna la ganan los picos y las palas, no los modelos. Largo en la capa física. Selectivo en software.\n¡Ahora también nos puedes escuchar en Spotify!\nSíguenos y mantente al día con la mejor lectura del mercado diariamente.\nMicrosoft despide mientras el gasto en IA rompe récords,"
+  },
+  {
+   "title": "Show HN: Running 104GB Qwen3.8-Flash-Next on 48GB Mac with at ~12 tok/s",
+   "url": "https://github.com/carloslfu/slotstream",
+   "source": "hackernews",
+   "total": 9,
+   "text": "I built slotstream, a way to run Qwen3.8-Flash-Next 4-bit on a low-memory mac starting from 16GB, a 125B parameter model that would need 100GB+ memory&#x2F;RAM, thanks to expert-offloading&#x2F;ssd-streaming. Easy to install&#x2F;update, and mac-native using MLX and Swift.<p>It ships with auto-mode, which makes a good tradeoff between memory usage and speed. I&#x27;ll be implementing and porting the MTP module for speculative decoding next"
+  },
+  {
+   "title": "Judge blocks X rival from using Twitter name, but allows ‘Tweet’ for now",
+   "url": "https://techcrunch.com/2026/09/04/judge-blocks-x-rival-from-using-twitter-name-but-allows-tweet-for-now/",
+   "source": "techcrunch",
+   "total": 3,
+   "text": "A federal judge temporarily barred an X rival from using the Twitter name, but found that X was likely to have abandoned the “Tweet” trademark and bird logo. The startup has since relaunched as Tweet.app."
+  },
+  {
+   "title": "The Download: selling battlefield drone data and AI reshaping language",
+   "url": "https://www.technologyreview.com/2026/09/04/1143457/the-download-ukraine-selling-drone-data-ai-reshaping-language/",
+   "source": "mit",
+   "total": 5,
+   "text": "This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. Data from drones in Ukraine is fueling a new Wild West marketplace —Cory Alpert, a researcher at the University of Melbourne studying AI&#8217;s impact on democracy, who previously served in the&#8230;"
+  },
+  {
+   "title": "Atira raises $17.5M to bring AI orchestration to industrial sales",
+   "url": "https://tech.eu/2026/09/03/atira-raises-175m-to-bring-ai-orchestration-to-industrial-sales/",
+   "source": "techeu",
+   "total": 27,
+   "text": "Munich-based AIcompany Atira has raised $15 million in seed funding to expand its platform forautomating industrial sales engineering. The round was led by Accel, withparticipation from UVC, Fortino, ..."
+  },
+  {
+   "title": "I refused to train the AI that could replace me",
+   "url": "https://restofworld.org/2026/ai-training-jobs-expert-replacement/?utm_source=rss&utm_medium=rss&utm_campaign=feeds",
+   "source": "restofworld",
+   "total": 16,
+   "text": "AI companies are paying highly educated workers to teach machines the judgment they spent years developing — even when those systems could eventually replace them."
+  },
+  {
+   "title": "Salmonicultura mueve $3,2 billones con proveedores y aporta más de $74 mil millones al Estado",
+   "url": "https://www.aqua.cl/salmonicultura-mueve-32-billones-con-proveedores-y-aporta-mas-de-74-mil-millones-al-estado/",
+   "source": "aqua",
+   "total": 4,
+   "text": "El sexto Reporte de Impacto Sostenible del Consejo del Salmón reúne más de 140 indicadores sobre el desempeño económico, social y ambiental de sus seis empresas socias.\nThe post Salmonicultura mueve $3,2 billones con proveedores y aporta más de $74 mil millones al Estado appeared first on AQUA."
+  },
+  {
+   "title": "Proyecto de Codelco en Atacama inicia su evaluación ambiental",
+   "url": "https://www.mch.cl/proyecto-de-codelco-en-atacama-inicia-su-evaluacion-ambiental/",
+   "source": "mch",
+   "total": 0,
+   "text": "La iniciativa tiene como objetivo incorporar una serie de adecuaciones y mejoras, que permitan optimizar la operación actual de una de sus divisiones.\nLa entrada Proyecto de Codelco en Atacama inicia su evaluación ambiental se publicó primero en Mch."
+  },
+  {
+   "title": "Palta: lo que decidirá la campaña no será el volumen, sino el precio",
+   "url": "https://redagricola.com/palta-lo-que-decidira-la-campana-no-sera-el-volumen-sino-el-precio/",
+   "source": "redagricola",
+   "total": 7,
+   "text": "Las proyecciones de Fresh Fruit anticipan que el Perú cerrará este 2026 con cerca de 920 mil toneladas y US$ 1,825 millones en palta exportada. Máximos históricos. Sin embargo, la industria entra en su etapa de madurez, donde el reto deja de ser producir más para pasar a sostener el margen.\nThe post Palta: lo que decidirá la campaña no será el volumen, sino el precio appeared first on Redagrícola."
+  },
+  {
+   "title": "Lululemon’s identity crisis continues, with comp sales down 9%, as it prepares to welcome new CEO",
+   "url": "https://www.modernretail.co/operations/lululemons-identity-crisis-continues-with-comp-sales-down-9-as-it-prepares-to-welcome-new-ceo/?utm_campaign=modernretaildis&utm_medium=rss&utm_source=general-rss",
+   "source": "modernretail",
+   "total": 5,
+   "text": "Lululemon reported second-quarter earnings on Thursday that came in below expectations, with executives facing plenty of questions from Wall Street analysts about whether or not the activewear brand had correctly diagnosed the challenges it faces."
+  },
+  {
+   "title": "Amazon Prime members now get free Alexa+ access",
+   "url": "https://www.retaildive.com/news/amazon-adds-perks-prime-free-alexa-access/829610/",
+   "source": "retaildive",
+   "total": 11,
+   "text": "The new perk follows a quarter of double-digit growth in Prime membership as Amazon and rivals emphasize the importance of their paid membership programs."
+  },
+  {
+   "title": "AI did not kill the entry-level job. Leaders did.",
+   "url": "https://www.charterworks.com/ai-did-not-kill-the-entry-level-job-leaders-did/",
+   "source": "charter",
+   "total": 20,
+   "text": "The rise of AI has just exacerbated a problem that was already in place but few companies want to talk about. Many companies chose to begin walking away from true entry-level hiring years ago. AI only accelerated it."
+  },
+  {
+   "title": "Former Golden State Warriors employees allege retaliation for engagement survey responses",
+   "url": "https://www.hrdive.com/news/golden-state-warriors-employees-allege-retaliation-for-engagement-surveys/829425/",
+   "source": "hrdive",
+   "total": 4,
+   "text": "The plaintiffs said they &ldquo;encountered a workplace marked by discrimination, hostility, and retaliation,&rdquo; while GSW said the allegations were &ldquo;without merit.&rdquo;"
+  },
+  {
+   "title": "More OEMs plan reshoring investments despite tariff, cost uncertainty",
+   "url": "https://www.manufacturingdive.com/news/manufacturing-reshoring-oem-capital-investments-tariff/829634/",
+   "source": "manufacturingdive",
+   "total": 5,
+   "text": "While 36% of manufacturers say they&rsquo;re actively reshoring, another 31% have no plans to do so, per a report from the Reshoring Initiative."
+  },
+  {
+   "title": "The Friday Checkout: Erewhon presses ahead with its promise of a ‘radiant lifestyle’",
+   "url": "https://www.grocerydive.com/news/the-friday-checkout-erewon-luxury-grocery-stores-high-food-prices/829630/",
+   "source": "grocerydive",
+   "total": 11,
+   "text": "The luxury California grocer famous for $30 packs of ice cubes just opened its 14th location and is developing two more."
+  },
+  {
+   "title": "The 2026 Restaurant Tech Power List",
+   "url": "https://www.nrn.com/restaurant-technology/the-2026-restaurant-tech-power-list",
+   "source": "nrn",
+   "total": 9,
+   "text": "These are the most powerful players driving foodservice’s technology revolution."
+  },
+  {
+   "title": "OpenAI rolls out long-awaited GPT-6 Astra",
+   "url": "https://www.finextra.com/newsarticle/48348/openai-rolls-out-long-awaited-gpt-6-astra?utm_medium=rssfinextra&utm_source=finextrafeed",
+   "source": "finextra",
+   "total": 7,
+   "text": "On Thursday OpenAI launched its latest AI model GPT-Astra, positioned as a key push of “AGI” or “artificial general intelligence”."
+  },
+  {
+   "title": "The Week in Market Moves | Aug 27- Sep 03, 2026",
+   "url": "https://tearsheet.co/10-q/the-week-in-market-moves-aug-27-sep-03-2026/?utm_source=rss&utm_medium=rss&utm_campaign=the-week-in-market-moves-aug-27-sep-03-2026",
+   "source": "tearsheet",
+   "total": 4,
+   "text": "Company signals and market response This analysis tracks the top company developments and how markets absorbed them through Thursday’s close, focusing on where shifting narratives translate into price action. It is part of Tearsheet PRO’s weekly 10-Q Newsletter, where strategy meets market reaction. I track how leading banks and fintechs are evolving in public markets &#8230; \nContinue reading \"The Week in Market Moves &#124; Aug 27- Sep 03, 2026\"\nThe post The Week in Market Moves | Aug 27- Sep 03, 2026 appeared first on Tearsheet."
+  },
+  {
+   "title": "FIZ Co-Founder Petr Kutis on the Layer After the Payment",
+   "url": "https://thefintechtimes.com/fiz-co-founder-petr-kutis-on-the-layer-after-the-payment/",
+   "source": "fintechtimes",
+   "total": 14,
+   "text": "FIZ co-founder Petr Kutis on why Portugal's certified invoicing regime is a preview of European compliance, and why his firm underwrites its own tax filings.\nThe post FIZ Co-Founder Petr Kutis on the Layer After the Payment appeared first on The Fintech Times."
+  },
+  {
+   "title": "Q2 2026 Proptech Earnings Radar",
+   "url": "https://geekestateblog.com/q2-2026-proptech-earnings-radar/",
+   "source": "geekestate",
+   "total": 5,
+   "text": "Q2 results have come and gone, and once again, GEM is there to summarize and analyze proptech’s public companies. In part 1, we shared earnings summaries and links to the full articles for each of the the ten companies we deem as the most important...\nThe post Q2 2026 Proptech Earnings Radar appeared first on GeekEstate Blog."
+  },
+  {
+   "title": "Luxury Briefing: How John Galliano’s 15-year rehabilitation reached its limit at the Met",
+   "url": "https://www.glossy.co/fashion/luxury/john-galliano-met-exhibition-cancellation-rehabilitation/?utm_campaign=glossydis&utm_medium=rss&utm_source=general-rss",
+   "source": "glossy",
+   "total": 3,
+   "text": "For this week's Luxury Briefing, I spoke with Vanessa Friedman, fashion director and chief fashion critic of The New York Times, about the cancellation of the John Galliano exhibit at the Met, with a timeline of how his rehabilitation came about before the announcement. Also, Thom Browne still has a way to go at Zegna, and executive moves at Bang &#38; Olufsen and Kering."
+  },
+  {
+   "title": "STAT+: Novartis’ experimental cardiovascular drug fails a pivotal study",
+   "url": "https://www.statnews.com/2026/09/04/novartis-therapy-pelacarsen-fails-cardiovascular-trial/?utm_campaign=rss",
+   "source": "statnews",
+   "total": 4,
+   "text": "A closely watched cardiovascular drug from Novartis failed in a pivotal study, the company said Friday, a major blow to the firm."
+  },
+  {
+   "title": "An Interview with OpenAI President Greg Brockman About Astra and Alignment",
+   "url": "https://stratechery.com/2026/an-interview-with-openai-president-greg-brockman-about-astra-and-alignment/",
+   "source": "stratechery",
+   "total": 5,
+   "text": "An interview with OpenAI President and Co-Founder Greg Brockman about the history of OpenAI, Astra and alignment, and the weight of building the future."
+  },
+  {
+   "title": "Blackstone Plans $7 Billion IPO of Spanish Resort Owner Hotel Investment Partners: Report",
+   "url": "https://skift.com/2026/09/04/blackstone-plans-7-billion-ipo-of-spanish-resort-owner-hotel-investment-partners-report/",
+   "source": "skift",
+   "total": 7,
+   "text": "After nearly two years of weighing a sale, the private equity giant is reportedly steering the Barcelona-based owner of hotels and resorts across the Mediterranean toward a Madrid listing this fall."
+  },
+  {
+   "title": "My client found my saas and now I’m jobless",
+   "url": "https://www.reddit.com/r/SaaS/comments/1w5amyj/my_client_found_my_saas_and_now_im_jobless/",
+   "source": "reddit_saas",
+   "total": 11,
+   "text": "So I was working under a client for 2 years now and I have been submitting my work on time. He once asked if I got anything else going on and I said no because I was scared he’d start suspecting me. Few days ago he found out my website and asked if I own it which I agreed. He said it’s time we depart. I am speechless I have no job and I’m scared. I didn’t even make single penny on my saas It was my stress reliever coded tool.  &#32; submitted by &#32;  /u/Affectionate_Gap972   [link] &#32; [comments]"
+  },
+  {
+   "title": "Broadcom in talks for up to $80b AI chip financing",
+   "url": "https://www.techinasia.com/broadcom-sees-22b-q2-revenue-ai-chips-drive-growth",
+   "source": "techinasia",
+   "total": 3,
+   "text": "The package could include US$45 billion in senior debt and US$35 billion in junior debt."
+  },
+  {
+   "title": "Revolution Deficit Y Records Que Castigan Dos Caras Del Mismo Salto Tec",
+   "url": "gbrain://newsletters/revolution-deficit-y-records-que-castigan-dos-caras-del-mismo-salto-tec",
+   "source": "newsletters",
+   "total": 0,
+   "text": "# Déficit y récords que castigan. Dos caras del mismo salto tecnológico.\n\n- **De:** Javier Morodo <javiermtzmorodo+revolution-daily@substack.com>\n- **Fecha:** Wed, 8 Jul 2026 12:03:24 +0000\n- **Capturado:** 2026-07-09 19:13\n\n---\n\nView this post on the web at https://javiermtzmorodo.substack.com/p/deficit-y-records-que-castigan-dos\n\nCuando se confunde el relevo con el final\nCon Nvidia en rojo, DeepSeek diseñando su propio silicio y titulares de despidos masivos, el mercado lee un techo en la inteligencia artificial. Lo que veo no es el final del ciclo sino un relevo dentro de él. El capital deja de premiar el monopolio de la GPU y empieza a pagar los cuellos de botella físicos: memoria, energía nuclear y chip a medida. \nNadie tiene aún en precio que el margen se muda del diseñador al dueño de la capacidad. Largo en memoria y en energía para centros de datos, cauto con la concentración en un solo proveedor de cómputo. \n¡Ahora también nos puedes escuchar en Spotify!\nSíguenos y mantente al día con la mejor lectura del mercado diariamente.\nPor qué el déficit comercial récord de Estados Unidos no habla de debilidad, sino de dónde se está construyendo el futuro.\nSamsung imprime una cifra "
+  },
+  {
+   "title": "Show HN: Laser Graffiti",
+   "url": "https://laser.consti.de",
+   "source": "hackernews",
+   "total": 11,
+   "text": ""
+  },
+  {
+   "title": "Another swarm of OpenAI agents reached the open internet without the frontier lab’s knowledge",
+   "url": "https://techcrunch.com/2026/09/04/another-swarm-of-openai-agents-reached-the-open-internet-without-the-frontier-labs-knowledge/",
+   "source": "techcrunch",
+   "total": 5,
+   "text": "It's the latest failure of OpenAI's internal monitoring and security systems."
+  },
+  {
+   "title": "Data from drones in Ukraine is fueling a new Wild West marketplace",
+   "url": "https://www.technologyreview.com/2026/09/04/1143452/drone-data-wild-west/",
+   "source": "mit",
+   "total": 8,
+   "text": "Battlefields in Ukraine are littered with the remnants of drones, which are now firmly established as a critical weapon of modern warfare. But behind all that wreckage, there’s a new gold mine for the defense sector. The data drones generate will far outlast the wars in which they are used to fight, increasingly becoming part&#8230;"
+  },
+  {
+   "title": "Zeit AI raises €5M to give Europe’s mid-market its own data engineer",
+   "url": "https://tech.eu/2026/09/03/zeit-ai-raises-eur5m-to-give-europes-mid-market-its-own-data-engineer/",
+   "source": "techeu",
+   "total": 25,
+   "text": "Zeit AI, a  startup developingautonomous data engineering technology, has raised €5 million in funding toexpand its platform for mid-sized European companies. Investors in the roundinclude Y Combinato..."
+  },
+  {
+   "title": "Taiwan’s six-year hunt for China’s undercover chip labs",
+   "url": "https://restofworld.org/2026/taiwan-china-chip-investigations/?utm_source=rss&utm_medium=rss&utm_campaign=feeds",
+   "source": "restofworld",
+   "total": 5,
+   "text": "Previously unpublished government data reveals the scale of Taiwan’s crackdown on Chinese companies accused of hiding their ties while recruiting chip talent and pursuing sensitive technology."
+  },
+  {
+   "title": "AmiChile analiza desafíos normativos y ambientales de la mitilicultura",
+   "url": "https://www.aqua.cl/amichile-analiza-desafios-normativos-y-ambientales-de-la-mitilicultura/",
+   "source": "aqua",
+   "total": 4,
+   "text": "El encuentro también permitió abordar los desafíos de la actividad y fortalecer el diálogo entre el gremio y organismos sectoriales.\nThe post AmiChile analiza desafíos normativos y ambientales de la mitilicultura appeared first on AQUA."
+  },
+  {
+   "title": "Sonami llama a suspender remates de pertenencias mineras mientras se discute reforma legal",
+   "url": "https://www.mch.cl/sonami-llama-a-suspender-remates-de-pertenencias-mineras-mientras-se-discute-reforma-legal/",
+   "source": "mch",
+   "total": 4,
+   "text": "“La minería necesita reglas claras, estables y previsibles, especialmente cuando se busca impulsar nuevas inversiones y actividad minera en el país”, expresó Jorge Riesco, presidente de la gremial.\nLa entrada Sonami llama a suspender remates de pertenencias mineras mientras se discute reforma legal se publicó primero en Mch."
+  },
+  {
+   "title": "Grape Talks: Benjamín Cillóniz aborda sin tapujos los retos de la uva de mesa",
+   "url": "https://redagricola.com/grape-talks-benjamin-cilloniz-aborda-sin-tapujos-los-retos-de-la-uva-de-mesa/",
+   "source": "redagricola",
+   "total": 6,
+   "text": "Un nuevo invitado de lujo. En esta ocasión, el gerente general de la Exportadora Safco se refiere a los desafíos técnicos y comerciales y también de la mano de obra, ante la arremetida del arándano en Ica.\nThe post Grape Talks: Benjamín Cillóniz aborda sin tapujos los retos de la uva de mesa appeared first on Redagrícola."
+  },
+  {
+   "title": "Big-Box Briefing: Sam’s Club targets high-retention members with new tire benefit",
+   "url": "https://www.modernretail.co/operations/big-box-briefing-sams-club-targets-high-retention-members-with-new-tire-benefit/?utm_campaign=modernretaildis&utm_medium=rss&utm_source=general-rss",
+   "source": "modernretail",
+   "total": 14,
+   "text": "The latest addition to Sam's Club's most premium membership aims to attract some of its stickiest members."
+  },
+  {
+   "title": "Ulta’s use of Flock technology causes upset online",
+   "url": "https://www.retaildive.com/news/ulta-flock-technology-backlash/829623/",
+   "source": "retaildive",
+   "total": 7,
+   "text": "The retailer drew attention on social media this week for its use of automated license plate readers at some locations as the technology has drawn widespread public criticism.&nbsp;"
+  },
+  {
+   "title": "What AI is doing to on-the-job learning—and how to protect it",
+   "url": "https://www.charterworks.com/what-ai-is-doing-to-on-the-job-learning-and-how-to-protect-it/",
+   "source": "charter",
+   "total": 22,
+   "text": "The impact of AI on young workers' learning and development might be an even greater risk than job losses"
+  },
+  {
+   "title": "The wavering economy ticks up as a factor in executive benefits decisions",
+   "url": "https://www.hrdive.com/news/the-wavering-economy-ticks-up-as-a-factor-in-executive-benefits-decisions/829408/",
+   "source": "hrdive",
+   "total": 16,
+   "text": "Retention and succession planning remain the key priorities, although many companies have no benefits strategies designed to support leadership transition."
+  },
+  {
+   "title": "DOJ asks judge to dismiss Oklahoma AG’s aluminum smelter lawsuit",
+   "url": "https://www.manufacturingdive.com/news/justice-department-asks-to-dismiss-oklahoma-ag-aluminum-smelter-lawsuit/829559/",
+   "source": "manufacturingdive",
+   "total": 4,
+   "text": "The agency said Century Aluminum&rsquo;s project in Inola would advance national and economic security. A separate lawsuit seeking to block the smelter is also pending."
+  },
+  {
+   "title": "Walmart shoppers can now get Dunkin’ delivered alongside orders",
+   "url": "https://www.grocerydive.com/news/walmart-shoppers-dunkin-delivery-coffee/829606/",
+   "source": "grocerydive",
+   "total": 17,
+   "text": "The service follows a similar announcement with Subway as the retailer aims to become a contender in the restaurant delivery space."
+  },
+  {
+   "title": "Restaurants led all industries in job growth in August",
+   "url": "https://www.nrn.com/restaurant-labor/restaurants-led-all-industries-in-job-growth-in-august",
+   "source": "nrn",
+   "total": 5,
+   "text": "This was a significant improvement after two straight months of job losses, according to BLS data."
+  },
+  {
+   "title": "BNP Paribas and HSBC complete first corporate treasury transaction on Swift's blockchain ledger",
+   "url": "https://www.finextra.com/newsarticle/48347/bnp-paribas-and-hsbc-complete-first-corporate-treasury-transaction-on-swifts-blockchain-ledger?utm_medium=rssfinextra&utm_source=finextrafeed",
+   "source": "finextra",
+   "total": 13,
+   "text": "Global banks BNP Paribas and HSBC have completed the first corporate treasury payments using Swift’s blockchain-based ledger for Siemens."
+  },
+  {
+   "title": "Financial firms are building new businesses from the layers beneath their products",
+   "url": "https://tearsheet.co/funding/financial-firms-are-building-new-businesses-from-the-layers-beneath-their-products/?utm_source=rss&utm_medium=rss&utm_campaign=financial-firms-are-building-new-businesses-from-the-layers-beneath-their-products",
+   "source": "tearsheet",
+   "total": 23,
+   "text": "Financial technology is moving toward a model where products and capabilities can be applied well beyond their original use cases. For Intuit and SoFi, that shift is leading to two different pathways. Intuit is opening up its financial and business software to an agentic AI environment through a new partnership with Perplexity. SoFi, meanwhile, is &#8230; \nContinue reading \"Financial firms are building new businesses from the layers beneath their products\"\nThe post Financial firms are building new businesses from the layers beneath their products appeared first on Tearsheet."
+  },
+  {
+   "title": "Oliver Wyman’s Hiten Patel on the $45 billion Tokenisation Shift",
+   "url": "https://thefintechtimes.com/oliver-wymans-hiten-patel-on-the-45-billion-tokenisation-shift/",
+   "source": "fintechtimes",
+   "total": 17,
+   "text": "Oliver Wyman's Hiten Patel separates the tokenisation revenue that moves from the revenue that vanishes, and says what would prove the firm's thesis wrong.\nThe post Oliver Wyman&#8217;s Hiten Patel on the $45 billion Tokenisation Shift appeared first on The Fintech Times."
+  },
+  {
+   "title": "The 3 reasons Shein is trading at a quarter of its previous valuation",
+   "url": "https://www.glossy.co/podcasts/the-3-reasons-shein-is-trading-at-a-quarter-of-its-previous-valuation/?utm_campaign=glossydis&utm_medium=rss&utm_source=general-rss",
+   "source": "glossy",
+   "total": 7,
+   "text": "On the Glossy Podcast this week, senior fashion reporter Danny Parisi and international reporter Zofia Zwieglisnka break down the three big reasons why Shein has struggled to maintain the valuation it held in recent years."
+  },
+  {
+   "title": "STAT+: Top Boston hospitals clash over Medicare Advantage network after split",
+   "url": "https://www.statnews.com/2026/09/04/mass-general-brigham-medicare-advantage-network-cancer-treatment-dana-farber/?utm_campaign=rss",
+   "source": "statnews",
+   "total": 5,
+   "text": "First, Mass General Brigham split with Dana-Farber. Now its Medicare Advantage plan is dropping the cancer hospital."
+  },
+  {
+   "title": "Fable 5.1, Enterprise Frontier Safeguards",
+   "url": "https://stratechery.com/2026/fable-5-1-enterprise-frontier-safeguards/",
+   "source": "stratechery",
+   "total": 7,
+   "text": "Fable 5.1 is out, and the hated Fable data retention policy is not just being altered, but entirely removed in the meantime. Plus, why increased caching is a win-win."
+  },
+  {
+   "title": "Europe Prepares New Law to Support Cities’ Airbnb Crackdowns",
+   "url": "https://skift.com/2026/09/04/european-commission-short-term-rental-crackdown/",
+   "source": "skift",
+   "total": 10,
+   "text": "Brussels is looking to advance legislation that would clarify local authorities’ power to crack down on short-term rentals amid Europe&apos;s housing crisis."
+  },
+  {
+   "title": "Why SaaS bros repeatedly fail at building a business with paying customers (as a founder that exited for $6 million)",
+   "url": "https://www.reddit.com/r/SaaS/comments/1w4hp89/why_saas_bros_repeatedly_fail_at_building_a/",
+   "source": "reddit_saas",
+   "total": null,
+   "text": "My cofounder and I recently exited our SaaS startup in South Africa for a significant sum of money (More than $6 million in USD) after 4 years of working at it. We started in 3rd year of university and kept building the business after graduation until we sold.  I've been lurking on this subreddit on various accounts for a few months now, and I keep seeing the same patterns that cause SaaS founders to fail. I wanted to get this off my chest. Basically to build a business you have to do this:  Identify a need Create a solution Sell the solution  Usually SaaS bros come from a software development background and have 0 experience building a BUSINESS (not a software). So they tend to do 2) first, then 1) afterwards.  They never do 3) because they have no sales ability and no sales experience. They try to do sales and marketing all on their own, which always fails when you have no experience. The founders I see succeed are the ones that do this: 1) Stumbles upon a problem by chance and connections. An aunt owns a dental practice with administrative issues that need a SaaS to fix. Or a family friend owns a construction company that needs stock taking admin software. Etc. It's a problem in"
+  },
+  {
+   "title": "Asia’s tech investors with the highest exit rates",
+   "url": "https://www.techinasia.com/asias-tech-investors-highest-exit-rate",
+   "source": "techinasia",
+   "total": 4,
+   "text": "An investor's true worth lies in how well they head for the exits."
+  },
+  {
+   "title": "Revolution El Mundo Crece Menos Invierte Concentrado Y Todavia No Sabe",
+   "url": "gbrain://newsletters/revolution-el-mundo-crece-menos-invierte-concentrado-y-todavia-no-sabe",
+   "source": "newsletters",
+   "total": 0,
+   "text": "# El mundo crece menos, invierte concentrado y todavía no sabe quién paga\n\n- **De:** Javier Morodo <javiermtzmorodo+revolution-daily@substack.com>\n- **Fecha:** Thu, 9 Jul 2026 12:00:34 +0000\n- **Capturado:** 2026-07-09 19:13\n\n---\n\nView this post on the web at https://javiermtzmorodo.substack.com/p/el-mundo-crece-menos-invierte-concentrado\n\nEl nuevo pasaporte\nEl mercado sigue operando un promedio global: recorta aquí, compra allá, y trata la geopolítica como ruido temporal sobre una misma curva. Esa curva ya no existe. Hay tres economías separadas y la frontera entre ellas no es la deuda ni la política monetaria, sino la posición en la cadena de valor tecnológica. La energía es el impuesto. El silicio es la exención. Y la deuda corporativa es el cable que conecta a los dos.\nLa implicación que nadie tiene en precio: largo en exportadores de energía y en fabricantes de infraestructura tecnológica. Corto en importadores de energía sin industria de chips y en su crédito soberano.\nLos países ya no compiten por capital. Compiten por permiso.\n¡Ahora también nos puedes escuchar en Spotify!\nSíguenos y mantente al día con la mejor lectura del mercado diariamente.\nEl FMI y la UNCTAD publicaron"
+  },
+  {
+   "title": "Show HN: Weedout – Safari extension that hides YouTube AI-labeled videos",
+   "url": "https://masteranza.github.io/weedout/",
+   "source": "hackernews",
+   "total": 15,
+   "text": "I&#x27;m the developer. I built this because AI-generated conspiracy videos were getting out of control in my own YouTube feed. Weedout is a $1.99 Safari extension for macOS that removes videos YouTube labels “Made with AI” from feed, search, related videos, playlists and Shorts. It uses YouTube&#x27;s label rather than AI detection, runs locally, and does not catch unlabeled videos.<p>Source for developers who want to fork or build: <a href=\"https:&#x2F;&#x2F;github.com&#x2F;masteranza&#x2F;weedout-for-youtube\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;masteranza&#x2F;weedout-for-youtube</a><p>Pull requests are not accepted; the repository is for independent forks."
+  },
+  {
+   "title": "CD sales are making an unexpected comeback amid a retro tech boom",
+   "url": "https://techcrunch.com/2026/09/04/cd-sales-are-making-an-unexpected-comeback-amid-a-retro-tech-boom/",
+   "source": "techcrunch",
+   "total": 12,
+   "text": "U.S. CD revenue jumped 58.6% in the first half of 2026, reversing last year’s decline as interest in retro tech and physical media continues to grow."
+  },
+  {
+   "title": "How AI plotted an interstellar journey to Alpha Centauri",
+   "url": "https://www.technologyreview.com/2026/09/01/1143247/ai-interstellar-journey-alpha-centauri/",
+   "source": "mit",
+   "total": 3,
+   "text": "A nonprofit organization called the Fermi Explorer Mission announced today that it intends to launch a spacecraft to our nearest star system by the end of 2029.&#160; It’s a hugely ambitious mission—if all goes well, the spacecraft could take up to 80,000 years to arrive at Alpha Centauri, which is 4.4 light-years away. And the&#8230;"
+  },
+  {
+   "title": "Souk lands $1.6M to turn inactive B2B partners into revenue",
+   "url": "https://tech.eu/2026/09/03/souk-lands-16m-to-turn-inactive-b2b-partners-into-revenue/",
+   "source": "techeu",
+   "total": 26,
+   "text": "UK-based B2B software startup Souk has raised $1.6 millionin pre-seed funding to develop its AI-powered partner management platform. Theround was led by Sure Valley Ventures (SVV), with participation ..."
+  },
+  {
+   "title": "AI safety is designed in the West, and failing users everywhere",
+   "url": "https://restofworld.org/2026/ai-safety-bias/?utm_source=rss&utm_medium=rss&utm_campaign=feeds",
+   "source": "restofworld",
+   "total": 13,
+   "text": "OpenAI’s pause shows the risks of rapid AI development, as safety frameworks fail to account for non-Western languages and contexts where harms are felt most."
+  },
+  {
+   "title": "AquaChile fortalece presencia en el Sudeste Asiático tras participar en Seafood Expo Asia 2026",
+   "url": "https://www.aqua.cl/aquachile-fortalece-su-presencia-en-el-sudeste-asiatico-tras-participar-en-seafood-expo-asia-2026/",
+   "source": "aqua",
+   "total": 6,
+   "text": "La compañía participó en Seafood Expo Asia 2026, donde reforzó vínculos comerciales y presentó su portafolio de salmón ante compradores de distintos mercados asiáticos.\nThe post AquaChile fortalece presencia en el Sudeste Asiático tras participar en Seafood Expo Asia 2026 appeared first on AQUA."
+  },
+  {
+   "title": "Cimit 2026 cierra con cerca de 3 mil participantes y 500 reuniones de vinculación minera",
+   "url": "https://www.mch.cl/cimit-2026-cierra-con-cerca-de-3-mil-participantes-y-500-reuniones-de-vinculacion-minera/",
+   "source": "mch",
+   "total": 4,
+   "text": "El Congreso Internacional de Minería de Tarapacá reunió durante sus dos jornadas a autoridades, compañías mineras, proveedores, trabajadores, estudiantes y representantes del ecosistema productivo regional\nLa entrada Cimit 2026 cierra con cerca de 3 mil participantes y 500 reuniones de vinculación minera se publicó primero en Mch."
+  },
+  {
+   "title": "El gigante de los berries se renueva: Driscoll’s anunció nuevo CEO",
+   "url": "https://redagricola.com/el-gigante-de-los-berries-se-renueva-driscolls-anuncio-nuevo-ceo/",
+   "source": "redagricola",
+   "total": 6,
+   "text": "La nueva directora ejecutiva ha ocupado diversos cargos dentro de la empresa que su abuelo, Joe Reiter, cofundó. Cultivó arándanos en Chile, supervisó las áreas de calidad y liderazgo de producto en las Américas, y se ha desempeñado como directora y vicepresidenta del Consejo de Administración de Driscoll’s.\nThe post El gigante de los berries se renueva: Driscoll&#8217;s anunció nuevo CEO appeared first on Redagrícola."
+  },
+  {
+   "title": "Hangover-prevention supplements are the hottest new wellness trend",
+   "url": "https://www.modernretail.co/operations/hangover-prevention-supplements-are-the-hottest-new-wellness-trend/?utm_campaign=modernretaildis&utm_medium=rss&utm_source=general-rss",
+   "source": "modernretail",
+   "total": 21,
+   "text": "Hangover-prevention products can now be found in places like big-box stores and fine-dining restaurants as more businesses look to cater to young drinkers who also care about wellness."
+  },
+  {
+   "title": "The Weekly Closeout: Reebok partners with Hilary Duff and Saks Fifth Avenue launches fall campaign",
+   "url": "https://www.retaildive.com/news/reebok-hilary-duff-saks-fifth-avenue-neiman-marcus-campaigns-walmart-rotisserie-chicken-purse/829620/",
+   "source": "retaildive",
+   "total": 9,
+   "text": "The pop icon is the athletic retailer&rsquo;s latest ambassador. Meanwhile, the department store, and sister brand&nbsp;Neiman Marcus, debuted seasonal campaigns.&nbsp;"
+  },
+  {
+   "title": "An ambitious new phase for helping you navigate AI and work",
+   "url": "https://www.charterworks.com/an-ambitious-new-phase-for-helping-you-navigate-ai-and-work/",
+   "source": "charter",
+   "total": 13,
+   "text": "To help you make sense of it all, Charter is launching first-of-its-kind research, convening leaders on the challenges that matter most, and bringing on new experts to guide you through what comes next."
+  },
+  {
+   "title": "Race bias claims tied to drug test can go to jury, 11th Circuit says",
+   "url": "https://www.hrdive.com/news/drug-test-race-discrimination-complaint/829678/",
+   "source": "hrdive",
+   "total": 4,
+   "text": "Evidence showed an employer rehired a White employee but not two Black employees after firing all three for the same conduct, the court said."
+  },
+  {
+   "title": "GE Appliances investing $1B to shift production from Mexico to Kentucky",
+   "url": "https://www.manufacturingdive.com/news/ge-appliances-invest-1b-shift-production-mexico-to-kentucky/829467/",
+   "source": "manufacturingdive",
+   "total": 8,
+   "text": "The company plans to end refrigeration manufacturing in Louisville by early 2027 and begin high-output dryer production later that year. The upgraded facility will be &ldquo;the largest home appliance manufacturing site in the U.S.&rdquo;"
+  },
+  {
+   "title": "Hannaford brings back seasonal in-store farm stands",
+   "url": "https://www.grocerydive.com/news/hannaford-farm-stands-grocery-supermarkets/829534/",
+   "source": "grocerydive",
+   "total": 14,
+   "text": "The grocer is partnering with more than 125 local food producers to source fruits and vegetables for the displays."
+  },
+  {
+   "title": "7-Eleven debuts the BiG Flavor Bar, a sauce and topping station",
+   "url": "https://www.nrn.com/menu-trends/7-eleven-debuts-the-big-flavor-bar-a-sauce-and-topping-station",
+   "source": "nrn",
+   "total": 13,
+   "text": "The custom flavor station includes a new lineup of original sauces from the convenience-store retailer."
+  },
+  {
+   "title": "Anthropic launches AI commerce agents with Visa and Mastercard",
+   "url": "https://www.finextra.com/newsarticle/48346/anthropic-launches-ai-commerce-agents-with-visa-and-mastercard?utm_medium=rssfinextra&utm_source=finextrafeed",
+   "source": "finextra",
+   "total": 26,
+   "text": "AI firm Anthropic, which created Claude, launched a blueprint for retailers to build their own shopping agents on the AI chatbot."
+  },
+  {
+   "title": "The antitrust question is moving up the stack: What California’s new push and NVIDIA’s retreat mean for finance",
+   "url": "https://tearsheet.co/policies-playbooks/the-antitrust-question-is-moving-up-the-stack-what-californias-new-push-and-nvidias-retreat-mean-for-financethe-antitrust-question-is-moving-up-the-stack-what-californias-new-push-and-nvidias-retreat/?utm_source=rss&utm_medium=rss&utm_campaign=the-antitrust-question-is-moving-up-the-stack-what-californias-new-push-and-nvidias-retreat-mean-for-financethe-antitrust-question-is-moving-up-the-stack-what-californias-new-push-and-nvidias-retreat",
+   "source": "tearsheet",
+   "total": 10,
+   "text": "California-based NVIDIA recently paused parts of its AI Compute Partnership Program, a financing initiative that helped smaller AI cloud companies buy NVIDIA chips and build data centers. The program addressed a key problem where these companies need billions of dollars in infrastructure before they have enough customers to easily secure traditional financing. NVIDIA could provide &#8230; \nContinue reading \"The antitrust question is moving up the stack: What California’s new push and NVIDIA’s retreat mean for finance\"\nThe post The antitrust question is moving up the stack: What California’s new push and NVIDIA’s retreat mean for finance appeared first on Tearsheet."
+  },
+  {
+   "title": "XPlace: Borrowing Against Crypto Instead of Selling It",
+   "url": "https://thefintechtimes.com/xplace-borrowing-against-crypto-instead-of-selling-it/",
+   "source": "fintechtimes",
+   "total": 20,
+   "text": "Artem Ponomarev, founder and chief executive of XPlace, on lending against digital assets, designing for drawdowns, and why the last cycle's lenders failed.\nThe post XPlace: Borrowing Against Crypto Instead of Selling It appeared first on The Fintech Times."
+  },
+  {
+   "title": "How Wizard Wellness used a beauty playbook to disrupt the allergy aisle",
+   "url": "https://www.glossy.co/podcasts/how-wizard-wellness-used-a-beauty-playbook-to-disrupt-the-allergy-aisle/?utm_campaign=glossydis&utm_medium=rss&utm_source=general-rss",
+   "source": "glossy",
+   "total": 22,
+   "text": "Lorne Lucree, a beauty exec-turned-wellness disruptor, took on legacy incumbents in the allergy space in January with the launch of Wizard Wellness, a line of drug-free, microbiome-focused allergy care. Nine months later, the line has entered Walmart, CVS and Target. Glossy Beauty Podcast host Lexy Lebsack sat down with Lucree to learn how he used a beauty playbook to get there."
+  },
+  {
+   "title": "STAT+: After failure of Angelman syndrome drug, experts see hope in other experimental therapies",
+   "url": "https://www.statnews.com/2026/09/04/angelman-syndrome-drug-ultragenyx-oak-hill-ionis/?utm_campaign=rss",
+   "source": "statnews",
+   "total": 5,
+   "text": "After the failure of an experimental drug for Angelman syndrome, experts cautioned that there is still reason to think similar experimental medicines can succeed."
+  },
+  {
+   "title": "Nvidia Earnings, Dollars Per Gigawatt, Open and Hugging Face",
+   "url": "https://stratechery.com/2026/nvidia-earnings-dollars-per-gigawatt-open-and-hugging-face/",
+   "source": "stratechery",
+   "total": 5,
+   "text": "Nvidia's earnings were remarking and boring — two sides of the same coin. Everything the company does is about avoiding a consolidated world."
+  },
+  {
+   "title": "Biggest Innovators in Travel and Hospitality: Summer 2026",
+   "url": "https://skift.com/2026/09/04/biggest-innovators-in-travel-and-hospitality-summer-2026/",
+   "source": "skift",
+   "total": 9,
+   "text": "There is no shortage of launches and you can easily find the most expensive hospitality offerings. We&apos;re most interested in judgment that leads to truly exceptional service."
+  },
+  {
+   "title": "i got lucky with 872 users i guess",
+   "url": "https://www.reddit.com/r/SaaS/comments/1w3cd46/i_got_lucky_with_872_users_i_guess/",
+   "source": "reddit_saas",
+   "total": 15,
+   "text": "I released blunlock.com, I’m a vibe coder so I released an saas app that could auto create a landing page for your idea, host it automatically, and had a data collection form that collects how many users will pay for this. I posted about it on reddit and twitter. With no analytics integrated. And it got picked up in a hackathon discord server somewhere. That hackathon was huge.. it had 3000 people in it (i got to know later) So yeah, i tried repeating it in other hackathons but didnt work. So onto releasing something new this week. This time im really excited because its gonna change how people interact with claude code. Building a community of vibe coders r/ClaudeVibes  &#32; submitted by &#32;  /u/Difficult-Rich-7302   [link] &#32; [comments]"
+  },
+  {
+   "title": "Strategy Breakdowns The Best Selling Mouse Of All Time",
+   "url": "gbrain://newsletters/strategy-breakdowns-the-best-selling-mouse-of-all-time",
+   "source": "newsletters",
+   "total": 0,
+   "text": "# 🎯 The best-selling mouse of all time.\n\n- **De:** Strategy Breakdowns <strategybreakdowns@mail.beehiiv.com>\n- **Fecha:** Wed, 8 Jul 2026 13:07:01 +0000\n- **Capturado:** 2026-07-09 19:12\n\n---\n\nView image: (https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80/uploads/asset/file/52bbc694-aa8b-483f-938b-5821eba97524/Email_header_Final_Cut_Opt_01.gif?t=1731078182)\nFollow image link: (https://strategybreakdowns.com/)\nCaption: \n\n----------\nRead on [our website](https://strategybreakdowns.com/p/logitech-mx-master)\n\n\n----------Read time:** 5 minutes 9 seconds**\n\n\n\n\n\n----------\nView image: (https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80/uploads/asset/file/624386a0-b5e2-4e4e-9980-803bf75ff584/Handover_Intro__1_.png?t=1732029728)\nCaption: \n\nI’ve always adored this little workhorse. \n\nThe horizontal scroll wheel. The thumb action buttons. The way it hugs your hand.\n\n\n\nView image: (https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80/uploads/asset/file/e4307fc7-a270-4739-ae6e-3133be9458f6/IMG_1335.jpg?t=1783432865)\nCaption: \n\n\n\nWhen I made the switch from spending "
+  },
+  {
+   "title": "Show HN: NFC Energy-Harvesting PCB Business Card with an MCU",
+   "url": "https://wilsonharper.net/projects/businesscard/",
+   "source": "hackernews",
+   "total": 12,
+   "text": ""
+  },
+  {
+   "title": "Oura files to go public",
+   "url": "https://techcrunch.com/2026/09/03/oura-files-to-go-public/",
+   "source": "techcrunch",
+   "total": 19,
+   "text": "The ring maker says that its business has shown significant revenue growth over the past year."
+  },
+  {
+   "title": "Making the AI-powered case for legacy modernization",
+   "url": "https://www.technologyreview.com/2026/09/01/1142180/making-the-ai-powered-case-for-legacy-modernization/",
+   "source": "mit",
+   "total": 22,
+   "text": "For years, legacy technology has been a problem companies knew they needed to solve, but one they often struggled to tackle. The cost, complexity, and risk of replacing business-critical systems could make modernization feel like a disruption to manage instead of an opportunity to pursue. But with the rise in customer expectations and the changes&#8230;"
+  },
+  {
+   "title": "Backbone raises €4M for automated food quality and compliance",
+   "url": "https://tech.eu/2026/09/03/backbone-raises-eur4m-for-automated-food-quality-and-compliance/",
+   "source": "techeu",
+   "total": 25,
+   "text": "Food industry software startup Backbone hasraised €4 million in pre-seed funding to further develop its AI-powered qualityand compliance platform and support its commercial expansion. The round was le..."
+  },
+  {
+   "title": "Meta accepts U.S. safety rules while pitching softer tools abroad",
+   "url": "https://restofworld.org/2026/meta-influencer-campaign-teen-accounts-under-16-social-media-ban/?utm_source=rss&utm_medium=rss&utm_campaign=feeds",
+   "source": "restofworld",
+   "total": 7,
+   "text": "As governments consider banning social media for under-16s, Meta is turning to influencers to argue that parental controls are a better solution."
+  },
+  {
+   "title": "Pescadores de Valparaíso definen hoja de ruta para fortalecer la Federación Nuevo Amanecer",
+   "url": "https://www.aqua.cl/pescadores-de-valparaiso-definen-hoja-de-ruta-para-fortalecer-la-federacion-nuevo-amanecer/",
+   "source": "aqua",
+   "total": 4,
+   "text": "Dirigentes de las caletas definieron los ejes de trabajo para robustecer su organización: unidad entre caletas, información para llegar preparados a las discusiones del sector y una hoja de ruta común frente al debate legislativo.\nThe post Pescadores de Valparaíso definen hoja de ruta para fortalecer la Federación Nuevo Amanecer appeared first on AQUA."
+  },
+  {
+   "title": "Ministerio de Minería y Enami firman programa para fortalecer la pequeña minería de Tarapacá",
+   "url": "https://www.mch.cl/ministerio-de-mineria-y-enami-firman-programa-para-fortalecer-la-pequena-mineria-de-tarapaca/",
+   "source": "mch",
+   "total": 6,
+   "text": "Iniciativa permitirá identificar el potencial geológico de las faenas, construir un catastro actualizado de pequeños productores y acercar al territorio herramientas de fomento, financiamiento y asistencia técnica.\nLa entrada Ministerio de Minería y Enami firman programa para fortalecer la pequeña minería de Tarapacá se publicó primero en Mch."
+  },
+  {
+   "title": "Información vital sobre plantación y gestión exitosa",
+   "url": "https://redagricola.com/informacion-vital-sobre-plantacion-y-gestion-exitosa/",
+   "source": "redagricola",
+   "total": 10,
+   "text": "Decisiones. La palabra clave donde nadie puede reemplazar el veredicto de productor sobre su propio campo. En el establecimiento del huerto, que definirá su futuro por muchos años, en la gestión que maneja todos los factores en un malabarismo permanente, la información ayuda a precisar las mejores opciones. El evento del 1 de octubre en Chillán convoca a especialistas de renombre y líderes de experimentadas empresas agrícolas a compartir los datos que todos merecen tener. El encuentro ofrece además un espacio relajado de conversación para el encuentro de la industria.\nThe post Información vital sobre plantación y gestión exitosa appeared first on Redagrícola."
+  },
+  {
+   "title": "State fairs are the hot new pop-up spot for brands like E.l.f. and Levi’s",
+   "url": "https://www.modernretail.co/marketing/state-fairs-are-the-hot-new-spot-for-pop-ups-by-brands-like-e-l-f-and-levis/?utm_campaign=modernretaildis&utm_medium=rss&utm_source=general-rss",
+   "source": "modernretail",
+   "total": 19,
+   "text": "State fairs have been a staple of the U.S. since the 1800s. Now, they've become a prime spot for pop-ups for brands like E.l.f. and Levi's, as they look to show up at events where their competitors haven't yet touched."
+  },
+  {
+   "title": "Dollar General deploys AI across distribution centers, stores",
+   "url": "https://www.retaildive.com/news/dollar-general-ai-distribution-centers-stores/829201/",
+   "source": "retaildive",
+   "total": 24,
+   "text": "The retailer is using Relex Solutions&rsquo; supply chain platform to manage ordering schedules, lead times, supplier coordination and fulfillment methods."
+  },
+  {
+   "title": "What Jared Diamond says decides whether leaders actually matter",
+   "url": "https://www.charterworks.com/what-jared-diamond-says-decides-whether-leaders-actually-matter/",
+   "source": "charter",
+   "total": 9,
+   "text": "Bill Gates calls out tech executives for downplaying AI’s threats. The author of ‘Guns, Germs, and Steel’ on when leaders really matter. The executive coach to Silicon Valley’s elite teaching them to dance between meetings"
+  },
+  {
+   "title": "Amtrak’s ‘relaxed’ COVID-era FMLA policy didn’t cover plaintiff’s unexplained absences, judge rules",
+   "url": "https://www.hrdive.com/news/amtrak-relaxed-covid-era-fmla-policy-unexplained-absences/829728/",
+   "source": "hrdive",
+   "total": 4,
+   "text": "The court&rsquo;s analysis demonstrates the importance of thorough documentation in intermittent Family and Medical Leave Act compliance."
+  },
+  {
+   "title": "SK Hynix, Stellantis, Innio and others announce manufacturing investments",
+   "url": "https://www.manufacturingdive.com/news/sk-hynix-stellantis-innio-openings-expansions/829355/",
+   "source": "manufacturingdive",
+   "total": 5,
+   "text": "Other companies making annoucements in August included DeltaX, Genetec and Niron. Investments spanned industries including batteries, biotechnology, power generation, magnets, semiconductors and autos."
+  },
+  {
+   "title": "Pardon the Disruption: Is grocery’s loyalty boom swaying price-sensitive shoppers?",
+   "url": "https://www.grocerydive.com/news/pardon-the-disruption-grocery-loyalty-program-revolution/829460/",
+   "source": "grocerydive",
+   "total": 19,
+   "text": "Retailers across the industry have made significant changes to their loyalty programs. But there&rsquo;s more work to be done to connect with value-seeking consumers."
+  },
+  {
+   "title": "Walk-On’s to debut a smaller, ‘smarter’ sports bar",
+   "url": "https://www.nrn.com/casual-dining/walk-on-s-to-debut-a-smaller-smarter-sports-bar",
+   "source": "nrn",
+   "total": 17,
+   "text": "The sports bar chain’s scaled-down prototype is designed to be more efficient and more affordable for franchisees."
+  },
+  {
+   "title": "Revolut achieves conditional OCC approval for US national bank status",
+   "url": "https://www.finextra.com/newsarticle/48345/revolut-achieves-conditional-occ-approval-for-us-national-bank-status?utm_medium=rssfinextra&utm_source=finextrafeed",
+   "source": "finextra",
+   "total": 12,
+   "text": "Revolut has received conditional approval from the US Officer of the Comptroller of the Currency to form a national bank."
+  },
+  {
+   "title": "Titan’s banking-native AI bet: Banking intelligence can’t be retrofitted",
+   "url": "https://tearsheet.co/awards/titans-banking-native-ai-bet-banking-intelligence-cant-be-retrofitted/?utm_source=rss&utm_medium=rss&utm_campaign=titans-banking-native-ai-bet-banking-intelligence-cant-be-retrofitted",
+   "source": "tearsheet",
+   "total": 22,
+   "text": "Over the past year, technology vendors have been using a new phrase to describe AI for financial institutions: adapted for banking. Whether the language is &#8220;trained on banking data&#8221; or &#8220;wrapped in a banking interface,&#8221; the implication is the same: a general-purpose model was retrofitted for an industry that it was never designed for. However, &#8230; \nContinue reading \"Titan&#8217;s banking-native AI bet: Banking intelligence can’t be retrofitted \"\nThe post Titan&#8217;s banking-native AI bet: Banking intelligence can’t be retrofitted  appeared first on Tearsheet."
+  },
+  {
+   "title": "DORA, NIS2 and the AI Act are One Job, Says UiPath’s Field CISO",
+   "url": "https://thefintechtimes.com/dora-nis2-and-the-ai-act-are-one-job-says-uipaths-field-ciso/",
+   "source": "fintechtimes",
+   "total": 16,
+   "text": "UiPath Field CISO Marco Eggerling on treating DORA, NIS2 and the EU AI Act as one control set, and why board AI literacy is the next supervisory test.\nThe post DORA, NIS2 and the AI Act are One Job, Says UiPath&#8217;s Field CISO appeared first on The Fintech Times."
+  },
+  {
+   "title": "Fashion Briefing: The Canada-US trade war is creating a ‘less integrated North American fashion market’",
+   "url": "https://www.glossy.co/fashion/fashion-briefing-the-canada-us-trade-war-is-creating-a-less-integrated-north-american-fashion-market/?utm_campaign=glossydis&utm_medium=rss&utm_source=general-rss",
+   "source": "glossy",
+   "total": 7,
+   "text": "A few months ago, as economic tensions between the U.S. and Canada were heating up, many fashion brands were feeling cautiously confident that they'd be able to manage whatever targeted tariffs or new trade regulations came up. Then came the blow-up."
+  },
+  {
+   "title": "STAT+: FDA takes another look at botanical drugs",
+   "url": "https://www.statnews.com/2026/09/04/biotech-news-fda-takes-another-look-at-botanical-drugs/?utm_campaign=rss",
+   "source": "statnews",
+   "total": 7,
+   "text": "The biggest barrier for a top schzophrenia treatment, Ionis' first approval for Alexander disease, and more biotech news"
+  },
+  {
+   "title": "Meta Settles, A Framework For Regulating Content, The Rest of Big Tech",
+   "url": "https://stratechery.com/2026/meta-settles-a-framework-for-regulating-content-the-rest-of-big-tech/",
+   "source": "stratechery",
+   "total": 7,
+   "text": "Meta's settlement makes sense for all parties, but the entire sage highlights why any solution to regulating technology feels off."
+  },
+  {
+   "title": "The New Travel Loyalty Leaders Aren’t Hotels or Airlines — They’re Banks",
+   "url": "https://skift.com/2026/09/04/the-new-travel-loyalty-leaders-arent-hotels-or-airlines-theyre-banks/",
+   "source": "skift",
+   "total": 17,
+   "text": "Travel companies have spent years worrying about losing customers to online travel agencies. The bigger threat was already in the wallet."
+  },
+  {
+   "title": "I just got my first paying customer for a product I built",
+   "url": "https://www.reddit.com/r/SaaS/comments/1w435xk/i_just_got_my_first_paying_customer_for_a_product/",
+   "source": "reddit_saas",
+   "total": 13,
+   "text": "After spending a lot of time building, tweaking, breaking things, and wondering whether anyone would actually pay for it. Today I got my first paying customer. This isn't about the $9. It's about getting that first confirmation that someone is willing to pay for something I built. Now onto the next 10 customers. https://vowinvites.com/  &#32; submitted by &#32;  /u/au_mirza   [link] &#32; [comments]"
+  },
+  {
+   "title": "Show HN: I wrote a BASIC interpreter that boots on UEFI machines",
+   "url": "https://tarjan.itch.io/thoreaubasic",
+   "source": "hackernews",
+   "total": 10,
+   "text": "I started writing Thoreau BASIC because I wanted a small, old-fashioned BASIC interpreter: line numbers, immediate mode, simple graphics, strings, arrays, the sort of environment where the computer starts with a &quot;Ready&quot; prompt and you can immediately make it do something.<p>Then I wondered: why should it need an operating system?<p>So I made it boot directly on x64 machines using UEFI.<p>The UEFI version uses the Graphics Output Protocol for its framebuffer and gets its keyboard input directly from the firmware. There is no Windows or Linux underneath it. The machine boots into BASIC.<p>It supports the usual BASIC machinery plus graphics primitives, 32-bit colour, floating point, file operations and other features I&#x27;ve been adding as I encounter programs that need them. There is now also a Windows version, which makes it considerably easier to try.<p>One of my goals is compatibility with the style and behaviour of old Microsoft BASICs rather than creating a modern language that merely happens to use BASIC syntax.<p>I&#x27;m currently porting my text adventure Pixel Prose to Thoreau BASIC. That&#x27;s becoming a much better test suite than artificial tests because eve"
+  },
+  {
+   "title": "Startup ARR is less secure than ever, new research shows",
+   "url": "https://techcrunch.com/2026/09/03/startup-arr-is-less-secure-than-ever-new-research-shows/",
+   "source": "techcrunch",
+   "total": 18,
+   "text": "The AI era has completely broken enterprise buying patterns, and startups haven't yet figured out how to navigate."
+  },
+  {
+   "title": "The Hugging Face hack could indicate cultural issues at OpenAI",
+   "url": "https://www.technologyreview.com/2026/08/31/1143180/hugging-face-hack-could-indicate-cultural-issues-at-openai/",
+   "source": "mit",
+   "total": 8,
+   "text": "This story originally appeared in The Algorithm, our weekly newsletter on AI. To get stories like this in your inbox first, sign up here. By now you’ve probably heard about last month’s major AI security incident, in which OpenAI agents escaped their sandbox and hacked into the AI platform Hugging Face while trying to cheat on&#8230;"
+  },
+  {
+   "title": "Netherlands-based AI startup Wonderful raises $550M at $5BN valuation",
+   "url": "https://tech.eu/2026/09/02/netherlands-based-ai-startup-wonderful-raises-550m-at-5bn-valuation/",
+   "source": "techeu",
+   "total": 7,
+   "text": "Wonderful, the Netherlands-based startup that provides AI services to help companies boost productivity, has raised around $550 million at a $5 billion valuation, it said today.The Series C funding ro..."
+  },
+  {
+   "title": "Sence y SalmonChile identifican perfiles laborales clave para la industria del salmón",
+   "url": "https://www.aqua.cl/sence-y-salmonchile-identifican-perfiles-laborales-clave-para-la-industria-del-salmon/",
+   "source": "aqua",
+   "total": 19,
+   "text": "El trabajo conjunto busca orientar la capacitación hacia los perfiles más demandados por la salmonicultura y fortalecer las oportunidades de empleo en Los Lagos.\nThe post Sence y SalmonChile identifican perfiles laborales clave para la industria del salmón appeared first on AQUA."
+  },
+  {
+   "title": "Cochilco y la Universidad Católica suscriben acuerdo de colaboración",
+   "url": "https://www.mch.cl/cochilco-y-la-universidad-catolica-suscriben-acuerdo-de-colaboracion/",
+   "source": "mch",
+   "total": 4,
+   "text": "El convenio permitirá impulsar el intercambio de datos, el desarrollo de herramientas metodológicas y la difusión de conocimiento.\nLa entrada Cochilco y la Universidad Católica suscriben acuerdo de colaboración se publicó primero en Mch."
+  },
+  {
+   "title": "Quince’s first-ever sample sale sold out 6 hours early",
+   "url": "https://www.modernretail.co/marketing/quinces-first-ever-sample-sale-sold-out-6-hours-early/?utm_campaign=modernretaildis&utm_medium=rss&utm_source=general-rss",
+   "source": "modernretail",
+   "total": 20,
+   "text": "A four-block line. A two-and-a-half hour wait time. And hundreds of sweaters. Quince took Modern Retail behind the scenes of its first sample sale as it ponders a larger physical presence."
+  },
+  {
+   "title": "Petco loses millions due to loyalty program",
+   "url": "https://www.retaildive.com/news/petco-learns-perils-overly-generous-loyalty-program/829664/",
+   "source": "retaildive",
+   "total": 19,
+   "text": "When Petco Perks launched in Q2, &ldquo;customer point redemption volumes far exceeded our initial projections,&rdquo; CEO Joel Anderson said."
+  },
+  {
+   "title": "Another ‘whiplash’ month for the labor market as August beats expectations",
+   "url": "https://www.hrdive.com/news/another-whiplash-month-for-the-labor-market-as-august-beats-expectations/829684/",
+   "source": "hrdive",
+   "total": 7,
+   "text": "The market remains in a &ldquo;fragile&rdquo; state, one economist said, as sensitivity to inflation, interest rates and geopolitical tensions remains high."
+  },
+  {
+   "title": "Hyundai Steel project moves ahead despite local pushback",
+   "url": "https://www.manufacturingdive.com/news/hyundai-steel-project-moves-ahead-despite-local-pushback-air-quality-louisiana/829411/",
+   "source": "manufacturingdive",
+   "total": 4,
+   "text": "Residents and organizers are challenging how Louisiana fast-tracked a $5.8 billion project with limited public input. They raised environmental and legal concerns at a hearing Tuesday."
+  },
+  {
+   "title": "Kroger taps Walmart tech veteran as store operations chief",
+   "url": "https://www.grocerydive.com/news/kroger-mark-ibbotson-chief-store-operations/829501/",
+   "source": "grocerydive",
+   "total": 5,
+   "text": "Mark Ibbotson, who helped lead the rollout of Walmart&rsquo;s e-commerce platform, is the latest C-suite appointment for the supermarket chain."
+  },
+  {
+   "title": "Menu Tracker: New items from Taco Bell, Popeyes, and Burger King",
+   "url": "https://www.nrn.com/menu-trends/menu-tracker-new-items-from-taco-bell-popeyes-and-burger-king",
+   "source": "nrn",
+   "total": 4,
+   "text": "Plus innovation at Applebee's, Chipotle, Chili’s, Denny's, Papa Johns, Qdoba, Zaxbys, and more."
+  },
+  {
+   "title": "Incore Bank trials AI for customer onboarding with automated risk assessment",
+   "url": "https://www.finextra.com/newsarticle/48344/incore-bank-trials-ai-for-customer-onboarding-with-automated-risk-assessment?utm_medium=rssfinextra&utm_source=finextrafeed",
+   "source": "finextra",
+   "total": 21,
+   "text": "Switzerland's Incore Bank has run a proof of concept trial with Kyndryl and Google Cloud on the use of AI agents to accelerate customer onboarding while maintaining strong risk oversight controls."
+  },
+  {
+   "title": "Goldman Sachs built its talent pipeline around apprenticeship. AI is now testing what that means",
+   "url": "https://tearsheet.co/10-q/goldman-sachs-built-its-talent-pipeline-around-apprenticeship-ai-is-now-testing-what-that-means/?utm_source=rss&utm_medium=rss&utm_campaign=goldman-sachs-built-its-talent-pipeline-around-apprenticeship-ai-is-now-testing-what-that-means",
+   "source": "tearsheet",
+   "total": 20,
+   "text": "Weekly 10-Q The weekly 10-Q newsletter is part of the Tearsheet Pro subscription, where I unpack the recent moves and strategies of leading banks and fintechs in the public space, coupled with stock market analysis. In your inbox every Friday! Message Sara Goldman Sachs built its talent pipeline around apprenticeship. AI is now testing what that &#8230; \nContinue reading \"Goldman Sachs built its talent pipeline around apprenticeship. AI is now testing what that means\"\nThe post Goldman Sachs built its talent pipeline around apprenticeship. AI is now testing what that means appeared first on Tearsheet."
+  },
+  {
+   "title": "Zambia: Mobile Money Opened Doors. Fintech Has to Go Further",
+   "url": "https://thefintechtimes.com/zambia-mobile-money-opened-doors-fintech-has-to-go-further/",
+   "source": "fintechtimes",
+   "total": 18,
+   "text": "The following is an in-depth analysis of the fintech and wider digital economic development of African nation Zambia.\nThe post Zambia: Mobile Money Opened Doors. Fintech Has to Go Further appeared first on The Fintech Times."
+  },
+  {
+   "title": "Fashion’s DTC era is over. What comes next?",
+   "url": "https://www.glossy.co/fashion/shein-ipo-dtc-fashion-cuyana-faherty-everlane/?utm_campaign=glossydis&utm_medium=rss&utm_source=general-rss",
+   "source": "glossy",
+   "total": 21,
+   "text": "Shein’s IPO and Everlane acquisition have put fashion’s DTC reset back in focus. For Cuyana and Faherty, survival has meant moving beyond pure-play DTC into disciplined inventory, repeat customers, stores and wholesale."
+  },
+  {
+   "title": "Disabled workers at greater risk of losing health insurance",
+   "url": "https://www.statnews.com/2026/09/04/health-news-disabled-workers-at-greater-risk-of-losing-insurance/?utm_campaign=rss",
+   "source": "statnews",
+   "total": 7,
+   "text": "An organ transplant first, new details on ADA conference controversy, and more health news from Morning Rounds"
+  },
+  {
+   "title": "Could AI Agents Turn the Time Between Trips Into a Revenue Channel?",
+   "url": "https://skift.com/2026/09/04/ai-agents-travel-customer-lifecycle/",
+   "source": "skift",
+   "total": 25,
+   "text": "AI agents are helping airlines and other travel companies stay connected with customers throughout the journey. By retaining context and acting on signals over time, they could turn isolated service interactions into a more persistent source of loyalty, direct bookings, and revenue."
+  },
+  {
+   "title": "We crossed €150K ARR. Here are the mistakes that cost me five years.",
+   "url": "https://www.reddit.com/r/SaaS/comments/1w1w0r9/we_crossed_150k_arr_here_are_the_mistakes_that/",
+   "source": "reddit_saas",
+   "total": 16,
+   "text": "We recently crossed €150K ARR with one of our SaaS products. It would make a nice story if I said we found a great idea, built it, and steadily grew it from zero. That is not what happened. The real story includes roughly five years of wrong turns, a difficult pivot, an early signal I ignored, and a lot of time spent building things before properly understanding who would pay for them. These are the mistakes I would try hardest not to repeat. 1. I ignored the most important signal because it looked too small In November 2025, I noticed an emerging problem in AI search. At the time, only a small number of products were trying to solve it. I built a working engine in about two weeks. It was not a polished product, but it was good enough to onboard users. Within a few weeks, it reached roughly €400 MRR. That was the signal. People had found an unfinished product and paid for it in a category that barely existed. But another product required most of my attention, so I treated this one as a side project. By the time I returned to it, the market had filled with competitors. My mistake was not choosing the wrong product. It was failing to investigate unexpected traction. €400 MRR is not p"
+  },
+  {
+   "title": "Show HN: GlassBox – what the browser reveals, and how identifiable you are",
+   "url": "https://glassbox.codecanary.org",
+   "source": "hackernews",
+   "total": 14,
+   "text": ""
+  },
+  {
+   "title": "Accel reportedly in talks to lead $1B round for Thinking Machines at $40B valuation",
+   "url": "https://techcrunch.com/2026/09/03/accel-reportedly-in-talks-to-lead-1b-round-for-thinking-machines-at-40b-valuation/",
+   "source": "techcrunch",
+   "total": 5,
+   "text": "The high-profile startup's annual revenue run rate stands at over $100 million."
+  },
+  {
+   "title": "The Download: rethinking child safety and fossil-fueled farming",
+   "url": "https://www.technologyreview.com/2026/09/03/1143385/the-download-rethinking-child-safety-online-fossil-fuels-farming/",
+   "source": "mit",
+   "total": 9,
+   "text": "This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. Child-monitoring apps might need a reboot Digital harms have become the defining fear of American parents. In response, they’re increasingly turning to content-monitoring apps that scan their children’s texts, photos, emails,&#8230;"
+  },
+  {
+   "title": "Uplift Ventures launches €100M fund to back European deeptech startups",
+   "url": "https://tech.eu/2026/09/02/uplift-ventures-launches-eur100m-fund-to-back-european-deeptech-startups/",
+   "source": "techeu",
+   "total": 5,
+   "text": "Uplift Ventures today announces the launch of its inaugural €100 million venture capital fund, dedicated to backing Europe's next generation of deeptech founders.  The fund addresses one of the bigges..."
+  },
+  {
+   "title": "[FOTOS+VIDEO] Steen-Hansen inaugura nueva sala de producción para la industria salmonicultora",
+   "url": "https://www.aqua.cl/steen-hansen-inaugura-nueva-sala-de-produccion-para-la-industria-salmonicultora/",
+   "source": "aqua",
+   "total": 9,
+   "text": "La instalación permitirá producir hasta 240.000 litros de pintura concentrada al mes en un solo turno y reducir los tiempos de respuesta a sus clientes.\nThe post [FOTOS+VIDEO] Steen-Hansen inaugura nueva sala de producción para la industria salmonicultora appeared first on AQUA."
+  }
+ ],
+ "deep": [
+  {
+   "title": "Anthropic launches AI commerce agents with Visa and Mastercard",
+   "url": "https://www.finextra.com/newsarticle/48346/anthropic-launches-ai-commerce-agents-with-visa-and-mastercard?utm_medium=rssfinextra&utm_source=finextrafeed",
+   "source": "finextra",
+   "problema_score": 20,
+   "barrera_score": 12,
+   "replicabilidad": {
+    "nivel": "Alta",
+    "evidencia": "ningún retailer chileno tiene aún agentes de compra tipo Claude"
+   },
+   "ventana": {
+    "nivel": "Media",
+    "evidencia": "Accenture ya se posiciona para llevar esto a clientes globales"
+   },
+   "tamano_mercado": {
+    "nivel": "Alta",
+    "evidencia": "todo el retail/ecommerce global es el mercado direccionable"
+   },
+   "resumen": "Anthropic lanzó un blueprint gratuito con Visa, Mastercard y Accenture para que cualquier retailer construya agentes de compra sobre Claude, con Shopify y Priceline ya corriendo agentes en vivo. No es una startup a replicar sino la infraestructura que habilita un nuevo negocio: implementar estos agentes para retailers chilenos que no tienen capacidad técnica propia.",
+   "b2b_o_b2c": "B2B2C",
+   "componente_ia": true,
+   "tipo_fundador": "consultor/builder de agentes IA con llegada a e-commerces medianos",
+   "mercado_actual": "global, ya en producción con Shopify y Priceline",
+   "company_url": "https://claude.com/solutions/commerce",
+   "funding_raised": "desconocido",
+   "stage": "Desconocido",
+   "por_que_ahora": "Anthropic acaba de liberar el blueprint (2 sept 2026) con partners de pago listos",
+   "modelo_negocio": "servicio de implementación a retailers (fee único + retainer) o revenue share",
+   "competencia_local": "no verificado",
+   "competencia_global": "Anthropic, Shopify, Visa, Mastercard, Accenture ya moviéndose en este espacio",
+   "fit_tesis": "Ecommerce",
+   "next_step": "armar un agente demo con el Claude Code plugin para 2-3 ecommerces chilenos medianos",
+   "valida_idea_propia": "Consultoría de agentes de IA para empresas medianas",
+   "fundadores": "no identificados",
+   "redes_sociales": "",
+   "fit_yc": "Alto",
+   "tipo_candidato": "Empresa específica"
+  },
+  {
+   "title": "Atira raises $17.5M to bring AI orchestration to industrial sales",
+   "url": "https://tech.eu/2026/09/03/atira-raises-175m-to-bring-ai-orchestration-to-industrial-sales/",
+   "source": "techeu",
+   "problema_score": 22,
+   "barrera_score": 6,
+   "replicabilidad": {
+    "nivel": "Media",
+    "evidencia": "Chile tiene fabricantes de equipos mineros/industriales con RFQs complejos"
+   },
+   "ventana": {
+    "nivel": "Media",
+    "evidencia": "Atira ya expande internacionalmente con $17.5M frescos"
+   },
+   "tamano_mercado": {
+    "nivel": "Alta",
+    "evidencia": "costo laboral global estimado en $128B en sales engineering"
+   },
+   "resumen": "Atira automatiza con multi-agentes el proceso de cotización (RFQ) para fabricantes industriales de productos complejos, reduciendo semanas de trabajo manual entre ventas, ingeniería y legal. Tiene clientes reales como ABB E-mobility y reduce hasta 95% el tiempo de cotización. Aplica directo a fabricantes de equipos para minería/agroindustria en Chile con procesos comerciales complejos.",
+   "b2b_o_b2c": "B2B",
+   "componente_ia": true,
+   "tipo_fundador": "cofundador técnico fuerte en IA + venta enterprise a industriales",
+   "mercado_actual": "Europa, clientes industriales tipo ABB",
+   "company_url": "",
+   "funding_raised": "$17.5M ($15M seed + $2.5M pre-seed)",
+   "stage": "Seed",
+   "por_que_ahora": "LLMs ya pueden orquestar conocimiento no estructurado disperso en documentos/personas",
+   "modelo_negocio": "SaaS enterprise, ticket alto por implementación + suscripción",
+   "competencia_local": "no verificado",
+   "competencia_global": "Atira (Accel-backed, $17.5M, ya con tracción en Europa)",
+   "fit_tesis": "B2B ops",
+   "next_step": "hablar con 3-5 fabricantes de equipos mineros/agro sobre su proceso de cotización actual",
+   "valida_idea_propia": "Copiloto para vendedores B2B LATAM",
+   "fundadores": "Florian Diegruber y August DuMont Schütte",
+   "redes_sociales": "",
+   "fit_yc": "Alto",
+   "tipo_candidato": "Empresa específica"
+  },
+  {
+   "title": "Zeit AI raises €5M to give Europe’s mid-market its own data engineer",
+   "url": "https://tech.eu/2026/09/03/zeit-ai-raises-eur5m-to-give-europes-mid-market-its-own-data-engineer/",
+   "source": "techeu",
+   "problema_score": 21,
+   "barrera_score": 6,
+   "replicabilidad": {
+    "nivel": "Alta",
+    "evidencia": "empresas medianas chilenas (agro, salmón, minería) dependen de Excel"
+   },
+   "ventana": {
+    "nivel": "Media",
+    "evidencia": "Zeit opera solo en Europa hoy, sin presencia en LatAm"
+   },
+   "tamano_mercado": {
+    "nivel": "Alta",
+    "evidencia": "toda empresa mediana sin equipo de datos es mercado potencial"
+   },
+   "resumen": "ZeitMind conecta ERP, CRM y 600+ fuentes para dar a empresas medianas europeas un 'ingeniero de datos autónomo' sin contratar gente, fundada por ex-Palantir que ya llevó la empresa de cero a €1M ARR en 12 meses. Ataca directo el dolor de ejecutivos no técnicos que no saben aprovechar sus propios datos, encajando de lleno con la tesis de IA para ejecutivos.",
+   "b2b_o_b2c": "B2B",
+   "componente_ia": true,
+   "tipo_fundador": "técnico senior en agentes/datos + comercial para vender a mid-market",
+   "mercado_actual": "Europa (mid-market), YC S24",
+   "company_url": "https://www.zeit-ai.com",
+   "funding_raised": "€5M (total desde $500K seed previo)",
+   "stage": "Seed",
+   "por_que_ahora": "LLMs frontera ya permiten automatizar limpieza/integración de datos a escala de software",
+   "modelo_negocio": "SaaS + forward-deployed engineer, ticket enterprise mid-market",
+   "competencia_local": "no verificado",
+   "competencia_global": "Zeit AI (Europa) y adyacentes YC como Haladir y Sieve en data engineering agéntico",
+   "fit_tesis": "IA ejecutivos",
+   "next_step": "prototipar un 'data engineer autónomo' con 2 exportadoras/salmoneras que hoy viven en Excel",
+   "valida_idea_propia": "Consultoría de agentes de IA para empresas medianas",
+   "fundadores": "Leopold von Waldthausen y Marvin Bornstein",
+   "redes_sociales": "",
+   "fit_yc": "Alto",
+   "tipo_candidato": "Empresa específica"
+  },
+  {
+   "title": "Backbone raises €4M for automated food quality and compliance",
+   "url": "https://tech.eu/2026/09/03/backbone-raises-eur4m-for-automated-food-quality-and-compliance/",
+   "source": "techeu",
+   "problema_score": 19,
+   "barrera_score": 8,
+   "replicabilidad": {
+    "nivel": "Alta",
+    "evidencia": "exportadoras chilenas de fruta/salmón enfrentan compliance intenso similar"
+   },
+   "ventana": {
+    "nivel": "Media",
+    "evidencia": "sin player local identificado, pero Backbone ya crece en Europa"
+   },
+   "tamano_mercado": {
+    "nivel": "Alta",
+    "evidencia": "software de food safety crece de $599M a $2.1B proyectado a 2033"
+   },
+   "resumen": "Backbone centraliza certificados de proveedores, resultados de laboratorio y normativas para automatizar compliance de calidad alimentaria, con clientes ya en Bélgica, UK y Holanda. El dolor está cuantificado: mala gestión de calidad cuesta hasta 15% del revenue del sector. Encaja directo con exportadoras chilenas de fruta y salmón, sujetas a certificaciones exigentes (SAG, BRCGS, mercados de destino).",
+   "b2b_o_b2c": "B2B",
+   "componente_ia": true,
+   "tipo_fundador": "socio con expertise regulatoria/food safety + técnico de datos",
+   "mercado_actual": "Bélgica, UK, Países Bajos",
+   "company_url": "",
+   "funding_raised": "€4M pre-seed",
+   "stage": "Pre-seed",
+   "por_que_ahora": "recalls recientes (fórmula infantil) presionan a la industria a digitalizar compliance",
+   "modelo_negocio": "SaaS por planta/sitio de producción",
+   "competencia_local": "no verificado",
+   "competencia_global": "Backbone (Bélgica, €4M, ya con clientes multi-país)",
+   "fit_tesis": "Industrias CL",
+   "next_step": "validar con 3-5 exportadoras de fruta/salmón cómo gestionan hoy certificados y compliance",
+   "valida_idea_propia": "",
+   "fundadores": "Louis Opsomer, Siska Lannoo y Julien Steel",
+   "redes_sociales": "",
+   "fit_yc": "Medio",
+   "tipo_candidato": "Empresa específica"
+  },
+  {
+   "title": "Pop Newsletter: Set did $3.5 million in 24 hours leveraging customers as the new influencers",
+   "url": "https://www.glossy.co/pop/set-customer-influencer-strategy-coastline-drop/?utm_campaign=glossydis&utm_medium=rss&utm_source=general-rss",
+   "source": "glossy",
+   "problema_score": 15,
+   "barrera_score": 11,
+   "replicabilidad": {
+    "nivel": "Alta",
+    "evidencia": "cualquier marca DTC puede adoptar clientes-como-influencers"
+   },
+   "ventana": {
+    "nivel": "Media",
+    "evidencia": "táctica emergente, aún no estandarizada en LatAm"
+   },
+   "tamano_mercado": {
+    "nivel": "Media",
+    "evidencia": "aplica a marcas DTC individuales, no es un mercado propio"
+   },
+   "resumen": "Set generó $3.5M en 24 horas dándole a sus propios clientes el rol tradicionalmente reservado a influencers, más una activación de $500K en Austin para adquisición. Es un playbook de crecimiento DTC (canal de adquisición alternativo), no un producto a construir. Útil como inteligencia de mercado para diseñar el propio approach de adquisición de una marca DTC en Chile.",
+   "b2b_o_b2c": "B2C",
+   "componente_ia": false,
+   "tipo_fundador": "fundador de marca DTC con foco en comunidad/marketing",
+   "mercado_actual": "EE.UU.",
+   "company_url": "",
+   "funding_raised": "desconocido",
+   "stage": "Desconocido",
+   "por_que_ahora": "fatiga de marketing de influencers tradicional abre espacio a UGC de clientes reales",
+   "modelo_negocio": "no aplica, es táctica de crecimiento no producto",
+   "competencia_local": "no verificado",
+   "competencia_global": "no verificado",
+   "fit_tesis": "Ecommerce",
+   "next_step": "extraer el mecanismo exacto de activación de clientes-influencer para aplicar a una marca DTC propia",
+   "valida_idea_propia": "",
+   "fundadores": "no identificados",
+   "redes_sociales": "",
+   "fit_yc": "Bajo",
+   "tipo_candidato": "Empresa específica"
+  },
+  {
+   "title": "Souk lands $1.6M to turn inactive B2B partners into revenue",
+   "url": "https://tech.eu/2026/09/03/souk-lands-16m-to-turn-inactive-b2b-partners-into-revenue/",
+   "source": "techeu",
+   "problema_score": 13,
+   "barrera_score": 9,
+   "replicabilidad": {
+    "nivel": "Media",
+    "evidencia": "ecosistemas de partners B2B existen pero son menos maduros en Chile"
+   },
+   "ventana": {
+    "nivel": "Media",
+    "evidencia": "espacio de partner management aún poco explotado localmente"
+   },
+   "tamano_mercado": {
+    "nivel": "Media",
+    "evidencia": "nicho de partner ecosystems, no masivo"
+   },
+   "resumen": "Souk usa IA para reactivar partners B2B inactivos y convertirlos en revenue, apuntando a programas de canal mal gestionados. Ronda pre-seed pequeña, señal temprana. Podría aplicar a ecosistemas de revendedores/distribuidores en industrias chilenas pero el mercado es más chico y menos formalizado que en UK/Europa.",
+   "b2b_o_b2c": "B2B",
+   "componente_ia": true,
+   "tipo_fundador": "perfil de sales ops con expertise en partner/channel management",
+   "mercado_actual": "Reino Unido",
+   "company_url": "",
+   "funding_raised": "$1.6M pre-seed",
+   "stage": "Pre-seed",
+   "por_que_ahora": "IA permite priorizar y activar partners a escala sin headcount extra",
+   "modelo_negocio": "SaaS por partner activo o comisión sobre revenue reactivado",
+   "competencia_local": "no verificado",
+   "competencia_global": "no verificado",
+   "fit_tesis": "B2B ops",
+   "next_step": "evaluar si hay suficientes programas de canal formales en Chile para justificar el nicho",
+   "valida_idea_propia": "",
+   "fundadores": "no identificados",
+   "redes_sociales": "",
+   "fit_yc": "Medio",
+   "tipo_candidato": "Empresa específica"
+  },
+  {
+   "title": "A Viral AI Bot Just Showed Travel What Frictionless Actually Means",
+   "url": "https://skift.com/2026/09/04/a-viral-ai-bot-just-showed-travel-what-frictionless-actually-means/",
+   "source": "skift",
+   "problema_score": 13,
+   "barrera_score": 6,
+   "replicabilidad": {
+    "nivel": "Media",
+    "evidencia": "booking de viajes vía chat existe pero fricción real persiste"
+   },
+   "ventana": {
+    "nivel": "Baja",
+    "evidencia": "Booking, Expedia y OTAs ya invierten fuerte en agentes de viaje"
+   },
+   "tamano_mercado": {
+    "nivel": "Alta",
+    "evidencia": "industria de viajes es enorme globalmente"
+   },
+   "resumen": "Instinct es un asistente de IA viral que permite reservar y re-reservar viajes desde un hilo de texto, sin apps ni formularios. La señal es el hype de Silicon Valley, no data de usuarios o revenue reportada. El ángulo interesante es la fricción cero, pero el espacio de travel-tech ya tiene jugadores globales muy financiados moviéndose hacia lo mismo.",
+   "b2b_o_b2c": "B2C",
+   "componente_ia": true,
+   "tipo_fundador": "equipo con integraciones a GDS/aerolíneas y expertise conversacional",
+   "mercado_actual": "EE.UU., fase viral/beta",
+   "company_url": "",
+   "funding_raised": "desconocido",
+   "stage": "Desconocido",
+   "por_que_ahora": "LLMs conversacionales maduros habilitan booking sin UI tradicional",
+   "modelo_negocio": "comisión por reserva o suscripción B2C",
+   "competencia_local": "no verificado",
+   "competencia_global": "no verificado",
+   "fit_tesis": "B2C servicios",
+   "next_step": "monitorear métricas de retención/GMV antes de invertir tiempo",
+   "valida_idea_propia": "",
+   "fundadores": "no identificados",
+   "redes_sociales": "",
+   "fit_yc": "Medio",
+   "tipo_candidato": "Empresa específica"
+  },
+  {
+   "title": "The single biggest shift coming to SaaS",
+   "url": "https://www.reddit.com/r/SaaS/comments/1w5qg2s/the_single_biggest_shift_coming_to_saas/",
+   "source": "reddit_saas",
+   "problema_score": 8,
+   "barrera_score": 5,
+   "replicabilidad": {
+    "nivel": "Baja",
+    "evidencia": "es una tesis, no un producto o empresa a replicar"
+   },
+   "ventana": {
+    "nivel": "Baja",
+    "evidencia": "sin dato de tracción, solo opinión sin engagement"
+   },
+   "tamano_mercado": {
+    "nivel": "Media",
+    "evidencia": "afecta a todo el mercado SaaS pero sin cuantificar"
+   },
+   "resumen": "Post de opinión sobre cómo los agentes (Claude Code, terminal) reemplazarán la UI como interfaz principal de SaaS, forzando a cambiar GTM hacia triggers de workflow en vez de outbound genérico. Es una reflexión de producto, no una empresa. Interesante como marco mental pero sin evidencia dura ni caso concreto.",
+   "b2b_o_b2c": "B2B",
+   "componente_ia": true,
+   "tipo_fundador": "no aplica, es un ensayo sin producto",
+   "mercado_actual": "no aplica",
+   "company_url": "",
+   "funding_raised": "desconocido",
+   "stage": "Idea",
+   "por_que_ahora": "adopción masiva de agentes tipo Claude Code cambia cómo los usuarios interactúan con SaaS",
+   "modelo_negocio": "no aplica",
+   "competencia_local": "no verificado",
+   "competencia_global": "no verificado",
+   "fit_tesis": "Otro",
+   "next_step": "descartar como candidato de producto, usar solo como insight de diseño",
+   "valida_idea_propia": "",
+   "fundadores": "no identificados",
+   "redes_sociales": "",
+   "fit_yc": "Bajo",
+   "tipo_candidato": "Reflexión"
+  }
+ ],
+ "gate_urls": [
+  "https://www.finextra.com/newsarticle/48346/anthropic-launches-ai-commerce-agents-with-visa-and-mastercard?utm_medium=rssfinextra&utm_source=finextrafeed",
+  "https://tech.eu/2026/09/03/atira-raises-175m-to-bring-ai-orchestration-to-industrial-sales/",
+  "https://tech.eu/2026/09/03/zeit-ai-raises-eur5m-to-give-europes-mid-market-its-own-data-engineer/",
+  "https://tech.eu/2026/09/03/backbone-raises-eur4m-for-automated-food-quality-and-compliance/",
+  "https://www.glossy.co/pop/set-customer-influencer-strategy-coastline-drop/?utm_campaign=glossydis&utm_medium=rss&utm_source=general-rss"
+ ],
+ "cost_usd": 0.308
+}
