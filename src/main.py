@@ -118,8 +118,25 @@ def run() -> Path:
     TENDENCIA_TYPES = {"Tendencia", "Reflexión"}
     empresas_scored = [s for s in scored if s.tipo_candidato not in TENDENCIA_TYPES]
     tendencias_scored = [s for s in scored if s.tipo_candidato in TENDENCIA_TYPES]
-    top_empresas = empresas_scored[: config.MAX_IDEAS_EMPRESA]
-    top_tendencias = tendencias_scored[: config.MAX_IDEAS_TENDENCIA]
+    # Bug real 2026-W36: el cupo por balde (MAX_IDEAS_EMPRESA=4) es un tope
+    # de RELLENO bajo-gate, no un tope duro sobre ganadores reales — antes
+    # cortaba por posición sin mirar si pasó el gate. Esa semana pasaron 5
+    # empresas el gate pero el balde solo mostraba 4: la 5ta ("Set", 26/40,
+    # SÍ pasó) quedaba afuera del email en silencio, sin aviso, mientras
+    # el log interno seguía diciendo "5 sobre gate" — inconsistencia que
+    # Matías detectó comparando lo que veía vs. lo que le dije por chat.
+    # Fix: todo el que pasó el gate entra siempre a su balde, aunque el
+    # balde crezca más allá del cupo nominal; el cupo solo limita cuánto
+    # relleno bajo-gate se agrega arriba de los que sí pasaron.
+    gate_urls = {s.url for s in top_gate}
+
+    def _fill_bucket(bucket: list, cap: int) -> list:
+        passers = [s for s in bucket if s.url in gate_urls]
+        rest = [s for s in bucket if s.url not in gate_urls]
+        return passers + rest[: max(0, cap - len(passers))]
+
+    top_empresas = _fill_bucket(empresas_scored, config.MAX_IDEAS_EMPRESA)
+    top_tendencias = _fill_bucket(tendencias_scored, config.MAX_IDEAS_TENDENCIA)
     top_email = top_empresas + top_tendencias
 
     # El reporte .md (el que se captura a GBrain) lleva TODAS las ideas con

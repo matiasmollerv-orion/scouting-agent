@@ -314,7 +314,15 @@ NO son números y NO suman al score. Juicio honesto. Sin base → Baja y decilo.
     · "Tendencia" — artículo o análisis que cubre VARIAS empresas o un
       patrón de mercado (ej: "5 startups de agentes de RRHH están surgiendo").
       No hay un jugador único a replicar; el valor es la señal de la ola, no
-      el producto. `company_url` normalmente queda "".
+      el producto. `company_url` normalmente queda "". **Esto incluye el
+      caso de UNA sola empresa que solo ILUSTRA una táctica/playbook
+      replicable** (ej: "marca X generó $3.5M activando a sus clientes como
+      influencers") — si tu propio `resumen` termina diciendo "es una
+      táctica/playbook, no un producto a construir", el `tipo_candidato` es
+      "Tendencia", NO "Empresa específica", aunque solo se mencione una
+      empresa. La pregunta que decide: ¿el fundador replicaría LA EMPRESA
+      (su producto, su modelo) o replicaría LA TÁCTICA que esa empresa usó?
+      Lo segundo es Tendencia.
     · "Reflexión" — opinión, ensayo o pieza de pensamiento sin empresa(s)
       concreta(s) mencionada(s).
   Esto importa porque una "Empresa específica" es algo que el fundador puede
