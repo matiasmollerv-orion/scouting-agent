@@ -18,15 +18,40 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Guardia de idempotencia — 2026-09-05: el cron se atrasó 3h (12:07
+      # -> 15:06 UTC) y mientras tanto se disparó a mano por impaciencia.
+      # Las 2 corridas completas del pipeline pagado corrieron esa semana,
+      # cada una con su propio muestreo real de candidatos (seen_urls.json
+      # se actualiza recién al final de cada corrida exitosa, así que la
+      # 2da corrida no vio los "vistos" de la 1ra hasta que ya había
+      # arrancado) — 2 emails distintos, ~2x costo, y el reporte .md de la
+      # 1ra corrida quedó pisado en git por el commit de la 2da. Si el
+      # reporte de esta semana YA existe en el repo (otra corrida — cron o
+      # manual — ya lo completó y pusheó), no vale la pena correr el
+      # pipeline pagado de nuevo.
+      - name: Verificar si esta semana ya se procesó
+        id: check
+        run: |
+          WEEK_KEY=$(date -u +%Y-W%V)
+          if [ -f "reports/${WEEK_KEY}.md" ]; then
+            echo "reports/${WEEK_KEY}.md ya existe — otra corrida ya procesó esta semana. Abortando para no duplicar costo ni email."
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - uses: actions/setup-python@v5
+        if: steps.check.outputs.skip != 'true'
         with:
           python-version: "3.11"
           cache: pip
 
       - name: Install deps
+        if: steps.check.outputs.skip != 'true'
         run: pip install -r requirements.txt
 
       - name: Run scouting agent
+        if: steps.check.outputs.skip != 'true'
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           PRODUCTHUNT_TOKEN: ${{ secrets.PRODUCTHUNT_TOKEN }}
@@ -35,6 +60,7 @@ jobs:
         run: python -m src.main
 
       - name: Commit report
+        if: steps.check.outputs.skip != 'true'
         run: |
           git config user.name "scouting-bot"
           git config user.email "actions@github.com"
