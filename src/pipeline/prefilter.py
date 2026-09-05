@@ -29,6 +29,7 @@ TRUSTED_SOURCES = {
     "grocerydive", "nrn",                               # tradicional reinventado (retail/restaurantes)
     "aqua", "mch", "redagricola",                       # industrias CL (salmón, minería, agro)
     "skift",                                            # b2c servicios (viajes/hospitalidad)
+    "saastr",                                           # b2b ops (GTM/revenue)
 }
 
 

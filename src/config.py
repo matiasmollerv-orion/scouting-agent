@@ -361,6 +361,15 @@ RSS_FEEDS = {
     # Dive) — mismo patrón probado, y ya trajo justo el caso buscado
     # ("Urban Outfitters' Nuuly pursues more fulfillment center automation").
     "supplychaindive": "https://www.supplychaindive.com/feeds/news/",
+    # B2B ops (tesis: B2B ops — revenue/ventas, comunicación interna,
+    # reporting, equipos en terreno) — 2026-09: mismo hueco que bodegaje,
+    # encontrado auditando frecuencia REAL de fit_tesis en todo el
+    # historial (no solo "¿tiene fuente la categoría?"): 4 hits reales en
+    # 9 semanas (comparable a Ecommerce, 5 hits) pero CERO fuente dedicada
+    # — pura señal incidental de TechCrunch/HN. SaaStr cubre justo esto:
+    # contratación de equipos de venta, GTM, category-winning agents para
+    # CPOs — verificado con títulos reales, no solo HTTP 200.
+    "saastr": "https://www.saastr.com/feed/",
     # "2pml": eliminada 2026-08 — último post 5 jul, 6+ semanas sin publicar
     # Futuro del trabajo / workforce (tesis: futuro del trabajo)
     "joshbersin": "https://joshbersin.com/feed/",       # analista #1 de HR tech
