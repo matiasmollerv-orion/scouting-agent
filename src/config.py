@@ -394,10 +394,25 @@ RSS_FEEDS = {
     "finextra":    "https://www.finextra.com/rss/headlines.aspx",
     "tearsheet":   "https://tearsheet.co/feed/",       # análisis de fondo, no solo noticias
     "fintechtimes": "https://thefintechtimes.com/feed/",
+    # finovate: ángulo distinto a los 3 de arriba — muestra PRODUCTOS/demos
+    # fintech nuevos (ej: "EMVCo Releases Framework for Card-Based Agentic
+    # Payments", "Finzly Unveils AI Assurance Layer"), no solo noticias de
+    # banca/macro. 2026-09: encontrado auditando por qué "Bienestar
+    # financiero" tiene 0 hits reales en deep pese a 3 fuentes activas —
+    # el problema no era falta de señal (candidatos SÍ llegan a triage con
+    # score 13-27/40) sino que compiten por 8 cupos de deep contra semanas
+    # cargadas de "Futuro del trabajo" (prioridad MÁXIMA) y pierden por
+    # poco. Esta fuente no resuelve eso — es un problema de cupo, no de
+    # cobertura — pero suma variedad real de ángulo igual.
+    "finovate":    "https://finovate.com/feed/",
     # Inmobiliario/proptech (tesis: inmobiliario)
     "geekestate":  "https://geekestateblog.com/feed/", # ex-Zillow, ángulo práctico
     # Creadores de contenido (tesis: creadores de contenido)
     "creatoreconomy": "https://thecreatoreconomy.com/rss.xml",
+    # Segunda fuente, ángulo distinto: tácticas/experimentos de crecimiento
+    # y monetización de UN creador (ej: "¿los newsletters de LinkedIn son
+    # la forma más fácil de crecer tu lista?"), no cobertura de industria.
+    "creatorscience": "https://creatorscience.com/rss/",
     # Wellness/estética (tesis: wellness) — hermana de modernretail, mismo
     # dueño (Digiday Media), mismo patrón que ya nos funciona. wellandgood
     # y mobihealthnews evaluadas y descartadas: la primera fue absorbida

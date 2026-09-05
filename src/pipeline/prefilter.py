@@ -19,9 +19,9 @@ MAX_PER_SOURCE = {
 TRUSTED_SOURCES = {
     "yc", "newsletters", "brain-inbox",
     "modernretail", "retaildive", "supplychaindive",    # ecommerce (+ bodegaje/fulfillment)
-    "finextra", "tearsheet", "fintechtimes",            # bienestar financiero
+    "finextra", "tearsheet", "fintechtimes", "finovate", # bienestar financiero
     "geekestate",                                       # inmobiliario
-    "creatoreconomy",                                   # creadores de contenido
+    "creatoreconomy", "creatorscience",                 # creadores de contenido
     "glossy", "statnews",                               # wellness/estética
     "stratechery",                                      # ia ejecutivos
     "restofworld",                                      # clase media (ya existía, sin marcar)
