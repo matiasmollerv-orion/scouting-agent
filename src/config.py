@@ -351,6 +351,16 @@ RSS_FEEDS = {
     # y manufacturingdive (Industry Dive), ya probado confiable.
     "modernretail": "https://www.modernretail.co/feed/",
     "retaildive":   "https://www.retaildive.com/feeds/news/",
+    # Bodegaje/logística/fulfillment para ecommerce (tesis: ecommerce, ángulo
+    # operación interna) — 2026-09: Matías preguntó específicamente por
+    # almacenamiento y no había NADA en 15+ semanas de reportes (grep sobre
+    # todo reports/*-full.json: 0 hits de warehousing/bodega/fulfillment/3PL).
+    # Mismo hueco que ya resolvimos para ecommerce en general: prensa tech
+    # cubre rondas, no automatización de bodega. supplychaindive es hermana
+    # de retaildive/modernretail/grocerydive/manufacturingdive (Industry
+    # Dive) — mismo patrón probado, y ya trajo justo el caso buscado
+    # ("Urban Outfitters' Nuuly pursues more fulfillment center automation").
+    "supplychaindive": "https://www.supplychaindive.com/feeds/news/",
     # "2pml": eliminada 2026-08 — último post 5 jul, 6+ semanas sin publicar
     # Futuro del trabajo / workforce (tesis: futuro del trabajo)
     "joshbersin": "https://joshbersin.com/feed/",       # analista #1 de HR tech

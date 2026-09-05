@@ -18,7 +18,7 @@ MAX_PER_SOURCE = {
 # a UNA categoría de la tesis, verificados con contenido real 2026-08).
 TRUSTED_SOURCES = {
     "yc", "newsletters", "brain-inbox",
-    "modernretail", "retaildive",                      # ecommerce
+    "modernretail", "retaildive", "supplychaindive",    # ecommerce (+ bodegaje/fulfillment)
     "finextra", "tearsheet", "fintechtimes",            # bienestar financiero
     "geekestate",                                       # inmobiliario
     "creatoreconomy",                                   # creadores de contenido
