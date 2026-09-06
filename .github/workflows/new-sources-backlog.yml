@@ -1,0 +1,26 @@
+name: new-sources-backlog
+
+# Consulta ad-hoc: backfill de ~4 semanas para las fuentes agregadas esta
+# semana (industrias CL, tradicional reinventado, b2c servicios, bodegaje,
+# b2b ops, fintech variedad, creadores). No corre en schedule.
+on:
+  workflow_dispatch: {}
+
+jobs:
+  backlog:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install deps
+        run: pip install -r requirements.txt
+
+      - name: Run new-sources backlog query
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python -m scripts.new_sources_backlog
