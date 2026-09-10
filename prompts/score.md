@@ -24,19 +24,35 @@ expertise que el fundador no tiene" o está "lejos de su perfil" — PARÁ, esa
 no es razón válida acá. Evaluá si el PROBLEMA es real y grande, no si este
 fundador específico podría resolverlo solo sin ayuda de nadie.
 
-**Regla dura: NO restrinjas por si la empresa ya es grande, madura o bien
-financiada.** 2026-09, bug real encontrado por el fundador: marketplaces
-masivos y exitosos (Whatnot, Vinted, Back Market — miles de millones en
-GMV, algunos ya rentables) NUNCA aparecían en el scouting, porque el
-scoring premiaba solo candidatos "recién financiados". El fundador quiere
-ver TANTO empresas nuevas como consolidadas con resultados probados —
-una empresa rentable y a escala real es señal FUERTE de que el modelo
-funciona, no una razón para descartarla. `funding_raised`/`stage` pueden
-quedar "N/A — empresa consolidada" sin que eso reste score. Fuentes
-válidas para esto: resultados anuales, "state of the industry", no solo
-noticias de rondas. Ver también el ángulo (3) de "Ecommerce" abajo, y la
-nota sobre `ventana` en la sección de señales cualitativas — mismo
-principio aplica a cualquier categoría, no solo ecommerce.
+**Regla dura sobre madurez — el eje correcto NO es "grande vs. chica" ni
+"nueva vs. vieja", es "¿sigue siendo el disruptor, o ya ES el status
+quo?"** 2026-09, bug real encontrado por el fundador: marketplaces
+exitosos con resultados probados (Whatnot, Vinted, Back Market — miles de
+millones en GMV, creciendo 30-100%+/año, varios todavía privados y sin
+salida a bolsa) NUNCA aparecían en el scouting, porque el scoring
+premiaba solo candidatos "recién financiados". El fundador corrigió el
+ángulo: NO se trata de traer empresas grandes porque sí — Whatnot,
+Vinted y Back Market NO cuentan como "maduras" en el sentido que importa:
+siguen creciendo agresivo, atacando un modelo distinto al incumbente, casi
+todas privadas. Lo que el fundador quiere evitar es exactamente lo
+opuesto: **gigantes archi-conocidos, ya establecidos como EL status quo
+de su industria — Walmart, Amazon, Nike, Target, Alibaba, Zara y
+similares.** Esas NO son candidatos válidos por sí solas: son demasiado
+conocidas, no hay nada que "descubrir", el fundador ya las conoce de
+memoria. Excepción: si la noticia es sobre algo genuinamente NUEVO que
+uno de esos gigantes está probando (un spin-off, una unidad de negocio
+nueva con modelo distinto al resto de la empresa) — evaluá ESE ángulo
+específico y acotado, no "Amazon es buena empresa" en general.
+**Test rápido:** ¿esta empresa sigue compitiendo CONTRA el modelo
+tradicional de su industria, o ya ES el modelo tradicional/dominante que
+otros tratan de disrumpir? Lo primero cuenta con score completo aunque
+facture miles de millones; lo segundo se excluye, sea cual sea su tamaño.
+`funding_raised`/`stage` pueden quedar "N/A — empresa privada consolidada,
+sigue creciendo agresivo" sin que eso reste score. Fuentes válidas para
+esto: resultados anuales, "state of the industry", no solo noticias de
+rondas. Ver también el ángulo (3) de "Ecommerce" abajo, y la nota sobre
+`ventana` en la sección de señales cualitativas — mismo principio aplica
+a cualquier categoría, no solo ecommerce.
 
 **Categorías de ALTO interés (usá estos nombres exactos en `fit_tesis`):**
 
@@ -92,8 +108,12 @@ principio aplica a cualquier categoría, no solo ecommerce.
   el primero en replicarlo en LatAm. Señales: marcas DTC con crecimiento
   llamativo, categorías donde aparecen muchos players nuevos, cambios en
   comportamiento de consumidor que crean demanda nueva.
-  (3) **Marcas y MARKETPLACES maduros que crecen bien — el playbook, no la
-  empresa en sí.** Dos sub-casos, IGUAL de válidos:
+  (3) **Marcas y MARKETPLACES disruptivos con resultados probados — el
+  playbook, no la empresa en sí. NO son gigantes archi-conocidos como
+  Amazon/Walmart/Nike/Zara** (esos se excluyen — ver regla dura del
+  inicio) — son players que siguen atacando el modelo tradicional de su
+  industria y lo vienen ganando, aunque ya factured mucho o sean privados
+  de varios años. Dos sub-casos, IGUAL de válidos:
     · Una marca DTC establecida extiende su línea de producto siguiendo el
       ciclo de vida o las nuevas necesidades de su MISMO cliente (ej: marca
       de bebés que sigue a la familia hacia niños mayores), o encuentra un
@@ -308,16 +328,20 @@ NO son números y NO suman al score. Juicio honesto. Sin base → Baja y decilo.
   Chile/LatAm, la ventana real es más angosta — ajustá a lo que
   encontraste, no a la intuición.
   **Excepción importante — no confundir "candidato = competidor directo
-  amenazante" con "candidato = playbook maduro a estudiar":** cuando el
-  candidato mismo ES esa empresa grande y madura (tipo_candidato =
-  "Empresa específica" analizada como PATRÓN/playbook, no como oportunidad
-  de fundar un competidor desde cero — ver ángulo 3 de Ecommerce), el
-  hecho de que sea grande/dominante/bien financiada NO es una señal
-  negativa de `ventana` — es la ventana de OTRO, no la del fundador. En
-  ese caso `ventana` mide algo distinto: si ESE modelo específico todavía
-  no tiene un jugador fuerte en Chile/LatAm, la ventana local sigue
-  abierta aunque el player global sea gigante. No bajes `ventana` de una
-  empresa consolidada solo porque es consolidada.
+  amenazante" con "candidato = playbook disruptivo a estudiar":** cuando
+  el candidato mismo ES una empresa con resultados probados y modelo
+  disruptivo (tipo_candidato = "Empresa específica" analizada como
+  PATRÓN/playbook, no como oportunidad de fundar un competidor desde
+  cero — ver ángulo 3 de Ecommerce), el hecho de que factura mucho o esté
+  bien financiada NO es señal negativa de `ventana` — es la ventana de
+  OTRO, no la del fundador. `ventana` mide si ESE modelo específico
+  todavía no tiene un jugador fuerte en Chile/LatAm — sigue abierta
+  aunque el player global sea grande. **Esto NO aplica a un gigante ya
+  establecido como el status quo de su industria** (Walmart, Amazon,
+  Nike, Target, Alibaba, Zara) — a esos ni siquiera deberían llegar acá,
+  se excluyen antes por la regla de arriba. La excepción es solo para
+  disruptores probados que siguen atacando el modelo tradicional, no para
+  el modelo tradicional mismo.
 - `tamano_mercado`: estimación gruesa. ¿Alcanza para justificar un negocio?
 
 ## Análisis de oportunidad (1 línea cada uno, conciso)
