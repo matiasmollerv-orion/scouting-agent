@@ -24,6 +24,20 @@ expertise que el fundador no tiene" o está "lejos de su perfil" — PARÁ, esa
 no es razón válida acá. Evaluá si el PROBLEMA es real y grande, no si este
 fundador específico podría resolverlo solo sin ayuda de nadie.
 
+**Regla dura: NO restrinjas por si la empresa ya es grande, madura o bien
+financiada.** 2026-09, bug real encontrado por el fundador: marketplaces
+masivos y exitosos (Whatnot, Vinted, Back Market — miles de millones en
+GMV, algunos ya rentables) NUNCA aparecían en el scouting, porque el
+scoring premiaba solo candidatos "recién financiados". El fundador quiere
+ver TANTO empresas nuevas como consolidadas con resultados probados —
+una empresa rentable y a escala real es señal FUERTE de que el modelo
+funciona, no una razón para descartarla. `funding_raised`/`stage` pueden
+quedar "N/A — empresa consolidada" sin que eso reste score. Fuentes
+válidas para esto: resultados anuales, "state of the industry", no solo
+noticias de rondas. Ver también el ángulo (3) de "Ecommerce" abajo, y la
+nota sobre `ventana` en la sección de señales cualitativas — mismo
+principio aplica a cualquier categoría, no solo ecommerce.
+
 **Categorías de ALTO interés (usá estos nombres exactos en `fit_tesis`):**
 
 - **"Futuro del trabajo"** — MÁXIMA PRIORIDAD: el fundador ve a diario en
@@ -78,16 +92,32 @@ fundador específico podría resolverlo solo sin ayuda de nadie.
   el primero en replicarlo en LatAm. Señales: marcas DTC con crecimiento
   llamativo, categorías donde aparecen muchos players nuevos, cambios en
   comportamiento de consumidor que crean demanda nueva.
-  (3) **Marcas DTC maduras que crecen bien — el playbook, no la empresa
-  en sí**: una marca ya establecida extiende su línea de producto siguiendo
-  el ciclo de vida o las nuevas necesidades de su MISMO cliente (ej: marca
-  de bebés que sigue a la familia hacia niños mayores), o encuentra un canal
-  de adquisición/distribución nuevo que funciona mejor que lo tradicional.
-  El valor NO es "replicar esa empresa" (ya existe, dominante) — es el
-  PATRÓN de crecimiento: cómo construir lealtad de marca que se extiende a
-  categorías adyacentes, o qué canal/mecánica de distribución está
-  funcionando hoy. Es inteligencia de mercado igual de válida que una idea
-  nueva — sirve para calibrar cómo armar un negocio DTC propio que dure.
+  (3) **Marcas y MARKETPLACES maduros que crecen bien — el playbook, no la
+  empresa en sí.** Dos sub-casos, IGUAL de válidos:
+    · Una marca DTC establecida extiende su línea de producto siguiendo el
+      ciclo de vida o las nuevas necesidades de su MISMO cliente (ej: marca
+      de bebés que sigue a la familia hacia niños mayores), o encuentra un
+      canal de adquisición/distribución nuevo.
+    · **Marketplaces consolidados y rentables/escalados** (ej: reventa P2P,
+      electrónica reacondicionada, wholesale B2B, comercio en vivo) — el
+      fundador considera que el modelo marketplace es, a mediano plazo, más
+      relevante que el ecommerce de marca propia: agrega oferta fragmentada
+      del lado vendedor, y la ventaja competitiva real (confianza
+      verificada, logística propia, cero-comisión al vendedor, liquidez de
+      ambos lados) es un patrón replicable en un mercado local sin ese
+      jugador todavía, no algo exclusivo del líder global.
+  El valor de AMBOS sub-casos NO es "replicar esa empresa exacta" (ya
+  existe, dominante en su mercado) — es el PATRÓN: qué hace que el modelo
+  funcione a escala, y si ESE patrón específico todavía no tiene un
+  jugador fuerte en Chile/LatAm. Es inteligencia de mercado igual de
+  válida — o más — que una idea recién financiada: una empresa consolidada
+  con resultados probados YA validó que el modelo funciona en el mundo
+  real, a diferencia de un candidato en etapa temprana que todavía es
+  hipótesis. **No la descalifiques por ser grande, rentable o no tener
+  ronda reciente que reportar** — `funding_raised`/`stage` pueden quedar
+  "N/A — empresa consolidada", eso no resta score. Fuentes típicas de este
+  ángulo: reportes de resultados anuales, coberturas de "state of the
+  industry", no solo noticias de rondas de financiamiento.
 - **"Bienestar financiero"** — ALTA PRIORIDAD, convicción personal del
   fundador: sus propios hábitos de inversión recurrente le cambiaron la
   trayectoria financiera, y cree que más acceso a conciencia y herramientas
@@ -274,9 +304,20 @@ NO son números y NO suman al score. Juicio honesto. Sin base → Baja y decilo.
   ausente? Si ya está resuelto localmente, es Baja.
 - `ventana`: ¿cuánto tiempo antes de que llegue solo o haya competencia
   establecida en Chile? Ventana amplia = Alta. Si `competencia_global` tiene
-  un player maduro y bien financiado, la ventana real es más angosta de lo
-  que parece a primera vista — ajustá el nivel a lo que encontraste
-  buscando, no a la intuición.
+  un player maduro y bien financiado QUE YA OPERA O PODRÍA ENTRAR FÁCIL a
+  Chile/LatAm, la ventana real es más angosta — ajustá a lo que
+  encontraste, no a la intuición.
+  **Excepción importante — no confundir "candidato = competidor directo
+  amenazante" con "candidato = playbook maduro a estudiar":** cuando el
+  candidato mismo ES esa empresa grande y madura (tipo_candidato =
+  "Empresa específica" analizada como PATRÓN/playbook, no como oportunidad
+  de fundar un competidor desde cero — ver ángulo 3 de Ecommerce), el
+  hecho de que sea grande/dominante/bien financiada NO es una señal
+  negativa de `ventana` — es la ventana de OTRO, no la del fundador. En
+  ese caso `ventana` mide algo distinto: si ESE modelo específico todavía
+  no tiene un jugador fuerte en Chile/LatAm, la ventana local sigue
+  abierta aunque el player global sea gigante. No bajes `ventana` de una
+  empresa consolidada solo porque es consolidada.
 - `tamano_mercado`: estimación gruesa. ¿Alcanza para justificar un negocio?
 
 ## Análisis de oportunidad (1 línea cada uno, conciso)

@@ -1,0 +1,26 @@
+name: whatnot-test
+
+# Test ad-hoc: valida que el fix del sesgo anti-madurez (score.md/triage.md)
+# realmente deje de penalizar empresas grandes/consolidadas en `ventana`.
+# NO tiene schedule.
+on:
+  workflow_dispatch: {}
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install deps
+        run: pip install -r requirements.txt
+
+      - name: Run Whatnot validation test
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python -m scripts.whatnot_test

@@ -361,6 +361,15 @@ RSS_FEEDS = {
     # Dive) — mismo patrón probado, y ya trajo justo el caso buscado
     # ("Urban Outfitters' Nuuly pursues more fulfillment center automation").
     "supplychaindive": "https://www.supplychaindive.com/feeds/news/",
+    # Marketplaces/ecommerce a ESCALA, no solo rondas de financiamiento
+    # (tesis: ecommerce ángulo 3, marketplace) — 2026-09: Matías señaló que
+    # el scouting nunca detectó Whatnot/Vinted/Back Market pese a ser
+    # marketplaces masivos y exitosos — el hueco real era prensa de
+    # financiamiento (techcrunch/tech.eu) que rara vez cubre resultados
+    # anuales o "state of the industry" de empresas ya consolidadas. PYMNTS
+    # sí lo hace — verificado con contenido real (cubrió la ronda de
+    # Whatnot, M&A de BNPL, proyecciones de escala de Mastercard).
+    "pymnts": "https://www.pymnts.com/feed/",
     # B2B ops (tesis: B2B ops — revenue/ventas, comunicación interna,
     # reporting, equipos en terreno) — 2026-09: mismo hueco que bodegaje,
     # encontrado auditando frecuencia REAL de fit_tesis en todo el
