@@ -1,9 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(cd /home/user/garrytan/gbrain && bun run src/cli.ts list --limit 3)",
-      "Bash(gbrain db-repair)",
-      "Bash(gbrain *)"
-    ]
-  }
-}
