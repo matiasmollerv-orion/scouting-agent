@@ -57,6 +57,13 @@ def _payload_items(user_content: str) -> list[dict]:
 
 
 def _fake_response_text(system: str, user_content: str) -> str:
+    if "analista de tendencias de mercado" in system:
+        # trends.py manda un payload {tema: [items]} (objeto), no un array
+        # como triage/deep — _payload_items() asume array y rompe con
+        # "Extra data" si se llama acá. No hace falta parsear el input:
+        # alcanza con devolver un array vacío (0 tendencias sintetizadas,
+        # camino válido y real cuando nada pasa el umbral).
+        return "[]"
     items = _payload_items(user_content)
     if "TRIAGE" in system:
         # MODE="truncated": simula el bug real de 2026-W35 — el modelo se

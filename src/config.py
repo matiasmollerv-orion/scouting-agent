@@ -24,14 +24,35 @@ COST_LIMIT_USD = float(os.environ.get("SCOUTING_COST_LIMIT_USD", "0.30"))
 MIN_OBJETIVO = int(os.environ.get("SCOUTING_MIN_OBJETIVO", "24"))  # sobre 40
 MAX_IDEAS = 5
 # El email separa "Empresas" (candidato único, estudiable) de "Tendencias"
-# (análisis que cubre varios players). Sin esto, las tendencias — que suelen
-# puntuar alto por agregar señal de varias empresas — desplazaban a las
-# empresas concretas del top 5. Overridable por env.
-MAX_IDEAS_EMPRESA = int(os.environ.get("SCOUTING_MAX_IDEAS_EMPRESA", "4"))
-MAX_IDEAS_TENDENCIA = int(os.environ.get("SCOUTING_MAX_IDEAS_TENDENCIA", "3"))
+# (análisis que cubre varios players) — solo para ORGANIZAR el email en dos
+# secciones, no para cortar contenido. 2026-09: el cupo estaba en 4+3=7,
+# pero se pagan hasta 8 (o más, con cupos de rescate) análisis profundos —
+# Matías: "para qué analizo 8 pagados si solo veo 4 en el correo?". Fix:
+# el cupo ahora es holgado a propósito (11 = TOP_DEEP más alto que
+# esperamos + MAX_RESCUE_SLOTS) — en la práctica nunca corta nada real,
+# todo lo que se paga se muestra. Si algún día ambos valores necesitan
+# subir de nuevo (TOP_DEEP o MAX_RESCUE_SLOTS), subir este límite con ellos.
+MAX_IDEAS_EMPRESA = int(os.environ.get("SCOUTING_MAX_IDEAS_EMPRESA", "11"))
+MAX_IDEAS_TENDENCIA = int(os.environ.get("SCOUTING_MAX_IDEAS_TENDENCIA", "11"))
 # Cuántos pasan del triage al análisis profundo. Overridable por env para
 # mini-runs reales baratos (ej: SCOUTING_TOP_DEEP=2 ≈ $0.01 total).
 TOP_DEEP = int(os.environ.get("SCOUTING_TOP_DEEP", "8"))
+# Categorías ALTA/MÁXIMA prioridad (prompts/score.md) sin representación
+# garantizada en el top-8 por mérito puro — 2026-09: Bienestar financiero
+# e IA ejecutivos perdían sistemáticamente la competencia por cupos contra
+# Futuro del trabajo (MÁXIMA prioridad, domina el ranking la mayoría de
+# semanas) — 0 y 2 candidatos reales en 9+ semanas respectivamente, pese a
+# triage con score real (13-27/40 visto en vivo). Mecanismo (ver score.py
+# _add_rescue_slots): si tras el top-8 por score ninguna fuente de esta
+# categoría está representada, se agrega el mejor candidato disponible de
+# esa categoría como cupo EXTRA — no le saca el lugar a nadie del top-8 por
+# mérito. Fuente como proxy de categoría porque el triage no asigna
+# fit_tesis, solo un score numérico.
+PRIORITY_CATEGORY_SOURCES = {
+    "Bienestar financiero": {"finextra", "tearsheet", "fintechtimes", "finovate"},
+    "IA ejecutivos": {"stratechery"},
+}
+MAX_RESCUE_SLOTS = 3  # tope duro de cupos extra por corrida, por costo
 
 # Búsquedas web reales para el deep (competencia global, ventana, por qué
 # ahora) — sin esto el modelo completaba esos campos desde su prior de
@@ -242,6 +263,40 @@ RELEVANCE_KEYWORDS = [
 # (no solo lo que pasa el filtro). No filtra nada: solo mide. La señal es la
 # aceleración entre semanas (práctica de Harmonic/Exploding Topics), no el
 # número absoluto.
+# Peso editorial por fuente, para "tendencias sintetizadas" (2026-09).
+# El conteo crudo de menciones por tema mezclaba dos tipos de señal muy
+# distintos: 5 piezas de redacción propia reporteando lo mismo (fuerte) vs.
+# 5 columnas de contribuyentes externos rotativos de UN medio (más débil,
+# más autoseleccionado). No default a 1.0 — una fuente no listada acá
+# probablemente sea ruido nuevo, mejor auditarla que asumir peso alto.
+SOURCE_WEIGHT = {
+    # Alto: redacción propia, reporteo real (Industry Dive family, pymnts,
+    # techcrunch/tech.eu con staff, analistas de una sola pluma pero de
+    # autoridad probada).
+    "finextra": 1.0, "tearsheet": 1.0, "retaildive": 1.0, "modernretail": 1.0,
+    "supplychaindive": 1.0, "grocerydive": 1.0, "manufacturingdive": 1.0,
+    "hrdive": 1.0, "pymnts": 1.0, "statnews": 1.0, "glossy": 1.0, "nrn": 1.0,
+    "skift": 1.0, "stratechery": 1.0, "restofworld": 1.0, "techcrunch": 1.0,
+    "techeu": 1.0, "techinasia": 1.0, "mit": 1.0, "aqua": 1.0, "mch": 1.0,
+    "redagricola": 1.0, "joshbersin": 1.0, "charter": 1.0,
+    # Alto: curadas por el propio fundador — ya pasaron su filtro personal.
+    "newsletters": 1.0, "brain-inbox": 1.0,
+    # Medio: columna/blog de un autor o contribuyentes externos rotativos —
+    # real, pero más autoseleccionado que redacción propia.
+    "fintechtimes": 0.6, "saastr": 0.6, "finovate": 0.6, "geekestate": 0.6,
+    "creatoreconomy": 0.6, "creatorscience": 0.6,
+    # Bajo: volumen alto, sin curación editorial — útil para detección
+    # temprana, no para confirmar tendencia por sí solo.
+    "hackernews": 0.3, "reddit_saas": 0.3, "yc": 0.3,
+}
+SOURCE_WEIGHT_DEFAULT = 0.4  # fuente no listada: ni alto ni descartable
+
+# Umbrales para que un tema crudo se considere "tendencia sintetizable":
+# mínimo 2 fuentes DISTINTAS y peso combinado mínimo 1.3 (no alcanza con
+# 2 fuentes de peso bajo — sí con 1 alta + 1 media, o 2 altas).
+TREND_MIN_SOURCES = 2
+TREND_MIN_WEIGHT = 1.3
+
 THEME_KEYWORDS = {
     "Futuro del trabajo": [
         "workforce", "hr tech", "people analytics", "headcount", "hiring",

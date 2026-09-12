@@ -12,6 +12,7 @@ from .pipeline.normalize import normalize
 from .pipeline.pool import load_newsletter_items, load_pool_items, reset_pool
 from .pipeline.prefilter import prefilter
 from .pipeline.score import score
+from .pipeline.trends import synthesize_trends
 from .render.email import render_html
 from .render.mailer import send_html
 from .render.report import render
@@ -75,7 +76,8 @@ def run() -> Path:
     for w in warnings:
         print(f"[salud] {w}")
 
-    themes = _count_themes(merged)
+    matched_items = _theme_items(merged)
+    themes = {cat: len(its) for cat, its in matched_items.items()}
     momentum = _theme_momentum(themes)
     print(f"[temas] {themes}")
     for m in momentum:
@@ -85,10 +87,23 @@ def run() -> Path:
     for d in dead:
         print(f"[salud-tema] {d}")
 
+    # Tendencias sintetizadas con evidencia real de 2+ fuentes (no solo
+    # conteo crudo) — ver docstring de trends.py. Costo se suma al total
+    # de la corrida; si nada pasa el umbral no llama al modelo (costo $0).
+    trends, trends_cost = synthesize_trends(matched_items)
+    # Se suman al mismo balde de "momentum" que ya se muestra en el reporte/
+    # email — misma sección, pero esto es evidencia real de 2+ fuentes
+    # distintas, no solo conteo crudo de keywords. Prefijo 📡 para
+    # distinguirlas de las de aceleración (conteo semana-a-semana).
+    for t in trends:
+        fuentes = ", ".join(t.get("fuentes", []))
+        momentum.append(f"📡 {t.get('subtema', '')} — {t.get('resumen', '')} (fuentes: {fuentes})")
+
     candidates = prefilter(merged, seen_urls=_load_seen(week_key))
     print(f"[prefilter] {len(candidates)} candidatos a Claude")
 
     result = score(candidates)
+    result.cost_usd += trends_cost  # se suma al costo total de la corrida
     scored = result.deep
     scored.sort(key=lambda s: s.objetivo_total, reverse=True)
     scoring_failed = bool(candidates) and not scored
@@ -143,7 +158,8 @@ def run() -> Path:
     # análisis profundo, no solo las que pasan el gate — así el segundo cerebro
     # ve la inteligencia completa, no solo el recorte que llega por email.
     report = render(scored, total_evaluados=len(candidates), min_objetivo=config.MIN_OBJETIVO,
-                    panorama=result.triage, gate_count=len(top_gate), warnings=warnings)
+                    panorama=result.triage, gate_count=len(top_gate), warnings=warnings,
+                    momentum=momentum)
 
     out = REPORTS_DIR / f"{week_key}.md"
     out.write_text(report, encoding="utf-8")
@@ -168,17 +184,20 @@ def run() -> Path:
     return out
 
 
-def _count_themes(items) -> dict[str, int]:
-    """Menciones por tema de la tesis sobre todo lo fetcheado esta semana."""
-    counts: dict[str, int] = {}
+def _theme_items(items) -> dict[str, list]:
+    """Items que matchean cada tema — base real detrás del conteo de menciones."""
+    matched: dict[str, list] = {cat: [] for cat in config.THEME_KEYWORDS}
     for cat, kws in config.THEME_KEYWORDS.items():
-        n = 0
         for it in items:
             haystack = f"{it.title} {it.text}".lower()
             if any(kw in haystack for kw in kws):
-                n += 1
-        counts[cat] = n
-    return counts
+                matched[cat].append(it)
+    return matched
+
+
+def _count_themes(items) -> dict[str, int]:
+    """Menciones por tema de la tesis sobre todo lo fetcheado esta semana."""
+    return {cat: len(its) for cat, its in _theme_items(items).items()}
 
 
 def _theme_momentum(themes: dict[str, int]) -> list[str]:

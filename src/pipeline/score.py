@@ -116,6 +116,7 @@ def score(items: list[Item]) -> ScoreResult:
         print("[score] triage sin resultados — fallback: top por orden de prefilter")
         ranked = items[: config.TOP_DEEP]
     top = ranked[: config.TOP_DEEP]
+    top = _add_rescue_slots(top, ranked)
     print(f"[score] triage: {len(items)} candidatos -> top {len(top)} a análisis profundo")
 
     if result.cost_usd >= config.COST_LIMIT_USD:
@@ -274,6 +275,30 @@ def _rank_from_triage(text: str, items: list[Item]) -> tuple[list[Item], dict[st
     ranked = sorted(scores, key=scores.get, reverse=True)
     # Excluidos (total=0) no pasan al deep aunque haya cupo.
     return [by_url[u] for u in ranked if scores[u] > 0], scores
+
+
+def _add_rescue_slots(top: list[Item], ranked: list[Item]) -> list[Item]:
+    """Cupos EXTRA (no reservados de los 8 por mérito) para categorías
+    ALTA/MÁXIMA prioridad sin representación — ver docstring de
+    config.PRIORITY_CATEGORY_SOURCES. No saca a nadie del top-8; solo
+    agrega, hasta MAX_RESCUE_SLOTS, si de verdad hace falta esa semana."""
+    top_sources = {it.source for it in top}
+    rescued: list[Item] = []
+    for categoria, sources in config.PRIORITY_CATEGORY_SOURCES.items():
+        if top_sources & sources:
+            continue  # ya hay representación real, no hace falta rescatar
+        candidato = next(
+            (it for it in ranked if it.source in sources and it not in top and it not in rescued),
+            None,
+        )
+        if candidato is None:
+            continue  # no llegó ningún candidato con score>0 de esta categoría esta semana
+        rescued.append(candidato)
+        print(f"[score] cupo de rescate: '{categoria}' sin representación — "
+              f"agregado {candidato.title[:50]!r} ({candidato.source})")
+        if len(rescued) >= config.MAX_RESCUE_SLOTS:
+            break
+    return top + rescued
 
 
 def _serialize(items: list[Item], text_chars: int) -> str:
