@@ -13,6 +13,7 @@ from datetime import datetime, timedelta, timezone
 from supabase import Client, create_client
 
 TABLE = "scouting_deep_ondemand"
+FAVORITES_TABLE = "scouting_favorites"
 WEEKLY_CAP = 15  # guardrail: tope de análisis on-demand por semana
 
 
@@ -88,3 +89,22 @@ def save_ondemand(week: str, item, scored, cost_usd: float) -> None:
         "cost_usd": round(cost_usd, 5),
     }
     sb.table(TABLE).upsert(row, on_conflict="url").execute()
+
+
+def fetch_favorites() -> dict[str, dict]:
+    """Todas las favoritas, indexadas por url."""
+    sb = get_client()
+    rows = sb.table(FAVORITES_TABLE).select("*").execute().data
+    return {r["url"]: r for r in rows}
+
+
+def add_favorite(url: str, title: str, note: str = "") -> None:
+    sb = get_client()
+    sb.table(FAVORITES_TABLE).upsert(
+        {"url": url, "title": title, "note": note}, on_conflict="url",
+    ).execute()
+
+
+def remove_favorite(url: str) -> None:
+    sb = get_client()
+    sb.table(FAVORITES_TABLE).delete().eq("url", url).execute()

@@ -46,3 +46,15 @@ alter table scouting_deep_ondemand add column if not exists redes_sociales text;
 alter table scouting_deep_ondemand add column if not exists fit_yc text;
 alter table scouting_deep_ondemand add column if not exists tipo_candidato text;
 alter table scouting_deep_ondemand add column if not exists competencia_global text;
+
+-- 2026-09: favoritos — marcar ideas para no perderlas de vista. Guarda solo
+-- el url (clave real de la idea en reports/*-full.json) + metadata liviana
+-- para no duplicar todo el análisis, que ya vive en full.json o en
+-- scouting_deep_ondemand si fue on-demand.
+create table if not exists scouting_favorites (
+  id bigint generated always as identity primary key,
+  url text not null unique,
+  title text not null,
+  note text,
+  favorited_at timestamptz not null default now()
+);

@@ -29,7 +29,10 @@ import pandas as pd
 import streamlit as st
 
 from dashboard.data import DEEP_COLS, load_all_weeks
-from dashboard.db import WEEKLY_CAP, count_this_week, fetch_ondemand, save_ondemand
+from dashboard.db import (
+    WEEKLY_CAP, add_favorite, count_this_week, fetch_favorites, fetch_ondemand,
+    remove_favorite, save_ondemand,
+)
 from dashboard.deep_single import analyze_one
 from src.models import Item
 
@@ -51,8 +54,17 @@ def _load_ondemand() -> dict:
         return {}
 
 
+@st.cache_data(ttl=30)
+def _load_favorites() -> dict:
+    try:
+        return fetch_favorites()
+    except Exception:
+        return {}
+
+
 df = _load()
 ondemand = _load_ondemand()
+favorites = _load_favorites()
 
 if df.empty:
     st.info("Todavía no hay datos — corre el pipeline semanal al menos una vez.")
@@ -94,6 +106,17 @@ if not valid_dates.empty:
 fit_options = sorted(f for f in df["fit_tesis"].dropna().unique() if f)
 fit_sel = st.sidebar.multiselect("Vertical / Industria (fit tesis)", fit_options)
 
+# "Tipo" (tipo_candidato) SOLO lo llena el análisis profundo — un candidato
+# que quedó en triage (la mayoría: ~8 de 150/semana pasan a profundo) nunca
+# tiene tipo_candidato, no es que falte poblarlo. Se filtra igual que
+# fit_tesis; las filas solo-triage sin tipo quedan afuera si se elige algo acá.
+tipo_options = sorted(t for t in df["tipo_candidato"].dropna().unique() if t)
+tipo_sel = st.sidebar.multiselect(
+    "Tipo", tipo_options,
+    help="Solo lo tienen las ideas con análisis PROFUNDO — las de solo-triage "
+         "quedan sin tipo porque esa etapa no lo calcula.",
+)
+
 source_options = sorted(df["source"].dropna().unique())
 source_sel = st.sidebar.multiselect("Fuente", source_options)
 
@@ -103,6 +126,7 @@ incluir_triage = st.sidebar.checkbox(
     "Incluir ideas solo-triage (sin análisis profundo)", value=True
 )
 solo_gate = st.sidebar.checkbox("Solo sobre el gate", value=False)
+solo_favoritas = st.sidebar.checkbox("⭐ Solo favoritas", value=False)
 busqueda = st.sidebar.text_input("Buscar en título")
 
 cap_used = 0
@@ -118,6 +142,8 @@ if date_range and len(date_range) == 2:
     f = f[f["week_date"].isna() | f["week_date"].between(start, end)]
 if fit_sel:
     f = f[f["fit_tesis"].isin(fit_sel)]
+if tipo_sel:
+    f = f[f["tipo_candidato"].isin(tipo_sel)]
 if source_sel:
     f = f[f["source"].isin(source_sel)]
 if not incluir_triage:
@@ -128,6 +154,8 @@ if score_range != (0, 40):
     f = f[scored | (unscored & incluir_triage)]
 if solo_gate:
     f = f[f["passes_gate"]]
+if solo_favoritas:
+    f = f[f["url"].isin(favorites)]
 if busqueda:
     f = f[f["title"].str.contains(busqueda, case=False, na=False)]
 
@@ -145,19 +173,24 @@ if f.empty:
 f = f.reset_index(drop=True)
 f["score_mostrado"] = f["objetivo_total"].where(f["has_deep"], f["triage_total"])
 f["analizado"] = f["has_deep"].map({True: "Profundo", False: "Triage"})
+f["favorita"] = f["url"].isin(favorites)
+# "—" en vez de vacío: deja claro que es "no aplica todavía" (solo-triage),
+# no un dato que falta cargar.
+f["tipo_mostrado"] = f["tipo_candidato"].where(f["tipo_candidato"] != "", "—")
 
 DISPLAY_COLS = [
-    "passes_gate", "score_mostrado", "analizado", "tipo_candidato", "title",
-    "source", "fit_tesis", "stage", "mercado_actual", "funding_raised",
+    "favorita", "passes_gate", "score_mostrado", "analizado", "tipo_mostrado",
+    "title", "source", "fit_tesis", "stage", "mercado_actual", "funding_raised",
     "fit_yc", "valida_idea_propia", "week", "url", "company_url",
 ]
 COLUMN_CONFIG = {
+    "favorita": st.column_config.CheckboxColumn("⭐", width="small"),
     "passes_gate": st.column_config.CheckboxColumn("Gate", width="small"),
     "score_mostrado": st.column_config.ProgressColumn(
         "Score", min_value=0, max_value=40, format="%d", width="small"
     ),
     "analizado": st.column_config.TextColumn("Análisis", width="small"),
-    "tipo_candidato": st.column_config.TextColumn("Tipo", width="small"),
+    "tipo_mostrado": st.column_config.TextColumn("Tipo", width="small"),
     "title": st.column_config.TextColumn("Idea", width="large"),
     "source": st.column_config.TextColumn("Fuente", width="small"),
     "fit_tesis": st.column_config.TextColumn("Vertical / Industria", width="medium"),
@@ -229,6 +262,17 @@ with cols[0]:
     else:
         st.caption("Solo triage — sin análisis profundo todavía.")
 with cols[1]:
+    es_favorita = row["url"] in favorites
+    if es_favorita:
+        if st.button("⭐ Quitar de favoritas", key=f"unfav_{row['url']}"):
+            remove_favorite(row["url"])
+            st.cache_data.clear()
+            st.rerun()
+    else:
+        if st.button("☆ Marcar favorita", key=f"fav_{row['url']}"):
+            add_favorite(row["url"], row["title"])
+            st.cache_data.clear()
+            st.rerun()
     if not row["has_deep"]:
         disabled = cap_used >= WEEKLY_CAP
         if st.button("🔍 Analizar en profundidad", key=f"deep_{row['url']}", disabled=disabled):
