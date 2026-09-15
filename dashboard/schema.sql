@@ -58,3 +58,43 @@ create table if not exists scouting_favorites (
   note text,
   favorited_at timestamptz not null default now()
 );
+
+-- 2026-09: análisis de MERCADO (no de empresa) — metodología de 8 pasos
+-- (Aulet beachhead, TAM bottom-up+top-down, Porter, JTBD, WTP estimado/
+-- validado con umbral Steve Blank, fit fundador vs prompts/score.md, RAT,
+-- regulación). Ver prompts/market_analysis.md. Cola manual, disparada por
+-- Matías desde el dashboard o desde una sesión de Claude Code — nunca
+-- automática. `source_url` referencia el candidato original en
+-- reports/*-full.json cuando origen='dashboard'; null cuando es una
+-- empresa que Matías da directo (origen='manual'/'chat').
+create table if not exists scouting_market_analysis (
+  id bigint generated always as identity primary key,
+  company_name text not null,
+  company_url text,
+  source_url text,
+  origen text not null default 'manual',  -- 'dashboard' | 'manual' | 'chat'
+  beachhead_hint text,  -- hipótesis pre-discutida ANTES del análisis caro
+  context_note text,    -- lo que Matías agrega al encolar (opcional)
+  status text not null default 'queued',  -- 'queued' | 'analizando' | 'listo' | 'error'
+  requested_at timestamptz not null default now(),
+  completed_at timestamptz,
+  cost_usd numeric,
+  error_detail text,
+  -- Esquema fijo de salida (los 13 campos del prompt), texto libre con
+  -- evidencia embebida — no JSON anidado, para tabular fácil en el
+  -- comparador del dashboard.
+  beachhead_definido text,
+  tam_bottom_up text,
+  tam_top_down text,
+  discrepancia_tam text,
+  competencia_global text,
+  competencia_local text,
+  competencia_en_beachhead_especifico text,
+  dolor_jtbd text,
+  wtp_estimado text,
+  wtp_validado text,
+  fit_fundador text,
+  rat_supuesto text,
+  rat_prueba_barata text,
+  regulacion text
+);

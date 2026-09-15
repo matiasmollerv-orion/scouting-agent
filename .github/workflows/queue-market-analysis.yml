@@ -1,0 +1,44 @@
+name: queue-market-analysis
+
+# Encola una empresa para análisis de mercado desde una sesión de Claude
+# Code (el usuario se la da a Claude en el chat) — solo escribe la fila,
+# NO corre el análisis caro. Ese paso es siempre separado (market-analysis.yml).
+on:
+  workflow_dispatch:
+    inputs:
+      company_name:
+        description: "Nombre de la empresa/candidato de referencia"
+        required: true
+      company_url:
+        description: "URL de la empresa (opcional)"
+        required: false
+      beachhead_hint:
+        description: "Hipótesis de beachhead ya discutida (opcional)"
+        required: false
+      context_note:
+        description: "Contexto adicional (opcional)"
+        required: false
+
+jobs:
+  queue:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install deps
+        run: pip install -r requirements.txt
+
+      - name: Encolar
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+          COMPANY_NAME: ${{ inputs.company_name }}
+          COMPANY_URL: ${{ inputs.company_url }}
+          BEACHHEAD_HINT: ${{ inputs.beachhead_hint }}
+          CONTEXT_NOTE: ${{ inputs.context_note }}
+        run: python -m scripts.queue_market_analysis

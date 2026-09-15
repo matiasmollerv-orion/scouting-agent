@@ -1,0 +1,29 @@
+name: market-analysis
+
+# Procesa TODA la cola de scouting_market_analysis (status='queued') —
+# análisis de mercado de 8 pasos, ver prompts/market_analysis.md. SIEMPRE
+# manual — nunca schedule. Se dispara desde el dashboard (marcando) + acá
+# (analizando) como dos pasos separados a propósito.
+on:
+  workflow_dispatch: {}
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install deps
+        run: pip install -r requirements.txt
+
+      - name: Procesar cola de análisis de mercado
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+        run: python -m scripts.market_analysis

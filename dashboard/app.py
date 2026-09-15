@@ -30,8 +30,8 @@ import streamlit as st
 
 from dashboard.data import DEEP_COLS, load_all_weeks
 from dashboard.db import (
-    WEEKLY_CAP, add_favorite, count_this_week, fetch_favorites, fetch_ondemand,
-    remove_favorite, save_ondemand,
+    WEEKLY_CAP, add_favorite, count_this_week, fetch_favorites, fetch_market_analyses,
+    fetch_ondemand, queue_market_analysis, remove_favorite, save_ondemand,
 )
 from dashboard.deep_single import analyze_one
 from src.models import Item
@@ -62,9 +62,27 @@ def _load_favorites() -> dict:
         return {}
 
 
+@st.cache_data(ttl=30)
+def _load_market_by_source_url() -> dict:
+    """Indexado por source_url (no por id) — así una fila de la tabla
+    principal sabe si YA tiene un análisis de mercado pedido, sea cual sea
+    su estado (queued/analizando/listo/error)."""
+    try:
+        rows = fetch_market_analyses()
+    except Exception:
+        return {}
+    out: dict[str, dict] = {}
+    for r in rows:
+        su = r.get("source_url")
+        if su and su not in out:  # más reciente primero, ya viene ordenado así
+            out[su] = r
+    return out
+
+
 df = _load()
 ondemand = _load_ondemand()
 favorites = _load_favorites()
+market_by_url = _load_market_by_source_url()
 
 if df.empty:
     st.info("Todavía no hay datos — corre el pipeline semanal al menos una vez.")
@@ -177,14 +195,20 @@ f["favorita"] = f["url"].isin(favorites)
 # "—" en vez de vacío: deja claro que es "no aplica todavía" (solo-triage),
 # no un dato que falta cargar.
 f["tipo_mostrado"] = f["tipo_candidato"].where(f["tipo_candidato"] != "", "—")
+_MARKET_BADGE = {"queued": "📊 en cola", "analizando": "📊 analizando",
+                 "listo": "📊 ✅ listo", "error": "📊 ⚠️ error"}
+f["analisis_mercado"] = f["url"].map(
+    lambda u: _MARKET_BADGE.get((market_by_url.get(u) or {}).get("status"), "")
+)
 
 DISPLAY_COLS = [
     "favorita", "passes_gate", "score_mostrado", "analizado", "tipo_mostrado",
-    "title", "source", "fit_tesis", "stage", "mercado_actual", "funding_raised",
-    "fit_yc", "valida_idea_propia", "week", "url", "company_url",
+    "analisis_mercado", "title", "source", "fit_tesis", "stage", "mercado_actual",
+    "funding_raised", "fit_yc", "valida_idea_propia", "week", "url", "company_url",
 ]
 COLUMN_CONFIG = {
     "favorita": st.column_config.CheckboxColumn("⭐", width="small"),
+    "analisis_mercado": st.column_config.TextColumn("Análisis de mercado", width="medium"),
     "passes_gate": st.column_config.CheckboxColumn("Gate", width="small"),
     "score_mostrado": st.column_config.ProgressColumn(
         "Score", min_value=0, max_value=40, format="%d", width="small"
@@ -291,3 +315,27 @@ with cols[1]:
                 st.error("El modelo no devolvió un resultado válido.")
         if disabled:
             st.caption("Tope semanal alcanzado")
+
+    st.divider()
+    existing_market = market_by_url.get(row["url"])
+    if existing_market:
+        st.caption(f"📊 Análisis de mercado: {_MARKET_BADGE.get(existing_market['status'], existing_market['status'])}")
+        st.page_link("pages/1_Analisis_de_Mercado.py", label="Ver análisis de mercado →")
+    else:
+        with st.form(key=f"market_form_{row['url']}"):
+            st.caption("📊 Pedir análisis de MERCADO (no de esta empresa — del "
+                       "mercado/categoría que representa, ver metodología en la pantalla nueva)")
+            hint = st.text_area(
+                "Hipótesis de beachhead (opcional, pero recomendado)",
+                placeholder="Si ya tenés una idea del segmento angosto real, ponela acá — "
+                            "el análisis parte de esto en vez de definir uno genérico.",
+                key=f"hint_{row['url']}",
+            )
+            if st.form_submit_button("📊 Pedir análisis de mercado"):
+                queue_market_analysis(
+                    company_name=row["title"], company_url=row.get("company_url") or "",
+                    source_url=row["url"], origen="dashboard", beachhead_hint=hint,
+                )
+                st.success("Encolado — el análisis corre en la próxima corrida manual, no es instantáneo.")
+                st.cache_data.clear()
+                st.rerun()

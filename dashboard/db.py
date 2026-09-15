@@ -14,6 +14,7 @@ from supabase import Client, create_client
 
 TABLE = "scouting_deep_ondemand"
 FAVORITES_TABLE = "scouting_favorites"
+MARKET_TABLE = "scouting_market_analysis"
 WEEKLY_CAP = 15  # guardrail: tope de análisis on-demand por semana
 
 
@@ -108,3 +109,40 @@ def add_favorite(url: str, title: str, note: str = "") -> None:
 def remove_favorite(url: str) -> None:
     sb = get_client()
     sb.table(FAVORITES_TABLE).delete().eq("url", url).execute()
+
+
+# --- Análisis de mercado (metodología 8 pasos, ver prompts/market_analysis.md) ---
+
+def fetch_market_analyses() -> list[dict]:
+    """Todas las filas de la cola, sin importar estado, más recientes primero."""
+    sb = get_client()
+    return (
+        sb.table(MARKET_TABLE).select("*")
+        .order("requested_at", desc=True).execute().data
+    )
+
+
+def queue_market_analysis(
+    company_name: str, company_url: str = "", source_url: str = "",
+    origen: str = "manual", beachhead_hint: str = "", context_note: str = "",
+) -> None:
+    """Encola una empresa/mercado para análisis — NO lo corre, solo lo marca.
+    El paso caro lo dispara scripts/market_analysis.py, siempre a mano."""
+    sb = get_client()
+    sb.table(MARKET_TABLE).insert({
+        "company_name": company_name,
+        "company_url": company_url or None,
+        "source_url": source_url or None,
+        "origen": origen,
+        "beachhead_hint": beachhead_hint or None,
+        "context_note": context_note or None,
+        "status": "queued",
+    }).execute()
+
+
+def update_market_analysis(row_id: int, **fields) -> None:
+    """Actualiza cualquier subconjunto de columnas de una fila — usado por
+    scripts/market_analysis.py para marcar 'analizando'/'listo'/'error' y
+    escribir el resultado."""
+    sb = get_client()
+    sb.table(MARKET_TABLE).update(fields).eq("id", row_id).execute()
