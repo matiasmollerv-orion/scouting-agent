@@ -22,6 +22,9 @@ on:
       new_context_note:
         description: "Nuevo context_note (opcional)"
         required: false
+      new_status:
+        description: "Poné 'queued' para reintentar una fila en 'error' (única transición soportada)"
+        required: false
 
 jobs:
   update:
@@ -46,4 +49,5 @@ jobs:
           NEW_EMPRESAS_REFERENTES: ${{ inputs.new_empresas_referentes }}
           NEW_BEACHHEAD_HINT: ${{ inputs.new_beachhead_hint }}
           NEW_CONTEXT_NOTE: ${{ inputs.new_context_note }}
+          NEW_STATUS: ${{ inputs.new_status }}
         run: python -m scripts.update_market_queue
