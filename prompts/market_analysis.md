@@ -49,6 +49,14 @@ Casi siempre significa que el bottom-up tiene un supuesto de precio o
 población mal calibrado, o que el top-down incluye algo que no aplica al
 beachhead. Marcalo para que el fundador lo investigue, no lo resuelvas vos.
 
+**Formato obligatorio de `tam_bottom_up` y `tam_top_down`**: la PRIMERA línea
+del campo es exclusivamente el número final, en este formato exacto:
+`**Número: US$X-YM/año**` (o la unidad que corresponda — la cifra sola, sin
+mezclarla con el razonamiento). Recién después, en el resto del campo, va
+todo el razonamiento/evidencia que la sustenta. El dashboard extrae esa
+primera línea para mostrarla como número grande — si no sigue el formato
+exacto, se muestra vacío.
+
 ## Paso 3 — Intensidad competitiva (Porter simplificado)
 
 Quiénes ya juegan, separados en GLOBAL y LOCAL/LatAm — no los mezcles (ya es
@@ -70,7 +78,9 @@ la prueba de que alguien compra.
 ## Paso 5 — WTP (willingness to pay) — dos campos, NUNCA mezclados
 
 - **WTP estimado**: proxy rápido por lo que cobran comparables/competidores
-  directos. Siempre completalo, siempre marcado como estimado.
+  directos. Siempre completalo, siempre marcado como estimado. Mismo formato
+  obligatorio que el TAM: primera línea `**Número: US$X-Y/mes**` (o la
+  unidad que corresponda), después el razonamiento.
 - **WTP validado**: vacío por default. El estándar para llenarlo NO es
   "encontré una mención de que a alguien le interesó" — es el modelo de
   Customer Development de Steve Blank: **30-50 entrevistas** con clientes
@@ -104,6 +114,11 @@ afirmarlo — cero cifras o nombres de empresa inventados. Si algo no se pudo
 verificar, el campo dice explícitamente "no verificado" o "supuesto a
 validar", nunca se deja vacío en silencio ni se asume. Mismo estándar que ya
 se aplica al campo `competencia_global` del scoring normal.
+
+**Citas: texto plano, nunca markup.** Cuando cites una fuente, escribilo
+como texto normal entre paréntesis — `(fuente: nombre, año)` — NUNCA como
+tags tipo `<cite index="...">...</cite>` ni ningún otro markup XML/HTML. El
+dashboard muestra el campo tal cual, cualquier tag crudo se ve roto.
 
 # Salida — esquema fijo, JSON, sin texto libre fuera del JSON
 

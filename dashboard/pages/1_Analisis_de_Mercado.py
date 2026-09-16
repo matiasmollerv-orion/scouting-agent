@@ -10,6 +10,7 @@ empresa de referencia (ej: Decade) solo ilustra que el mercado existe.
 from __future__ import annotations
 
 import os
+import re
 import sys
 from pathlib import Path
 
@@ -58,19 +59,74 @@ FIELD_LABELS = {
     "regulacion": "8. Regulación/barreras estructurales",
 }
 
-# Agrupa los 13 campos en las mismas secciones que la metodología de 8 pasos
-# — evita la pared de texto plano, cada grupo es una card con su propio
-# título e ícono, escaneable de un vistazo antes de entrar al detalle.
-FIELD_GROUPS = [
+# TAM y WTP se renderizan aparte (número grande + metodología colapsable) —
+# el resto de los campos usa la card de texto genérica. Ver _render_money_field.
+GENERIC_FIELD_GROUPS = [
     ("🎯 1. Beachhead", ["beachhead_definido"]),
-    ("📐 2. TAM", ["tam_bottom_up", "tam_top_down", "discrepancia_tam"]),
     ("⚔️ 3. Competencia", ["competencia_global", "competencia_local", "competencia_en_beachhead_especifico"]),
     ("🩹 4. Dolor (JTBD)", ["dolor_jtbd"]),
-    ("💰 5. Disposición a pagar", ["wtp_estimado", "wtp_validado"]),
     ("🧑‍💼 6. Fit fundador", ["fit_fundador"]),
     ("🧪 7. RAT", ["rat_supuesto", "rat_prueba_barata"]),
     ("⚖️ 8. Regulación", ["regulacion"]),
 ]
+
+# --- Limpieza y extracción de texto generado por el modelo -----------------
+# Dos bugs reales encontrados 2026-09-16 con datos pagados reales:
+# (1) Streamlit interpreta "$..$" como fórmula LaTeX por default — cualquier
+#     monto en dólares en el texto ("US$12-13M/año") rompe el render entero.
+#     Se escapa "$" ANTES de pasar por st.markdown/st.caption (st.metric no
+#     necesita esto, su value nunca se interpreta como markdown).
+# (2) El texto trae tags crudos <cite index="50-1">...</cite> de las citas
+#     de búsqueda web — se sacan los tags, se deja el texto citado.
+_CITE_RE = re.compile(r"</?cite[^>]*>", re.IGNORECASE)
+
+
+def _clean(text) -> str:
+    """Texto listo para st.markdown/st.caption/st.info — sin tags de cita,
+    sin que Streamlit intente leer los montos en dólares como LaTeX."""
+    if not text:
+        return ""
+    text = _CITE_RE.sub("", str(text))
+    return text.replace("$", "\\$")
+
+
+# Convención NUEVA para corridas futuras (ver prompts/market_analysis.md):
+# el campo debe arrancar con "**Número: <valor>**" en su propia línea — eso
+# hace la extracción exacta, sin adivinar. Para los 5 análisis ya pagados el
+# 2026-09-16 (corridos ANTES de este fix) no existe esa línea, así que cae
+# al heurístico de regex — mejor esfuerzo, no perfecto, pero no amerita
+# volver a gastar en la API solo para reformatear texto que ya existe.
+_HEADLINE_RE = re.compile(r"^\*\*Número:\s*(.+?)\*\*", re.IGNORECASE | re.MULTILINE)
+_MONEY_USD_RE = re.compile(
+    r"(?:USD?\$|US\s?\$|USD)\s?[\d][\d.,]*(?:\s?[-–a]\s?[\d][\d.,]*)?\s?[kKmMbB]?"
+    r"(?:/(?:año|mes|year|month))?"
+)
+_MONEY_ANY_RE = re.compile(
+    r"(?:CLP|EUR|€|USD?\$|US\s?\$|USD)\s?[\d][\d.,]*(?:\s?[-–a]\s?[\d][\d.,]*)?\s?[kKmMbB]?"
+    r"(?:/(?:año|mes|year|month))?"
+)
+
+
+def _headline(text) -> str | None:
+    """Mejor esfuerzo para sacar EL número de un campo largo — prioriza la
+    línea explícita "**Número: ...**" (formato nuevo), si no existe busca el
+    ÚLTIMO monto en USD mencionado (el modelo suele cerrar con el total: "...
+    TOTAL BOTTOM-UP: ~US$15-16M/año"), si no hay USD cae a cualquier moneda."""
+    if not text:
+        return None
+    text = str(text)
+    m = _HEADLINE_RE.search(text)
+    if m:
+        return m.group(1).strip()
+    usd = _MONEY_USD_RE.findall(text)
+    if usd:
+        return usd[-1].strip()
+    any_money = _MONEY_ANY_RE.findall(text)
+    return any_money[-1].strip() if any_money else None
+
+
+def _short(name: str, n: int = 42) -> str:
+    return name if len(name) <= n else name[: n - 1] + "…"
 
 
 @st.cache_data(ttl=30)
@@ -150,45 +206,82 @@ with tab_lista:
         st.info("👆 Seleccioná una fila para ver el detalle completo.")
     else:
         row = df.iloc[selected[0]]
-        st.markdown(f"### {row['market_name']}")
+        st.markdown(f"### {_clean(row['market_name'])}")
         meta_bits = [STATUS_BADGE.get(row['status'], row['status']), f"pedido {row['requested_at']}"]
         if pd.notna(row.get("cost_usd")):
-            meta_bits.append(f"costo ${row['cost_usd']:.4f}")
+            meta_bits.append(f"costo \\${row['cost_usd']:.4f}")
         if row.get("empresas_referentes"):
-            meta_bits.append(f"referentes: {row['empresas_referentes']}")
+            meta_bits.append(f"referentes: {_clean(row['empresas_referentes'])}")
         st.caption(" · ".join(meta_bits))
 
         if row.get("beachhead_hint"):
             with st.container(border=True):
                 st.markdown("##### 💡 Hipótesis de beachhead dada")
-                st.markdown(row["beachhead_hint"])
+                st.markdown(_clean(row["beachhead_hint"]))
         if row.get("context_note"):
             with st.container(border=True):
                 st.markdown("##### 📎 Contexto adicional dado")
-                st.markdown(row["context_note"])
+                st.markdown(_clean(row["context_note"]))
 
         if row["status"] == "error":
-            st.error(f"Error: {row.get('error_detail', 'sin detalle')}")
+            st.error(f"Error: {_clean(row.get('error_detail', 'sin detalle'))}")
         elif row["status"] in ("queued", "analizando"):
             st.warning("Todavía no tiene resultado — falta correr "
                        "`scripts/market_analysis.py` (siempre manual).")
         else:
             st.divider()
-            # Cards por grupo (metodología de 8 pasos) en vez de texto plano
-            # corrido — cada grupo se escanea solo, sin tener que leer todo.
-            for group_label, fields in FIELD_GROUPS:
+
+            # --- 1. Beachhead (genérico) ---
+            group_label, fields = GENERIC_FIELD_GROUPS[0]
+            with st.container(border=True):
+                st.markdown(f"##### {group_label}")
+                st.markdown(_clean(row.get(fields[0])) or "—")
+
+            # --- 2. TAM — número grande primero, metodología colapsada ---
+            with st.container(border=True):
+                st.markdown("##### 📐 2. TAM")
+                c1, c2 = st.columns(2)
+                with c1:
+                    st.metric("Bottom-up (el número que manda)", _headline(row.get("tam_bottom_up")) or "—")
+                with c2:
+                    st.metric("Top-down (sanity check)", _headline(row.get("tam_top_down")) or "—")
+                if row.get("discrepancia_tam"):
+                    st.warning(_clean(row["discrepancia_tam"]))
+                with st.expander("Ver cómo se calculó"):
+                    st.markdown("**Bottom-up:**")
+                    st.markdown(_clean(row.get("tam_bottom_up")) or "—")
+                    st.markdown("**Top-down:**")
+                    st.markdown(_clean(row.get("tam_top_down")) or "—")
+
+            # --- 3-4. Competencia + Dolor (genéricos) ---
+            for group_label, fields in GENERIC_FIELD_GROUPS[1:3]:
                 with st.container(border=True):
                     st.markdown(f"##### {group_label}")
                     for field in fields:
-                        val = row.get(field)
                         if len(fields) > 1:
                             st.markdown(f"**{FIELD_LABELS[field].split('. ', 1)[-1]}**")
-                        if field == "discrepancia_tam" and not val:
-                            st.caption("Sin discrepancia significativa entre bottom-up y top-down.")
-                        elif field == "wtp_validado" and not val:
-                            st.caption("Vacío — pendiente de entrevistas reales (30-50, Customer Development).")
-                        else:
-                            st.markdown(val or "—")
+                        st.markdown(_clean(row.get(field)) or "—")
+
+            # --- 5. WTP — número grande primero, metodología colapsada ---
+            with st.container(border=True):
+                st.markdown("##### 💰 5. Disposición a pagar")
+                st.metric("WTP estimado (por comparables)", _headline(row.get("wtp_estimado")) or "—")
+                with st.expander("Ver cómo se estimó"):
+                    st.markdown(_clean(row.get("wtp_estimado")) or "—")
+                st.markdown("**WTP validado (30-50 entrevistas)**")
+                if row.get("wtp_validado"):
+                    st.markdown(_clean(row["wtp_validado"]))
+                else:
+                    st.caption("Vacío — pendiente de entrevistas reales (Customer Development).")
+
+            # --- 6-8. Fit fundador + RAT + Regulación (genéricos) ---
+            for group_label, fields in GENERIC_FIELD_GROUPS[3:]:
+                with st.container(border=True):
+                    st.markdown(f"##### {group_label}")
+                    for field in fields:
+                        if len(fields) > 1:
+                            st.markdown(f"**{FIELD_LABELS[field].split('. ', 1)[-1]}**")
+                        st.markdown(_clean(row.get(field)) or "—")
 
 with tab_comparar:
     listas = df[df["status"] == "listo"]
@@ -198,9 +291,31 @@ with tab_comparar:
         opciones = listas["market_name"].tolist()
         elegidas = st.multiselect("Elegí 2 o más para comparar lado a lado", opciones)
         if len(elegidas) >= 2:
-            subset = listas[listas["market_name"].isin(elegidas)].set_index("market_name")
-            comp = subset[list(FIELD_LABELS.keys())].T
-            comp.index = [FIELD_LABELS[k] for k in FIELD_LABELS]
-            st.dataframe(comp, use_container_width=True, height=560)
+            by_name = {r["market_name"]: r for r in listas[listas["market_name"].isin(elegidas)].to_dict("records")}
+
+            st.markdown("##### 📐 Números clave, lado a lado")
+            cols = st.columns(len(elegidas))
+            for col, name in zip(cols, elegidas):
+                row = by_name[name]
+                with col:
+                    st.markdown(f"**{_clean(_short(name))}**")
+                    st.metric("TAM bottom-up", _headline(row.get("tam_bottom_up")) or "—")
+                    st.metric("TAM top-down", _headline(row.get("tam_top_down")) or "—")
+                    st.metric("WTP estimado", _headline(row.get("wtp_estimado")) or "—")
+
+            st.divider()
+            st.markdown("##### 🔍 Comparar un paso específico en detalle")
+            campo = st.selectbox(
+                "Elegí qué campo comparar", list(FIELD_LABELS.keys()),
+                format_func=lambda k: FIELD_LABELS[k],
+            )
+            cols2 = st.columns(len(elegidas))
+            for col, name in zip(cols2, elegidas):
+                row = by_name[name]
+                with col:
+                    st.markdown(f"**{_clean(_short(name))}**")
+                    with st.container(border=True):
+                        val = row.get(campo)
+                        st.markdown(_clean(val) if val else "—")
         elif elegidas:
             st.caption("Elegí al menos 2 para comparar.")
