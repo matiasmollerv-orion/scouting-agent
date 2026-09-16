@@ -33,7 +33,11 @@ from src.pipeline.score import _call_direct, web_search_tool  # noqa: E402
 
 PROMPTS_DIR = REPO / "prompts"
 MAX_SEARCHES = 15  # bastante más que el deep semanal (4) — 8 pasos con verificación real
-MAX_TOKENS = 6000  # 13 campos con evidencia embebida, no resúmenes cortos
+MAX_TOKENS = 16000  # 13 campos con evidencia embebida, no resúmenes cortos —
+# 6000 se cortó a mitad de generar el JSON en la corrida real del
+# 2026-09-16 (salida real ~7400-7800 tokens, más que el límite viejo) y
+# esos 3 análisis se perdieron completos (mismo síntoma que ya se arregló
+# una vez en el pipeline semanal por el mismo motivo, ver score.py history)
 RUN_COST_CEILING = 8.0  # guardrail de seguridad para esta corrida completa, no por-análisis
 
 OUTPUT_FIELDS = [
