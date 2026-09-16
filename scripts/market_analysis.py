@@ -86,9 +86,13 @@ def _parse_object(text: str) -> dict | None:
 
 
 def build_user(row: dict) -> str:
-    parts = [f"Empresa/candidato de referencia: {row['company_name']}"]
-    if row.get("company_url"):
-        parts.append(f"URL: {row['company_url']}")
+    parts = [f"Mercado/oportunidad a analizar: {row['market_name']}"]
+    if row.get("empresas_referentes"):
+        parts.append(
+            f"Empresas de referencia (ilustran que el mercado existe — el "
+            f"análisis es del MERCADO, no de estas empresas puntuales): "
+            f"{row['empresas_referentes']}"
+        )
     if row.get("beachhead_hint"):
         parts.append(
             f"\nHipótesis de beachhead YA discutida con el fundador (partí de "
@@ -104,7 +108,7 @@ def main() -> None:
     if not queue:
         print("[market] cola vacía — nada que procesar")
         return
-    print(f"[market] {len(queue)} en cola: {[r['company_name'] for r in queue]}")
+    print(f"[market] {len(queue)} en cola: {[r['market_name'] for r in queue]}")
 
     system = build_system()
     client = Anthropic(api_key=config.ANTHROPIC_API_KEY)
@@ -114,10 +118,10 @@ def main() -> None:
     for row in queue:
         if total_cost >= RUN_COST_CEILING:
             print(f"[market] GUARDRAIL: ${total_cost:.2f} ≥ ${RUN_COST_CEILING} — "
-                  f"se aborta el resto de la cola ({row['company_name']} y siguientes quedan 'queued')")
+                  f"se aborta el resto de la cola ({row['market_name']} y siguientes quedan 'queued')")
             break
 
-        print(f"\n[market] === {row['company_name']} (id={row['id']}) ===")
+        print(f"\n[market] === {row['market_name']} (id={row['id']}) ===")
         update_market_analysis(row["id"], status="analizando")
         user = build_user(row)
         try:
@@ -138,7 +142,7 @@ def main() -> None:
             print(f"[market] ✅ listo — costo=${cost:.4f}"
                   f"{' (truncado, revisar)' if truncated else ''}")
         except Exception as e:  # noqa: BLE001 — un error no debe tumbar el resto de la cola
-            print(f"[market] ❌ error en '{row['company_name']}': {e}")
+            print(f"[market] ❌ error en '{row['market_name']}': {e}")
             update_market_analysis(row["id"], status="error", error_detail=str(e)[:2000])
         time.sleep(2)  # cortesía con rate limits entre análisis pesados
 

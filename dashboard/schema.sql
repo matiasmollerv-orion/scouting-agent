@@ -64,14 +64,23 @@ create table if not exists scouting_favorites (
 -- validado con umbral Steve Blank, fit fundador vs prompts/score.md, RAT,
 -- regulación). Ver prompts/market_analysis.md. Cola manual, disparada por
 -- Matías desde el dashboard o desde una sesión de Claude Code — nunca
--- automática. `source_url` referencia el candidato original en
--- reports/*-full.json cuando origen='dashboard'; null cuando es una
--- empresa que Matías da directo (origen='manual'/'chat').
+-- automática.
+--
+-- El SUJETO es el mercado/oportunidad (market_name), NO una empresa — una
+-- empresa de referencia (Decade, Farther) solo ilustra que el mercado
+-- existe, puede haber varias, y el análisis puede no venir de ningún
+-- candidato del dashboard (ej: salió de una sesión de ideación). Por eso
+-- `empresas_referentes` es texto libre separado, y `source_url` es
+-- opcional (solo se llena cuando SÍ vino de un candidato puntual del
+-- dashboard, como metadata de origen, no como el sujeto del análisis).
 create table if not exists scouting_market_analysis (
   id bigint generated always as identity primary key,
-  company_name text not null,
-  company_url text,
-  source_url text,
+  market_name text not null,       -- la OPORTUNIDAD/mercado, ej: "asesoría
+                                    -- de inversión IA para clase media
+                                    -- chilena que ya invierte" — no un
+                                    -- nombre de empresa
+  empresas_referentes text,        -- ej: "Decade (Brasil), Farther (EEUU)"
+  source_url text,                 -- candidato del dashboard que lo disparó (opcional)
   origen text not null default 'manual',  -- 'dashboard' | 'manual' | 'chat'
   beachhead_hint text,  -- hipótesis pre-discutida ANTES del análisis caro
   context_note text,    -- lo que Matías agrega al encolar (opcional)

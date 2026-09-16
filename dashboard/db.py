@@ -123,15 +123,16 @@ def fetch_market_analyses() -> list[dict]:
 
 
 def queue_market_analysis(
-    company_name: str, company_url: str = "", source_url: str = "",
+    market_name: str, empresas_referentes: str = "", source_url: str = "",
     origen: str = "manual", beachhead_hint: str = "", context_note: str = "",
 ) -> None:
-    """Encola una empresa/mercado para análisis — NO lo corre, solo lo marca.
-    El paso caro lo dispara scripts/market_analysis.py, siempre a mano."""
+    """Encola un MERCADO/oportunidad para análisis — no una empresa (ver
+    docstring de la tabla en schema.sql). NO lo corre, solo lo marca. El
+    paso caro lo dispara scripts/market_analysis.py, siempre a mano."""
     sb = get_client()
     sb.table(MARKET_TABLE).insert({
-        "company_name": company_name,
-        "company_url": company_url or None,
+        "market_name": market_name,
+        "empresas_referentes": empresas_referentes or None,
         "source_url": source_url or None,
         "origen": origen,
         "beachhead_hint": beachhead_hint or None,

@@ -319,23 +319,17 @@ with cols[1]:
     st.divider()
     existing_market = market_by_url.get(row["url"])
     if existing_market:
-        st.caption(f"📊 Análisis de mercado: {_MARKET_BADGE.get(existing_market['status'], existing_market['status'])}")
-        st.page_link("pages/1_Analisis_de_Mercado.py", label="Ver análisis de mercado →")
+        st.caption(f"📊 Ya usada como referente en un análisis de mercado: "
+                   f"{_MARKET_BADGE.get(existing_market['status'], existing_market['status'])} "
+                   f"— \"{existing_market['market_name']}\"")
+        st.page_link("pages/1_Analisis_de_Mercado.py", label="Ver en Análisis de Mercado →")
     else:
-        with st.form(key=f"market_form_{row['url']}"):
-            st.caption("📊 Pedir análisis de MERCADO (no de esta empresa — del "
-                       "mercado/categoría que representa, ver metodología en la pantalla nueva)")
-            hint = st.text_area(
-                "Hipótesis de beachhead (opcional, pero recomendado)",
-                placeholder="Si ya tenés una idea del segmento angosto real, ponela acá — "
-                            "el análisis parte de esto en vez de definir uno genérico.",
-                key=f"hint_{row['url']}",
-            )
-            if st.form_submit_button("📊 Pedir análisis de mercado"):
-                queue_market_analysis(
-                    company_name=row["title"], company_url=row.get("company_url") or "",
-                    source_url=row["url"], origen="dashboard", beachhead_hint=hint,
-                )
-                st.success("Encolado — el análisis corre en la próxima corrida manual, no es instantáneo.")
-                st.cache_data.clear()
-                st.rerun()
+        st.caption("📊 El análisis de mercado no es sobre esta empresa puntual — es sobre "
+                   "el MERCADO que representa. Definí eso en la pantalla dedicada.")
+        if st.button("📊 Usar como referente para un análisis de mercado", key=f"market_{row['url']}"):
+            st.session_state["market_prefill"] = {
+                "empresas_referentes": row["title"],
+                "source_url": row["url"],
+                "origen": "dashboard",
+            }
+            st.switch_page("pages/1_Analisis_de_Mercado.py")
