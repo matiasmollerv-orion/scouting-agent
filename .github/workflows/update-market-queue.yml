@@ -1,0 +1,49 @@
+name: update-market-queue
+
+# Edita market_name/empresas_referentes/beachhead_hint/context_note de UNA
+# fila que todavía está en status='queued' — para corregir texto antes de
+# correr el análisis caro, sin tocar Supabase a mano. Ver
+# scripts/list_market_queue.py para encontrar el id.
+on:
+  workflow_dispatch:
+    inputs:
+      market_id:
+        description: "id de la fila a editar (ver list-market-queue.yml)"
+        required: true
+      new_market_name:
+        description: "Nuevo market_name (opcional — deja vacío para no cambiar)"
+        required: false
+      new_empresas_referentes:
+        description: "Nuevas empresas_referentes (opcional)"
+        required: false
+      new_beachhead_hint:
+        description: "Nuevo beachhead_hint (opcional)"
+        required: false
+      new_context_note:
+        description: "Nuevo context_note (opcional)"
+        required: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install deps
+        run: pip install -r requirements.txt
+
+      - name: Actualizar
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+          MARKET_ID: ${{ inputs.market_id }}
+          NEW_MARKET_NAME: ${{ inputs.new_market_name }}
+          NEW_EMPRESAS_REFERENTES: ${{ inputs.new_empresas_referentes }}
+          NEW_BEACHHEAD_HINT: ${{ inputs.new_beachhead_hint }}
+          NEW_CONTEXT_NOTE: ${{ inputs.new_context_note }}
+        run: python -m scripts.update_market_queue

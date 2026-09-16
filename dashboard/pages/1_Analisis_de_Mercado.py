@@ -58,6 +58,20 @@ FIELD_LABELS = {
     "regulacion": "8. Regulación/barreras estructurales",
 }
 
+# Agrupa los 13 campos en las mismas secciones que la metodología de 8 pasos
+# — evita la pared de texto plano, cada grupo es una card con su propio
+# título e ícono, escaneable de un vistazo antes de entrar al detalle.
+FIELD_GROUPS = [
+    ("🎯 1. Beachhead", ["beachhead_definido"]),
+    ("📐 2. TAM", ["tam_bottom_up", "tam_top_down", "discrepancia_tam"]),
+    ("⚔️ 3. Competencia", ["competencia_global", "competencia_local", "competencia_en_beachhead_especifico"]),
+    ("🩹 4. Dolor (JTBD)", ["dolor_jtbd"]),
+    ("💰 5. Disposición a pagar", ["wtp_estimado", "wtp_validado"]),
+    ("🧑‍💼 6. Fit fundador", ["fit_fundador"]),
+    ("🧪 7. RAT", ["rat_supuesto", "rat_prueba_barata"]),
+    ("⚖️ 8. Regulación", ["regulacion"]),
+]
+
 
 @st.cache_data(ttl=30)
 def _load() -> list[dict]:
@@ -137,27 +151,44 @@ with tab_lista:
     else:
         row = df.iloc[selected[0]]
         st.markdown(f"### {row['market_name']}")
-        st.caption(f"{STATUS_BADGE.get(row['status'], row['status'])} · pedido {row['requested_at']}"
-                   + (f" · costo ${row['cost_usd']:.4f}" if pd.notna(row.get("cost_usd")) else ""))
+        meta_bits = [STATUS_BADGE.get(row['status'], row['status']), f"pedido {row['requested_at']}"]
+        if pd.notna(row.get("cost_usd")):
+            meta_bits.append(f"costo ${row['cost_usd']:.4f}")
         if row.get("empresas_referentes"):
-            st.markdown(f"**Empresas de referencia:** {row['empresas_referentes']}")
+            meta_bits.append(f"referentes: {row['empresas_referentes']}")
+        st.caption(" · ".join(meta_bits))
+
         if row.get("beachhead_hint"):
-            st.info(f"**Hipótesis de beachhead dada:** {row['beachhead_hint']}")
+            with st.container(border=True):
+                st.markdown("##### 💡 Hipótesis de beachhead dada")
+                st.markdown(row["beachhead_hint"])
+        if row.get("context_note"):
+            with st.container(border=True):
+                st.markdown("##### 📎 Contexto adicional dado")
+                st.markdown(row["context_note"])
+
         if row["status"] == "error":
             st.error(f"Error: {row.get('error_detail', 'sin detalle')}")
         elif row["status"] in ("queued", "analizando"):
             st.warning("Todavía no tiene resultado — falta correr "
                        "`scripts/market_analysis.py` (siempre manual).")
         else:
-            for field, field_label in FIELD_LABELS.items():
-                val = row.get(field)
-                st.markdown(f"**{field_label}**")
-                if field == "discrepancia_tam" and not val:
-                    st.caption("Sin discrepancia significativa entre bottom-up y top-down.")
-                elif field == "wtp_validado" and not val:
-                    st.caption("Vacío — pendiente de entrevistas reales (30-50, Customer Development).")
-                else:
-                    st.write(val or "—")
+            st.divider()
+            # Cards por grupo (metodología de 8 pasos) en vez de texto plano
+            # corrido — cada grupo se escanea solo, sin tener que leer todo.
+            for group_label, fields in FIELD_GROUPS:
+                with st.container(border=True):
+                    st.markdown(f"##### {group_label}")
+                    for field in fields:
+                        val = row.get(field)
+                        if len(fields) > 1:
+                            st.markdown(f"**{FIELD_LABELS[field].split('. ', 1)[-1]}**")
+                        if field == "discrepancia_tam" and not val:
+                            st.caption("Sin discrepancia significativa entre bottom-up y top-down.")
+                        elif field == "wtp_validado" and not val:
+                            st.caption("Vacío — pendiente de entrevistas reales (30-50, Customer Development).")
+                        else:
+                            st.markdown(val or "—")
 
 with tab_comparar:
     listas = df[df["status"] == "listo"]
