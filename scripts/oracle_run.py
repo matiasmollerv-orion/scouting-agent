@@ -20,6 +20,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import os
+import random
 import re
 import sys
 from collections import Counter
@@ -49,14 +50,41 @@ WEIGHTS = {"evidencia_necesidad": 0.30, "tamano_gravedad": 0.20, "por_que_ahora"
 SENALES_VALIDAS = {"queja", "brecha", "fuerza_externa", "oferta"}
 
 
-def mining_user(cc: str, lens_key: str) -> str:
+MAX_FEEDBACK_PER_KIND = 5
+
+
+def lens_feedback() -> dict[str, str]:
+    """Bloque de feedback del fundador por lente, armado con sus veredictos reales
+    (Vault). Afina QUÉ se busca en cada lente: más de lo que le interesó, menos de
+    lo que descartó y por qué. Nunca se imprime (los logs de Actions son públicos)."""
+    from dashboard.db import fetch_verdicts
+    by_lens: dict[str, dict[str, list[str]]] = {}
+    for v in fetch_verdicts():
+        kind = "interes" if v["human_verdict"] in ("elegida", "guardada") else "descarte"
+        bucket = by_lens.setdefault(v["lens"], {"interes": [], "descarte": []})
+        if len(bucket[kind]) < MAX_FEEDBACK_PER_KIND:
+            reason = f" — motivo: {v['human_reason']}" if v.get("human_reason") else ""
+            bucket[kind].append(f"- ({v['country']}) {v['necesidad'][:110]}{reason}")
+    out = {}
+    for lens, b in by_lens.items():
+        parts = []
+        if b["interes"]:
+            parts.append("Le INTERESÓ (buscá más de este tipo):\n" + "\n".join(b["interes"]))
+        if b["descarte"]:
+            parts.append("DESCARTÓ (evitá este tipo, salvo evidencia nueva):\n" + "\n".join(b["descarte"]))
+        out[lens] = ("\nFeedback previo del fundador sobre ESTE lente — usalo para afinar qué buscás. "
+                     "Los motivos reflejan sus intereses, no su falta de experiencia:\n" + "\n".join(parts))
+    return out
+
+
+def mining_user(cc: str, lens_key: str, feedback: str = "") -> str:
     name, _ = COUNTRIES[cc]
     lens = LENS_BY_KEY[lens_key]
     extra = ("\nPriorizá señales de tipo 'oferta' (qué se financia, lanza y crece): las quejas "
              "locales de este país son poco accesibles." if cc in SENALES_OFERTA else "")
     return (f"País: {name}\nLente: {lens.name}\nDefinición del lente: {lens.definition}{extra}\n"
             f"Buscá las necesidades más fuertes y recientes (últimos 12 meses). "
-            f"Una sola URL por necesidad: la mejor fuente, completa.")
+            f"Una sola URL por necesidad: la mejor fuente, completa.{feedback}")
 
 
 def first_url(raw: str) -> str:
@@ -100,7 +128,9 @@ def mine(client, pairs, model: str, effort: str | None, month_key: str) -> tuple
 
     system = (PROMPTS / "oracle_mining.md").read_text(encoding="utf-8")
     tools = web_search_tool(SEARCHES_PER_PAIR)
-    reqs = [make_request(f"{cc}-{lk}", model, system, mining_user(cc, lk), MINING_MAX_TOKENS,
+    fb = lens_feedback()
+    reqs = [make_request(f"{cc}-{lk}", model, system,
+                         mining_user(cc, lk, fb.get(LENS_BY_KEY[lk].name, "")), MINING_MAX_TOKENS,
                          tools, effort) for cc, lk in pairs]
     res = run_batch(client, reqs, log_prefix="[oracle:minería]")
 
@@ -255,7 +285,10 @@ def main() -> None:
 
     pairs = sorted(due_pairs(month_index(y, m)))
     if args.max_pairs:
-        pairs = pairs[: args.max_pairs]
+        # Muestra REPARTIDA (mezcla fija), no las primeras N por orden alfabético: la
+        # corrida de humo del 2026-09-19 tomó las primeras 6 y fueron todas Argentina.
+        random.Random(7).shuffle(pairs)
+        pairs = sorted(pairs[: args.max_pairs])
     kind = "haiku" if "haiku" in mining_model else "sonnet"
     est = len(pairs) * EST_PAIR_COST[kind]
     print(f"[oracle] {month_key}: {len(pairs)} combinaciones — minería {mining_model}, "

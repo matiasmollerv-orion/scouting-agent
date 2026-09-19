@@ -214,3 +214,15 @@ def save_oracle_run(month_key: str, **fields) -> None:
 def fetch_oracle_runs() -> list[dict]:
     sb = get_client()
     return sb.table(ORACLE_RUNS_TABLE).select("*").order("month_key", desc=True).limit(12).execute().data
+
+
+def fetch_verdicts(limit: int = 300) -> list[dict]:
+    """Semillas con veredicto humano, más recientes primero — el runner las usa para
+    afinar cada lente y el dashboard para medir la precisión de los lentes."""
+    sb = get_client()
+    return (
+        sb.table(VAULT_TABLE)
+        .select("lens,country,necesidad,human_verdict,human_reason,verdict_at")
+        .not_.is_("human_verdict", "null").order("verdict_at", desc=True).limit(limit)
+        .execute().data
+    )

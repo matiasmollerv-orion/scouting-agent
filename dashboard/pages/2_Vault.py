@@ -48,8 +48,9 @@ STATUS_LABEL = {
 STATUS_KIND = {"sin puntuar": "warn", "en vault": "ok", "guardada": "info",
                "elegida": "info", "descartada": "neutral", "bajo umbral": "neutral"}
 SENAL_LABEL = {"queja": "Queja", "brecha": "Brecha", "fuerza_externa": "Fuerza externa", "oferta": "Oferta"}
-REASONS = ["—", "Ya está resuelto / mucha competencia", "Mercado muy chico", "No me interesa el tema",
-           "Difícil de ejecutar", "Poca evidencia", "No se puede transferir a Chile/LatAm", "Otro"]
+REASONS = ["—", "Ya lo resuelve alguien en Chile/LatAm", "Mucha competencia", "Mercado muy chico",
+           "No me interesa el tema", "Mal encuadrado para este lente", "Difícil de ejecutar",
+           "Poca evidencia", "No se puede transferir a Chile/LatAm", "Otro"]
 
 
 @st.cache_data(ttl=30)
@@ -84,6 +85,35 @@ if not rows:
     st.stop()
 
 df = pd.DataFrame(rows)
+
+
+def _precision(rev: pd.DataFrame, col: str, label: str) -> pd.DataFrame:
+    out = []
+    for key, grp in rev.groupby(col):
+        util = int(grp["human_verdict"].isin(["elegida", "guardada"]).sum())
+        motivos = (grp[grp["human_verdict"] == "descartada"]["human_reason"].dropna()
+                   .str.split(" — ").str[0])
+        out.append({label: key, "Revisadas": len(grp), "Te sirvieron": util,
+                    "Descartadas": len(grp) - util, "% útil": f"{util / len(grp):.0%}",
+                    "Motivo de descarte más frecuente": motivos.mode().iloc[0] if not motivos.empty else "—"})
+    return pd.DataFrame(out)
+
+
+with st.expander(":material/tune: Precisión de los lentes"):
+    reviewed = df[df["human_verdict"].notna()]
+    if reviewed.empty:
+        st.caption("Todavía no diste veredictos. Con cada uno, esta tabla muestra qué lentes y países "
+                   "te dan ideas que sirven, y cada corrida usa tus veredictos para afinar qué busca "
+                   "en cada lente.")
+    else:
+        style.label("Por lente")
+        st.dataframe(_precision(reviewed, "lens", "Lente"), hide_index=True, use_container_width=True)
+        style.label("Por país")
+        st.dataframe(_precision(reviewed, "country", "País"), hide_index=True, use_container_width=True)
+        st.caption("Con menos de 5 revisadas por fila todavía no es concluyente. Tus veredictos de "
+                   "cada lente se agregan al prompt de la próxima corrida: más de lo que te interesó, "
+                   "menos de lo que descartaste y por qué.")
+
 for _c in ("score", "s_evidencia", "s_tamano", "s_ahora", "s_hueco", "s_testeabilidad", "bonus_fit"):
     df[_c] = pd.to_numeric(df[_c], errors="coerce")
 df["estado"] = df["status"].map(lambda s: STATUS_LABEL.get(s, s))
@@ -201,18 +231,30 @@ def _verdict(kind: str, status: str, **extra) -> None:
 
 
 b1, b2, b3 = st.columns(3)
-if b1.button("Profundizar", icon=":material/target:", key=f"b1_{sid}", use_container_width=True):
-    hint = (f"Semilla del Oracle ({row['country']} × {row['lens']}, señal: {row['señal']}).\n\n"
-            f"- Necesidad: {row['necesidad']}\n- Quién: {g('quien') or '—'}\n"
-            f"- Evidencia: {g('evidencia') or '—'}\n"
-            f"- Transferencia a Chile/LatAm: {g('transferencia') or '—'}")
-    mid = queue_market_analysis(
-        market_name=str(row["necesidad"])[:200], origen="vault", beachhead_hint=hint,
-        context_note=f"Fuente: {g('fuente_url') or '—'}. Consejo: {g('veredicto_consejo') or '—'}",
+with b1.popover("Profundizar", icon=":material/target:", use_container_width=True):
+    st.markdown(
+        f"Se encola un análisis de mercado para **Chile y LatAm**. **{row['country']}** es solo la "
+        f"evidencia de origen: no limita el análisis a ese país. Encolar no gasta nada; correrlo "
+        f"cuesta ≈ $1 y lo pides tú."
     )
-    _verdict("elegida", "elegida", market_analysis_id=mid)
+    market_name = st.text_input("Mercado a analizar (sin país, si aplica)",
+                                value=str(row["necesidad"])[:200], key=f"mn_{sid}")
+    if st.button("Encolar análisis", key=f"b1_{sid}", use_container_width=True):
+        hint = (f"Origen de la señal: {row['country']} × {row['lens']} (señal: {row['señal']}). "
+                f"{row['country']} es SOLO evidencia de que la necesidad existe: el análisis es del "
+                f"mercado en Chile y LatAm, NO limitado a {row['country']}.\n\n"
+                f"- Necesidad: {row['necesidad']}\n- Quién: {g('quien') or '—'}\n"
+                f"- Evidencia: {g('evidencia') or '—'}\n"
+                f"- Transferencia a Chile/LatAm: {g('transferencia') or '—'}")
+        mid = queue_market_analysis(
+            market_name=(market_name.strip() or str(row["necesidad"]))[:200],
+            empresas_referentes=str(g("solucion_existente") or "")[:200],
+            origen="vault", beachhead_hint=hint,
+            context_note=f"Fuente: {g('fuente_url') or '—'}. Consejo: {g('veredicto_consejo') or '—'}",
+        )
+        _verdict("elegida", "elegida", market_analysis_id=mid)
 if b2.button("Guardar", icon=":material/bookmark:", key=f"b2_{sid}", use_container_width=True):
     _verdict("guardada", "guardada")
 if b3.button("Descartar", icon=":material/delete:", key=f"b3_{sid}", use_container_width=True):
     _verdict("descartada", "descartada")
-st.caption("Profundizar solo encola el análisis de mercado (gratis); correrlo sigue siendo un paso manual aparte.")
+st.caption("Guardar y Descartar solo registran tu veredicto. Ningún botón de acá gasta créditos: el análisis pago corre solo cuando tú lo pides.")
