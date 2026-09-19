@@ -6,8 +6,24 @@ on:
     # punto es el más congestionado de GitHub Actions a nivel global (ahí
     # caen todos los crons del mundo) — 2026-07-18 se atrasó 46+ min por eso.
     # Corriendo en :07 se evita ese pico; igual puede atrasarse algo bajo carga.
+    #
+    # 2026-09-19: el cron de las 12:07 se atrasó 3-4.5h TRES sábados seguidos
+    # (29-ago 16:40, 5-sep 15:06, 12-sep 15:27 UTC) y el email llegaba al
+    # mediodía en vez de a primera hora — Matías tenía que preguntar cada
+    # semana por qué no llegaba. Un solo cron a esa hora no alcanza: se agrega
+    # uno más temprano (07:23 UTC, fuera del pico) — el primero que corra gana,
+    # el otro lo descarta la guardia de idempotencia de abajo. El pool diario
+    # (collect.yml, 22:00 UTC del viernes) ya está listo a esa hora.
+    - cron: "23 7 * * 6"
     - cron: "7 12 * * 6"
   workflow_dispatch: {}  # permite correrlo a mano desde la pestaña Actions
+
+# Serializa disparos (cron temprano, cron tardío, manual): sin esto dos
+# corridas podían empezar a la vez antes de que ninguna commiteara el
+# reporte, y la guardia de abajo no las detectaba (ver 2026-09-05).
+concurrency:
+  group: weekly-scouting
+  cancel-in-progress: false
 
 permissions:
   contents: write  # necesario para commitear el reporte de vuelta
