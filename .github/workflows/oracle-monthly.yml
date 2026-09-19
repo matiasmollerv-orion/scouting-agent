@@ -1,0 +1,65 @@
+name: oracle-monthly
+
+# Corrida MENSUAL del Oracle: minería de necesidades por país × lente → consejo →
+# Vault privado (Supabase). Agenda en src/oracle/matrix.py. Usa Batch API (tokens
+# -50%). Idempotente por mes: si el mes ya está 'listo' no vuelve a gastar.
+#
+# PRIVACIDAD: los logs de Actions son públicos en este repo — el script solo
+# imprime conteos y costos, nunca contenido de semillas ni de lessons.
+on:
+  schedule:
+    # Día 3 de cada mes, 07:23 UTC (fuera del pico de :00 de GitHub Actions).
+    - cron: "23 7 3 * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Solo agenda y costo estimado, sin API ni Supabase"
+        type: boolean
+        default: false
+      tag:
+        description: "Sufijo del run (ej: test) — prueba que no bloquea el mes real"
+        required: false
+      max_pairs:
+        description: "Limitar combinaciones (pruebas). 0 = todas las del mes"
+        required: false
+        default: "0"
+      force:
+        description: "Correr aunque el mes ya esté 'listo'"
+        type: boolean
+        default: false
+
+concurrency:
+  group: oracle-monthly
+  cancel-in-progress: false
+
+jobs:
+  oracle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install deps
+        run: pip install -r requirements.txt
+
+      - name: Oracle
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+          DRY_RUN: ${{ inputs.dry_run }}
+          RUN_TAG: ${{ inputs.tag }}
+          MAX_PAIRS: ${{ inputs.max_pairs }}
+          FORCE: ${{ inputs.force }}
+        run: |
+          ARGS=""
+          [ "$DRY_RUN" = "true" ] && ARGS="$ARGS --dry-run"
+          [ -n "$RUN_TAG" ] && ARGS="$ARGS --tag $RUN_TAG"
+          [ -n "$MAX_PAIRS" ] && [ "$MAX_PAIRS" != "0" ] && ARGS="$ARGS --max-pairs $MAX_PAIRS"
+          [ "$FORCE" = "true" ] && ARGS="$ARGS --force"
+          python -m scripts.oracle_run $ARGS

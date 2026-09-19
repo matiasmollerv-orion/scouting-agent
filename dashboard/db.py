@@ -15,6 +15,9 @@ from supabase import Client, create_client
 TABLE = "scouting_deep_ondemand"
 FAVORITES_TABLE = "scouting_favorites"
 MARKET_TABLE = "scouting_market_analysis"
+VAULT_TABLE = "scouting_vault"
+LESSONS_TABLE = "scouting_lessons"
+ORACLE_RUNS_TABLE = "scouting_oracle_runs"
 WEEKLY_CAP = 15  # guardrail: tope de análisis on-demand por semana
 
 
@@ -125,12 +128,12 @@ def fetch_market_analyses() -> list[dict]:
 def queue_market_analysis(
     market_name: str, empresas_referentes: str = "", source_url: str = "",
     origen: str = "manual", beachhead_hint: str = "", context_note: str = "",
-) -> None:
+) -> int | None:
     """Encola un MERCADO/oportunidad para análisis — no una empresa (ver
     docstring de la tabla en schema.sql). NO lo corre, solo lo marca. El
     paso caro lo dispara scripts/market_analysis.py, siempre a mano."""
     sb = get_client()
-    sb.table(MARKET_TABLE).insert({
+    res = sb.table(MARKET_TABLE).insert({
         "market_name": market_name,
         "empresas_referentes": empresas_referentes or None,
         "source_url": source_url or None,
@@ -139,6 +142,7 @@ def queue_market_analysis(
         "context_note": context_note or None,
         "status": "queued",
     }).execute()
+    return res.data[0]["id"] if res.data else None
 
 
 def update_market_analysis(row_id: int, **fields) -> None:
@@ -147,3 +151,66 @@ def update_market_analysis(row_id: int, **fields) -> None:
     escribir el resultado."""
     sb = get_client()
     sb.table(MARKET_TABLE).update(fields).eq("id", row_id).execute()
+
+
+# --- Oracle: Vault de semillas, lessons y registro de corridas (ver schema.sql) ---
+
+def fetch_vault() -> list[dict]:
+    """Todas las semillas, mejor score primero (las sin score al final)."""
+    sb = get_client()
+    return (
+        sb.table(VAULT_TABLE).select("*")
+        .order("score", desc=True, nullsfirst=False).limit(2000).execute().data
+    )
+
+
+def fetch_vault_status(status: str) -> list[dict]:
+    """Semillas en un estado (de cualquier mes) — el consejo procesa las 'nueva'."""
+    sb = get_client()
+    return sb.table(VAULT_TABLE).select("*").eq("status", status).order("id").execute().data
+
+
+def insert_vault_seeds(rows: list[dict]) -> None:
+    """Inserta ignorando duplicados exactos (dedupe_key) — una corrida repetida
+    no duplica semillas."""
+    if not rows:
+        return
+    sb = get_client()
+    sb.table(VAULT_TABLE).upsert(rows, on_conflict="dedupe_key", ignore_duplicates=True).execute()
+
+
+def update_vault(row_id: int, **fields) -> None:
+    sb = get_client()
+    sb.table(VAULT_TABLE).update(fields).eq("id", row_id).execute()
+
+
+def add_lesson(verdict: str, reason: str, seed_snapshot: str) -> None:
+    sb = get_client()
+    sb.table(LESSONS_TABLE).insert({
+        "verdict": verdict, "reason": reason or None, "seed_snapshot": seed_snapshot,
+    }).execute()
+
+
+def fetch_lessons(limit: int = 25) -> list[dict]:
+    """Últimos veredictos activos, más recientes primero."""
+    sb = get_client()
+    return (
+        sb.table(LESSONS_TABLE).select("*").eq("active", True)
+        .order("created_at", desc=True).limit(limit).execute().data
+    )
+
+
+def get_oracle_run(month_key: str) -> dict | None:
+    sb = get_client()
+    rows = sb.table(ORACLE_RUNS_TABLE).select("*").eq("month_key", month_key).execute().data
+    return rows[0] if rows else None
+
+
+def save_oracle_run(month_key: str, **fields) -> None:
+    sb = get_client()
+    sb.table(ORACLE_RUNS_TABLE).upsert({"month_key": month_key, **fields}, on_conflict="month_key").execute()
+
+
+def fetch_oracle_runs() -> list[dict]:
+    sb = get_client()
+    return sb.table(ORACLE_RUNS_TABLE).select("*").order("month_key", desc=True).limit(12).execute().data

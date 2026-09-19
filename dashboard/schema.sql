@@ -107,3 +107,55 @@ create table if not exists scouting_market_analysis (
   rat_prueba_barata text,
   regulacion text
 );
+
+-- 2026-09: ORACLE — minería mensual de necesidades por país × lente (ver
+-- src/oracle/matrix.py y prompts/oracle_mining.md). Todo PRIVADO: las semillas
+-- nacen de fuentes públicas, pero los veredictos y motivos de Matías no deben
+-- salir de acá (el repo y los logs de Actions son públicos — el runner nunca
+-- imprime contenido del Vault ni de las lessons, solo conteos y costos).
+create table if not exists scouting_vault (
+  id bigint generated always as identity primary key,
+  created_at timestamptz not null default now(),
+  run_month text not null,              -- '2026-10'
+  country text not null,
+  lens text not null,
+  tipo_senal text,                      -- queja | brecha | fuerza_externa | oferta
+  necesidad text not null,
+  quien text,
+  evidencia text,
+  fuente_url text,
+  url_estado text,                      -- ok | bloqueada | rota | sin_url (chequeo automático, barato)
+  solucion_existente text,
+  transferencia text,                   -- hipótesis de transferencia a Chile/LatAm
+  modelo text,                          -- modelo que la minó
+  dedupe_key text unique,               -- evita repetir la misma semilla en corridas repetidas
+  -- consejo de críticos (rubric SIN penalizar fit del fundador, solo bonus 0-1)
+  s_evidencia numeric, s_tamano numeric, s_ahora numeric, s_hueco numeric,
+  s_testeabilidad numeric, bonus_fit numeric, score numeric,
+  objeciones text, veredicto_consejo text,
+  -- nueva | en_vault (score >= umbral) | descartada_consejo | elegida | descartada | guardada
+  status text not null default 'nueva',
+  -- veredicto humano (alimenta scouting_lessons)
+  human_verdict text, human_reason text, verdict_at timestamptz,
+  market_analysis_id bigint             -- si se eligió, fila en scouting_market_analysis
+);
+
+-- Aprendizaje: cada veredicto de Matías + su motivo. El consejo lee las últimas
+-- para calibrar gusto (NO para penalizar falta de experiencia — regla dura).
+create table if not exists scouting_lessons (
+  id bigint generated always as identity primary key,
+  created_at timestamptz not null default now(),
+  verdict text not null,                -- elegida | descartada | guardada
+  reason text,
+  seed_snapshot text,                   -- necesidad + país + lente, para contexto
+  active boolean not null default true
+);
+
+-- Una fila por mes: idempotencia (no correr dos veces el mismo mes) y costo real.
+create table if not exists scouting_oracle_runs (
+  month_key text primary key,
+  started_at timestamptz not null default now(),
+  finished_at timestamptz,
+  status text not null default 'corriendo',   -- corriendo | listo | error
+  pairs int, seeds int, cost_usd numeric, note text
+);
