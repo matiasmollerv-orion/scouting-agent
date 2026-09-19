@@ -28,10 +28,11 @@ except Exception:
 import pandas as pd
 import streamlit as st
 
+from dashboard import style
 from dashboard.db import fetch_market_analyses, queue_market_analysis
 
-st.set_page_config(page_title="Análisis de Mercado", page_icon="📊", layout="wide")
-st.title("📊 Análisis de Mercado")
+st.set_page_config(page_title="Análisis de mercado", page_icon=":material/analytics:", layout="wide")
+st.title(":material/analytics: Análisis de mercado")
 st.caption(
     "No es análisis de UNA empresa — es del MERCADO/oportunidad que una o más "
     "empresas de referencia ilustran. Metodología fija de 8 pasos: beachhead "
@@ -39,14 +40,15 @@ st.caption(
     "→ WTP → fit fundador → RAT → regulación."
 )
 
-STATUS_BADGE = {"queued": "⏳ en cola", "analizando": "🔬 analizando",
-                 "listo": "✅ listo", "error": "⚠️ error"}
+STATUS_BADGE = {"queued": "en cola", "analizando": "analizando",
+                "listo": "listo", "error": "error"}
+STATUS_KIND = {"en cola": "warn", "analizando": "info", "listo": "ok", "error": "bad"}
 
 FIELD_LABELS = {
     "beachhead_definido": "1. Beachhead definido",
     "tam_bottom_up": "2a. TAM bottom-up (el número que manda)",
     "tam_top_down": "2b. TAM top-down (sanity check)",
-    "discrepancia_tam": "⚠️ Discrepancia TAM (si aplica)",
+    "discrepancia_tam": "Discrepancia TAM (si aplica)",
     "competencia_global": "3a. Competencia global",
     "competencia_local": "3b. Competencia local/LatAm",
     "competencia_en_beachhead_especifico": "3c. Competencia EN el beachhead específico",
@@ -62,12 +64,12 @@ FIELD_LABELS = {
 # TAM y WTP se renderizan aparte (número grande + metodología colapsable) —
 # el resto de los campos usa la card de texto genérica. Ver _render_money_field.
 GENERIC_FIELD_GROUPS = [
-    ("🎯 1. Beachhead", ["beachhead_definido"]),
-    ("⚔️ 3. Competencia", ["competencia_global", "competencia_local", "competencia_en_beachhead_especifico"]),
-    ("🩹 4. Dolor (JTBD)", ["dolor_jtbd"]),
-    ("🧑‍💼 6. Fit fundador", ["fit_fundador"]),
-    ("🧪 7. RAT", ["rat_supuesto", "rat_prueba_barata"]),
-    ("⚖️ 8. Regulación", ["regulacion"]),
+    ("1 · Beachhead", ["beachhead_definido"]),
+    ("3 · Competencia", ["competencia_global", "competencia_local", "competencia_en_beachhead_especifico"]),
+    ("4 · Dolor (JTBD)", ["dolor_jtbd"]),
+    ("6 · Fit fundador", ["fit_fundador"]),
+    ("7 · RAT", ["rat_supuesto", "rat_prueba_barata"]),
+    ("8 · Regulación", ["regulacion"]),
 ]
 
 # --- Limpieza y extracción de texto generado por el modelo -----------------
@@ -146,7 +148,8 @@ rows = _load()
 # nunca se asume automático del título del candidato.
 prefill = st.session_state.pop("market_prefill", {})
 expanded = bool(prefill)
-label = "➕ Nuevo análisis de mercado" if not prefill else "➕ Nuevo análisis de mercado (con referente pre-cargado)"
+label = (":material/add: Nuevo análisis de mercado" if not prefill
+         else ":material/add: Nuevo análisis de mercado (con referente pre-cargado)")
 with st.expander(label, expanded=expanded):
     if prefill:
         st.info(f"Referente pre-cargado desde el dashboard: **{prefill.get('empresas_referentes', '')}**. "
@@ -168,7 +171,7 @@ with st.expander(label, expanded=expanded):
                 placeholder="Si ya tenés una idea del segmento angosto real, ponela acá.",
             )
             note = st.text_area("Contexto adicional (opcional)")
-        if st.form_submit_button("📊 Encolar"):
+        if st.form_submit_button("Encolar"):
             if not market_name.strip():
                 st.error("Falta definir el mercado/oportunidad.")
             else:
@@ -192,35 +195,38 @@ df["estado"] = df["status"].map(lambda s: STATUS_BADGE.get(s, s))
 st.divider()
 st.subheader("Cola y resultados")
 
-tab_lista, tab_comparar = st.tabs(["📋 Lista", "⚖️ Comparar"])
+tab_lista, tab_comparar = st.tabs([":material/list: Lista", ":material/compare_arrows: Comparar"])
 
 with tab_lista:
     display = df[["estado", "market_name", "empresas_referentes", "origen", "requested_at", "cost_usd"]].copy()
     display.columns = ["Estado", "Mercado/oportunidad", "Referentes", "Origen", "Pedido", "Costo USD"]
+    styled = display.style.map(
+        lambda v: style.status_cell_css(STATUS_KIND.get(v, "neutral")), subset=["Estado"])
     event = st.dataframe(
-        display, hide_index=True, use_container_width=True,
+        styled, hide_index=True, use_container_width=True,
         on_select="rerun", selection_mode="single-row",
     )
     selected = event.selection.rows if event and event.selection else []
     if not selected or selected[0] >= len(df):
-        st.info("👆 Seleccioná una fila para ver el detalle completo.")
+        st.info("Selecciona una fila para ver el detalle completo.")
     else:
         row = df.iloc[selected[0]]
         st.markdown(f"### {_clean(row['market_name'])}")
-        meta_bits = [STATUS_BADGE.get(row['status'], row['status']), f"pedido {row['requested_at']}"]
+        state = STATUS_BADGE.get(row["status"], row["status"])
+        bits = [f"pedido {str(row['requested_at'])[:10]}"]
         if pd.notna(row.get("cost_usd")):
-            meta_bits.append(f"costo \\${row['cost_usd']:.4f}")
+            bits.append(f"costo ${row['cost_usd']:.2f}")
         if row.get("empresas_referentes"):
-            meta_bits.append(f"referentes: {_clean(row['empresas_referentes'])}")
-        st.caption(" · ".join(meta_bits))
+            bits.append(f"referentes: {row['empresas_referentes']}")
+        style.meta(*bits, pills=[(state, STATUS_KIND.get(state, "neutral"))])
 
         if row.get("beachhead_hint"):
-            with st.container(border=True):
-                st.markdown("##### 💡 Hipótesis de beachhead dada")
+            with style.card():
+                style.label("Hipótesis de beachhead dada")
                 st.markdown(_clean(row["beachhead_hint"]))
         if row.get("context_note"):
-            with st.container(border=True):
-                st.markdown("##### 📎 Contexto adicional dado")
+            with style.card():
+                style.label("Contexto adicional dado")
                 st.markdown(_clean(row["context_note"]))
 
         if row["status"] == "error":
@@ -233,13 +239,13 @@ with tab_lista:
 
             # --- 1. Beachhead (genérico) ---
             group_label, fields = GENERIC_FIELD_GROUPS[0]
-            with st.container(border=True):
-                st.markdown(f"##### {group_label}")
+            with style.card():
+                style.label(group_label)
                 st.markdown(_clean(row.get(fields[0])) or "—")
 
             # --- 2. TAM — número grande primero, metodología colapsada ---
-            with st.container(border=True):
-                st.markdown("##### 📐 2. TAM")
+            with style.card():
+                style.label("2 · TAM")
                 c1, c2 = st.columns(2)
                 with c1:
                     st.metric("Bottom-up (el número que manda)", _headline(row.get("tam_bottom_up")) or "—")
@@ -255,16 +261,16 @@ with tab_lista:
 
             # --- 3-4. Competencia + Dolor (genéricos) ---
             for group_label, fields in GENERIC_FIELD_GROUPS[1:3]:
-                with st.container(border=True):
-                    st.markdown(f"##### {group_label}")
+                with style.card():
+                    style.label(group_label)
                     for field in fields:
                         if len(fields) > 1:
                             st.markdown(f"**{FIELD_LABELS[field].split('. ', 1)[-1]}**")
                         st.markdown(_clean(row.get(field)) or "—")
 
             # --- 5. WTP — número grande primero, metodología colapsada ---
-            with st.container(border=True):
-                st.markdown("##### 💰 5. Disposición a pagar")
+            with style.card():
+                style.label("5 · Disposición a pagar")
                 st.metric("WTP estimado (por comparables)", _headline(row.get("wtp_estimado")) or "—")
                 with st.expander("Ver cómo se estimó"):
                     st.markdown(_clean(row.get("wtp_estimado")) or "—")
@@ -276,8 +282,8 @@ with tab_lista:
 
             # --- 6-8. Fit fundador + RAT + Regulación (genéricos) ---
             for group_label, fields in GENERIC_FIELD_GROUPS[3:]:
-                with st.container(border=True):
-                    st.markdown(f"##### {group_label}")
+                with style.card():
+                    style.label(group_label)
                     for field in fields:
                         if len(fields) > 1:
                             st.markdown(f"**{FIELD_LABELS[field].split('. ', 1)[-1]}**")
@@ -293,7 +299,7 @@ with tab_comparar:
         if len(elegidas) >= 2:
             by_name = {r["market_name"]: r for r in listas[listas["market_name"].isin(elegidas)].to_dict("records")}
 
-            st.markdown("##### 📐 Números clave, lado a lado")
+            style.label("Números clave, lado a lado")
             cols = st.columns(len(elegidas))
             for col, name in zip(cols, elegidas):
                 row = by_name[name]
@@ -304,7 +310,7 @@ with tab_comparar:
                     st.metric("WTP estimado", _headline(row.get("wtp_estimado")) or "—")
 
             st.divider()
-            st.markdown("##### 🔍 Comparar un paso específico en detalle")
+            style.label("Comparar un paso específico en detalle")
             campo = st.selectbox(
                 "Elegí qué campo comparar", list(FIELD_LABELS.keys()),
                 format_func=lambda k: FIELD_LABELS[k],
@@ -314,7 +320,7 @@ with tab_comparar:
                 row = by_name[name]
                 with col:
                     st.markdown(f"**{_clean(_short(name))}**")
-                    with st.container(border=True):
+                    with style.card():
                         val = row.get(campo)
                         st.markdown(_clean(val) if val else "—")
         elif elegidas:

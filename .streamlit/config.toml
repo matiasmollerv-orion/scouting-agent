@@ -1,0 +1,42 @@
+# Tema único del dashboard (2026-09-19): fondo blanco (más legible), plano, bordes finos, esquinas de 8/12px,
+# texto en tres tonos, un solo acento azul. Colores tomados de las rampas
+# gris/azul/verde/ámbar/rojo del boceto aprobado del Vault. Solo tema claro
+# (Streamlit 1.50 no permite definir claro y oscuro a la vez en config.toml).
+# Los retoques que el tema no cubre (tarjetas, métricas, pills) viven en
+# dashboard/style.py.
+
+[theme]
+base = "light"
+primaryColor = "#185FA5"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F5F4EF"
+textColor = "#141413"
+linkColor = "#185FA5"
+linkUnderline = false
+borderColor = "#E3E1D8"
+showWidgetBorder = true
+baseRadius = "8px"
+buttonRadius = "8px"
+# Fuente: el boceto usa la sans propia de Claude (no disponible fuera de sus
+# productos). Inter es la sans neutra más cercana; cambiar acá si se prefiere otra.
+font = "Inter:https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap"
+baseFontSize = 14
+baseFontWeight = 400
+headingFontSizes = ["1.6rem", "1.3rem", "1.1rem", "1rem", "0.9rem", "0.85rem"]
+headingFontWeights = [500, 500, 500, 500, 500, 500]
+dataframeBorderColor = "#E3E1D8"
+dataframeHeaderBackgroundColor = "#F5F4EF"
+blueBackgroundColor = "#E6F1FB"
+blueTextColor = "#0C447C"
+greenBackgroundColor = "#EAF3DE"
+greenTextColor = "#27500A"
+yellowBackgroundColor = "#FAEEDA"
+yellowTextColor = "#633806"
+orangeBackgroundColor = "#FAEEDA"
+orangeTextColor = "#633806"
+redBackgroundColor = "#FCEBEB"
+redTextColor = "#791F1F"
+
+[theme.sidebar]
+backgroundColor = "#F7F6F2"
+secondaryBackgroundColor = "#FFFFFF"
