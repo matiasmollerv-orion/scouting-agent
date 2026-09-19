@@ -27,9 +27,14 @@ class ScoreResult:
     triage_truncated: bool = False  # el triage chocó max_tokens — candidatos sin scorear
 
 # USD por millón de tokens (input, output). Actualizar si cambian los modelos.
+# Sonnet 5: $2/$10 es el precio ESTÁNDAR vigente (verificado contra la página
+# de pricing el 2026-09-19). Estuvo en $3/$15 acá porque el lanzamiento lo
+# anunció como introductorio hasta 31-ago con alza a $3/$15 el 1-sep — el alza
+# se canceló. Con el valor viejo, todos los costos reportados de Sonnet 5
+# salían ~33-50% más altos que lo que factura Anthropic realmente.
 PRICES = {
     "claude-haiku-4-5": (1.00, 5.00),
-    "claude-sonnet-5": (3.00, 15.00),
+    "claude-sonnet-5": (2.00, 10.00),
 }
 BATCH_DISCOUNT = 0.5  # Batch API: 50% off input y output
 PRICE_WEB_SEARCH = 0.01  # USD por búsqueda ($10 / 1000) — sin descuento batch
