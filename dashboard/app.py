@@ -18,9 +18,19 @@ REPO = Path(__file__).resolve().parents[1]
 DASHBOARD_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(REPO))
 
+import importlib  # noqa: E402
+
 import streamlit as st  # noqa: E402
 
-from dashboard import style  # noqa: E402
+from dashboard import db as _db, style, textutils as _textutils  # noqa: E402
+
+# Streamlit Cloud reutiliza el proceso entre deploys (warm deployment): los módulos locales
+# ya importados quedan en memoria con la versión ANTERIOR aunque el archivo cambió — el
+# 2026-09-20 la página principal se cayó con "module 'dashboard.style' has no attribute
+# 'pager'" justo después de un push. Se recargan en cada ejecución (es barato) para que un
+# deploy solo de Python nunca deje código viejo en memoria.
+for _mod in (_textutils, style, _db):
+    importlib.reload(_mod)
 
 style.inject()
 
