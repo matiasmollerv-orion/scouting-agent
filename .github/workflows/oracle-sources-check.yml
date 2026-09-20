@@ -1,0 +1,32 @@
+name: oracle-sources-check
+
+# Cobertura de fuentes del Oracle por país × lente. SIN API de Anthropic, costo $0:
+# solo descarga RSS públicos de Google Noticias. Imprime conteos, nunca contenido
+# (los logs de Actions son públicos en este repo).
+on:
+  workflow_dispatch:
+    inputs:
+      countries:
+        description: "Códigos separados por coma (ej: CL,BR). Vacío = todos"
+        required: false
+      lenses:
+        description: "Claves de lente separadas por coma. Vacío = todos"
+        required: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install deps
+        run: pip install -r requirements.txt
+      - name: Cobertura
+        env:
+          COUNTRIES: ${{ inputs.countries }}
+          LENSES: ${{ inputs.lenses }}
+        run: python -m scripts.oracle_sources_check --countries "$COUNTRIES" --lenses "$LENSES"
