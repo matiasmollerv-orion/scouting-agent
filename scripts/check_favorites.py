@@ -24,7 +24,17 @@ def step(name, fn):
         return False, None
 
 
+def check_tables() -> None:
+    """¿Existen todas las tablas que usa el dashboard? (una lectura de 1 fila por tabla)"""
+    from dashboard.db import get_client
+    sb = get_client()
+    for t in ("scouting_deep_ondemand", "scouting_favorites", "scouting_market_analysis",
+              "scouting_vault", "scouting_lessons", "scouting_oracle_runs"):
+        step(f"tabla {t}", lambda t=t: f"{len(sb.table(t).select('*').limit(1).execute().data)} fila(s) de muestra")
+
+
 def main() -> None:
+    check_tables()
     step("leer tabla scouting_favorites", lambda: f"{len(fetch_favorites())} filas")
     step("agregar favorita de prueba", lambda: add_favorite(TEST_URL, "prueba"))
     ok, present = step("leer y confirmar que aparece", lambda: TEST_URL in fetch_favorites())
