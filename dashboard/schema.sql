@@ -137,8 +137,14 @@ create table if not exists scouting_vault (
   status text not null default 'nueva',
   -- veredicto humano (alimenta scouting_lessons)
   human_verdict text, human_reason text, verdict_at timestamptz,
-  market_analysis_id bigint             -- si se eligió, fila en scouting_market_analysis
+  market_analysis_id bigint,            -- si se eligió, fila en scouting_market_analysis
+  cluster_id bigint,                    -- tema repetido entre países (lo asigna scripts/oracle_run.py)
+  cluster_label text
 );
+
+-- Migración para la tabla YA creada (2026-09-20, agrupar semillas repetidas entre países):
+alter table scouting_vault add column if not exists cluster_id bigint;
+alter table scouting_vault add column if not exists cluster_label text;
 
 -- Aprendizaje: cada veredicto de Matías + su motivo. El consejo lee las últimas
 -- para calibrar gusto (NO para penalizar falta de experiencia — regla dura).

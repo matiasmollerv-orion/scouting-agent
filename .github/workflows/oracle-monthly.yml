@@ -27,6 +27,10 @@ on:
         description: "Correr aunque el mes ya esté 'listo'"
         type: boolean
         default: false
+      cluster_only:
+        description: "Solo agrupar semillas repetidas entre países (barato, sin minería)"
+        type: boolean
+        default: false
 
 concurrency:
   group: oracle-monthly
@@ -56,10 +60,12 @@ jobs:
           RUN_TAG: ${{ inputs.tag }}
           MAX_PAIRS: ${{ inputs.max_pairs }}
           FORCE: ${{ inputs.force }}
+          CLUSTER_ONLY: ${{ inputs.cluster_only }}
         run: |
           ARGS=""
           [ "$DRY_RUN" = "true" ] && ARGS="$ARGS --dry-run"
           [ -n "$RUN_TAG" ] && ARGS="$ARGS --tag $RUN_TAG"
           [ -n "$MAX_PAIRS" ] && [ "$MAX_PAIRS" != "0" ] && ARGS="$ARGS --max-pairs $MAX_PAIRS"
           [ "$FORCE" = "true" ] && ARGS="$ARGS --force"
+          [ "$CLUSTER_ONLY" = "true" ] && ARGS="$ARGS --cluster-only"
           python -m scripts.oracle_run $ARGS

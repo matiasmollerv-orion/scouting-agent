@@ -198,19 +198,29 @@ st.subheader("Cola y resultados")
 tab_lista, tab_comparar = st.tabs([":material/list: Lista", ":material/compare_arrows: Comparar"])
 
 with tab_lista:
-    display = df[["estado", "market_name", "empresas_referentes", "origen", "requested_at", "cost_usd"]].copy()
-    display.columns = ["Estado", "Mercado/oportunidad", "Referentes", "Origen", "Pedido", "Costo USD"]
-    styled = display.style.map(
-        lambda v: style.status_cell_css(STATUS_KIND.get(v, "neutral")), subset=["Estado"])
-    event = st.dataframe(
-        styled, hide_index=True, use_container_width=True,
-        on_select="rerun", selection_mode="single-row",
-    )
-    selected = event.selection.rows if event and event.selection else []
-    if not selected or selected[0] >= len(df):
-        st.info("Selecciona una fila para ver el detalle completo.")
+    sel_id = st.session_state.get("mkt_sel")
+    hit = df[df["id"] == sel_id] if sel_id is not None else df.iloc[0:0]
+    if hit.empty:
+        # Lista de tarjetas: el texto del mercado se ve COMPLETO (la fila crece).
+        start_i, end_i = style.pager("mkt", len(df), 12, "lista", "top")
+        for i in range(start_i, end_i):
+            r = df.iloc[i]
+            state = STATUS_BADGE.get(r["status"], r["status"])
+            bits = [f"pedido {str(r['requested_at'])[:10]}"]
+            if pd.notna(r.get("cost_usd")):
+                bits.append(f"costo ${r['cost_usd']:.2f}")
+            if r.get("empresas_referentes"):
+                bits.insert(0, f"referentes: {r['empresas_referentes']}")
+            if style.row(f"mkt_{i}", title=str(r["market_name"]), meta=" · ".join(bits),
+                         lead_html=style.pill(state, STATUS_KIND.get(state, "neutral"))) == "open":
+                st.session_state["mkt_sel"] = int(r["id"])
+                st.rerun()
+        style.pager("mkt", len(df), 12, "lista", "bottom")
     else:
-        row = df.iloc[selected[0]]
+        row = hit.iloc[0]
+        if st.button("Volver a la lista", icon=":material/arrow_back:", key="mkt_back"):
+            st.session_state.pop("mkt_sel", None)
+            st.rerun()
         st.markdown(f"### {_clean(row['market_name'])}")
         state = STATUS_BADGE.get(row["status"], row["status"])
         bits = [f"pedido {str(row['requested_at'])[:10]}"]

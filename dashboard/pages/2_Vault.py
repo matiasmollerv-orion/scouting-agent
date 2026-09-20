@@ -119,42 +119,63 @@ for _c in ("score", "s_evidencia", "s_tamano", "s_ahora", "s_hueco", "s_testeabi
 df["estado"] = df["status"].map(lambda s: STATUS_LABEL.get(s, s))
 df["señal"] = df["tipo_senal"].map(lambda s: SENAL_LABEL.get(s, s or "—"))
 
-c1, c2, c3, c4 = st.columns([2, 2, 2, 1])
-default_status = [s for s in ("en_vault", "guardada", "nueva") if s in set(df["status"])]
-sel_status = c1.multiselect("Estado", list(STATUS_LABEL), default=default_status,
-                            format_func=lambda s: STATUS_LABEL[s])
-sel_lens = c2.multiselect("Lente", sorted(df["lens"].dropna().unique()))
-sel_country = c3.multiselect("País", sorted(df["country"].dropna().unique()))
-min_score = c4.number_input("Score mín.", 0.0, 10.0, 0.0, 0.5)
+# Temas repetidos entre países (cluster_id/cluster_label los asigna scripts/oracle_run.py;
+# hasta que se corra la migración de columnas todo esto degrada a "cada semilla sola").
+for _c in ("cluster_id", "cluster_label"):
+    if _c not in df.columns:
+        df[_c] = None
+df["cluster_id"] = pd.to_numeric(df["cluster_id"], errors="coerce")
+_paises = df.dropna(subset=["cluster_id"]).groupby("cluster_id")["country"].nunique()
+df["n_paises"] = df["cluster_id"].map(_paises).fillna(1).astype(int)
 
-f = df[df["status"].isin(sel_status)] if sel_status else df
-if sel_lens:
-    f = f[f["lens"].isin(sel_lens)]
-if sel_country:
-    f = f[f["country"].isin(sel_country)]
-f = f[f["score"].fillna(0) >= min_score].sort_values("score", ascending=False, na_position="last").reset_index(drop=True)
+sel_id = st.session_state.get("vault_sel")
+hit = df[df["id"] == sel_id] if sel_id is not None else df.iloc[0:0]
 
-st.caption(f"{len(f)} de {len(df)} semillas")
-if f.empty:
-    st.info("Nada con esos filtros.")
+if hit.empty:
+    c1, c2, c3, c4 = st.columns([2, 2, 2, 1])
+    default_status = [s for s in ("en_vault", "guardada", "nueva") if s in set(df["status"])]
+    sel_status = c1.multiselect("Estado", list(STATUS_LABEL), default=default_status,
+                                format_func=lambda s: STATUS_LABEL[s])
+    sel_lens = c2.multiselect("Lente", sorted(df["lens"].dropna().unique()))
+    sel_country = c3.multiselect("País", sorted(df["country"].dropna().unique()))
+    min_score = c4.number_input("Score mín.", 0.0, 10.0, 0.0, 0.5)
+    multi_only = st.checkbox("Solo temas que aparecen en 2 o más países", value=False)
+
+    f = df[df["status"].isin(sel_status)] if sel_status else df
+    if sel_lens:
+        f = f[f["lens"].isin(sel_lens)]
+    if sel_country:
+        f = f[f["country"].isin(sel_country)]
+    if multi_only:
+        f = f[f["n_paises"] >= 2]
+    f = (f[f["score"].fillna(0) >= min_score]
+         .sort_values(["n_paises", "score"], ascending=[False, False], na_position="last")
+         .reset_index(drop=True))
+
+    st.caption(f"{len(f)} de {len(df)} semillas · los temas que aparecen en más países van primero")
+    if f.empty:
+        st.info("Nada con esos filtros.")
+        st.stop()
+
+    sig = str((sel_status, sel_lens, sel_country, min_score, multi_only))
+    start_i, end_i = style.pager("vault", len(f), 15, sig, "top")
+    for i in range(start_i, end_i):
+        r = f.iloc[i]
+        chips = [(r["estado"], STATUS_KIND.get(r["estado"], "neutral"))]
+        if r["n_paises"] >= 2:
+            chips.append((f"en {r['n_paises']} países", "ok" if r["n_paises"] >= 3 else "info"))
+        lead = style.pill(f"{r['score']:.1f}", style.score_kind(r["score"])) if pd.notna(r["score"]) else style.pill("—")
+        meta = f"{r['country']} · {r['lens']} · señal: {r['señal']}"
+        if style.row(f"vault_{i}", title=str(r["necesidad"]), meta=meta, lead_html=lead, pills=chips) == "open":
+            st.session_state["vault_sel"] = int(r["id"])
+            st.rerun()
+    style.pager("vault", len(f), 15, sig, "bottom")
     st.stop()
 
-view = f[["score", "country", "lens", "señal", "necesidad", "estado"]].copy()
-view["necesidad"] = view["necesidad"].str.slice(0, 110)
-view.columns = ["Score", "País", "Lente", "Señal", "Necesidad", "Estado"]
-styled = (view.style
-          .map(lambda v: style.status_cell_css(style.score_kind(v)) if pd.notna(v) else "", subset=["Score"])
-          .map(lambda v: style.status_cell_css(STATUS_KIND.get(v, "neutral")), subset=["Estado"])
-          .format({"Score": lambda v: f"{v:.1f}" if pd.notna(v) else "—"}))
-event = st.dataframe(styled, hide_index=True, use_container_width=True,
-                     height=min(420, 40 + 35 * len(view)),
-                     on_select="rerun", selection_mode="single-row")
-selected = event.selection.rows if event and event.selection else []
-if not selected or selected[0] >= len(f):
-    st.info("Selecciona una semilla para ver el detalle y darle veredicto.")
-    st.stop()
-
-row = f.iloc[selected[0]]
+row = hit.iloc[0]
+if st.button("Volver a la lista", icon=":material/arrow_back:", key="vault_back"):
+    st.session_state.pop("vault_sel", None)
+    st.rerun()
 
 
 def g(k):
@@ -208,6 +229,20 @@ if g("objeciones"):
         if g("veredicto_consejo"):
             st.caption(f"Veredicto: {clean(row['veredicto_consejo'])}")
 
+members = (df[(df["cluster_id"] == row["cluster_id"]) & (df["id"] != row["id"])]
+           if pd.notna(row.get("cluster_id")) else df.iloc[0:0])
+if not members.empty:
+    with style.card():
+        style.label(f"Mismo tema en otros países — {g('cluster_label') or ''}")
+        for _, m_ in members.sort_values("score", ascending=False, na_position="last").iterrows():
+            sc_ = f"{m_['score']:.1f}" if pd.notna(m_["score"]) else "—"
+            st.markdown(f"- **{m_['country']}** · {m_['lens']} · score {sc_} · {m_['estado']} — "
+                        f"{clean(str(m_['necesidad'])[:200])}")
+        ya = members[members["status"] == "elegida"]
+        if not ya.empty:
+            st.info("Este tema ya se profundizó desde " + ", ".join(ya["country"]) +
+                    ". Profundizarlo de nuevo repetiría el análisis.", icon=":material/info:")
+
 st.divider()
 if g("human_verdict"):
     st.info(f"Ya le diste veredicto: **{row['human_verdict']}**"
@@ -246,6 +281,10 @@ with b1.popover("Profundizar", icon=":material/target:", use_container_width=Tru
                 f"- Necesidad: {row['necesidad']}\n- Quién: {g('quien') or '—'}\n"
                 f"- Evidencia: {g('evidencia') or '—'}\n"
                 f"- Transferencia a Chile/LatAm: {g('transferencia') or '—'}")
+        if not members.empty:
+            hint += "\n\nEl mismo tema apareció también en:\n" + "\n".join(
+                f"- {m_['country']} ({m_['lens']}): {str(m_['necesidad'])[:160]}"
+                for _, m_ in members.iterrows())
         mid = queue_market_analysis(
             market_name=(market_name.strip() or str(row["necesidad"]))[:200],
             empresas_referentes=str(g("solucion_existente") or "")[:200],

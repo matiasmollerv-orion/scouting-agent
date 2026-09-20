@@ -274,7 +274,18 @@ def main() -> None:
     ap.add_argument("--tag", default="", help="sufijo del run (ej: test) — no bloquea el mes real")
     ap.add_argument("--max-pairs", type=int, default=0, help="limita combinaciones (pruebas)")
     ap.add_argument("--force", action="store_true", help="correr aunque el mes ya esté 'listo'")
+    ap.add_argument("--cluster-only", action="store_true",
+                    help="solo agrupar semillas repetidas entre países (sin minería ni consejo)")
     args = ap.parse_args()
+
+    if args.cluster_only:
+        from anthropic import Anthropic
+        from src import config
+        from src.oracle.cluster import cluster_seeds
+        cost, kstats = cluster_seeds(Anthropic(api_key=config.ANTHROPIC_API_KEY),
+                                     os.environ.get("SCOUTING_MODEL_CLUSTER", "claude-haiku-4-5"))
+        print(f"[oracle:cluster] {dict(kstats)} costo=${cost:.4f}")
+        return
 
     now = datetime.now(timezone.utc)
     y, m = (int(x) for x in args.month.split("-")) if args.month else (now.year, now.month)
@@ -326,7 +337,15 @@ def main() -> None:
             _, council_cost, cstats = council(client, council_model, effort)
         else:
             print("[oracle] GUARDRAIL: minería pasó el tope — se omite el consejo")
-        total = mining_cost + council_cost
+        cluster_cost = 0.0
+        try:  # agrupar temas repetidos entre países; un fallo acá no debe perder la corrida
+            from src.oracle.cluster import cluster_seeds
+            cluster_cost, kstats = cluster_seeds(
+                client, os.environ.get("SCOUTING_MODEL_CLUSTER", "claude-haiku-4-5"))
+            print(f"[oracle] temas: {dict(kstats)} costo=${cluster_cost:.4f}")
+        except Exception as e:  # noqa: BLE001
+            print(f"[oracle] agrupamiento omitido ({type(e).__name__}) — ¿falta la migración de columnas?")
+        total = mining_cost + council_cost + cluster_cost
         print(f"[oracle] consejo: {dict(cstats)} costo=${council_cost:.4f}")
         print(f"[oracle] === COSTO TOTAL {month_key}: ${total:.4f} ===")
         save_oracle_run(month_key, status="listo", seeds=len(rows), cost_usd=round(total, 4),

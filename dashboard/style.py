@@ -13,6 +13,7 @@ helpers para armar esas piezas con el mismo HTML en todas las páginas.
 from __future__ import annotations
 
 import html
+import math
 
 import streamlit as st
 
@@ -78,7 +79,10 @@ section[data-testid="stSidebar"]{border-right:0.5px solid var(--v-border)}
    el aire inferior va como padding del envoltorio (1rem compensa + 0.9rem de aire) */
 .v-sub-wrap{padding-bottom:1.9rem}
 .v-sub{background:var(--v-sub); border-radius:8px; padding:0.65rem 0.8rem}
-.v-sub p{margin:0; font-size:0.93rem}
+.v-sub p{margin:0; font-size:0.93rem; overflow-wrap:anywhere}
+.v-row-title{margin:0 0 0.2rem; font-weight:500; font-size:1rem; line-height:1.4; overflow-wrap:anywhere}
+.v-row-meta{margin:0 !important}
+.v-lead{text-align:center; margin:0}
 .v-bar{height:6px; border-radius:3px; background:var(--v-sub); overflow:hidden}
 .v-bar i{display:block; height:100%; background:var(--v-accent); border-radius:3px}
 .v-kv{display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center; margin:0 0 0.6rem}
@@ -150,3 +154,53 @@ def status_cell_css(kind: str) -> str:
               "neutral": ("#F1EFE8", "#444441")}
     bg, fg = colors.get(kind, colors["neutral"])
     return f"background-color:{bg};color:{fg};font-weight:500"
+
+
+# --- Lista de filas-tarjeta (reemplaza las tablas: una tabla de Streamlit no puede
+# envolver texto ni alargar filas, así que el texto largo siempre salía cortado) ----
+
+def pager(key: str, total: int, page_size: int = 15, sig: str = "", pos: str = "top") -> tuple[int, int]:
+    """Paginador. `sig` identifica el filtro/orden actual: si cambia vuelve a la página 1.
+    Devuelve (inicio, fin) para cortar la lista. `pos` distingue el paginador de arriba
+    y el de abajo (los dos comparten estado)."""
+    pages = max(1, math.ceil(total / page_size))
+    skey, gkey = f"{key}_page", f"{key}_sig"
+    if st.session_state.get(gkey) != sig:
+        st.session_state[gkey] = sig
+        st.session_state[skey] = 0
+    page = max(0, min(st.session_state.get(skey, 0), pages - 1))
+    if pages > 1:
+        c1, c2, c3 = st.columns([1, 2, 1], vertical_alignment="center")
+        if c1.button("Anterior", icon=":material/chevron_left:", key=f"{key}_prev_{pos}",
+                     disabled=page == 0, use_container_width=True):
+            st.session_state[skey] = page - 1
+            st.rerun()
+        c2.markdown(f'<p class="v-meta" style="text-align:center;margin:0">Página {page + 1} de {pages}'
+                    f' · {total} en total</p>', unsafe_allow_html=True)
+        if c3.button("Siguiente", icon=":material/chevron_right:", key=f"{key}_next_{pos}",
+                     disabled=page >= pages - 1, use_container_width=True):
+            st.session_state[skey] = page + 1
+            st.rerun()
+    return page * page_size, min(total, (page + 1) * page_size)
+
+
+def row(key: str, *, title: str, meta: str = "", lead_html: str = "",
+        pills: list[tuple[str, str]] | None = None, fav: bool | None = None,
+        open_label: str = "Abrir") -> str | None:
+    """Fila-tarjeta con el TEXTO COMPLETO (envuelve, la fila crece). Devuelve "open",
+    "fav" o None según el botón que se apretó. `fav` = None oculta la estrella."""
+    action = None
+    with card():
+        widths = [1, 9, 2] if fav is None else [1, 8, 1.6, 1.6]
+        cols = st.columns(widths, vertical_alignment="center")
+        cols[0].markdown(f'<p class="v-lead">{lead_html}</p>', unsafe_allow_html=True)
+        chips = " ".join(pill(t, k) for t, k in (pills or []))
+        cols[1].markdown(f'<p class="v-row-title">{esc(title)}</p>'
+                         f'<p class="v-meta v-row-meta">{esc(meta)} {chips}</p>', unsafe_allow_html=True)
+        if fav is not None and cols[2].button(
+                "Favorita" if fav else "Marcar", icon=":material/star:", key=f"{key}_fav",
+                type="primary" if fav else "secondary", use_container_width=True):
+            action = "fav"
+        if cols[-1].button(open_label, key=f"{key}_open", use_container_width=True):
+            action = "open"
+    return action

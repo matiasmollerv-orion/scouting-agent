@@ -31,7 +31,7 @@ import streamlit as st
 from dashboard.data import DEEP_COLS, load_all_weeks
 from dashboard.db import (
     WEEKLY_CAP, add_favorite, count_this_week, fetch_favorites, fetch_market_analyses,
-    fetch_ondemand, queue_market_analysis, remove_favorite, save_ondemand,
+    fetch_ondemand, remove_favorite, save_ondemand,
 )
 from dashboard import style
 from dashboard.deep_single import analyze_one
@@ -57,11 +57,14 @@ def _load_ondemand() -> dict:
 
 
 @st.cache_data(ttl=30)
-def _load_favorites() -> dict:
+def _load_favorites() -> tuple[dict, str | None]:
+    """(favoritas, error). El error NO se traga: 2026-09-20 se descubrió que la tabla
+    scouting_favorites nunca se había creado y la página lo ocultaba en silencio, así
+    que marcar favoritas parecía "no funcionar" sin ningún aviso."""
     try:
-        return fetch_favorites()
-    except Exception:
-        return {}
+        return fetch_favorites(), None
+    except Exception as e:  # noqa: BLE001
+        return {}, f"{type(e).__name__}: {str(e)[:220]}"
 
 
 @st.cache_data(ttl=30)
@@ -83,7 +86,7 @@ def _load_market_by_source_url() -> dict:
 
 df = _load()
 ondemand = _load_ondemand()
-favorites = _load_favorites()
+favorites, fav_load_error = _load_favorites()
 market_by_url = _load_market_by_source_url()
 
 if df.empty:
@@ -110,6 +113,34 @@ for url, row in ondemand.items():
                 "valida_idea_propia", "fundadores", "redes_sociales",
                 "fit_yc", "tipo_candidato"]:
         df.loc[mask, col] = row.get(col, "")
+
+# Columnas derivadas (sobre TODO el df, así la lista y el detalle las comparten).
+df["score_mostrado"] = df["objetivo_total"].where(df["has_deep"], df["triage_total"])
+df["analizado"] = df["has_deep"].map({True: "Profundo", False: "Triage"})
+df["favorita"] = df["url"].isin(favorites)
+_MARKET_BADGE = {"queued": "en cola", "analizando": "analizando",
+                 "listo": "listo", "error": "error"}
+_MARKET_KIND = {"queued": "warn", "analizando": "info", "listo": "ok", "error": "bad"}
+
+if fav_load_error:
+    st.warning(
+        "Las favoritas no están disponibles: no pude leer la tabla `scouting_favorites` en "
+        f"Supabase (¿falta crearla? el SQL está en `dashboard/schema.sql`). Detalle: {fav_load_error}",
+        icon=":material/warning:",
+    )
+if st.session_state.get("fav_error"):
+    st.error(f"No pude guardar la favorita. {st.session_state.pop('fav_error')}")
+
+
+def _toggle_fav(url: str, title: str, is_fav: bool) -> None:
+    try:
+        remove_favorite(url) if is_fav else add_favorite(url, title)
+    except Exception as e:  # noqa: BLE001
+        st.session_state["fav_error"] = f"{type(e).__name__}: {str(e)[:220]}"
+        st.rerun()
+    st.cache_data.clear()
+    st.rerun()
+
 
 # --- Filtros ---
 st.sidebar.header("Filtros")
@@ -179,191 +210,164 @@ if solo_favoritas:
 if busqueda:
     f = f[f["title"].str.contains(busqueda, case=False, na=False)]
 
-f = f.sort_values(
-    ["has_deep", "objetivo_total", "triage_total"], ascending=[False, False, False]
-)
-
-st.caption(f"{len(f)} ideas mostradas · {len(df)} evaluadas en total desde que corre el sistema")
-
-# --- Tabla compacta: una fila por idea, columnas para escanear de un vistazo ---
-if f.empty:
-    st.info("Ningún resultado con estos filtros.")
-    st.stop()
-
-f = f.reset_index(drop=True)
-f["score_mostrado"] = f["objetivo_total"].where(f["has_deep"], f["triage_total"])
-f["analizado"] = f["has_deep"].map({True: "Profundo", False: "Triage"})
-f["favorita"] = f["url"].isin(favorites)
-# "—" en vez de vacío: deja claro que es "no aplica todavía" (solo-triage),
-# no un dato que falta cargar.
-f["tipo_mostrado"] = f["tipo_candidato"].where(f["tipo_candidato"] != "", "—")
-_MARKET_BADGE = {"queued": "en cola", "analizando": "analizando",
-                 "listo": "listo", "error": "error"}
-_MARKET_KIND = {"queued": "warn", "analizando": "info", "listo": "ok", "error": "bad"}
-f["analisis_mercado"] = f["url"].map(
-    lambda u: _MARKET_BADGE.get((market_by_url.get(u) or {}).get("status"), "")
-)
-
-DISPLAY_COLS = [
-    "favorita", "passes_gate", "score_mostrado", "analizado", "tipo_mostrado",
-    "analisis_mercado", "title", "source", "fit_tesis", "stage", "mercado_actual",
-    "funding_raised", "fit_yc", "valida_idea_propia", "week", "url", "company_url",
-]
-COLUMN_CONFIG = {
-    "favorita": st.column_config.CheckboxColumn("Fav.", width="small"),
-    "analisis_mercado": st.column_config.TextColumn("Análisis de mercado", width="medium"),
-    "passes_gate": st.column_config.CheckboxColumn("Gate", width="small"),
-    "score_mostrado": st.column_config.ProgressColumn(
-        "Score", min_value=0, max_value=40, format="%d", width="small"
-    ),
-    "analizado": st.column_config.TextColumn("Análisis", width="small"),
-    "tipo_mostrado": st.column_config.TextColumn("Tipo", width="small"),
-    "title": st.column_config.TextColumn("Idea", width="large"),
-    "source": st.column_config.TextColumn("Fuente", width="small"),
-    "fit_tesis": st.column_config.TextColumn("Vertical / Industria", width="medium"),
-    "stage": st.column_config.TextColumn("Etapa", width="small"),
-    "mercado_actual": st.column_config.TextColumn("País", width="small"),
-    "funding_raised": st.column_config.TextColumn("Ronda / Funding", width="medium"),
-    "fit_yc": st.column_config.TextColumn("Fit YC", width="small"),
-    "valida_idea_propia": st.column_config.TextColumn("Valida idea propia", width="medium"),
-    "week": st.column_config.TextColumn("Semana", width="small"),
-    "url": st.column_config.LinkColumn("Fuente", width="small", display_text="Abrir"),
-    "company_url": st.column_config.LinkColumn("Web", width="small", display_text="Web"),
-}
-
-st.caption("Click en una fila para ver el detalle completo abajo. Click en el header de una columna para ordenar.")
-event = st.dataframe(
-    f[DISPLAY_COLS],
-    column_config=COLUMN_CONFIG,
-    hide_index=True,
-    use_container_width=True,
-    height=600,
-    on_select="rerun",
-    selection_mode="single-row",
-)
-
-selected = event.selection.rows if event and event.selection else []
-if not selected:
-    st.info("Selecciona una idea de la tabla para ver el detalle.")
-    st.stop()
-
-row = f.iloc[selected[0]]
-
-# --- Detalle de la idea seleccionada (tarjetas, mismo diseño que el Vault) ---
-st.divider()
-left, right = st.columns([3, 1], gap="medium")
-
 
 def _dash(v) -> str:
     return clean(v) if v not in (None, "") else "—"
 
 
-with left:
-    st.subheader(clean(row["title"]))
-    style.meta(row["source"], row["week"],
-               pills=[("sobre el gate", "ok")] if row["passes_gate"] else [])
-    score = row["score_mostrado"]
-    m = st.columns(4)
-    m[0].metric("Score", f"{score:.0f}/40" if pd.notna(score) else "—")
-    m[1].metric("Análisis", row["analizado"])
-    m[2].metric("Fit YC", row.get("fit_yc") or "—")
-    m[3].metric("País", row.get("mercado_actual") or "—")
-    links = [f"[Ver original]({row['url']})"]
-    if row.get("company_url"):
-        links.append(f"[Web de la empresa]({row['company_url']})")
-    st.markdown("  ·  ".join(links))
+def show_detail(row) -> None:
+    """Detalle de una idea (tarjetas, mismo diseño que el Vault)."""
+    if st.button("Volver a la lista", icon=":material/arrow_back:", key="scout_back"):
+        st.session_state.pop("scout_sel", None)
+        st.rerun()
+    left, right = st.columns([3, 1], gap="medium")
+    with left:
+        st.subheader(clean(row["title"]))
+        style.meta(row["source"], row["week"],
+                   pills=[("sobre el gate", "ok")] if row["passes_gate"] else [])
+        score = row["score_mostrado"]
+        m = st.columns(4)
+        m[0].metric("Score", f"{score:.0f}/40" if pd.notna(score) else "—")
+        for col, (lbl, val) in zip(m[1:], [("Análisis", row["analizado"]), ("Fit YC", row.get("fit_yc")),
+                                           ("País", row.get("mercado_actual"))]):
+            col.markdown(style.sub_box(lbl, style.esc(val or "—")), unsafe_allow_html=True)
+        links = [f"[Ver original]({row['url']})"]
+        if row.get("company_url"):
+            links.append(f"[Web de la empresa]({row['company_url']})")
+        st.markdown("  ·  ".join(links))
 
-    if row["has_deep"]:
-        with style.card():
-            style.label("Resumen")
-            st.write(clean(row["resumen"]))
-            if row.get("valida_idea_propia"):
-                st.info(f"Valida idea propia: {clean(row['valida_idea_propia'])}",
-                        icon=":material/target:")
+        if row["has_deep"]:
+            with style.card():
+                style.label("Resumen")
+                st.write(clean(row["resumen"]))
+                if row.get("valida_idea_propia"):
+                    st.info(f"Valida idea propia: {clean(row['valida_idea_propia'])}",
+                            icon=":material/target:")
 
-        c1, c2 = st.columns(2, gap="medium")
-        with c1, style.card():
-            style.label("Contexto")
-            st.markdown(f"**Vertical:** {_dash(row['fit_tesis'])}")
-            st.markdown(f"**Etapa:** {_dash(row.get('stage'))}")
-            st.markdown(f"**Funding:** {_dash(row.get('funding_raised'))}")
-            if row.get("tipo_candidato"):
-                st.markdown(f"**Tipo:** {_dash(row['tipo_candidato'])}")
-            if row.get("fundadores") and row["fundadores"] != "no identificados":
-                st.markdown(f"**Fundadores:** {_dash(row['fundadores'])}")
-            if row.get("redes_sociales"):
-                st.markdown(f"**Redes:** {_dash(row['redes_sociales'])}")
-        with c2, style.card():
-            style.label("Mercado y competencia")
-            st.markdown(f"**Por qué ahora:** {_dash(row.get('por_que_ahora'))}")
-            st.markdown(f"**Modelo de negocio:** {_dash(row.get('modelo_negocio'))}")
-            st.markdown(f"**Competencia local:** {_dash(row.get('competencia_local'))}")
-            comp_global = row.get("competencia_global", "")
-            if comp_global and comp_global not in ("no identificada", "no verificado"):
-                st.error(f"Competencia global real: {clean(comp_global)} — no es blue ocean.",
-                         icon=":material/warning:")
-            elif comp_global:
-                st.markdown(f"**Competencia global:** {_dash(comp_global)}")
+            c1, c2 = st.columns(2, gap="medium")
+            with c1, style.card():
+                style.label("Contexto")
+                st.markdown(f"**Vertical:** {_dash(row['fit_tesis'])}")
+                st.markdown(f"**Etapa:** {_dash(row.get('stage'))}")
+                st.markdown(f"**Funding:** {_dash(row.get('funding_raised'))}")
+                if row.get("tipo_candidato"):
+                    st.markdown(f"**Tipo:** {_dash(row['tipo_candidato'])}")
+                if row.get("fundadores") and row["fundadores"] != "no identificados":
+                    st.markdown(f"**Fundadores:** {_dash(row['fundadores'])}")
+                if row.get("redes_sociales"):
+                    st.markdown(f"**Redes:** {_dash(row['redes_sociales'])}")
+            with c2, style.card():
+                style.label("Mercado y competencia")
+                st.markdown(f"**Por qué ahora:** {_dash(row.get('por_que_ahora'))}")
+                st.markdown(f"**Modelo de negocio:** {_dash(row.get('modelo_negocio'))}")
+                st.markdown(f"**Competencia local:** {_dash(row.get('competencia_local'))}")
+                comp_global = row.get("competencia_global", "")
+                if comp_global and comp_global not in ("no identificada", "no verificado"):
+                    st.error(f"Competencia global real: {clean(comp_global)} — no es blue ocean.",
+                             icon=":material/warning:")
+                elif comp_global:
+                    st.markdown(f"**Competencia global:** {_dash(comp_global)}")
 
-        with style.card():
-            style.label("Siguiente paso")
-            st.write(clean(row.get("next_step", "")) or "—")
+            with style.card():
+                style.label("Siguiente paso")
+                st.write(clean(row.get("next_step", "")) or "—")
+        else:
+            st.caption("Solo triage — sin análisis profundo todavía.")
+
+    with right, style.card():
+        style.label("Acciones")
+        es_favorita = row["url"] in favorites
+        if st.button("Quitar de favoritas" if es_favorita else "Marcar favorita",
+                     icon=":material/star:", key=f"fav_{row['url']}", use_container_width=True,
+                     type="primary" if es_favorita else "secondary"):
+            _toggle_fav(row["url"], row["title"], es_favorita)
+        if not row["has_deep"]:
+            disabled = cap_used >= WEEKLY_CAP
+            if st.button("Analizar en profundidad", icon=":material/manage_search:",
+                         key=f"deep_{row['url']}", disabled=disabled, use_container_width=True):
+                with st.spinner("Analizando con Claude..."):
+                    item = Item(
+                        source=row["source"], title=row["title"],
+                        url=row["url"], text=row.get("text") or "",
+                    )
+                    scored, cost = analyze_one(item)
+                if scored:
+                    save_ondemand(row["week"], item, scored, cost)
+                    st.success(f"Listo (\\${cost:.4f}). Recargando...")
+                    st.cache_data.clear()
+                    st.rerun()
+                else:
+                    st.error("El modelo no devolvió un resultado válido.")
+            if disabled:
+                st.caption("Tope semanal alcanzado")
+
+        st.divider()
+        existing_market = market_by_url.get(row["url"])
+        if existing_market:
+            status = existing_market["status"]
+            style.label("Ya usada como referente en un análisis de mercado")
+            st.markdown(style.pill(_MARKET_BADGE.get(status, status), _MARKET_KIND.get(status, "neutral")),
+                        unsafe_allow_html=True)
+            st.caption(clean(existing_market["market_name"]))
+            st.page_link("pages/1_Analisis_de_Mercado.py", label="Ver en Análisis de mercado",
+                         icon=":material/arrow_forward:")
+        else:
+            st.caption("El análisis de mercado no es sobre esta empresa puntual: es sobre el mercado "
+                       "que representa. Se define en la pantalla dedicada.")
+            if st.button("Usar como referente", icon=":material/analytics:",
+                         key=f"market_{row['url']}", use_container_width=True):
+                st.session_state["market_prefill"] = {
+                    "empresas_referentes": row["title"],
+                    "source_url": row["url"],
+                    "origen": "dashboard",
+                }
+                st.switch_page("pages/1_Analisis_de_Mercado.py")
+
+
+# --- Detalle (si hay una idea abierta) o lista de tarjetas ---
+selected_url = st.session_state.get("scout_sel")
+if selected_url:
+    hit = df[df["url"] == selected_url]
+    if hit.empty:
+        st.session_state.pop("scout_sel", None)
     else:
-        st.caption("Solo triage — sin análisis profundo todavía.")
+        show_detail(hit.iloc[0])
+        st.stop()
 
-with right, style.card():
-    style.label("Acciones")
-    es_favorita = row["url"] in favorites
-    if es_favorita:
-        if st.button("Quitar de favoritas", icon=":material/star:",
-                     key=f"unfav_{row['url']}", use_container_width=True):
-            remove_favorite(row["url"])
-            st.cache_data.clear()
-            st.rerun()
-    else:
-        if st.button("Marcar favorita", icon=":material/star_border:",
-                     key=f"fav_{row['url']}", use_container_width=True):
-            add_favorite(row["url"], row["title"])
-            st.cache_data.clear()
-            st.rerun()
-    if not row["has_deep"]:
-        disabled = cap_used >= WEEKLY_CAP
-        if st.button("Analizar en profundidad", icon=":material/manage_search:",
-                     key=f"deep_{row['url']}", disabled=disabled, use_container_width=True):
-            with st.spinner("Analizando con Claude..."):
-                item = Item(
-                    source=row["source"], title=row["title"],
-                    url=row["url"], text=row.get("text") or "",
-                )
-                scored, cost = analyze_one(item)
-            if scored:
-                save_ondemand(row["week"], item, scored, cost)
-                st.success(f"Listo (\\${cost:.4f}). Recargando...")
-                st.cache_data.clear()
-                st.rerun()
-            else:
-                st.error("El modelo no devolvió un resultado válido.")
-        if disabled:
-            st.caption("Tope semanal alcanzado")
+orden_col, _ = st.columns([1, 3])
+orden = orden_col.selectbox("Ordenar por", ["Mayor score", "Más recientes"], key="scout_order")
+if orden == "Más recientes":
+    f = f.sort_values(["week_date", "objetivo_total"], ascending=[False, False], na_position="last")
+else:
+    f = f.sort_values(["has_deep", "objetivo_total", "triage_total"], ascending=[False, False, False])
+f = f.reset_index(drop=True)
 
-    st.divider()
-    existing_market = market_by_url.get(row["url"])
-    if existing_market:
-        status = existing_market["status"]
-        style.label("Ya usada como referente en un análisis de mercado")
-        st.markdown(style.pill(_MARKET_BADGE.get(status, status), _MARKET_KIND.get(status, "neutral")),
-                    unsafe_allow_html=True)
-        st.caption(clean(existing_market["market_name"]))
-        st.page_link("pages/1_Analisis_de_Mercado.py", label="Ver en Análisis de mercado",
-                     icon=":material/arrow_forward:")
-    else:
-        st.caption("El análisis de mercado no es sobre esta empresa puntual: es sobre el mercado "
-                   "que representa. Se define en la pantalla dedicada.")
-        if st.button("Usar como referente", icon=":material/analytics:",
-                     key=f"market_{row['url']}", use_container_width=True):
-            st.session_state["market_prefill"] = {
-                "empresas_referentes": row["title"],
-                "source_url": row["url"],
-                "origen": "dashboard",
-            }
-            st.switch_page("pages/1_Analisis_de_Mercado.py")
+st.caption(f"{len(f)} ideas mostradas · {len(df)} evaluadas en total desde que corre el sistema")
+if f.empty:
+    st.info("Ningún resultado con estos filtros.")
+    st.stop()
+
+sig = str((orden, date_range, fit_sel, tipo_sel, source_sel, score_range, incluir_triage,
+           solo_gate, solo_favoritas, busqueda))
+start_i, end_i = style.pager("scout", len(f), 15, sig, "top")
+for i in range(start_i, end_i):
+    r = f.iloc[i]
+    score = r["score_mostrado"]
+    lead = style.pill(f"{score:.0f}", "ok" if score >= 28 else "info" if score >= 24 else "neutral") \
+        if pd.notna(score) else style.pill("—")
+    chips = [(r["analizado"], "info" if r["has_deep"] else "neutral")]
+    if r["passes_gate"]:
+        chips.append(("sobre el gate", "ok"))
+    market = market_by_url.get(r["url"])
+    if market:
+        chips.append((f"mercado: {_MARKET_BADGE.get(market['status'], market['status'])}",
+                      _MARKET_KIND.get(market["status"], "neutral")))
+    meta = " · ".join(x for x in (r["source"], r["week"], r["fit_tesis"] or "", r["mercado_actual"] or "") if x)
+    action = style.row(f"scout_{i}", title=r["title"], meta=meta, lead_html=lead, pills=chips,
+                       fav=bool(r["favorita"]))
+    if action == "open":
+        st.session_state["scout_sel"] = r["url"]
+        st.rerun()
+    elif action == "fav":
+        _toggle_fav(r["url"], r["title"], bool(r["favorita"]))
+style.pager("scout", len(f), 15, sig, "bottom")
