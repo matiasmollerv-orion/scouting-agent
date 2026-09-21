@@ -1,0 +1,28 @@
+name: vault-stats
+
+# Estadística NUMÉRICA del Vault (conteos y medias de puntajes). No imprime contenido de
+# semillas: los logs de Actions son públicos en este repo.
+on:
+  workflow_dispatch:
+    inputs:
+      run_month:
+        description: "Mes/tag (ej: 2026-09-lectura). Vacío = todos"
+        required: false
+
+jobs:
+  stats:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install deps
+        run: pip install -r requirements.txt
+      - name: Stats
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+          RUN_MONTH: ${{ inputs.run_month }}
+        run: python -m scripts.vault_stats "$RUN_MONTH"
