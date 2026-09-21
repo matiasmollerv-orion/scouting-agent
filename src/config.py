@@ -51,8 +51,15 @@ TOP_DEEP = int(os.environ.get("SCOUTING_TOP_DEEP", "8"))
 PRIORITY_CATEGORY_SOURCES = {
     "Bienestar financiero": {"finextra", "tearsheet", "fintechtimes", "finovate"},
     "IA ejecutivos": {"stratechery"},
+    # 2026-09-21: "Tradicional reinventado" (2 de 88 análisis profundos en 11 semanas, 0 en el
+    # gate) y logística/bodegaje (0 hits) nunca llegaban al top-8. Fuentes dedicadas (gn_*,
+    # ver más abajo) + cupo de rescate para que cada semana haya al menos un candidato de cada una.
+    "Tradicional reinventado": {"gn_tradicional_en", "gn_tradicional_negocios", "gn_tradicional_es",
+                                "gn_tradicional_pt"},
+    "Logística y bodegaje": {"gn_logistica_en", "gn_logistica_prensa", "gn_logistica_es",
+                             "gn_logistica_pt", "supplychaindive"},
 }
-MAX_RESCUE_SLOTS = 3  # tope duro de cupos extra por corrida, por costo
+MAX_RESCUE_SLOTS = 5  # tope duro de cupos extra por corrida, por costo
 
 # Búsquedas web reales para el deep (competencia global, ventana, por qué
 # ahora) — sin esto el modelo completaba esos campos desde su prior de
@@ -114,7 +121,9 @@ MIN_ENGAGEMENT = {
 # su cupo (hackernews=10, resto=7 default) ≈ 100-110 — 150 da margen para
 # no cortar antes de ese fill natural.
 # Overridable por env para mini-runs reales (ej: SCOUTING_MAX_CANDIDATES=3).
-MAX_CANDIDATES = int(os.environ.get("SCOUTING_MAX_CANDIDATES", "150"))
+# 2026-09-21: 150 -> 200 al sumar 8 fuentes dedicadas (tradicional/logística); el triage
+# cuesta ~$0.0003/item, así que +50 ≈ +$0.015/semana.
+MAX_CANDIDATES = int(os.environ.get("SCOUTING_MAX_CANDIDATES", "200"))
 
 # Keywords que marcan relevancia para scouting de negocio.
 # Un item pasa el pre-filtro si su engagement supera el umbral
@@ -221,6 +230,21 @@ RELEVANCE_KEYWORDS = [
     "cashierless", "autonomous store", "ghost kitchen", "cloud kitchen",
     "laundry", "car wash", "barbershop", "dry cleaning", "self-storage",
     "moving service", "grocery", "convenience store", "pharmacy", "gym",
+    # Historias de negocios tradicionales en prensa tradicional (2026-09-21): en un diario
+    # regional o de negocios el titular no dice "reinventing" — dice quién es, cuántos locales
+    # abrió, cuánto factura y qué hace distinto.
+    "family-owned", "family business", "mom-and-pop", "third-generation", "franchise",
+    "opens its", "new location", "new locations", "locations nationwide", "new concept",
+    "new format", "flagship store", "expands to", "doubles revenue", "million in revenue",
+    "empresa familiar", "abre su", "nueva sucursal", "nuevos locales", "nuevo formato",
+    "facturación", "cadena de", "franquicia", "emprendedor", "pyme",
+    "empresa familiar", "abre nova", "nova unidade", "novo formato", "faturamento",
+    # Logística/bodegaje (2026-09-21): tesis ecommerce, ángulo operación + logística como negocio
+    "warehouse", "warehousing", "fulfillment center", "cold storage", "cold chain",
+    "micro-fulfillment", "reverse logistics", "returns logistics", "cross-border logistics",
+    "freight", "carrier", "warehouse automation", "storage as a service",
+    "bodega", "bodegaje", "almacenamiento", "centro de distribución", "última milla",
+    "armazém", "centro de distribuição", "última milha",
     # Tesis: manufactura/industria tradicional reinventada — el ejemplo que
     "manufacturing startup", "contract manufacturer", "injection molding",
     "factory automation", "industrial automation", "reshoring",
@@ -288,6 +312,9 @@ SOURCE_WEIGHT = {
     # Bajo: volumen alto, sin curación editorial — útil para detección
     # temprana, no para confirmar tendencia por sí solo.
     "hackernews": 0.3, "reddit_saas": 0.3, "yc": 0.3,
+    # Google Noticias dedicadas (tradicional/logística): agregan medios de calidad dispar.
+    **{f"gn_{k}": 0.6 for k in ("tradicional_en", "tradicional_negocios", "tradicional_es", "tradicional_pt",
+                                "logistica_en", "logistica_prensa", "logistica_es", "logistica_pt")},
 }
 SOURCE_WEIGHT_DEFAULT = 0.4  # fuente no listada: ni alto ni descartable
 
@@ -374,6 +401,15 @@ THEME_KEYWORDS = {
         "cashierless", "ghost kitchen", "cloud kitchen", "refurbished",
         "recommerce", "laundry", "car wash", "grocery", "manufacturing",
         "factory", "injection molding", "contract manufacturer",
+        "family-owned", "franchise", "new concept", "new format", "mom-and-pop",
+        "barbershop", "pharmacy", "hardware store", "bakery", "self-storage",
+        "empresa familiar", "franquicia", "nuevo formato", "lavandería", "ferretería",
+    ],
+    "Logística y bodegaje": [
+        "warehouse", "warehousing", "fulfillment", "3pl", "cold chain", "cold storage",
+        "last mile", "last-mile", "reverse logistics", "returns", "micro-fulfillment",
+        "warehouse automation", "cross-border", "freight", "storage",
+        "bodega", "última milla", "centro de distribución", "armazém", "última milha",
     ],
     "Industrias CL": [
         "mining", "aquaculture", "agtech", "agriculture", "fishery", "salmon",
@@ -505,6 +541,61 @@ RSS_FEEDS = {
     # "wired": eliminada — solo reviews de productos de consumo, sin señal de negocio
     # "credaily" (CRE Daily): descartada — feed responde 200 pero 0 items reales
 }
+
+# --- Fuentes dedicadas vía Google Noticias (2026-09-21) ---
+# Diagnóstico (11 semanas, 88 análisis profundos): "Tradicional reinventado" tuvo 2 y ninguno
+# pasó el gate; logística/bodegaje, 0. Las fuentes que las alimentaban (Retail Dive, Grocery
+# Dive, NRN, Manufacturing Dive, Supply Chain Dive) son prensa de industria sobre GRANDES
+# cadenas y tienen triage medio de 0.6-3.8/40: no cuentan el caso de un negocio chico o
+# mediano que armó algo grande con una propuesta distinta. Esas historias salen en diarios de
+# negocios, prensa regional y revistas de emprendimiento — sin RSS propio, así que se
+# consultan con el RSS público de Google Noticias (`site:` + palabras del patrón de historia).
+import urllib.parse as _up
+
+
+def _gn(q: str, hl: str = "en-US", gl: str = "US", ceid: str = "US:en", days: int = 7) -> str:
+    return "https://news.google.com/rss/search?" + _up.urlencode(
+        {"q": f"{q} when:{days}d", "hl": hl, "gl": gl, "ceid": ceid})
+
+
+_ES = dict(hl="es-419", gl="CL", ceid="CL:es-419")
+_PT = dict(hl="pt-BR", gl="BR", ceid="BR:pt-419")
+
+
+def _many(qs: list[str], **ed) -> list[str]:
+    return [_gn(q, **ed) for q in qs]
+
+
+# Cada feed = VARIAS consultas SIMPLES (una mezcla larga de OR/AND hace que Google ignore
+# `when:7d` y devuelva resultados viejos — medido 2026-09-21: 100 items, solo 2-4 de la semana).
+# Se fusionan y deduplican por título en MultiFeed.
+GN_FEEDS: dict[str, list[str]] = {
+    # Tradicional reinventado — historias de negocios: quién, cuántos locales/ventas, qué hace distinto
+    "gn_tradicional_en": _many(['"small business of the year"', '"entrepreneur of the year" store', '"fastest-growing" "family-owned"',
+                                '"opens second location"', '"third location" owner', '"now has" locations founder',
+                                '"new concept" store opens', 'laundromat OR "dry cleaning" subscription', 'franchise "fastest-growing"',
+                                'reinvents bakery OR barbershop OR hardware OR grocery', '"car wash" membership',
+                                '"self-storage" startup']),
+    "gn_tradicional_negocios": _many(['site:bizjournals.com "new concept"', 'site:bizjournals.com franchise',
+                                      'site:inc.com founder revenue', 'site:franchisetimes.com', 'site:qsrmagazine.com "new concept"',
+                                      'site:smallbiztrends.com', 'site:chainstoreage.com', 'site:starterstory.com']),
+    "gn_tradicional_es": _many(['"empresa familiar" "nuevo formato"', 'emprendedor "abrió su" local', '"pyme del año"',
+                                'emprendimiento lavandería OR panadería OR ferretería historia', '"ya tiene" locales cadena chilena',
+                                'franquicia "nueva marca" Chile', 'emprendimiento "facturó" locales', '"modelo de suscripción" tienda'],
+                               **_ES),
+    "gn_tradicional_pt": _many(['"pequenas empresas grandes negócios"', 'empreendedor "abriu sua" unidade', 'franquia "nova unidade" cresce',
+                                'padaria "novo modelo"', 'lavanderia assinatura', 'empreendedor faturamento rede'], **_PT),
+    # Logística, bodegaje y fulfillment — como negocio y como capa del ecommerce
+    "gn_logistica_en": _many(['warehouse fulfillment', '3PL', '"last-mile" startup', '"cold storage" expands',
+                              '"reverse logistics"', '"warehouse automation"', '"micro-fulfillment"', 'warehouse "as a service"']),
+    "gn_logistica_prensa": _many(['site:freightwaves.com warehouse', 'site:supplychainbrain.com fulfillment',
+                                  'site:logisticsmgmt.com warehouse', 'site:theloadstar.com', 'site:mmh.com', 'site:dcvelocity.com']),
+    "gn_logistica_es": _many(['bodegaje', 'fulfillment ecommerce', '"última milla" startup', '"centro de distribución" automatización',
+                              '"logística inversa"', 'bodegas arriendo', 'logística ecommerce Chile'], **_ES),
+    "gn_logistica_pt": _many(['armazém fulfillment', '"última milha" startup', 'logística reversa',
+                              '"centro de distribuição" automação', 'fulfillment ecommerce'], **_PT),
+}
+GN_MAX_ITEMS = 40  # por feed: Google devuelve hasta 100 y el pool diario no necesita tanto
 
 # Reddit r/SaaS: único subreddit activo sin rate-limit en CI.
 # r/startups y r/entrepreneur dan 429 desde GitHub Actions con múltiples calls.

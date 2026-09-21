@@ -79,3 +79,42 @@ def _strip_html(text: str) -> str:
     import re
 
     return re.sub(r"<[^>]+>", "", text).strip()
+
+
+class MultiFeed(Source):
+    """Varias consultas RSS fusionadas en UNA fuente (Google Noticias con consultas simples).
+
+    Dedup por título normalizado y tope `max_items` para no inflar el pool diario.
+    """
+
+    def __init__(self, name: str, urls: list[str], lookback_days: int = 7, max_items: int = 40,
+                 delay: float = 0.4):
+        self.name = name
+        self.feeds = [RSSFeed(name=name, url=u, lookback_days=lookback_days) for u in urls]
+        self.max_items = max_items
+        self.delay = delay
+
+    def fetch(self) -> list[RawItem]:
+        import re
+        per_query: list[list[RawItem]] = []
+        for i, feed in enumerate(self.feeds):
+            if i:
+                time.sleep(self.delay)
+            per_query.append(feed.fetch())
+        # Intercala las consultas (1 de cada una por turno, en el orden de relevancia de Google):
+        # ninguna consulta monopoliza el cupo, y no se ordena por fecha porque eso sube el ruido
+        # de "ayer" (incendios, ofertas de empleo) por sobre lo relevante.
+        seen: set[str] = set()
+        out: list[RawItem] = []
+        for rank in range(max((len(q) for q in per_query), default=0)):
+            for q in per_query:
+                if rank < len(q):
+                    key = re.sub(r"\W+", "", q[rank].title.lower())[:80]
+                    if key and key not in seen:
+                        seen.add(key)
+                        out.append(q[rank])
+        out = out[: self.max_items]
+        for it in out:  # Google Noticias repite el titular como "resumen": no gastar tokens en eso
+            if it.text and it.text[:40] == it.title[:40]:
+                it.text = ""
+        return out

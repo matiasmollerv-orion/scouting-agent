@@ -209,7 +209,11 @@ with style.card():
     if url:
         badge = {"ok": style.pill("la fuente resuelve", "ok"),
                  "bloqueada": style.pill("el sitio bloquea la verificación", "neutral"),
-                 "rota": style.pill("la fuente no resuelve", "warn")}.get(g("url_estado"), "")
+                 "rota": style.pill("la fuente no resuelve", "warn"),
+                 "titular": style.pill("solo titular de prensa · sin verificar", "neutral"),
+                 "verificada": style.pill("verificada con búsqueda", "ok"),
+                 "parcial": style.pill("verificación parcial", "warn"),
+                 "no_confirmada": style.pill("no se pudo confirmar", "bad")}.get(g("url_estado"), "")
         st.markdown(f"[Fuente]({url}) &nbsp; {badge}", unsafe_allow_html=True)
 
 with style.card():

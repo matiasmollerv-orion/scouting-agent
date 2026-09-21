@@ -33,6 +33,12 @@ on:
         description: "Solo agrupar semillas repetidas entre países (barato, sin minería)"
         type: boolean
         default: false
+      pairs:
+        description: "Combinaciones PAÍS-lente a correr, separadas por coma (ej: CL-tradicional,US-logistica). Reemplaza la agenda"
+        required: false
+      verify_top:
+        description: "Semillas a verificar con búsqueda web (vacío = 25; 0 = ninguna)"
+        required: false
 
 concurrency:
   group: oracle-monthly
@@ -63,6 +69,8 @@ jobs:
           MAX_PAIRS: ${{ inputs.max_pairs }}
           FORCE: ${{ inputs.force }}
           CLUSTER_ONLY: ${{ inputs.cluster_only }}
+          PAIRS: ${{ inputs.pairs }}
+          ORACLE_VERIFY_TOP: ${{ inputs.verify_top }}
         run: |
           ARGS=""
           [ "$DRY_RUN" = "true" ] && ARGS="$ARGS --dry-run"
@@ -70,4 +78,5 @@ jobs:
           [ -n "$MAX_PAIRS" ] && [ "$MAX_PAIRS" != "0" ] && ARGS="$ARGS --max-pairs $MAX_PAIRS"
           [ "$FORCE" = "true" ] && ARGS="$ARGS --force"
           [ "$CLUSTER_ONLY" = "true" ] && ARGS="$ARGS --cluster-only"
+          [ -n "$PAIRS" ] && ARGS="$ARGS --pairs $PAIRS"
           python -m scripts.oracle_run $ARGS

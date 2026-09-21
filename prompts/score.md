@@ -206,27 +206,57 @@ a cualquier categoría, no solo ecommerce.
   agricultura donde hay dolor real y poca solución tecnológica local.
 - **"B2C servicios"** — cualquier servicio con tracción real de consumidores,
   especialmente con WhatsApp como canal o componente agéntico.
-- **"Tradicional reinventado"** — CUALQUIER industria probada y "aburrida"
-  (lavandería, supermercado, retail, barbería, mudanzas, ferretería,
-  farmacia, gimnasio, restaurante, arriendo, electrónica usada, lo que sea)
-  donde alguien reinventó el CÓMO, no el QUÉ. La innovación puede estar en
-  cualquier dimensión, no importa cuál mientras cree una ventaja real:
+- **"Tradicional reinventado"** — ALTA PRIORIDAD (2026-09-21, el fundador notó que
+  esta categoría casi nunca traía resultados): EMPRESAS de industrias probadas y
+  "aburridas" que venden productos o servicios a personas o empresas —lavandería,
+  supermercado, retail, tienda de artículos, ecommerce, barbería, mudanzas,
+  ferretería, farmacia, gimnasio, panadería, restaurante, servicios para el hogar,
+  manufactura, arriendo, electrónica usada, lo que sea— destacadas por lo que
+  armaron: alguien reinventó el CÓMO, no el QUÉ, y tiene resultados. **No es una
+  categoría de tecnología**: el negocio puede no usar nada de software. La
+  innovación puede estar en cualquier dimensión, no importa cuál mientras cree una
+  ventaja real:
+    · Producto (una versión distinta, más simple, más premium o más barata de lo de siempre)
     · Entrega/logística (lavandería que despacha con drones, delivery en 10 min)
     · Modelo de negocio (suscripción, membresía, recommerce, vertical integrado,
       marketplace, dark stores, pago por uso)
+    · Distribución (D2C donde había intermediarios, canal nuevo, punto de venta distinto)
     · Tecnología/automatización (supermercado sin cajas, cocina robotizada,
       IA para pricing o inventario)
     · Experiencia radicalmente mejor (app-first donde todo era presencial,
       transparencia de precios, atención instantánea)
-    · Formato (autoservicio donde había atención, D2C donde había intermediarios,
-      capa de confianza/certificación sobre un mercado informal)
+    · Formato (autoservicio donde había atención, capa de confianza/certificación
+      sobre un mercado informal)
   La demanda YA está probada (todos usan supermercados, lavanderías, etc.), así
-  que el riesgo de mercado es casi cero. Lo único que se evalúa es si la vuelta
-  de tuerca es lo bastante fuerte para crear una ventaja defendible y no ser
-  copiada al día siguiente. Señales del patrón: un incumbente fragmentado,
-  informal o con mala experiencia; "el Warby Parker / Back Market / Rappi de X";
-  digitalización de algo que era 100% análogo; un formato nuevo que baja costos
-  o mejora la experiencia de forma radical.
+  que el riesgo de mercado es casi cero. Lo que se evalúa es si la vuelta de
+  tuerca es lo bastante fuerte para crear una ventaja defendible y no ser
+  copiada al día siguiente, y si los RESULTADOS son reales. Señales del patrón: un
+  incumbente fragmentado, informal o con mala experiencia; "el Warby Parker / Back
+  Market / Rappi de X"; digitalización de algo 100% análogo; un formato nuevo que
+  baja costos o mejora la experiencia de forma radical.
+  **Cómo puntuar (importante):** estas historias vienen de diarios de negocios,
+  prensa regional, premios y rankings, NO de rondas de financiamiento. Que no haya
+  `funding_raised` ni startup detrás NO resta score: usá "bootstrapped" o
+  "desconocido". La evidencia de `problema_score` son los resultados (crecimiento,
+  N° de locales, facturación, premios, cobertura) y la claridad de la innovación.
+  `fit_yc` suele ser "Bajo" y NO debe arrastrar el juicio. `barrera_score` debe ser
+  generoso: abrir un local piloto o un servicio no exige ingenieros ni hardware
+  propio; solo baja si el capital requerido es realmente pesado. El fundador
+  podría replicar el MODELO asociándose con un socio operador. `next_step`: qué
+  visitar, probar o a quién preguntar en Chile para validar el formato.
+- **"Logística y bodegaje"** — ALTA PRIORIDAD (2026-09-21): almacenamiento,
+  fulfillment/3PL para ecommerce, última milla, cold chain, logística inversa
+  (devoluciones), cross-border, bodegaje como servicio, micro-fulfillment y
+  automatización de bodegas. El fundador cree que el ecommerce solo va a crecer y
+  que esta capa va a evolucionar mucho: interesan tanto los OPERADORES y modelos de
+  servicio nuevos (con activos propios o livianos, ej: bodega compartida, red de
+  puntos de retiro, fulfillment para pymes) como las herramientas que los habilitan
+  cuando el comprador es un operador logístico o un vendedor online. Puntuá por
+  claridad de la propuesta y resultados (clientes, volumen, crecimiento,
+  financiamiento si hay). Excluí noticias sin ángulo de negocio nuevo (huelgas,
+  tarifas, navieras o aerolíneas gigantes, trámites). Pensá siempre en replicabilidad
+  en Chile/LatAm: costos de suelo, densidad de ecommerce, última milla en
+  ciudades intermedias.
 - **"Otro"** — si no mapea a ninguna categoría anterior.
 
 **Excluir explícitamente (objeto MÍNIMO — problema_score=0, barrera_score=0,

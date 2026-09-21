@@ -88,8 +88,11 @@ def score(items: list[Item]) -> ScoreResult:
     # salir, pero lo que nunca salió no es recuperable. 150 items × ~50-60
     # tokens/item real (URLs largas con utm params pesan más que el
     # "~30 tokens/item" original) ≈ 7500-9000 tokens — 16000 da margen real.
+    # 2026-09-21: 200 candidatos y las fuentes Google Noticias (gn_*) traen URLs de redirección
+    # de ~150 caracteres (≈100 tokens c/u) y quedan AL FINAL del round-robin — justo donde
+    # cae el corte si se trunca. 200 × ~110 ≈ 22k -> 32000 (solo se paga lo generado).
     text, c, triage_truncated = _call(client, config.MODEL_TRIAGE, triage_system,
-                                       triage_user, max_tokens=16000)
+                                       triage_user, max_tokens=32000)
     result.cost_usd += c
     if triage_truncated:
         result.triage_truncated = True

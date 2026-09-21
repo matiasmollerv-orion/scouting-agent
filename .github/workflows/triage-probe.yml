@@ -1,0 +1,23 @@
+name: triage-probe
+
+# Sonda puntual (~$0.03-0.06, Haiku): ¿puntúa bien el triage las historias de negocios
+# tradicionales y logística? Imprime puntajes y titulares públicos de prensa.
+on:
+  workflow_dispatch: {}
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install deps
+        run: pip install -r requirements.txt
+      - name: Sonda
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python -m scripts.triage_probe

@@ -83,10 +83,10 @@ LENSES: tuple[Lens, ...] = (
          ("CL", "BR", "MX", "US", "UK", "ES", "DE", "NL", "AU", "IN", "IL", "KR", "SG")),
     Lens("ops_b2b", "Eficiencia operacional de empresas (B2B)", 2,
          "Actores: empresas de cualquier tamaño y sector, sobre todo pymes y medianas. Necesidad: "
-         "eficientar la operación de punta a punta — ventas y cotización, compras, logística, "
+         "eficientar la operación de punta a punta — ventas y cotización, compras, "
          "facturación y cobranza, atención al cliente, reportes, cumplimiento. NO gestión de "
-         "personas (otro lente), NO sensores físicos (otro lente), NO lo específico de exportadores "
-         "(otro lente). Señales: brecha (procesos en planilla, adopción de ERP y CRM por tamaño), "
+         "personas (otro lente), NO sensores físicos (otro lente), NO logística ni bodegaje (otro "
+         "lente), NO lo específico de exportadores (otro lente). Señales: brecha (procesos en planilla, adopción de ERP y CRM por tamaño), "
          "queja (reseñas de ERP/CRM, pagos a 60-90 días), oferta.",
          ("CL", "BR", "MX", "PE", "CO", "AR", "US", "UK", "ES", "DE", "NL", "AU", "IN")),
     Lens("comercio", "Comercio y marketplaces", 2,
@@ -125,6 +125,31 @@ LENSES: tuple[Lens, ...] = (
          "('tradicional reinventado'). Señales: queja (incumplimiento, precios opacos), brecha "
          "(informalidad), oferta ('el X de Y').",
          ("CL", "BR", "MX", "PE", "CO", "AR", "ES", "IN", "US")),
+    Lens("tradicional", "Negocios tradicionales reinventados", 1,
+         "Actores: NEGOCIOS reales que venden productos o servicios a personas o empresas en "
+         "industrias probadas — lavandería, tienda de artículos, ferretería, farmacia, panadería, "
+         "gimnasio, supermercado, restaurante, ecommerce, servicios para el hogar, manufactura — "
+         "con o sin tecnología. Lo que se busca son EMPRESAS destacadas por una propuesta "
+         "innovadora en el producto, el modelo de negocio, la distribución, el formato o la "
+         "experiencia, y por sus RESULTADOS (crecimiento, locales, ventas, premios). Señales: "
+         "oferta (casos que crecen, en prensa económica, regional y de emprendimiento, premios y "
+         "rankings), brecha (industria fragmentada o análoga sin un jugador moderno), queja (clientes "
+         "del formato tradicional). La evidencia son RESULTADOS de negocios reales, no rondas de "
+         "financiamiento. Excluir: gigantes que ya son el status quo (Walmart, Amazon, Zara), "
+         "franquicias globales conocidas y startups de software puro.",
+         ("CL", "BR", "MX", "PE", "CO", "AR", "US", "UK", "ES", "DE", "NL", "AU", "IN", "KR", "SG", "CN")),
+    Lens("logistica", "Logística, bodegaje y fulfillment", 2,
+         "Actores: vendedores online, marcas, pymes y operadores logísticos. Necesidad: costo, "
+         "velocidad y confiabilidad del almacenaje y la entrega — bodegaje y bodegas compartidas, "
+         "fulfillment y 3PL para ecommerce, última milla (incluida fuera de las grandes ciudades), "
+         "cold chain, logística inversa (devoluciones), cross-border, automatización de bodegas. "
+         "Cuentan tanto operadores y modelos de servicio nuevos (activos propios o livianos) como "
+         "las herramientas que los habilitan. Señales: oferta (operadores y modelos que crecen, "
+         "financiamiento), queja (vendedores sobre costos de envío, 3PL y devoluciones), brecha "
+         "(bodegaje y última milla en ciudades intermedias), fuerza_externa (aduanas y normativa de "
+         "comercio electrónico). Excluir: huelgas, tarifas de navieras y grandes aerolíneas sin ángulo "
+         "de negocio nuevo.",
+         ("CL", "BR", "MX", "PE", "CO", "AR", "US", "UK", "ES", "DE", "NL", "AU", "IN", "CN", "SG", "KR")),
 )
 
 LENS_BY_KEY = {l.key: l for l in LENSES}

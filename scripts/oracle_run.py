@@ -3,8 +3,14 @@
 chequeo de fuentes → consejo de críticos → Vault (Supabase, privado).
 
 Agenda: src/oracle/matrix.py decide qué combinaciones tocan este mes (17 países,
-11 lentes, frecuencia por lente, matriz parcial). Todo va por Batch API (-50% en
+13 lentes, frecuencia por lente, matriz parcial). Todo va por Batch API (-50% en
 tokens); las búsquedas web no llevan descuento.
+
+Flujo (rediseño 2026-09-21): 1) recolección GRATIS de titulares por país × lente
+(src/oracle/sources.py) → 2) el modelo LEE los titulares (src/oracle/read.py, sin búsqueda
+web) → 3) consejo de críticos → 4) VERIFICACIÓN con búsqueda web solo de las mejores
+semillas → 5) agrupamiento de temas repetidos entre países. `--legacy-search` vuelve a la
+minería con búsqueda web a ciegas (más cara, sin lista de fuentes).
 
 Privacidad: el repo y los logs de Actions son PÚBLICOS. Este script nunca imprime
 contenido de semillas ni lessons, solo conteos y costos. La materia prima interna
@@ -35,7 +41,11 @@ from src.oracle.matrix import (  # noqa: E402
 )
 
 PROMPTS = REPO / "prompts"
-SEARCHES_PER_PAIR = 2            # supuesto de costo/precisión — el canario lo calibra
+SEARCHES_PER_PAIR = 2            # solo modo --legacy-search
+READ_MAX_TOKENS = 8000           # lectura de titulares: holgado por el razonamiento de Sonnet
+VERIFY_TOP = int(os.environ.get("ORACLE_VERIFY_TOP") or 25)  # semillas del consejo a verificar con búsqueda web
+VERIFY_MAX_SEARCHES = 2
+VERIFY_MAX_TOKENS = 6000
 MINING_MAX_TOKENS = 12000        # holgado: el razonamiento de Sonnet cuenta acá
 COUNCIL_MAX_TOKENS = 16000
 COUNCIL_CHUNK = 8                # semillas por llamada (el canario v2 truncó con 20)
@@ -45,6 +55,9 @@ MAX_DIRECT_FALLBACK = 8
 DEFAULT_MODEL = "claude-sonnet-5"
 # Costo estimado por combinación con Batch y 2 búsquedas — medido en el canario v2.
 EST_PAIR_COST = {"sonnet": 0.065, "haiku": 0.035}
+# Estimación de la lectura de titulares (Batch, ~4k tokens de entrada + salida con razonamiento).
+# NO medida todavía — la primera corrida real la calibra.
+EST_READ_PAIR_COST = {"sonnet": 0.03, "haiku": 0.012}
 WEIGHTS = {"evidencia_necesidad": 0.30, "tamano_gravedad": 0.20, "por_que_ahora": 0.20,
            "hueco_vs_incumbentes": 0.20, "testeabilidad": 0.10}
 SENALES_VALIDAS = {"queja", "brecha", "fuerza_externa", "oferta"}
@@ -178,6 +191,145 @@ def mine(client, pairs, model: str, effort: str | None, month_key: str) -> tuple
     return rows, cost, stats
 
 
+def read_mine(client, pairs, model: str, effort: str | None, month_key: str) -> tuple[list[dict], float, Counter]:
+    """Lee titulares recolectados gratis (sin búsqueda web) y extrae las mejores señales."""
+    import httpx
+    from scripts.market_analysis import _parse_object
+    from src.oracle import read, sources
+    from src.oracle.batch import direct_call, make_request, run_batch
+
+    system = (PROMPTS / "oracle_read.md").read_text(encoding="utf-8")
+    fb = lens_feedback()
+    stats: Counter = Counter()
+    reqs, ranked_by_id = [], {}
+    cache: dict = {}
+    with httpx.Client(headers=sources._UA, follow_redirects=True) as http:
+        for cc, lk in pairs:
+            ranked = read.rank(read.gather(cc, lk, http, cache), cc, lk)
+            if len(ranked) < 5:
+                stats["sin_titulares"] += 1
+                continue
+            ranked_by_id[f"{cc}-{lk}"] = ranked
+            name, _ = COUNTRIES[cc]
+            lens = LENS_BY_KEY[lk]
+            extra = ("\nPriorizá señales de tipo 'oferta': las quejas locales de este país son poco "
+                     "accesibles." if cc in SENALES_OFERTA else "")
+            user = (f"País: {name}\nLente: {lens.name}\nDefinición del lente: {lens.definition}{extra}\n\n"
+                    f"Titulares ({len(ranked)}):\n{read.render(ranked)}\n\n"
+                    f"Extraé las señales más específicas y accionables.{fb.get(lens.name, '')}")
+            reqs.append(make_request(f"{cc}-{lk}", model, system, user, READ_MAX_TOKENS, None, effort))
+    stats["titulares_leidos"] = sum(len(v) for v in ranked_by_id.values())
+    res = run_batch(client, reqs, log_prefix="[oracle:lectura]")
+    for r in [r for r in reqs if "error" in res.get(r["custom_id"], {"error": "faltante"})][:MAX_DIRECT_FALLBACK]:
+        try:
+            res[r["custom_id"]] = direct_call(client, r)
+            stats["reintento_directo_ok"] += 1
+        except Exception as e:  # noqa: BLE001
+            res[r["custom_id"]] = {"error": type(e).__name__}
+    cost = sum(v.get("cost", 0.0) for v in res.values())
+
+    rows: list[dict] = []
+    for cc, lk in pairs:
+        cid = f"{cc}-{lk}"
+        if cid not in ranked_by_id:
+            continue
+        r = res.get(cid, {"error": "faltante"})
+        if "error" in r:
+            stats["pares_fallidos"] += 1
+            continue
+        if r.get("truncated"):
+            stats["truncados"] += 1
+        obj = _parse_object(r["text"]) or {}
+        items = obj.get("necesidades", []) if isinstance(obj, dict) else []
+        if not items:
+            stats["sin_necesidades"] += 1
+        country, lens_name = COUNTRIES[cc][0], LENS_BY_KEY[lk].name
+        ranked = ranked_by_id[cid]
+        for it in items[:3]:
+            nec = (it.get("necesidad") or "").strip()
+            if not nec:
+                continue
+            cited = [n for n in (_as_int(x) for x in (it.get("items") or [])) if n and 1 <= n <= len(ranked)]
+            tipo = (it.get("tipo_senal") or "").strip().lower()
+            rows.append({
+                "run_month": month_key, "country": country, "lens": lens_name,
+                "tipo_senal": tipo if tipo in SENALES_VALIDAS else None,
+                "necesidad": nec, "quien": it.get("quien"), "evidencia": it.get("evidencia"),
+                "fuente_url": ranked[cited[0] - 1]["url"] if cited else "",
+                # Solo titular de prensa: se verifica con búsqueda si pasa el consejo.
+                "url_estado": "titular" if cited else "sin_url",
+                "solucion_existente": it.get("solucion_existente"),
+                "transferencia": it.get("transferencia_chile_latam"),
+                "modelo": model, "dedupe_key": dedupe_key(country, lens_name, nec),
+            })
+    stats["semillas"] = len(rows)
+    return rows, cost, stats
+
+
+def verify(client, model: str, effort: str | None, month_key: str) -> tuple[float, Counter]:
+    """Verifica con búsqueda web REAL las mejores semillas del consejo del mes (basadas en titulares)."""
+    from dashboard.db import fetch_vault_status, update_vault
+    from scripts.market_analysis import _parse_object
+    from src.oracle.batch import direct_call, make_request, run_batch
+    from src.pipeline.score import web_search_tool
+
+    stats: Counter = Counter()
+    seeds = [x for x in fetch_vault_status("en_vault")
+             if x.get("run_month") == month_key and x.get("url_estado") == "titular"]
+    seeds = sorted(seeds, key=lambda x: x.get("score") or 0, reverse=True)[:VERIFY_TOP]
+    if not seeds:
+        return 0.0, stats
+    system = (PROMPTS / "oracle_verify.md").read_text(encoding="utf-8")
+    tools = web_search_tool(VERIFY_MAX_SEARCHES)
+    reqs = [make_request(f"v{x['id']}", model, system,
+                         f"País: {x['country']} · Lente: {x['lens']}\nNecesidad: {x['necesidad']}\n"
+                         f"Quién: {x.get('quien')}\nEvidencia detectada en titulares: {x.get('evidencia')}\n"
+                         f"Solución existente según los titulares: {x.get('solucion_existente')}",
+                         VERIFY_MAX_TOKENS, tools, effort) for x in seeds]
+    res = run_batch(client, reqs, log_prefix="[oracle:verificación]")
+    for r in [r for r in reqs if "error" in res.get(r["custom_id"], {"error": "faltante"})][:MAX_DIRECT_FALLBACK]:
+        try:
+            res[r["custom_id"]] = direct_call(client, r)
+        except Exception as e:  # noqa: BLE001
+            res[r["custom_id"]] = {"error": type(e).__name__}
+    cost = sum(v.get("cost", 0.0) for v in res.values())
+
+    urls = [_first for x in seeds
+            if (_first := first_url((_parse_object(res.get(f"v{x['id']}", {}).get("text", "")) or {})
+                                    .get("fuente_url", "")))]
+    states = url_states(sorted(set(urls))) if urls else {}
+    for x in seeds:
+        r = res.get(f"v{x['id']}", {"error": "faltante"})
+        if "error" in r:
+            stats["fallidas"] += 1
+            continue
+        obj = _parse_object(r["text"]) or {}
+        verdict = (obj.get("veredicto") or "").strip().lower()
+        if verdict not in ("confirmada", "parcial", "no_confirmada"):
+            stats["ilegibles"] += 1
+            continue
+        stats[verdict] += 1
+        url = first_url(obj.get("fuente_url", ""))
+        fields: dict = {"url_estado": {"confirmada": "verificada", "parcial": "parcial",
+                                      "no_confirmada": "no_confirmada"}[verdict]}
+        if obj.get("evidencia"):
+            fields["evidencia"] = obj["evidencia"]
+        if url:
+            fields["fuente_url"] = url
+            if states.get(url) == "rota":
+                fields["url_estado"] = fields["url_estado"] if verdict != "confirmada" else "parcial"
+        if obj.get("solucion_existente"):
+            fields["solucion_existente"] = obj["solucion_existente"]
+        if verdict == "no_confirmada":
+            fields["status"] = "descartada_consejo"
+            fields["objeciones"] = ((x.get("objeciones") or "") + " | Verificación: no se pudo confirmar"
+                                    + (f" — {obj['nota']}" if obj.get("nota") else "")).strip(" |")
+        elif obj.get("nota"):
+            fields["objeciones"] = ((x.get("objeciones") or "") + f" | Verificación: {obj['nota']}").strip(" |")
+        update_vault(x["id"], **fields)
+    return cost, stats
+
+
 def _as_float(x) -> float:
     """Puntajes del modelo: tolera '7', '7/10', None — un formato raro no debe tumbar la corrida."""
     try:
@@ -220,7 +372,9 @@ def council(client, model: str, effort: str | None) -> tuple[int, float, Counter
     chunks = [seeds[i:i + COUNCIL_CHUNK] for i in range(0, len(seeds), COUNCIL_CHUNK)]
 
     def brief(s: dict) -> str:
-        url = {"ok": "resuelve (ok)", "bloqueada": "no verificable (el sitio bloquea)",
+        url = {"titular": "titular de prensa, sin el texto completo — puntuá el POTENCIAL de la señal; "
+                          "si pasa el umbral se verifica después con búsqueda web",
+               "ok": "resuelve (ok)", "bloqueada": "no verificable (el sitio bloquea)",
                "rota": "NO resuelve — tratá la evidencia como NO verificable",
                "sin_url": "sin URL — tratá la evidencia como NO verificable"}.get(s.get("url_estado"), "?")
         return (f"[{s['id']}] ({s['country']} × {s['lens']}) NECESIDAD: {s['necesidad']}\n"
@@ -274,6 +428,11 @@ def main() -> None:
     ap.add_argument("--tag", default="", help="sufijo del run (ej: test) — no bloquea el mes real")
     ap.add_argument("--max-pairs", type=int, default=0, help="limita combinaciones (pruebas)")
     ap.add_argument("--force", action="store_true", help="correr aunque el mes ya esté 'listo'")
+    ap.add_argument("--legacy-search", action="store_true",
+                    help="minería con búsqueda web a ciegas (diseño anterior, más cara)")
+    ap.add_argument("--no-verify", action="store_true", help="omitir la verificación con búsqueda web")
+    ap.add_argument("--pairs", default="", help="lista PAÍS-lente a correr (ej: CL-tradicional,US-logistica); "
+                                                "reemplaza la agenda del mes")
     ap.add_argument("--cluster-only", action="store_true",
                     help="solo agrupar semillas repetidas entre países (sin minería ni consejo)")
     args = ap.parse_args()
@@ -295,14 +454,18 @@ def main() -> None:
     effort = os.environ.get("ORACLE_EFFORT", "medium") or None
 
     pairs = sorted(due_pairs(month_index(y, m)))
-    if args.max_pairs:
+    if args.pairs:
+        wanted = {tuple(p.split("-", 1)) for p in args.pairs.split(",") if "-" in p}
+        pairs = sorted(p for p in ((c, lk) for c in COUNTRIES for lk in LENS_BY_KEY) if p in wanted)
+    elif args.max_pairs:
         # Muestra REPARTIDA (mezcla fija), no las primeras N por orden alfabético: la
         # corrida de humo del 2026-09-19 tomó las primeras 6 y fueron todas Argentina.
         random.Random(7).shuffle(pairs)
         pairs = sorted(pairs[: args.max_pairs])
     kind = "haiku" if "haiku" in mining_model else "sonnet"
-    est = len(pairs) * EST_PAIR_COST[kind]
-    print(f"[oracle] {month_key}: {len(pairs)} combinaciones — minería {mining_model}, "
+    est = len(pairs) * (EST_PAIR_COST if args.legacy_search else EST_READ_PAIR_COST)[kind]
+    print(f"[oracle] {month_key}: {len(pairs)} combinaciones — "
+          f"{'minería con búsqueda web' if args.legacy_search else 'lectura de titulares'} {mining_model}, "
           f"consejo {council_model}, effort={effort}, costo estimado minería ≈ ${est:.2f} "
           f"(+ consejo ≈ ${len(pairs) * 0.01:.2f})")
     if args.dry_run:
@@ -328,7 +491,8 @@ def main() -> None:
         if effort and not (effort_supported(client, mining_model, effort)
                            and effort_supported(client, council_model, effort)):
             effort = None
-        rows, mining_cost, mstats = mine(client, pairs, mining_model, effort, month_key)
+        miner = mine if args.legacy_search else read_mine
+        rows, mining_cost, mstats = miner(client, pairs, mining_model, effort, month_key)
         insert_vault_seeds(rows)
         print(f"[oracle] minería: {dict(mstats)} costo=${mining_cost:.4f}")
         council_cost = 0.0
@@ -337,6 +501,12 @@ def main() -> None:
             _, council_cost, cstats = council(client, council_model, effort)
         else:
             print("[oracle] GUARDRAIL: minería pasó el tope — se omite el consejo")
+        verify_cost = 0.0
+        vstats: Counter = Counter()
+        if (not args.legacy_search and not args.no_verify and VERIFY_TOP > 0
+                and mining_cost + council_cost < MONTH_COST_CEILING):
+            verify_cost, vstats = verify(client, council_model, effort, month_key)
+            print(f"[oracle] verificación: {dict(vstats)} costo=${verify_cost:.4f}")
         cluster_cost = 0.0
         try:  # agrupar temas repetidos entre países; un fallo acá no debe perder la corrida
             from src.oracle.cluster import cluster_seeds
@@ -345,12 +515,12 @@ def main() -> None:
             print(f"[oracle] temas: {dict(kstats)} costo=${cluster_cost:.4f}")
         except Exception as e:  # noqa: BLE001
             print(f"[oracle] agrupamiento omitido ({type(e).__name__}) — ¿falta la migración de columnas?")
-        total = mining_cost + council_cost + cluster_cost
+        total = mining_cost + council_cost + verify_cost + cluster_cost
         print(f"[oracle] consejo: {dict(cstats)} costo=${council_cost:.4f}")
         print(f"[oracle] === COSTO TOTAL {month_key}: ${total:.4f} ===")
         save_oracle_run(month_key, status="listo", seeds=len(rows), cost_usd=round(total, 4),
                         finished_at=datetime.now(timezone.utc).isoformat(),
-                        note=f"minería={dict(mstats)} consejo={dict(cstats)}"[:500])
+                        note=f"minería={dict(mstats)} consejo={dict(cstats)} verificación={dict(vstats)}"[:500])
     except Exception as e:  # noqa: BLE001
         save_oracle_run(month_key, status="error", note=f"{type(e).__name__}: {str(e)[:300]}",
                         finished_at=datetime.now(timezone.utc).isoformat())

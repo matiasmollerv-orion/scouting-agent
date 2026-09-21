@@ -30,6 +30,9 @@ TRUSTED_SOURCES = {
     "aqua", "mch", "redagricola",                       # industrias CL (salmón, minería, agro)
     "skift",                                            # b2c servicios (viajes/hospitalidad)
     "saastr",                                           # b2b ops (GTM/revenue)
+    # Google Noticias dedicadas a tradicional reinventado y logística/bodegaje (2026-09-21)
+    "gn_tradicional_en", "gn_tradicional_negocios", "gn_tradicional_es", "gn_tradicional_pt",
+    "gn_logistica_en", "gn_logistica_prensa", "gn_logistica_es", "gn_logistica_pt",
 }
 
 

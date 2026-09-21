@@ -80,11 +80,36 @@ palabras de ejemplo.
   disruptor y no el status quo. El fundador cree que los marketplaces son
   más relevantes a futuro que el ecommerce de marca propia.
 - Marketplaces de nicho. Industrias chilenas (minería, pesca, agro).
-- Negocios tradicionales reinventados: CUALQUIER industria probada y "aburrida"
-  (lavandería, supermercado, retail, farmacia, gimnasio, servicios físicos)
-  con innovación disruptiva en el CÓMO — sea entrega, modelo de negocio,
-  tecnología, experiencia o formato. Demanda ya probada. Ej: supermercado sin
-  cajas, lavandería con delivery, Back Market con electrónica usada.
+- Negocios tradicionales con propuesta innovadora (ALTA prioridad, 2026-09-21): el
+  fundador quiere encontrar EMPRESAS de industrias probadas —venta de productos o
+  servicios a personas o empresas: lavandería, tienda, ferretería, farmacia,
+  panadería, gimnasio, supermercado, ecommerce, servicios para el hogar,
+  restaurantes, manufactura, lo que sea— destacadas por lo que armaron: una
+  propuesta distinta en el PRODUCTO, el MODELO de negocio, la DISTRIBUCIÓN, el
+  FORMATO o la EXPERIENCIA, y con RESULTADOS visibles. No busca tecnología: el
+  negocio puede no tener nada de software. Suelen aparecer en diarios de negocios,
+  prensa regional, premios y rankings (pyme del año, fastest-growing), no en
+  prensa tech: el titular dice quién es, cuántos locales abrió, cuánto factura o
+  qué hace distinto. **Cómo puntuar estas historias:** NO uses funding ni engagement
+  (una pyme familiar no levanta rondas). La evidencia de `problema_score` son
+  RESULTADOS y claridad de la innovación: crecimiento, N° de locales o unidades,
+  facturación, premios, cobertura, y una vuelta de tuerca identificable
+  (suscripción, formato nuevo, integración vertical, canal nuevo, servicio que
+  antes era informal). Negocio nombrado + innovación clara + resultados = 15-25;
+  negocio nombrado con innovación pero sin cifras = 8-14; solo inauguración,
+  aviso comercial, nota policial, evento o gigante conocido = 0-5. La demanda ya
+  está probada: el riesgo de mercado es bajo, y `barrera_score` debe ser generoso
+  (abrir un local piloto o un servicio no requiere ingenieros ni hardware propio).
+  Ej: cadena de lavanderías con suscripción, panadería que abrió su 5º local con
+  formato nuevo, tienda de usados con modelo de reventa, Back Market.
+- Logística, bodegaje y fulfillment (ALTA prioridad, 2026-09-21): almacenamiento,
+  fulfillment/3PL para ecommerce, última milla, cold chain, logística inversa
+  (devoluciones), cross-border, bodegaje como servicio, micro-fulfillment,
+  automatización de bodegas. Cuenta tanto el operador o servicio nuevo (activos
+  propios o livianos) como la herramienta que lo habilita, si un operador logístico
+  o un ecommerce es el comprador. Puntuá por propuesta clara y resultados (clientes,
+  volumen, crecimiento, financiamiento si lo hay); excluí trámites, huelgas,
+  noticias de tarifas o de grandes navieras/aerolíneas sin ángulo de negocio nuevo.
 
 **Excluir (problema_score=0 y barrera_score=0) — solo casos de FIT, sin
 ángulo de negocio evaluable:**

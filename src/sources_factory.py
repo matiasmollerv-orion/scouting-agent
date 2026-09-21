@@ -6,7 +6,7 @@ from . import config
 from .sources.base import Source
 from .sources.hackernews import HackerNews
 from .sources.producthunt import ProductHunt
-from .sources.rss_generic import RSSFeed
+from .sources.rss_generic import MultiFeed, RSSFeed
 from .sources.yc import YCombinator
 
 
@@ -20,6 +20,9 @@ def build_sources() -> list[Source]:
     for name, url in config.RSS_FEEDS.items():
         lookback = config.LOOKBACK_OVERRIDES.get(name, config.LOOKBACK_DAYS)
         sources.append(RSSFeed(name=name, url=url, lookback_days=lookback))
+    for name, urls in config.GN_FEEDS.items():
+        sources.append(MultiFeed(name=name, urls=urls, lookback_days=config.LOOKBACK_DAYS,
+                                 max_items=config.GN_MAX_ITEMS))
     for name, url in config.REDDIT_FEEDS.items():
         sources.append(RSSFeed(name=name, url=url, lookback_days=config.LOOKBACK_DAYS))
     if config.ENABLE_PRODUCTHUNT:
