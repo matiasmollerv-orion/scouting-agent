@@ -24,7 +24,7 @@ MIN_OK = 15  # bajo esto, el par tiene cobertura floja
 
 def _relevantes(items: list[dict], cc: str, lens_key: str) -> int:
     """Proxy barato de relevancia: items cuyo título/fragmento nombra algo del lente."""
-    kws = [k.strip('"').lower() for k in sources.KEYWORDS[lens_key][sources.EDITIONS[cc][3]]]
+    kws = [k.strip('"').lower() for k in sources.lang_terms(cc, lens_key, "keywords")[1]]
     return sum(any(k in f"{i['title']} {i['snippet']}".lower() for k in kws) for i in items)
 
 
@@ -49,7 +49,7 @@ def main() -> int:
             rel = _relevantes(items, cc, lk)
             rows.append((cc, lk, len(items), len(media), via["abierta"], via["curada"], len(pool)))
             print(f"[fuentes] {cc:<2} {lk:<16} items={len(items):>4} medios={len(media):>3} "
-                  f"abiertas={via['abierta']:>3} curadas={via['curada']:>3} pool={len(pool):>3} "
+                  f"abiertas={via['abierta']:>3} curadas={via['curada']:>3} global={via['global']:>3} pool={len(pool):>3} "
                   f"con_palabra_del_lente={rel:>3}", flush=True)
 
     weak = [r for r in rows if r[2] < MIN_OK]
