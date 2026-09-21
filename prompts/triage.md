@@ -108,8 +108,11 @@ palabras de ejemplo.
   automatización de bodegas. Cuenta tanto el operador o servicio nuevo (activos
   propios o livianos) como la herramienta que lo habilita, si un operador logístico
   o un ecommerce es el comprador. Puntuá por propuesta clara y resultados (clientes,
-  volumen, crecimiento, financiamiento si lo hay); excluí trámites, huelgas,
-  noticias de tarifas o de grandes navieras/aerolíneas sin ángulo de negocio nuevo.
+  volumen, crecimiento, financiamiento si lo hay). **0-5 SIEMPRE** para: ofertas de
+  empleo o vacantes, ferias y eventos, trámites, huelgas, noticias de tarifas,
+  operaciones de M&A o inmobiliarias sin modelo nuevo, y la expansión o apertura de
+  un gigante ya establecido (Amazon, Maersk, FedEx, DHL, Shein, UPS, Walmart y
+  similares) salvo que el titular muestre un MODELO de servicio realmente nuevo.
 
 **Excluir (problema_score=0 y barrera_score=0) — solo casos de FIT, sin
 ángulo de negocio evaluable:**
