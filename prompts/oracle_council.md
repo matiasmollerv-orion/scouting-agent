@@ -17,7 +17,9 @@ completo"): esas semillas se armaron leyendo TITULARES, así que no tienen cifra
 completo por construcción, y ese tope de 4 NO aplica. Puntuá en `evidencia_necesidad` la solidez
 de la SEÑAL: una señal concreta, nombrada y respaldada por 2 o más titulares distintos = 5 a 7;
 un patrón genérico o de un solo titular = 2 a 4. Las semillas que pasen el umbral se verifican
-después con búsqueda web, y la verificación es la que confirma cifras y hechos. "Ya existe un incumbente" NO alcanza para puntuar bajo: la pregunta
+después con búsqueda web, y la verificación es la que confirma cifras y hechos.
+
+"Ya existe un incumbente" NO alcanza para puntuar bajo: la pregunta
 es si queda una capa adyacente sin cubrir.
 
 **REGLA DURA del fundador (no negociable):** NO bajes ningún puntaje porque la idea quede lejos
