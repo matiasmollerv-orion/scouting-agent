@@ -173,12 +173,12 @@ QUERIES: dict[str, dict[str, list[str]]] = {
         "pt": ['aluguel imobiliárias', 'déficit habitacional', 'construção modular', 'proptech'],
         "en": ['rental landlords', 'housing shortage', 'modular construction', 'proptech']},
     "tradicional": {
-        "es": ['negocio familiar nuevo formato', 'emprendedor cadena locales', 'pyme crece facturación', 'franquicia nueva marca',
-               'emprendimiento suscripción tienda', 'lavandería panadería ferretería innovación'],
-        "pt": ['negócio familiar novo formato', 'empreendedor rede unidades', 'pequena empresa cresce faturamento', 'franquia nova marca',
-               'empreendimento assinatura loja', 'lavanderia padaria farmácia inovação'],
-        "en": ['family-owned business new concept', 'entrepreneur chain locations', 'small business fastest-growing', 'franchise new brand',
-               'subscription store business model', 'laundromat bakery hardware innovation']},
+        "es": ['"pyme del año"', '"empresa familiar" crece locales', 'emprendedor abrió su local', 'franquicia nueva marca',
+               'cadena de locales expande', 'lavandería panadería ferretería emprendedor'],
+        "pt": ['padaria rede expande unidades', 'lavanderia franquia', 'franquia cresce faturamento',
+               'supermercado nova loja expansão', 'empreendedor franquia cresce'],
+        "en": ['"small business of the year"', '"opens second location"', '"family-owned" fastest-growing',
+               'franchise fastest-growing', '"new concept" store opens', '"car wash" membership', 'laundromat subscription']},
     "logistica": {
         "es": ['bodegaje', 'fulfillment ecommerce', 'última milla', 'centros de distribución', 'logística inversa devoluciones', 'bodegas arriendo'],
         "pt": ['armazém fulfillment', 'última milha', 'centro de distribuição', 'logística reversa', 'ecommerce logística'],
