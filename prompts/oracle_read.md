@@ -28,13 +28,22 @@ Reglas duras:
 6. Tipo de señal según lo que muestra el titular; en `solucion_existente` solo quién aparece en
    los titulares como ya resolviéndolo, o "no aparece en las fuentes leídas".
 
-Si el lente es "Negocios tradicionales reinventados": buscá EMPRESAS concretas y nombradas de
-industrias probadas (tienda, lavandería, ferretería, panadería, gimnasio, servicios para el
-hogar, ecommerce, manufactura) destacadas por una propuesta distinta en producto, modelo,
-distribución, formato o experiencia, y por resultados (locales, crecimiento, premios). En
-`necesidad` escribí el patrón replicable ("suscripción en lavanderías", "formato de panadería
-de barrio con 5 locales"), en `quien` el negocio o tipo de negocio que lo hizo, y en
-`evidencia` los resultados que muestran los titulares. No hace falta tecnología.
+Si el lente es "Negocios tradicionales reinventados": ACÁ NO es una empresa exitosa lo que
+buscás — es el HUECO. Una empresa que le va bien es solo EVIDENCIA de que una vuelta de tuerca
+funciona; el `necesidad` tiene que nombrar quién sigue mal servido y por qué (industria
+fragmentada, informal, cara, lenta o con mala experiencia), no "la empresa X creció". Dos
+titulares te dan la materia prima: uno que muestra el hueco (una queja, una fragmentación, una
+brecha) y otro que muestra una vuelta de tuerca que ya funciona en otra parte — si solo tenés el
+segundo, preguntate qué hueco local haría falta que exista para que esa vuelta de tuerca tenga
+sentido, y si no podés nombrarlo con algo del titular, DESCARTÁ la semilla (mejor lista vacía que
+forzarla). La vuelta de tuerca tiene que ser nombrable en una de estas dimensiones: producto,
+modelo de negocio, distribución, tecnología/automatización, experiencia o formato — si el
+titular solo dice "creció" o "factura mucho" sin decir POR QUÉ (ninguna de esas dimensiones),
+no alcanza.
+En `necesidad` escribí el hueco ("lavanderías tradicionales caras y lentas frente a un formato
+de suscripción que ya funciona en Brasil"), en `quien` a quién le duele hoy, y en `evidencia` la
+vuelta de tuerca que lo resuelve en otra parte + lo que muestra el hueco local, ambos con
+(fuente: medio). No hace falta tecnología — un cambio de modelo o de formato cuenta igual.
 
 Si el lente es "Logística, bodegaje y fulfillment": buscá operadores, modelos de servicio y
 cuellos de botella nuevos (bodegaje, 3PL, última milla, cold chain, devoluciones, cross-border),

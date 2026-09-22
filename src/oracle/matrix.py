@@ -126,17 +126,20 @@ LENSES: tuple[Lens, ...] = (
          "(informalidad), oferta ('el X de Y').",
          ("CL", "BR", "MX", "PE", "CO", "AR", "ES", "IN", "US")),
     Lens("tradicional", "Negocios tradicionales reinventados", 1,
-         "Actores: NEGOCIOS reales que venden productos o servicios a personas o empresas en "
-         "industrias probadas — lavandería, tienda de artículos, ferretería, farmacia, panadería, "
-         "gimnasio, supermercado, restaurante, ecommerce, servicios para el hogar, manufactura — "
-         "con o sin tecnología. Lo que se busca son EMPRESAS destacadas por una propuesta "
-         "innovadora en el producto, el modelo de negocio, la distribución, el formato o la "
-         "experiencia, y por sus RESULTADOS (crecimiento, locales, ventas, premios). Señales: "
-         "oferta (casos que crecen, en prensa económica, regional y de emprendimiento, premios y "
-         "rankings), brecha (industria fragmentada o análoga sin un jugador moderno), queja (clientes "
-         "del formato tradicional). La evidencia son RESULTADOS de negocios reales, no rondas de "
-         "financiamiento. Excluir: gigantes que ya son el status quo (Walmart, Amazon, Zara), "
-         "franquicias globales conocidas y startups de software puro.",
+         "Actores: personas y pymes de industrias probadas — lavandería, tienda de artículos, "
+         "ferretería, farmacia, panadería, gimnasio, supermercado, restaurante, ecommerce, "
+         "servicios para el hogar, manufactura — mal servidas por el incumbente típico: "
+         "fragmentado, informal, caro, lento o con mala experiencia. NO es minería de casos de "
+         "éxito (eso va al scouting semanal, que sí los captura y los premia); acá el HUECO es el "
+         "sujeto — un segmento, geografía o parte del proceso que el formato de siempre no resuelve "
+         "bien, usando como evidencia que en otra parte alguien YA lo resolvió con una vuelta de "
+         "tuerca en producto, modelo de negocio, distribución, tecnología/automatización, "
+         "experiencia o formato (misma taxonomía que el scouting semanal). Señales: brecha "
+         "(fragmentación, informalidad, mala experiencia del formato de siempre), queja (clientes "
+         "del incumbente), oferta (una vuelta de tuerca que ya funciona en otro país o industria "
+         "análoga, como evidencia de que el hueco se puede cerrar así). Excluir: gigantes que ya "
+         "son el status quo (Walmart, Amazon, Zara), franquicias globales conocidas, startups de "
+         "software puro, y una empresa exitosa sola sin un hueco local identificable detrás.",
          ("CL", "BR", "MX", "PE", "CO", "AR", "US", "UK", "ES", "DE", "NL", "AU", "IN", "KR", "SG", "CN")),
     Lens("logistica", "Logística, bodegaje y fulfillment", 2,
          "Actores: vendedores online, marcas, pymes y operadores logísticos. Necesidad: costo, "
