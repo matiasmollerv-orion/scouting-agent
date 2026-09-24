@@ -299,6 +299,12 @@ with tab_lista:
                             st.markdown(f"**{FIELD_LABELS[field].split('. ', 1)[-1]}**")
                         st.markdown(_clean(row.get(field)) or "—")
 
+            # --- 9. Diseño del servicio AI-native (solo lente "Servicios operados por IA") ---
+            if row.get("diseno_servicio_ia"):
+                with style.card():
+                    style.label("9 · Diseño del servicio AI-native")
+                    st.markdown(_clean(row.get("diseno_servicio_ia")))
+
 with tab_comparar:
     listas = df[df["status"] == "listo"]
     if listas.empty:

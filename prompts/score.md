@@ -257,6 +257,41 @@ a cualquier categoría, no solo ecommerce.
   tarifas, navieras o aerolíneas gigantes, trámites). Pensá siempre en replicabilidad
   en Chile/LatAm: costos de suelo, densidad de ecommerce, última milla en
   ciudades intermedias.
+- **"Servicios AI-native"** — ALTA PRIORIDAD (2026-09-24, artículo "AI-native services: a $100B
+  opportunity" de Greg Isenberg): empresas que VENDEN EL TRABAJO TERMINADO —no una herramienta— y
+  lo entregan con agentes de IA más un equipo humano chico para lo que aún necesita una persona.
+  El cliente no quiere un software de contabilidad, quiere sus libros cerrados; no quiere una
+  herramienta de revisión de contratos, quiere saber si puede firmar. Es un PATRÓN que atraviesa
+  cualquier vertical de servicios profesionales o de trastienda (contabilidad, seguros, facturación
+  médica, legal, comercio exterior, cumplimiento regulatorio, arriendos, subsidios y licitaciones,
+  impuestos, cuentas por pagar), no una industria ni una lista cerrada. Precio como servicio,
+  márgenes como software.
+  **Test de entrada (las dos preguntas, ambas deben dar "sí" o "casi"):**
+    · ¿El cliente YA le paga hoy a una firma o proveedor externo por este trabajo? (el presupuesto
+      existe; no hay que convencer a nadie de que tiene un problema; cambiarse no cuesta nada)
+    · ¿El resultado tiene una respuesta CORRECTA VERIFICABLE contra una regla, norma o checklist?
+      Si necesita puro criterio, solo vale con un humano en el circuito y precio premium.
+  "Ya tercerizado + verificable" es el punto dulce. Si el trabajo se hace en casa con un empleado
+  y es verificable: oportunidad real pero venta más difícil. Si es en casa y de puro criterio:
+  no es un negocio, es un puesto.
+  **Qué NO es (para no confundir categorías):** una herramienta que el cliente opera él mismo
+  (eso es B2B ops, Ecommerce o IA ejecutivos); una agencia tradicional con algo de IA que sigue
+  vendiendo horas; un "wrapper" de un modelo sin un trabajo terminado que entregar.
+  **Cómo puntuar:** `problema_score` sube con (a) evidencia de que el trabajo ya se terceriza y
+  cuánto cuesta hoy, (b) resultados reales (ingresos, clientes, precio por unidad, margen),
+  (c) una dimensión verificable clara. Financiamiento reciente cuenta, pero también un negocio
+  bootstrapped con resultados. Las QUEJAS o reseñas de los clientes sobre la solución NO-IA actual
+  (lenta, cara, con errores) son evidencia fuerte de que el hueco existe.
+  **Después de identificar un segmento, la viabilidad se evalúa con las 8 piezas** — `next_step`
+  y `modelo_negocio` deben apuntar a ellas: (1) la UNIDAD que se vende (por reclamo, por
+  presentación, por mes de libros; nunca por hora), (2) el INTAKE (¿se puede reducir a un
+  formulario?), (3) el MOTOR (el modelo + instrucciones + ejemplos del rubro), (4) el LIBRO DE
+  REGLAS (qué es "correcto" en ese nicho y cómo falla la IA), (5) la CAPA DE REVISIÓN humana
+  (qué sale solo y qué revisa una persona), (6) la ENTREGA (panel, correo, portal), (7) el PRECIO
+  (por unidad o retainer, contra la alternativa humana, no contra el costo), (8) la DISTRIBUCIÓN
+  (canal directo al que firma el cheque; el primer trabajo gratis como gancho). Si no se puede
+  definir la unidad ni el intake, el segmento todavía no está claro. Sirve de referencia:
+  Harvey (legal), EvenUp (cartas de demanda), Kick (contabilidad pyme).
 - **"Otro"** — si no mapea a ninguna categoría anterior.
 
 **Excluir explícitamente (objeto MÍNIMO — problema_score=0, barrera_score=0,

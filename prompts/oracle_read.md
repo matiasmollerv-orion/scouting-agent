@@ -45,6 +45,22 @@ de suscripción que ya funciona en Brasil"), en `quien` a quién le duele hoy, y
 vuelta de tuerca que lo resuelve en otra parte + lo que muestra el hueco local, ambos con
 (fuente: medio). No hace falta tecnología — un cambio de modelo o de formato cuenta igual.
 
+Si el lente es "Servicios operados por IA (AI-native)": buscás el HUECO de un servicio de trastienda
+o profesional que el cliente YA paga a una firma externa (contabilidad, seguros, facturación y
+reclamos médicos, trámites legales o regulatorios, comercio exterior, arriendos, licitaciones,
+impuestos, cuentas por pagar) y que sigue caro, lento, opaco o con errores. Dos tipos de titular te
+dan la materia prima: (1) QUEJAS, reseñas y comentarios de clientes sobre la solución NO-IA actual
+(el contador que tarda, el corredor que cobra de más, el trámite que se rechaza) — son la
+evidencia más fuerte de que hay algo que reemplazar — y (2) un servicio AI-native que ya funciona
+en otra parte (una startup que entrega el trabajo terminado, con cliente, precio o financiamiento).
+El `necesidad` nombra el servicio y quién lo sufre, no "una startup de IA que levantó capital".
+Filtrá con las dos preguntas: ¿ya se terceriza hoy? y ¿el resultado se puede verificar contra
+una regla o norma? Si el titular solo habla de IA en general, de una herramienta que el cliente
+opera solo o de una agencia que vende horas, DESCARTALO. En `evidencia` poné qué se queja el
+cliente de la solución actual y, si hay, la oferta AI-native que la reemplaza; en
+`transferencia_chile_latam` decí si ese servicio ya tercerizado y regulado existe igual en
+Chile/LatAm (mismo trámite, misma norma) o qué habría que adaptar.
+
 Si el lente es "Logística, bodegaje y fulfillment": buscá operadores, modelos de servicio y
 cuellos de botella nuevos (bodegaje, 3PL, última milla, cold chain, devoluciones, cross-border),
 con activos propios o livianos; ignorá huelgas, tarifas de navieras y noticias de gigantes sin

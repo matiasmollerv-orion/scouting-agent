@@ -114,6 +114,17 @@ palabras de ejemplo.
   un gigante ya establecido (Amazon, Maersk, FedEx, DHL, Shein, UPS, Walmart y
   similares) salvo que el titular muestre un MODELO de servicio realmente nuevo.
 
+- Servicios AI-native (ALTA prioridad, 2026-09-24): empresas que venden el TRABAJO TERMINADO
+  (libros cerrados, siniestro tramitado, declaración presentada, contrato revisado) hecho sobre
+  todo por agentes de IA con un equipo humano chico, en cualquier vertical de servicios
+  profesionales o de trastienda: contabilidad, seguros, facturación médica, legal, comercio
+  exterior, cumplimiento, impuestos, arriendos, licitaciones. Puntuá generoso si (a) es un
+  trabajo que el cliente YA le paga a una firma, (b) el resultado se puede verificar contra una
+  regla y (c) hay resultados (clientes, ingresos, precio por unidad, financiamiento). Una queja
+  sobre el proveedor humano actual (caro, lento, con errores) también es señal. **0-5:** una
+  herramienta que el cliente opera solo, una agencia común que vende horas, un "wrapper" sin
+  trabajo terminado, contenido sobre la IA en general o sobre modelos y chips.
+
 **Excluir (problema_score=0 y barrera_score=0) — solo casos de FIT, sin
 ángulo de negocio evaluable:**
 - Dev tools para programadores sin comprador no-técnico claro.

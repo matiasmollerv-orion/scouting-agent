@@ -58,6 +58,8 @@ PRIORITY_CATEGORY_SOURCES = {
                                 "gn_tradicional_pt"},
     "Logística y bodegaje": {"gn_logistica_en", "gn_logistica_prensa", "gn_logistica_es",
                              "gn_logistica_pt", "supplychaindive"},
+    # 2026-09-24: categoría nueva (artículo de Greg Isenberg) — cupo de rescate mientras madura.
+    "Servicios AI-native": {"gn_ai_native_en", "gn_ai_native_x", "gn_ai_native_es", "gn_ai_native_pt"},
 }
 MAX_RESCUE_SLOTS = 5  # tope duro de cupos extra por corrida, por costo
 
@@ -239,6 +241,12 @@ RELEVANCE_KEYWORDS = [
     "empresa familiar", "abre su", "nueva sucursal", "nuevos locales", "nuevo formato",
     "facturación", "cadena de", "franquicia", "emprendedor", "pyme",
     "empresa familiar", "abre nova", "nova unidade", "novo formato", "faturamento",
+    # Servicios AI-native (2026-09-24): el trabajo terminado hecho por agentes, vendido como servicio
+    "ai-native", "services as software", "service-as-software", "ai-native accounting",
+    "ai-native insurance", "ai-native law firm", "ai-native agency", "ai accountant",
+    "ai bookkeeping", "ai claims processing", "ai medical billing", "ai contract review",
+    "ai accounts payable", "ai underwriting", "ai compliance", "ai paralegal",
+    "servicios nativos de ia", "contabilidad con ia", "serviços nativos de ia",
     # Logística/bodegaje (2026-09-21): tesis ecommerce, ángulo operación + logística como negocio
     "warehouse", "warehousing", "fulfillment center", "cold storage", "cold chain",
     "micro-fulfillment", "reverse logistics", "returns logistics", "cross-border logistics",
@@ -314,7 +322,8 @@ SOURCE_WEIGHT = {
     "hackernews": 0.3, "reddit_saas": 0.3, "yc": 0.3,
     # Google Noticias dedicadas (tradicional/logística): agregan medios de calidad dispar.
     **{f"gn_{k}": 0.6 for k in ("tradicional_en", "tradicional_negocios", "tradicional_es", "tradicional_pt",
-                                "logistica_en", "logistica_prensa", "logistica_es", "logistica_pt")},
+                                "logistica_en", "logistica_prensa", "logistica_es", "logistica_pt",
+                                "ai_native_en", "ai_native_x", "ai_native_es", "ai_native_pt")},
 }
 SOURCE_WEIGHT_DEFAULT = 0.4  # fuente no listada: ni alto ni descartable
 
@@ -404,6 +413,12 @@ THEME_KEYWORDS = {
         "family-owned", "franchise", "new concept", "new format", "mom-and-pop",
         "barbershop", "pharmacy", "hardware store", "bakery", "self-storage",
         "empresa familiar", "franquicia", "nuevo formato", "lavandería", "ferretería",
+    ],
+    "Servicios AI-native": [
+        "ai-native", "services as software", "service-as-software", "ai accountant", "ai bookkeeping",
+        "ai claims", "ai medical billing", "ai contract review", "ai accounts payable", "ai underwriting",
+        "ai paralegal", "ai-native accounting", "ai-native insurance", "ai-native agency",
+        "servicios nativos de ia", "contabilidad con ia",
     ],
     "Logística y bodegaje": [
         "warehouse", "warehousing", "fulfillment", "3pl", "cold chain", "cold storage",
@@ -594,6 +609,17 @@ GN_FEEDS: dict[str, list[str]] = {
                               '"logística inversa"', 'bodegas arriendo', 'logística ecommerce Chile'], **_ES),
     "gn_logistica_pt": _many(['armazém fulfillment', '"última milha" startup', 'logística reversa',
                               '"centro de distribuição" automação', 'fulfillment ecommerce'], **_PT),
+    # Servicios AI-native — trabajo terminado vendido como servicio (2026-09-24). "x" busca posts de
+    # X indexados por Google Noticias: el TÍTULO trae el texto del post (suficiente para el triage).
+    "gn_ai_native_en": _many(['"AI-native" accounting', '"AI-native" insurance', '"AI-native" bookkeeping',
+                              '"AI-native" law firm', '"services as software"', 'AI accounts payable startup',
+                              'AI claims processing startup', 'AI medical billing startup']),
+    "gn_ai_native_x": _many(['site:x.com "AI-native services"', 'site:x.com "AI-native" agency',
+                             'site:x.com "services as software"', 'site:x.com "AI-native" firm']),
+    "gn_ai_native_es": _many(['servicios nativos de IA', 'automatizar contabilidad IA startup',
+                              'estudio contable IA startup', 'servicios profesionales IA startup'], **_ES),
+    "gn_ai_native_pt": _many(['contabilidade automatizada IA startup', 'serviços profissionais IA startup',
+                              'escritório contábil IA startup'], **_PT),
 }
 GN_MAX_ITEMS = 40  # por feed: Google devuelve hasta 100 y el pool diario no necesita tanto
 

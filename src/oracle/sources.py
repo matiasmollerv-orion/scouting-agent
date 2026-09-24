@@ -121,6 +121,8 @@ GLOBAL_SITES: dict[str, list[str]] = {
     "ia_real": ["therobotreport.com", "venturebeat.com", "technologyreview.com", "spectrum.ieee.org"],
     "salud_bienestar": ["fiercehealthcare.com", "statnews.com"],
     "inmobiliario": ["constructiondive.com"],
+    "servicios_ia": ["x.com", "techcrunch.com", "fiercehealthcare.com", "insurancebusinessmag.com",
+                     "accountingtoday.com", "artificiallawyer.com"],
     "logistica": ["freightwaves.com", "logisticsmgmt.com", "supplychainbrain.com", "theloadstar.com",
                   "mmh.com", "supplychaindive.com"],
     "tradicional": ["bizjournals.com", "inc.com", "franchisetimes.com", "qsrmagazine.com",
@@ -183,6 +185,17 @@ QUERIES: dict[str, dict[str, list[str]]] = {
         "es": ['bodegaje', 'fulfillment ecommerce', 'última milla', 'centros de distribución', 'logística inversa devoluciones', 'bodegas arriendo'],
         "pt": ['armazém fulfillment', 'última milha', 'centro de distribuição', 'logística reversa', 'ecommerce logística'],
         "en": ['warehouse fulfillment', '3PL', 'last-mile delivery', 'cold storage', 'reverse logistics returns', 'warehouse automation']},
+    # Servicios AI-native: el hueco es un servicio que el cliente YA paga y sigue caro/lento/con errores.
+    # Mitad de las consultas buscan QUEJAS sobre la solución NO-IA actual (el contador, el corredor, el
+    # gestor); la otra mitad, la oferta AI-native que ya funciona en otra parte.
+    "servicios_ia": {
+        "es": ['contador pyme caro lento', 'corredor de seguros reclamos demora', 'trámite regulatorio demora asesor',
+               'automatizar contabilidad IA startup', 'servicios profesionales IA startup', 'facturación médica rechazos glosas'],
+        "pt": ['contador pequena empresa caro lento', 'corretora de seguros reclamações demora', 'despachante aduaneiro atraso custo',
+               'automatizar contabilidade IA startup', 'serviços profissionais IA startup'],
+        "en": ['"AI-native" accounting', '"AI-native" insurance', '"services as software"', 'AI accounts payable startup',
+               'accountant fees complaints small business', 'insurance broker complaints slow quotes',
+               'medical billing denied claims errors']},
     "servicios_hogar": {
         "es": ['servicios del hogar plataforma', 'cuidado adultos mayores', 'reparaciones WhatsApp', 'limpieza mudanzas plataformas'],
         "pt": ['serviços domésticos plataforma', 'cuidado idosos', 'reparos WhatsApp', 'limpeza mudanças plataformas'],
@@ -259,6 +272,10 @@ KEYWORDS: dict[str, dict[str, list[str]]] = {
     "logistica": {"es": ['bodega', 'fulfillment', '"última milla"', 'logística', 'almacenamiento', 'despacho'],
                   "pt": ['armazém', 'fulfillment', '"última milha"', 'logística', 'armazenagem'],
                   "en": ['warehouse', 'fulfillment', '3PL', 'last-mile', '"cold chain"', 'logistics']},
+    "servicios_ia": {"es": ['contador', 'contabilidad', 'seguros', 'corredor', 'trámite', 'facturación', 'reclamos', 'IA'],
+                     "pt": ['contador', 'contabilidade', 'seguros', 'corretora', 'despachante', 'faturamento', 'reclamações', 'IA'],
+                     "en": ['"AI-native"', '"services as software"', 'accountant', 'bookkeeping', 'insurance', 'claims',
+                            'billing', 'compliance', 'paralegal']},
     "servicios_hogar": {"es": ['hogar', 'limpieza', 'reparaciones', 'cuidado', 'servicios'], "pt": ['casa', 'limpeza', 'reparos', 'cuidado', 'serviços'],
                         "en": ['"home services"', 'cleaning', 'repairs', 'caregiving', 'plumber', 'contractor', '"elder care"', 'nanny']},
 }

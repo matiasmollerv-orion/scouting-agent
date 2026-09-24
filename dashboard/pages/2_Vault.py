@@ -293,7 +293,8 @@ with b1.popover("Profundizar", icon=":material/target:", use_container_width=Tru
             market_name=(market_name.strip() or str(row["necesidad"]))[:200],
             empresas_referentes=str(g("solucion_existente") or "")[:200],
             origen="vault", beachhead_hint=hint,
-            context_note=f"Fuente: {g('fuente_url') or '—'}. Consejo: {g('veredicto_consejo') or '—'}",
+            context_note=(("[servicio-ia] " if "AI-native" in str(row["lens"]) else "")
+                          + f"Fuente: {g('fuente_url') or '—'}. Consejo: {g('veredicto_consejo') or '—'}"),
         )
         _verdict("elegida", "elegida", market_analysis_id=mid)
 if b2.button("Guardar", icon=":material/bookmark:", key=f"b2_{sid}", use_container_width=True):

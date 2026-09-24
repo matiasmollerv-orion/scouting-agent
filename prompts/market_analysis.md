@@ -107,6 +107,34 @@ con el beachhead sobre construir algo, salvo que el producto mismo sea la
 Si aplica (licencias, compliance pesado desde el día 1) — mismo criterio que
 ya usa el scoring normal del pipeline.
 
+## Paso 9 — Diseño del servicio AI-native (SOLO si el contexto trae la marca `[servicio-ia]`)
+
+Este paso se hace DESPUÉS de haber definido el beachhead (Paso 1): primero se encuentra el segmento
+donde el servicio se puede ofrecer, y recién entonces se evalúa si se puede armar como servicio
+AI-native (un servicio que entrega el TRABAJO TERMINADO con agentes de IA más un equipo humano
+chico, cobrado por unidad y no por hora). Si el contexto NO trae la marca `[servicio-ia]`, el campo
+`diseno_servicio_ia` va como string vacío `""` y no se hace este paso.
+
+Con la marca, evaluá cada pieza con evidencia real (búsqueda) y sé crítico — si una pieza no se
+puede definir, decilo, porque eso significa que el segmento todavía no está claro:
+1. UNIDAD — la cosa concreta que se vende (por reclamo, presentación, contrato, mes de libros),
+   con una línea de llegada clara. Nunca por hora.
+2. INTAKE — cómo entra el trabajo: ¿se reduce a un formulario o carga de documentos? Si hacen falta
+   varias llamadas para acotar un trabajo, la unidad no está clara.
+3. MOTOR — qué hace el trabajo (modelo + instrucciones + ejemplos del rubro) y qué parte es
+   realmente automatizable hoy.
+4. LIBRO DE REGLAS — 5 a 10 reglas de "qué es correcto" en ese nicho y cómo suele fallar la IA (lo
+   que hace defendible el negocio). Si el resultado no se puede verificar contra una regla, marcalo.
+5. CAPA DE REVISIÓN — qué sale solo y qué revisa una persona (todo lo que tiene plata, exposición
+   legal o reputación del cliente).
+6. ENTREGA — cómo llega el trabajo terminado (panel, correo, portal).
+7. PRECIO — por unidad o retainer, comparado con lo que cobra hoy la alternativa humana (con la cifra
+   verificada) y el costo estimado de entregar una unidad más.
+8. DISTRIBUCIÓN — el canal directo a quien firma el cheque y el gancho (por ejemplo, el primer
+   trabajo gratis); quién es exactamente esa persona en el beachhead.
+Cerrá con un veredicto de una línea: ¿el segmento admite un servicio AI-native? (sí / con
+condiciones / no) y por qué.
+
 # Disciplina de verificación (no negociable)
 
 Todo dato de mercado/competencia se verifica con búsqueda real antes de
@@ -139,7 +167,8 @@ EXCLUSIVAMENTE un objeto JSON, sin texto extra antes ni después:
   "fit_fundador": "...",
   "rat_supuesto": "...",
   "rat_prueba_barata": "...",
-  "regulacion": "..."
+  "regulacion": "...",
+  "diseno_servicio_ia": "... (string vacío \"\" salvo que el contexto traiga la marca [servicio-ia])"
 }
 ```
 

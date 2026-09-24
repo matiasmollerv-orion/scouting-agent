@@ -141,6 +141,26 @@ LENSES: tuple[Lens, ...] = (
          "son el status quo (Walmart, Amazon, Zara), franquicias globales conocidas, startups de "
          "software puro, y una empresa exitosa sola sin un hueco local identificable detrás.",
          ("CL", "BR", "MX", "PE", "CO", "AR", "US", "UK", "ES", "DE", "NL", "AU", "IN", "KR", "SG", "CN")),
+    Lens("servicios_ia", "Servicios operados por IA (AI-native)", 1,
+         "Actores: empresas (sobre todo pymes y medianas) y personas que HOY le pagan a una firma o "
+         "proveedor externo por un trabajo de trastienda o servicio profesional — contabilidad y "
+         "libros, seguros y cotización, facturación y reclamos médicos, trámites legales y "
+         "regulatorios, comercio exterior y aduana, arriendos y títulos, licitaciones y subsidios, "
+         "impuestos, cuentas por pagar. Lo que se busca es el HUECO: un servicio que el cliente ya "
+         "paga y que sigue caro, lento, opaco o con errores, y cuyo resultado se puede verificar "
+         "contra una regla o norma — así lo puede entregar terminado un sistema de agentes con un "
+         "equipo humano chico, cobrado por unidad (por trámite, por mes de libros) y no por hora. "
+         "EVIDENCIA PRIORITARIA: quejas, reseñas y comentarios de clientes sobre la solución NO-IA "
+         "actual (el contador, el corredor, el gestor: tardan, cobran caro, se equivocan), que es la "
+         "que se puede reemplazar. Señales: queja (reseñas y reclamos del proveedor humano o del "
+         "software que usan), brecha (trabajo tercerizado y verificable que aún se hace a mano), "
+         "fuerza_externa (regulación que multiplica el trámite), oferta (un servicio AI-native que "
+         "ya funciona en otro país o vertical: cliente, precio por unidad, margen). Prueba de entrada: "
+         "(1) ¿ya se terceriza hoy? y (2) ¿tiene una respuesta correcta verificable? Excluir: "
+         "herramientas que el cliente opera él mismo, agencias que venden horas, wrappers sin "
+         "trabajo terminado. Después de encontrar el segmento, su diseño (unidad, intake, motor, "
+         "reglas, revisión, entrega, precio, distribución) se evalúa en el análisis profundo.",
+         ("CL", "BR", "MX", "PE", "CO", "AR", "US", "UK", "ES", "DE", "NL", "AU", "IN", "IL", "SG")),
     Lens("logistica", "Logística, bodegaje y fulfillment", 2,
          "Actores: vendedores online, marcas, pymes y operadores logísticos. Necesidad: costo, "
          "velocidad y confiabilidad del almacenaje y la entrega — bodegaje y bodegas compartidas, "

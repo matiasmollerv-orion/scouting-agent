@@ -165,3 +165,6 @@ create table if not exists scouting_oracle_runs (
   status text not null default 'corriendo',   -- corriendo | listo | error
   pairs int, seeds int, cost_usd numeric, note text
 );
+
+-- 2026-09-24: diseño del servicio AI-native (Paso 9 del análisis, solo lente "Servicios operados por IA").
+alter table scouting_market_analysis add column if not exists diseno_servicio_ia text;

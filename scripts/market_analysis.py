@@ -143,6 +143,14 @@ def main() -> None:
                 row["id"], status="listo", cost_usd=round(cost, 4),
                 completed_at=datetime.now(timezone.utc).isoformat(), **fields,
             )
+            # Paso 9 (solo servicios AI-native): columna opcional. Si la migración todavía no se
+            # corrió, no se pierde el análisis — solo se avisa.
+            if obj.get("diseno_servicio_ia"):
+                try:
+                    update_market_analysis(row["id"], diseno_servicio_ia=obj["diseno_servicio_ia"])
+                except Exception as e:  # noqa: BLE001
+                    print(f"[market] ⚠️ no se guardó diseno_servicio_ia ({type(e).__name__}) — "
+                          "falta: alter table scouting_market_analysis add column diseno_servicio_ia text")
             print(f"[market] ✅ listo — costo=${cost:.4f}"
                   f"{' (truncado, revisar)' if truncated else ''}")
         except Exception as e:  # noqa: BLE001 — un error no debe tumbar el resto de la cola
