@@ -58,7 +58,8 @@ PRIORITY_CATEGORY_SOURCES = {
                                 "gn_tradicional_pt"},
     "Logística y bodegaje": {"gn_logistica_en", "gn_logistica_prensa", "gn_logistica_es",
                              "gn_logistica_pt", "supplychaindive"},
-    # 2026-09-24: categoría nueva (artículo de Greg Isenberg) — cupo de rescate mientras madura.
+    # 2026-09-24: categoría nueva (artículo de Greg Isenberg), MÁXIMA prioridad por decisión del
+    # fundador — cupo de rescate para que siempre haya al menos un candidato cada semana.
     "Servicios AI-native": {"gn_ai_native_en", "gn_ai_native_x", "gn_ai_native_es", "gn_ai_native_pt"},
 }
 MAX_RESCUE_SLOTS = 5  # tope duro de cupos extra por corrida, por costo

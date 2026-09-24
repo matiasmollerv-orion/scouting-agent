@@ -114,7 +114,7 @@ palabras de ejemplo.
   un gigante ya establecido (Amazon, Maersk, FedEx, DHL, Shein, UPS, Walmart y
   similares) salvo que el titular muestre un MODELO de servicio realmente nuevo.
 
-- Servicios AI-native (ALTA prioridad, 2026-09-24): empresas que venden el TRABAJO TERMINADO
+- Servicios AI-native (MÁXIMA prioridad, 2026-09-24, junto con Futuro del trabajo): empresas que venden el TRABAJO TERMINADO
   (libros cerrados, siniestro tramitado, declaración presentada, contrato revisado) hecho sobre
   todo por agentes de IA con un equipo humano chico, en cualquier vertical de servicios
   profesionales o de trastienda: contabilidad, seguros, facturación médica, legal, comercio

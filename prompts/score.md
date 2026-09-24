@@ -257,8 +257,8 @@ a cualquier categoría, no solo ecommerce.
   tarifas, navieras o aerolíneas gigantes, trámites). Pensá siempre en replicabilidad
   en Chile/LatAm: costos de suelo, densidad de ecommerce, última milla en
   ciudades intermedias.
-- **"Servicios AI-native"** — ALTA PRIORIDAD (2026-09-24, artículo "AI-native services: a $100B
-  opportunity" de Greg Isenberg): empresas que VENDEN EL TRABAJO TERMINADO —no una herramienta— y
+- **"Servicios AI-native"** — MÁXIMA PRIORIDAD (2026-09-24, subida por el fundador; artículo "AI-native
+  services: a $100B opportunity" de Greg Isenberg; junto con "Futuro del trabajo"): empresas que VENDEN EL TRABAJO TERMINADO —no una herramienta— y
   lo entregan con agentes de IA más un equipo humano chico para lo que aún necesita una persona.
   El cliente no quiere un software de contabilidad, quiere sus libros cerrados; no quiere una
   herramienta de revisión de contratos, quiere saber si puede firmar. Es un PATRÓN que atraviesa
