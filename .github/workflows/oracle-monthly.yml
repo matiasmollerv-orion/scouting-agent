@@ -7,11 +7,12 @@ name: oracle-monthly
 # PRIVACIDAD: los logs de Actions son públicos en este repo — el script solo
 # imprime conteos y costos, nunca contenido de semillas ni de lessons.
 on:
-  # PAUSADO 2026-09-20 por decisión de Matías: no gastar ~$5/mes hasta rediseñar la
-  # recolección (fuentes preferidas por país×lente + pool semanal). Reactivar el cron
-  # solo con su OK: "23 7 3 * *" (día 3, 07:23 UTC).
-  # schedule:
-  #   - cron: "23 7 3 * *"
+  # Pausado el 2026-09-20 hasta rediseñar la recolección; REACTIVADO el 2026-09-25 por Matías.
+  # Costo estimado por corrida (medido en pruebas): $2.9-3.6 con ~100 combinaciones. Freno interno
+  # de $9 (MONTH_COST_CEILING en scripts/oracle_run.py). Idempotente por mes.
+  schedule:
+    # Día 3 de cada mes, 07:23 UTC (fuera del pico de :00 de GitHub Actions).
+    - cron: "23 7 3 * *"
   workflow_dispatch:
     inputs:
       dry_run:
