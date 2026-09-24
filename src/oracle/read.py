@@ -22,6 +22,7 @@ from . import sources
 
 MAX_ITEMS = 80            # titulares por combinación que lee el modelo (≈ 3k tokens de entrada)
 MAX_PER_DOMAIN = 3        # diversidad: un medio no llena la lista
+MAX_PER_QUERY = 6         # diversidad: una consulta (p. ej. contabilidad) no llena la lista
 MAX_POOL = 10             # señales globales del scouting semanal (sin país)
 LAYER_BONUS = {"curada": 1.0, "global": 0.5, "abierta": 0.0, "pool": -0.5}
 
@@ -46,15 +47,28 @@ def rank(items: list[dict], cc: str, lens_key: str, n: int = MAX_ITEMS) -> list[
         return (2.0 if hit else 0.0) + LAYER_BONUS.get(i["via"], 0.0)
 
     per_domain: Counter = Counter()
+    per_query: Counter = Counter()
     out: list[dict] = []
     for it in sorted(items, key=score, reverse=True):
         dom = it["domain"] or it["source"]
-        if per_domain[dom] >= MAX_PER_DOMAIN:
+        q = it.get("q") or ""
+        if per_domain[dom] >= MAX_PER_DOMAIN or (q and per_query[q] >= MAX_PER_QUERY):
             continue
         per_domain[dom] += 1
+        per_query[q] += 1
         out.append(it)
         if len(out) >= n:
             break
+    if len(out) < n:  # relleno: si los topes por consulta dejaron la lista corta, se completan con lo que sobró
+        chosen = {id(x) for x in out}
+        for it in sorted(items, key=score, reverse=True):
+            dom = it["domain"] or it["source"]
+            if id(it) in chosen or per_domain[dom] >= MAX_PER_DOMAIN:
+                continue
+            per_domain[dom] += 1
+            out.append(it)
+            if len(out) >= n:
+                break
     return out
 
 

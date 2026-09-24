@@ -189,13 +189,23 @@ QUERIES: dict[str, dict[str, list[str]]] = {
     # Mitad de las consultas buscan QUEJAS sobre la solución NO-IA actual (el contador, el corredor, el
     # gestor); la otra mitad, la oferta AI-native que ya funciona en otra parte.
     "servicios_ia": {
-        "es": ['contador pyme caro lento', 'corredor de seguros reclamos demora', 'trámite regulatorio demora asesor',
-               'automatizar contabilidad IA startup', 'servicios profesionales IA startup', 'facturación médica rechazos glosas'],
-        "pt": ['contador pequena empresa caro lento', 'corretora de seguros reclamações demora', 'despachante aduaneiro atraso custo',
-               'automatizar contabilidade IA startup', 'serviços profissionais IA startup'],
-        "en": ['"AI-native" accounting', '"AI-native" insurance', '"services as software"', 'AI accounts payable startup',
-               'accountant fees complaints small business', 'insurance broker complaints slow quotes',
-               'medical billing denied claims errors']},
+        # Por vertical del artículo (contabilidad, seguros, facturación médica, legal, comercio exterior,
+        # cumplimiento, licitaciones/subsidios, cuentas por pagar) — la primera prueba (2026-09-25) dio 5
+        # semillas y las 5 eran de contabilidad. Consultas de 2-4 palabras (las largas rinden 0-13 items).
+        "es": ['automatizar contabilidad IA startup', 'seguros IA startup', 'cumplimiento normativo IA startup',
+               'abogados IA startup contratos', 'licitaciones IA startup', 'servicios profesionales IA startup',
+               'contador pyme caro lento', 'corredor de seguros reclamos demora', 'trámite regulatorio demora asesor',
+               'facturación médica rechazos glosas'],
+        "pt": ['automatizar contabilidade IA startup', 'seguros IA startup', 'advogado contratos IA startup',
+               'licitações IA startup', 'compliance regulatório IA startup', 'serviços profissionais IA startup',
+               'contador pequena empresa caro lento', 'corretora de seguros reclamações demora',
+               'despachante aduaneiro atraso custo'],
+        "en": ['"AI-native" accounting', '"AI-native" insurance', '"AI-native" law firm', '"services as software"',
+               'AI medical billing startup', 'AI claims processing startup', 'AI customs classification',
+               'AI contract review startup', 'AI compliance startup', 'AI grant writing startup',
+               'AI accounts payable startup', 'accountant fees complaints small business',
+               'insurance broker complaints slow quotes', 'medical billing denied claims errors',
+               'legal fees too expensive small business', 'compliance consultant costs small business']},
     "servicios_hogar": {
         "es": ['servicios del hogar plataforma', 'cuidado adultos mayores', 'reparaciones WhatsApp', 'limpieza mudanzas plataformas'],
         "pt": ['serviços domésticos plataforma', 'cuidado idosos', 'reparos WhatsApp', 'limpeza mudanças plataformas'],
@@ -272,10 +282,13 @@ KEYWORDS: dict[str, dict[str, list[str]]] = {
     "logistica": {"es": ['bodega', 'fulfillment', '"última milla"', 'logística', 'almacenamiento', 'despacho'],
                   "pt": ['armazém', 'fulfillment', '"última milha"', 'logística', 'armazenagem'],
                   "en": ['warehouse', 'fulfillment', '3PL', 'last-mile', '"cold chain"', 'logistics']},
-    "servicios_ia": {"es": ['contador', 'contabilidad', 'seguros', 'corredor', 'trámite', 'facturación', 'reclamos', 'IA'],
-                     "pt": ['contador', 'contabilidade', 'seguros', 'corretora', 'despachante', 'faturamento', 'reclamações', 'IA'],
+    "servicios_ia": {"es": ['contador', 'contabilidad', 'seguros', 'corredor', 'trámite', 'facturación', 'reclamos', 'IA',
+                            'aduana', 'abogado', 'contratos', 'licitación', 'cumplimiento', 'impuestos'],
+                     "pt": ['contador', 'contabilidade', 'seguros', 'corretora', 'despachante', 'faturamento', 'reclamações', 'IA',
+                            'aduaneiro', 'advogado', 'contratos', 'licitação', 'compliance', 'impostos'],
                      "en": ['"AI-native"', '"services as software"', 'accountant', 'bookkeeping', 'insurance', 'claims',
-                            'billing', 'compliance', 'paralegal']},
+                            'billing', 'compliance', 'paralegal', 'customs', 'legal', 'contract', 'tax', 'tender',
+                            'grant', 'underwriting', 'lease']},
     "servicios_hogar": {"es": ['hogar', 'limpieza', 'reparaciones', 'cuidado', 'servicios'], "pt": ['casa', 'limpeza', 'reparos', 'cuidado', 'serviços'],
                         "en": ['"home services"', 'cleaning', 'repairs', 'caregiving', 'plumber', 'contractor', '"elder care"', 'nanny']},
 }
@@ -315,7 +328,7 @@ def _strip(html: str) -> str:
     return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", html or "")).strip()
 
 
-def _entries(xml: str, via: str) -> list[dict]:
+def _entries(xml: str, via: str, q: str = "") -> list[dict]:
     out = []
     for e in feedparser.parse(xml).entries:
         src = (e.get("source") or {}).get("title", "") or ""
@@ -323,7 +336,7 @@ def _entries(xml: str, via: str) -> list[dict]:
             "title": _clean_title(e.get("title", "") or "", src), "source": src,
             "domain": urllib.parse.urlparse((e.get("source") or {}).get("href", "") or "").netloc.removeprefix("www."),
             "url": e.get("link", "") or "", "snippet": _strip(e.get("summary", ""))[:300],
-            "published": e.get("published", "") or "", "via": via,
+            "published": e.get("published", "") or "", "via": via, "q": q,
         })
     return out
 
@@ -365,7 +378,7 @@ def fetch_pair(cc: str, lens_key: str, client: httpx.Client, days: int = 30,
     for via, q in queries_for(cc, lens_key, days):
         url = _rss_url(q, cc)
         if url not in cache:
-            cache[url] = _entries(_get(url, client), via)
+            cache[url] = _entries(_get(url, client), via, q)
             time.sleep(DELAY)
         for it in cache[url]:
             key = re.sub(r"\W+", "", it["title"].lower())[:80]

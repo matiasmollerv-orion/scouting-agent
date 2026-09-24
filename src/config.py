@@ -614,13 +614,15 @@ GN_FEEDS: dict[str, list[str]] = {
     # X indexados por Google Noticias: el TÍTULO trae el texto del post (suficiente para el triage).
     "gn_ai_native_en": _many(['"AI-native" accounting', '"AI-native" insurance', '"AI-native" bookkeeping',
                               '"AI-native" law firm', '"services as software"', 'AI accounts payable startup',
-                              'AI claims processing startup', 'AI medical billing startup']),
+                              'AI claims processing startup', 'AI medical billing startup', 'AI contract review startup',
+                              'AI compliance startup', 'AI customs classification', 'AI grant writing startup']),
     "gn_ai_native_x": _many(['site:x.com "AI-native services"', 'site:x.com "AI-native" agency',
                              'site:x.com "services as software"', 'site:x.com "AI-native" firm']),
     "gn_ai_native_es": _many(['servicios nativos de IA', 'automatizar contabilidad IA startup',
-                              'estudio contable IA startup', 'servicios profesionales IA startup'], **_ES),
+                              'estudio contable IA startup', 'servicios profesionales IA startup', 'seguros IA startup',
+                              'cumplimiento normativo IA startup', 'abogados IA startup contratos'], **_ES),
     "gn_ai_native_pt": _many(['contabilidade automatizada IA startup', 'serviços profissionais IA startup',
-                              'escritório contábil IA startup'], **_PT),
+                              'escritório contábil IA startup', 'seguros IA startup', 'licitações IA startup'], **_PT),
 }
 GN_MAX_ITEMS = 40  # por feed: Google devuelve hasta 100 y el pool diario no necesita tanto
 

@@ -56,8 +56,8 @@ DEFAULT_MODEL = "claude-sonnet-5"
 # Costo estimado por combinación con Batch y 2 búsquedas — medido en el canario v2.
 EST_PAIR_COST = {"sonnet": 0.065, "haiku": 0.035}
 # Estimación de la lectura de titulares (Batch, ~4k tokens de entrada + salida con razonamiento).
-# NO medida todavía — la primera corrida real la calibra.
-EST_READ_PAIR_COST = {"sonnet": 0.03, "haiku": 0.012}
+# MEDIDA en 5 corridas reales (2026-09-22/25): $0.011-0.016 por combinación (Sonnet, Batch).
+EST_READ_PAIR_COST = {"sonnet": 0.013, "haiku": 0.005}
 WEIGHTS = {"evidencia_necesidad": 0.30, "tamano_gravedad": 0.20, "por_que_ahora": 0.20,
            "hueco_vs_incumbentes": 0.20, "testeabilidad": 0.10}
 SENALES_VALIDAS = {"queja", "brecha", "fuerza_externa", "oferta"}
