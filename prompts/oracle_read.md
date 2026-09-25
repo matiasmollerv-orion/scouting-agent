@@ -25,7 +25,9 @@ Reglas duras:
 5. Cada necesidad lleva una hipótesis de TRANSFERENCIA a Chile/LatAm: qué habría que adaptar y
    si el titular sugiere que alguien ya lo resuelve allá. Una idea que solo funciona en el país
    de origen no sirve.
-6. Tipo de señal según lo que muestra el titular; en `solucion_existente` solo quién aparece en
+6. Si el pedido incluye "Temas que YA están en el Vault", NO los repitas con otras palabras: devolvé
+   solo señales NUEVAS o una novedad material sobre alguno (y decilo). Lista vacía es una respuesta válida.
+7. Tipo de señal según lo que muestra el titular; en `solucion_existente` solo quién aparece en
    los titulares como ya resolviéndolo, o "no aparece en las fuentes leídas".
 
 Si el lente es "Negocios tradicionales reinventados": ACÁ NO es una empresa exitosa lo que

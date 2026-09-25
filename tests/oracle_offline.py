@@ -46,6 +46,9 @@ def fake_run_batch(client, reqs, log_prefix="", **_):
 batch.run_batch = fake_run_batch
 batch.direct_call = lambda c, r: {"error": "no debería llamarse"}
 run.lens_feedback = lambda: {}
+import dashboard.db as _db  # noqa: E402
+_db.fetch_vault = lambda: [{"id": 1, "country": "Chile", "lens": "Negocios tradicionales reinventados",
+                            "necesidad": "Tema ya conocido de prueba"}]
 run.url_states = lambda urls: {u: "ok" for u in urls}
 
 pairs = [("CL", "tradicional"), ("US", "logistica")]
@@ -56,13 +59,15 @@ assert all(r["fuente_url"].startswith("http") for r in rows[::2]), "la cita [1] 
 assert rows[0]["url_estado"] == "titular" and rows[1]["url_estado"] == "sin_url"
 assert rows[1]["tipo_senal"] is None, "un tipo de señal inválido no debe colarse"
 assert rows[0]["country"] == "Chile" and rows[0]["lens"] == "Negocios tradicionales reinventados"
+assert "Tema ya conocido de prueba" in SEEN["CL-tradicional"], "el tema ya en el Vault debe ir en el prompt"
+assert "Temas que YA están" not in SEEN["US-logistica"], "solo se listan los temas del MISMO país y lente"
 for cid, user in SEEN.items():
     n = user.count("\n[")
     print(f"prompt {cid}: {len(user)} caracteres (≈{len(user)//4} tokens), {n} titulares numerados")
     assert 30 <= n <= 90, "cantidad de titulares fuera de rango"
 
 # verificación
-import dashboard.db as db  # noqa: E402
+db = _db
 seeds = [{"id": i, "run_month": "2026-09-test", "url_estado": "titular", "score": 9 - i, "country": "Chile",
           "lens": "X", "necesidad": "n", "quien": "q", "evidencia": "e", "solucion_existente": "s", "objeciones": "obj"}
          for i in range(4)]
@@ -75,4 +80,16 @@ assert UPDATES[1]["url_estado"] == "parcial"
 assert UPDATES[2]["url_estado"] == "no_confirmada" and UPDATES[2]["status"] == "descartada_consejo"
 assert "Verificación" in UPDATES[2]["objeciones"] and 3 not in UPDATES, "una respuesta ilegible no debe escribir nada"
 assert vstats["ilegibles"] == 1
+
+# un solo semilla por tema y ningún tema ya verificado/decidido
+from collections import Counter  # noqa: E402
+st = Counter()
+cand = [{"id": 10, "score": 7.0, "cluster_id": 1}, {"id": 11, "score": 6.5, "cluster_id": 1},
+        {"id": 12, "score": 6.8, "cluster_id": 2}, {"id": 13, "score": 6.2, "cluster_id": None},
+        {"id": 14, "score": 6.1, "cluster_id": 3}]
+vault = [{"id": 99, "cluster_id": 2, "url_estado": "verificada"},          # tema 2 ya verificado antes
+         {"id": 98, "cluster_id": 3, "url_estado": "titular", "human_verdict": "descartada"}]  # tema 3 ya decidido
+got = [x["id"] for x in run.pick_to_verify(cand, vault, st)]
+assert got == [10, 13], got
+assert st["omitidas_tema_ya_verificado"] == 2 and st["omitidas_mismo_tema_en_esta_corrida"] == 1, dict(st)
 print("=== OK: lectura y verificación validadas offline ($0) ===")

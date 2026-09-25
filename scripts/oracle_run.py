@@ -191,6 +191,22 @@ def mine(client, pairs, model: str, effort: str | None, month_key: str) -> tuple
     return rows, cost, stats
 
 
+MAX_KNOWN_TOPICS = 20
+
+
+def known_topics(vault_rows: list[dict]) -> dict[tuple[str, str], str]:
+    """Bloque 'temas que YA están en el Vault' por (país, lente), para que la lectura de este mes no
+    vuelva a extraer (y a pagar consejo y verificación por) lo mismo con otras palabras. El chequeo
+    exacto de dedupe_key solo ve textos idénticos; esto evita el duplicado antes de generarlo."""
+    by: dict[tuple[str, str], list[str]] = {}
+    for r in sorted(vault_rows, key=lambda r: r.get("id") or 0, reverse=True):
+        by.setdefault((r["country"], r["lens"]), []).append(str(r.get("necesidad") or "")[:110])
+    return {k: ("\n\nTemas que YA están en el Vault para este país y lente (NO los repitas: devolvé solo "
+                "señales NUEVAS, o una novedad MATERIAL sobre alguno de ellos y en ese caso decilo en "
+                "`necesidad`):\n" + "\n".join(f"- {t}" for t in v[:MAX_KNOWN_TOPICS]))
+            for k, v in by.items() if v}
+
+
 def read_mine(client, pairs, model: str, effort: str | None, month_key: str) -> tuple[list[dict], float, Counter]:
     """Lee titulares recolectados gratis (sin búsqueda web) y extrae las mejores señales."""
     import httpx
@@ -198,8 +214,11 @@ def read_mine(client, pairs, model: str, effort: str | None, month_key: str) -> 
     from src.oracle import read, sources
     from src.oracle.batch import direct_call, make_request, run_batch
 
+    from dashboard.db import fetch_vault
+
     system = (PROMPTS / "oracle_read.md").read_text(encoding="utf-8")
     fb = lens_feedback()
+    known = known_topics(fetch_vault())
     stats: Counter = Counter()
     reqs, ranked_by_id = [], {}
     cache: dict = {}
@@ -216,7 +235,8 @@ def read_mine(client, pairs, model: str, effort: str | None, month_key: str) -> 
                      "accesibles." if cc in SENALES_OFERTA else "")
             user = (f"País: {name}\nLente: {lens.name}\nDefinición del lente: {lens.definition}{extra}\n\n"
                     f"Titulares ({len(ranked)}):\n{read.render(ranked)}\n\n"
-                    f"Extraé las señales más específicas y accionables.{fb.get(lens.name, '')}")
+                    f"Extraé las señales más específicas y accionables.{fb.get(lens.name, '')}"
+                    f"{known.get((name, lens.name), '')}")
             reqs.append(make_request(f"{cc}-{lk}", model, system, user, READ_MAX_TOKENS, None, effort))
     stats["titulares_leidos"] = sum(len(v) for v in ranked_by_id.values())
     res = run_batch(client, reqs, log_prefix="[oracle:lectura]")
@@ -266,9 +286,34 @@ def read_mine(client, pairs, model: str, effort: str | None, month_key: str) -> 
     return rows, cost, stats
 
 
+def pick_to_verify(candidates: list[dict], vault_rows: list[dict], stats: Counter) -> list[dict]:
+    """Cada verificación cuesta ~$0.045 (búsqueda web), la etapa más cara por semilla. Se verifica
+    UNA semilla por tema (la de mejor score) y ninguna si el tema ya tiene una semilla verificada o con
+    veredicto humano — de un mes anterior o de otro país. Sin cluster asignado, cada semilla es un tema."""
+    done = {}
+    for r in vault_rows:
+        cid = r.get("cluster_id")
+        if cid is not None and (r.get("url_estado") in ("verificada", "parcial", "no_confirmada")
+                                or r.get("human_verdict")):
+            done.setdefault(cid, set()).add(r["id"])
+    picked, taken = [], set()
+    for x in sorted(candidates, key=lambda x: x.get("score") or 0, reverse=True):
+        cid = x.get("cluster_id")
+        if cid is not None:
+            if done.get(cid, set()) - {x["id"]}:
+                stats["omitidas_tema_ya_verificado"] += 1
+                continue
+            if cid in taken:
+                stats["omitidas_mismo_tema_en_esta_corrida"] += 1
+                continue
+            taken.add(cid)
+        picked.append(x)
+    return picked
+
+
 def verify(client, model: str, effort: str | None, month_key: str) -> tuple[float, Counter]:
     """Verifica con búsqueda web REAL las mejores semillas del consejo del mes (basadas en titulares)."""
-    from dashboard.db import fetch_vault_status, update_vault
+    from dashboard.db import fetch_vault, fetch_vault_status, update_vault
     from scripts.market_analysis import _parse_object
     from src.oracle.batch import direct_call, make_request, run_batch
     from src.pipeline.score import web_search_tool
@@ -276,7 +321,7 @@ def verify(client, model: str, effort: str | None, month_key: str) -> tuple[floa
     stats: Counter = Counter()
     seeds = [x for x in fetch_vault_status("en_vault")
              if x.get("run_month") == month_key and x.get("url_estado") == "titular"]
-    seeds = sorted(seeds, key=lambda x: x.get("score") or 0, reverse=True)[:VERIFY_TOP]
+    seeds = pick_to_verify(seeds, fetch_vault(), stats)[:VERIFY_TOP]
     if not seeds:
         return 0.0, stats
     system = (PROMPTS / "oracle_verify.md").read_text(encoding="utf-8")
@@ -495,6 +540,16 @@ def main() -> None:
         rows, mining_cost, mstats = miner(client, pairs, mining_model, effort, month_key)
         insert_vault_seeds(rows)
         print(f"[oracle] minería: {dict(mstats)} costo=${mining_cost:.4f}")
+        # Agrupar temas repetidos ANTES del consejo y la verificación: la verificación usa los
+        # grupos para no pagar dos veces el mismo tema. Un fallo acá no debe perder la corrida.
+        cluster_cost = 0.0
+        try:
+            from src.oracle.cluster import cluster_seeds
+            cluster_cost, kstats = cluster_seeds(
+                client, os.environ.get("SCOUTING_MODEL_CLUSTER", "claude-haiku-4-5"))
+            print(f"[oracle] temas: {dict(kstats)} costo=${cluster_cost:.4f}")
+        except Exception as e:  # noqa: BLE001
+            print(f"[oracle] agrupamiento omitido ({type(e).__name__}) — ¿falta la migración de columnas?")
         council_cost = 0.0
         cstats: Counter = Counter()
         if mining_cost < MONTH_COST_CEILING:
@@ -507,14 +562,6 @@ def main() -> None:
                 and mining_cost + council_cost < MONTH_COST_CEILING):
             verify_cost, vstats = verify(client, council_model, effort, month_key)
             print(f"[oracle] verificación: {dict(vstats)} costo=${verify_cost:.4f}")
-        cluster_cost = 0.0
-        try:  # agrupar temas repetidos entre países; un fallo acá no debe perder la corrida
-            from src.oracle.cluster import cluster_seeds
-            cluster_cost, kstats = cluster_seeds(
-                client, os.environ.get("SCOUTING_MODEL_CLUSTER", "claude-haiku-4-5"))
-            print(f"[oracle] temas: {dict(kstats)} costo=${cluster_cost:.4f}")
-        except Exception as e:  # noqa: BLE001
-            print(f"[oracle] agrupamiento omitido ({type(e).__name__}) — ¿falta la migración de columnas?")
         total = mining_cost + council_cost + verify_cost + cluster_cost
         print(f"[oracle] consejo: {dict(cstats)} costo=${council_cost:.4f}")
         print(f"[oracle] === COSTO TOTAL {month_key}: ${total:.4f} ===")
