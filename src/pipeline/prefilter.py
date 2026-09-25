@@ -34,6 +34,7 @@ TRUSTED_SOURCES = {
     "gn_tradicional_en", "gn_tradicional_negocios", "gn_tradicional_es", "gn_tradicional_pt",
     "gn_logistica_en", "gn_logistica_prensa", "gn_logistica_es", "gn_logistica_pt",
     "gn_ai_native_en", "gn_ai_native_x", "gn_ai_native_es", "gn_ai_native_pt",  # 2026-09-24
+    "gn_ai_native_verticales",
 }
 
 

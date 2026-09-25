@@ -60,7 +60,8 @@ PRIORITY_CATEGORY_SOURCES = {
                              "gn_logistica_pt", "supplychaindive"},
     # 2026-09-24: categoría nueva (artículo de Greg Isenberg), MÁXIMA prioridad por decisión del
     # fundador — cupo de rescate para que siempre haya al menos un candidato cada semana.
-    "Servicios AI-native": {"gn_ai_native_en", "gn_ai_native_x", "gn_ai_native_es", "gn_ai_native_pt"},
+    "Servicios AI-native": {"gn_ai_native_en", "gn_ai_native_x", "gn_ai_native_es", "gn_ai_native_pt",
+                            "gn_ai_native_verticales"},
 }
 MAX_RESCUE_SLOTS = 5  # tope duro de cupos extra por corrida, por costo
 
@@ -324,7 +325,8 @@ SOURCE_WEIGHT = {
     # Google Noticias dedicadas (tradicional/logística): agregan medios de calidad dispar.
     **{f"gn_{k}": 0.6 for k in ("tradicional_en", "tradicional_negocios", "tradicional_es", "tradicional_pt",
                                 "logistica_en", "logistica_prensa", "logistica_es", "logistica_pt",
-                                "ai_native_en", "ai_native_x", "ai_native_es", "ai_native_pt")},
+                                "ai_native_en", "ai_native_x", "ai_native_es", "ai_native_pt",
+                                "ai_native_verticales")},
 }
 SOURCE_WEIGHT_DEFAULT = 0.4  # fuente no listada: ni alto ni descartable
 
@@ -616,6 +618,13 @@ GN_FEEDS: dict[str, list[str]] = {
                               '"AI-native" law firm', '"services as software"', 'AI accounts payable startup',
                               'AI claims processing startup', 'AI medical billing startup', 'AI contract review startup',
                               'AI compliance startup', 'AI customs classification', 'AI grant writing startup']),
+    "gn_ai_native_verticales": _many(['AI-native customer support outsourcing', 'AI recruiting agency startup',
+                                      'AI video production agency startup', 'AI market research firm startup',
+                                      'AI prior authorization startup', 'AI fund administration startup',
+                                      'AI property management startup', 'AI debt collection startup',
+                                      'AI payroll HR compliance startup', '"AI-native" marketing agency',
+                                      'AI inspection services startup', 'AI patent drafting startup',
+                                      'AI tax preparation startup', 'AI food safety compliance startup']),
     "gn_ai_native_x": _many(['site:x.com "AI-native services"', 'site:x.com "AI-native" agency',
                              'site:x.com "services as software"', 'site:x.com "AI-native" firm']),
     "gn_ai_native_es": _many(['servicios nativos de IA', 'automatizar contabilidad IA startup',

@@ -24,14 +24,17 @@ MAX_ITEMS = 80            # titulares por combinación que lee el modelo (≈ 3k
 MAX_PER_DOMAIN = 3        # diversidad: un medio no llena la lista
 MAX_PER_QUERY = 6         # diversidad: una consulta (p. ej. contabilidad) no llena la lista
 MAX_POOL = 10             # señales globales del scouting semanal (sin país)
-LAYER_BONUS = {"curada": 1.0, "global": 0.5, "abierta": 0.0, "pool": -0.5}
+LAYER_BONUS = {"rotacion": 2.0, "curada": 1.0, "global": 0.5, "abierta": 0.0, "pool": -0.5}
 
 
 def _norm(t: str) -> str:
     return re.sub(r"\W+", "", t.lower())[:80]
 
 
-def gather(cc: str, lens_key: str, client: httpx.Client, cache: dict, days: int = 30) -> list[dict]:
+WINDOW_DAYS = 35  # corridas cada 4-5 semanas (último viernes de cada mes): 35 días no deja huecos entre corridas
+
+
+def gather(cc: str, lens_key: str, client: httpx.Client, cache: dict, days: int = WINDOW_DAYS) -> list[dict]:
     items = sources.fetch_pair(cc, lens_key, client, days, cache)
     seen = {_norm(i["title"]) for i in items}
     pool = [p for p in sources.pool_items(lens_key) if _norm(p["title"]) not in seen][:MAX_POOL]

@@ -251,6 +251,33 @@ KEYWORDS_LOCAL: dict[str, dict[str, list[str]]] = {
            "inmobiliario": ['huur', 'woning', 'vastgoed', 'bouw']},
 }
 
+# Verticales MENOS obvias para el lente AI-native (2026-09-25: a Matías le parecieron "fomes" las del
+# artículo — contabilidad, seguros, legal). Cada mes se consultan 8 distintas, en rotación, así que en
+# ~2.5 meses se recorren todas. Medidas gratis con Google Noticias (>=10 resultados en 35 días).
+# Para sumar una vertical: agregar la consulta acá (2-5 palabras, patrón "AI <servicio> startup").
+ROTATING_VERTICALS: dict[str, list[str]] = {
+    "servicios_ia": [
+        'AI-native customer support outsourcing', 'AI recruiting agency startup', 'AI video production agency startup',
+        'AI market research firm startup', 'AI prior authorization startup', 'AI fund administration startup',
+        'AI property management startup', 'AI debt collection startup', 'AI payroll HR compliance startup',
+        '"AI-native" marketing agency', 'AI inspection services startup', 'AI patent drafting startup',
+        'AI tax preparation startup', 'AI ESG reporting startup', 'AI food safety compliance startup',
+        'AI immigration visa startup', 'AI translation localization startup', 'AI engineering drawing review startup',
+        'AI college admissions startup', 'AI data annotation services startup',
+    ],
+}
+ROTATING_PER_MONTH = 8
+
+
+def rotating_queries(lens_key: str, now: datetime | None = None) -> list[str]:
+    verts = ROTATING_VERTICALS.get(lens_key)
+    if not verts:
+        return []
+    now = now or datetime.now(timezone.utc)
+    start = ((now.year * 12 + now.month - 1) * ROTATING_PER_MONTH) % len(verts)
+    return [verts[(start + i) % len(verts)] for i in range(min(ROTATING_PER_MONTH, len(verts)))]
+
+
 # Palabras del lente para filtrar las fuentes curadas (que publican de todo).
 KEYWORDS: dict[str, dict[str, list[str]]] = {
     "futuro_trabajo": {"es": ['"equipos remotos"', '"trabajo remoto"', '"agentes de IA"', 'freelancers', 'pymes', 'automatización', 'productividad'],
@@ -355,6 +382,7 @@ def lang_terms(cc: str, lens_key: str, kind: str) -> tuple[str, list[str]]:
 def queries_for(cc: str, lens_key: str, days: int = 30) -> list[tuple[str, str]]:
     """[(via, consulta)] de las capas 'abiertas', 'curadas' y 'global' para el par."""
     qs = [("abierta", f"{q} when:{days}d") for q in lang_terms(cc, lens_key, "queries")[1]]
+    qs += [("rotacion", f"{q} when:{days}d") for q in rotating_queries(lens_key)]
     sites = SITES.get(cc, {})
     curated = list(dict.fromkeys(sites.get("general", []) + sites.get(lens_key, [])
                                  + COMPLAINT_SITES + (["reclameaqui.com.br"] if cc == "BR" else [])))

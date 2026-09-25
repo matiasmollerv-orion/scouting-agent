@@ -11,10 +11,12 @@ on:
   # Costo estimado por corrida (medido en pruebas): $2.9-3.6 con ~100 combinaciones. Freno interno
   # de $9 (MONTH_COST_CEILING en scripts/oracle_run.py). Idempotente por mes.
   schedule:
-    # Día 25 de cada mes, 07:23 UTC (fuera del pico de :00 de GitHub Actions). Movido del día 3 al 25
-    # el 2026-09-25: la corrida de septiembre se lanzó a mano ese día y las consultas leen una ventana
-    # de 30 días, así que la siguiente debe caer ~30 días después (25-oct), no a los 8 días.
-    - cron: "23 7 25 * *"
+    # ÚLTIMO VIERNES de cada mes, 07:23 UTC (04:23 Chile; fuera del pico de :00 de GitHub Actions), para
+    # tener los resultados listos el fin de semana (pedido de Matías, 2026-09-25). Cron no sabe de "último
+    # viernes": dispara TODOS los viernes y el primer paso de abajo se salta los que no son el último
+    # del mes. Corridas cada 4-5 semanas -> ventana de lectura de 35 días (src/oracle/read.py).
+    # Próximas: vie 30-oct, vie 27-nov, vie 25-dic. Se puede lanzar a mano cualquier día (workflow_dispatch).
+    - cron: "23 7 * * 5"
   workflow_dispatch:
     inputs:
       dry_run:
@@ -52,17 +54,31 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 330
     steps:
+      - name: Guardia — solo el último viernes del mes (los disparos manuales siempre corren)
+        id: guard
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "$(date -u -d '+7 days' +%m)" = "$(date -u +%m)" ]; then
+            echo "run=false" >> "$GITHUB_OUTPUT"
+            echo "Hoy $(date -u +%F) no es el último viernes del mes — no se corre (costo \$0)."
+          else
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          fi
+
       - uses: actions/checkout@v4
+        if: steps.guard.outputs.run == 'true'
 
       - uses: actions/setup-python@v5
+        if: steps.guard.outputs.run == 'true'
         with:
           python-version: "3.11"
           cache: pip
 
       - name: Install deps
+        if: steps.guard.outputs.run == 'true'
         run: pip install -r requirements.txt
 
       - name: Oracle
+        if: steps.guard.outputs.run == 'true'
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
