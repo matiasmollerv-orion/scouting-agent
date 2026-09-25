@@ -11,8 +11,10 @@ on:
   # Costo estimado por corrida (medido en pruebas): $2.9-3.6 con ~100 combinaciones. Freno interno
   # de $9 (MONTH_COST_CEILING en scripts/oracle_run.py). Idempotente por mes.
   schedule:
-    # Día 3 de cada mes, 07:23 UTC (fuera del pico de :00 de GitHub Actions).
-    - cron: "23 7 3 * *"
+    # Día 25 de cada mes, 07:23 UTC (fuera del pico de :00 de GitHub Actions). Movido del día 3 al 25
+    # el 2026-09-25: la corrida de septiembre se lanzó a mano ese día y las consultas leen una ventana
+    # de 30 días, así que la siguiente debe caer ~30 días después (25-oct), no a los 8 días.
+    - cron: "23 7 25 * *"
   workflow_dispatch:
     inputs:
       dry_run:
