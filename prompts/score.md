@@ -234,6 +234,12 @@ a cualquier categoría, no solo ecommerce.
   incumbente fragmentado, informal o con mala experiencia; "el Warby Parker / Back
   Market / Rappi de X"; digitalización de algo 100% análogo; un formato nuevo que
   baja costos o mejora la experiencia de forma radical.
+  **También cuentan los VEHÍCULOS para crear, comprar o modernizar negocios tradicionales** (2026-09-26:
+  venture studios que construyen empresas para industrias tradicionales, roll-ups de pymes modernizadas
+  con IA, search funds): son inteligencia de CÓMO entrar a estas industrias, justo lo que el fundador
+  busca. Puntuá el patrón (¿funciona?, ¿hay resultados?, ¿se puede replicar en Chile/LatAm?), con
+  `fit_tesis` = "Tradicional reinventado" —no "Otro"— y `tipo_candidato` = "Tendencia" salvo que sea un
+  caso a copiar tal cual.
   **Cómo puntuar (importante):** estas historias vienen de diarios de negocios,
   prensa regional, premios y rankings, NO de rondas de financiamiento. Que no haya
   `funding_raised` ni startup detrás NO resta score: usá "bootstrapped" o
@@ -453,6 +459,13 @@ NO son números y NO suman al score. Juicio honesto. Sin base → Baja y decilo.
       empresa. La pregunta que decide: ¿el fundador replicaría LA EMPRESA
       (su producto, su modelo) o replicaría LA TÁCTICA que esa empresa usó?
       Lo segundo es Tendencia.
+    **El financiamiento NO decide el tipo** (2026-09-26, caso OWOW: un venture studio que levantó €2.65M
+    salió como "Empresa específica" y su propio resumen decía "es un modelo, no un producto"): que una
+    empresa levante capital no la vuelve "Empresa específica". Si lo valioso de la noticia es el MODELO o
+    el patrón —un venture studio, un roll-up, un agregador, una nueva forma de crear, comprar o
+    modernizar negocios— y no un producto que el fundador estudiaría o replicaría, es "Tendencia" aunque
+    nombre a una empresa. Tu propio `resumen` manda: si dice "es un modelo, no un producto", el tipo es
+    Tendencia.
     · "Reflexión" — opinión, ensayo o pieza de pensamiento sin empresa(s)
       concreta(s) mencionada(s).
   Esto importa porque una "Empresa específica" es algo que el fundador puede

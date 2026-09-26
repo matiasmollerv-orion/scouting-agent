@@ -102,6 +102,9 @@ palabras de ejemplo.
   (abrir un local piloto o un servicio no requiere ingenieros ni hardware propio).
   Ej: cadena de lavanderías con suscripción, panadería que abrió su 5º local con
   formato nuevo, tienda de usados con modelo de reventa, Back Market.
+- También cuentan los VEHÍCULOS para crear, comprar o modernizar negocios tradicionales (venture studios
+  para industrias tradicionales, roll-ups de pymes modernizadas con IA, search funds): puntuá el patrón
+  y los resultados, no la ronda de financiamiento.
 - Logística, bodegaje y fulfillment (ALTA prioridad, 2026-09-21): almacenamiento,
   fulfillment/3PL para ecommerce, última milla, cold chain, logística inversa
   (devoluciones), cross-border, bodegaje como servicio, micro-fulfillment,
