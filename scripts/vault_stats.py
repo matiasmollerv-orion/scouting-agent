@@ -33,6 +33,17 @@ def main() -> int:
     for lens, d in sorted(per.items(), key=lambda kv: -kv[1]["n"]):
         print(f"[vault]   {str(lens)[:38]:38} semillas={d['n']:>3} temas={len(d['cl']):>3} "
               f"verificadas={d['ver']:>2} max_por_tema={max(d['cl'].values())}")
+    print("[vault] EN VAULT (score>=umbral) por lente: semillas / temas / verificadas con búsqueda:")
+    inv: dict = defaultdict(lambda: {"n": 0, "cl": set(), "ver": 0})
+    for r in rows:
+        if r.get("status") not in ("en_vault", "guardada", "elegida"):
+            continue
+        d = inv[r.get("lens")]
+        d["n"] += 1
+        d["cl"].add(r.get("cluster_id") if r.get("cluster_id") is not None else f"solo{r['id']}")
+        d["ver"] += r.get("url_estado") in ("verificada", "parcial")
+    for lens, d in sorted(inv.items(), key=lambda kv: -kv[1]["n"]):
+        print(f"[vault]   {str(lens)[:38]:38} en_vault={d['n']:>3} temas={len(d['cl']):>3} verificadas={d['ver']:>2}")
     crit = ("s_evidencia", "s_tamano", "s_ahora", "s_hueco", "s_testeabilidad", "bonus_fit", "score")
     by: dict = defaultdict(lambda: defaultdict(list))
     for r in rows:
