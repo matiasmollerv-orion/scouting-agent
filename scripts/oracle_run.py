@@ -207,6 +207,28 @@ def known_topics(vault_rows: list[dict]) -> dict[tuple[str, str], str]:
             for k, v in by.items() if v}
 
 
+def saturated_topics(vault_rows: list[dict], min_n: int = 3, top: int = 8) -> dict[str, str]:
+    """Por lente: temas que YA tienen >= min_n semillas (en cualquier país). Sin esto, cada país vuelve a
+    extraer el mismo tema obvio (p. ej. contabilidad de pymes en AI-native) y el Vault se llena de
+    semillas casi iguales. El modelo recibe la lista y prioriza otros huecos."""
+    by: dict[str, dict[int, dict]] = {}
+    for r in vault_rows:
+        cid = r.get("cluster_id")
+        if cid is None:
+            continue
+        d = by.setdefault(r["lens"], {}).setdefault(int(cid), {"label": r.get("cluster_label") or "", "n": 0})
+        d["n"] += 1
+    out = {}
+    for lens, clusters in by.items():
+        big = sorted((v for v in clusters.values() if v["n"] >= min_n and v["label"]), key=lambda v: -v["n"])[:top]
+        if big:
+            out[lens] = ("\n\nTemas YA MUY REPETIDOS en el Vault para este lente (en otros países): no los "
+                         "vuelvas a extraer salvo que un titular muestre un ángulo local claramente distinto; "
+                         "preferí otras verticales u otros huecos:\n"
+                         + "\n".join(f"- {v['label']} ({v['n']} semillas)" for v in big))
+    return out
+
+
 def read_mine(client, pairs, model: str, effort: str | None, month_key: str) -> tuple[list[dict], float, Counter]:
     """Lee titulares recolectados gratis (sin búsqueda web) y extrae las mejores señales."""
     import httpx
@@ -218,7 +240,9 @@ def read_mine(client, pairs, model: str, effort: str | None, month_key: str) -> 
 
     system = (PROMPTS / "oracle_read.md").read_text(encoding="utf-8")
     fb = lens_feedback()
-    known = known_topics(fetch_vault())
+    vault_rows = fetch_vault()
+    known = known_topics(vault_rows)
+    saturated = saturated_topics(vault_rows)
     stats: Counter = Counter()
     reqs, ranked_by_id = [], {}
     cache: dict = {}
@@ -236,7 +260,7 @@ def read_mine(client, pairs, model: str, effort: str | None, month_key: str) -> 
             user = (f"País: {name}\nLente: {lens.name}\nDefinición del lente: {lens.definition}{extra}\n\n"
                     f"Titulares ({len(ranked)}):\n{read.render(ranked)}\n\n"
                     f"Extraé las señales más específicas y accionables.{fb.get(lens.name, '')}"
-                    f"{known.get((name, lens.name), '')}")
+                    f"{known.get((name, lens.name), '')}{saturated.get(lens.name, '')}")
             reqs.append(make_request(f"{cc}-{lk}", model, system, user, READ_MAX_TOKENS, None, effort))
     stats["titulares_leidos"] = sum(len(v) for v in ranked_by_id.values())
     res = run_batch(client, reqs, log_prefix="[oracle:lectura]")

@@ -48,7 +48,11 @@ batch.direct_call = lambda c, r: {"error": "no debería llamarse"}
 run.lens_feedback = lambda: {}
 import dashboard.db as _db  # noqa: E402
 _db.fetch_vault = lambda: [{"id": 1, "country": "Chile", "lens": "Negocios tradicionales reinventados",
-                            "necesidad": "Tema ya conocido de prueba"}]
+                            "necesidad": "Tema ya conocido de prueba"}] + [
+    {"id": 100 + i, "country": "Brasil", "lens": "Logística, bodegaje y fulfillment", "necesidad": "x",
+     "cluster_id": 7, "cluster_label": "Tema saturado de prueba"} for i in range(3)] + [
+    {"id": 200, "country": "Brasil", "lens": "Logística, bodegaje y fulfillment", "necesidad": "y",
+     "cluster_id": 8, "cluster_label": "Tema con una sola semilla"}]
 run.url_states = lambda urls: {u: "ok" for u in urls}
 
 pairs = [("CL", "tradicional"), ("US", "logistica")]
@@ -60,6 +64,8 @@ assert rows[0]["url_estado"] == "titular" and rows[1]["url_estado"] == "sin_url"
 assert rows[1]["tipo_senal"] is None, "un tipo de señal inválido no debe colarse"
 assert rows[0]["country"] == "Chile" and rows[0]["lens"] == "Negocios tradicionales reinventados"
 assert "Tema ya conocido de prueba" in SEEN["CL-tradicional"], "el tema ya en el Vault debe ir en el prompt"
+assert "Tema saturado de prueba (3 semillas)" in SEEN["US-logistica"], "los temas saturados del lente van a todos los países"
+assert "Tema con una sola semilla" not in SEEN["US-logistica"], "solo temas con >= 3 semillas"
 assert "Temas que YA están" not in SEEN["US-logistica"], "solo se listan los temas del MISMO país y lente"
 for cid, user in SEEN.items():
     n = user.count("\n[")
