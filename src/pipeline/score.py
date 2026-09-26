@@ -145,7 +145,9 @@ def score(items: list[Item]) -> ScoreResult:
         # 16k tokens: el run 2026-W28 truncó a 8k con newsletters de contenido
         # rico (~1000 tokens/item). Solo se paga lo generado, no el tope.
         text, c, truncated = _call(client, config.MODEL_DEEP, deep_system, deep_user,
-                                   max_tokens=16000, tools=WEB_SEARCH_TOOL)
+                                   max_tokens=32000, tools=WEB_SEARCH_TOOL)  # 2026-09-26: 16k truncó
+        # con 9 candidatos (AI-native + tradicional traen análisis más largos) y se perdió 1 de 9;
+        # solo se paga lo que se genera, no el tope.
         result.cost_usd += c
         result.deep = _parse(text)
         if result.deep:
