@@ -98,4 +98,12 @@ vault = [{"id": 99, "cluster_id": 2, "url_estado": "verificada"},          # tem
 got = [x["id"] for x in run.pick_to_verify(cand, vault, st)]
 assert got == [10, 13], got
 assert st["omitidas_tema_ya_verificado"] == 2 and st["omitidas_mismo_tema_en_esta_corrida"] == 1, dict(st)
+# a igual puntaje se prefiere Chile > México > resto de LatAm > otros; un mejor puntaje siempre gana
+tie = [{"id": 20, "score": 7.3, "cluster_id": 5, "country": "Estados Unidos"},
+       {"id": 21, "score": 7.3, "cluster_id": 5, "country": "Chile"},
+       {"id": 22, "score": 7.3, "cluster_id": 6, "country": "México"},
+       {"id": 23, "score": 7.3, "cluster_id": 6, "country": "España"},
+       {"id": 24, "score": 7.4, "cluster_id": 7, "country": "Reino Unido"}]
+got = [x["id"] for x in run.pick_to_verify(tie, [], Counter())]
+assert got == [24, 21, 22], got   # 7.4 primero; en cada tema de 7.3 gana el latinoamericano
 print("=== OK: lectura y verificación validadas offline ($0) ===")

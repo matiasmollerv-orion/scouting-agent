@@ -310,6 +310,15 @@ def read_mine(client, pairs, model: str, effort: str | None, month_key: str) -> 
     return rows, cost, stats
 
 
+# A igual puntaje (el que se muestra, con 1 decimal) se verifica primero la semilla de Chile, luego México,
+# luego el resto de Latinoamérica: son los mercados donde Matías puede actuar (pedido del 2026-09-26).
+LATAM_PRIORITY = {"Chile": 3, "México": 2, "Brasil": 1, "Perú": 1, "Colombia": 1, "Argentina": 1}
+
+
+def _verify_order(x: dict) -> tuple:
+    return (round(x.get("score") or 0, 1), LATAM_PRIORITY.get(x.get("country"), 0))
+
+
 def pick_to_verify(candidates: list[dict], vault_rows: list[dict], stats: Counter) -> list[dict]:
     """Cada verificación cuesta ~$0.045 (búsqueda web), la etapa más cara por semilla. Se verifica
     UNA semilla por tema (la de mejor score) y ninguna si el tema ya tiene una semilla verificada o con
@@ -321,7 +330,7 @@ def pick_to_verify(candidates: list[dict], vault_rows: list[dict], stats: Counte
                                 or r.get("human_verdict")):
             done.setdefault(cid, set()).add(r["id"])
     picked, taken = [], set()
-    for x in sorted(candidates, key=lambda x: x.get("score") or 0, reverse=True):
+    for x in sorted(candidates, key=_verify_order, reverse=True):
         cid = x.get("cluster_id")
         if cid is not None:
             if done.get(cid, set()) - {x["id"]}:

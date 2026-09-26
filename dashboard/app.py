@@ -29,8 +29,20 @@ from dashboard import db as _db, style, textutils as _textutils  # noqa: E402
 # 2026-09-20 la página principal se cayó con "module 'dashboard.style' has no attribute
 # 'pager'" justo después de un push. Se recargan en cada ejecución (es barato) para que un
 # deploy solo de Python nunca deje código viejo en memoria.
-for _mod in (_textutils, style, _db):
-    importlib.reload(_mod)
+def _fresh(name: str):
+    """Versión ACTUAL del módulo. `importlib.reload` falla con ImportError ("module ... not in
+    sys.modules") cuando Streamlit ya purgó el módulo — pasó el 2026-09-26 al despertar la app en
+    Cloud (Python 3.14) y dejó las 3 páginas caídas. En ese caso se re-importa limpio."""
+    try:
+        return importlib.reload(sys.modules[name])
+    except (KeyError, ImportError):
+        sys.modules.pop(name, None)
+        return importlib.import_module(name)
+
+
+_textutils = _fresh("dashboard.textutils")
+style = _fresh("dashboard.style")
+_db = _fresh("dashboard.db")
 
 style.inject()
 
