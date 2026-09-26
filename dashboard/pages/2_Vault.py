@@ -139,7 +139,9 @@ if hit.empty:
     sel_lens = c2.multiselect("Lente", sorted(df["lens"].dropna().unique()))
     sel_country = c3.multiselect("País", sorted(df["country"].dropna().unique()))
     min_score = c4.number_input("Score mín.", 0.0, 10.0, 0.0, 0.5)
-    multi_only = st.checkbox("Solo temas que aparecen en 2 o más países", value=False)
+    ck1, ck2 = st.columns(2)
+    multi_only = ck1.checkbox("Solo temas que aparecen en 2 o más países", value=False)
+    agrupar = ck2.checkbox("Agrupar semillas del mismo tema (muestra la mejor de cada tema)", value=True)
 
     f = df[df["status"].isin(sel_status)] if sel_status else df
     if sel_lens:
@@ -148,22 +150,32 @@ if hit.empty:
         f = f[f["country"].isin(sel_country)]
     if multi_only:
         f = f[f["n_paises"] >= 2]
-    f = (f[f["score"].fillna(0) >= min_score]
-         .sort_values(["n_paises", "score"], ascending=[False, False], na_position="last")
-         .reset_index(drop=True))
+    f = f[f["score"].fillna(0) >= min_score]
+    n_semillas = len(f)
+    if agrupar:  # una tarjeta por tema: la de mejor score, con "+N similares"; las sin tema quedan solas
+        con = f[f["cluster_id"].notna()].sort_values("score", ascending=False, na_position="last")
+        sin = f[f["cluster_id"].isna()].assign(n_similares=0)
+        con = con.assign(n_similares=con.groupby("cluster_id")["id"].transform("count") - 1)
+        f = pd.concat([con.drop_duplicates(subset="cluster_id", keep="first"), sin])
+    else:
+        f = f.assign(n_similares=0)
+    f = f.sort_values(["n_paises", "score"], ascending=[False, False], na_position="last").reset_index(drop=True)
 
-    st.caption(f"{len(f)} de {len(df)} semillas · los temas que aparecen en más países van primero")
+    st.caption((f"{len(f)} temas ({n_semillas} semillas) de {len(df)} en total" if agrupar
+                else f"{len(f)} de {len(df)} semillas") + " · los temas que aparecen en más países van primero")
     if f.empty:
         st.info("Nada con esos filtros.")
         st.stop()
 
-    sig = str((sel_status, sel_lens, sel_country, min_score, multi_only))
+    sig = str((sel_status, sel_lens, sel_country, min_score, multi_only, agrupar))
     start_i, end_i = style.pager("vault", len(f), 15, sig, "top")
     for i in range(start_i, end_i):
         r = f.iloc[i]
         chips = [(r["estado"], STATUS_KIND.get(r["estado"], "neutral"))]
         if r["n_paises"] >= 2:
             chips.append((f"en {r['n_paises']} países", "ok" if r["n_paises"] >= 3 else "info"))
+        if r["n_similares"] > 0:
+            chips.append((f"+{int(r['n_similares'])} similares", "neutral"))
         lead = style.pill(f"{r['score']:.1f}", style.score_kind(r["score"])) if pd.notna(r["score"]) else style.pill("—")
         meta = f"{r['country']} · {r['lens']} · señal: {r['señal']}"
         if style.row(f"vault_{i}", title=str(r["necesidad"]), meta=meta, lead_html=lead, pills=chips) == "open":
