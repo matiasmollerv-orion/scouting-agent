@@ -1,0 +1,1717 @@
+{
+ "week": "2026-W39",
+ "triage": [
+  {
+   "title": "Show HN: Make cursed fonts like Times New Bastard",
+   "url": "https://bastardica.mitpit.com",
+   "source": "hackernews",
+   "total": 15,
+   "text": "A joke tool that abuses OpenType&#x27;s ligature feature to mix fonts. It works pretty fast on client-side by loading Python in WASM."
+  },
+  {
+   "title": "Unsecured OpenAI agents posted 53 user images on the internet without the lab’s knowledge",
+   "url": "https://techcrunch.com/2026/09/25/unsecured-openai-agents-posted-53-user-images-on-the-internet-without-the-labs-knowledge/",
+   "source": "techcrunch",
+   "total": 0,
+   "text": "AI agents operating in OpenAI's research environment posted user images on public image-hosting sites without the lab's knowledge."
+  },
+  {
+   "title": "The Download: the Pentagon’s AI-powered lie detector and young organ limits",
+   "url": "https://www.technologyreview.com/2026/09/25/1145157/the-download-pentagon-ai-lie-detector-young-organ-limits/",
+   "source": "mit",
+   "total": 0,
+   "text": "This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. The Pentagon wants $30 million to build an AI-powered lie detector The US government wants to spend $30.3 million over the next five years on an improved lie detector, according to&#8230;"
+  },
+  {
+   "title": "TEKEVER raises $580M Series D, DTCP closes €455M defence fund, and the challenge to reinvent chip design",
+   "url": "https://tech.eu/2026/09/25/tekever-raises-580m-series-d-dtcp-closes-455m-defence-fund-and-the-challenge-to-reinvent-chip-design/",
+   "source": "techeu",
+   "total": 0,
+   "text": "This week, we tracked more than 65 tech funding deals worth over €2 billion and over 4 exits, M&amp;A transactions, rumours, and related news stories across Europe.    If email is more your thing, you..."
+  },
+  {
+   "title": "China is excelling in health tech. That’s good news for the world",
+   "url": "https://restofworld.org/2026/china-ai-healthcare-biotech-drugs/?utm_source=rss&utm_medium=rss&utm_campaign=feeds",
+   "source": "restofworld",
+   "total": 0,
+   "text": "A visitor experiences an artificial intelligence health screening system at the 2026 Ningxia Elderly Care Service Expo on August 28, 2026 in Yinchuan, China."
+  },
+  {
+   "title": "Comisión de Pesca analiza impactos de El Niño en la actividad pesquera",
+   "url": "https://www.aqua.cl/comision-de-pesca-analiza-impactos-de-el-nino-en-la-actividad-pesquera/",
+   "source": "aqua",
+   "total": 0,
+   "text": "La instancia legislativa abordó, junto a expertos y representantes de organismos públicos, los posibles efectos del aumento de la temperatura del agua del Pacífico, asociado al fenómeno de El Niño.\nThe post Comisión de Pesca analiza impactos de El Niño en la actividad pesquera appeared first on AQUA."
+  },
+  {
+   "title": "Codelco da a conocer ajustes organizacionales y nuevos nombramientos",
+   "url": "https://www.mch.cl/codelco-da-a-conocer-ajustes-organizacionales-y-nuevos-nombramientos/",
+   "source": "mch",
+   "total": 0,
+   "text": "“Estamos fortaleciendo nuestras capacidades para que sean coherentes con nuestro compromiso de tener la vida y la salud de los trabajadores al centro de nuestras decisiones”, expresó el presidente ejecutivo de la estatal, Jorge Gómez.\nLa entrada Codelco da a conocer ajustes organizacionales y nuevos nombramientos se publicó primero en Mch."
+  },
+  {
+   "title": "INIA avanza en la búsqueda de tolerancia a Fusarium en banano",
+   "url": "https://redagricola.com/inia-avanza-en-la-busqueda-de-tolerancia-a-fusarium-en-banano/",
+   "source": "redagricola",
+   "total": 0,
+   "text": "El instituto presentó los resultados de su trabajo durante la reunión técnica del proyecto internacional SATREPS, que reúne a instituciones peruanas y japonesas para desarrollar herramientas de alerta y estrategias de mitigación frente a la enfermedad.\nThe post INIA avanza en la búsqueda de tolerancia a Fusarium en banano appeared first on Redagrícola."
+  },
+  {
+   "title": "The rise of the AI shelf",
+   "url": "https://www.modernretail.co/operations/the-rise-of-the-ai-shelf/?utm_campaign=modernretaildis&utm_medium=rss&utm_source=general-rss",
+   "source": "modernretail",
+   "total": 12,
+   "text": "This week's episode of the Modern Retail Podcast digs into how AI product recommendations are reshaping retail shelves. Increasingly, brands are strategizing around how to get their products surfaced in ChatGPT and Gemini results."
+  },
+  {
+   "title": "Neighborhood Intelligence reworks Fathom deal",
+   "url": "https://www.retaildive.com/news/neighborhood-intelligence-bed-bath-beyond-reworks-fathom-deal/831381/",
+   "source": "retaildive",
+   "total": 0,
+   "text": "The company formerly known as Bed Bath &amp; Beyond Inc. intends to leverage &quot;substantially all&rdquo; of its digital assets, including tZero, Medici-related assets and investments in GrainChain."
+  },
+  {
+   "title": "USPS warns of Indianapolis, Louisville delays due to facility upgrades",
+   "url": "https://www.supplychaindive.com/news/usps-warns-of-indianapolis-louisville-delays-due-to-facility-upgrades/831390/",
+   "source": "supplychaindive",
+   "total": 0,
+   "text": "The agency said the installation of new sorting equipment could temporarily disrupt package flows but benefit its peak season operations."
+  },
+  {
+   "title": "New York City Gives the Public Bathroom a Tap Card",
+   "url": "https://www.pymnts.com/pymnts-features/the-weekender/2026/new-york-city-gives-the-public-bathroom-a-tap-card/",
+   "source": "pymnts",
+   "total": 0,
+   "text": "New York City has found a new use for the tap card: opening a public toilet. The city is installing 17 modular bathrooms across its five boroughs. Visitors can unlock a door with a text message, QR code, app or card. The bathrooms are free, which may come as a relief to anyone who has ever bought [&#8230;]\nThe post New York City Gives the Public Bathroom a Tap Card appeared first on PYMNTS.com."
+  },
+  {
+   "title": "Anthropic Pushes Its $2 Trillion IPO to November, Meta’s Muse Hits #1, and a $40M Seed for a Model That Doesn’t Talk: The Latest 20VC x SaaStr",
+   "url": "https://www.saastr.com/anthropic-pushes-its-2-trillion-ipo-to-november-metas-muse-hits-1-and-a-40m-seed-for-a-model-that-doesnt-talk-the-latest-20vc-x-saastr/",
+   "source": "saastr",
+   "total": 0,
+   "text": "With Harry Stebbings, Rory O&#8217;Driscoll and Jason Lemkin This week&#8217;s 20VC x SaaStr covered a lot. Anthropic moved its IPO back a month. OpenAI&#8217;s internal forecast put total burn through 2030 at $278 billion. Meta shipped the first consumer AI product that competes head-on with ChatGPT and added about $100 billion in market cap in... Continue Reading"
+  },
+  {
+   "title": "How ‘zero-based calendaring’ can prevent burnout for your team",
+   "url": "https://www.charterworks.com/how-zero-based-calendaring-can-prevent-burnout-for-your-team/",
+   "source": "charter",
+   "total": 18,
+   "text": "People are overwhelmed. Nearly two-thirds of professionals say they&#x2019;re currently performing the responsibilities of more than one role, and half say AI tools have contributed to an increasing workload, according to a recent survey from Korn Ferry.&#xa0;For many leaders, workload levels expanded gradually. What started"
+  },
+  {
+   "title": "DOL provides guidance to employers on responding to opioid overdoses",
+   "url": "https://www.hrdive.com/news/dol-provides-guidance-to-employers-on-responding-to-opioid-overdoses/831393/",
+   "source": "hrdive",
+   "total": 0,
+   "text": "The guidance is part of the Great American Recovery Initiative, an effort by the Trump Administration focused on addiction treatment and recovery."
+  },
+  {
+   "title": "Amazon, US Steel, Pirelli and others make facility investments, while layoffs progress",
+   "url": "https://www.manufacturingdive.com/news/amazon-us-steel-pirelli-eli-lilly-investments-layoffs-september-2026/831373/",
+   "source": "manufacturingdive",
+   "total": 0,
+   "text": "Additionally, Eli Lilly broke ground on its Houston facility, and auto parts suppliers Hansae and Toyotetsu announced U.S. expansions. Meanwhile, Amy&rsquo;s Kitchen and others are shuttering facilities."
+  },
+  {
+   "title": "PCC to open 17th store",
+   "url": "https://www.grocerydive.com/news/pcc-community-markets-new-store-seattle-grocery/831340/",
+   "source": "grocerydive",
+   "total": 0,
+   "text": "The grocery co-op&rsquo;s newest location is set to debut in mid-October in Seattle&rsquo;s Madison Valley district."
+  },
+  {
+   "title": "New on the Menu: Three seafood dishes and a pork chop",
+   "url": "https://www.nrn.com/independent-restaurants/new-on-the-menu-three-seafood-dishes-and-a-pork-chop",
+   "source": "nrn",
+   "total": 0,
+   "text": "Plus a cocktail inspired by a black &amp; white cookie."
+  },
+  {
+   "title": "Bitget hit by $387.5 million hack",
+   "url": "https://www.finextra.com/newsarticle/48481/bitget-hit-by-3875-million-hack?utm_medium=rssfinextra&utm_source=finextrafeed",
+   "source": "finextra",
+   "total": 0,
+   "text": "Bitget has halted customer withdrawals after hackers that the crypto exchange suspects are linked to North Korea stole more than $380 million."
+  },
+  {
+   "title": "The Week in Market Moves | Sept 17 – 24, 2026",
+   "url": "https://tearsheet.co/10-q/the-week-in-market-moves-sept-17-24-2026/?utm_source=rss&utm_medium=rss&utm_campaign=the-week-in-market-moves-sept-17-24-2026",
+   "source": "tearsheet",
+   "total": 0,
+   "text": "Company signals and market response This analysis tracks the top company developments and how markets absorbed them through Thursday’s close, focusing on where shifting narratives translate into price action. It is part of Tearsheet PRO’s weekly 10-Q Newsletter, where strategy meets market reaction. I track how leading banks and fintechs are evolving in public markets &#8230; \nContinue reading \"The Week in Market Moves &#124; Sept 17 &#8211; 24, 2026\"\nThe post The Week in Market Moves | Sept 17 &#8211; 24, 2026 appeared first on Tearsheet."
+  },
+  {
+   "title": "Shawbrook Provides £11m Inventory Backed Facility To Glasgow Distillery",
+   "url": "https://thefintechtimes.com/shawbrook-provides-11m-inventory-backed-facility-to-glasgow-distillery/",
+   "source": "fintechtimes",
+   "total": 0,
+   "text": "The asset-based lending deal, secured against maturing Scotch whisky stock, refinances existing debt and adds working capital headroom for Glasgow Distillery Company.\nThe post Shawbrook Provides £11m Inventory Backed Facility To Glasgow Distillery appeared first on The Fintech Times."
+  },
+  {
+   "title": "Finovate Global Cambodia: Partnerships in Fraud Fighting and Innovations in Payments",
+   "url": "https://finovate.com/finovate-global-cambodia-partnerships-in-fraud-fighting-and-innovations-in-payments/",
+   "source": "finovate",
+   "total": 0,
+   "text": "This week&#8217;s edition of Finovate Global features fintech news from Cambodia. Cambodia and the UK partner to fight online scams The UK and Cambodia have signed a Memorandum of Understanding (MoU) declaring their intent to work together to combat networks of illegal scam centers. The agreement calls for more data sharing and greater coordination against Read more...\nThe post Finovate Global Cambodia: Partnerships in Fraud Fighting and Innovations in Payments appeared first on Finovate."
+  },
+  {
+   "title": "London Fashion Week got more commercial. Did it get better?",
+   "url": "https://www.glossy.co/podcasts/london-fashion-week-2026-mulberry-mcqueen-burberry/?utm_campaign=glossydis&utm_medium=rss&utm_source=general-rss",
+   "source": "glossy",
+   "total": 0,
+   "text": "London Fashion Week drew more international buyers and brought several major British brands back into focus. But as collections became more commercial, questions remained about creativity, archive references and what buyers will actually order."
+  },
+  {
+   "title": "Trump administration uses rare authority to claw back nearly $1B in spending approved by Congress",
+   "url": "https://www.statnews.com/2026/09/25/trump-administration-cancel-spending-hhs-programs/?utm_campaign=rss",
+   "source": "statnews",
+   "total": 0,
+   "text": "President Trump is canceling nearly $1 billion in spending approved by Congress, and most of the cuts are focused on HHS programs that serve refugees and unaccompanied minors."
+  },
+  {
+   "title": "2026.39: Begun, the Aggregator Wars Have",
+   "url": "https://stratechery.com/2026/begun-the-aggregator-wars-have/",
+   "source": "stratechery",
+   "total": 0,
+   "text": "The best Stratechery content from the week of September 21, 2026, including Meta vs. Amazon, GM bending the knee to CarPlay, and profiling the profiler."
+  },
+  {
+   "title": "Expedia Cuts 58 Roles in Latest Layoff Round",
+   "url": "https://skift.com/2026/09/25/expedia-cuts-58-roles-in-latest-layoff-round/",
+   "source": "skift",
+   "total": 0,
+   "text": "Expedia filed a WARN notice in Washington eliminating 58 jobs, including executive positions and data science roles. The reorganization reached Illinois and Florida too."
+  },
+  {
+   "title": "Supplier Excellence Awards Ceremony - City of Knoxville, TN (.gov)",
+   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE43bjgxZFlodmhiWDkxMUxOX2Z5c1RIYVJCcjJWNDh3a1VET1JYV2c4X3VrOWNScHNDTnZ6aUdKRHdyYmRsUGJwUXdwVHRNdUFsaXNGOTlqQmtKRWs0N0h2MGVldGl5UlFaTWhxWEVrN1kxOGxaZFE?oc=5",
+   "source": "gn_tradicional_en",
+   "total": 0,
+   "text": "Supplier Excellence Awards Ceremony&nbsp;&nbsp;City of Knoxville, TN (.gov)"
+  },
+  {
+   "title": "Chops Lobster Bar to open first suburban location at Johns Creek mixed-use project - bizjournals.com",
+   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOMHhYVktzRUdHR3pCX0tKMHRLMk9qd0pFX29ONEE1ZkVuOS1XUmhiS0p6cFdUVDdkN0VXTjBGNjd2QW5WOExzV3lsSGVsT1lYbzdGYVBlWWtXYjNjNXRZZTZBS0FaY2NwVG1EdURTYlJ0UC1pT21ZTlphbXVab0wzUFVvNXJ4am1jUDBaZVFWbzRPM0VnX1hsYw?oc=5",
+   "source": "gn_tradicional_negocios",
+   "total": null,
+   "text": ""
+  },
+  {
+   "title": "Invitan a postular a quienes impulsan el desarrollo y la innovación en la provincia de Biobío - latribuna.cl",
+   "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPempFRWowMmNNYXhqaE1xM1pzcUZJdE5ZTnhEckRib2VEcDVWNXhrNTJDM2R1WEZRNEEyRERSSEg2SFdicXFHeDI0UXNWam9aUjlBNnlnSE5Na0FPRUZWOThPdWZtT1FWMDNzWlZrR3d5TlFaaGpKcE1vaW9Pbi1YLVZ2dzFQVVVCUXl2LWdJNmZrVE9SNm9wVEVVVGM4X0xLRnVocmJoaHNSekdNMFVjQWVia3FWYmItUE5KbmcwZHkxcm1vbjBtOFhwY2NsY3phZXpMUHlmOGJQZFpiMGfSAeYBQVVfeXFMT0xlZE1uYldNaTVfcUZtQU04SFVtMVQ2SXF1eGtpNGtSVFFOeGduajZCckIyLXA3RkRRT2w2T3pZWXNtTE0zbDlpQnZVcHczWTdxSWp0U1lYaTZfY3RpbkF6S3RMNkdNQkVGaDZFQ2FxQnlZelFSTEZEN1YtU2dXeDFlY0tVT0xEenhaTlJ2UmdycXpNSWJpWUhJOVphbmdOVVlWNy14RDJxYmRUSXlrS2FlOE85N0d4bVRiNUlYV1lLR1FZUGVCZ05peDFjOVFBNEVwb0ExdFZ2aWJwZGtOS3pILThjOFE?oc=5",
+   "source": "gn_tradicional_es",
+   "total": null,
+   "text": ""
+  },
+  {
+   "title": "Febre das lavanderias: SP tem 5 vezes mais unidades self-service do que em 2022, diz associação - G1",
+   "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxPMzJ5c1FrOGRQVnFZOThOTkZSTlJYVzNIeWlkM2F4d2J2YmNxcXo4M2RNM044bWtXY3BoUXBDZmxmanJIV21WMmhXRkxCSEthTlc1ZngwTmhNdm9yQkZCdDdialY4ZnRCTE9IQlB6c09iY0ctTDJYVEhjN3RqQVh3a0cxbFZUWm1DVzNnTDJWQmJqWXptSFVKcGZXaW9nRzNkUy1NZTRLRUVBLVBZSWtwRExjWVJfZGNtdUJ3enVNbWt4WjdKVEpKQ1hHaGpOb095YUR0YVg1Vmo3ZUhsaE94WjMwZXdIZFBMQWxNcHJ6QWd3WmxnM3fSAfYBQVVfeXFMTzMyeXNRazhkUFZxWTk4Tk5GUk5SWFczSHlpZDNheHdidmJjcXF6ODNkTTNOOG1rV2NwaFFwQ2ZsZmpySFdtVjJoV0ZMQkhLYU5XNWZ4ME5oTXZvckJGQnQ3YmpWOGZ0QkxPSEJQenNPYmNHLUwyWFRIYzd0akFYd2tHMWxWVFptQ1czZ0wyVkJiall6bUhVSnBmV2lvZ0czZFMtTWU0S0VFQS1QWUlrcERMY1lSX2RjbXVCd3p1TW1reFo3SlRKSkNYR2hqTm9PeWFEdGFYNVZqN2VIbGhPeFozMGV3SGRQTEFsTXByekFnd1psZzN3?oc=5",
+   "source": "gn_tradicional_pt",
+   "total": 22,
+   "text": ""
+  },
+  {
+   "title": "2 Florida Amazon warehouses convert to fulfillment centers - Treasure Coast News",
+   "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxPbjVvZVplS09ial81UFdIR1owQXhQcmNFQVh1MFhGVHdFZ2dTb3dYSTFHWHNjMHZHU1Q3WndUclhud2pRTXMyMjFpUXNHUTBhOE9mdV8zQkNzejM0ak9jdFluSnFuS2pEYXZIXzliX2YzWHBxQUdST0hTOXNiRERMRExuVHM2TjlDWk9TWEdrN2J1bS1DWTB3a1d2YURMR2djWFZQRkJ1cmFfM1JTUkE0QUNra29EUzZqS08wbGtyV0owdFFPeElEZHZpMlktTWtlUkFpVEM0aXY3TkdBQXdlX2M2b3RLWk1zMXBwSmNybHotM25yNkdhb2o0M202b1FHN1E?oc=5",
+   "source": "gn_logistica_en",
+   "total": 19,
+   "text": ""
+  },
+  {
+   "title": "Dual labor shocks in 2028? UPS, West Coast port bargaining to overlap - FreightWaves",
+   "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOQVpNaWlOT0I2eDlmMkVXN29XUlhrYWhxWklSS1JJYmVJZ3l3dHgzMk9vU1lCdURLVVRwTUZYalROWTJhdktudXNvdV8wYS0wbEdXcVFVVjZ2RnZWdHd4ZEZFOFkxZDFzUzF5ekwzNHhRUHFCQzlrbjNrd0dCT1JEWUN4bnhvLXB2R2IwbndKR1l1aUxsdkRpaWMwMElaQmlIeUdB?oc=5",
+   "source": "gn_logistica_prensa",
+   "total": 0,
+   "text": ""
+  },
+  {
+   "title": "Santiago enfrenta escasez de bodegas, Latam amplía oferta - Agenda Logística",
+   "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQb0pwdU1RTVE5aTh1dEk0aGRVczVHZHMzU3JJcWpSTHU0dnM5Wmk2TUxLMnBTNjFKSWU1enk4NjN1WnBQSDNQOHZHby1mR21OelFwY1NqcmZDVnBXVFdIeU5weDNtdmxIcTlYOEpBcVQ2T1pUdEl1MS1GeG1mSFdjMFNwdEl0bk14OGY3Q054bGpDRElCa3BUZGN6ZTVTV1lraXJ6b2xmLU9GQy1YaUYtejNqb29YU21ZUExqVzg4U2NPSlJRV3dyQUl2aFpXQlVlWUJ6Q2pBWVc?oc=5",
+   "source": "gn_logistica_es",
+   "total": null,
+   "text": ""
+  },
+  {
+   "title": "Maersk e PUMA expandem parceria para otimizar a rede de distribuição da PUMA nos EUA - Data Portuaria",
+   "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQYzlNMzBmT1h1UGFMQlhZclpLRjVVRjRubnViS3Z3NFE3bXlzckVxRFkyWk5SQWFYX3BhYWlCVnhlRWJMVFYxMDVwcnJiODg2ZGdGODhpNGVYSnBrb05TeXcyQXRzckE0NnRmTlZZQWF0aDFyUWFXcmdCTjlQNl9IRGpMRG8wS1ZQNHpTbV9oVVBqdEdxaXlUdGlZeXpncjJkTEZlNmxaNlA2cVIwRjNwUDFqdUNIZlpxelE0SUc2eWctR1BaUXpRclI3SGtUYlhVUW8w?oc=5",
+   "source": "gn_logistica_pt",
+   "total": 18,
+   "text": ""
+  },
+  {
+   "title": "Rillet and RSM Partner to Transform Middle Market Finance with AI-Native Agentic ERP - FF News",
+   "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQVVFvVnFiTGNDeEItRHVFNDh4eDE2bHBEMEprZHlYdHUyZ09iZlhidkJBeFh0cVBLazNNRDZLbGwxQTBZdm5jUlJGejJ5aENUTEdwNHVZWXVjZDRFb2JkelZjUFZWTldnczNpU3FhX0M5SVZaZ1Z2MnlxazE5dEJLRmZ1cFNCS09LSXlHT0llWXhYLVB5?oc=5",
+   "source": "gn_ai_native_en",
+   "total": 24,
+   "text": ""
+  },
+  {
+   "title": "Qtis.ai Unveils AI-Native Clinical Research Division - Medical Product Outsourcing",
+   "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQdUNLOXlIMVNHaWdDdE80NDl1Z2hKQzFOamNHNjBoTkFhdDB2anQyWmp5M2phV3J0NlQ1bGdCV3IxcHd1OUZ0alMyUnV3Z0VfcWdaRUwwTGVHRmRMa3dqZG9MWXRWT1FpT0k4RGRoSnZjMUxOU0xmdG5Wal9NSGtHbXBMSTQxVEpUZTRBajRZVENFM3ZXbkE?oc=5",
+   "source": "gn_ai_native_verticales",
+   "total": 21,
+   "text": ""
+  },
+  {
+   "title": "AI-native services: a $100B opportunity AI-native services are here, and I think they're the best business you can start right now. There's probably $100 billion up for grabs. This is the full guide: what AI native services are, how to - x.com",
+   "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5wN1Y1bFZNZmx6YmxyVDFBVWtGNUNDRHRhTkRiOGh5ZVhzYWNxbG9OdFhQRTlMQ09DQTJkY2RvRkcta3U2UXU5Q0lWc1plNXpUUGxWOXFGRHlZN0N2cEdPVVlWRQ?oc=5",
+   "source": "gn_ai_native_x",
+   "total": 18,
+   "text": ""
+  },
+  {
+   "title": "Acelerador de IA generativa de AWS de 2025: 40 startups con objetivos muy ambiciosos - Amazon Web Services (AWS)",
+   "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOc0Iwc0t4RG1xZUJ1UkJfcC1DdTJaME9BMmRIV0RSbE5iWXZjTWxFdkNlNXYyVEk3Z3pDR1dNY25aRUNESDhxclpUZkxvRmtwZzcwb3ZVVnQ2Q0tMNnJqd0J2aE1yYl9KMHRLMF8tT253Vk9LV0w1R0wyN05qeDhZYk0ta1NPTERVNERNNVgtZEtMdl9CeWJtRGxxVmNKc1NBUXpMZVpxWUJyYWpEN2xvVnBFcnhqWUcyX1JF?oc=5",
+   "source": "gn_ai_native_es",
+   "total": 0,
+   "text": ""
+  },
+  {
+   "title": "A ferramenta de IA Tabby automatiza a contabilidade e desafia os contadores - boainformacao.com.br",
+   "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOX0VFWmU3QkdBZ2tfS192Y0JraktUTUNRWGpYYncyMFpNYk5LRWMxR24ta0N4QkVPSTF4MVlhS3VpeExubUpLSkFEazlPY0haNTNsUnJxTWF4N2tXUkNtYWE3MVlRRWtHeTJ5OGZCcTRxY2FhdWZfTjc1YWt0cEFyT0NJVkxmTjg5VW1INENLbXItZUZIcmd0OGd4cm1VMXN2NmFqbEF6TkExM3AyNmhFb1Rkcw?oc=5",
+   "source": "gn_ai_native_pt",
+   "total": 21,
+   "text": ""
+  },
+  {
+   "title": "My SaaS just made $0.000 revenue in 60days after launch and I am so grateful, this feels so real 🎉🎉🎉",
+   "url": "https://www.reddit.com/r/SaaS/comments/1wlg91y/my_saas_just_made_0000_revenue_in_60days_after/",
+   "source": "reddit_saas",
+   "total": 0,
+   "text": "Just launched our first fully working SaaS 60 days ago, and today we made $0.000 in revenue, crossing 1 users!!!! We are so grateful! This started as a SaaS and now it’s not my full-time income, but honestly, this feels so real. It enabled me to keep my 9 to 5 job and work on this SaaS part time. Thank you everyone. Started because I kept seeing people use different tools for managing links, tracking campaigns, QR codes and analytics, so I thought... Why not make another SaaS? 😂 So we built one. We have tons of features but sadly no users: Dynamic Short links Custom domains Dynamic QR codes UTM tracking Real-time analytics Geo and device tracking Link scheduling Password-protected links And probably way too many features for a SaaS with 0 users 😂 Revenue: $0.000 Users: 0 Features: 47,000 Sleep: 0 hours Confidence: somehow still 100% But honestly, getting something live feels pretty damn good. Now comes the hard part: finding people who actually want to use it. 😅  &#32; submitted by &#32;  /u/LinkForgeHQ   [link] &#32; [comments]"
+  },
+  {
+   "title": "MusicArena (YC Summer 2026) – The crowdsourced benchmark for AI-generated music and music production",
+   "url": "https://musicarena.io/",
+   "source": "yc",
+   "total": 13,
+   "text": "The crowdsourced benchmark for AI-generated music and music production\nhttps://musicarena.io/"
+  },
+  {
+   "title": "Show HN: Whiteboard (YC W26) – An open-source IDE for thoughtful software design",
+   "url": "https://github.com/devdotfast/whiteboard",
+   "source": "hackernews",
+   "total": 0,
+   "text": "Hello! We’re Sid, Alex, Ketan, and Milan. We’re building Whiteboard (<a href=\"https:&#x2F;&#x2F;whiteboard.dev.fast&#x2F;\">https:&#x2F;&#x2F;whiteboard.dev.fast&#x2F;</a>), an open-source desktop app where humans and agents can architect software together in a common workspace. Here’s our repo: <a href=\"https:&#x2F;&#x2F;github.com&#x2F;devdotfast&#x2F;whiteboard\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;devdotfast&#x2F;whiteboard</a>.<p>We were missing the feeling of a “whiteboard session” with another dev where you leave with a deep understanding of a system, so we built this app for ourselves. Whiteboard plugs into the tools you already use - e.g. Claude Code, Codex, etc. – and gives your agent an SDK to draw on an in-app canvas to describe its work. We began with an MVP based on HTML artifacts and started rethinking the app as we ran into limitations:<p>1. Built on top of CodeOSS: We found that in pure HTML tools it was hard to connect a spec or diagram to code. In Whiteboard, when you click on visualizations like a sequence diagram, an entity relationship diagram, or a quote from the agent’s trace, you can jump to the underlying code directly. When navigating code, you"
+  },
+  {
+   "title": "Anthropic to pay Akamai $11.6 billion over seven years in cloud deal",
+   "url": "https://techcrunch.com/2026/09/25/anthropic-to-pay-akamai-11-6-billion-over-seven-years-in-cloud-deal/",
+   "source": "techcrunch",
+   "total": 0,
+   "text": "Anthropic has committed $11.6 billion over seven years to Akamai's cloud infrastructure, a bet on CPUs that could grow to about $20 billion, and in an unusual arrangement, Akamai is giving Anthropic a potential stake of up to 5% of its stock that grows as Anthropic spends more."
+  },
+  {
+   "title": "The Pentagon wants $30 million to build an AI-powered lie detector",
+   "url": "https://www.technologyreview.com/2026/09/25/1145144/pentagon-ai-lie-detector/",
+   "source": "mit",
+   "total": 0,
+   "text": "The US government wants to spend $30.3 million over the next five years on an improved form of lie detector, according to a Department of Defense budget request. The program, called Polygraph+ or Polygraph Next, will focus on scoring algorithms that use artificial intelligence and machine learning and on a technique called “standoff sensing,” which&#8230;"
+  },
+  {
+   "title": "Bootstrapping, AI, &quot;building for a flip&quot;: Central European VCs have their say",
+   "url": "https://tech.eu/2026/09/25/central-european-startup-going-for-bigger-cheques-as-want-moment-in-spotlight-says-vc/",
+   "source": "techeu",
+   "total": 0,
+   "text": "When is the right time for founders to take VC capital? Bootstrapping versus VC backing, “building for a flip”, AI, and many other issues were discussed on the startup stage at a recent conference in ..."
+  },
+  {
+   "title": "Dario Amodei wants to slow AI. China isn’t taking orders",
+   "url": "https://restofworld.org/2026/china-rejects-dario-amodei-anthropic-ai-slowdown-trump-xi/?utm_source=rss&utm_medium=rss&utm_campaign=feeds",
+   "source": "restofworld",
+   "total": 0,
+   "text": "Chinese officials and engineers see an attempt to preserve the U.S. lead; “Why do you always get to define the game — and change the rules?”"
+  },
+  {
+   "title": "AquaChile destacó a 20 organizaciones de Chiloé seleccionadas en su Fondo Concursable 2026",
+   "url": "https://www.aqua.cl/aquachile-destaco-a-20-organizaciones-de-chiloe-seleccionadas-en-su-fondo-concursable-2026/",
+   "source": "aqua",
+   "total": 0,
+   "text": "Las iniciativas seleccionadas provinieron de Castro, Chonchi, Dalcahue, Puqueldón, Queilén, Quellón y Quemchi, y abordaron necesidades vinculadas a inclusión, educación, agua potable, infraestructura y medio ambiente.\nThe post AquaChile destacó a 20 organizaciones de Chiloé seleccionadas en su Fondo Concursable 2026 appeared first on AQUA."
+  },
+  {
+   "title": "Kinross ajusta a la baja su producción de oro para 2026 y 2027 por dificultades en La Coipa",
+   "url": "https://www.mch.cl/kinross-ajusta-a-la-baja-su-produccion-de-oro-para-2026-y-2027-por-dificultades-en-la-coipa/",
+   "source": "mch",
+   "total": 0,
+   "text": "La minera canadiense atribuyó parte de la revisión a fenómenos meteorológicos invernales y menores recuperaciones en mineral sulfurado de la operación ubicada en Atacama.\nLa entrada Kinross ajusta a la baja su producción de oro para 2026 y 2027 por dificultades en La Coipa se publicó primero en Mch."
+  },
+  {
+   "title": "Bases fisiológicas para una oferta sostenible de racimos de alta calidad",
+   "url": "https://redagricola.com/bases-fisiologicas-para-una-oferta-sostenible-de-racimos-de-alta-calidad/",
+   "source": "redagricola",
+   "total": 0,
+   "text": "Un sistema radicular sano constituye mucho más que un órgano de absorción. Representa el principal soporte del activo fisiológico del parrón, permitiendo sostener un crecimiento equilibrado durante la temporada y preparar el potencial productivo del ciclo siguiente. El sistema radicular constituye el principal órgano de percepción de las señales que regulan muchas de las respuestas fisiológicas que condicionan el funcionamiento de toda la planta. \nThe post Bases fisiológicas para una oferta sostenible de racimos de alta calidad appeared first on Redagrícola."
+  },
+  {
+   "title": "Marketers bemoan the culture of ‘good enough — go,’ as standards fall amid the AI bubble",
+   "url": "https://www.modernretail.co/technology/marketers-bemoan-the-culture-of-good-enough-go-as-standards-fall-amid-the-ai-bubble/?utm_campaign=modernretaildis&utm_medium=rss&utm_source=general-rss",
+   "source": "modernretail",
+   "total": 0,
+   "text": "‘Drowning in measurement,’ marketers mull priorities in an internet where ‘two audiences’ exist."
+  },
+  {
+   "title": "Target is opening a store in the Hamptons. It’s not red.",
+   "url": "https://www.retaildive.com/news/target-store-hamptons-bridgehampton-gray/831356/",
+   "source": "retaildive",
+   "total": 0,
+   "text": "The retailer&rsquo;s signature color is not part of the external facade of the building at its new location in Bridgehampton, New York."
+  },
+  {
+   "title": "6 food manufacturers talk supply chain tactics",
+   "url": "https://www.supplychaindive.com/news/6-food-manufacturers-talk-supply-chain-tactics/831214/",
+   "source": "supplychaindive",
+   "total": 0,
+   "text": "General Mills, Nestl&eacute; and more discussed how they are cutting operational costs, navigating uneven freight rates and sharpening demand forecasting at a Barclays conference."
+  },
+  {
+   "title": "Block Joins x402 Foundation to Drive Agentic Commerce Standards",
+   "url": "https://www.pymnts.com/news/artificial-intelligence/2026/block-joins-x402-foundation-to-drive-agentic-commerce-standards/",
+   "source": "pymnts",
+   "total": 14,
+   "text": "Block has joined the x402 Foundation to help advance open, agentic commerce, Steve Reis, head of product, Block Financial Platform, said in a Thursday (Sept. 24) blog post. As a member of this open standard for agentic payments, Block will bring its experience across payments and consumer products to the Foundation’s working groups, continue contributing to Bitcoin Lightning support of x402 and continue [&#8230;]\nThe post Block Joins x402 Foundation to Drive Agentic Commerce Standards appeared first on PYMNTS.com."
+  },
+  {
+   "title": "5 Interesting Learnings from GitLab at $1.13 Billion in Revenue: 24% Billings Growth, $20M of Flex in Six Weeks, and 400 Basis Points of AI Margin Cost",
+   "url": "https://www.saastr.com/5-interesting-learnings-from-gitlab-at-1-13-billion-in-revenue-24-billings-growth-20m-of-flex-in-six-weeks-and-400-basis-points-of-ai-margin-cost/",
+   "source": "saastr",
+   "total": 0,
+   "text": "Four months ago GitLab looked like the clearest AI casualty in public B2B: The stock was in the high teens. In May the company announced it would cut roughly 14% of its workforce, about 350 people, exit 22 countries, shrink its geographic footprint about 37%, and strip out up to three layers of management. AI... Continue Reading"
+  },
+  {
+   "title": "AI skills are entering performance reviews. Are managers ready?",
+   "url": "https://www.charterworks.com/ai-skills-are-entering-performance-reviews-are-managers-ready/",
+   "source": "charter",
+   "total": 16,
+   "text": "AI skills are becoming part of promotions, performance, and pay. But new HiBob research shows many companies are moving faster than their managers, standards, and talent systems are ready for."
+  },
+  {
+   "title": "Should workers be paid for AI skills?",
+   "url": "https://www.hrdive.com/news/should-workers-be-paid-for-ai-skills/830908/",
+   "source": "hrdive",
+   "total": 0,
+   "text": "Companies could face a &ldquo;retention time bomb&rdquo; if existing workers see new hires get paid more for tech expertise, Payscale found."
+  },
+  {
+   "title": "These ‘4 pillars’ are critical for successful automation",
+   "url": "https://www.manufacturingdive.com/news/implement-ai-four-pillars-sven-diedrich-pinaxis-imts-2026-automation/831305/",
+   "source": "manufacturingdive",
+   "total": 0,
+   "text": "&ldquo;People, processes, data and systems&rdquo; are essential elements of any automation strategy, Sven Diedrich, head of digital transformation and business solutions at Pinaxis, said at IMTS in Chicago."
+  },
+  {
+   "title": "Costco trumps Aldi in grocery value perception, data shows",
+   "url": "https://www.grocerydive.com/news/aldi-costco-value-grocery-yougov/831339/",
+   "source": "grocerydive",
+   "total": 0,
+   "text": "While the club retailer enjoys an overall advantage over the discounter, the gap varied based on people&rsquo;s age, analytics firm YouGov found."
+  },
+  {
+   "title": "A look at KFC’s new Open House restaurant prototype",
+   "url": "https://www.nrn.com/quick-service/a-look-at-kfc-s-new-open-house-restaurant-prototype",
+   "source": "nrn",
+   "total": 0,
+   "text": "The restaurant, located outside of Dallas, will serve as a learning lab to fuel the chain’s U.S. comeback plan."
+  },
+  {
+   "title": "NatWest unveils AI-powered audio-visual spending insights tool",
+   "url": "https://www.finextra.com/newsarticle/48480/natwest-unveils-ai-powered-audio-visual-spending-insights-tool?utm_medium=rssfinextra&utm_source=finextrafeed",
+   "source": "finextra",
+   "total": 16,
+   "text": "NatWest is set to trial a fully generative audio-visual AI spending insights tool that lets customers explore their finances through natural voice and text conversations."
+  },
+  {
+   "title": "Affirm wants its data to tell a more complete customer story",
+   "url": "https://tearsheet.co/member-exclusive/affirm-wants-its-data-to-tell-a-more-complete-customer-story/?utm_source=rss&utm_medium=rss&utm_campaign=affirm-wants-its-data-to-tell-a-more-complete-customer-story",
+   "source": "tearsheet",
+   "total": 0,
+   "text": "Affirm is looking inward at its customer base for the next leg of its lending business. Last week, the BNPL firm deployed a new transformer-based underwriting model across its U.S. checkout. The model is designed to identify patterns in a consumer’s credit history that conventional models can miss, particularly the timing and sequence of credit &#8230; \nContinue reading \"Affirm wants its data to tell a more complete customer story\"\nThe post Affirm wants its data to tell a more complete customer story appeared first on Tearsheet."
+  },
+  {
+   "title": "UK Salary Sacrifice Cap Hits 3.3 Million Pension Savers From 2029",
+   "url": "https://thefintechtimes.com/uk-salary-sacrifice-cap-hits-3-3-million-pension-savers-from-2029/",
+   "source": "fintechtimes",
+   "total": 0,
+   "text": "The £2,000 National Insurance exemption limit on salary sacrifice pension contributions is now law, catching 44% of current users from day one.\nThe post UK Salary Sacrifice Cap Hits 3.3 Million Pension Savers From 2029 appeared first on The Fintech Times."
+  },
+  {
+   "title": "LoanPro Launches New Payments, Disbursement, and AI Servicing Tools",
+   "url": "https://finovate.com/loanpro-launches-new-payments-disbursement-and-ai-servicing-tools/",
+   "source": "finovate",
+   "total": 18,
+   "text": "Lending and credit platform LoanPro revealed its three newest launches this week. The Utah-based company unveiled multiple new products covering payments, card-based loan disbursement and AI-assisted servicing. Among today&#8217;s launches are LoanPro DirectPay, Beyond Credit, and the LoanPro MCP (Model Context Protocol). The company also announced RiskRadar delinquency prediction, ongoing compliance monitoring, LoanPro Connect, full Read more...\nThe post LoanPro Launches New Payments, Disbursement, and AI Servicing Tools appeared first on Finovate."
+  },
+  {
+   "title": "How Netflix’s ‘America’s Sweethearts’ fueled a Dallas Cowboys Cheerleaders brand boom",
+   "url": "https://www.glossy.co/pop/netflix-dallas-cowboys-cheerleaders-brand-boom/?utm_campaign=glossydis&utm_medium=rss&utm_source=general-rss",
+   "source": "glossy",
+   "total": 0,
+   "text": "The Netflix series “America’s Sweethearts” has expanded the Dallas Cowboys Cheerleaders’ global audience, attracting new fashion and beauty partnerships. But the women creating that value do not necessarily share directly in the resulting sponsorship revenue."
+  },
+  {
+   "title": "STAT+: Licensing deals on generic versions of Roche flu drug aimed at preparing for pandemic",
+   "url": "https://www.statnews.com/pharmalot/2026/09/25/roche-xofluza-influenza-treatment-agreements/?utm_campaign=rss",
+   "source": "statnews",
+   "total": 0,
+   "text": "With an eye toward pandemic preparedness, a U.N.-backed agency has signed sub-licensing deals related to generic versions of a Roche influenza treatment."
+  },
+  {
+   "title": "An Interview with Colossus EIC Jeremy Stern About Profiling Mark Zuckerberg",
+   "url": "https://stratechery.com/2026/an-interview-with-colossus-eic-jeremy-stern-about-profiling-mark-zuckerberg/",
+   "source": "stratechery",
+   "total": 0,
+   "text": "An interview with Colossus EIC Jeremy Stern about profiling Mark Zuckerberg and other prominent tech figures."
+  },
+  {
+   "title": "Staying Agile in an Unpredictable Market",
+   "url": "https://skift.com/2026/09/25/staying-agile-in-an-unpredictable-market/",
+   "source": "skift",
+   "total": 0,
+   "text": "The question for every travel company shifting resources toward premium: is the demand truly structural?"
+  },
+  {
+   "title": "EY World Entrepreneur Of The Year™ 2026 finalist, Indonesia | EY - Thailand - EY",
+   "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1JaVd2d2FxNjR1bDBjQkNpa3c3SlRvTGZjTmdEMUJXVmkyWTRJZjRFbEFkRHI5NUg1VFpOSjAzNlA2aElMbzBxbThQd1RuNG5IRkRCblY2SDVtSmtPTVNiNXhISQ?oc=5",
+   "source": "gn_tradicional_en",
+   "total": 0,
+   "text": ""
+  },
+  {
+   "title": "Quirky Kissimmee tourist destination Old Town sold for $24M - bizjournals.com",
+   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQNHNBdHJnUTE1dWE4OHBwaVBBUVVteWJuRkVkeEplMzBEdmFoaVd2YlNoLUVYLVB0QUVsWkpjWGtNSHZnWHJkMVE3c2FWY1laSEhubVM4clFmaGpSUVlnaXUwa2dlLTV1aUVNbXY3OEVoUi04ZGRJZUpRRUZRWEh3SThJX21RWUZVV3ZGUW5ya1JzcVB4M2Jv?oc=5",
+   "source": "gn_tradicional_negocios",
+   "total": 0,
+   "text": ""
+  },
+  {
+   "title": "MAES HONEY, Pyme del Año 2026 de Salamanca - SALAMANCArtv AL DÍA",
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOQmg2ME8tTEtra3NGbW9NMGRjclRrd21WOHZ4YU9CLWtWUUZlZUVTd1hROEdlYnJrZ3BIWEdxU1F3Yi14dUlRSF9NR0hFNHlKdVBwYTZaY1o1ZUZlQlVJbnU1LVY1QmNKN2k4MFNpcEQ1SlJBQncwMmhVWVh1bGtIZVF6TTdPR01XNW5Ta184QkhjR01fVFRBWE8zQlc?oc=5",
+   "source": "gn_tradicional_es",
+   "total": null,
+   "text": ""
+  },
+  {
+   "title": "Quanto custa uma franquia? Descubra os 'valores ocultos' do setor antes de decidir - Pequenas Empresas & Grandes Negócios",
+   "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQWTRMY01UNlZKcFVlelhOek9KTldveVhESTUxck9uOUtPRS1HWXFZbUFKeEJMOGhIV0t3S3dLdWk5STNvSkNDeWtad1ZaaE1ib0w4dVVWeXptMlZFY0ItZzF1cEJkWW9LRkpLbmxCTV9qN2FGY2xkWTMzaFhyOHlrak1wb050MHI3V0Rpb3pJNDdoZXhMYzhNaW9Jd1R6REJMRDdlU2hhcVIyS2xBQnlmMXJac0xtY1dRNWtYTnZlV2pUOS03SnNfcWZMeGJ3TE5yLVBxTEtJQjfSAecBQVVfeXFMTzdjcGxNSU9xbklWSVZKaHFid1p0Q3JLLS1FUkxrZUpFZnAwdDFWXzhFclFZeEVhTkpkNFp6YlpsS0Y5cmpOXzY3ZElrNzBqU0RWV3ZRNVBWd3J2cnF3d3ZLQjNEMEdoYTZhbk55UmNidVNHcGR3TUV4UjJNemdtZE9LVnF3eU5Ccmx1SVlsQmtqQVEyUVBiYUZPN1ZQeVFYbWZaVDRpZlYtR2tOcFhCbTZ2WjU1aFlkbmhMWDF1ZC1KN0Q2NGM4VW9xdmpZTWt2d2J1NURucXh4TEVhT0FpeUFWVTZMUXRR?oc=5",
+   "source": "gn_tradicional_pt",
+   "total": 0,
+   "text": ""
+  },
+  {
+   "title": "News Uber Freight bets on European 4PL services, as distinction with 3PL blurs - The Loadstar",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPU2RYZHIzMUxaa1U3Q1M0TkY5VU5CcTMweUZjN1MyZXZxOFNUM1NDYXMyQVBqYVh6R3BRWGluNGFlTmF4aHk5dVNleWh2UENRaWZzVmV5UVJEN1JxM1NpazRyNlB2U2M3Q2hIN1NsUE5acWJnWGZ1RVFIRWJheDFXXzdKSW42WEhiYW1vR3h3VWs2UUwyNmJVTXhuYkI0QQ?oc=5",
+   "source": "gn_logistica_en",
+   "total": 16,
+   "text": ""
+  },
+  {
+   "title": "Podcast | How Quickly Can Supply Chains Recover From a Major Disruption? - supplychainbrain.com",
+   "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNYm1zV0xjQ1JtcTlDZzBnbmwzbnYwUVpjX0FxeTdGY1Y1SV9YOUdfT0d0UXRHdS1ZOXpBQkhoV1VBOFBXWV92VkFfX3BZRV9mZVVfbmJRT2NJZUVTZHJyeWprajhjSGFTYk9NWW5abmhZT2pvU3NJdm9VaXhORGZkeHhBQ2R0bjhYTnlqRU9EYzNqYUd0NkFKV04tSHBQd3RfWEE1NGtYb1U4c29PRm9SZE5ZTS1PTnB0?oc=5",
+   "source": "gn_logistica_prensa",
+   "total": 0,
+   "text": ""
+  },
+  {
+   "title": "Amphora conecta su logística con ChatGPT y Claude vía MCP - El Ecosistema Startup",
+   "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOTnVCcGFySWJiQWN3R05OWEttNFl3NkQ4ME51a25VMGFHSkd0LV9PTVc2dlA2UnpjTFJvSE55aW9hM0hRdFRyX2F0dXlmbl9LajM2T1ltQi1xckNWel9OdHIxdlRkTzNWMHJzNmV3QVNhV0t2WnRydzNBVDhVRnhvOFdqYUJHRFdWNFIyS1p6bG80QQ?oc=5",
+   "source": "gn_logistica_es",
+   "total": null,
+   "text": ""
+  },
+  {
+   "title": "eSales lança Sollara, startup de agentes de IA, educação e consultoria - expansao.co",
+   "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNbWhJbzNKQWZoWDJJMWlOMjFOZ1VhU1MzUzBNaERnSmNtaVRCMmdHbzdZWmpWamxjV2hiTXFHTVFHYVBZVzFzcVBjbXg1QlQtcmxRem1VQkMtbVZCbkRncEdFcEMzNXlIejY5YVJnUmhlUW9PUWFaUkRyMU9LYUd5MjItQndsX19DZko0eFNQRUJrNXc?oc=5",
+   "source": "gn_logistica_pt",
+   "total": null,
+   "text": ""
+  },
+  {
+   "title": "Investors pour capital into AI-native small business health plans - Insurance Business",
+   "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPUGtIa2tZVWpkcGZPZVMxWFdnM0RMejI2bDRvYURlTlRBYS1XQjBFMnV3S1lBSllTazB0a3ZNZmNWcU03RlVDcXdGZ2ZOdzZqWm54enZXREFPZ3NhSEI5Nm1DSG9Zd0g3bW51eVZTalJvRF9QMy1HNWN1Ti1aX3ZBMEg3NFhvaFlMZ09oNXpOY3pzcUF5MS1jZFMwRjE3cjVwejRqWWE1cF9YeF9CZm5hQUpKWEowMmdWcjZWZmVON0NZZjRiYnoxTUVR?oc=5",
+   "source": "gn_ai_native_en",
+   "total": null,
+   "text": ""
+  },
+  {
+   "title": "Recruitment AI startup Spott raises $21M to expand capabilities - staffingindustry.com",
+   "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOOGhYT0pmZFlPU1N1YXF3RmdJdkd0UHBXNUxxdUNpN2RzRmhjbFhHU2t6ZVFPWW0xYkdOYXBXMkFTOUtjY2kyVm9tRzcxMS1ONFNpOGloeklsSFpLNEYzWEJLeXYtVmVwNklhUjdmYXlUUFFvRUUtVVBPS25vU284NHpzeF9xMS1wN0ZRbnM1eFZoSlh5UmRYUmk1ZWVya1Q5SVJ6V0p1bDVDNE9rSjRsbnBVOVZxRkFjcUtON0tHb0pmcTRMZzl1Ng?oc=5",
+   "source": "gn_ai_native_verticales",
+   "total": null,
+   "text": ""
+  },
+  {
+   "title": "Today we're launching DIFFUSE: a platform for agencies, brands and studios to search for, connect with and hire AI-native talent. There's a lot of worry around AI displacing creatives but the reality we keep seeing is different: an entirely new creative workforce i - x.com",
+   "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE5oeTBNSk5fbnFVTmZramFON0tkQUVOOUZTZE9sNEc1bzlQUktZTElXMnlDX3hsMThIZEZ1UWxwVjVHZ2xYUHRJQ25QcXZDR3hHbU9rWHk3cnFPYlRkMEE?oc=5",
+   "source": "gn_ai_native_x",
+   "total": null,
+   "text": ""
+  },
+  {
+   "title": "Contadores, abogados y administradores: qué cambia con la IA - El Ecosistema Startup",
+   "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQYmNiWHNIQnJoRWhtTFdwQkN4YlJHdmFubF93STFzcWRsZTNOS1g4UjZ3ak5UdVVpTjJQR2FnSkphWDR3ejFZaEFHN2FWUm1nd0pmTXpZekRyUV9DcFhrRnpWV2ZzdHUyYThwaWp5RnVIZWZTOVZLSzZaS2hqbkprVk5XNEpHeHFmeHE3UTZmVmFfSkE?oc=5",
+   "source": "gn_ai_native_es",
+   "total": null,
+   "text": ""
+  },
+  {
+   "title": "Jota quer transformar IA em “C-level” para pequenos empreendedores - startups.com.br",
+   "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQRE1fOG5nUlFxLTRSRFlJOHpzbm1wRXROTkY1OUhuWGZxXzJHbGVidTBQMnAtd1I5ekFaeDk5ZnBPWG1CaGhwTHFMQkk4cGNZbDZHOFBheDNtR190eW9LLW9uYmYyTEdqeGREUm1pUlNQb1VrakZ3UmVmbVBMc091RHB4WE1RblVrbUNwZWRaT1gwMlFJVEM2RE9DNkdhV25fVFdmTF9SMG1YUQ?oc=5",
+   "source": "gn_ai_native_pt",
+   "total": null,
+   "text": ""
+  },
+  {
+   "title": "company raised $416M, sold for $465M, founders got $0",
+   "url": "https://www.reddit.com/r/SaaS/comments/1wlzxqi/company_raised_416m_sold_for_465m_founders_got_0/",
+   "source": "reddit_saas",
+   "total": null,
+   "text": "Raising funds for your company can be crazy! There's a company that raised around $416M, was valued at over $1B at one point, and eventually got acquired for about $465.5M.  But the founders walked away with a grand total of $0.  The investors had liquidation preferences totalling around $559M. The company sold for $465.5M, so the investors got the sale proceeds and there was apparently nothing left for the common shareholders. The founders and early employees held common stock, so they reportedly got $0. That's the part that surprised me. The company didn't fail. It wasn't shut down. It wasn't some tiny acquisition. It sold for almost half a billion dollars. But the cap table basically meant the exit price wasn't high enough to get past the preference stack. It also made me think differently about all those &quot;startup raises $100M at a $1B valuation&quot; headlines. Raising money isn't just getting cash in the bank. You're also adding preferred shareholders, dilution and potentially more money that has to be paid out before common shareholders see anything. Founders should spend a lot more time thinking about the valuation when raising:  What happens if we sell for less than th"
+  },
+  {
+   "title": "Show HN: Mini-AGI – Dynamic continual learning model trained on 8GB VRAM",
+   "url": "https://github.com/volotat/mini-AGI/",
+   "source": "hackernews",
+   "total": null,
+   "text": "Sorry for the pretentious name, I know, I know.. It just contains all the pieces I would like to see a AGI model to have, and I can&#x27;t stand the temptation. Before throwing rocks at me, please take a glance at the Readme, and I hope it will cover your mood a little bit.<p>So, first of all it does work and you can see the sample from the whole training run here: <a href=\"https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;volotat&#x2F;mini-AGI&#x2F;refs&#x2F;heads&#x2F;main&#x2F;runs&#x2F;samples.txt\" rel=\"nofollow\">https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;volotat&#x2F;mini-AGI&#x2F;refs&#x2F;head...</a><p>Here is the scaling law graph I have so far, and it looks very promising:\n<a href=\"https:&#x2F;&#x2F;github.com&#x2F;volotat&#x2F;mini-AGI&#x2F;blob&#x2F;main&#x2F;assets&#x2F;scaling.png\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;volotat&#x2F;mini-AGI&#x2F;blob&#x2F;main&#x2F;assets&#x2F;scaling...</a><p>The model was built under my deep dissatisfaction so we cannot really train even moderately big models (1B+ scale) on the consumer&#x27;s hardware. We can inference and fine-tune them for sure, but I would like to have full control over what the model sees over th"
+  },
+  {
+   "title": "Mark Wahlberg is coming to TechCrunch Disrupt 2026, and he wants to talk about your work, not his",
+   "url": "https://techcrunch.com/2026/09/25/mark-wahlberg-is-coming-to-techcrunch-disrupt-2026/",
+   "source": "techcrunch",
+   "total": null,
+   "text": "Mark Wahlberg joins Bruce K. Lee at Disrupt to discuss investing, entrepreneurship, healthcare, wellness, and building businesses."
+  },
+  {
+   "title": "Smart glasses are already causing havoc in India",
+   "url": "https://www.technologyreview.com/2026/09/23/1144953/smart-glasses-havoc-india/",
+   "source": "mit",
+   "total": null,
+   "text": "Shubnam was packing boxes for a move into a new home when their friend sent them an Instagram video. The footage had only been up for a few hours, but it was days old, recorded at a Delhi protest this spring against a bill that would have narrowed the legal recognition for transgender people in&#8230;"
+  },
+  {
+   "title": "Europeans in Japan raise $1.2M to put modular humanoid robots to work",
+   "url": "https://tech.eu/2026/09/24/brits-in-japan-raise-1m-to-put-modular-humanoid-robots-to-work/",
+   "source": "techeu",
+   "total": null,
+   "text": "O-ID, a Tokyo-based company founded by two Europeans building one of the world’s first fully modular humanoid robots for industrial manufacturing and logistics, has raised $1.2 million in pre-seed fun..."
+  },
+  {
+   "title": "America is in the wrong AI race with China",
+   "url": "https://restofworld.org/2026/america-china-ai-race-trust/?utm_source=rss&utm_medium=rss&utm_campaign=feeds",
+   "source": "restofworld",
+   "total": null,
+   "text": "The U.S. is framing its rivalry with China as one of technical superiority, failing to recognize that public trust and robust consumer protections are necessary for long-term dominance."
+  },
+  {
+   "title": "Programa Capacita Pesca Artesanal fortalece competencias de trabajadores de Arauco y Coronel",
+   "url": "https://www.aqua.cl/programa-capacita-pesca-artesanal-fortalece-competencias-de-trabajadores-de-arauco-y-coronel/",
+   "source": "aqua",
+   "total": null,
+   "text": "Completaron exitosamente cuatro cursos de capacitación para diversificar sus ingresos y modernizar sus labores.\nThe post Programa Capacita Pesca Artesanal fortalece competencias de trabajadores de Arauco y Coronel appeared first on AQUA."
+  },
+  {
+   "title": "Ministerio de Minería destina $960 millones para impulsar la pequeña minería entre Antofagasta y Los Ríos",
+   "url": "https://www.mch.cl/ministerio-de-mineria-destina-960-millones-para-impulsar-la-pequena-mineria-entre-antofagasta-y-los-rios/",
+   "source": "mch",
+   "total": null,
+   "text": "El detalle de los proyectos seleccionados para recibir estos fondos y las iniciativas en lista de espera está disponible en el sitio web de la cartera sectorial.\nLa entrada Ministerio de Minería destina $960 millones para impulsar la pequeña minería entre Antofagasta y Los Ríos se publicó primero en Mch."
+  },
+  {
+   "title": "Manejo agronómico basado en biología integrada con datos",
+   "url": "https://redagricola.com/manejo-agronomico-basado-en-biologia-integrada-con-datos/",
+   "source": "redagricola",
+   "total": null,
+   "text": "La integración de bioinsumos y tecnologías de precisión redefine el manejo agronómico, por ejemplo, sustituyendo aplicaciones uniformes por decisiones sitio-específicas y mejorando la eficiencia, la sostenibilidad y la capacidad de respuesta del sistema agrícola.\nThe post Manejo agronómico basado en biología integrada con datos appeared first on Redagrícola."
+  },
+  {
+   "title": "Costco’s digital sales hit $33 billion in 2026, growing more than 20%",
+   "url": "https://www.modernretail.co/operations/costcos-digital-sales-hit-33-billion-in-2026-growing-more-than-20/?utm_campaign=modernretaildis&utm_medium=rss&utm_source=general-rss",
+   "source": "modernretail",
+   "total": 0,
+   "text": "Costco's business is increasingly living beyond the doors of its core warehouses, as digital sales and partnerships with platforms like DoorDash and Uber Eats are helping it attract newer, younger customers."
+  },
+  {
+   "title": "TJX CEO: Distribution model will help weather El Niño",
+   "url": "https://www.retaildive.com/news/tjx-ceo-distribution-model-el-nino/831118/",
+   "source": "retaildive",
+   "total": 0,
+   "text": "The off-price retailer&rsquo;s supply chain strategy allows it to hold inventory instead of going straight to stores.&nbsp;"
+  },
+  {
+   "title": "Lego to spend $400M to add warehouse space at Mexico plant",
+   "url": "https://www.supplychaindive.com/news/lego-to-spend-400m-to-add-warehouse-space-at-mexico-plant/831302/",
+   "source": "supplychaindive",
+   "total": 0,
+   "text": "The toymaker's investment will also support expanded packing capabilities to strengthen its regional supply chain network in the Americas."
+  },
+  {
+   "title": "Costco Wins Younger Shoppers With Expanded Third-Party Same-Day Delivery",
+   "url": "https://www.pymnts.com/earnings/2026/costco-wins-younger-shoppers-with-expanded-third-party-same-day-delivery/",
+   "source": "pymnts",
+   "total": 0,
+   "text": "Costco’s third-party same-day delivery offering is helping draw younger customers to the retailer, CEO Ron Vachris said Thursday (Sept. 24) during the company’s quarterly earnings call. Costco highlighted its expansion of third-party same-day delivery channels in the United States in a presentation released Thursday, saying that this is one of the company’s digital enhancements and that it offers [&#8230;]\nThe post Costco Wins Younger Shoppers With Expanded Third-Party Same-Day Delivery appeared first on PYMNTS.com."
+  },
+  {
+   "title": "Dear SaaStr: How Do We Close Bigger Deals?",
+   "url": "https://www.saastr.com/how-do-we-close-bigger-deals-in-saas/",
+   "source": "saastr",
+   "total": 0,
+   "text": "Dear SaaStr: How Do We Close Bigger Deals? If you already have a few bigger deals under your belt, but most are smaller … a few higher-level suggestions: #1.  Hire a Very Good CRO / VP of Sales that has sold at your “high end” price point. They will be much better at you than... Continue Reading"
+  },
+  {
+   "title": "Beyonce's former strategist on turning employees into fans",
+   "url": "https://www.charterworks.com/beyonces-former-strategist-on-turning-employees-into-fans/",
+   "source": "charter",
+   "total": 0,
+   "text": "How to build a culture that feels like fandom. Millennials' career malaise. One downside of AI for Alfred, Allen, and Albert"
+  },
+  {
+   "title": "Nearly half of workers say they don’t want AI in payroll",
+   "url": "https://www.hrdive.com/news/nearly-half-of-workers-say-they-dont-want-ai-in-payroll/831143/",
+   "source": "hrdive",
+   "total": 0,
+   "text": "Artificial intelligence&rsquo;s use in total rewards remains in the early stages, reports have shown."
+  },
+  {
+   "title": "6 food manufacturers talk supply chain tactics",
+   "url": "https://www.manufacturingdive.com/news/6-food-manufacturers-talk-supply-chain-tactics/831379/",
+   "source": "manufacturingdive",
+   "total": 0,
+   "text": "General Mills, Nestl&eacute; and more discussed how they are cutting operational costs, navigating uneven freight rates and sharpening demand forecasting at a Barclays conference."
+  },
+  {
+   "title": "The Friday Checkout: Grocery AI is in full hype mode right now",
+   "url": "https://www.grocerydive.com/news/groceryshop-2026-artificial-intelligence/831386/",
+   "source": "grocerydive",
+   "total": 0,
+   "text": "The fast-evolving technology was the focus of this year&rsquo;s Groceryshop. But amid all the optimism, key executives sounded notes of caution."
+  },
+  {
+   "title": "7-unit Dave’s Hot Chicken franchisee files Chapter 11 bankruptcy",
+   "url": "https://www.nrn.com/fast-casual/7-unit-dave-s-hot-chicken-franchisee-files-chapter-11-bankruptcy",
+   "source": "nrn",
+   "total": 0,
+   "text": "The seven-location operator is disputing $8.8 million in Bank Midwest debt, alleging that lender interference derailed a $30 million sale opportunity."
+  },
+  {
+   "title": "US prosecutors seize Tether-linked payment firm's bank accounts - FT",
+   "url": "https://www.finextra.com/newsarticle/48478/us-prosecutors-seize-tether-linked-payment-firms-bank-accounts---ft?utm_medium=rssfinextra&utm_source=finextrafeed",
+   "source": "finextra",
+   "total": 0,
+   "text": "US federal prosecutors have seized bank accounts belonging Capstone, a payments business working on behalf of stablecoin issuer Tether and its sister exchange Bitfinex, according to the Financial Times."
+  },
+  {
+   "title": "NVIDIA, Revolut, and Citi are facing questions their old playbooks can’t answer",
+   "url": "https://tearsheet.co/funding/nvidia-revolut-and-citi-are-facing-questions-their-old-playbooks-cant-answer/?utm_source=rss&utm_medium=rss&utm_campaign=nvidia-revolut-and-citi-are-facing-questions-their-old-playbooks-cant-answer",
+   "source": "tearsheet",
+   "total": 0,
+   "text": "The questions facing NVIDIA, Revolut, and Citi are getting bigger as the companies themselves get bigger. This week, NVIDIA CEO Jensen Huang weighed in on whether the AI industry should slow the development of increasingly powerful models. Revolut CEO Nik Storonsky discussed where a $115 billion fintech could eventually list its shares. And Citi CEO &#8230; \nContinue reading \"NVIDIA, Revolut, and Citi are facing questions their old playbooks can&#8217;t answer\"\nThe post NVIDIA, Revolut, and Citi are facing questions their old playbooks can&#8217;t answer appeared first on Tearsheet."
+  },
+  {
+   "title": "JPMorgan Cut Polymarket Banking Ties Over Regulatory Concerns",
+   "url": "https://thefintechtimes.com/jpmorgan-cut-polymarket-banking-ties-over-regulatory-concerns/",
+   "source": "fintechtimes",
+   "total": 0,
+   "text": "Reports say JPMorgan quietly closed Polymarket's primary account last year, even as the prediction market pursues a $1bn raise at a $20bn valuation.\nThe post JPMorgan Cut Polymarket Banking Ties Over Regulatory Concerns appeared first on The Fintech Times."
+  },
+  {
+   "title": "Crux Analytics Secures $2.2 Million in Seed Funding",
+   "url": "https://finovate.com/crux-analytics-secures-2-2-million-in-seed-funding/",
+   "source": "finovate",
+   "total": 16,
+   "text": "Relationship intelligence platform Crux Analytics has raised €1.9 million ($2.2 million) in seed funding, bringing the company&#8217;s total capital raised to €2.8 million. The round was led by Castle Creek Launchpad, a joint venture fund with 35 community banks as limited partners. Chartway Ventures, One Washington Financial, and Curql, three credit union investment funds, also Read more...\nThe post Crux Analytics Secures $2.2 Million in Seed Funding appeared first on Finovate."
+  },
+  {
+   "title": "Luxury Briefing: What Harrods and Bloomingdale’s buyers want from London Fashion Week",
+   "url": "https://www.glossy.co/fashion/luxury/luxury-briefing-london-fashion-week-buyers-online-buzz/?utm_campaign=glossydis&utm_medium=rss&utm_source=general-rss",
+   "source": "glossy",
+   "total": 0,
+   "text": "London Fashion Week welcomed a 41% increase in international buyers, even as online posts and earned media value declined. For designers, the challenge is turning renewed commercial interest into lasting growth."
+  },
+  {
+   "title": "STAT+: Lilly wins approval for once-weekly insulin shot",
+   "url": "https://www.statnews.com/2026/09/25/biotech-news-lilly-wins-approval-for-weekly-insulin-shot/?utm_campaign=rss",
+   "source": "statnews",
+   "total": 0,
+   "text": "The FDA approved Eli Lilly’s Onswik, a once-weekly basal insulin for adults with type 2 diabetes, offering patients an alternative to daily long-acting insulin injections."
+  },
+  {
+   "title": "More on Muse, Amazon, and Walmart; Muse and Expedia; Whither Google?",
+   "url": "https://stratechery.com/2026/more-on-muse-amazon-and-walmart-muse-and-expedia-whither-google/",
+   "source": "stratechery",
+   "total": 0,
+   "text": "Meta needs Walmart to wait out Amazon; Expedia seeks to keep its middleware position; meanwhile, where is Google?"
+  },
+  {
+   "title": "Driving Innovation and Partnerships Forward",
+   "url": "https://skift.com/2026/09/25/driving-innovation-and-partnerships-forward/",
+   "source": "skift",
+   "total": 0,
+   "text": "Guest behaviors around how they use their time on cruises are materially changing, a shift hospitality companies should all be considering."
+  },
+  {
+   "title": "St. Louis region's 50 fastest-growing companies generated $8.4B in revenue - bizjournals.com",
+   "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQU09oRHVNV3pyaDRVSFZNVWlfLWFVWXJSVGVJU0diXzJ1RUh1YXl4b2tDSE1pRnFzUmdwR1NVTDNfbUYwc25RWVhucm90OHdlUWtGaDlfMUlSdlEzejdCOHI0LXktSmNPTTEzYml4UmRIRGV1ZTltWHBMRlZFYlBwb2hqV0E2NkthUEdmanM4emdaMDc0RjFlTFJlYThyMXd0OXpqQWItUnIwSHowOFcwMXAwcTBicFViLVVEQlBEYw?oc=5",
+   "source": "gn_tradicional_en",
+   "total": null,
+   "text": ""
+  },
+  {
+   "title": "This Family Has Owned the Same New Orleans Hotel for 140 Years - inc.com",
+   "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQdXFPbThOVjNQR1VsWWhDZ0xKMTA0RmMwZGxjNlJFMlBpcWRZazQwYkxrR3M3ODBWQWV3VEg0VlI3QjlxNktkeGdtSVRuaS1IQlRkZnFLSFBocUNIc1QxN2NzV3Q5eV9qNmo0MVZxeE1ZeXY4MGZ2N2lVZ1NWRTFzSjNtRWhMOVJiUXRQOFU3a2hIUUUwTTNwSFNtMUFBVXpmYVBUdVNNRHBvbndscW9PTVg0UVlWbnJYaVdkcEtQVDZCZlVXQmJYU0dhSHdkcTA?oc=5",
+   "source": "gn_tradicional_negocios",
+   "total": 0,
+   "text": ""
+  },
+  {
+   "title": "De estar a punto de cerrar a ganar la Mejor Empanada del Gran Concepción: la historia de Pan de Pancho - Trade-news.cl",
+   "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPSnNzbjZPTXNDYkE4Y09NQWtVcnZxb2FVTlpPWGtYSzZpbEVzZ1ZldHk5clplOV9QYVA2RWI1LWdEVHRsSU01Vm04V2ZoM0h4Z1F4WW5uM1VFcXJoV1V6elJHNGpDeG1RTG1RYnpFa3BaYTNnWjlGMUJSY2NTdGdzU191cEJ5OG9oRVRrMndIRU1yTHJpeXBtNE5SZml1WDdMVzVrVTdYdkROaHB6eWFJY01MdTlHQk9qU2NPaEMtMlA?oc=5",
+   "source": "gn_tradicional_es",
+   "total": null,
+   "text": ""
+  },
+  {
+   "title": "O município de Quatro Barras, na Região Metropolitana de Curitiba, passou a contar com uma nova unidade do supermercado Rio Verde. A loja, instalada na Rua Pedro Augusto Bossardi, no bairro Jardim Menino Deus, foi inaugurada dia 11/09 e representa - instagram.com",
+   "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5TMWlEVG9CbFcwZXZ3MDVQcGlycG1WYTY1NmFfVE5lLXJjbXppN3FYN1VDTzIzVkl5WDJCUDFyUkJJMWhFVGF6U0pmek1MbDNXY3c?oc=5",
+   "source": "gn_tradicional_pt",
+   "total": 0,
+   "text": ""
+  },
+  {
+   "title": "Startup LittleHorse Says It Can Rein In AI Agent Chaos With ‘Business-As-Code’ - crn.com",
+   "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOdVhSU1AyZVR4V0xBazdLajJhZEo3R1drR1h0dlJmZVVjVlBIcVJZRU1feXFlQkxOUU4xTU9CX3NLOUFRUkFxRlllU29wc0M0RG43OWlRbjVVVEFPZmpoUGdPWnkwZWFYRDNmUkVlVEVmbDhNbkgxRFM3TVRNd0t3bGVXYlJjTllDSE1BTDcxMTBmb0ZrejhmMkdaRFlUVnFWNC1lM3BxQTUzXzZBU2c?oc=5",
+   "source": "gn_logistica_en",
+   "total": 22,
+   "text": ""
+  },
+  {
+   "title": "What Supply Chain Disruptions Reveal about Physical Security Preparedness - Logistics Management",
+   "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOdDF4aGt4SnRJczV2QUpWNXF3NG5sajEzMlhUdnVsckhxM2ZBWVhWajRKRTBIYmZzWWRWbmRLWTdydzZCOWpaS2dZSDVTaWFpUUtGQm1MYXR4ZnRRd2tVOXpSbGZxN1l2UVEySzAwRV9EWmw3ZmlBZmdkSWxZd0FkT0NwdUFWNXB3SjdMamZPQnZFWEE3ZjVWTEJwemZOYUlJSGJRT2xKQnFibkJjdE4yQ3ZB?oc=5",
+   "source": "gn_logistica_prensa",
+   "total": 0,
+   "text": ""
+  },
+  {
+   "title": "WEF mapea US$7.000M en IA logística y sus brechas agénticas - El Ecosistema Startup",
+   "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNS2RCZkgyZ1c3T0RQLUJCd1MtekhyNVgwc0Q3MloyeldWcG5OOWFyeE1WSE9WSTJfQ1ZLajBWUDFWSG9Md2dSSmQ3XzNOZVlRblRsZWtuSkxScHlBUWRWM3lwd3htOE94aUdKTURJbGJaMWE2d01jODVrLU1OdXJPeXc0b1JaN1ozM2RHeDhXUXo4UTQ?oc=5",
+   "source": "gn_logistica_es",
+   "total": 19,
+   "text": ""
+  },
+  {
+   "title": "Governo lança sistema nacional para monitorar logística reversa no Brasil - Recicla Sampa",
+   "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOamg4czQyaThkQVJWSXRva0R5ZFV5Q2lMOGhsZ0RITTJabm9tZ3JMZk9oMHB2NFRuanpZVnlJSkY2TnpMVmRoMS1rWVV4ODc1NGJ1NV9BT3F6NF9ld0FNZm9wbXcyMURUck1PbTUwUFhIcElWQ1Q5OENTV2lzWUU0aDF5bzYzdXNsRmtKdklmemR6LVBmc25vcU1TaU92ei1YeW5rSm02QXhZbnNuMTJDV29n?oc=5",
+   "source": "gn_logistica_pt",
+   "total": 17,
+   "text": ""
+  },
+  {
+   "title": "Tabby Builds AI-Native Bookkeeping Platform for Small Businesses - konsulteer.com",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQamJrcDRyS3ZpTEloX3hkSXFvY2FkdDZsblh4VmQ2ZWhwdEFaeHJxQmpNbkw5Y3lUTXQ0VHAwQTZnUFBIbDlnUVg2UHdBTE9lNEJwSTJidXJjSHNUUnVMckw2R1E3WDZTZmY2eFF5aldKRFRYX0JUamw1SnM0dmF5MmJHZEM2czNydHpmZTU1cENIbWNZS0VZSmI3RXV6ejhx?oc=5",
+   "source": "gn_ai_native_en",
+   "total": 23,
+   "text": ""
+  },
+  {
+   "title": "Martin Sorrell's Venture Fund Backs AI Video Startup Higgsfield - ADWEEK",
+   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPMmJnbVBmVkJBQncwSk85ZmVqM3hseUNoT0NtN2FLRE5TSDF5cWZSOGVyNVNQNkp1VVhfUlhmdWl5M2ZyaUFvX3RaSnBvNHZqVzUwSUI2UVlQZnBmcHpDbk03QkFsZE9SYnI1RWpudW9ZQy1SZjd2RW1SLU55X25GRkpJNDAtOTJ4Z0IxZVJvQllRYkt6TDF5SzFEaw?oc=5",
+   "source": "gn_ai_native_verticales",
+   "total": null,
+   "text": ""
+  },
+  {
+   "title": "Services as software, applied to distribution: Treat distribution as something your company keeps improving, the same way it improves the product. Every campaign should teach the team which accounts fit and which messages get replies, and the next campai - x.com",
+   "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBfU3hiTl9MTjRKNG9iQlJRUkdUaFdTQmQ2UDl2NktyOThpb0VFMXU2SUFRbC1SRmpjTTF2X1hoNnNRMnNaZWpMWTl2Z2VibU82ZTlEY2E2VWdoWHNrQ2xFeU9PNA?oc=5",
+   "source": "gn_ai_native_x",
+   "total": 0,
+   "text": ""
+  },
+  {
+   "title": "Globant nombra COO para escalar AI Pods con agentes de IA - El Ecosistema Startup",
+   "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNdG5ZNGVvdGl2c09Iekc1ZGpBYlRWWm16S09yT3RQbXJEQ3dybXRaR3k1VzZkeFVHVVV0Vy0wel9wS2tEQ2o3c0d2Tk9IMEdNUGRucE9kSG1YZlM3X1JJY19rYlVPSG9ScERZYmdlT1RzUUF1TlA2c3NBc2N5YnN2QzlWRWFMNDF0SDM2dWhueDQ0UQ?oc=5",
+   "source": "gn_ai_native_es",
+   "total": null,
+   "text": ""
+  },
+  {
+   "title": "IA cresce em pequenas empresas, mas dados limitam resultados - Dica App do Dia",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPMHQ5UVo4UzVaRHpwMWQyWWM4b1JwS1FEQS1JSkR3N3J2cmJHNjRSZk95TTlUWGUxSUNRMkt4Tlpxc2FiWnk2OTlwdzROWWRLWkY3LU9ZWUxBcUkyVy1sbWowTnJsVkUxYWRCUnp0cXV2UHo0OWVqdjVBbXpTVG10SWVha1gySXo3YWdGNWs3aktCQWdsTU9BLTZDZkRfZmfSAZ8BQVVfeXFMTzB0OVFaOFM1WkR6cDFkMlljOG9ScEtRREEtSUpEdzdydnJiRzY0UmZPeU05VFhlMUlDUTJLeE5acXNhYlp5Njk5cHc0TllkS1pGNy1PWVlMQXFJMlctbG1qME5ybFZFMWFkQlJ6dHF1dlB6NDllanY1QW16U1RtdEllYWtYMkl6N2FnRjVrN2pLQkFnbE1PQS02Q2ZEX2Zn?oc=5",
+   "source": "gn_ai_native_pt",
+   "total": 0,
+   "text": ""
+  },
+  {
+   "title": "JEV broke down 724 live ads from 37 brands in 40 seconds for 9¢ of tokens: here's what it means for SaaS",
+   "url": "https://www.reddit.com/r/SaaS/comments/1wok0cg/jev_broke_down_724_live_ads_from_37_brands_in_40/",
+   "source": "reddit_saas",
+   "total": 0,
+   "text": "Came across a video on X where TypeSafe’s new model (Jev) broke down 724 live competitor ads across 37 brands in 40 seconds for 9 cents. If you haven’t followed the buzz around Jev this week, people are treating it like a major shift because it doesn't generate conversational text like ChatGPT or Claude, instead it’s a dedicated classification model that evaluates predefined schema questions (like hook type, CTA, format and awareness stage) in parallel in about 200ms without needing custom fine-tuning. While the speed is genuinely impressive, there are two distinct ways to look at what this actually does: What’s genuinely useful: High-throughput auditing, if you’re manually auditing competitor ad libraries or doing landing page consistency checks (matching whether the ad promise actually lines up with the headline on the page), running that through Claude would cost $30+ and take 15 minutes but running it through a structured classifier takes under a minute for pennies. What people are getting wrong: Some people are taking these demos and claiming Jev can &quot;predict which ad will convert&quot; or &quot;replace creative testing.&quot; It can’t. Jev can use historical conversion d"
+  },
+  {
+   "title": "Show HN: Jev Plays Pokémon Red",
+   "url": "https://jev-pokemon.vercel.app/",
+   "source": "hackernews",
+   "total": 0,
+   "text": "Hey HN! Wanted to share a fun project I&#x27;ve been hacking on. Given Jev can make decisions really fast (but not fast enough to play Doom yet sadly), I wanted to try and push it to play a more complex game than Tetris. So I went with Pokémon.<p>I&#x27;ve spent endless hours playing this game as a child so building this was a ton of fun.<p>I open sourced everything in case you want to hack on it yourself here: <a href=\"https:&#x2F;&#x2F;github.com&#x2F;christianmat&#x2F;jev-pokemon\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;christianmat&#x2F;jev-pokemon</a><p>The game is being streamed live including the tokens and cost - hopefully we get all the badges and don&#x27;t get stuck in a cave :)"
+  },
+  {
+   "title": "Meta is putting its muscle behind Muse as the AI app takes off",
+   "url": "https://techcrunch.com/2026/09/25/meta-is-putting-its-muscle-behind-muse-as-the-ai-app-takes-off/",
+   "source": "techcrunch",
+   "total": 0,
+   "text": "Muse is topping the app store charts and adding users at a rapid clip, while Meta ramps up the personal AI agent's promotion across its own apps and beyond."
+  },
+  {
+   "title": "Young organs may not be a fountain of youth for recipients",
+   "url": "https://www.technologyreview.com/2026/09/25/1145083/young-organs-may-not-be-a-fountain-of-youth-for-recipients/",
+   "source": "mit",
+   "total": 0,
+   "text": "Around this time last year I was attending an aging conference in Manchester, listening to a talk about fly aging, when my phone started pinging. News outlets were reporting that a hot mic had caught Russia’s and China’s leaders discussing the possibility of living forever. “With the developments of biotechnology, human organs can be continuously&#8230;"
+  },
+  {
+   "title": "OWOW Venture Studio lands €2.65M to build B2B startups for traditional industries",
+   "url": "https://tech.eu/2026/09/24/owow-venture-studio-lands-eur265m-to-build-b2b-startups-for-traditional-industries/",
+   "source": "techeu",
+   "total": 23,
+   "text": "Eindhoven-based OWOW Venture Studio hassecured €2.65 million from eight family offices and angel investors to buildand accelerate early-stage B2B startups, with a focus on manufacturing andoriginal eq..."
+  },
+  {
+   "title": "Nvidia’s free AI model could push the UAE closer to the U.S.",
+   "url": "https://restofworld.org/2026/nvidia-open-source-ai-models-uae/?utm_source=rss&utm_medium=rss&utm_campaign=feeds",
+   "source": "restofworld",
+   "total": 0,
+   "text": "The Emirates owns the machines but rents the intelligence. Nvidia’s next free AI model could change that."
+  },
+  {
+   "title": "Aportes del Incar para la acuicultura frente a la amenaza de El Niño 2026-2027 y cambio climático",
+   "url": "https://www.aqua.cl/aportes-del-incar-para-la-acuicultura-frente-a-la-amenaza-de-el-nino-2026-2027-y-cambio-climatico/",
+   "source": "aqua",
+   "total": 0,
+   "text": "La presencia de El Niño genera una señal de amenaza y riesgos para la salmonicultura y la mitilicultura. Estos efectos podrían evidenciarse con mayor intensidad durante el verano y otoño de 2026-2027 en el sur de Chile.\nThe post Aportes del Incar para la acuicultura frente a la amenaza de El Niño 2026-2027 y cambio climático appeared first on AQUA."
+  },
+  {
+   "title": "Minverso inaugura el «Museo del Metaverso» para dar a conocer la evolución de las tecnologías inmersivas",
+   "url": "https://www.mch.cl/minverso-inaugura-el-museo-del-metaverso-para-dar-a-conocer-la-evolucion-de-las-tecnologias-inmersivas/",
+   "source": "mch",
+   "total": 0,
+   "text": "Un recorrido histórico por los hitos de la realidad virtual y sus aplicaciones industriales contemporáneas reunió a exponentes del ecosistema tecnológico y cultural.\nLa entrada Minverso inaugura el «Museo del Metaverso» para dar a conocer la evolución de las tecnologías inmersivas se publicó primero en Mch."
+  },
+  {
+   "title": "Sinergia entre tricodermas y fungicidas, una opción que aparece frente a temporadas rebeldes y cambio climático",
+   "url": "https://redagricola.com/sinergia-entre-tricodermas-y-fungicidas-una-opcion-que-aparece-frente-a-temporadas-rebeldes-y-cambio-climatico/",
+   "source": "redagricola",
+   "total": 0,
+   "text": "La fitopatóloga y académica de la Universidad de Chile, Marcela Esterio, está trabajando en un formulado en base a trichodermas, identificados como resistentes a fungicidas y que actúan como antagonistas de patógenos que afectan -principalmente-, a la uva de mesa.\nThe post Sinergia entre tricodermas y fungicidas, una opción que aparece frente a temporadas rebeldes y cambio climático appeared first on Redagrícola."
+  },
+  {
+   "title": "Big-Box Briefing: Best Buy puts CTV at the center of its retail media pitch",
+   "url": "https://www.modernretail.co/marketing/big-box-briefing-best-buy-puts-ctv-at-the-center-of-its-retail-media-pitch/?utm_campaign=modernretaildis&utm_medium=rss&utm_source=general-rss",
+   "source": "modernretail",
+   "total": 0,
+   "text": "Best Buy is increasingly putting its electronics roots at the heart of its retail media pitch. On Wednesday, Best Buy held its annual showcase event highlighting what’s coming up in its retail media business — including a new part of its advertising business that the company is branding as Best Buy CTV."
+  },
+  {
+   "title": "The Weekly Closeout: What will happen to Michael Kors and J. Crew celebrates its Barn Jacket",
+   "url": "https://www.retaildive.com/news/michael-kors-capri-sale-acquisition-j-crew-barn-jacket-anniversary/831321/",
+   "source": "retaildive",
+   "total": 0,
+   "text": "The fashion brand is dragging on Capri Holdings. Meanwhile, the specialty retailer observes 40 years of a key outerwear product.&nbsp;"
+  },
+  {
+   "title": "Carrier diversity key to holiday success in a high cost environment",
+   "url": "https://www.supplychaindive.com/news/carrier-diversity-key-to-holiday-success-in-a-high-cost-environment/831027/",
+   "source": "supplychaindive",
+   "total": 0,
+   "text": "Even saving a few dollars per order on shipping fees can free up capital for other parts of a business, UniUni Chief Revenue Officer Sheila Berry said."
+  },
+  {
+   "title": "Doctors Stop Typing as AI Takes Over the Chart",
+   "url": "https://www.pymnts.com/news/artificial-intelligence/2026/doctors-stop-typing-as-ai-takes-over-the-chart/",
+   "source": "pymnts",
+   "total": 21,
+   "text": "University Hospital at Downstate is piloting an ambient artificial intelligence (AI) scribe with 50 physicians across family medicine, internal medicine, cardiology and the emergency department. The tool has drafted notes for more than 900 patient encounters since May, Altera Digital Health said on Tuesday (Sept. 22). The Brooklyn academic medical center is the first to [&#8230;]\nThe post Doctors Stop Typing as AI Takes Over the Chart appeared first on PYMNTS.com."
+  },
+  {
+   "title": "Stripe’s AI CRO on the Fastest-Growing AI Companies: 175% Growth, 48% of Revenue From Outside the Home Market, and Agents About to Read More Stripe Docs Than Human",
+   "url": "https://www.saastr.com/stripes-ai-cro-on-the-fastest-growing-ai-companies-175-growth-48-of-revenue-from-outside-the-home-market-and-agents-about-to-read-more-stripe-docs-than-human/",
+   "source": "saastr",
+   "total": 0,
+   "text": "Stripe processes payments for most of the fastest-growing AI companies in the world, so it sees their actual revenue data. At her SaaStr AI session, Maia Josebachvili, Chief Revenue Officer of AI at Stripe, walked through what Stripe is seeing across its AI customer base and how differently she would run a company if she... Continue Reading"
+  },
+  {
+   "title": "Book Briefing: ‘The Insider Advantage’ by Matthew Bidwell",
+   "url": "https://www.charterworks.com/book-briefing-the-insider-advantage-by-matthew-bidwell/",
+   "source": "charter",
+   "total": 0,
+   "text": "Why the ‘liquid workforce’ concept doesn’t work"
+  },
+  {
+   "title": "Teen’s ‘therapeutic’ DJ classes did not entitle mother to FMLA leave, court finds",
+   "url": "https://www.hrdive.com/news/teens-therapeutic-dj-classes-did-not-entitle-mother-to-fmla-leave-mattress-firm/830933/",
+   "source": "hrdive",
+   "total": 0,
+   "text": "While the mother, a Mattress Firm manager, said the classes were related to her son&rsquo;s mental health, the court noted they had not been prescribed."
+  },
+  {
+   "title": "Lego to spend $400M expanding manufacturing facility in Mexico",
+   "url": "https://www.manufacturingdive.com/news/lego-monterrey-mexico-manufacturing-facility-expansion-packing-warehouse/831196/",
+   "source": "manufacturingdive",
+   "total": 0,
+   "text": "The toymaker plans to add packing and warehousing capabilities, as well as create 1,300 jobs at the Monterrey site."
+  },
+  {
+   "title": "Albertsons names new regional president",
+   "url": "https://www.grocerydive.com/news/albertsons-east-region-president-ken-rinaldi-grocery/831208/",
+   "source": "grocerydive",
+   "total": 0,
+   "text": "Ken Rinaldi has assumed the role of regional operating president of the grocer&rsquo;s newly formed East Region."
+  },
+  {
+   "title": "Starbucks closures, Burger King AI, Olive Garden sales",
+   "url": "https://www.nrn.com/quick-service/starbucks-closures-burger-king-ai-olive-garden-sales",
+   "source": "nrn",
+   "total": 0,
+   "text": "Get all the headlines in today's Restaurant Daily podcast."
+  },
+  {
+   "title": "Online scams agreement signed between UK and Cambodian governments",
+   "url": "https://www.finextra.com/newsarticle/48476/online-scams-agreement-signed-between-uk-and-cambodian-governments?utm_medium=rssfinextra&utm_source=finextrafeed",
+   "source": "finextra",
+   "total": 0,
+   "text": "The UK and Cambodia will work together to tackle networks of illegal scam centres, locations where sophisticated fraud techniques are deployed and scaled to target thousands of victims."
+  },
+  {
+   "title": "Nubank intends to paint the U.S. banking system purple",
+   "url": "https://tearsheet.co/banking/nubank-intends-to-paint-the-us-banking-system-purple/?utm_source=rss&utm_medium=rss&utm_campaign=nubank-intends-to-paint-the-us-banking-system-purple",
+   "source": "tearsheet",
+   "total": 17,
+   "text": "Nubank has officially begun serving customers in the United States, rolling out an initial lineup built around high-yield savings, a no-fee credit card, and low-cost international transfers through its U.S. banking partner, Lead Bank. Speaking at a launch event in Miami, founder and CEO David Vélez and co-founder and head of the U.S. business laid &#8230; \nContinue reading \"Nubank intends to paint the U.S. banking system purple\"\nThe post Nubank intends to paint the U.S. banking system purple appeared first on Tearsheet."
+  },
+  {
+   "title": "Corpay Research: UK Finance Teams Lose a Day a Week to Manual Admin",
+   "url": "https://thefintechtimes.com/corpay-research-uk-finance-teams-lose-a-day-a-week-to-manual-admin/",
+   "source": "fintechtimes",
+   "total": 0,
+   "text": "A Corpay survey of 300 UK CFOs found 86% of finance teams spend six or more hours weekly on manual administration tasks.\nThe post Corpay Research: UK Finance Teams Lose a Day a Week to Manual Admin appeared first on The Fintech Times."
+  },
+  {
+   "title": "FinovateFall 2026 in Photos",
+   "url": "https://finovate.com/finovatefall-2026-in-photos/",
+   "source": "finovate",
+   "total": 0,
+   "text": "Whether you missed out on FinovateFall in New York earlier this month or you were there in person, it&#8217;s worth checking out the massive number of photos that came out of the three-plus day event. The event was full of meaningful conversations, fast-paced demos, a reunion of familiar faces, and new connections. And while speakers Read more...\nThe post FinovateFall 2026 in Photos appeared first on Finovate."
+  },
+  {
+   "title": "Marketers bemoan the culture of ‘good enough — go,’ as standards fall amid the AI bubble",
+   "url": "https://www.glossy.co/fashion/marketers-bemoan-the-culture-of-good-enough-go-as-standards-fall-amid-the-ai-bubble/?utm_campaign=glossydis&utm_medium=rss&utm_source=general-rss",
+   "source": "glossy",
+   "total": 0,
+   "text": "‘Drowning in measurement,’ marketers mull priorities in an internet where ‘two audiences’ exist."
+  },
+  {
+   "title": "Opinion: FDA commissioner nominee Heidi Overton is ignoring the science on abortion drug",
+   "url": "https://www.statnews.com/2026/09/25/heidi-overton-confirmation-hearing-mifepristone-abortion-evasive/?utm_campaign=rss",
+   "source": "statnews",
+   "total": 0,
+   "text": "“With this latest appointment, mifepristone has a new boss but an old problem,” writes Julie F. Kay, founder and CEO of Reproductive Futures."
+  },
+  {
+   "title": "Amazon Blocks Muse, Amazon’s Moat, Aggregator v Aggregator",
+   "url": "https://stratechery.com/2026/amazon-blocks-muse-amazons-moat-aggregator-v-aggregator/",
+   "source": "stratechery",
+   "total": 0,
+   "text": "Amazon predictably blocked Muse, but there is room for a deal based on the reality that Amazon's physical world investments are an AI moat."
+  },
+  {
+   "title": "The Flavors That Connect Us",
+   "url": "https://skift.com/2026/09/25/the-flavors-that-connect-us/",
+   "source": "skift",
+   "total": 0,
+   "text": "Travelers remember and return for experiences that can only be produced in a single time and place."
+  },
+  {
+   "title": "Merrick's Coffee Barn opens second location, in Albertson - Newsday",
+   "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOenBZM0V5dE9zaWhuQy1pWlNDV0R5aWZTdWJoMWVsZUFvRDM0enYxbnRNdGRTMUpOZVp0d2RFNEVJRjFFdElMcjlqNjhVWDZINjZwSU03SmNLWkVGSmZ5eXdiTjVtSUZJYXVkaU1ZY0xTRDdQUlBQUTJsd2J2SDZzMUpfck9FLUdicVJjMmUxZTBtR05RRTFEOGNhckRZT21FZkpTRTZKUXY1M1ZrU0t3?oc=5",
+   "source": "gn_tradicional_en",
+   "total": 0,
+   "text": ""
+  },
+  {
+   "title": "McDonald’s Plans $8.5 Billion in Franchisee Support Under New Growth Strategy - QSR Magazine",
+   "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNekx1dVd6ZmFVQ3hDbFhTeVlNeWZTU1lZaXM2U1FvT3I0cGdSQVJlc1VIUWJ4WUJFOC1hZ05jM1B2SnpVNVhyTS1VRlBic3YtczMxa3Fnbkp2bE52YjZwa0lhSEJ0aWJWRjdyclRoTFNMMENxSGV0QmsxMVhUSlNXQUNCSDR6OTh2VVJlV3Z5b0lxWW9iVUJTenBqWE5TVUp4SXNUeTJtUWZPMnZjMEZR?oc=5",
+   "source": "gn_tradicional_negocios",
+   "total": 0,
+   "text": ""
+  },
+  {
+   "title": "No tendrá que ver con remedios: El nuevo negocio de Dr. Simi que prepara su llegada a Chile - Meganoticias",
+   "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNeFF3Q25GSU9oZGdTVXhIUExLN0tjbnJocW5ENVNPM3NjeHNodjY5cDNRYWt3eEFCblpKUFlkbmRRY0NFYS1mNDV4WHVGcXdTTF9oVnFuRnJ3N2VBcENMSDRManBWRUc2N3FGdTMzZEFaVllTalFZYjg5SHFZUDFWMWptZ1l0alpwNXFzQ0ZnSTBQTDQtckVSM01qY0pPeDJQNDEybXBOckVDRHp5UTJrei13Z9IBuAFBVV95cUxOR01nMl90bUxZLUVfRXhkUFdOakwtZng0U1gwcEo4Yk1iZFgyVzR5S3BpZDhDM2ZYQUR2VkFsM2E1NllSNDQwR19WZWZwYlhOVWRDNWNEcTJ6dXBWN3oxX1AwNUNOY0NJeGtKZUxTWFZPSUctUTg4NV9lSHN3dVJfWjI4UkJ0alp1Z1BpYWMzMnV1bzVSQ2FEUDFWREtES3VBclNqX3NzUUotZkt2NGktalR0Uk00NEZE?oc=5",
+   "source": "gn_tradicional_es",
+   "total": 0,
+   "text": ""
+  },
+  {
+   "title": "Quanto custa uma franquia de sorvete? Veja 10 redes para empreender com o produto - Pequenas Empresas & Grandes Negócios",
+   "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQc1Q1ZzA3SzZwSk82bXZ0NDZSSDIzeGxINUpiaDlvekRpQjRBc2hHNk1HODNBN2RRcGdZT2lCeTRLalVnTTJPNmVodUNKM0loWFVrT2FETlZLX0VVbFp3eHBJLW1NMUppdVhLQWVvZl83WXFicnRUNmN5UEdXTGdyWGJOeHBrOUp3cUJ0ZVJ5LWRZTWFEcjdKTk5JaHZ4MzI2ckJHcXIxN3dTS1ozc0szUDF3cWRuWVRSUjhIbENEbkJ5SjZUMklqU2lNaUN2anFGUGF3MmJmbUZHQQ?oc=5",
+   "source": "gn_tradicional_pt",
+   "total": null,
+   "text": ""
+  },
+  {
+   "title": "How 290,000 Pounds of Additional Food Closes Healthcare Gaps - Sutter Health",
+   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNMnNPbjUxZFpUTWlrajRDQ2tZeGZnZHg1TUh4d2UzYjRkUXhrWkVqZ3Y1R1BBUU11anNROHdqUWtlaHRYdXhRM2RHYlZ4Mm1tQkh6U0hpZVdCVHRHRXJNcW5kQmFpbXY4ZkJ3RDkyN2xVTWYtV2Ixb2xybjNhU01QNXk1b2xSV1ZrTnNoTjVFRU1USzhRc2ZR?oc=5",
+   "source": "gn_logistica_en",
+   "total": 0,
+   "text": ""
+  },
+  {
+   "title": "News Forwarder anger as Hapag-Lloyd cuts guaranteed-capacity allocations - The Loadstar",
+   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPQWNVYmVyRnUzSDdSWlJTcWlmMUJSNUNTRHdMRzZpMENwUGF0b0tIMldyS3cwTFk5MDlUdW1rRjg2cGFwZmVxaklXMFZTTTdENGFmeV81VEFrUTI4NkRSby1mWmdzc0xvdFh3ODcyYTBZbVFGdHE5MzBxUDVzX1NSbnpWMlJnQkNoVXlHSlpEcGIxcHo4XzBj?oc=5",
+   "source": "gn_logistica_prensa",
+   "total": 0,
+   "text": ""
+  },
+  {
+   "title": "Automatización redefine el diseño y operación de los almacenes - Agenda Logística",
+   "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOeFVUU1ZfYVFaLWJNQk0yajVDRm9NblpiNTYyM3U4R0FGbmFYbktTb0R2MU1FUHhCLU1FNUwyS0g0cktjanRmUUZ0dktzQ3dIRHFmc2tYcmtKczQyRHBHWDBqNUZiWlBlLVNmNm1HMl83RVBrbzJRLXk3Q3Y5ajFuRWxUVGNNa053T0tid3VUS3JHVm1qU3VCajRzNnBJU29sQlVpaHBuRGpjUUoyUlBEd1ZMWFdRYkNLVGtkaWhVcnJEbnFPNVVTVkduWlIwMjQ?oc=5",
+   "source": "gn_logistica_es",
+   "total": 0,
+   "text": ""
+  },
+  {
+   "title": "Milfarma projeta ampliar capacidade em 500%: De 5 mil para até 30 mil pedidos por dia - Mundo Logística",
+   "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOTXhXVUVNVWVFTF8yV2pYdHZJc3pUeDBsbjdLTmxzSkRHejh5Tnk4OUZyODlyb1U1aEtacWtCb21oTGxYZjFaT29zY2NRRDNNZXVRdnU1T2NYcjgxRWxZNTE0cmVjXzBzQkVJeXRQcXNZSW5IYXV4a1pxRWVvc2xWVjJZMzJxZW1reGU4SjB3?oc=5",
+   "source": "gn_logistica_pt",
+   "total": null,
+   "text": ""
+  },
+  {
+   "title": "Former Latham & Watkins lawyer launches AI-native law firm targeting private capital work - The Global Legal Post",
+   "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQelhqZThRbjNBbkNyeW9uVllSQ1JLX3VMcENvN1h2RWJhNHd6Y2lSNzUzSEViSlRVZjRjdGNvZXhRUERhLUVWNF85ckl4Nm41dV8wWWhnVWJnTWRIZ192Ql91YVg3eDNPNEQ2RUluY0djRGRWY2dBemt6RjhqTGhVZWZhRW1RVjAxcnk1OWVQT1YzVWxqRVRjZEw3LWNtYnM4VnlEU1JsTWJfcElONEl6ZEx4elFUaW5QMDZ1LXFJaDJvYzg0MmRLSGpTR2c0bk0?oc=5",
+   "source": "gn_ai_native_en",
+   "total": null,
+   "text": ""
+  },
+  {
+   "title": "Legal AI startup Spellbook hired a new CMO — and she has strong opinions on avoiding 'creepy' AI marketing - Business Insider",
+   "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQT19WRDNjN2dJVHB1LVJ4ZzFpTTV3dG1GT1RvWGRqekpmYmNUbFN6YVBuMTBTY3pYNW1RNDBTNEt2enRhc3NQTnB0OURIM3pRSlRybzU4bkJXQUNYVjVSWjdVYUFUZ3M0RUF3bktRM1ZpdkF5NFRXZnRWT1JxRkVjMFhsYlpoWi1la1YzVGVTM204Vmh0RU9TenVKV3VlR0dPelo4?oc=5",
+   "source": "gn_ai_native_verticales",
+   "total": null,
+   "text": ""
+  },
+  {
+   "title": "Everyone founder should read this! Every freelancer should read this! Before you build “SaaS” in 2026 please read this! - x.com",
+   "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5wcUlROXlkaTgxSnJjUFcwdVVvSXI0cnhsSjNBcHlJRnNZV1NjT0pKUmxYd1J5UFRMODNqX25nanR4ZGZVcFhuakxDb04yRWRBRE1DZ1dpcWNqUUN1bkN2cw?oc=5",
+   "source": "gn_ai_native_x",
+   "total": 0,
+   "text": ""
+  },
+  {
+   "title": "Seguros con IA: el reto de escalar más allá del piloto - El Ecosistema Startup",
+   "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPUll4RGVVcVU2ckdXNURkb09EX1N4UWJpdEotWU43dXh0MHROSEJtMW44dFV1T29zTEI3UXd3Q3F5RE8wZWlVRHVrRHBZOFdWMmNnaTdmMTI0cjJNWE1ncnB4LTVaT2RHY0p1RndZdHJGY0lYOW9vX011NXBRNXNzYzZjbDEwZWpsTlg3ZUw1dw?oc=5",
+   "source": "gn_ai_native_es",
+   "total": null,
+   "text": ""
+  },
+  {
+   "title": "Como a V7 dá memória institucional a agentes de IA - OpenAI",
+   "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE5GbUVWcFk1WVhmTDFYdy13QWI3RmdfSHNidzl0UkRPa3h1bUVvUVAxaEpveEpwS2F1NGI3QXNsTlB5OUlxZ1lzWVZ3?oc=5",
+   "source": "gn_ai_native_pt",
+   "total": 0,
+   "text": ""
+  },
+  {
+   "title": "I made my first $9 online from something I built 🥹",
+   "url": "https://www.reddit.com/r/SaaS/comments/1wm9hum/i_made_my_first_9_online_from_something_i_built/",
+   "source": "reddit_saas",
+   "total": 0,
+   "text": "Today I received my first-ever internet payment. Someone purchased a project I built, and honestly, seeing that $9 payment notification hit differently. It’s only $9, but for me, it means a lot. I spent days building this project, and knowing that someone found enough value in it to actually pay for it made me both happy and emotional. This is a small amount of money, but a huge milestone for me. Mom, I made it. 🥹❤️ Just wanted to share this moment with people who are also building things.   &#32; submitted by &#32;  /u/Inner-Hearing1079   [link] &#32; [comments]"
+  },
+  {
+   "title": "Show HN: Koi.rest – watch some fish and regain your balance",
+   "url": "https://koi.rest",
+   "source": "hackernews",
+   "total": 0,
+   "text": "Hi there. My name is Paul. I’m a developer, an explorer and I’ve got ADHD. As of the beginning of August, I’m also unemployed.<p>This last part, along with everything else this past year, has caused me a great deal of stress.<p>While our balcony zen garden project is yet to be completed, I had an idea to create a virtual one that everyone can use.<p>It&#x27;s an idea that, unfortunately, I’ve been postponing for a while now, mostly because I have no fucking idea how to do it as I don’t know JavaScript, and I don&#x27;t have the capacity to learn it right now.<p>So I let perfect be the enemy of good and, well... just kept the idea to myself.<p>Then I said &quot;fuck it&quot; and used AI to make the thing I really wanted to make.<p>I realized I didn&#x27;t want &quot;perfect&quot;. I wanted &quot;good enough&quot;.<p>I tweaked, added, removed, drew, researched, questioned, tested... I just wasn&#x27;t the one coding it.<p>So now, instead of occupying my brain, it now lives on the internet for others to enjoy.<p>Yes, there’s something noble about making something entirely on your own, but what good is an idea that just sits in my head?<p>So here I am. I made the thing. The weird, litt"
+  },
+  {
+   "title": "Meta’s AI Tamagotchi bet is…working?",
+   "url": "https://techcrunch.com/video/will-metas-ai-tamagotchi-bet-isworking/",
+   "source": "techcrunch",
+   "total": 0,
+   "text": "When AI leaders at OpenAI and Anthropic started talking about “pacing the frontier,”&#160;maybe someone&#160;should have asked: what pace?&#160;Now&#160;it’s&#160;turned into model drop week for both companies as&#160;Anthropic rolled out Opus 5.5, followed by&#160;OpenAI’s GPT-6 model updates&#160;just&#160;90 minutes&#160;later.&#160;But the company that stole the spotlight was Meta, whose&#160;personal AI agent Muse&#160;is&#160;reportedly&#160;outpacing&#160;ChatGPT’s early numbers and is headed for&#160;smart glasses&#160;and [&#8230;]"
+  },
+  {
+   "title": "The Download: a bid to scrap the virtual wall and AI hits Climate Week",
+   "url": "https://www.technologyreview.com/2026/09/24/1145064/the-download-bid-scrap-virtual-wall-ai-climate-week/",
+   "source": "mit",
+   "total": 0,
+   "text": "This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. A congressional representative just proposed killing America’s border tower program Delia Ramirez, a Democratic US representative from Illinois, has announced plans to introduce legislation to terminate the surveillance tower program along&#8230;"
+  },
+  {
+   "title": "Kontext raises $4M for runtime security platform for AI agents",
+   "url": "https://tech.eu/2026/09/24/kontext-raises-4m-for-runtime-security-platform-for-ai-agents/",
+   "source": "techeu",
+   "total": 15,
+   "text": "AI security company Kontext has raised $4million in funding to expand its runtime security platform for AI agents. Thefinancing was led by 42CAP, with backing from a16z CSX and HTGF.Founded by Jens Er..."
+  },
+  {
+   "title": "Esteban Alveal: “Todos queremos conversar de algo eficiente, sostenible o sustentable”",
+   "url": "https://www.aqua.cl/esteban-alveal-todos-queremos-conversar-de-algo-eficiente-sostenible-o-sustentable/",
+   "source": "aqua",
+   "total": 0,
+   "text": "El gerente general de GLA Chile aborda con Medios AQUA la experiencia de la empresa con combustibles alternativos, sus metas para el transporte de carga y la importancia de participar como auspiciador de AquaForum Los Lagos 2026.\nThe post Esteban Alveal: “Todos queremos conversar de algo eficiente, sostenible o sustentable” appeared first on AQUA."
+  },
+  {
+   "title": "Corproa y Asociación Regional de Municipios de Atacama firman alianza",
+   "url": "https://www.mch.cl/corproa-y-asociacion-regional-de-municipios-de-atacama-firman-alianza-para-fortalecer-proyectos-de-inversion-municipal/",
+   "source": "mch",
+   "total": 0,
+   "text": "Iniciativa tiene por objetivo el fortalecimiento de proyectos de inversión municipal.\nLa entrada Corproa y Asociación Regional de Municipios de Atacama firman alianza se publicó primero en Mch."
+  },
+  {
+   "title": "Sunshine: innovación y diversificación para enfrentar los nuevos desafíos de la agroindustria piurana",
+   "url": "https://redagricola.com/sunshine-innovacion-y-diversificacion-para-enfrentar-los-nuevos-desafios-de-la-agroindustria-piurana/",
+   "source": "redagricola",
+   "total": 0,
+   "text": "Redagrícola On The Road llega a Piura para conocer el trabajo de Sunshine, una empresa con más de cuatro décadas de trayectoria, y explorar su apuesta por el mango fresco y congelado, la palta y los arándanos, además de su estrecha relación con productores de distintas regiones del país.\nThe post Sunshine: innovación y diversificación para enfrentar los nuevos desafíos de la agroindustria piurana appeared first on Redagrícola."
+  },
+  {
+   "title": "Why Instacart is focused on reducing item markups to grow its delivery platform",
+   "url": "https://www.modernretail.co/technology/why-instacart-is-focused-on-reducing-item-markups-to-grow-its-delivery-platform/?utm_campaign=modernretaildis&utm_medium=rss&utm_source=general-rss",
+   "source": "modernretail",
+   "total": 0,
+   "text": "Instacart CEO Chris Rogers says lower online markups, loyalty perks and cheaper delivery options are crucial to driving more online grocery growth in the coming years."
+  },
+  {
+   "title": "Tapestry to sell via Google’s Gemini app, AI Mode",
+   "url": "https://www.retaildive.com/news/tapestry-sell-via-google-gemini-app-ai-mode/830890/",
+   "source": "retaildive",
+   "total": 0,
+   "text": "Coach and Kate Spade items are now available for purchase in Google&rsquo;s AI shopping ecosystem.&nbsp;"
+  },
+  {
+   "title": "Shippers are exploring port-to-inland transit to de-risk supply chains",
+   "url": "https://www.supplychaindive.com/news/shippers-are-exploring-port-to-inland-transit-to-de-risk-supply-chains/831261/",
+   "source": "supplychaindive",
+   "total": 0,
+   "text": "Inland routes offer a stable alternative to heavily utilized routes, APM Terminals Mobile managing director Brian Harold told Supply Chain Dive."
+  },
+  {
+   "title": "CFTC Clarifies Crypto Rules After Clarity Act Stalls",
+   "url": "https://www.pymnts.com/cryptocurrency/2026/cftc-clarifies-crypto-rules-after-clarity-act-stalls/",
+   "source": "pymnts",
+   "total": 0,
+   "text": "The Commodity Futures Trading Commission (CFTC) has updated its FAQs about crypto assets and blockchain technologies to provide greater clarity, the regulator said in a Thursday (Sept. 24) press release. The updates address investments of customer funds in tokenized forms of permitted investments and the use of blockchain technologies to meet a registrant’s recordkeeping requirements, according to the release. The [&#8230;]\nThe post CFTC Clarifies Crypto Rules After Clarity Act Stalls appeared first on PYMNTS.com."
+  },
+  {
+   "title": "The SaaStr AI Guide to Building a Top-Tier Inbound AI Agent: 17,000 Conversations, ~600 Meetings Booked, and 60% More New Business",
+   "url": "https://www.saastr.com/the-saastr-ai-guide-to-building-a-top-tier-inbound-ai-agent-17000-conversations-600-meetings-booked-and-60-more-new-business/",
+   "source": "saastr",
+   "total": 0,
+   "text": "Our inbound AI agent has had 17,000 conversations with prospects in the last 12 months and booked about 600 meetings for SaaStr AI Annual 2026.  And for 2027, it&#8217;s running almost 2x of the prior 12 months. Together with the newer self-serve agent we added on top of it, our inbound agents drove a 60%... Continue Reading"
+  },
+  {
+   "title": "Colorado judge: Doctor’s burnout wasn’t a disability",
+   "url": "https://www.hrdive.com/news/doctors-burnout-didnt-count-as-disability-colorado-judge/830932/",
+   "source": "hrdive",
+   "total": 0,
+   "text": "The Americans with Disabilities Act and related federal laws define disability broadly, but recent federal court decisions demonstrate the statute&rsquo;s limits."
+  },
+  {
+   "title": "Automation, AI among biggest trends shaping manufacturing in 2026: AMT",
+   "url": "https://www.manufacturingdive.com/news/automation-ai-trends-assocation-manufacturing-technology-2026-imts/831049/",
+   "source": "manufacturingdive",
+   "total": 0,
+   "text": "Demand for automation is &quot;off the charts&quot; due in part to the manufacturing labor shortage, and AI is driving major demand for power transmission and electrical equipment, said principal economist Chris Chidzik."
+  },
+  {
+   "title": "Instacart and DoorDash wrestle with online grocery’s growing affordability problem",
+   "url": "https://www.grocerydive.com/news/instacart-doordash-tackle-online-grocery-affordability/831246/",
+   "source": "grocerydive",
+   "total": 0,
+   "text": "Cost concerns have long challenged e-grocery, and addressing the issue is becoming more urgent as consumer price sensitivity rises, executives of the companies said."
+  },
+  {
+   "title": "Menu Tracker: New items from Taco Bell, Del Taco, and Krispy Kreme",
+   "url": "https://www.nrn.com/menu-trends/menu-tracker-new-items-from-taco-bell-del-taco-and-krispy-kreme",
+   "source": "nrn",
+   "total": 0,
+   "text": "Plus innovation at Cousins Subs, Grimaldi's, Jollibee, la Madeleine, Piada, STK, Tropical Smoothie Cafe, and more."
+  },
+  {
+   "title": "Nature-related financing and assessments increases worldwide - TNFD",
+   "url": "https://www.finextra.com/newsarticle/48468/nature-related-financing-and-assessments-increases-worldwide---tnfd?utm_medium=rssfinextra&utm_source=finextrafeed",
+   "source": "finextra",
+   "total": 0,
+   "text": "Financial institutions have increased nature-related assessments and reporting across markets in the last year according to a Taskforce for Nature-related Financial Disclosures (TNFD) report."
+  },
+  {
+   "title": "Fiserv is reworking the infrastructure behind modern banking",
+   "url": "https://tearsheet.co/10-q/fiserv-is-reworking-the-infrastructure-behind-modern-banking/?utm_source=rss&utm_medium=rss&utm_campaign=fiserv-is-reworking-the-infrastructure-behind-modern-banking",
+   "source": "tearsheet",
+   "total": 0,
+   "text": "Weekly 10-Q The weekly 10-Q newsletter is part of the Tearsheet Pro subscription, where I unpack the recent moves and strategies of leading banks and fintechs in the public space, coupled with stock market analysis. In your inbox every Friday! Message Sara Fiserv is reworking the infrastructure behind modern banking The bank-tech complexity problem is moving &#8230; \nContinue reading \"Fiserv is reworking the infrastructure behind modern banking\"\nThe post Fiserv is reworking the infrastructure behind modern banking appeared first on Tearsheet."
+  },
+  {
+   "title": "Inventi Becomes First Swift Business Connect Provider in the Baltics",
+   "url": "https://thefintechtimes.com/inventi-becomes-first-swift-business-connect-provider-in-the-baltics/",
+   "source": "fintechtimes",
+   "total": 0,
+   "text": "The Lithuanian payments platform can now offer banks and EMIs managed Swift connectivity alongside SEPA and TARGET through a single integration.\nThe post Inventi Becomes First Swift Business Connect Provider in the Baltics appeared first on The Fintech Times."
+  },
+  {
+   "title": "Fintech After the Midterms: 3 Thoughts on How Politics Might Impact Policy",
+   "url": "https://finovate.com/fintech-after-the-midterms-3-thoughts-on-how-politics-might-impact-policy/",
+   "source": "finovate",
+   "total": 0,
+   "text": "With the midterm elections only six-odd weeks away, control of the US House is one of the questions that will shape the next Congress. I wanted to think a little about what a future Democratic House might mean in terms of policymaking for banking, fintech, and financial services. New Sheriffs with Old Badges The biggest Read more...\nThe post Fintech After the Midterms: 3 Thoughts on How Politics Might Impact Policy appeared first on Finovate."
+  },
+  {
+   "title": "How to make it in Sephora, with Ilia Beauty founder Sasha Plavsic",
+   "url": "https://www.glossy.co/podcasts/how-to-make-it-in-sephora-with-ilia-beauty-founder-sasha-plavsic/?utm_campaign=glossydis&utm_medium=rss&utm_source=general-rss",
+   "source": "glossy",
+   "total": 0,
+   "text": "What does it take to thrive within the notoriously-competitive world of Sephora? Ilia Beauty founder Sasha Plavsic joined the Glossy Beauty Podcast to share advice, anecdotes and more about 10 successful years in America's biggest beauty retailer."
+  },
+  {
+   "title": "STAT+: Up and down the ladder: The latest comings and goings",
+   "url": "https://www.statnews.com/pharmalot/2026/09/25/up-and-down-the-ladder-latest-comings-goings-jobs-pharma-biotech/?utm_campaign=rss",
+   "source": "statnews",
+   "total": 0,
+   "text": "From new hires to departures, promotions and transfers, here are the latest comings and goings in the pharmaceutical industry."
+  },
+  {
+   "title": "Frontier Overhangs",
+   "url": "https://stratechery.com/2026/frontier-overhangs/",
+   "source": "stratechery",
+   "total": 0,
+   "text": "Pacing the frontier may be sincere, but it would also be strategically useful for the frontier labs to have time to reduce overhangs caused by model advancement."
+  },
+  {
+   "title": "Building Systems That Take Everyone Into Account",
+   "url": "https://skift.com/2026/09/25/building-systems-that-take-everyone-into-account/",
+   "source": "skift",
+   "total": 0,
+   "text": "Most sustainability commitments in travel measure what travel companies control directly. It&apos;s time to measure what they influence."
+  },
+  {
+   "title": "The Bagelry to open third location - citybeat.com",
+   "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1SRXVXU2NEQVk1VTVpUWhIX2pkWUtiZUxmYkdJTXp3bUk3ZWszaVhwbWZzT1ZhWFZUUkVOZV9HSjhqNU90NTlpT3hQU3VTNVpPc1luV1ZNcF9RVGVGTE9ScFdyckNfdXJWRG1CdVlNQjdOTm4xOVpwTg?oc=5",
+   "source": "gn_tradicional_en",
+   "total": null,
+   "text": "The Bagelry to open third location&nbsp;&nbsp;citybeat.com"
+  },
+  {
+   "title": "Best Project Management Software for Startups - Small Business Trends",
+   "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFAzU2ZmbnVuRmRVYmN1YU5uNEw1LXQwLUduVlctRTA3NnRCekRscXlkVHJCV0NfSWVVQmNCX2d1N1Jhclk5azRmOEh6V1JsQjJFLVcycHZzc0lNRXFJYzJZZnBfcVdvYmdEcGdPMURIVjJmR2Zab1diOGxqd21sZw?oc=5",
+   "source": "gn_tradicional_negocios",
+   "total": 0,
+   "text": ""
+  },
+  {
+   "title": "‘Resident Evil’ hace historia en taquilla y duplica el récord de estreno de la franquicia - Tomatazos",
+   "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOUlJEa0pZWEZtcHN0VEc0VHBoVDlrdFRjQlZzVWZiN2pGWkFsdmVRWWhRZmIwU0Etak4wdEhkTDlwNUJIMjdMODdHOXZLMjZ4bkd6SXljdnZ2c1RSbzFkQUtfWEtkbnlyZDNGaDlRUjU0dDQ5LXAxWmltWU1PZ3ZaZjd5c2xmdUxqcHBWNFhVNkY2SFE4UTkyS1Ryc25KSS1kb0pyZmk4aXhkaTFaRmNvYnRqTVVKTnBTLWE1S280MA?oc=5",
+   "source": "gn_tradicional_es",
+   "total": 0,
+   "text": ""
+  },
+  {
+   "title": "João Adibe revela a filosofia por trás do crescimento da Cimed em palestra realizada na Semana Caldeira - Jornal da Capital",
+   "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNZFQ3dDNfWHB3WE1GcE5LNzFxLWxicWpOUjVPamVqUlFxeWRJeDhmZ1g1aHNJVEpJLWRkcnZQb2FNcWJDd29uRUNJS2tkT0RSYzRoMUd2UHBVZ1ZJRG5aWk1nWDFsbi1rWVMwU0h4dGdQZFI3OVFDOXFHV3FtR3Bwc3psa0RYc0ZGMTlHeEZVMzV5U3J0cFJzRzNKLUpqZHVldVpaSm5HZVJDU3lTaUlGMnE0TVlrcEVMcHI4NndOV05MZGJBalliREtEa0NHeUxHWE5FT3VwUkFvRlVuTlFIcWhRUUpRVHpr?oc=5",
+   "source": "gn_tradicional_pt",
+   "total": 0,
+   "text": ""
+  },
+  {
+   "title": "How Divert Pairs Data with Reverse Logistics to Tackle Grocery Waste - Waste360",
+   "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPb2pNXy1tT3lxRVlVNzI0aDdocEN1UzFUMnBTTzRtWHA5RW9TYmNUMXJMcWQ2OW1sMHVEUkxNaFhBa2NpSG1UVEVDMjFsUjV5OVVCZkVfVkxLSHUtaUhaRUI5LVFLblNBczdZLVZHVmN1T0ZLcjdGbDFxaHV2amZ2S0lzakNNTlhEN0x3TGMwQjV4RWZjTW1zajZ4ODE1Y1RWeXpGdVFqbExGMjA?oc=5",
+   "source": "gn_logistica_en",
+   "total": 0,
+   "text": ""
+  },
+  {
+   "title": "Call for nominations: 2026 Material Handling Product News Readers’ Choice Products of the Year Awards - Modern Materials Handling",
+   "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQbjFSdnRiejFTT2FVeXowX3NKVnNtQmRBNERFakktdWtaTjBRVGFKMl9wWmFzUWZJSlpGZENuUnBjY0p6Q0tUUDRReENXSzRDcWtIbDYzWnZiRnF1YmRBbUt2OERMby05QkJlSnBtWmZvMGVNRTBDYmVOZUtnR2pSSk1LdkFCTzF6bUZici10NGJWeDUxR25zQlBYQTBoVGZiallkRmxhaTdMdkx6LXdVNDltQVJhWGhid0R1VGgtVUEyTVBtdVE?oc=5",
+   "source": "gn_logistica_prensa",
+   "total": 0,
+   "text": ""
+  },
+  {
+   "title": "Salmón: Los engranajes logísticos detrás de una gran exportación - logistica360chile.cl",
+   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQNmtVZUs3eWt5djJ6YTI0RGtUZ2NrMVJ2ZE5WcVJ3SE4zRml3dE9qTDNodHJuUEtoemxTUkNmbkpVbnNzR2hLSGhrZEYzYWFmdmVheVNhdmZJbVhINmRiTC1HcmRBdmE5TWxERE1tWUFKdjYyZW5DWXBxWXFDUnRwUFk4VXl5WnJXUXZ1T3NWSjBMcnFYSU5oaA?oc=5",
+   "source": "gn_logistica_es",
+   "total": 0,
+   "text": ""
+  },
+  {
+   "title": "Mercado Livre lança entregas em até 1 hora e amplia venda de medicamentos - E-Commerce Brasil",
+   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPWjlzTjhWcnRpR3d6OHZqaWFOdnpZZlBZaGdjNm5FZm9PcjRZeHZqeG9ZTjVZX1JNalJWTml3MDRpZXJkNERmdjNwN0FJUDBObnBjSHE1M1JVWEtQQ3BxYUtlYnQwUUtkLS1EeERPMWJKZE1ucW5pckVCbW1xb2ctSmRXSkRITFVtUE9DWnVVeWZGODhaREg0?oc=5",
+   "source": "gn_logistica_pt",
+   "total": 17,
+   "text": ""
+  },
+  {
+   "title": "Firstsource Recognized Among the Best in 'Services Eating Software' at the 2026 HFS SaS Awards - PR Newswire",
+   "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQYk5KMHZCTlotWndLNGJRUTJGUFZnRnQxZklTaGlidWVHSzlQblpnVTRKczd4T0RmZHdFbnNGaTUwcmU1TmFySTAtTDRfVE5LLThmNW0ycmhXZW80bG5HY3REUi0xY09Kci1uYXg0S1c1SXVVOUtwTFRrdWlDS0FrT3BudkF0VjFvbThDVF9VYS0yLW9nVkNlNGp4R0NrU1dCTFRWb0ZMQ2hDVWl2ZlprM0ttQ1k2MjF6SmFtRWNROEUtR25PbHpnVzBqNVExa29Kc1NtVkttdWJlOE5ZM1BlNDd3?oc=5",
+   "source": "gn_ai_native_en",
+   "total": 22,
+   "text": ""
+  },
+  {
+   "title": "New Records Show Medicare WISeR AI Prior Authorization Model Causing Inappropriate Denials of Care - medicarerights.org",
+   "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxOUVlEaUFaU2JCX21HQlJEUnN3OWxxdk9RQzVTcFpxMXFCX0ZodEg3emI3Z0VvVk13ZVE2R2dYc01mSTltSjR4b2ZmMndMdG0xdEVFSTRBV1ZHam9LZlRWd2JQdkQwNlFTWURFcEpmS3BmRlYxeWlidEE5bHhIeU45ZVlGV0xXRHdEY1ZZLVZnTFY1X25LUmM1NFJKbHQ3MWJOenh4TnBiMnNpZEQ0YTN6WWVmTm95aF9vUjh4TWhvT0RtbjktME9IbjBSbGRtTnpGYTE5TW0tbXlyQjlOWWpYSW9fT040ZXRtQlBn?oc=5",
+   "source": "gn_ai_native_verticales",
+   "total": 0,
+   "text": ""
+  },
+  {
+   "title": "Services as Software: Build Distribution Your Competitors Can't Buy - x.com",
+   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5zcW81eFEtTkpIMVdRTkxzTXQ2OWhFeXRva2Q5NHNXY0ZUTFo5QXlrNnVPU2ZjNzNuZkZpX1dqZzgwc0pBeUI5ZkpsSC10cklfazJ2bEV3?oc=5",
+   "source": "gn_ai_native_x",
+   "total": 0,
+   "text": ""
+  },
+  {
+   "title": "Dapper: la startup colombiana que usa IA para seguir la regulación - El Ecosistema Startup",
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNdWFtcUhyb0lwemRtMDJsekp6SlVnODVUUEtydnZuTEhvRGlYeUprRzc3eTNkNVN3V01TQy05TFhKelhYNzZVMUxmLXVUQzF1bGxLbXZVYmtZVzF2dXJUemV6NTkyWTJGY0lYWHVwNDRER0YyVWR0ZU9VTldGNGxHZzJDTkxBZWEyb1E3NVJGU2RnYlYtR0hpU2trRjE?oc=5",
+   "source": "gn_ai_native_es",
+   "total": 0,
+   "text": ""
+  },
+  {
+   "title": "A startup gringa que atraiu o Itaú - pipelinevalor.globo.com",
+   "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOWFpjdXZ4UnVTc3hidllPUXZ4MFFnbVBsQU9XdjBXRkZqZEM2YlFfbmYzRjlDTHNMbF9zYzMxeGxZWHRXbTNYNFRKSF9rN1N5anc0bHMtUHcyVGxxS1BiTFYtZVVweUgzWnZBRk5KQ1JQRS1XWmtaWENDLW1MYkxVV0N6d3JWZGpXd2xmTVBMcm5KSTDSAaIBQVVfeXFMUEd2YlU1TDV3dzhpQjFoVE52X2liSm1QZFcwUzl4YV9NZ3dfM21KcWFKZTI5TXJoM3pBaW0tWUthTmR5Z0xvaDgwZG9OMkM4T0swWDB1clB4aGppaXVnaDF4VFp6OFFTZXd4MEZDSWtYaXJKRlVNUlo3bWJnTnF2b3ZqbWluNUZLMFJadTczZnhwenAtcjdzWDZCTzhRdzdXM1FB?oc=5",
+   "source": "gn_ai_native_pt",
+   "total": 0,
+   "text": "A startup gringa que atraiu o Itaú&nbsp;&nbsp;pipelinevalor.globo.com"
+  },
+  {
+   "title": "It's such a cool feeling having people use your app from all over the world",
+   "url": "https://www.reddit.com/r/SaaS/comments/1wmk3ow/its_such_a_cool_feeling_having_people_use_your/",
+   "source": "reddit_saas",
+   "total": 0,
+   "text": "Building a SaaS is HARD but man it can feel so rewarding. I worked in big tech for many years, and don't get me wrong it was a good and comfortable career, but personally after a while it just felt like I was going through the motions and years of my life were just flying past me.  So I finally decided to quit and build something of my own. The road has had a lot of ups and downs for sure. Many ideas and products never took off. But I finally landed on a product that people seem to really like. One of the coolest feelings was seeing people from all over the world use/pay for something that I've built and share nice messages with me.  It's just the beginning and there's still a long road ahead but I hope you'll indulge me and let me smell the roses for a bit. If you're in the grind, just keep on going! If you're curious, this is what I'm building - https://www.daydreamvideo.com  &#32; submitted by &#32;  /u/Chemical_Deer_512   [link] &#32; [comments]"
+  },
+  {
+   "title": "Show HN: Radius – A Meetup.com Alternative",
+   "url": "https://radius.to/",
+   "source": "hackernews",
+   "total": 18,
+   "text": "Hello HN!<p>I&#x27;m relaunching Radius [1] - far too long after the original Show HN [2] (I&#x27;ll blame the day job for that).<p>Radius started out from my frustration with not knowing what was going on around me.  The initial plan was to &quot;show all and every type of event&quot; from big to small, but over time I narrowed the focus to communities, groups, events, and helping people connect through them.<p>The initial Show HN gave me 150+ comments (surprising, looking back, given how terrible the plain Bootstrap UI was...) with a huge amount of useful feedback and feature requests.  I&#x27;ve spent the time since then working through that, along with additional requests from groups using Radius, and it finally feels ready for a proper relaunch.<p>I&#x27;ve also recently added &quot;Activities&quot; [3] - which are lightweight events, independent of groups, intended to help people find others to do things with - for example:<p>&gt; John is going for a cycle and a coffee in New York at 10am<p>People can join and vote for a time that works for them.<p>I&#x27;ve got a bunch of ideas for where to go next with this, including things like open sourcing and federation, but those are "
+  }
+ ],
+ "deep": [
+  {
+   "title": "Tabby Builds AI-Native Bookkeeping Platform for Small Businesses - konsulteer.com",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQamJrcDRyS3ZpTEloX3hkSXFvY2FkdDZsblh4VmQ2ZWhwdEFaeHJxQmpNbkw5Y3lUTXQ0VHAwQTZnUFBIbDlnUVg2UHdBTE9lNEJwSTJidXJjSHNUUnVMckw2R1E3WDZTZmY2eFF5aldKRFRYX0JUamw1SnM0dmF5MmJHZEM2czNydHpmZTU1cENIbWNZS0VZSmI3RXV6ejhx?oc=5",
+   "source": "gn_ai_native_en",
+   "problema_score": 20,
+   "barrera_score": 10,
+   "replicabilidad": {
+    "nivel": "Alta",
+    "evidencia": "pymes chilenas gastan en contadores externos, dolor real y recurrente"
+   },
+   "ventana": {
+    "nivel": "Media",
+    "evidencia": "competidores globales no localizados aún a SII/boleta electrónica"
+   },
+   "tamano_mercado": {
+    "nivel": "Alta",
+    "evidencia": "$15B mercado de software contable en EE.UU. según fuente"
+   },
+   "resumen": "Tabby, creada por un excontador, automatiza la contabilidad de pymes/freelancers con AI conectada vía Plaid, entregando P&L en tiempo real y busca hacer 'invisible' el software contable. Tiene 5.500 negocios usando la plataforma y está levantando pre-seed.",
+   "b2b_o_b2c": "B2B2C",
+   "componente_ia": true,
+   "tipo_fundador": "cofundador técnico + expertise contable real (CPA)",
+   "mercado_actual": "pequeños negocios y freelancers en EE.UU.",
+   "company_url": "https://www.usetabby.com/",
+   "funding_raised": "$1M pre-seed (en proceso)",
+   "stage": "Pre-seed",
+   "por_que_ahora": "LLMs ya categorizan transacciones y generan libros en tiempo real, fatiga con QuickBooks",
+   "modelo_negocio": "suscripción mensual tipo bill, reemplaza honorario de contador",
+   "competencia_local": "no verificado",
+   "competencia_global": "QuickBooks, Rillet, Puzzle, Digits",
+   "fit_tesis": "Servicios AI-native",
+   "next_step": "medir cuánto pagan pymes chilenas hoy a contadores/facturación y validar switch a IA",
+   "valida_idea_propia": "",
+   "fundadores": "Ahad Ali y Shah Paran",
+   "redes_sociales": "",
+   "fit_yc": "Alto",
+   "tipo_candidato": "Empresa específica"
+  },
+  {
+   "title": "A ferramenta de IA Tabby automatiza a contabilidade e desafia os contadores - boainformacao.com.br",
+   "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOX0VFWmU3QkdBZ2tfS192Y0JraktUTUNRWGpYYncyMFpNYk5LRWMxR24ta0N4QkVPSTF4MVlhS3VpeExubUpLSkFEazlPY0haNTNsUnJxTWF4N2tXUkNtYWE3MVlRRWtHeTJ5OGZCcTRxY2FhdWZfTjc1YWt0cEFyT0NJVkxmTjg5VW1INENLbXItZUZIcmd0OGd4cm1VMXN2NmFqbEF6TkExM3AyNmhFb1Rkcw?oc=5",
+   "source": "gn_ai_native_pt",
+   "problema_score": 20,
+   "barrera_score": 10,
+   "replicabilidad": {
+    "nivel": "Alta",
+    "evidencia": "pymes/contadores en LatAm enfrentan mismo dolor de bookkeeping manual"
+   },
+   "ventana": {
+    "nivel": "Media",
+    "evidencia": "sin localización a normativa fiscal LatAm (SII, NF-e) por parte de Tabby"
+   },
+   "tamano_mercado": {
+    "nivel": "Alta",
+    "evidencia": "mismo mercado global de contabilidad automatizada"
+   },
+   "resumen": "Misma startup Tabby (excontador crea AI bookkeeping), esta cobertura en portugués enfatiza el ángulo de amenaza a los contadores tradicionales. Con 5.500 pymes usándola, valida que la automatización contable con IA ya genera fricción real con el gremio contable, señal fuerte para LatAm/Chile.",
+   "b2b_o_b2c": "B2B2C",
+   "componente_ia": true,
+   "tipo_fundador": "cofundador técnico + expertise contable",
+   "mercado_actual": "pequeños negocios en EE.UU.",
+   "company_url": "https://www.usetabby.com/",
+   "funding_raised": "$1M pre-seed",
+   "stage": "Pre-seed",
+   "por_que_ahora": "IA madura para reemplazar el trabajo manual de categorización contable",
+   "modelo_negocio": "suscripción mensual reemplazando honorario de contador",
+   "competencia_local": "no verificado",
+   "competencia_global": "QuickBooks, Rillet, Puzzle, Digits",
+   "fit_tesis": "Servicios AI-native",
+   "next_step": "entrevistar contadores/pymes chilenas sobre disposición a delegar bookkeeping a IA",
+   "valida_idea_propia": "",
+   "fundadores": "Ahad Ali",
+   "redes_sociales": "",
+   "fit_yc": "Alto",
+   "tipo_candidato": "Empresa específica"
+  },
+  {
+   "title": "Rillet and RSM Partner to Transform Middle Market Finance with AI-Native Agentic ERP - FF News",
+   "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQVVFvVnFiTGNDeEItRHVFNDh4eDE2bHBEMEprZHlYdHUyZ09iZlhidkJBeFh0cVBLazNNRDZLbGwxQTBZdm5jUlJGejJ5aENUTEdwNHVZWXVjZDRFb2JkelZjUFZWTldnczNpU3FhX0M5SVZaZ1Z2MnlxazE5dEJLRmZ1cFNCS09LSXlHT0llWXhYLVB5?oc=5",
+   "source": "gn_ai_native_en",
+   "problema_score": 18,
+   "barrera_score": 6,
+   "replicabilidad": {
+    "nivel": "Media",
+    "evidencia": "mid-market Chile usa Excel/ERP legacy, requiere adaptación a normativa local"
+   },
+   "ventana": {
+    "nivel": "Media",
+    "evidencia": "Rillet ya levantó $100M, compite con Puzzle, Digits, Campfire"
+   },
+   "tamano_mercado": {
+    "nivel": "Alta",
+    "evidencia": "mercado global de ERP/finance software es gigante"
+   },
+   "resumen": "Rillet, ERP agéntico con agentes embebidos en el libro mayor, se alía con RSM (top consultora middle-market) para modernizar finanzas de empresas medianas. El playbook interesante es la combinación software AI-native + firma contable que vende la transformación a sus clientes.",
+   "b2b_o_b2c": "B2B",
+   "componente_ia": true,
+   "tipo_fundador": "cofundador técnico con expertise en contabilidad/ERP y alianza con firma contable local",
+   "mercado_actual": "empresas middle-market en EE.UU.",
+   "company_url": "https://www.rillet.com/",
+   "funding_raised": "$100M (Sequoia-backed)",
+   "stage": "Series B+",
+   "por_que_ahora": "agentes IA ya capaces de manejar el libro mayor y cierre contable end-to-end",
+   "modelo_negocio": "SaaS ERP por suscripción + consultoría de implementación",
+   "competencia_local": "no verificado",
+   "competencia_global": "Rillet, Puzzle, Digits, Campfire, QuickBooks",
+   "fit_tesis": "B2B ops",
+   "next_step": "hablar con gerentes de finanzas de empresas medianas chilenas sobre dolor de cierre contable",
+   "valida_idea_propia": "",
+   "fundadores": "Nicolas Kopp (CEO y co-fundador de Rillet)",
+   "redes_sociales": "",
+   "fit_yc": "Alto",
+   "tipo_candidato": "Empresa específica"
+  },
+  {
+   "title": "Febre das lavanderias: SP tem 5 vezes mais unidades self-service do que em 2022, diz associação - G1",
+   "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxPMzJ5c1FrOGRQVnFZOThOTkZSTlJYVzNIeWlkM2F4d2J2YmNxcXo4M2RNM044bWtXY3BoUXBDZmxmanJIV21WMmhXRkxCSEthTlc1ZngwTmhNdm9yQkZCdDdialY4ZnRCTE9IQlB6c09iY0ctTDJYVEhjN3RqQVh3a0cxbFZUWm1DVzNnTDJWQmJqWXptSFVKcGZXaW9nRzNkUy1NZTRLRUVBLVBZSWtwRExjWVJfZGNtdUJ3enVNbWt4WjdKVEpKQ1hHaGpOb095YUR0YVg1Vmo3ZUhsaE94WjMwZXdIZFBMQWxNcHJ6QWd3WmxnM3fSAfYBQVVfeXFMTzMyeXNRazhkUFZxWTk4Tk5GUk5SWFczSHlpZDNheHdidmJjcXF6ODNkTTNOOG1rV2NwaFFwQ2ZsZmpySFdtVjJoV0ZMQkhLYU5XNWZ4ME5oTXZvckJGQnQ3YmpWOGZ0QkxPSEJQenNPYmNHLUwyWFRIYzd0akFYd2tHMWxWVFptQ1czZ0wyVkJiall6bUhVSnBmV2lvZ0czZFMtTWU0S0VFQS1QWUlrcERMY1lSX2RjbXVCd3p1TW1reFo3SlRKSkNYR2hqTm9PeWFEdGFYNVZqN2VIbGhPeFozMGV3SGRQTEFsTXByekFnd1psZzN3?oc=5",
+   "source": "gn_tradicional_pt",
+   "problema_score": 14,
+   "barrera_score": 10,
+   "replicabilidad": {
+    "nivel": "Media",
+    "evidencia": "Chile ya tiene incumbentes fuertes (Spin Ok, ProntoMatic, Speed Clean)"
+   },
+   "ventana": {
+    "nivel": "Baja",
+    "evidencia": "mercado chileno de lavanderías edificio ya consolidado hace años"
+   },
+   "tamano_mercado": {
+    "nivel": "Media",
+    "evidencia": "crecimiento 5x en unidades desde 2022 en São Paulo"
+   },
+   "resumen": "En São Paulo las lavanderías self-service crecieron 5 veces desde 2022 según la asociación del sector, impulsadas por departamentos chicos y falta de tiempo. En Chile el modelo (lavanderías en edificios/condominios) ya está operado por players consolidados como Spin Ok y ProntoMatic.",
+   "b2b_o_b2c": "B2C",
+   "componente_ia": false,
+   "tipo_fundador": "operador con capital para equipamiento y gestión de locales/concesiones",
+   "mercado_actual": "São Paulo, Brasil",
+   "company_url": "",
+   "funding_raised": "bootstrapped/desconocido",
+   "stage": "Bootstrapped",
+   "por_que_ahora": "departamentos más pequeños sin espacio para lavadora, hábito de delivery/apps",
+   "modelo_negocio": "pago por ciclo de lavado, concesión en edificios/condominios",
+   "competencia_local": "Spin Ok, ProntoMatic, Speed Clean, Smart Wash ya operan modelo similar en Chile",
+   "competencia_global": "no verificado",
+   "fit_tesis": "Tradicional reinventado",
+   "next_step": "verificar si el crecimiento BR es de lavanderías standalone (sin lavadora en casa) no cubierto aún en Chile",
+   "valida_idea_propia": "",
+   "fundadores": "no identificados",
+   "redes_sociales": "",
+   "fit_yc": "Bajo",
+   "tipo_candidato": "Tendencia"
+  },
+  {
+   "title": "Qtis.ai Unveils AI-Native Clinical Research Division - Medical Product Outsourcing",
+   "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQdUNLOXlIMVNHaWdDdE80NDl1Z2hKQzFOamNHNjBoTkFhdDB2anQyWmp5M2phV3J0NlQ1bGdCV3IxcHd1OUZ0alMyUnV3Z0VfcWdaRUwwTGVHRmRMa3dqZG9MWXRWT1FpT0k4RGRoSnZjMUxOU0xmdG5Wal9NSGtHbXBMSTQxVEpUZTRBajRZVENFM3ZXbkE?oc=5",
+   "source": "gn_ai_native_verticales",
+   "problema_score": 14,
+   "barrera_score": 3,
+   "replicabilidad": {
+    "nivel": "Media",
+    "evidencia": "Chile tiene sector de ensayos clínicos pero mercado chico"
+   },
+   "ventana": {
+    "nivel": "Media",
+    "evidencia": "poco jugador AI-native en clinical research aún"
+   },
+   "tamano_mercado": {
+    "nivel": "Media",
+    "evidencia": "industria CRO relevante pero nicho vs software horizontal"
+   },
+   "resumen": "Qtis.ai lanza una división AI-native para investigación clínica, combinando agentes de IA con expertise regulatorio para acelerar protocolos, reclutamiento y reporting de ensayos clínicos. El trabajo ya se terceriza a CROs y es verificable contra normas GCP/regulatorias, encaja en el patrón de servicios AI-native pero con barrera regulatoria alta.",
+   "b2b_o_b2c": "B2B",
+   "componente_ia": true,
+   "tipo_fundador": "cofundador con expertise regulatorio/clínico + técnico",
+   "mercado_actual": "industria de investigación clínica/CRO en EE.UU.",
+   "company_url": "",
+   "funding_raised": "desconocido",
+   "stage": "Desconocido",
+   "por_que_ahora": "presión de costos en ensayos clínicos + IA madura para documentación y compliance",
+   "modelo_negocio": "servicio tercerizado tipo CRO, cobro por estudio/fase",
+   "competencia_local": "no verificado",
+   "competencia_global": "no verificado",
+   "fit_tesis": "Servicios AI-native",
+   "next_step": "baja prioridad por barrera regulatoria; evaluar solo con socio con expertise clínica",
+   "valida_idea_propia": "",
+   "fundadores": "no identificados",
+   "redes_sociales": "",
+   "fit_yc": "Medio",
+   "tipo_candidato": "Empresa específica"
+  },
+  {
+   "title": "Firstsource Recognized Among the Best in 'Services Eating Software' at the 2026 HFS SaS Awards - PR Newswire",
+   "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQYk5KMHZCTlotWndLNGJRUTJGUFZnRnQxZklTaGlidWVHSzlQblpnVTRKczd4T0RmZHdFbnNGaTUwcmU1TmFySTAtTDRfVE5LLThmNW0ycmhXZW80bG5HY3REUi0xY09Kci1uYXg0S1c1SXVVOUtwTFRrdWlDS0FrT3BudkF0VjFvbThDVF9VYS0yLW9nVkNlNGp4R0NrU1dCTFRWb0ZMQ2hDVWl2ZlprM0ttQ1k2MjF6SmFtRWNROEUtR25PbHpnVzBqNVExa29Kc1NtVkttdWJlOE5ZM1BlNDd3?oc=5",
+   "source": "gn_ai_native_en",
+   "problema_score": 10,
+   "barrera_score": 5,
+   "replicabilidad": {
+    "nivel": "Baja",
+    "evidencia": "requiere escala BPO enterprise, no replicable como MVP"
+   },
+   "ventana": {
+    "nivel": "Baja",
+    "evidencia": "es un incumbente grande ya premiado, no una ventana nueva"
+   },
+   "tamano_mercado": {
+    "nivel": "Alta",
+    "evidencia": "BPO enterprise es industria multimillonaria"
+   },
+   "resumen": "Firstsource, gran BPO, fue reconocido en los HFS SaS Awards bajo la tesis 'Services Eating Software': servicios profesionales entregados con IA agéntica + equipo humano, cobrando por resultado. Valida la tendencia de 'Servicios AI-native' a nivel industria, pero Firstsource ya es un incumbente grande, no un jugador a replicar desde cero.",
+   "b2b_o_b2c": "B2B",
+   "componente_ia": true,
+   "tipo_fundador": "no aplica directamente; sirve como validación de tesis",
+   "mercado_actual": "BPO enterprise global",
+   "company_url": "",
+   "funding_raised": "desconocido",
+   "stage": "Desconocido",
+   "por_que_ahora": "la industria BPO migra de precio por hora a precio por resultado gracias a IA agéntica",
+   "modelo_negocio": "servicio tercerizado con pricing por outcome",
+   "competencia_local": "no verificado",
+   "competencia_global": "no verificado",
+   "fit_tesis": "Servicios AI-native",
+   "next_step": "revisar el reporte HFS 'Services Eating Software' para identificar verticales chicas replicables",
+   "valida_idea_propia": "Consultoría de agentes de IA para empresas medianas",
+   "fundadores": "no identificados",
+   "redes_sociales": "",
+   "fit_yc": "Bajo",
+   "tipo_candidato": "Tendencia"
+  },
+  {
+   "title": "OWOW Venture Studio lands €2.65M to build B2B startups for traditional industries",
+   "url": "https://tech.eu/2026/09/24/owow-venture-studio-lands-eur265m-to-build-b2b-startups-for-traditional-industries/",
+   "source": "techeu",
+   "problema_score": 8,
+   "barrera_score": 5,
+   "replicabilidad": {
+    "nivel": "Baja",
+    "evidencia": "modelo de venture studio depende de red europea de family offices"
+   },
+   "ventana": {
+    "nivel": "Baja",
+    "evidencia": "sin diferenciación clara replicable rápido"
+   },
+   "tamano_mercado": {
+    "nivel": "Media",
+    "evidencia": "B2B para manufactura/OEM, nicho europeo"
+   },
+   "resumen": "OWOW es un venture studio en Eindhoven que levantó capital de family offices para construir startups B2B enfocadas en manufactura y OEM tradicionales. Es un modelo de fondeo/construcción de empresas, no un producto único a replicar.",
+   "b2b_o_b2c": "B2B",
+   "componente_ia": false,
+   "tipo_fundador": "venture builder con capital y red industrial",
+   "mercado_actual": "Europa (Países Bajos)",
+   "company_url": "",
+   "funding_raised": "€2.65M",
+   "stage": "Seed",
+   "por_que_ahora": "family offices buscando exposición a industrias tradicionales vía tecnología",
+   "modelo_negocio": "equity en startups construidas por el studio",
+   "competencia_local": "no verificado",
+   "competencia_global": "no verificado",
+   "fit_tesis": "Otro",
+   "next_step": "baja prioridad, no accionable directamente para el fundador",
+   "valida_idea_propia": "",
+   "fundadores": "no identificados",
+   "redes_sociales": "",
+   "fit_yc": "Bajo",
+   "tipo_candidato": "Empresa específica"
+  },
+  {
+   "title": "Startup LittleHorse Says It Can Rein In AI Agent Chaos With ‘Business-As-Code’ - crn.com",
+   "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOdVhSU1AyZVR4V0xBazdLajJhZEo3R1drR1h0dlJmZVVjVlBIcVJZRU1feXFlQkxOUU4xTU9CX3NLOUFRUkFxRlllU29wc0M0RG43OWlRbjVVVEFPZmpoUGdPWnkwZWFYRDNmUkVlVEVmbDhNbkgxRFM3TVRNd0t3bGVXYlJjTllDSE1BTDcxMTBmb0ZrejhmMkdaRFlUVnFWNC1lM3BxQTUzXzZBU2c?oc=5",
+   "source": "gn_logistica_en",
+   "problema_score": 0,
+   "barrera_score": 0,
+   "replicabilidad": {
+    "nivel": "Baja",
+    "evidencia": "excluido: dev tool orquestación"
+   },
+   "ventana": {
+    "nivel": "Baja",
+    "evidencia": "excluido: dev tool orquestación"
+   },
+   "tamano_mercado": {
+    "nivel": "Baja",
+    "evidencia": "excluido: dev tool orquestación"
+   },
+   "resumen": "Framework de orquestación de agentes de IA para desarrolladores, sin comprador no técnico claro.",
+   "b2b_o_b2c": "",
+   "componente_ia": false,
+   "tipo_fundador": "",
+   "mercado_actual": "",
+   "company_url": "",
+   "funding_raised": "",
+   "stage": "",
+   "por_que_ahora": "",
+   "modelo_negocio": "",
+   "competencia_local": "",
+   "competencia_global": "",
+   "fit_tesis": "",
+   "next_step": "",
+   "valida_idea_propia": "",
+   "fundadores": "",
+   "redes_sociales": "",
+   "fit_yc": "Bajo",
+   "tipo_candidato": "Empresa específica"
+  }
+ ],
+ "gate_urls": [
+  "https://news.google.com/rss/articles/CBMioAFBVV95cUxQamJrcDRyS3ZpTEloX3hkSXFvY2FkdDZsblh4VmQ2ZWhwdEFaeHJxQmpNbkw5Y3lUTXQ0VHAwQTZnUFBIbDlnUVg2UHdBTE9lNEJwSTJidXJjSHNUUnVMckw2R1E3WDZTZmY2eFF5aldKRFRYX0JUamw1SnM0dmF5MmJHZEM2czNydHpmZTU1cENIbWNZS0VZSmI3RXV6ejhx?oc=5",
+  "https://news.google.com/rss/articles/CBMiswFBVV95cUxOX0VFWmU3QkdBZ2tfS192Y0JraktUTUNRWGpYYncyMFpNYk5LRWMxR24ta0N4QkVPSTF4MVlhS3VpeExubUpLSkFEazlPY0haNTNsUnJxTWF4N2tXUkNtYWE3MVlRRWtHeTJ5OGZCcTRxY2FhdWZfTjc1YWt0cEFyT0NJVkxmTjg5VW1INENLbXItZUZIcmd0OGd4cm1VMXN2NmFqbEF6TkExM3AyNmhFb1Rkcw?oc=5",
+  "https://news.google.com/rss/articles/CBMilAFBVV95cUxQVVFvVnFiTGNDeEItRHVFNDh4eDE2bHBEMEprZHlYdHUyZ09iZlhidkJBeFh0cVBLazNNRDZLbGwxQTBZdm5jUlJGejJ5aENUTEdwNHVZWXVjZDRFb2JkelZjUFZWTldnczNpU3FhX0M5SVZaZ1Z2MnlxazE5dEJLRmZ1cFNCS09LSXlHT0llWXhYLVB5?oc=5"
+ ],
+ "cost_usd": 0.2944
+}
