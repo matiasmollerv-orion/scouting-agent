@@ -91,8 +91,11 @@ def score(items: list[Item]) -> ScoreResult:
     # 2026-09-21: 200 candidatos y las fuentes Google Noticias (gn_*) traen URLs de redirección
     # de ~150 caracteres (≈100 tokens c/u) y quedan AL FINAL del round-robin — justo donde
     # cae el corte si se trunca. 200 × ~110 ≈ 22k -> 32000 (solo se paga lo generado).
+    # 2026-09-26: 200 candidatos generaron 25.6k tokens de salida (~128 por item: la URL de Google
+    # Noticias pesa ~100 tokens); con hasta ~290 candidatos (cupo extra gn_*) son ~37k. Haiku 4.5
+    # admite 64k de salida; solo se paga lo generado.
     text, c, triage_truncated = _call(client, config.MODEL_TRIAGE, triage_system,
-                                       triage_user, max_tokens=32000)
+                                       triage_user, max_tokens=64000)
     result.cost_usd += c
     if triage_truncated:
         result.triage_truncated = True
@@ -123,6 +126,8 @@ def score(items: list[Item]) -> ScoreResult:
     if not ranked:
         print("[score] triage sin resultados — fallback: top por orden de prefilter")
         ranked = items[: config.TOP_DEEP]
+    ranked, dedupe_cost = _dedupe_same_story(client, ranked, config.TOP_DEEP)
+    result.cost_usd += dedupe_cost
     top = ranked[: config.TOP_DEEP]
     top = _add_rescue_slots(top, ranked)
     print(f"[score] triage: {len(items)} candidatos -> top {len(top)} a análisis profundo")
@@ -164,6 +169,40 @@ def score(items: list[Item]) -> ScoreResult:
         print(f"[score] deep intento {attempt} sin resultados válidos"
               + (", reintentando" if attempt == 1 else " — abortando"))
     return result
+
+
+DEDUPE_SYSTEM = """Recibís una lista numerada de titulares. Agrupá los que hablan de la MISMA empresa, producto o
+noticia concreta, aunque estén en otro idioma, en otro medio o con otras palabras (por ejemplo, la misma
+startup en una nota en inglés y otra en portugués). Dos titulares sobre el mismo TEMA general pero de
+empresas o hechos distintos NO son el mismo. Ante la duda, NO agrupes.
+
+Respondé EXCLUSIVAMENTE JSON, con solo los grupos de 2 o más: {"grupos": [[0, 3], [5, 7, 9]]}
+Si no hay repetidos: {"grupos": []}"""
+
+
+def _dedupe_same_story(client: Anthropic, ranked: list[Item], want: int) -> tuple[list[Item], float]:
+    """Entre los mejores candidatos quita los que son la MISMA empresa o noticia (2026-09-26, W39: Tabby
+    apareció dos veces, en inglés y en portugués, y ocupó dos cupos del análisis profundo pago). Se queda
+    con el mejor rankeado de cada grupo y repone con los siguientes. Un fallo nunca tumba la corrida."""
+    pool = ranked[: want + 6]
+    if len(pool) < 2:
+        return ranked, 0.0
+    listing = "\n".join(f"[{i}] ({it.source}) {it.title[:160]}" for i, it in enumerate(pool))
+    try:
+        text, cost, _ = _call_direct(client, config.MODEL_TRIAGE, DEDUPE_SYSTEM, listing,
+                                     max_tokens=600, log_prefix="[score:dedupe]")
+        groups = json.loads(text[text.find("{"): text.rfind("}") + 1]).get("grupos", [])
+    except Exception as e:  # noqa: BLE001
+        print(f"[score] dedupe omitido ({type(e).__name__}) — se sigue sin agrupar")
+        return ranked, 0.0
+    drop: set[int] = set()
+    for g in groups:
+        idx = sorted({i for i in g if isinstance(i, int) and 0 <= i < len(pool)})
+        drop.update(idx[1:])  # el de menor índice es el mejor rankeado
+    if not drop:
+        return ranked, cost
+    print(f"[score] dedupe: {len(drop)} candidato(s) de la misma empresa/noticia descartado(s)")
+    return [it for i, it in enumerate(pool) if i not in drop] + ranked[len(pool):], cost
 
 
 def _call(client: Anthropic, model: str, system: str, user: str,

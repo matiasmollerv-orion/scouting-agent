@@ -128,6 +128,11 @@ MIN_ENGAGEMENT = {
 # 2026-09-21: 150 -> 200 al sumar 8 fuentes dedicadas (tradicional/logística); el triage
 # cuesta ~$0.0003/item, así que +50 ≈ +$0.015/semana.
 MAX_CANDIDATES = int(os.environ.get("SCOUTING_MAX_CANDIDATES", "200"))
+# 2026-09-26 (W39): con el round-robin cada feed gn_* entraba al triage con solo ~5 de sus 40 titulares
+# (y los primeros de cada consulta suelen ser ruido). Las fuentes dedicadas (tradicional, logística,
+# AI-native) pueden aportar hasta N candidatos EXTRA por encima del tope base: ~13 feeds × 7 ≈ +90
+# candidatos ≈ +$0.04/semana (el triage cuesta ~$0.00044 por candidato).
+GN_MAX_PER_SOURCE = int(os.environ.get("SCOUTING_GN_MAX_PER_SOURCE", "12"))
 
 # Keywords que marcan relevancia para scouting de negocio.
 # Un item pasa el pre-filtro si su engagement supera el umbral

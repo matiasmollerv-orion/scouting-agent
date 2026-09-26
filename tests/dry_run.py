@@ -64,6 +64,8 @@ def _fake_response_text(system: str, user_content: str) -> str:
         # alcanza con devolver un array vacío (0 tendencias sintetizadas,
         # camino válido y real cuando nada pasa el umbral).
         return "[]"
+    if "MISMA empresa, producto o" in system:  # score._dedupe_same_story: el 2º titular repite al 1º
+        return json.dumps({"grupos": [[0, 1]]})
     items = _payload_items(user_content)
     if "TRIAGE" in system:
         # MODE="truncated": simula el bug real de 2026-W35 — el modelo se

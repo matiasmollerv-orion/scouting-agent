@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from collections import defaultdict
+from collections import Counter, defaultdict
 
 from .. import config
 from ..models import Item
@@ -87,7 +87,23 @@ def prefilter(items: list[Item], seen_urls: set[str] | None = None) -> list[Item
             if idx < len(pool) and len(result) < config.MAX_CANDIDATES:
                 result.append(pool[idx])
         idx += 1
-    print(f"[funnel] {len(result)} candidatos a triage (round-robin, tope {config.MAX_CANDIDATES})")
+    base = len(result)
+    # Cupo extra para las fuentes dedicadas (gn_*), por encima del tope base: ver config.GN_MAX_PER_SOURCE.
+    chosen = {it.url for it in result}
+    per_source = Counter(it.source for it in result)
+    for source, src_items in by_source.items():
+        if not source.startswith("gn_"):
+            continue
+        for it in src_items:
+            if per_source[source] >= config.GN_MAX_PER_SOURCE:
+                break
+            if it.url in chosen:
+                continue
+            result.append(it)
+            chosen.add(it.url)
+            per_source[source] += 1
+    print(f"[funnel] {base} candidatos a triage (round-robin, tope {config.MAX_CANDIDATES}) "
+          f"+ {len(result) - base} extra de fuentes dedicadas gn_* (hasta {config.GN_MAX_PER_SOURCE} c/u)")
     return result
 
 
